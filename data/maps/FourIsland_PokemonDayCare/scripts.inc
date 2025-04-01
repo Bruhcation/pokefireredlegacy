@@ -404,13 +404,21 @@ FourIsland_PokemonDayCare_EventScript_ReturnForEgg::
 FourIsland_PokemonDayCare_Text_LetMeTakeLookAtMons::
 # 203 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "Hello there, CHAMP!\p"  
+# 204 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "I was just coming here to pick\n"  
+# 205 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "up my SUDOWOODO,\l"  
+# 206 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "but to my surprise, she's laid\l"  
+# 207 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "a whole bunch of EGGS!\p" 
+# 208 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "I don't have space for all\n"  
+# 209 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "of them, so I want to\l"  
+# 210 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "offload some.$"  
+# 211 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 
 # 212 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 FourIsland_PokemonDayCare_Text_HmmISeeIsee::
@@ -422,9 +430,13 @@ FourIsland_PokemonDayCare_Text_HmmISeeIsee::
 
 # 216 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 FourIsland_PokemonDayCare_Text_TreatMonRightHaveThis::
+# 217 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "I'm sure the CHAMPION of\n"  
+# 218 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "KANTO will have no problem\l"  
+# 219 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "raising this EGG!\p"  
+# 220 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 
 # 221 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 FourIsland_PokemonDayCare_Text_ReceivedEggFromMan::
@@ -462,8 +474,11 @@ FourIsland_PokemonDayCare_Text_YouveComeBackForTheEgg::
 FourIsland_PokemonDayCare_Text_GladIMetSomeoneLikeYou::
 # 238 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "I'm glad to give you\n"  
+# 239 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "this EGG, CHAMPION.\p"  
+# 240 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
     .string "Hope you like SUDOWOODO!$"  
+# 241 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 
 # 242 "data/maps/FourIsland_PokemonDayCare/scripts.pory"
 FourIsland_PokemonDayCare_Text_CuteMonRemindsMeOfDaisy::

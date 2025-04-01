@@ -2207,7 +2207,7 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 # 1104 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 0
 # 1105 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_BULBASAUR
+	setvar PLAYER_STARTER_SPECIES, SPECIES_CHIKORITA
 # 1106 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_CHARMANDER
 # 1107 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2493,7 +2493,7 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 # 1247 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 1
 # 1248 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_SQUIRTLE
+	setvar PLAYER_STARTER_SPECIES, SPECIES_TOTODILE
 # 1249 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_BULBASAUR
 # 1250 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2519,7 +2519,7 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 # 1260 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 2
 # 1261 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_SPECIES, SPECIES_CYNDAQUIL
 # 1262 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
 # 1263 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
