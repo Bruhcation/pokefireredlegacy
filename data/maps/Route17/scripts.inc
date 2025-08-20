@@ -57,6 +57,34 @@ Route17_EventScript_CyclingRoadSign::
 # 29 "data/maps/Route17/scripts.pory"
 Route17_EventScript_Paxton::
 # 30 "data/maps/Route17/scripts.pory"
-	msgbox Route17_Text_Paxton, MSGBOX_SIGN
+	msgbox Route17_Text_Paxton, MSGBOX_YESNO
 # 31 "data/maps/Route17/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, Route17_EventScript_NoWhitney
+# 32 "data/maps/Route17/scripts.pory"
+	trainerbattle_single TRAINER_GUITARIST, Route17_Text_YesWhitney, Route17_Text_WhitneyDefeat, Route17_EventScript_PostWhitney, NO_MUSIC
+# 33 "data/maps/Route17/scripts.pory"
+	release
+# 34 "data/maps/Route17/scripts.pory"
+	end
+# 35 "data/maps/Route17/scripts.pory"
+
+# 36 "data/maps/Route17/scripts.pory"
+Route17_EventScript_PostWhitney::
+# 37 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_WhitneyPostBattle
+# 38 "data/maps/Route17/scripts.pory"
+	cleartrainerflag TRAINER_GUITARIST
+# 39 "data/maps/Route17/scripts.pory"
+	release
+# 40 "data/maps/Route17/scripts.pory"
+	end
+# 41 "data/maps/Route17/scripts.pory"
+
+# 42 "data/maps/Route17/scripts.pory"
+Route17_EventScript_NoWhitney::
+# 43 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_NoWhitney
+# 44 "data/maps/Route17/scripts.pory"
+	release
+# 45 "data/maps/Route17/scripts.pory"
 	end

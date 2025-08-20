@@ -110,11 +110,10 @@ ViridianForest_Text_LassDefeat::
 	.string "Oh no, really?$"
 
 ViridianForest_Text_LassPostBattle::
-	.string "I looked forever,\n"
-	.string "but I never found\l"
-	.string "a PIKACHU here!\p"
-	.string "I did run into an ODDISH\n"
-	.string "though!\p"
+	.string "I looked for ages, but I never\n"
+	.string "found a PIKACHU here!\p"
+	.string "I did run into an ODDISH,\n"
+	.string "though.\p"
 	.string "Or was it a BELLSPROUT?\p"
-	.string "Those two POKéMON are usually\n"
-	.string "found in the same places.$"
+	.string "I always get their locations\n"
+	.string "mixed up…$"

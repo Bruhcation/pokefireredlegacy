@@ -5,4 +5,54 @@ OneIsland_House2_MapScripts::
 OneIsland_House2_EventScript_Lass::
 	msgbox OneIsland_House2_Text_IWantToStayHereForever, MSGBOX_NPC
 	end
+
+OneIsland_House2_EventScript_Elyssa::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_POSTGAME_GOSSIPERS, OneIsland_House2_EventScript_Busy
+	msgbox Trade_Text_ThanksMan
+	setvar VAR_0x8004, SPECIES_CYNDAQUIL
+	special SetSeenMon
+	showmonpic SPECIES_CYNDAQUIL, 10, 3
+	waitbuttonpress
+	hidemonpic
+	release
+	end
+
+Trade_Text_ThanksMan::
+	.string "Hey! I took a picture of\n"
+	.string "this POKEMON I found on\l"
+	.string "these islands!\p"
+	.string "It rare's and looks\n"
+	.string "very cute!\p"
+	.string "Take a look!$"
+
+OneIsland_House2_EventScript_Busy::
+	msgbox OneIsland_House2_Text_Busy, MSGBOX_NPC
+	end
+
+OneIsland_House2_EventScript_DeclineTrade::
+	msgbox Trade_Text_WellIfYouDontWantTo
+	release
+	end
+
+OneIsland_House2_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	release
+	end
+
+OneIsland_House2_EventScript_AlreadyTraded::
+	msgbox Trade_Text_IsntMyOldMonGreat
+	release
+	end
+
+OneIsland_House2_Text_Busy::
+	.string "I'm quite busy at the moment.\n"
+	.string "However, when I'm done.\p"
+	.string "I would like to show\n"
+	.string "you something.\p"
+	.string "Go on with your day and\n"
+	.string "Visit me later.$"
+
 `

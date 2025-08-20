@@ -52,3 +52,11 @@ ViridianCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox ViridianCity_PokemonCenter_1F_Text_PokeCentersHealMons, MSGBOX_NPC
 # 27 "data/maps/ViridianCity_PokemonCenter_1F/scripts.pory"
 	end
+# 28 "data/maps/ViridianCity_PokemonCenter_1F/scripts.pory"
+
+# 29 "data/maps/ViridianCity_PokemonCenter_1F/scripts.pory"
+ViridianCity_PokemonCenter_1F_EventScript_Busy::
+# 30 "data/maps/ViridianCity_PokemonCenter_1F/scripts.pory"
+	msgbox ViridianCity_PokemonCenter_1F_Text_PokeCenterBusy, MSGBOX_NPC
+# 31 "data/maps/ViridianCity_PokemonCenter_1F/scripts.pory"
+	end

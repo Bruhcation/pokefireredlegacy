@@ -145,10 +145,10 @@ PewterCity_Text_AskedToDeliverThis::
 
 PewterCity_Text_ReceivedRunningShoesFromAide::
     .string "{PLAYER} received the\n"
-    .string "EXP SHARE from the AIDE.$"
+    .string "EXP. SHARE from the AIDE.$"
 
 PewterCity_Text_SwitchedShoesWithRunningShoes::
-    .string "{PLAYER} put the EXP SHARE\n"
+    .string "{PLAYER} put the EXP. SHARE\n"
     .string "in the BAG.$"
 
 PewterCity_Text_ExplainRunningShoes::
@@ -164,20 +164,20 @@ PewterCity_Text_MustBeGoingBackToLab::
 PewterCity_Text_RunningShoesLetterFromMom::
     .string "There's a letter attached…\p"
     .string "Dear {PLAYER},\p"
-    .string "Here is an EXP SHARE for\n"
-    .string "for my beloved challenger.\p"
+    .string "Here is an EXP. SHARE for\n"
+    .string "my beloved challenger.\p"
     .string "Remember, I'll always cheer for\n"
     .string "you! Don't ever give up!\p"
     .string "From Mom$"
 
 PewterCity_Text_AbilityGirl::
 	.string "ABILITIES are so cool!\p"
- 	.string "POKéMON with PICKUP can find all sorts\n"
- 	.string "of rare items, even RARE CANDY.\p"
+ 	.string "POKéMON with PICKUP can find all\n"
+ 	.string "sorts of items, even RARE CANDY.\p"
  	.string "MAGMA ARMOR is so hot, it evaporates\n"
  	.string "WATER attacks and reduces their\l"
  	.string "damage!\p"
- 	.string "STENCH smells so bad that the opponent\n"
- 	.string "might miss you, while ILLUMINATE makes\l"
- 	.string "it easier to see and ignore accuracy\l"
- 	.string "loss!$"
+ 	.string "STENCH smells so bad that the\n"
+ 	.string "opponent might miss you, while\l"
+ 	.string "ILLUMINATE makes it easier to see\l"
+ 	.string "and ignores accuracy loss!$"

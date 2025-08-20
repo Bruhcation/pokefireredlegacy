@@ -51,7 +51,7 @@ CinnabarIsland_Gym_Text_RematchBlaineDefeat::
 CinnabarIsland_Gym_Text_BlainePostRematchBattle::
     .string "Incredible! Your strength burns\n"
     .string "brighter than the wildest flame!\p"
-    .string "Truly, you are a worthy Champion!$"
+    .string "Truly, you are a worthy CHAMPION!$"
 
 CinnabarIsland_Gym_Text_BlaineNoRematchBattle::
     .string "Hah, not fired up yet?\n"
@@ -187,10 +187,10 @@ CinnabarIsland_Gym_Text_QuizQuestion1::
 
 CinnabarIsland_Gym_Text_QuizQuestion2::
     .string "There are 151 certified POKéMON\n"
-    .string "in the POKEDEX?$"
+    .string "in the POKéDEX?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion3::
-    .string "EEVEE has 3 Evolutions?$"
+    .string "EEVEE has 3 evolutions?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion4::
     .string "Are water moves effective\n"
@@ -201,7 +201,7 @@ CinnabarIsland_Gym_Text_QuizQuestion5::
     .string "are not identical?$"
 
 CinnabarIsland_Gym_Text_QuizQuestion6::
-    .string "TM28 contains TOMBSTONY?$"
+    .string "TM28 contains TOMBSTONE?$"
 
 CinnabarIsland_Gym_Text_CorrectGoOnThrough::
     .string "You're absolutely correct!\p"

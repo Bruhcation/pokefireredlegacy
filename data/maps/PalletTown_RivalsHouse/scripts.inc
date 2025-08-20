@@ -55,7 +55,7 @@ PalletTown_RivalsHouse_EventScript_Daisy::
 # 28 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	famechecker FAMECHECKER_DAISY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 # 29 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_RivalsHouse_EventScript_GroomMon
+	goto_if_set FLAG_GOT_HM01, PalletTown_RivalsHouse_EventScript_GroomMon
 # 30 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	goto_if_eq RECEIVED_TOWN_MAP, TRUE, PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest
 # 31 "data/maps/PalletTown_RivalsHouse/scripts.pory"
@@ -95,7 +95,7 @@ PalletTown_RivalsHouse_EventScript_GroomMon::
 # 48 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	special QuestLog_CutRecording
 # 49 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_lt VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 500, PalletTown_RivalsHouse_EventScript_RateMonFriendship
+	goto_if_lt VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 350, PalletTown_RivalsHouse_EventScript_RateMonFriendship
 # 50 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	msgbox PalletTown_RivalsHouse_Text_LikeMeToGroomMon, MSGBOX_YESNO
 # 51 "data/maps/PalletTown_RivalsHouse/scripts.pory"

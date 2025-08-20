@@ -13,6 +13,7 @@
 #include "battle_util2.h"
 #include "battle_bg.h"
 
+
 /*
     Banks are a name given to what could be called a 'battlerId' or 'monControllerId'.
     Each bank has a value consisting of two bits.
@@ -71,43 +72,43 @@ enum {
 struct TrainerMon
 
 {
-    u16 iv;
-    u8 nickname[POKEMON_NAME_LENGTH + 1];
-    u8 ivs[NUM_STATS];
-    u8 evs[NUM_STATS];
+    u32 iv;
     u8 lvl;
+    const u8 *nickname;
+    bool8 gender:2;
+    bool8 isShiny:1;
+    bool8 abilityNum:1;
     u16 species;
     u16 heldItem;
     u16 moves[MAX_MON_MOVES];
-    u8 ball;
-    u16 ability:2;
-    u16 friendship:2;
-    u16 gender:2;
-    u16 build:3;
-    u16 shiny:1;
-    u16 nature:5;
-    u16 unused:1;
+    u16 nature:11;
+    u16 pokeball:5;
+    const u8 *ev;
 };
 
-#define TRAINER_MON(party) { .TrainerMon = party }, .partySize = ARRAY_COUNT(party)
+#define TRAINER_PARTY(party) party, .partySize = ARRAY_COUNT(party)
 
-union TrainerMonPtr
+struct TrainerTypeTrainer
+ {
+    u16 items[MAX_TRAINER_ITEMS];
+    u32 aiFlags;
+ };
+
+union TrainerTypePtr
 {
-    const struct TrainerMon *TrainerMon;
+    struct TrainerTypeTrainer trainer;
 };
 
 struct Trainer
 {
-    u8 partyFlags; // Unread
+    u8 partySize:7;
+    bool8 doubleBattle:1;    
     u8 trainerClass;
     u8 encounterMusic_gender; // last bit is gender
     u8 trainerPic;
-    u8 trainerName[12];
-    u16 items[4];
-    bool8 doubleBattle;
-    u32 aiFlags;
-    u8 partySize;
-    union TrainerMonPtr party;
+    const u8 *trainerName;
+    union TrainerTypePtr trainerType;
+    const struct TrainerMon *party;
 };
 
 extern const struct Trainer gTrainers[];
@@ -705,5 +706,7 @@ extern u8 gChosenActionByBattler[MAX_BATTLERS_COUNT];
 extern u8 gBattleTerrain;
 extern struct MultiBattlePokemonTx gMultiPartnerParty[3];
 extern u16 gRandomTurnNumber;
+
+#include "trainer_control.h"
 
 #endif // GUARD_BATTLE_H

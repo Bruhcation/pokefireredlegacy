@@ -174,6 +174,8 @@
 #define TRAINER_PIC_JASMINE               153
 #define TRAINER_PIC_PRYCE                 154
 #define TRAINER_PIC_CLAIR                 155
+#define TRAINER_PIC_OFFICER               156
+#define TRAINER_PIC_NURSE                 157
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_RED                    0
@@ -297,6 +299,8 @@
 #define TRAINER_CLASS_PAINTER             106
 #define TRAINER_CLASS_SEVII_CHAMPION      107
 #define TRAINER_CLASS_JOHTO_LEADER        108
+#define TRAINER_CLASS_GUARD               109
+#define TRAINER_CLASS_NURSE            110
 
 #define FACILITY_CLASS_AQUA_LEADER_ARCHIE     0
 #define FACILITY_CLASS_AQUA_GRUNT_M           1
@@ -463,10 +467,7 @@
 
 // Set to buff up all trained pokemon that use .iv instead of .ivs
 #define TRAINER_IV_MODIFIER       0
-// Unused.
-#define F_TRAINER_PARTY_CUSTOM_MOVESET (1 << 0)
-#define F_TRAINER_PARTY_HELD_ITEM      (1 << 1)
-#define F_TRAINER_PARTY_CUSTOM_MON     (1 << 2)
+
 // Use for trainer parties.
 #define TRAINER_MON_FEMALE     1
 #define TRAINER_MON_MALE       2

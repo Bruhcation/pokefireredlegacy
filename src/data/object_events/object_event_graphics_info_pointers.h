@@ -180,6 +180,17 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pryce;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clair;
 
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jolteon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flareon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vaporeon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Espeon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Umbreon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Charizard;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blastoise;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Venusaur;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hex_Maniac;
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_RED_NORMAL]               = &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE]                 = &gObjectEventGraphicsInfo_RedBike,
@@ -361,4 +372,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JASMINE]                  = &gObjectEventGraphicsInfo_Jasmine,
     [OBJ_EVENT_GFX_PRYCE]                    = &gObjectEventGraphicsInfo_Pryce,
     [OBJ_EVENT_GFX_CLAIR]                    = &gObjectEventGraphicsInfo_Clair,
+    [OBJ_EVENT_GFX_EEVEE] = &gObjectEventGraphicsInfo_Eevee,
+    [OBJ_EVENT_GFX_JOLTEON] = &gObjectEventGraphicsInfo_Jolteon,
+    [OBJ_EVENT_GFX_FLAREON] = &gObjectEventGraphicsInfo_Flareon,
+    [OBJ_EVENT_GFX_VAPOREON] = &gObjectEventGraphicsInfo_Vaporeon,
+    [OBJ_EVENT_GFX_ESPEON] = &gObjectEventGraphicsInfo_Espeon,
+    [OBJ_EVENT_GFX_UMBREON] = &gObjectEventGraphicsInfo_Umbreon,
+    [OBJ_EVENT_GFX_CHARIZARD] = &gObjectEventGraphicsInfo_Charizard,
+    [OBJ_EVENT_GFX_BLASTOISE] = &gObjectEventGraphicsInfo_Blastoise,
+    [OBJ_EVENT_GFX_VENUSAUR] = &gObjectEventGraphicsInfo_Venusaur,
+    [OBJ_EVENT_GFX_SUDOWOODO] = &gObjectEventGraphicsInfo_Sudowoodo,
+    [OBJ_EVENT_GFX_HEX_MANIAC] = &gObjectEventGraphicsInfo_Hex_Maniac,
 };

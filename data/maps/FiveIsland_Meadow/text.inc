@@ -58,7 +58,7 @@ FiveIsland_Meadow_Text_Rocket3PostBattle::
     .string "the passwords anyway.$"
 
 FiveIsland_Meadow_Text_Beasts::
-	.string "Hey man, I'm just playing\n"
+	.string "Hey! I'm just playing\n"
 	.string "in this meadow.\p"
 	.string "What do you want?\p"
 	.string "I actually found something\n"
@@ -73,6 +73,10 @@ FiveIsland_Meadow_Text_Beasts::
     .string "look like!$"  
 
 FiveIsland_Meadow_Text_Beasts22::
+	.string "I heard one of them roams\n"
+	.string "KANTO at a single time\l"
+	.string "following a Great achievement, \l"
+	.string "as long as you caught one of them.\p"
 	.string "If you can, I'll give you\n"
 	.string "the item!$"
 

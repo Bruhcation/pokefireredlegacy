@@ -97,207 +97,207 @@ TwoIsland_JoyfulGameCorner_EventScript_FoundLostelleScene::
 # 49 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	setvar VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 3
 # 50 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	releaseall
+	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyWalkToPlayer
 # 51 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
+	waitmovement 0
 # 52 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 # 53 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_HelpFindLostelleScene::
+	waitmovement 0
 # 54 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	lockall
+	goto TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite
 # 55 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	textcolor NPC_TEXT_COLOR_MALE
+	releaseall
 # 56 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyPacing
+	end
 # 57 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
+
 # 58 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_WhereHasLostelleGottenTo
+TwoIsland_JoyfulGameCorner_EventScript_HelpFindLostelleScene::
 # 59 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	closemessage
+	lockall
 # 60 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_DADDY, Common_Movement_WalkInPlaceFasterDown
+	textcolor NPC_TEXT_COLOR_MALE
 # 61 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyPacing
 # 62 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	playse SE_PIN
-# 63 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_DADDY, Common_Movement_ExclamationMark
-# 64 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	waitmovement 0
+# 63 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	msgbox TwoIsland_JoyfulGameCorner_Text_WhereHasLostelleGottenTo
+# 64 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	closemessage
 # 65 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_DADDY, Common_Movement_Delay48
+	applymovement LOCALID_DADDY, Common_Movement_WalkInPlaceFasterDown
 # 66 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	waitmovement 0
 # 67 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyApproachPlayer
+	playse SE_PIN
 # 68 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_DADDY, Common_Movement_ExclamationMark
 # 69 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
 # 70 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_DADDY, Common_Movement_Delay48
 # 71 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseHelpFindLostelle
+	waitmovement 0
 # 72 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	closemessage
+	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyApproachPlayer
 # 73 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	playse SE_RS_DOOR
+	waitmovement 0
 # 74 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitse
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 # 75 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy
+	waitmovement 0
 # 76 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
+	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseHelpFindLostelle
 # 77 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	playbgm MUS_ENCOUNTER_BOY, 0
-# 78 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	addobject LOCALID_BIKER
-# 79 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_BIKER, TwoIsland_JoyfulGameCorner_Movement_BikerLookAround
-# 80 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
-# 81 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_IsThisOnlyThreeIsland
-# 82 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_BIKER, Common_Movement_WalkInPlaceFasterRight
-# 83 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmovement 0
-# 84 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_ThisIsTwoIslandMoveIt
-# 85 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_TheseIslandsAreConfusing
-# 86 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	closemessage
+# 78 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	playse SE_RS_DOOR
+# 79 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	waitse
+# 80 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy
+# 81 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	waitmovement 0
+# 82 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	playbgm MUS_ENCOUNTER_BOY, 0
+# 83 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	addobject LOCALID_BIKER
+# 84 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	applymovement LOCALID_BIKER, TwoIsland_JoyfulGameCorner_Movement_BikerLookAround
+# 85 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	waitmovement 0
+# 86 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	msgbox TwoIsland_JoyfulGameCorner_Text_IsThisOnlyThreeIsland
 # 87 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	applymovement LOCALID_BIKER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_BIKER, Common_Movement_WalkInPlaceFasterRight
 # 88 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	waitmovement 0
 # 89 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	playse SE_EXIT
+	msgbox TwoIsland_JoyfulGameCorner_Text_ThisIsTwoIslandMoveIt
 # 90 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	removeobject LOCALID_BIKER
+	msgbox TwoIsland_JoyfulGameCorner_Text_TheseIslandsAreConfusing
 # 91 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	fadedefaultbgm
+	closemessage
 # 92 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	delay 60
+	applymovement LOCALID_BIKER, Common_Movement_WalkInPlaceFasterDown
 # 93 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_PunkScuffedUpMyFloor
+	waitmovement 0
 # 94 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	clearflag FLAG_HIDE_THREE_ISLAND_LONE_BIKER
+	playse SE_EXIT
 # 95 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	setvar VAR_MAP_SCENE_THREE_ISLAND, 2
+	removeobject LOCALID_BIKER
 # 96 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	setvar VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 1
+	fadedefaultbgm
 # 97 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	releaseall
+	delay 60
 # 98 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
+	msgbox TwoIsland_JoyfulGameCorner_Text_PunkScuffedUpMyFloor
 # 99 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	clearflag FLAG_HIDE_THREE_ISLAND_LONE_BIKER
 # 100 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_Movement_DaddyPacing::
+	setvar VAR_MAP_SCENE_THREE_ISLAND, 2
 # 101 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_left
+	setvar VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 1
 # 102 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_right
+	releaseall
 # 103 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_right
+	end
 # 104 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	delay_8
+
 # 105 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_in_place_faster_up
+TwoIsland_JoyfulGameCorner_Movement_DaddyPacing::
 # 106 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	delay_16
-# 107 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	step_end
-# 108 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
-# 109 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_Movement_DaddyApproachPlayer::
-# 110 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_down
-# 111 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_down
-# 112 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_down
-# 113 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_in_place_faster_left
-# 114 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	step_end
-# 115 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
-# 116 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy::
-# 117 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	walk_left
-# 118 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_in_place_faster_right
-# 119 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	step_end
-# 120 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
-# 121 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_Movement_BikerLookAround::
-# 122 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_in_place_faster_left
-# 123 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 107 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_right
+# 108 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_right
+# 109 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	delay_8
-# 124 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	walk_in_place_faster_right
-# 125 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	delay_8
-# 126 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 110 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	walk_in_place_faster_up
-# 127 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 111 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	delay_16
+# 112 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	step_end
+# 113 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+
+# 114 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_Movement_DaddyWalkToPlayer::
+# 115 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_down
+# 116 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	face_player
+# 117 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	delay_16
+# 118 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	step_end
+# 119 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+
+# 120 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_Movement_DaddyApproachPlayer::
+# 121 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_down
+# 122 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_down
+# 123 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_down
+# 124 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	walk_in_place_faster_left
+# 125 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	step_end
+# 126 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+
+# 127 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_Movement_PlayerFaceDaddy::
 # 128 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	walk_left
 # 129 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_InfoMan::
+	walk_in_place_faster_right
 # 130 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	lock
+	step_end
 # 131 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	faceplayer
+
 # 132 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 4, JoyfulGameCorner_EventScript_InfoMan2
+TwoIsland_JoyfulGameCorner_Movement_BikerLookAround::
 # 133 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_set FLAG_RESCUED_LOSTELLE, TwoIsland_JoyfulGameCorner_EventScript_GetGamesGoingSoon
+	walk_in_place_faster_left
 # 134 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_NotRunningAnyGamesToday
+	delay_8
 # 135 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	release
+	walk_in_place_faster_right
 # 136 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
+	delay_8
 # 137 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	walk_in_place_faster_up
 # 138 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_GetGamesGoingSoon::
+	step_end
 # 139 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_GetGamesGoingSoon
-# 140 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	release
-# 141 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
-# 142 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 
-# 143 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-@ Only referred to as Lostelles Daddy in text
-# 144 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_LostellesDaddy::
-# 145 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 140 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_EventScript_InfoMan::
+# 141 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	lock
-# 146 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 142 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	faceplayer
+# 143 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 4, JoyfulGameCorner_EventScript_InfoMan2
+# 144 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	goto_if_set FLAG_RESCUED_LOSTELLE, TwoIsland_JoyfulGameCorner_EventScript_GetGamesGoingSoon
+# 145 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	msgbox TwoIsland_JoyfulGameCorner_Text_NotRunningAnyGamesToday
+# 146 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	release
 # 147 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 4, JoyfulGameCorner_EventScript_MinigameAttendant
+	end
 # 148 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_set FLAG_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER, TwoIsland_JoyfulGameCorner_EventScript_GetGameCornerRunning
+
 # 149 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 3, TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite
+TwoIsland_JoyfulGameCorner_EventScript_GetGamesGoingSoon::
 # 150 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseGoToThreeIsland
+	msgbox TwoIsland_JoyfulGameCorner_Text_GetGamesGoingSoon
 # 151 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	release
 # 152 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
@@ -305,69 +305,69 @@ TwoIsland_JoyfulGameCorner_EventScript_LostellesDaddy::
 # 153 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 
 # 154 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite::
+@ Only referred to as Lostelles Daddy in text
 # 155 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_set FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE, TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone
+TwoIsland_JoyfulGameCorner_EventScript_LostellesDaddy::
 # 156 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_ThisIsForMe
+	lock
 # 157 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	setvar VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 2
+	faceplayer
 # 158 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	textcolor NPC_TEXT_COLOR_NEUTRAL
+	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 4, JoyfulGameCorner_EventScript_MinigameAttendant
 # 159 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	playfanfare MUS_OBTAIN_TMHM
+	goto_if_set FLAG_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER, TwoIsland_JoyfulGameCorner_EventScript_GetGameCornerRunning
 # 160 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	message TwoIsland_JoyfulGameCorner_Text_HandedMeteoriteToLostellesDaddy
+	goto_if_eq VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 3, TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite
 # 161 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitmessage
+	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseGoToThreeIsland
 # 162 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	waitfanfare
+	release
 # 163 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	call EventScript_RestorePrevTextColor
+	end
 # 164 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	removeitem ITEM_METEORITE
+
 # 165 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_OhThisIsFromBill
+TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite::
 # 166 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone
+	goto_if_set FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE, TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone
 # 167 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
+	msgbox TwoIsland_JoyfulGameCorner_Text_ThisIsForMe
 # 168 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	setvar VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 2
 # 169 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 # 170 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	checkitemspace ITEM_MOON_STONE
+	playfanfare MUS_OBTAIN_TMHM
 # 171 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone
+	message TwoIsland_JoyfulGameCorner_Text_HandedMeteoriteToLostellesDaddy
 # 172 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	additem ITEM_MOON_STONE
+	waitmessage
 # 173 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	setflag FLAG_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER
+	waitfanfare
 # 174 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgreceiveditem TwoIsland_JoyfulGameCorner_Text_ReceivedMoonStoneFromLostellesDaddy, ITEM_MOON_STONE
+	call EventScript_RestorePrevTextColor
 # 175 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	release
+	removeitem ITEM_METEORITE
 # 176 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	end
+	msgbox TwoIsland_JoyfulGameCorner_Text_OhThisIsFromBill
 # 177 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-
+	goto TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone
 # 178 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_GetGameCornerRunning::
-# 179 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_IllGetGameCornerRunning
-# 180 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	release
-# 181 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	end
-# 182 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+# 179 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 
+# 180 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_EventScript_ReceiveMoonStone::
+# 181 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	checkitemspace ITEM_MOON_STONE
+# 182 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone
 # 183 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone::
+	additem ITEM_MOON_STONE
 # 184 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	setflag FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE
+	setflag FLAG_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER
 # 185 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_NotGoingToFitInBag
+	msgreceiveditem TwoIsland_JoyfulGameCorner_Text_ReceivedMoonStoneFromLostellesDaddy, ITEM_MOON_STONE
 # 186 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	release
 # 187 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
@@ -375,14 +375,36 @@ TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone::
 # 188 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 
 # 189 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-TwoIsland_JoyfulGameCorner_EventScript_Lostelle::
+TwoIsland_JoyfulGameCorner_EventScript_GetGameCornerRunning::
 # 190 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	lock
+	msgbox TwoIsland_JoyfulGameCorner_Text_IllGetGameCornerRunning
 # 191 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	faceplayer
-# 192 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
-	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseShowMeYouBeingCool
-# 193 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	release
+# 192 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	end
+# 193 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+
 # 194 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_EventScript_NoRoomForMoonStone::
+# 195 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	setflag FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE
+# 196 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	msgbox TwoIsland_JoyfulGameCorner_Text_NotGoingToFitInBag
+# 197 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	release
+# 198 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	end
+# 199 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+
+# 200 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+TwoIsland_JoyfulGameCorner_EventScript_Lostelle::
+# 201 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	lock
+# 202 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	faceplayer
+# 203 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	msgbox TwoIsland_JoyfulGameCorner_Text_PleaseShowMeYouBeingCool
+# 204 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
+	release
+# 205 "data/maps/TwoIsland_JoyfulGameCorner/scripts.pory"
 	end

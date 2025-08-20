@@ -81,7 +81,11 @@ PokemonMansion_2F_EventScript_PostOak::
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
 	waitmessage 
+	delay 40
 	msgbox PokemonMansion_1F_Text_Mew
+	waitmessage
+	setflag FLAG_AMONGUS
+	clearflag FLAG_AHHH
 	release
 	end
 

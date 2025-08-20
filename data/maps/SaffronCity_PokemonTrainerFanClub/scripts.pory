@@ -284,8 +284,41 @@ SaffronCity_PokemonTrainerFanClub_EventScript_Gentleman::
 	specialvar VAR_RESULT, Script_GetNumFansOfPlayerInTrainerFanClub
 	goto_if_eq VAR_RESULT, (NUM_TRAINER_FAN_CLUB_MEMBERS - 1), SaffronCity_PokemonTrainerFanClub_EventScript_GentlemanOnlyNonFan
 	msgbox SaffronCity_PokemonTrainerFanClub_Text_HmmAndYouAre
+	goto_if_unset FLAG_ORBING, SaffronCity_PokemonTrainerFanClub_EventScript_Orb
 	release
 	end
+
+SaffronCity_PokemonTrainerFanClub_EventScript_Orb::
+	special BattleTrophy
+	call_if_eq VAR_RESULT, TRUE, SaffronCity_PokemonTrainerFanClub_EventScript_Orbing
+	return
+
+SaffronCity_PokemonTrainerFanClub_EventScript_Orbing::
+	msgbox SaffronCity_PokemonTrainerFanClub_Text_Orb
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_OBTAIN_KEY_ITEM
+	giveitem ITEM_BLUE_ORB
+	waitmessage
+	waitfanfare 
+	msgbox SaffronCity_PokemonTrainerFanClub_Text_Orb2
+	setflag FLAG_ORBING
+	release
+	end
+
+SaffronCity_PokemonTrainerFanClub_Text_Orb::
+	.string "Oh, seems like you have gotten\n"
+	.string "quite popular for your battles\l"
+	.string "between very strong trainers.\p"
+	.string "And for that I got you this Trophy,\n"
+	.string "An orb that represent's your\l"
+	.string "battles and whatnot!$"
+
+SaffronCity_PokemonTrainerFanClub_Text_Orb2::
+	.string "That orb may lead to\n"
+	.string "other places, maybe where\l"
+	.string "such artifacts would lie.\p"
+	.string "But for now,\n"
+	.string "Continue to Grow!$"
 
 SaffronCity_PokemonTrainerFanClub_EventScript_GentlemanPlayersFan::
 	specialvar VAR_RESULT, Script_GetNumFansOfPlayerInTrainerFanClub

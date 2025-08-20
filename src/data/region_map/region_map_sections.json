@@ -317,8 +317,8 @@
     {
       "map_section": "MAPSEC_MT_MOON",
       "name": "MT. MOON",
-      "x": 0,
-      "y": 0,
+      "x": 8,
+      "y": 3,
       "width": 1,
       "height": 1
     },

@@ -335,7 +335,7 @@ gSpecials::
 	def_special StartSouthernIslandBattle
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special BattleTrophy
 	def_special GetPartyMonSpecies
 	def_special IsSelectedMonEgg
 	def_special NullFieldSpecial

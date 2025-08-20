@@ -5,6 +5,7 @@ CeladonCity_Gym_MapScripts::
 CeladonCity_Gym_EventScript_Erika::
 	famechecker FAMECHECKER_ERIKA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	goto_if_set FLAG_DEFEATED_ERIKA, CeladonCity_Gym_EventScript_ContinueErika
+	goto_if_set FLAG_DEFEATED_BLAINE, CeladonCity_Gym_EventScript_BeatBlaine
 	goto_if_set FLAG_DEFEATED_KOGA, CeladonCity_Gym_EventScript_BeatKoga
 	goto_if_set FLAG_DEFEATED_SABRINA, CeladonCity_Gym_EventScript_BeatSabrina
 	trainerbattle_single TRAINER_LEADER_ERIKA, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
@@ -19,6 +20,9 @@ CeladonCity_Gym_EventScript_BeatSabrina::
 	goto CeladonCity_Gym_EventScript_ContinueErika
 CeladonCity_Gym_EventScript_BeatKogaSabrina::
 	trainerbattle_single TRAINER_ERIKA3, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
+	goto CeladonCity_Gym_EventScript_ContinueErika
+CeladonCity_Gym_EventScript_BeatBlaine::
+	trainerbattle_single TRAINER_BUG_MANIAC, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
 	goto CeladonCity_Gym_EventScript_ContinueErika
 CeladonCity_Gym_EventScript_ContinueErika::
 	goto_if_unset FLAG_GOT_TM19_FROM_ERIKA, CeladonCity_Gym_EventScript_GiveTM19
@@ -36,6 +40,8 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 	settrainerflag TRAINER_LEADER_ERIKA
 	settrainerflag TRAINER_ERIKA2
 	settrainerflag TRAINER_ERIKA3
+	setflag FLAG_GYM3CAP
+	setflag FLAG_GYM4CAP
 	set_gym_trainers 4
 	goto CeladonCity_Gym_EventScript_GiveTM19
 	end

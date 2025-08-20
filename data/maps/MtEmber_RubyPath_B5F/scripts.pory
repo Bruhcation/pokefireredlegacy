@@ -5,6 +5,7 @@ MtEmber_RubyPath_B5F_MapScripts::
 MtEmber_RubyPath_B5F_EventScript_BrailleMessage::
 	lockall
 	setvar VAR_0x8005, 130
+	goto_if_set FLAG_0x020, MtEmber_RubyPath_B5F_EventScript_Pokemon
 	braillemessage_wait Braille_Text_Everything
 	braillemessage_wait Braille_Text_HasMeaning1
 	braillemessage_wait Braille_Text_Existence
@@ -16,4 +17,91 @@ MtEmber_RubyPath_B5F_EventScript_BrailleMessage::
 	waitbuttonpress
 	releaseall
 	end
+
+MtEmber_RubyPath_B5F_EventScript_Pokemon::
+	message MtEmber_RubyPath_B5F_Text_Notice
+	waitmessage
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	delay 40
+	msgbox MtEmber_RubyPath_B5F_Text_Mon, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, MtEmber_RubyPath_B5F_EventScript_NoWhitney
+	goto MtEmber_RubyPath_B5F_EventScript_Pokemon2
+	end
+
+MtEmber_RubyPath_B5F_EventScript_NoWhitney::
+	lock
+	faceplayer
+	playse SE_PIN
+	waitse
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
+	delay 16
+	goto_if_questlog EventScript_ReleaseEnd
+	waitse
+	playmoncry SPECIES_BLASTOISE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SHINY_CREATION
+	setwildbattle SPECIES_BLASTOISE, 75
+	dowildbattle
+	special QuestLog_CutRecording
+	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
+
+MtEmber_RubyPath_B5F_Text_Mon::
+	.string "There's a Pokemon sealed\n"
+	.string "in this room.$"
+	.string "Want to release it?$"
+
+MtEmber_RubyPath_B5F_Text_SummonMon4::
+	.string "Despite your disapproval,\n"
+	.string "a different POKEMON than\l"
+	.string "what's sealed appears\l"
+	.string "in your mind?$"
+MtEmber_RubyPath_B5F_Text_Notice::
+	.string "(You noticed a voice in the air.)\p"
+	.string "(Perhaps it's the orb?)$"
+MtEmber_RubyPath_B5F_EventScript_Pokemon2::
+	lock
+	faceplayer
+	playse SE_PIN
+	waitse
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
+	delay 16
+	goto_if_questlog EventScript_ReleaseEnd
+	.ifdef FIRERED
+	playmoncry SPECIES_CHARIZARD, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SHINY_CREATION
+	setwildbattle SPECIES_CHARIZARD, 75
+	.else
+	.ifdef LEAFGREEN
+	playmoncry SPECIES_VENUSAUR, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SHINY_CREATION
+	setwildbattle SPECIES_VENUSAUR, 75
+	.endif
+	.endif
+	dowildbattle
+	special QuestLog_CutRecording
+	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
+
+MtEmber_RubyPath_B5F_EventScript_Pokemon3::
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon2
+	clearflag FLAG_0x020
+	release
+	end
+
+MtEmber_RubyPath_B5F_Text_SummonMon2::
+	.string "The room sealed itself\n"
+	.string "from the Shining POKEMON!$"
+MtEmber_RubyPath_B5F_Text_SummonMon::
+	.string "The shining POKEMON\n"
+	.string "appears in your mind?$"
+
 `

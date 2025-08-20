@@ -5,7 +5,7 @@ Route15_WestEntrance_2F_Text_GiveItemIfCaughtEnough::
     .string "on {STR_VAR_1} species, I'm supposed to\l"
     .string "give you a reward.\p"
     .string "PROF. OAK entrusted me with a\n"
-    .string "rare JOHTO POKéMON {STR_VAR_2}\l"
+    .string "rare JOHTO POKéMON, {STR_VAR_2},\l"
     .string "for you.\p"
     .string "So, {PLAYER}, let me ask you.\p"
     .string "Have you gathered data on at least\n"
@@ -22,11 +22,10 @@ Route15_WestEntrance_2F_Text_ReceivedItemFromAide::
     .string "from the AIDE.$"
 
 Route15_WestEntrance_2F_Text_ExplainExpShare::
-    .string "SKARMORY is a POKéMON from\n"
-    .string "the JOHTO Region.\p"
+    .string "SKARMORY is a POKéMON from JOHTO.\p"
     .string "It's a STEEL/FLYING type POKéMON\n"
-    .string "that takes physical hits\l"
-    .string "without a sweat!$"
+    .string "that takes physical hits without\l"
+    .string "breaking a sweat!$"
     
 Route15_WestEntrance_2F_Text_LargeShiningBird::
     .string "Let's see what the binoculars have\n"

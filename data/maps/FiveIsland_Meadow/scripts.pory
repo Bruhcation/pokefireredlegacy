@@ -168,8 +168,71 @@ FiveIsland_Meadow_Items::
 
 FiveIsland_Meadow_EventScript_Beast::
 	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, FiveIsland_Meadow_EventScript_Beast3
+	call_if_unset FLAG_0x024, FiveIsland_Meadow_EventScript_BeastShow
+	call_if_unset FLAG_0x025, FiveIsland_Meadow_EventScript_Entei
+	call_if_unset FLAG_0x022, FiveIsland_Meadow_EventScript_Raikou
+	call_if_unset FLAG_0x026, FiveIsland_Meadow_EventScript_Suicune
 	special RoamingBeasts
 	call_if_eq VAR_RESULT, TRUE, FiveIsland_Meadow_EventScript_GiveTicket
+	msgbox FiveIsland_Meadow_Text_Beasts22, MSGBOX_NPC
+	release
+	end
+
+FiveIsland_Meadow_EventScript_Suicune::
+	goto_if_set FLAG_CAUGHT_SUICUNE, FiveIsland_Meadow_EventScript_Suicune2
+	return
+
+FiveIsland_Meadow_EventScript_Suicune2::
+	msgbox FiveIsland_Meadow_Text_Suicune, MSGBOX_NPC
+	setflag FLAG_0x026
+	special InitRoamer
+	return
+
+FiveIsland_Meadow_Text_Suicune::
+	.string "Oh, you caught SUICUNE!\p"
+	.string "Must of been a lot of work\n"
+	.string "to catch that POKEMON!\p"
+	.string "Perhaps the next one will roaming\n"
+	.string "now that SUICUNE has been caught.\p"
+	.string "Good Luck!$"
+
+FiveIsland_Meadow_EventScript_Entei::
+	goto_if_set FLAG_CAUGHT_ENTEI, FiveIsland_Meadow_EventScript_Entei2
+	return
+
+FiveIsland_Meadow_EventScript_Entei2::
+	msgbox FiveIsland_Meadow_Text_Entei, MSGBOX_NPC
+	setflag FLAG_0x025
+	special InitRoamer
+	return
+
+FiveIsland_Meadow_Text_Entei::
+	.string "Oh, you caught ENTEI!\p"
+	.string "Must of been a lot of work\n"
+	.string "to catch that POKEMON!\p"
+	.string "Perhaps the next one will roaming\n"
+	.string "now that ENTEI has been caught.\p"
+	.string "Good Luck!$"
+
+FiveIsland_Meadow_EventScript_Raikou::
+	goto_if_set FLAG_CAUGHT_RAIKOU, FiveIsland_Meadow_EventScript_Raikou2
+	return
+
+FiveIsland_Meadow_EventScript_Raikou2::
+	msgbox FiveIsland_Meadow_Text_Raikou, MSGBOX_NPC
+	setflag FLAG_0x022
+	special InitRoamer
+	return
+
+FiveIsland_Meadow_Text_Raikou::
+	.string "Oh, you caught RAIKOU!\p"
+	.string "Must of been a lot of work\n"
+	.string "to catch that POKEMON!\p"
+	.string "Perhaps the next one will roaming\n"
+	.string "now that RAIKOU has been caught.\p"
+	.string "Good Luck!$"
+
+FiveIsland_Meadow_EventScript_BeastShow::
 	msgbox FiveIsland_Meadow_Text_Beasts, MSGBOX_NPC
 	waitmessage
 	setvar VAR_0x8004, SPECIES_RAIKOU
@@ -187,9 +250,8 @@ FiveIsland_Meadow_EventScript_Beast::
 	showmonpic SPECIES_SUICUNE, 10, 3
 	waitbuttonpress
 	hidemonpic
-	msgbox FiveIsland_Meadow_Text_Beasts22, MSGBOX_NPC
-	release
-	end
+	setflag FLAG_0x024
+	return
 
 FiveIsland_Meadow_EventScript_GiveTicket::
 	msgbox FiveIsland_Meadow_Text_Beasts2, 
@@ -200,5 +262,6 @@ FiveIsland_Meadow_EventScript_GiveTicket::
 
 FiveIsland_Meadow_EventScript_Beast3::
 	msgbox FiveIsland_Meadow_Text_Beasts2, MSGBOX_NPC
+	releaseall
 	end
 `

@@ -59,12 +59,17 @@ SaffronCity_Dojo_EventScript_HitmonchanBall::
 
 SaffronCity_Dojo_EventScript_GiveHitmon::
 	hidemonpic
+	call_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_Shiny
 	givemon VAR_TEMP_1, 25
 	goto_if_eq VAR_RESULT, 0, SaffronCity_Dojo_EventScript_ReceivedHitmonParty
 	goto_if_eq VAR_RESULT, 1, SaffronCity_Dojo_EventScript_ReceivedHitmonPC
 	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
 	release
 	end
+
+SaffronCity_Dojo_EventScript_Shiny::
+	setflag FLAG_SHINY_CREATION
+	return
 
 SaffronCity_Dojo_EventScript_ReceivedHitmonParty::
 	removeobject VAR_LAST_TALKED
@@ -142,7 +147,38 @@ SaffronCity_Dojo_EventScript_MasterKoichi::
 	msgbox SaffronCity_Dojo_Text_ChoosePrizedFightingMon, MSGBOX_AUTOCLOSE
 	end
 
+SaffronCity_Dojo_EventScript_MasterKoichiRematch::
+	goto_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_RematchKarate
+	msgbox SaffronCity_Dojo_Text_Karate, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_NoKarate
+	trainerbattle_single TRAINER_RS_CAMPER, SaffronCity_Dojo_Text_YesKarate, SaffronCity_Dojo_Text_KarateDefeat, SaffronCity_Dojo_EventScript_PostKarate, NO_MUSIC
+	release
+	end
+SaffronCity_Dojo_EventScript_PostKarate::
+	msgbox SaffronCity_Dojo_Text_KaratePostBattle
+	setflag FLAG_KOICHI_REMATCH
+	cleartrainerflag TRAINER_RS_CAMPER
+	clearflag FLAG_GOT_HITMON_FROM_DOJO
+	release
+	end
+SaffronCity_Dojo_EventScript_NoKarate::
+	msgbox SaffronCity_Dojo_Text_NoKarate
+	release
+	end
+SaffronCity_Dojo_EventScript_RematchKarate::
+	msgbox SaffronCity_Dojo_Text_RematchKarate, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_NoKarate
+	trainerbattle_single TRAINER_RS_CAMPER, SaffronCity_Dojo_Text_YesRematchKarate, SaffronCity_Dojo_Text_RematchKarateDefeat, SaffronCity_Dojo_EventScript_PostRematchKarate, NO_MUSIC
+	release
+	end
+SaffronCity_Dojo_EventScript_PostRematchKarate::
+	msgbox SaffronCity_Dojo_Text_RematchKarateDefeat
+	cleartrainerflag TRAINER_RS_CAMPER
+	release
+	end
+	
 SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
+	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Dojo_EventScript_MasterKoichiRematch
 	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
 	release
 	end
@@ -151,4 +187,41 @@ SaffronCity_Dojo_EventScript_DefeatedMasterKoichi::
 	setvar VAR_MAP_SCENE_SAFFRON_CITY_DOJO, 1
 	release
 	end
+
+SaffronCity_Dojo_Text_Karate::
+    .string "Ah, the CHAMPION. I see you\n"
+    .string "defeated Master BRUNO.\p"
+    .string "If so, I would like to face\n"
+    .string "you again. You can have one\l"
+    .string "more of our prized POKÉMON.\p"
+    .string "But expect no mercy! This\n"
+    .string "is me at my strongest!$"
+
+
+SaffronCity_Dojo_Text_KarateDefeat::
+    .string "Humbled again.$"
+
+SaffronCity_Dojo_Text_KaratePostBattle::
+    .string "You truly are a master at\n"
+    .string "battles.$"
+
+SaffronCity_Dojo_Text_NoKarate::
+    .string "Not ready, huh?$"
+
+SaffronCity_Dojo_Text_YesKarate::
+    .string "Prepare for a match you\n"
+    .string "won't forget!$"
+
+SaffronCity_Dojo_Text_RematchKarate::
+    .string "Back for another battle?$"
+
+SaffronCity_Dojo_Text_RematchKarateDefeat::
+    .string "Humbled once again.\p"
+
+SaffronCity_Dojo_Text_YesRematchKarate::
+    .string "Fight once again!$"
+
+SaffronCity_Dojo_Text_RematchKaratePostBattle::
+    .string "I've got nothing else to\n"
+    .string "say.$"
 `

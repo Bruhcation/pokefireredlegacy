@@ -68,4 +68,48 @@ SevenIsland_House_Room2_EventScript_BaldMan::
 	msgbox SevenIsland_House_Room2_Text_BaldMan, MSGBOX_NPC
 	end
 
+SevenIsland_House_Room2_EventScript_Eevee::
+	msgbox SevenIsland_House_Room2_Text_Eevee, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_EventScript_Jolteon::
+	msgbox SevenIsland_House_Room2_Text_Jolteon, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_EventScript_Vaporeon::
+	msgbox SevenIsland_House_Room2_Text_Vaporeon, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_EventScript_Flareon::
+	msgbox SevenIsland_House_Room2_Text_Flareon, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_EventScript_Espeon::
+	msgbox SevenIsland_House_Room2_Text_Espeon, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_EventScript_Umbreon::
+	msgbox SevenIsland_House_Room2_Text_Umbreon, MSGBOX_NPC
+	end
+
+SevenIsland_House_Room2_Text_Jolteon:
+	.string "JOLTEON!$"
+
+SevenIsland_House_Room2_Text_Vaporeon:
+	.string "VAPOREON!$"
+
+SevenIsland_House_Room2_Text_Flareon:
+	.string "FLAREON!$"
+
+SevenIsland_House_Room2_Text_Espeon:
+	.string "ESPEON!$"
+
+SevenIsland_House_Room2_Text_Umbreon:
+	.string "UMBREON!$"
+
+SevenIsland_House_Room2_Text_Eevee:
+	.string "EEVEE!$"
+
+
+
 `

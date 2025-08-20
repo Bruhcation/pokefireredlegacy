@@ -63,10 +63,10 @@ CeladonCity_Text_GuardSpecProtectsFromStatus::
     .string "TRAINER TIPS\p"
 	.string "Some POKéMON find better cover in\n"
  	.string "certain weather.\p"
- 	.string "A SANDSTORM increases the SP. DEF of a\n"
- 	.string "ROCK-type POKéMON and those with SAND\l"
- 	.string "VEIL, while HAIL gives extra DEFENSE to\l"
- 	.string "ICE types.$"
+ 	.string "A SANDSTORM increases the SP. DEF\n"
+ 	.string "of a ROCK-type POKéMON and those\l"
+ 	.string "with SAND VEIL, while HAIL gives\l"
+ 	.string "extra DEFENSE to ICE types.$"
 
 CeladonCity_Text_PrizeExchangeSign::
     .string "COINS exchanged for prizes!\n"

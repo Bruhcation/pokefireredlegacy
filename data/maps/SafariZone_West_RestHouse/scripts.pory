@@ -34,7 +34,17 @@ SafariZone_West_RestHouse_EventScript_NoRoomForHM08::
 
 SafariZone_West_RestHouse_EventScript_ExplainDive::
 	msgbox Route19_Text_ExplainDive
+	goto_if_unset FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, SafariZone_West_RestHouse_EventScript_ExplainWaterfall
 	release
 	end
 
+SafariZone_West_RestHouse_EventScript_ExplainWaterfall::
+	msgbox Route19_Text_ExplainWaterfall
+	checkitemspace ITEM_HM07
+	goto_if_eq VAR_RESULT, FALSE, SafariZone_West_RestHouse_EventScript_NoRoomForHM08
+	giveitem_msg Route19_Text_ReceivedHM07FromDiveGuy, ITEM_HM07
+	msgbox Route19_Text_ExplainWaterfall2
+	setflag FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07
+	release
+	end
 `

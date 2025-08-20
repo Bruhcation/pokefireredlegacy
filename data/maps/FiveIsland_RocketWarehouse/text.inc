@@ -107,7 +107,7 @@ FiveIsland_RocketWarehouse_Text_ReportWithGraphsAndText::
     .string "It's too difficult to understand…$"
 
 FiveIsland_RocketWarehouse_Text_GideonIntro::
-    .string "Looks like you got through the ADMINS…\n"
+    .string "So you got through the ADMINS…\n"
     .string "What a bunch of disorganised dullards!\p"
     .string "I'll tell you, I've only been using\n"
     .string "them to futher my own goals!\p"
@@ -115,8 +115,8 @@ FiveIsland_RocketWarehouse_Text_GideonIntro::
     .string "Once I heard that the boss went AWOL,\n"
     .string "I decided I'd snatch the SAPPHIRE\l"
     .string "from under their noses.\p"
-    .string "No more will the ISLANDS linger\p"
-    .string "in the shadow of KANTO…\p"
+    .string "No more will SEVII linger in the\n"
+    .string "shadow of KANTO…\p"
     .string "Prepare to lose!$"
     
 FiveIsland_RocketWarehouse_Text_GideonDefeat::
@@ -131,13 +131,13 @@ FiveIsland_RocketWarehouse_Text_GideonPostBattle::
     .string "I'd heard that people from KANTO\n"
     .string "were looking for the SAPPHIRE.\p"
     .string "I was hoping I could use it to do\n"
-    .string "something for the ISLANDS for once.\p"
+    .string "something for the islands for once.\p"
     .string "But I suppose aligning myself with\n"
     .string "TEAM ROCKET wasn't the best way\l"
     .string "to go about it…\p"
     .string "Wait? Huh? You're giving this to\n"  
     .string "someone who's building a machine\l"  
-    .string "that will help the ISLANDS?\p"  
+    .string "that will help the islands?\p"  
     .string "I suppose I was wrong about you!\p"  
     .string "Here, you can take it!$" 
 

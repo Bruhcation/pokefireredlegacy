@@ -282,11 +282,12 @@ void BattleAI_HandleItemUseBeforeAISetup(void)
         && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_SAFARI | BATTLE_TYPE_LINK))
         )
     {
+        u16 *items = gTrainers[gTrainerBattleOpponent_A].trainerType.trainer.items;
         for (i = 0; i < MAX_TRAINER_ITEMS; i++)
         {
-            if (gTrainers[gTrainerBattleOpponent_A].items[i] != 0)
+            if (items[i] != 0)
             {
-                BATTLE_HISTORY->trainerItems[BATTLE_HISTORY->itemsNo] = gTrainers[gTrainerBattleOpponent_A].items[i];
+                BATTLE_HISTORY->trainerItems[BATTLE_HISTORY->itemsNo] = items[i];
                 BATTLE_HISTORY->itemsNo++;
             }
         }
@@ -369,7 +370,7 @@ void BattleAI_SetupAIData(void)
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
             AI_THINKING_STRUCT->aiFlags |= AI_SCRIPT_DOUBLE_BATTLE; // act smart in doubles and don't attack your partner
     }
-    AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags;
+    AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].trainerType.trainer.aiFlags;
 }
 
 u8 BattleAI_ChooseMoveOrAction(void)

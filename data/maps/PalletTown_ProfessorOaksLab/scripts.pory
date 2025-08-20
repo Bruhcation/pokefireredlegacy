@@ -829,11 +829,16 @@ PalletTown_ProfessorOaksLab_EventScript_DexCompleted::
 	delay 70
 	msgbox PokedexRating_Text_ThankYouMadeDreamReality
 	setflag SHOWED_OAK_COMPLETE_DEX
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_Mew::
 	msgbox PokedexRating_Text_ThankYouMadeDreamReality2
 	setflag FLAG_HIDE_OAK_IN_HIS_LAB
 	removeobject 4
 	fadescreen FADE_TO_BLACK
 	fadescreen FADE_FROM_BLACK
+	setflag FLAG_AHHH
 	release
 	end
 
@@ -944,8 +949,15 @@ PalletTown_ProfessorOaksLab_EventScript_TryStartNationalDexScene::
 	end
 
 PalletTown_ProfessorOaksLab_EventScript_DontStartNationalDexScene::
+	msgbox PalletTown_ProfessorOaksLab_Text_BillNeeds
 	release
 	end
+
+PalletTown_ProfessorOaksLab_Text_BillNeeds::
+	.string "Oh and Bill still wants you\n"
+	.string "to help him in the sevii islands!\p"
+	.string "He's in the Cinnabar Island\n"
+	.string "POKECENTER waiting for you!$"
 
 PalletTown_ProfessorOaksLab_EventScript_CheckIfPlayerNeedsBalls::
 	goto_if_questlog EventScript_ReleaseEnd
@@ -1307,6 +1319,33 @@ PalletTown_ProfessorOaksLab_EventScript_Aide3::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakIsAuthorityOnMons
 	release
 	end
+
+PalletTown_ProfessorOaksLab_EventScript_PcAide::
+	lock
+	faceplayer
+	msgbox PalletTown_ProfessorOaksLab_Text_PcMan, MSGBOX_NPC
+	waitmessage
+	lockall
+	faceplayer
+	msgbox FiveIsland_ResortGorgeous_House_Text_PcManYesNo, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PalletTown_ProfessorOaksLab_EventScript_PCMANNO
+	goto EventScript_PCMan
+
+PalletTown_ProfessorOaksLab_EventScript_PCMANNO:
+	msgbox PalletTown_ProfessorOaksLab_Text_Medic2, MSGBOX_NPC
+	end
+
+PalletTown_ProfessorOaksLab_Text_PcMan::
+	.string "Hello, Professor Oak\n"
+	.string "is gonna be trying to\l"
+	.string "get a POKEMON PC here soon,\l"
+	.string "but for now has hired me\l"
+	.string "for my portable PC Services.\p"
+	.string "I can also offer my services\n"
+	.string "to you if you want also.$"
+PalletTown_ProfessorOaksLab_Text_Medic2::
+	.string "Alright, you can use\n"
+	.string "my PC anytime you like!$"
 
 PalletTown_ProfessorOaksLab_EventScript_Pokedex::
 	msgbox PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia, MSGBOX_NPC

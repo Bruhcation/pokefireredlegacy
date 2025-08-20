@@ -5,4 +5,33 @@ SixIsland_House_MapScripts::
 SixIsland_House_EventScript_OldMan::
 	msgbox SixIsland_House_Text_GoodPlaceForNatureAndHistory, MSGBOX_NPC
 	end
+
+SixIsland_House_EventScript_Elyssa::
+	lock
+	faceplayer
+	msgbox Trade_Text_ThanksMan
+	setvar VAR_0x8004, SPECIES_CHIKORITA
+	special SetSeenMon
+	showmonpic SPECIES_CHIKORITA, 10, 3
+	waitbuttonpress
+	hidemonpic
+	release
+	end
+
+SixIsland_House_EventScript_DeclineTrade::
+	msgbox Trade_Text_WellIfYouDontWantTo
+	release
+	end
+
+SixIsland_House_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	release
+	end
+
+SixIsland_House_EventScript_AlreadyTraded::
+	msgbox Trade_Text_IsntMyOldMonGreat
+	release
+	end
+
 `

@@ -136,3 +136,87 @@ SevenIsland_House_Room2_EventScript_BaldMan::
 	msgbox SevenIsland_House_Room2_Text_BaldMan, MSGBOX_NPC
 # 69 "data/maps/SevenIsland_House_Room2/scripts.pory"
 	end
+# 70 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 71 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Eevee::
+# 72 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Eevee, MSGBOX_NPC
+# 73 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 74 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 75 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Jolteon::
+# 76 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Jolteon, MSGBOX_NPC
+# 77 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 78 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 79 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Vaporeon::
+# 80 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Vaporeon, MSGBOX_NPC
+# 81 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 82 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 83 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Flareon::
+# 84 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Flareon, MSGBOX_NPC
+# 85 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 86 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 87 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Espeon::
+# 88 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Espeon, MSGBOX_NPC
+# 89 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 90 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 91 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_EventScript_Umbreon::
+# 92 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	msgbox SevenIsland_House_Room2_Text_Umbreon, MSGBOX_NPC
+# 93 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	end
+# 94 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 95 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Jolteon:
+# 96 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "JOLTEON!$"
+# 97 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 98 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Vaporeon:
+# 99 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "VAPOREON!$"
+# 100 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 101 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Flareon:
+# 102 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "FLAREON!$"
+# 103 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 104 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Espeon:
+# 105 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "ESPEON!$"
+# 106 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 107 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Umbreon:
+# 108 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "UMBREON!$"
+# 109 "data/maps/SevenIsland_House_Room2/scripts.pory"
+
+# 110 "data/maps/SevenIsland_House_Room2/scripts.pory"
+SevenIsland_House_Room2_Text_Eevee:
+# 111 "data/maps/SevenIsland_House_Room2/scripts.pory"
+	.string "EEVEE!$"

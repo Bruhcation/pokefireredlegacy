@@ -207,6 +207,13 @@
       "elevation": 0,
       "dest_map": "MAP_VIRIDIAN_CITY_MART",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE6_UNUSED_HOUSE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

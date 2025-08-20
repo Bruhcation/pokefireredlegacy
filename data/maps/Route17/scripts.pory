@@ -27,6 +27,20 @@ Route17_EventScript_CyclingRoadSign::
 	end
 
 Route17_EventScript_Paxton::
-	msgbox Route17_Text_Paxton, MSGBOX_SIGN
+	msgbox Route17_Text_Paxton, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route17_EventScript_NoWhitney
+	trainerbattle_single TRAINER_GUITARIST, Route17_Text_YesWhitney, Route17_Text_WhitneyDefeat, Route17_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+Route17_EventScript_PostWhitney::
+	msgbox Route17_Text_WhitneyPostBattle
+	cleartrainerflag TRAINER_GUITARIST
+	release
+	end
+
+Route17_EventScript_NoWhitney::
+	msgbox Route17_Text_NoWhitney
+	release
 	end
 `

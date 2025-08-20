@@ -7,6 +7,7 @@
 #include "constants/moves.h"
 #include "constants/battle_ai.h"
 #include "constants/trainers.h"
+#include "strings.h"
 
 #define BATTLER_OFFSET(i) (gHeap + 0x8000 + MON_PIC_SIZE * (i))
 

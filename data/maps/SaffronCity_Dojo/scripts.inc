@@ -121,186 +121,332 @@ SaffronCity_Dojo_EventScript_GiveHitmon::
 # 61 "data/maps/SaffronCity_Dojo/scripts.pory"
 	hidemonpic
 # 62 "data/maps/SaffronCity_Dojo/scripts.pory"
-	givemon VAR_TEMP_1, 25
+	call_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_Shiny
 # 63 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_eq VAR_RESULT, 0, SaffronCity_Dojo_EventScript_ReceivedHitmonParty
+	givemon VAR_TEMP_1, 25
 # 64 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_eq VAR_RESULT, 1, SaffronCity_Dojo_EventScript_ReceivedHitmonPC
+	goto_if_eq VAR_RESULT, 0, SaffronCity_Dojo_EventScript_ReceivedHitmonParty
 # 65 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	goto_if_eq VAR_RESULT, 1, SaffronCity_Dojo_EventScript_ReceivedHitmonPC
 # 66 "data/maps/SaffronCity_Dojo/scripts.pory"
-	release
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
 # 67 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
+	release
 # 68 "data/maps/SaffronCity_Dojo/scripts.pory"
-
+	end
 # 69 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_ReceivedHitmonParty::
+
 # 70 "data/maps/SaffronCity_Dojo/scripts.pory"
-	removeobject VAR_LAST_TALKED
+SaffronCity_Dojo_EventScript_Shiny::
 # 71 "data/maps/SaffronCity_Dojo/scripts.pory"
-	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	setflag FLAG_SHINY_CREATION
 # 72 "data/maps/SaffronCity_Dojo/scripts.pory"
-	playfanfare MUS_LEVEL_UP
+	return
 # 73 "data/maps/SaffronCity_Dojo/scripts.pory"
-	message SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster
+
 # 74 "data/maps/SaffronCity_Dojo/scripts.pory"
-	waitmessage
+SaffronCity_Dojo_EventScript_ReceivedHitmonParty::
 # 75 "data/maps/SaffronCity_Dojo/scripts.pory"
-	waitfanfare
-# 76 "data/maps/SaffronCity_Dojo/scripts.pory"
-	setflag FLAG_GOT_HITMON_FROM_DOJO
-# 77 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
-# 78 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_EndGiveMon
-# 79 "data/maps/SaffronCity_Dojo/scripts.pory"
-	call EventScript_GetGiftMonPartySlot
-# 80 "data/maps/SaffronCity_Dojo/scripts.pory"
-	call EventScript_ChangePokemonNickname
-# 81 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto SaffronCity_Dojo_EventScript_EndGiveMon
-# 82 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
-# 83 "data/maps/SaffronCity_Dojo/scripts.pory"
-
-# 84 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_ReceivedHitmonPC::
-# 85 "data/maps/SaffronCity_Dojo/scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 86 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 76 "data/maps/SaffronCity_Dojo/scripts.pory"
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
-# 87 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 77 "data/maps/SaffronCity_Dojo/scripts.pory"
 	playfanfare MUS_LEVEL_UP
-# 88 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 78 "data/maps/SaffronCity_Dojo/scripts.pory"
 	message SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster
-# 89 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 79 "data/maps/SaffronCity_Dojo/scripts.pory"
 	waitmessage
-# 90 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 80 "data/maps/SaffronCity_Dojo/scripts.pory"
 	waitfanfare
-# 91 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 81 "data/maps/SaffronCity_Dojo/scripts.pory"
 	setflag FLAG_GOT_HITMON_FROM_DOJO
-# 92 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 82 "data/maps/SaffronCity_Dojo/scripts.pory"
 	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
-# 93 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_TransferredHitmonToPC
-# 94 "data/maps/SaffronCity_Dojo/scripts.pory"
-	call EventScript_NameReceivedBoxMon
-# 95 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto SaffronCity_Dojo_EventScript_TransferredHitmonToPC
-# 96 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
-# 97 "data/maps/SaffronCity_Dojo/scripts.pory"
-
-# 98 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_TransferredHitmonToPC::
-# 99 "data/maps/SaffronCity_Dojo/scripts.pory"
-	call EventScript_TransferredToPC
-# 100 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 83 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_EndGiveMon
+# 84 "data/maps/SaffronCity_Dojo/scripts.pory"
+	call EventScript_GetGiftMonPartySlot
+# 85 "data/maps/SaffronCity_Dojo/scripts.pory"
+	call EventScript_ChangePokemonNickname
+# 86 "data/maps/SaffronCity_Dojo/scripts.pory"
 	goto SaffronCity_Dojo_EventScript_EndGiveMon
+# 87 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 88 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 89 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_ReceivedHitmonPC::
+# 90 "data/maps/SaffronCity_Dojo/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 91 "data/maps/SaffronCity_Dojo/scripts.pory"
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+# 92 "data/maps/SaffronCity_Dojo/scripts.pory"
+	playfanfare MUS_LEVEL_UP
+# 93 "data/maps/SaffronCity_Dojo/scripts.pory"
+	message SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster
+# 94 "data/maps/SaffronCity_Dojo/scripts.pory"
+	waitmessage
+# 95 "data/maps/SaffronCity_Dojo/scripts.pory"
+	waitfanfare
+# 96 "data/maps/SaffronCity_Dojo/scripts.pory"
+	setflag FLAG_GOT_HITMON_FROM_DOJO
+# 97 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+# 98 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_TransferredHitmonToPC
+# 99 "data/maps/SaffronCity_Dojo/scripts.pory"
+	call EventScript_NameReceivedBoxMon
+# 100 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto SaffronCity_Dojo_EventScript_TransferredHitmonToPC
 # 101 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 102 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 103 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_EndGiveMon::
+SaffronCity_Dojo_EventScript_TransferredHitmonToPC::
 # 104 "data/maps/SaffronCity_Dojo/scripts.pory"
-	release
+	call EventScript_TransferredToPC
 # 105 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
+	goto SaffronCity_Dojo_EventScript_EndGiveMon
 # 106 "data/maps/SaffronCity_Dojo/scripts.pory"
-
+	end
 # 107 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_Statue::
+
 # 108 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_FightingDojo, MSGBOX_SIGN
+SaffronCity_Dojo_EventScript_EndGiveMon::
 # 109 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
+	release
 # 110 "data/maps/SaffronCity_Dojo/scripts.pory"
-
+	end
 # 111 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_LeftScroll::
+
 # 112 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_EnemiesOnEverySide, MSGBOX_SIGN
+SaffronCity_Dojo_EventScript_Statue::
 # 113 "data/maps/SaffronCity_Dojo/scripts.pory"
-	end
+	msgbox SaffronCity_Dojo_Text_FightingDojo, MSGBOX_SIGN
 # 114 "data/maps/SaffronCity_Dojo/scripts.pory"
-
-# 115 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_RightScroll::
-# 116 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_GoesAroundComesAround, MSGBOX_SIGN
-# 117 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
-# 118 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 115 "data/maps/SaffronCity_Dojo/scripts.pory"
 
+# 116 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_LeftScroll::
+# 117 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_EnemiesOnEverySide, MSGBOX_SIGN
+# 118 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
 # 119 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_Hitoshi::
+
 # 120 "data/maps/SaffronCity_Dojo/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_HITOSHI, SaffronCity_Dojo_Text_HitoshiIntro, SaffronCity_Dojo_Text_HitoshiDefeat
+SaffronCity_Dojo_EventScript_RightScroll::
 # 121 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_HitoshiPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SaffronCity_Dojo_Text_GoesAroundComesAround, MSGBOX_SIGN
 # 122 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 123 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 124 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_Hideki::
+SaffronCity_Dojo_EventScript_Hitoshi::
 # 125 "data/maps/SaffronCity_Dojo/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_HIDEKI, SaffronCity_Dojo_Text_HidekiIntro, SaffronCity_Dojo_Text_HidekiDefeat
+	trainerbattle_single TRAINER_BLACK_BELT_HITOSHI, SaffronCity_Dojo_Text_HitoshiIntro, SaffronCity_Dojo_Text_HitoshiDefeat
 # 126 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_HidekiPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SaffronCity_Dojo_Text_HitoshiPostBattle, MSGBOX_AUTOCLOSE
 # 127 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 128 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 129 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_Aaron::
+SaffronCity_Dojo_EventScript_Hideki::
 # 130 "data/maps/SaffronCity_Dojo/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_AARON, SaffronCity_Dojo_Text_AaronIntro, SaffronCity_Dojo_Text_AaronDefeat
+	trainerbattle_single TRAINER_BLACK_BELT_HIDEKI, SaffronCity_Dojo_Text_HidekiIntro, SaffronCity_Dojo_Text_HidekiDefeat
 # 131 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_AaronPostBattle, MSGBOX_AUTOCLOSE
+	msgbox SaffronCity_Dojo_Text_HidekiPostBattle, MSGBOX_AUTOCLOSE
 # 132 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 133 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 134 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_Mike::
+SaffronCity_Dojo_EventScript_Aaron::
 # 135 "data/maps/SaffronCity_Dojo/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_MIKE, SaffronCity_Dojo_Text_MikeIntro, SaffronCity_Dojo_Text_MikeDefeat
+	trainerbattle_single TRAINER_BLACK_BELT_AARON, SaffronCity_Dojo_Text_AaronIntro, SaffronCity_Dojo_Text_AaronDefeat
 # 136 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_MikePostBattle, MSGBOX_AUTOCLOSE
+	msgbox SaffronCity_Dojo_Text_AaronPostBattle, MSGBOX_AUTOCLOSE
 # 137 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 138 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 139 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_MasterKoichi::
+SaffronCity_Dojo_EventScript_Mike::
 # 140 "data/maps/SaffronCity_Dojo/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_KOICHI, SaffronCity_Dojo_Text_MasterKoichiIntro, SaffronCity_Dojo_Text_MasterKoichiDefeat, SaffronCity_Dojo_EventScript_DefeatedMasterKoichi
+	trainerbattle_single TRAINER_BLACK_BELT_MIKE, SaffronCity_Dojo_Text_MikeIntro, SaffronCity_Dojo_Text_MikeDefeat
 # 141 "data/maps/SaffronCity_Dojo/scripts.pory"
-	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon
+	msgbox SaffronCity_Dojo_Text_MikePostBattle, MSGBOX_AUTOCLOSE
 # 142 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_ChoosePrizedFightingMon, MSGBOX_AUTOCLOSE
-# 143 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
-# 144 "data/maps/SaffronCity_Dojo/scripts.pory"
+# 143 "data/maps/SaffronCity_Dojo/scripts.pory"
 
+# 144 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_MasterKoichi::
 # 145 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
+	trainerbattle_single TRAINER_BLACK_BELT_KOICHI, SaffronCity_Dojo_Text_MasterKoichiIntro, SaffronCity_Dojo_Text_MasterKoichiDefeat, SaffronCity_Dojo_EventScript_DefeatedMasterKoichi
 # 146 "data/maps/SaffronCity_Dojo/scripts.pory"
-	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
+	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon
 # 147 "data/maps/SaffronCity_Dojo/scripts.pory"
-	release
+	msgbox SaffronCity_Dojo_Text_ChoosePrizedFightingMon, MSGBOX_AUTOCLOSE
 # 148 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
 # 149 "data/maps/SaffronCity_Dojo/scripts.pory"
 
 # 150 "data/maps/SaffronCity_Dojo/scripts.pory"
-SaffronCity_Dojo_EventScript_DefeatedMasterKoichi::
+SaffronCity_Dojo_EventScript_MasterKoichiRematch::
 # 151 "data/maps/SaffronCity_Dojo/scripts.pory"
-	setvar VAR_MAP_SCENE_SAFFRON_CITY_DOJO, 1
+	goto_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_RematchKarate
 # 152 "data/maps/SaffronCity_Dojo/scripts.pory"
-	release
+	msgbox SaffronCity_Dojo_Text_Karate, MSGBOX_YESNO
 # 153 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_NoKarate
+# 154 "data/maps/SaffronCity_Dojo/scripts.pory"
+	trainerbattle_single TRAINER_RS_CAMPER, SaffronCity_Dojo_Text_YesKarate, SaffronCity_Dojo_Text_KarateDefeat, SaffronCity_Dojo_EventScript_PostKarate, NO_MUSIC
+# 155 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 156 "data/maps/SaffronCity_Dojo/scripts.pory"
 	end
+# 157 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_PostKarate::
+# 158 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_KaratePostBattle
+# 159 "data/maps/SaffronCity_Dojo/scripts.pory"
+	setflag FLAG_KOICHI_REMATCH
+# 160 "data/maps/SaffronCity_Dojo/scripts.pory"
+	cleartrainerflag TRAINER_RS_CAMPER
+# 161 "data/maps/SaffronCity_Dojo/scripts.pory"
+	clearflag FLAG_GOT_HITMON_FROM_DOJO
+# 162 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 163 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 164 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_NoKarate::
+# 165 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_NoKarate
+# 166 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 167 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 168 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_RematchKarate::
+# 169 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_RematchKarate, MSGBOX_YESNO
+# 170 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Dojo_EventScript_NoKarate
+# 171 "data/maps/SaffronCity_Dojo/scripts.pory"
+	trainerbattle_single TRAINER_RS_CAMPER, SaffronCity_Dojo_Text_YesRematchKarate, SaffronCity_Dojo_Text_RematchKarateDefeat, SaffronCity_Dojo_EventScript_PostRematchKarate, NO_MUSIC
+# 172 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 173 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 174 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_PostRematchKarate::
+# 175 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_RematchKarateDefeat
+# 176 "data/maps/SaffronCity_Dojo/scripts.pory"
+	cleartrainerflag TRAINER_RS_CAMPER
+# 177 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 178 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 179 "data/maps/SaffronCity_Dojo/scripts.pory"
+	
+# 180 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
+# 181 "data/maps/SaffronCity_Dojo/scripts.pory"
+	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Dojo_EventScript_MasterKoichiRematch
+# 182 "data/maps/SaffronCity_Dojo/scripts.pory"
+	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
+# 183 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 184 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 185 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 186 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_EventScript_DefeatedMasterKoichi::
+# 187 "data/maps/SaffronCity_Dojo/scripts.pory"
+	setvar VAR_MAP_SCENE_SAFFRON_CITY_DOJO, 1
+# 188 "data/maps/SaffronCity_Dojo/scripts.pory"
+	release
+# 189 "data/maps/SaffronCity_Dojo/scripts.pory"
+	end
+# 190 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 191 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_Karate::
+# 192 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Ah, the CHAMPION. I see you\n"
+# 193 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "defeated Master BRUNO.\p"
+# 194 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "If so, I would like to face\n"
+# 195 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "you again. You can have one\l"
+# 196 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "more of our prized POKÉMON.\p"
+# 197 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "But expect no mercy! This\n"
+# 198 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "is me at my strongest!$"
+# 199 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 200 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 201 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_KarateDefeat::
+# 202 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Humbled again.$"
+# 203 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 204 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_KaratePostBattle::
+# 205 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "You truly are a master at\n"
+# 206 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "battles.$"
+# 207 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 208 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_NoKarate::
+# 209 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Not ready, huh?$"
+# 210 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 211 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_YesKarate::
+# 212 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Prepare for a match you\n"
+# 213 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "won't forget!$"
+# 214 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 215 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_RematchKarate::
+# 216 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Back for another battle?$"
+# 217 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 218 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_RematchKarateDefeat::
+# 219 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Humbled once again.\p"
+# 220 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 221 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_YesRematchKarate::
+# 222 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "Fight once again!$"
+# 223 "data/maps/SaffronCity_Dojo/scripts.pory"
+
+# 224 "data/maps/SaffronCity_Dojo/scripts.pory"
+SaffronCity_Dojo_Text_RematchKaratePostBattle::
+# 225 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "I've got nothing else to\n"
+# 226 "data/maps/SaffronCity_Dojo/scripts.pory"
+    .string "say.$"

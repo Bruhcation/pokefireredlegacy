@@ -179,14 +179,17 @@ PokemonLeague_ChampionsRoom_EventScript_BattleCharmander::
 
 PokemonLeague_ChampionsRoom_EventScript_RematchSquirtle::
 	trainerbattle_no_intro TRAINER_CHAMPION_REMATCH_SQUIRTLE, PokemonLeague_ChampionsRoom_Text_Defeat2
+	setflag FLAG_BLUE_REMATCH_DEFEAT
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_RematchBulbasaur::
 	trainerbattle_no_intro TRAINER_CHAMPION_REMATCH_BULBASAUR, PokemonLeague_ChampionsRoom_Text_Defeat2
+	setflag FLAG_BLUE_REMATCH_DEFEAT
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_RematchCharmander::
 	trainerbattle_no_intro TRAINER_CHAMPION_REMATCH_CHARMANDER, PokemonLeague_ChampionsRoom_Text_Defeat2
+	setflag FLAG_BLUE_REMATCH_DEFEAT
 	return
 
 PokemonLeague_ChampionsRoom_Movement_PlayerEnter::

@@ -69,6 +69,11 @@ CinnabarIsland_Gym_EventScript_DefeatedBlaine::
 	setrespawn SPAWN_CINNABAR_ISLAND
 	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 1
 	clearflag FLAG_HIDE_CINNABAR_BILL
+	setflag FLAG_GYM3CAP
+	setflag FLAG_GYM4CAP
+	setflag FLAG_GYM5CAP
+	setflag FLAG_GYM6CAP
+	setflag FLAG_GYM7CAP
 	set_gym_trainers 7
 	goto CinnabarIsland_Gym_EventScript_GiveTM38
 	end

@@ -56,4 +56,4 @@ VermilionCity_PokemonCenter_1F_Text_ExplainUpgrade::
     .string "battling!$"
 
 VermilionCity_PokemonCenter_1F_Text_SeekerUpgrade::
-    .string "VS SEEKER Upgrade!$"
+    .string "The VS SEEKER got an Upgrade!$"

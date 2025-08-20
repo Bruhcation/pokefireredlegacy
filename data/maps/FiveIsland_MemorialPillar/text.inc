@@ -22,7 +22,10 @@ FiveIsland_MemorialPillar_Text_ChazDefeat::
 
 FiveIsland_MemorialPillar_Text_ChazPostBattle::
     .string "There was a really somber guy\n"
-    .string "over that way.$"
+    .string "over that way, and\l"
+    .string "there's also a weird TREE here.\p"
+    .string "I wonder if the weird TREE\n"
+    .string "reacts to tears?$"
 
 FiveIsland_MemorialPillar_Text_HaroldIntro::
     .string "I'm the youngest of the BIRD\n"
@@ -100,7 +103,7 @@ FiveIsland_MemorialPillar_Text_HereLiesTectonix::
 FiveIsland_MemorialPillar_Text_Oman::  
     .string "Wow, I can't believe he'd\n"  
     .string "use a POKéMON weak to water\l"  
-    .string "on the OCEAN ISLANDS!\p"  
+    .string "on these oceanic islands!\p"  
     .string "Unlucky for him.\p"  
     .string "I've also had to put up with\p"  
     .string "less than stellar POKéMON,\p"  

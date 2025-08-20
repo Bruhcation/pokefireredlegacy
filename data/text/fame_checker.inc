@@ -85,8 +85,8 @@ gFameCheckerFlavorText_Brock1:: @ 0x81AD771
 	.string "in even my POKéMON.\p"
 	.string "My POKéMON are all rock hard and\n"
 	.string "have true-grit determination.\p"
-	.string "That's right - my POKéMON are all\n"
-	.string "the ROCK type!$"
+	.string "That's right - I'm a ROCK type\n"
+	.string "specialist!$"
 
 gFameCheckerFlavorText_Brock2:: @ 0x81AD840
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What is this person like?\p"

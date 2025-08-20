@@ -24,9 +24,9 @@ ViridianCity_Text_ExplainCaterpieWeedle::
     .string "POKéMON are born with a set of\n"  
     .string "IVs, while EVs are gained from\l"  
     .string "defeating other POKéMON.\p"  
-    .string "The top floor of the POKÉCENTER\n"  
-    .string "has people who can check both\l"  
-    .string "of them for you.$"  
+    .string "The top floor of the POKéMON\n"  
+    .string "CENTER has people who can check\l"  
+    .string "both of them for you.$"  
 
 ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "Oh, Grandpa!\n"
@@ -57,7 +57,7 @@ ViridianCity_Text_ShowYouHowToCatchMons::
     .string "Whenever you catch a POKéMON,\n"
     .string "the POKéDEX automatically updates\l"
     .string "its data.\p"
-    .string "Do you know how to catch pokemon?$"
+    .string "Do you know how to catch POKéMON?$"
 
 ViridianCity_Text_DontKnow::
     .string "…You don't know how to catch\n"
@@ -67,8 +67,9 @@ ViridianCity_Text_DontKnow::
 
 ViridianCity_Text_DoKnow::
     .string "Oh, you already know how to\n"
-    .string "catch a POKéMON.\p"
-    .string "But I think you should still have this!$"
+    .string "catch a POKéMON…\p"
+    .string "But I think you should still have\n"
+    .string "this!$"
 
 ViridianCity_Text_ThatWasEducationalTakeThis::
     .string "There! Now tell me, that was\n"

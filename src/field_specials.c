@@ -2079,7 +2079,7 @@ bool8 BufferTMHMMoveName(void)
 void RunMassageCooldownStepCounter(void)
 {
     u16 count = VarGet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER);
-    if (count < 500)
+    if (count < 350)
         VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, count + 1);
 }
 
@@ -2638,7 +2638,7 @@ void CheckBeatJohto(void)
 void MewStuff(void)
 {
     if (FlagGet(FLAG_OAK_DEFEATED) &&
-        FlagGet(FLAG_OAK_SAW_DEX_COMPLETION))
+        FlagGet(FLAG_AHHH))
     {
         gSpecialVar_Result = TRUE;
         return;
@@ -2676,6 +2676,48 @@ void GetDeoxys(void)  //UNUSED
         FlagGet(FLAG_FOUGHT_LUGIA) &&
         FlagGet(FLAG_FOUGHT_HO_OH) &&
         FlagGet(FLAG_CAUGHT_RAIKOU))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+
+void BattleTrophy(void)
+{
+    if (FlagGet(TRAINER_ARMSTRONG) &&
+        FlagGet(TRAINER_WHITNEY) &&
+        FlagGet(TRAINER_FALKNER) &&
+        FlagGet(TRAINER_CLAIR) &&
+        FlagGet(TRAINER_BUGSY) &&
+        FlagGet(TRAINER_JASMINE) &&
+        FlagGet(TRAINER_CHUCK) &&
+        FlagGet(TRAINER_MORTY) &&
+        FlagGet(TRAINER_PRYCE) &&
+        FlagGet(TRAINER_SAMAL) &&
+        FlagGet(TRAINER_CRUEL_KING) &&
+        FlagGet(TRAINER_KSI) &&
+        FlagGet(TRAINER_OMAN) &&
+        FlagGet(TRAINER_SPIKE) &&
+        FlagGet(TRAINER_NURSE_JOY) &&
+        FlagGet(TRAINER_BROCK2) &&
+        FlagGet(TRAINER_LEADER_SABRINA2) &&
+        FlagGet(TRAINER_LEADER_KOGA2) &&
+        FlagGet(TRAINER_LEADER_ERIKA2) &&
+        FlagGet(TRAINER_MISTY2) &&
+        FlagGet(TRAINER_SURGE2) &&
+        FlagGet(TRAINER_LEADER_BLAINE2) &&
+        FlagGet(TRAINER_KAREN) &&
+        FlagGet(TRAINER_WILL) &&
+        FlagGet(TRAINER_JACKO) &&
+        FlagGet(TRAINER_KINDLER) &&
+        FlagGet(TRAINER_GUITARIST) &&
+        FlagGet(FLAG_BLUE_REMATCH_DEFEAT) &&
+        FlagGet(TRAINER_CASENO))
     {
         gSpecialVar_Result = TRUE;
         return;

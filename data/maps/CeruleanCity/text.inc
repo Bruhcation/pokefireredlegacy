@@ -78,7 +78,11 @@ CeruleanCity_Text_MakeRoomForThisCantRun::
 CeruleanCity_Text_TrainerLifeIsToughIsntIt::
     .string "You're a TRAINER, too?\p"
     .string "Collecting, battling…\n"
-    .string "It's a tough life, isn't it?$"
+    .string "It's a tough life, isn't it?\p"
+    .string "The LEADER here, MISTY, was too\n"
+    .string "strong for me to handle…\p"
+    .string "Maybe I should head north to\n"
+    .string "NUGGET BRIDGE to train some more.$"
 
 CeruleanCity_Text_YouCanCutDownSmallTrees::
     .string "Did you know that you can CUT down\n"
@@ -161,18 +165,17 @@ CeruleanCity_Text_ThisIsCeruleanCave::
 
 CeruleanCity_Text_CitySign::
     .string "CERULEAN CITY\n"
-    .string "A Mysterious, Blue Aura Surrounds\l"
-    .string "It$"
+    .string "A Mysterious Blue Aura Surrounds It$"
 
 CeruleanCity_Text_TrainerTipsHeldItems::
     .string "TRAINER TIPS\p"
     .string "A POKéMON can be made to hold\n"
     .string "an item.\p"
     .string "Some items can even be used by\n"
-    .string "the holding POKéMON in battle.$"
+    .string "the holding POKéMON in battle.\p"
 	.string "Some trainers used to trade\n"
- 	.string "POKéMON to evolve them, but nowadays\l"
- 	.string "using an item or leveling\l"
+ 	.string "POKéMON to evolve them, but\l"
+ 	.string "nowadays using an item or leveling\l"
  	.string "them up is all they need.$"
 
 CeruleanCity_Text_BikeShopSign::

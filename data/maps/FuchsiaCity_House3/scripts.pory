@@ -53,4 +53,21 @@ FuchsiaCity_House3_EventScript_CancelForgetMove::
 	msgbox FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves
 	release
 	end
+
+FuchsiaCity_House3_Poison::
+	faceplayer
+	msgbox FuchsiaCity_House3_Text_Eva, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RS_SWIMMER_M, FuchsiaCity_House3_Text_EvaPostBattle
+	cleartrainerflag TRAINER_RS_SWIMMER_M
+	end
+
+FuchsiaCity_House3_Text_Eva::
+	.string "Fighting while poison may buff\n"
+	.string "your POKEMON in the long run!\p"
+	.string "And my DROWZEE can do that\n"
+	.string "in one move!$"
+
+FuchsiaCity_House3_Text_EvaPostBattle::
+	.string "You can come back for more!$"
+
 `

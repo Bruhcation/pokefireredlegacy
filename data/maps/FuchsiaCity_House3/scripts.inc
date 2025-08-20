@@ -108,3 +108,35 @@ FuchsiaCity_House3_EventScript_CancelForgetMove::
 	release
 # 55 "data/maps/FuchsiaCity_House3/scripts.pory"
 	end
+# 56 "data/maps/FuchsiaCity_House3/scripts.pory"
+
+# 57 "data/maps/FuchsiaCity_House3/scripts.pory"
+FuchsiaCity_House3_Poison::
+# 58 "data/maps/FuchsiaCity_House3/scripts.pory"
+	faceplayer
+# 59 "data/maps/FuchsiaCity_House3/scripts.pory"
+	msgbox FuchsiaCity_House3_Text_Eva, MSGBOX_DEFAULT
+# 60 "data/maps/FuchsiaCity_House3/scripts.pory"
+	trainerbattle_no_intro TRAINER_RS_SWIMMER_M, FuchsiaCity_House3_Text_EvaPostBattle
+# 61 "data/maps/FuchsiaCity_House3/scripts.pory"
+	cleartrainerflag TRAINER_RS_SWIMMER_M
+# 62 "data/maps/FuchsiaCity_House3/scripts.pory"
+	end
+# 63 "data/maps/FuchsiaCity_House3/scripts.pory"
+
+# 64 "data/maps/FuchsiaCity_House3/scripts.pory"
+FuchsiaCity_House3_Text_Eva::
+# 65 "data/maps/FuchsiaCity_House3/scripts.pory"
+	.string "Fighting while poison may buff\n"
+# 66 "data/maps/FuchsiaCity_House3/scripts.pory"
+	.string "your POKEMON in the long run!\p"
+# 67 "data/maps/FuchsiaCity_House3/scripts.pory"
+	.string "And my DROWZEE can do that\n"
+# 68 "data/maps/FuchsiaCity_House3/scripts.pory"
+	.string "in one move!$"
+# 69 "data/maps/FuchsiaCity_House3/scripts.pory"
+
+# 70 "data/maps/FuchsiaCity_House3/scripts.pory"
+FuchsiaCity_House3_Text_EvaPostBattle::
+# 71 "data/maps/FuchsiaCity_House3/scripts.pory"
+	.string "You can come back for more!$"

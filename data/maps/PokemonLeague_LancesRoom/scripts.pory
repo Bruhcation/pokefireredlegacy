@@ -119,6 +119,9 @@ PokemonLeague_LancesRoom_EventScript_Lance::
 
 PokemonLeague_LancesRoom_EventScript_Intro::
 	msgbox PokemonLeague_LancesRoom_Text_Intro
+	setflag FLAG_VENUSAUR
+	setflag FLAG_CHARIZARD
+	setflag FLAG_BLASTOISE
 	return
 
 PokemonLeague_LancesRoom_EventScript_RematchIntro::
@@ -155,9 +158,28 @@ PokemonLeague_LancesRoom_EventScript_DefeatedLance2::
 	setflag FLAG_DEFEATED_LANCE
 	call PokemonLeague_EventScript_OpenDoorLance
 	msgbox PokemonLeague_LancesRoom_Text_PostBattle2
+	call PokemonLeague_LancesRoom_EventScript_Starter
 	closemessage
 	release
 	end
+
+PokemonLeague_LancesRoom_EventScript_Starter::
+	call_if_eq VAR_STARTER_MON, 2, PokemonLeague_LancesRoom_EventScript_BattleSquirtle
+	call_if_eq VAR_STARTER_MON, 1, PokemonLeague_LancesRoom_EventScript_BattleBulbasaur
+	call_if_eq VAR_STARTER_MON, 0, PokemonLeague_LancesRoom_EventScript_BattleCharmander
+	return
+
+PokemonLeague_LancesRoom_EventScript_BattleSquirtle::
+	clearflag FLAG_BLASTOISE
+	return
+
+PokemonLeague_LancesRoom_EventScript_BattleBulbasaur::
+	clearflag FLAG_VENUSAUR
+	return
+
+PokemonLeague_LancesRoom_EventScript_BattleCharmander::
+	clearflag FLAG_CHARIZARD
+	return
 
 PokemonLeague_LancesRoom_EventScript_LanceMoveOutOfWayLeft::
 	applymovement LOCALID_LANCE, PokemonLeague_LancesRoom_Movement_LanceMoveOutOfWayLeft

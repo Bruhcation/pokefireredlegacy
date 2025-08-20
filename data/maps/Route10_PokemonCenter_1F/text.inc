@@ -33,10 +33,10 @@ Route10_PokemonCenter_1F_Text_ReceivedEverstoneFromAide::
 Route10_PokemonCenter_1F_Text_ExplainEverstone::
     .string "ROCK SMASH can be used to break\n"
     .string "smashable rocks, and you can\l"
-    .string "sometimes encounter wild\l"
-    .string "POKéMON in the rubble.\p" 
-    .string "You'll need LT SURGE's\n"
-    .string "BADGE to use ROCK SMASH.$"
+    .string "sometimes encounter wild POKéMON\l"
+    .string "in the rubble.\p" 
+    .string "You'll need LT SURGE's BADGE\n"
+    .string "to use ROCK SMASH.$"
 
 Route10_PokemonCenter_1F_Text_Nurse::
 	.string "I've always dreamed of\n"  
@@ -86,8 +86,7 @@ Route10_PokemonCenter_1F_Text_PostRematchNurse::
     .string "I'll always be here!$"
 
 Route10_PokemonCenter_1F_Text_BattleNurse::
-	.string "Actually…\p"  
-	.string "Before you go.$" 
+	.string "Actually, before you go…$" 
 
 Route10_PokemonCenter_1F_Text_GiveHM05IfSeen10Mons::
     .string "Hi! Remember me?\n"
@@ -96,10 +95,9 @@ Route10_PokemonCenter_1F_Text_GiveHM05IfSeen10Mons::
     .string "on ten species, I'm supposed to\l"
     .string "give you a reward.\p"
     .string "PROF. OAK entrusted me with\n"
-    .string "HM05 FLASH for you, and\l"
-	.string "if you're looking for the\l"  
-	.string "aide with ROCK SMASH, he's\l"  
-	.string "on ROUTE 2.$"  
+    .string "HM05 FLASH for you, and if\l"
+	.string "you're looking for the AIDE with\l"  
+	.string "ROCK SMASH, he's on ROUTE 2.\p"  
     .string "So, {PLAYER}, let me ask you.\p"
     .string "Have you gathered data on at least\n"
     .string "ten kinds of POKéMON?$"

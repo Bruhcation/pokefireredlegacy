@@ -30,6 +30,7 @@ PokedexRating_EventScript_NormalFanfare::
 
 PokedexRating_EventScript_DexCompleteFanfare::
 	playfanfare MUS_EVOLVED
+	setflag FLAG_OAK_DEXING
 	return
 
 PokedexRating_EventScript_Rate::
@@ -46,6 +47,7 @@ PokedexRating_EventScript_Rate::
 	msgbox PokedexRating_Text_SeenXOwnedY
 	call_if_unset FLAG_OAKS_RATING_IS_VIA_PC, PokedexRating_EventScript_SetTextColor
 	call PokedexRating_EventScript_ShowRatingMsg
+	call_if_unset FLAG_OAKS_RATING_IS_VIA_PC, PokedexRating_EventScript_OkAnd
 	goto_if_eq VAR_0x800A, FALSE, PokedexRating_EventScript_EndRating  @ National Dex not enabled
 	setvar VAR_0x8004, 1
 	specialvar VAR_RESULT, GetPokedexCount
@@ -58,6 +60,14 @@ PokedexRating_EventScript_Rate::
 	goto_if_eq VAR_RESULT, FALSE, PokedexRating_EventScript_DexIncomplete
 	goto_if_eq VAR_RESULT, TRUE, PokedexRating_EventScript_DexComplete
 	end
+
+PokedexRating_EventScript_OkAnd::
+	call_if_set FLAG_OAK_DEXING, PokedexRating_EventScript_Amongus
+	return
+
+PokedexRating_EventScript_Amongus::
+	call_if_unset FLAG_AMONGUS, PalletTown_ProfessorOaksLab_EventScript_Mew
+	return
 
 PokedexRating_EventScript_SetTextColor::
 	textcolor NPC_TEXT_COLOR_MALE

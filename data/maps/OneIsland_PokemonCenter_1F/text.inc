@@ -36,9 +36,8 @@ OneIsland_PokemonCenter_1F_Text_BillBringMeUpToSpeed::
 OneIsland_PokemonCenter_1F_Text_CelioPCsCantLinkWithYours::
     .string "CELIO: It's running fine, but we're\n"
     .string "too remote out here.\p"
-    .string "These ISLANDS really\n"
-    .string "need some way to connect\l"
-    .string "to the mainland.$"
+    .string "These islands really need some way\n"
+    .string "to communicate with the mainland.$"
 
 OneIsland_PokemonCenter_1F_Text_BillLetMeHelpYou::
     .string "BILL: Oh, yeah?\n"
@@ -171,10 +170,11 @@ OneIsland_PokemonCenter_1F_Text_CelioCaughtMoreMonMaybeICanBeUseful::
 OneIsland_PokemonCenter_1F_Text_YoullBeTradingFromTrainersFarAway::
     .string "I'm modifying the Network\n"  
     .string "Machine right now.\p"  
-    .string "I'm working on connecting the\n"  
-    .string "SEVII ISLANDS to other regions.\p"  
-    .string "Once I'm finished, the SEVII\n"  
-    .string "ISLANDS will enter a new era\l"  
+    .string "I've been trying to establish\p"
+    .string "communication links between the\l"
+    .string "SEVII ISLANDS and other regions.$"
+    .string "Once I'm finished, these remote\n"  
+    .string "islands will enter a new era\l"  
     .string "of greatness!$"  
 
 OneIsland_PokemonCenter_1F_Text_NeedsSpecialGemstone::
@@ -260,14 +260,15 @@ OneIsland_PokemonCenter_1F_Text_OkayThisIsGood::
     .string "Okay, this is good…$"
 
 OneIsland_PokemonCenter_1F_Text_LinkedUpWithLanette::
-    .string "I did it!\n"
-    .string "The Network Machine's working!$"
+    .string "I did it!\p"
+    .string "At last, the SEVII ISLANDS are\n"
+    .string "fully connected to the network!$"
 
 OneIsland_PokemonCenter_1F_Text_ManagedToLinkWithHoennThankYou::
     .string "{PLAYER}…\n"
     .string "{PLAYER}, I did it!\p"
-    .string "I've managed to connect the\n"
-    .string "SEVII ISLANDS to HOENN!\p"
+    .string "I've managed to link up with\n"
+    .string "KANTO, JOHTO and HOENN!\p"
     .string "Finally, the Network Machine is\n"
     .string "fully operational!\p"
     .string "{PLAYER}, I owe it all to you!$"
@@ -276,11 +277,11 @@ OneIsland_PokemonCenter_1F_Text_WishYouBestOfLuck::
     .string "Now the machine is working,\n"  
     .string "people in the SEVII ISLANDS\l"  
     .string "can easily communicate with\l"  
-    .string "KANTO and HOENN.\p"
-    .string "Tourists will start flocking\n"  
-    .string "here from all over!\p"  
+    .string "KANTO, JOHTO and HOENN.\p"
+    .string "Tourists and TRAINERS will start\n"  
+    .string "flocking here from all over!\p"  
     .string "{PLAYER}, you're going to keep\n"
-    .string "looking for exotic POKéMON, right?\p"
+    .string "battling strong TRAINERS, right?\p"
     .string "I wish you the best of luck!$"
 
 OneIsland_PokemonCenter_1F_Text_CelioHearingRumorsAboutYou::
@@ -351,8 +352,8 @@ OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKanto::
 OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKantoAndHoenn::
     .string "Network Machine\n"
     .string "Link Level 2\p"
-    .string "Link established with the KANTO\n"
-    .string "and HOENN regions.$"
+    .string "Link established with the KANTO,\n"
+    .string "JOHTO and HOENN regions.$"
 
 OneIsland_PokemonCenter_1F_Text_ObtainedTriPass::
     .string "Obtained the TRI-PASS!$"

@@ -223,6 +223,7 @@ SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit::
 SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage::
 	lockall
 	setvar VAR_0x8005, 130
+	goto_if_set FLAG_ORBING, SixIsland_DottedHole_SapphireRoom_EventScript_Orb
 	braillemessage_wait Braille_Text_LetTheTwo
 	braillemessage_wait Braille_Text_Glittering
 	braillemessage_wait Braille_Text_Stones
@@ -242,4 +243,106 @@ SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage::
 	waitbuttonpress
 	releaseall
 	end
-`
+
+SixIsland_DottedHole_SapphireRoom_EventScript_Orb::
+	goto_if_unset FLAG_RE_DEFEATED, SixIsland_DottedHole_SapphireRoom_EventScript_Orbing
+	return
+
+SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
+	message SixIsland_DottedHole_SapphireRoom_Text_Notice
+	waitmessage
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	delay 40
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Ren
+	closemessage
+	delay 40
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Whitney, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney
+	setvar VAR_FORCEANIM, 1
+	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesWhitney, SixIsland_DottedHole_SapphireRoom_Text_PostWhitney, SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
+	setvar VAR_FORCEANIM, 0
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle
+	setflag FLAG_RE_DEFEATED
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_OBTAIN_KEY_ITEM
+	giveitem ITEM_RED_ORB
+	setflag FLAG_0x020
+	waitmessage
+	waitfanfare 
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Orbing
+	delay_16
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Goodbye
+	release
+	end
+
+SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney::
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_NoWhitney
+	release
+	end
+
+SixIsland_DottedHole_SapphireRoom_Text_Ren::
+	.string "Hello {PLAYER}, I notice you\n"
+	.string "have the Blue Orb.\p"
+	.string "That means you must be\n"
+	.string "a great battler huh?\p"
+	.string "Call me surpised that\n"
+	.string "you got this face and managed\l"
+	.string "to find this orb's purpose!\p"
+	.string "In terms of what I am,\n"
+	.string "don't worry.\p"
+	.string "All I know is that I want\n"
+	.string "a battle with you, if you want.$"
+
+SixIsland_DottedHole_SapphireRoom_Text_Notice::
+	.string "(You noticed a voice in the air.)$"
+
+SixIsland_DottedHole_SapphireRoom_Text_Whitney::
+	.string "Do you wish to battle.\n"
+	.string "My team will the must\l"
+	.string "stronger than the rest.$"
+
+SixIsland_DottedHole_SapphireRoom_Text_NoWhitney::
+	.string "Guess you need more\n"
+	.string "time to train than,\l"
+	.string "take your time!$"
+
+SixIsland_DottedHole_SapphireRoom_Text_PostWhitney::
+	.string "Wow! What a amazing battle!\n"
+	.string "From Red to Blue, this\l"
+	.string "battle is Green all around!$"
+
+SixIsland_DottedHole_SapphireRoom_Text_Orbing::
+	.string "This orb if exposed\n"
+	.string "to the right place,\l"
+	.string "say, a place where you\l"
+	.string "found a red gem,\l"
+	.string "will let you encounter\l"
+	.string "something shiny!\p"
+	.string "Better not let it waste.$"
+
+SixIsland_DottedHole_SapphireRoom_Text_YesWhitney::
+	.string "Alright.\n"
+	.string "May this battle not be blue,\l"
+	.string "May this battle be red in hype,\l"
+	.string "and green in success!$"
+
+SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle::
+	.string "Ok, guess I gotta give\n"
+	.string "you this reward.$"
+
+SixIsland_DottedHole_SapphireRoom_Text_Goodbye::
+	.string "Alright than, I better\n"
+	.string "get going now.\p"
+	.string "And as for me and what I am,\n"
+	.string "you should be able to read\l"
+	.string "the connections from this battle.\p"
+	.string "...\n"
+	.string "Goodbye {PLAYER}$"`

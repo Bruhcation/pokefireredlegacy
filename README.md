@@ -1,5 +1,7 @@
 # Pokémon FireRed Reignited Legacy and LeafGreen Regrown Legacy
 
+<img width="1471" height="1472" alt="regrown" src="https://github.com/user-attachments/assets/60b338ca-77f4-4316-9120-d3f6eb4f235a" /> <img width="1000" height="1000" alt="reignited" src="https://github.com/user-attachments/assets/87bab07f-7d39-4edb-a7d3-a92381935c6d" />
+
 This is a decompilation of English Pokémon FireRed and LeafGreen that acts as the Unoffical Legacy Game of FRLG.
 a QOL if you will
 
@@ -15,6 +17,7 @@ Features:
 - Added Mt Moon Square and a floor under Rock Tunnel, both accessed with rock smash
   
 Battle and locationImprovements:
+- Trade Evos evolve with either it's trade item or level up
 - Improved Pokemon Locations, stats, movesets, and moves (Bug Type Cut, Improved Movesets, Higher Stats, Better Abilities for some) (Nidorans are back on route 22)
 - A lot of the pokemon releated locations mirrors Yellow Legacy
 - Many Battle Engine and Stat Changes from Emerald Legacy (Ported Directly from EL, but I made my own changes) (50% Boost to defense for hail for instance)
@@ -71,6 +74,19 @@ QOL:
 - Champion and Oak turns on Battle Animations like in RBY
 - Safari Zone improvements to make rocks baits and balls better
 - Relearn Move Tutor Moves at a price
+- Daisy grooming is avaible earlier and gives more friendship
+- All Rev1 Changes besides Ttars pokedex change (which is here)
+"
+Normal:
+"Its body can't be harmed by any sort of\n"
+    "attack, so it is very eager to make\n"
+    "challenges against enemies."
+Rev1:
+"It has an impudent nature. Having great\n"
+    "strength, it can even change surrounding\n"
+    "landforms."
+"
+);
 - Some more stuff I forgot
 
 - VERSION DIFFERENCES:
@@ -91,7 +107,7 @@ Delevoper:
 - SpikeCation (Sole Dev)
 
 Helper:
-- The Real Team Player (Did lots of text fixes)
+- therealteamplayer (Did lots of text fixes and edits)
 
 Playtesters:
 
@@ -122,7 +138,45 @@ Credits:
 
 - Team Aqua Hideout - Like Above for help
 
+- Project Palladium Team - Male Guard Sprite
+
+- Invis (HMA Discord) - Nurse Joy Sprite
+
 - Numerous Pret Tutorials
+
+Item Locations:
+
+Sludge Bomb	Sliph Co		
+Facade	Mt Moon (Rock Smash)		
+Hidden Power	Celadon		
+Metal Coat	Thief/2Island (Onix)		
+Ugrade	Game Cornor		
+King's Rock	Thief/2Island (Slowpoke/Poliwhirl)		
+Dragon Scale	Seaform/2 Island/Thief (Horsea)		
+Sun Stone	Celadon/Thief (Oddish)		
+Moon Stone	Fuscia Store		
+Flutes	Celadon		
+Ice Beam	Seafoam		
+Hail	Seafoam		
+Rock Smash 	Route 2 (Aid)		
+Flash	Route 10 (Aid)		
+Sandstorm	Rock Tunnel		
+Everstone	Rock Tunnel		
+Flamethrower	Mt Ember		
+Shadow Ball	Mt Ember		
+Iron Tail	Rock Tunnel (Rock Smash)		
+Thunderbolt	Power Plant		
+Eggtutor	Beat the 7 Johto Leaders
+
+Tutorials:
+
+locations guide (og by a guy on reddit)
+https://docs.google.com/spreadsheets/d/100n-2riTFc4Smetj2cQECD3f45pw_zIaaYIpKeJ-Luk/edit?gid=0#gid=0
+
+- Some Fanmade tutorials for the hack:
+https://www.youtube.com/playlist?list=PLaXfMWm8D14lc8qGFEe9OCIpMUyKkWoqw
+
+Stats and movepools in src/data
 
 - Patching Info, best for your sha1 to have this
 pokefirered.gba sha1: 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc

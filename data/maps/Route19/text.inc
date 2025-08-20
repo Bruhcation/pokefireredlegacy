@@ -156,22 +156,37 @@ Route19_Text_LucNotEnoughMons::
 
 Route19_Text_CongratsYouveWon::
     .string "This HM is useless!\p"
-    .string "There aren't any DIVE spots\n"
-    .string "around KANTO, nor are there\l"
-    .string "any in the SEVII ISLANDS!\p"
-    .string "I don't even battle!\p"
-    .string "So take it!$"
+    .string "There aren't any DIVE spots around\n"
+    .string "KANTO, nor are there any in the\l"
+    .string "SEVII ISLANDS!\p"
+    .string "I'm not interested in battling,\n"
+    .string "so take it!$"
 
 Route19_Text_ReceivedHM08FromDiveGuy::
     .string "{PLAYER} received HM08!$"
+
+Route19_Text_ReceivedHM07FromDiveGuy::
+    .string "{PLAYER} received HM07!$"
 
 Route19_Text_ExplainDive::
     .string "HM08 is DIVE.\p"
     .string "Your POKéMON hide in water one\n"
     .string "turn, before emerging and dealing\l"
     .string "damage on the next.\p"
-    .string "Hopefully you can find a use\n"
-    .string "for this HM as a battle move!$"
+    .string "Hopefully you can find a use for\n"
+    .string "this HM in battle!$"
+
+Route19_Text_ExplainWaterfall::
+    .string "Oh, also…\p"
+    .string "I have yet another utterly\n"
+    .string "worthless HM to give you!$"
+
+Route19_Text_ExplainWaterfall2::
+    .string "HM07 is WATERFALL.\p"
+    .string "Your POKéMON rides up a stream of\n"
+    .string "water and charges at the foe,\l"
+    .string "dealing damage with a chance to\l"
+    .string "make the opponent flinch!$"
 
 Route19_Text_DontHaveRoomForPrize::
     .string "You don't have room for this\n"

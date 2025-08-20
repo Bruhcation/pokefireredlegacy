@@ -43,6 +43,7 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
+//All these gonna be used im lazy to make names
 #define FLAG_0x020               0x020
 #define FLAG_0x021               0x021
 #define FLAG_0x022               0x022
@@ -215,26 +216,26 @@
 #define FLAG_AGATHACAP              0x0C5
 #define FLAG_BRUNOCAP               0x0C6
 #define FLAG_LORCAP             0x0C7
-#define FLAG_0x0C8               0x0C8
-#define FLAG_0x0C9               0x0C9
-#define FLAG_0x0CA               0x0CA
-#define FLAG_0x0CB               0x0CB
-#define FLAG_0x0CC               0x0CC
-#define FLAG_0x0CD               0x0CD
-#define FLAG_0x0CE               0x0CE
-#define FLAG_0x0CF               0x0CF
-#define FLAG_0x0D0               0x0D0
-#define FLAG_0x0D1               0x0D1
-#define FLAG_0x0D2               0x0D2
-#define FLAG_0x0D3               0x0D3
-#define FLAG_0x0D4               0x0D4
-#define FLAG_0x0D5               0x0D5
-#define FLAG_0x0D6               0x0D6
-#define FLAG_0x0D7               0x0D7
-#define FLAG_0x0D8               0x0D8
-#define FLAG_0x0D9               0x0D9
-#define FLAG_0x0DA               0x0DA
-#define FLAG_0x0DB               0x0DB
+#define FLAG_OAK_DEXING              0x0C8
+#define FLAG_AMONGUS               0x0C9
+#define FLAG_AHHH               0x0CA
+#define FLAG_GYM3CAP               0x0CB
+#define FLAG_GYM4CAP               0x0CC
+#define FLAG_GYM5CAP               0x0CD
+#define FLAG_GYM6CAP               0x0CE
+#define FLAG_GYM7CAP               0x0CF
+#define FLAG_KOICHI_REMATCH               0x0D0
+#define FLAG_GUARD_REMATCH               0x0D1
+#define FLAG_CHARIZARD              0x0D2
+#define FLAG_BLASTOISE               0x0D3
+#define FLAG_VENUSAUR               0x0D4
+#define FLAG_FREDDY             0x0D5
+#define FLAG_ORBING               0x0D6
+#define FLAG_RE_DEFEATED               0x0D7
+#define FLAG_BLUE_REMATCH_DEFEAT            0x0D8
+#define FLAG_CAUGHT_SUDOWOODO                                0x0D9
+#define FLAG_DEFEATED_SUDOWOODO                              0x0DA
+#define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                  0x0DB
 #define FLAG_0x0DC               0x0DC
 #define FLAG_0x0DD               0x0DD
 #define FLAG_0x0DE               0x0DE
@@ -461,7 +462,7 @@
 #define FLAG_HIDE_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY         0x1B9
 #define FLAG_HIDE_TWO_ISLAND_REVIVE                             0x1BA
 #define FLAG_HIDE_THREE_ISLAND_ZINC                             0x1BB
-#define FLAG_0x1BC                                              0x1BC
+#define FLAG_HIDE_METAL_COAT                                             0x1BC
 #define FLAG_0x1BD                                              0x1BD
 #define FLAG_HIDE_VIRIDIAN_FOREST_POTION_2                      0x1BE
 #define FLAG_HIDE_MT_MOON_B2F_REVIVE                            0x1BF
@@ -533,7 +534,7 @@
 #define FLAG_HIDE_CELADON_CITY_SUN_STONE               0x1FF
 #define FLAG_HIDE_ROUTE12_SILK             0x200
 #define FLAG_BIKE_GEAR           0x201
-#define FLAG_0x202               0x202
+#define FLAG_BINARY_GUY              0x202
 #define FLAG_0x203               0x203
 #define FLAG_0x204               0x204
 #define FLAG_0x205               0x205
@@ -832,10 +833,10 @@
 #define FLAG_R23_GUYS              0x324
 #define FLAG_HARD_NUGGET               0x325
 #define FLAG_SELPHY_PC           0x326
-#define FLAG_0x327               0x327
-#define FLAG_0x328               0x328
-#define FLAG_0x329               0x329
-#define FLAG_0x32A               0x32A
+#define FLAG_DID_TOTO_TRADE               0x327
+#define FLAG_DID_QUILER_TRADE               0x328
+#define FLAG_DID_CHIK_TRADE               0x329
+#define FLAG_POSTGAME_TRADES              0x32A
 #define FLAG_0x32B               0x32B
 #define FLAG_0x32C               0x32C
 #define FLAG_0x32D               0x32D
@@ -1097,7 +1098,7 @@
 #define FLAG_HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2           (FLAG_HIDDEN_ITEMS_START +  66)
 #define FLAG_HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3           (FLAG_HIDDEN_ITEMS_START +  67)
 #define FLAG_HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL            (FLAG_HIDDEN_ITEMS_START +  68)
-#define FLAG_HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL             (FLAG_HIDDEN_ITEMS_START +  69)
+#define FLAG_GOTGREEN                                                      (FLAG_HIDDEN_ITEMS_START +  69)
 #define FLAG_HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION        (FLAG_HIDDEN_ITEMS_START +  70)
 #define FLAG_HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE      (FLAG_HIDDEN_ITEMS_START +  71)
 #define FLAG_HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL (FLAG_HIDDEN_ITEMS_START +  72)
@@ -1223,13 +1224,13 @@
 // Unused hidden item flags
 #define FLAG_HIDDEN_ITEM_ROUTE10_LIGHTBALL                                 (FLAG_HIDDEN_ITEMS_START + 191)
 #define FLAG_HIDDEN_ITEM_THICK_CLUB                                        (FLAG_HIDDEN_ITEMS_START + 192) 
-#define FLAG_HIDE_SOUL_DEW                                                 (FLAG_HIDDEN_ITEMS_START + 193)
+#define FLAG_GOTPINK                                                       (FLAG_HIDDEN_ITEMS_START + 193)
 #define FLAG_HIDE_CHOICE_BAND                                              (FLAG_HIDDEN_ITEMS_START + 194)
 #define FLAG_HIDDEN_MOON_STONE_RESPAWN                                     (FLAG_HIDDEN_ITEMS_START + 195)
-#define FLAG_UNUSED_0x4AC               0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD               0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE               0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF               0x4AF // Unused Flag
+#define FLAG_GOTFANG             (FLAG_HIDDEN_ITEMS_START + 196)
+#define FLAG_GOTYELLOW           (FLAG_HIDDEN_ITEMS_START + 197)
+#define FLAG_GOTBLUE             (FLAG_HIDDEN_ITEMS_START + 198)
+#define FLAG_GOTRED              (FLAG_HIDDEN_ITEMS_START + 199)
 
 // Boss clear flags, 1200
 #define FLAG_DEFEATED_BROCK           0x4B0
@@ -1252,12 +1253,12 @@
 #define FLAG_SEVIIJOHTO          0x4BF
 #define FLAG_ARMSTRONG_DEFEATED  0x4C0
 #define FLAG_SEVIIMATCH          0x4C1
-#define FLAG_GOTFANG             (FLAG_HIDDEN_ITEMS_START + 196)
-#define FLAG_GOTYELLOW           (FLAG_HIDDEN_ITEMS_START + 197)
-#define FLAG_GOTBLUE             (FLAG_HIDDEN_ITEMS_START + 198)
-#define FLAG_GOTRED              (FLAG_HIDDEN_ITEMS_START + 199)
-#define FLAG_GOTPINK             (FLAG_HIDDEN_ITEMS_START + 200)
-#define FLAG_GOTGREEN            (FLAG_HIDDEN_ITEMS_START + 201)
+#define FLAG_UNUSED1             0x4C2
+#define FLAG_UNUSED2             0x4C3
+#define FLAG_UNUSED3             0x4C4
+#define FLAG_UNUSED4             0x4C5
+#define FLAG_UNUSED5             0x4C6
+#define FLAG_UNUSED6             0x4C7
 #define FLAG_DEFEATED_NURSE_JOY  0x4C8
 #define FLAG_FOUGHT_CELEBI       0x4C9
 #define FLAG_DEFEATED_DUDE       0x4CA
@@ -1287,7 +1288,7 @@
 #define FLAG_SHOW_HIDDEN_POWER   0x4E2
 #define FLAG_OWL_DEFEATED        0x4E3
 #define FLAG_HIDE_EASTER         0x4E4
-#define FLAG_HIDDEN_AURORA       (FLAG_HIDDEN_ITEMS_START + 201)
+#define FLAG_HIDDEN_AURORA       0x4E5
 #define FLAG_HIDE_GIOVANNI_ONE   0x4E6
 #define FLAG_SEVEN_SEVII         0x4E7
 #define FLAG_OLD_LEAD             0x4E8
@@ -1372,7 +1373,7 @@
 
 #define FLAG_SYS_POKEMON_GET                                        (SYS_FLAGS + 0x28)
 #define FLAG_SYS_POKEDEX_GET                                        (SYS_FLAGS + 0x29)
-#define FLAG_0x82A                                                  (SYS_FLAGS + 0x2A)
+#define FLAG_SYS_CTRL_OBJ_DELETE                                    (SYS_FLAGS + 0x2A)
 #define FLAG_0x82B                                                  (SYS_FLAGS + 0x2B)
 #define FLAG_SYS_GAME_CLEAR_OLD (SYS_FLAGS + 0x2C) //Needs to be set to link with XD. New FLAG_SYS_GAME_CLEAR (now used in scripts) is at the bottom.
 #define FLAG_SYS_SET_TRAINER_CARD_PROFILE                           (SYS_FLAGS + 0x2D)

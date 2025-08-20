@@ -578,6 +578,10 @@ FiveIsland_MemorialPillar_EventScript_ItemMetalCoat::
 	finditem ITEM_METAL_COAT
 	end
 
+SilphCo_6F_EventScript_ItemMetalCoat::
+	finditem ITEM_METAL_COAT
+	end
+
 SixIsland_OutcastIsland_EventScript_ItemPPUp::
 	finditem ITEM_PP_UP
 	end
@@ -697,3 +701,4 @@ SevenIsland_SevaultCanyon_House_EventScript_ItemLuckyPunch::
 SilphCo_4F_EventScript_ItemTM41::
 	finditem ITEM_TM41
 	end
+

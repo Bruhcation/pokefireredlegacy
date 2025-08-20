@@ -44,15 +44,6 @@
 
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 25,
-      "y": 11,
-      "elevation": 0,
-      "item": "ITEM_SOUL_DEW",
-      "flag": "FLAG_HIDE_SOUL_DEW",
-      "quantity": 1,
-      "underfoot": true
-    }
+
   ]
 }

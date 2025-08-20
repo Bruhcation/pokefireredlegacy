@@ -63,5 +63,9 @@ PalletTown_Text_OakYouEnjoyingTraveling::
     .string "imagine you going out to even more\l"
     .string "exotic locales.\p"
     .string "Good for you, good for you.\n"
-    .string "Hohoho.$"
+    .string "Hohoho.\p"
+	.string "Oh and BILL still wants you\n"
+	.string "to help him in the SEVII ISLANDS!\p"
+	.string "He's in the CINNABAR ISLAND\n"
+	.string "POKECENTER waiting for you!$"
 

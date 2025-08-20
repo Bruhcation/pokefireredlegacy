@@ -47,6 +47,11 @@ TwoIsland_JoyfulGameCorner_EventScript_FoundLostelleScene::
 	applymovement LOCALID_LOSTELLE, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	setvar VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER, 3
+	applymovement LOCALID_DADDY, TwoIsland_JoyfulGameCorner_Movement_DaddyWalkToPlayer
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	goto TwoIsland_JoyfulGameCorner_EventScript_GiveDaddyMeteorite
 	releaseall
 	end
 
@@ -103,6 +108,12 @@ TwoIsland_JoyfulGameCorner_Movement_DaddyPacing::
 	walk_right
 	delay_8
 	walk_in_place_faster_up
+	delay_16
+	step_end
+
+TwoIsland_JoyfulGameCorner_Movement_DaddyWalkToPlayer::
+	walk_down
+	face_player
 	delay_16
 	step_end
 

@@ -166,7 +166,12 @@ FiveIsland_ResortGorgeous_House_Text_Medic2::
 	.string "saving her!$" 
 
 FiveIsland_ResortGorgeous_House_EventScript_PCMAN::
+	lockall
+	faceplayer
 	msgbox FiveIsland_ResortGorgeous_House_Text_PcMan, MSGBOX_NPC
+	waitmessage
+	lockall
+	faceplayer
 	msgbox FiveIsland_ResortGorgeous_House_Text_PcManYesNo, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, FiveIsland_ResortGorgeous_House_EventScript_PCMANNO
 	goto EventScript_PCMan

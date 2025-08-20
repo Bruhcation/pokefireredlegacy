@@ -284,8 +284,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 4,
-      "y": 4,
+      "x": 14,
+      "y": 26,
       "elevation": 0,
       "item": "ITEM_LIGHT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE10_LIGHTBALL",

@@ -155,7 +155,7 @@
       "type": "hidden_item",
       "x": 11,
       "y": 28,
-      "elevation": 0,
+      "elevation": 3,
       "item": "ITEM_YELLOW_SCARF",
       "flag": "FLAG_GOTYELLOW",
       "quantity": 1,

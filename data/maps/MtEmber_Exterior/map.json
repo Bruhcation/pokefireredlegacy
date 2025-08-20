@@ -392,13 +392,13 @@
     },
     {
       "type": "hidden_item",
-      "x": 29,
-      "y": 15,
-      "elevation": 0,
+      "x": 31,
+      "y": 14,
+      "elevation": 3,
       "item": "ITEM_RED_SCARF",
       "flag": "FLAG_GOTRED",
       "quantity": 1,
-      "underfoot": true
+      "underfoot": false
     }
   ]
 }

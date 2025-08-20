@@ -185,7 +185,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
       "x": 35,
       "y": 9,
       "elevation": 3,

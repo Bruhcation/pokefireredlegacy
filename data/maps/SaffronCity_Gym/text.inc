@@ -23,7 +23,7 @@ SaffronCity_Gym_Text_SabrinaPostBattle::
 
 SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
     .string "The MARSHBADGE makes POKéMON up\n"
-    .string "to Lv. 70 obey you.\p"
+    .string "to Lv. 56 obey you.\p"
     .string "Stronger POKéMON will become wild,\n"
     .string "ignoring your orders in battle.\p"
     .string "Just don't raise your POKéMON too\n"

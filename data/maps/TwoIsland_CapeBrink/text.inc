@@ -58,10 +58,10 @@ TwoIsland_CapeBrink_Text_CasenoDefeat::
     .string "gave you strength!$"
 
 TwoIsland_CapeBrink_Text_CasenoPostBattle::
-    .string "Huh, you're the KANTO Champion?\n"
+    .string "Huh, you're the KANTO CHAMPION?\n"
     .string "I knew KANTO was stronger.\p"
     .string "Guess I should have read the news.\p"
-    .string "Now, If you beat the other\n"
+    .string "Now, if you beat the other\n"
     .string "five MASTERS, you can fight\l"
     .string "the supreme MASTER on SEVEN.$"
 

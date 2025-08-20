@@ -16,6 +16,7 @@ EventScript_ResetLegendaries::
 	clearflag FLAG_LUGIA_FLEW_AWAY
 	clearflag FLAG_HO_OH_FLEW_AWAY
 	clearflag FLAG_DEOXYS_FLEW_AWAY
+	clearflag FLAG_DEFEATED_SUDOWOODO
 	special InitRoamer
 	return
 

@@ -100,15 +100,15 @@ FuchsiaCity_Gym_Text_KirkPostBattle::
 
 FuchsiaCity_Gym_Text_NateIntro::
     .string "I'm Master KOGA's daughter.\p"
-    .string "I hope to succeed him as\n"
-    .string "LEADER one day!$"
+    .string "I hope to succeed him as LEADER\n"
+    .string "one day!$"
 
 FuchsiaCity_Gym_Text_NateDefeat::
     .string "Think I still need some practice…$"
 
 FuchsiaCity_Gym_Text_NatePostBattle::
-    .string "I'm warning you,\n"
-    .string "my DAD doesn't hold back!$"
+    .string "I'm warning you, my DAD doesn't\n"
+    .string "hold back!$"
 
 FuchsiaCity_Gym_Text_PhilIntro::
     .string "Stop right there!\p"

@@ -5,4 +5,21 @@ Route14_MapScripts::
 Route14_EventScript_RouteSign::
 	msgbox Route14_Text_RouteSign, MSGBOX_SIGN
 	end
-`
+
+Route14_EventScript_HealWoman::
+	lock
+	faceplayer
+	msgbox Route14_Text_HealWoman1
+	call EventScript_OutOfCenterPartyHeal
+	msgbox Route14_Text_HealWoman2
+	release
+	end
+
+Route14_Text_HealWoman1::
+	.string "Oh, I'm just tending to the flowers.\n"
+	.string "But I know how far the next city\l"
+	.string "is from here, so I provide free\l"
+	.string "healing to TRAINERS!$"
+
+Route14_Text_HealWoman2::
+	.string "Stay strong, TRAINER!$"

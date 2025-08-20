@@ -130,7 +130,7 @@ SevenIsland_SevaultCanyon_Text_BrunoTrainedWithBrawly::
     .string "name of BRAWLY before.$"
 
 SevenIsland_SevaultCanyon_Text_Chuck::
-    .string "Hey, man! I'm training.\n"  
+    .string "Hey, kid! I'm training.\n"  
     .string "This form of training is not\l"  
     .string "to be disturbed.\p"  
     .string "This place is great for FIGHTING\n"  

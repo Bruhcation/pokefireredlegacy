@@ -4,9 +4,16 @@ SaffronCity_Gym_MapScripts::
 
 SaffronCity_Gym_EventScript_Sabrina::
 	famechecker FAMECHECKER_SABRINA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_DEFEATED_SABRINA, SaffronCity_Gym_EventScript_SabrinaContinue
+	goto_if_set FLAG_DEFEATED_BLAINE, SaffronCity_Gym_EventScript_Blaine
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
-	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Gym_EventScript_RematchSabrina
+	goto SaffronCity_Gym_EventScript_SabrinaContinue
+SaffronCity_Gym_EventScript_Blaine::
+	trainerbattle_single TRAINER_PRESABRINA, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
+	goto SaffronCity_Gym_EventScript_SabrinaContinue
+SaffronCity_Gym_EventScript_SabrinaContinue::
 	goto_if_unset FLAG_GOT_TM04_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTM04
+	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Gym_EventScript_RematchSabrina
 	msgbox SaffronCity_Gym_Text_ExplainTM04
 	release
 	end
@@ -17,6 +24,10 @@ SaffronCity_Gym_EventScript_DefeatedSabrina::
 	clearflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
 	setflag FLAG_DEFEATED_SABRINA
 	setflag FLAG_BADGE06_GET
+	setflag FLAG_GYM3CAP
+	setflag FLAG_GYM4CAP
+	setflag FLAG_GYM5CAP
+	setflag FLAG_GYM6CAP
 	set_gym_trainers 6
 	goto SaffronCity_Gym_EventScript_GiveTM04
 	end

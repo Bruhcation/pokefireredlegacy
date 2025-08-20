@@ -1311,6 +1311,7 @@ VermilionCity_PokemonCenter_1F_EventScript_UpgradeVSSeeker::
 	message VermilionCity_PokemonCenter_1F_Text_SeekerUpgrade
 	waitmessage
 	waitfanfare
+	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox VermilionCity_PokemonCenter_1F_Text_ExplainUpgrade
 	release
 	end
@@ -1425,3 +1426,6 @@ Text_TestMsg::
 
 	.include "data/maps/MtMoonSquare/scripts.inc"
 	.include "data/maps/MtMoonSquare/text.inc"
+
+	.include "data/maps/FishermansHouse/scripts.inc"
+	.include "data/maps/FishermansHouse/text.inc"

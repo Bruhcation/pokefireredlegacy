@@ -5,11 +5,15 @@ FuchsiaCity_Gym_MapScripts::
 FuchsiaCity_Gym_EventScript_Koga::
 	famechecker FAMECHECKER_KOGA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	goto_if_set FLAG_DEFEATED_KOGA, FuchsiaCity_Gym_EventScript_ContinueKoga
+	goto_if_set FLAG_DEFEATED_BLAINE, FuchsiaCity_Gym_EventScript_BeatBlaine
 	goto_if_set FLAG_DEFEATED_SABRINA, FuchsiaCity_Gym_EventScript_BeatSabrina
 	trainerbattle_single TRAINER_LEADER_KOGA, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 	goto FuchsiaCity_Gym_EventScript_ContinueKoga
 FuchsiaCity_Gym_EventScript_BeatSabrina::
 	trainerbattle_single TRAINER_KOGA2, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
+	goto FuchsiaCity_Gym_EventScript_ContinueKoga
+FuchsiaCity_Gym_EventScript_BeatBlaine::
+	trainerbattle_single TRAINER_RS_GENTLEMAN, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 	goto FuchsiaCity_Gym_EventScript_ContinueKoga
 FuchsiaCity_Gym_EventScript_ContinueKoga::
 	goto_if_unset FLAG_GOT_TM06_FROM_KOGA, FuchsiaCity_Gym_EventScript_GiveTM06
@@ -25,6 +29,9 @@ FuchsiaCity_Gym_EventScript_DefeatedKoga::
 	setflag FLAG_BADGE05_GET
 	settrainerflag TRAINER_LEADER_KOGA
 	settrainerflag TRAINER_KOGA2
+	setflag FLAG_GYM3CAP
+	setflag FLAG_GYM4CAP
+	setflag FLAG_GYM5CAP
 	set_gym_trainers 5
 	goto FuchsiaCity_Gym_EventScript_GiveTM06
 	end

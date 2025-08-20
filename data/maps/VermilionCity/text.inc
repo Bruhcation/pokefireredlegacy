@@ -131,5 +131,4 @@ VermilionCity_Text_Route2AideHasPackageForYou::
 
 VermilionCity_Text_Challenger::
     .string "Why is this tree here?\p"
-    .string "I'm trying to challenge\n"
-    .string "the GYM!$"
+    .string "I'm trying to challenge the GYM!$"

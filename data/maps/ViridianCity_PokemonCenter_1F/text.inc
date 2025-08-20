@@ -16,3 +16,5 @@ ViridianCity_PokemonCenter_1F_Text_PokeCentersHealMons::
     .string "They make all POKéMON completely\n"
     .string "healthy.$"
 
+ViridianCity_PokemonCenter_1F_Text_PokeCenterBusy::
+    .string "Sorry, we will be open soon.$"

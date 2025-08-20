@@ -5,4 +5,33 @@ FiveIsland_House1_MapScripts::
 FiveIsland_House1_EventScript_Woman::
 	msgbox FiveIsland_House1_Text_HusbandWentOffFishing, MSGBOX_NPC
 	end
+
+FiveIsland_House1_EventScript_Elyssa::
+	lock
+	faceplayer
+	msgbox Trade_Text_ThanksMan
+	setvar VAR_0x8004, SPECIES_TOTODILE
+	special SetSeenMon
+	showmonpic SPECIES_TOTODILE, 10, 3
+	waitbuttonpress
+	hidemonpic	
+	release
+	end
+
+FiveIsland_House1_EventScript_DeclineTrade::
+	msgbox Trade_Text_WellIfYouDontWantTo
+	release
+	end
+
+FiveIsland_House1_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox Trade_Text_ThisIsntMon
+	release
+	end
+
+FiveIsland_House1_EventScript_AlreadyTraded::
+	msgbox Trade_Text_IsntMyOldMonGreat
+	release
+	end
+
 `

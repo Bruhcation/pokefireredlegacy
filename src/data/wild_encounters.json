@@ -14092,7 +14092,7 @@
               {
                 "min_level": 50,
                 "max_level": 50,
-                "species": "SPECIES_SUDOWOODO"
+                "species": "SPECIES_STANTLER"
               }
             ]
           },
@@ -14246,7 +14246,7 @@
               {
                 "min_level": 50,
                 "max_level": 50,
-                "species": "SPECIES_SUDOWOODO"
+                "species": "SPECIES_STANTLER"
               }
             ]
           },
@@ -19576,7 +19576,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_MURKROW"
+                "species": "SPECIES_SNEASEL"
               },
               {
                 "min_level": 25,
@@ -19586,7 +19586,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_MURKROW"
+                "species": "SPECIES_SNEASEL"
               },
               {
                 "min_level": 27,
@@ -25018,7 +25018,7 @@
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_RHYHORN"
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 21,
@@ -25053,7 +25053,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_RHYHORN"
+                "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 21,

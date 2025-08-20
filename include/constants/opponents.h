@@ -33,7 +33,7 @@
 #define TRAINER_MISTY2                            28
 #define TRAINER_SURGE2                            29
 #define TRAINER_SCHOOL_KID_M                      30
-#define TRAINER_SCHOOL_KID_F                      31
+#define TRAINER_SURGE_2                           31
 #define TRAINER_SR_AND_JR                         32
 #define TRAINER_POKEFAN_M                         33
 #define TRAINER_POKEFAN_F                         34

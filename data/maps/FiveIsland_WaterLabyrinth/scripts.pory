@@ -106,6 +106,46 @@ FiveIsland_WaterLabyrinth_EventScript_NoFalkner::
 	release
 	end
 
+FiveIsland_WaterLabyrinth_EventScript_HeartScale::
+	lock
+	faceplayer
+	goto_if_set FLAG_SHOPJOHTO, FiveIsland_WaterLabyrinth_EventScript_HeartScale2
+	msgbox FiveIsland_WaterLabyrinth_Text_Heartscale
+	release
+	end
+
+FiveIsland_WaterLabyrinth_EventScript_HeartScale2::
+	msgbox FiveIsland_WaterLabyrinth_Text_Heartscale2
+	release
+	end
+
+FiveIsland_WaterLabyrinth_Text_Heartscale::
+	.string "My painter friend is currently\n"
+	.string "on a mission to learn how to\l"
+	.string "teach moves that Parents\l"
+	.string "give to their offspring\l"
+	.string "in their little egg.\p"
+	.string "I'm talking about\n"
+	.string "EGGS MOVES of Course!\p"
+	.string "You can't learn them\n"
+	.string "anywhere else!\p"
+	.string "A CHAMPION like you could have\n"
+	.string "great potential with them,\l"
+	.string "when my friend returns here.\p"
+	.string "You be better off doing\n"
+	.string "something else...$"
+
+FiveIsland_WaterLabyrinth_Text_Heartscale2::
+	.string "Ahh, my painter friend\n"
+	.string "is finally here!\p"
+	.string "She would be glad to teach\n"
+	.string "you exclusive EGG MOVES\l"
+	.string "for the price of 1 HEART SCALE.\p"
+	.string "I think you can find them on\n"
+	.string "the Islands south of\l"
+	.string "SEVEN ISLAND.$"
+
+
 FiveIsland_WaterLabyrinth_EventScript_RematchFalkner::
 	lock
 	faceplayer
@@ -245,7 +285,9 @@ FiveIsland_WaterLabyrinth_Text_HandedOverOneBigMushroom::
 
 FiveIsland_WaterLabyrinth_Text_NeedMushroomOrTwoToLearnMove::
 	.string "If your POKéMON need to learn an EGG\n"
-	.string "move, come back with a HEART SCALE.$"
+	.string "move, come back with a HEART SCALE.p"
+	.string "I heard there's some south of\n"
+	.string "Seven Island!$"
 
 FiveIsland_WaterLabyrinth_Text_CantTeachAnEgg::
 	.string "Hunh? No move in my sketchbook\n"

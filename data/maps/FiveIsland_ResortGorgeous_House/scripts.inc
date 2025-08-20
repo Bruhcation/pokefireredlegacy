@@ -335,38 +335,48 @@ FiveIsland_ResortGorgeous_House_Text_Medic2::
 # 168 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
 FiveIsland_ResortGorgeous_House_EventScript_PCMAN::
 # 169 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	msgbox FiveIsland_ResortGorgeous_House_Text_PcMan, MSGBOX_NPC
+	lockall
 # 170 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	msgbox FiveIsland_ResortGorgeous_House_Text_PcManYesNo, MSGBOX_YESNO
+	faceplayer
 # 171 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, FiveIsland_ResortGorgeous_House_EventScript_PCMANNO
+	msgbox FiveIsland_ResortGorgeous_House_Text_PcMan, MSGBOX_NPC
 # 172 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	goto EventScript_PCMan
+	waitmessage
 # 173 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	end
+	lockall
 # 174 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-
+	faceplayer
 # 175 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-FiveIsland_ResortGorgeous_House_EventScript_PCMANNO:
+	msgbox FiveIsland_ResortGorgeous_House_Text_PcManYesNo, MSGBOX_YESNO
 # 176 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	msgbox FiveIsland_ResortGorgeous_House_Text_Medic2, MSGBOX_NPC
+	goto_if_eq VAR_RESULT, NO, FiveIsland_ResortGorgeous_House_EventScript_PCMANNO
 # 177 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	end
+	goto EventScript_PCMan
 # 178 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-
+	end
 # 179 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-FiveIsland_ResortGorgeous_House_Text_PcMan::
+
 # 180 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	.string "Hello, I'm SELPHY's personal\n"  
+FiveIsland_ResortGorgeous_House_EventScript_PCMANNO:
 # 181 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	.string "technician. I've got a PC\l"  
+	msgbox FiveIsland_ResortGorgeous_House_Text_Medic2, MSGBOX_NPC
 # 182 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	.string "on me at all times!$"  
+	end
 # 183 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
 
 # 184 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-FiveIsland_ResortGorgeous_House_Text_PcManYesNo:
+FiveIsland_ResortGorgeous_House_Text_PcMan::
 # 185 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
-	.string "Do you want to access\n"  
+	.string "Hello, I'm SELPHY's personal\n"  
 # 186 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
+	.string "technician. I've got a PC\l"  
+# 187 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
+	.string "on me at all times!$"  
+# 188 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
+
+# 189 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
+FiveIsland_ResortGorgeous_House_Text_PcManYesNo:
+# 190 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
+	.string "Do you want to access\n"  
+# 191 "data/maps/FiveIsland_ResortGorgeous_House/scripts.pory"
 	.string "the PC?$"

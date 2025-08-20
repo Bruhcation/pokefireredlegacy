@@ -477,7 +477,13 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_JASMINE                     0x1122
 #define OBJ_EVENT_PAL_TAG_PRYCE                       0x1123
 #define OBJ_EVENT_PAL_TAG_CLAIR                       0x1124
-
+#define OBJ_EVENT_PAL_TAG_NPC_1                       0x1125
+#define OBJ_EVENT_PAL_TAG_NPC_2                       0x1126
+#define OBJ_EVENT_PAL_TAG_NPC_3                       0x1127
+#define OBJ_EVENT_PAL_TAG_NPC_4                       0x1128    
+#define OBJ_EVENT_PAL_TAG_CHARIZARD                   0x1129
+#define OBJ_EVENT_PAL_TAG_BLASTOISE                   0x1130
+#define OBJ_EVENT_PAL_TAG_VENUSAUR                    0x1131     
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -516,8 +522,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Jasmine,                 OBJ_EVENT_PAL_TAG_JASMINE},
     {gObjectEventPal_Pryce,                   OBJ_EVENT_PAL_TAG_PRYCE},
     {gObjectEventPal_Clair,               OBJ_EVENT_PAL_TAG_CLAIR},
-
-
+    {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
+    {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
+    {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},
+    {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4},
+    {gObjectEventPal_Charizard,                  OBJ_EVENT_PAL_TAG_CHARIZARD},
+    {gObjectEventPal_Blastoise,                  OBJ_EVENT_PAL_TAG_BLASTOISE},
+    {gObjectEventPal_Venusaur,                  OBJ_EVENT_PAL_TAG_VENUSAUR},
     {},
 };
 

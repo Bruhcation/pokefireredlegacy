@@ -2693,7 +2693,7 @@ void InitPokedudePartyAndOpponent(void)
             mon = &gPlayerParty[myIdx++];
         else
             mon = &gEnemyParty[opIdx++];
-                CreateMonWithGenderNatureLetter(mon, data[i].species, data[i].level, 31, data[i].gender, data[i].nature, 0, 0);
+                CreateMonWithGenderNatureLetter(mon, data[i].species, data[i].level, 31, data[i].gender, data[i].nature, 0);
         for (j = 0; j < 4; ++j)
             SetMonMoveSlot(mon, data[i].moves[j], j);
     } while (data[++i].side != 0xFF);

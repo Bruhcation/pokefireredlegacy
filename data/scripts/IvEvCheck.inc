@@ -21,7 +21,10 @@ EventScript_IVChecker::
 	end
 
 Text_IVChecker_1:
-	.string "Your {STR_VAR_1}…$"
+	.string "I can check your pokemon's\n"
+	.string "hidden potential!\p"
+	.string "Also Known as IVs!\p"
+	.string "So, your {STR_VAR_1}…$"
 
 Text_IVChecker_2:
 	.string "Its HP IV is {STR_VAR_1}.\p"
@@ -32,7 +35,7 @@ Text_IVChecker_3:
 	.string "Its Special Attack IV is {STR_VAR_1}.\p"
 	.string "Its Special Defense IV is {STR_VAR_2}.\p"
 	.string "Its Speed IV is {STR_VAR_3}.\n"
-	.string "You're welcome.$"
+	.string "You're welcome!$"
 
 EventScript_EVChecker::
 	lock
@@ -57,7 +60,10 @@ EventScript_EVChecker::
 	end
 
 Text_EVChecker_1:
-	.string "Your {STR_VAR_1}…$"
+	.string "I can check your pokemon's\n"
+	.string "gained effort potential!\p"
+	.string "Also Known as EVs!\p"
+	.string "So, your {STR_VAR_1}…$"
 
 Text_EVChecker_2:
 	.string "Its HP EV is {STR_VAR_1}.\p"
@@ -68,4 +74,4 @@ Text_EVChecker_3:
 	.string "Its Special Attack EV is {STR_VAR_1}.\p"
 	.string "Its Special Defense EV is {STR_VAR_2}.\p"
 	.string "Its Speed EV is {STR_VAR_3}.\n"
-	.string "You're welcome.$"
+	.string "You're welcome!$"

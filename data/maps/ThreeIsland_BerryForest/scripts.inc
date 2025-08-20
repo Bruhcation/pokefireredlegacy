@@ -169,7 +169,7 @@ ThreeIsland_BerryForest_EventScript_Lostelle::
 # 85 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	waitmoncry
 # 86 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	setwildbattle SPECIES_HYPNO, 50
+	setwildbattle SPECIES_HYPNO, 55
 # 87 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	dowildbattle
 # 88 "data/maps/ThreeIsland_BerryForest/scripts.pory"
@@ -421,7 +421,7 @@ ThreeIsland_BerryForest_Text_Rocket3Intro::
 # 211 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	.string "world is pure, unadulterated power!\p"
 # 212 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	.string "Witness the Power!$"
+	.string "WITNESS THE POWER!$"
 # 213 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 
 # 214 "data/maps/ThreeIsland_BerryForest/scripts.pory"
@@ -433,6 +433,6 @@ ThreeIsland_BerryForest_Text_Rocket3Defeat::
 # 217 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 ThreeIsland_BerryForest_Text_Rocket3PostBattle::
 # 218 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	.string "Do what you have to do...\l"
+	.string "Do what you have to do…\l"
 # 219 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	.string "Fight the CRUEL KING!$"

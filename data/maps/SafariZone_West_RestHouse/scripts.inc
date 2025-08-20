@@ -71,6 +71,28 @@ SafariZone_West_RestHouse_EventScript_ExplainDive::
 # 36 "data/maps/SafariZone_West_RestHouse/scripts.pory"
 	msgbox Route19_Text_ExplainDive
 # 37 "data/maps/SafariZone_West_RestHouse/scripts.pory"
-	release
+	goto_if_unset FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07, SafariZone_West_RestHouse_EventScript_ExplainWaterfall
 # 38 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	release
+# 39 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	end
+# 40 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+
+# 41 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+SafariZone_West_RestHouse_EventScript_ExplainWaterfall::
+# 42 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	msgbox Route19_Text_ExplainWaterfall
+# 43 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	checkitemspace ITEM_HM07
+# 44 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, SafariZone_West_RestHouse_EventScript_NoRoomForHM08
+# 45 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	giveitem_msg Route19_Text_ReceivedHM07FromDiveGuy, ITEM_HM07
+# 46 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	msgbox Route19_Text_ExplainWaterfall2
+# 47 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	setflag FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07
+# 48 "data/maps/SafariZone_West_RestHouse/scripts.pory"
+	release
+# 49 "data/maps/SafariZone_West_RestHouse/scripts.pory"
 	end

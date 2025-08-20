@@ -3011,7 +3011,7 @@
     {
       "english": "SILVERPOWDER",
       "itemId": "ITEM_SILVER_POWDER",
-      "price": 4800,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_BUG_POWER",
       "holdEffectParam": 10,
       "description_english": "An item to be held by a POKéMON.\\nA shiny silver powder that boosts\\nthe power of BUG-type moves.",
@@ -3251,7 +3251,7 @@
     {
       "english": "SOFT SAND",
       "itemId": "ITEM_SOFT_SAND",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_GROUND_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA loose, silky sand that boosts the\\npower of GROUND-type moves.",
@@ -3267,7 +3267,7 @@
     {
       "english": "HARD STONE",
       "itemId": "ITEM_HARD_STONE",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_ROCK_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nAn unbreakable stone that boosts\\nthe power of ROCK-type moves.",
@@ -3283,7 +3283,7 @@
     {
       "english": "MIRACLE SEED",
       "itemId": "ITEM_MIRACLE_SEED",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_GRASS_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA seed imbued with life that boosts\\nthe power of GRASS-type moves.",
@@ -3299,7 +3299,7 @@
     {
       "english": "BLACKGLASSES",
       "itemId": "ITEM_BLACK_GLASSES",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_DARK_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA shady-looking pair of glasses\\nthat boosts DARK-type moves.",
@@ -3315,7 +3315,7 @@
     {
       "english": "BLACK BELT",
       "itemId": "ITEM_BLACK_BELT",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_FIGHTING_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA belt that boosts determination\\nand FIGHTING-type moves.",
@@ -3331,7 +3331,7 @@
     {
       "english": "MAGNET",
       "itemId": "ITEM_MAGNET",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_ELECTRIC_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA powerful magnet that boosts the\\npower of ELECTRIC-type moves.",
@@ -3347,7 +3347,7 @@
     {
       "english": "MYSTIC WATER",
       "itemId": "ITEM_MYSTIC_WATER",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_WATER_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA teardrop-shaped gem that boosts\\nthe power of WATER-type moves.",
@@ -3363,7 +3363,7 @@
     {
       "english": "SHARP BEAK",
       "itemId": "ITEM_SHARP_BEAK",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_FLYING_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA long, sharp beak that boosts the\\npower of FLYING-type moves.",
@@ -3379,7 +3379,7 @@
     {
       "english": "POISON BARB",
       "itemId": "ITEM_POISON_BARB",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_POISON_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA small, poisonous barb that boosts\\nthe power of POISON-type moves.",
@@ -3395,7 +3395,7 @@
     {
       "english": "NEVERMELTICE",
       "itemId": "ITEM_NEVER_MELT_ICE",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_ICE_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA piece of ice that repels heat\\nand boosts ICE-type moves.",
@@ -3411,7 +3411,7 @@
     {
       "english": "SPELL TAG",
       "itemId": "ITEM_SPELL_TAG",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_GHOST_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA sinister, eerie tag that boosts\\nGHOST-type moves.",
@@ -3427,7 +3427,7 @@
     {
       "english": "TWISTEDSPOON",
       "itemId": "ITEM_TWISTED_SPOON",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_PSYCHIC_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA spoon imbued with telekinetic\\npower boosts PSYCHIC-type moves.",
@@ -3459,7 +3459,7 @@
     {
       "english": "DRAGON FANG",
       "itemId": "ITEM_DRAGON_FANG",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_DRAGON_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA hard and sharp fang that boosts\\nthe power of DRAGON-type moves.",
@@ -3475,7 +3475,7 @@
     {
       "english": "SILK SCARF",
       "itemId": "ITEM_SILK_SCARF",
-      "price": 2500,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_NORMAL_POWER",
       "holdEffectParam": 20,
       "description_english": "An item to be held by a POKéMON.\\nA sumptuous scarf that boosts the\\npower of NORMAL-type moves.",
@@ -4417,7 +4417,7 @@
       "secondaryId": 1
     },
     {
-      "english": "RED ORB",
+      "english": "RE ORB",
       "itemId": "ITEM_RED_ORB",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
@@ -4433,12 +4433,12 @@
       "secondaryId": 0
     },
     {
-      "english": "BLUE ORB",
+      "english": "BATTLE ORB",
       "itemId": "ITEM_BLUE_ORB",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "An orb that glows blue.\\nIt is said to contain an incredible\\npower from ancient times.",
+      "description_english": "An orb that glows blue.\\nA Trophy For the greatest battlers.",
       "importance": 2,
       "registrability": 0,
       "pocket": "POCKET_KEY_ITEMS",

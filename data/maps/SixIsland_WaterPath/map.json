@@ -156,6 +156,14 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SixIsland_WaterPath_EventScript_ItemDragonScale",
       "flag": "FLAG_HIDE_SIX_ISLAND_WATER_PATH_DRAGON_SCALE"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_AROMA_LADY",
+      "x": 0,
+      "y": 7,
+      "target_local_id": 2,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH"
     }
   ],
   "warp_events": [

@@ -274,3 +274,22 @@ u32 CalcByteArraySum(const u8 * array, u32 size)
 
     return result;
 }
+
+u32 CalcCRC32(const u8 *data, u32 length)
+ {
+     s32 i, j;
+     u32 crc = 0xFFFFFFFF;
+     u32 byte;
+ 
+     for (i = 0; i < length; i++)
+     {
+         byte = data[i];
+         crc = crc ^ byte;
+         for (j = 7; j >= 0; j--)
+         {
+             u32 mask = -(crc & 1);
+             crc = (crc >> 1) ^ (0xEDB88320 & mask);
+         }
+     }
+     return ~crc;
+ }

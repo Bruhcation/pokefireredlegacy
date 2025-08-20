@@ -1,4 +1,5 @@
 raw `
+.set LOCALID_HEX, 13
 ViridianForest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ViridianForest_OnTransition
 	.byte 0
@@ -68,4 +69,53 @@ ViridianForest_EventScript_Lass::
 	trainerbattle_single TRAINER_RS_FISHERMAN, ViridianForest_Text_LassIntro, ViridianForest_Text_LassDefeat
 	msgbox ViridianForest_Text_LassPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+ViridianForest_EventScript_Hex_Maniac::
+	lock
+	goto_if_set FLAG_BINARY_GUY, ViridianForest_EventScript_Hex_Maniac5
+	msgbox ViridianForest_Text_Hex_Maniac
+	waitmessage
+	applymovement LOCALID_HEX, Common_Movement_FacePlayer
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_HEX, Common_Movement_ExclamationMarkDelay
+	waitmovement 0
+	waitbuttonpress
+	trainerbattle_single TRAINER_HEX_MANIAC, ViridianForest_Text_Hex_Maniac2, ViridianForest_Text_Hex_Maniac3, ViridianForest_EventScript_Hex_Maniac5
+	end
+
+ViridianForest_EventScript_Hex_Maniac5::
+	msgbox ViridianForest_Text_Hex_Maniac4, MSGBOX_AUTOCLOSE
+	setflag FLAG_BINARY_GUY
+	end
+
+ViridianForest_Text_Hex_Maniac::
+	.string "Hey there new trainer! Do you\n"
+	.string "want to become CHAMPION one day?\p"
+	.string "For a beginner like you,\n"
+	.string "a WEEDLE will bring you to\l"
+	.string "the HALL OF FAME while\l"
+	.string "being very easy to raise!\p"
+	.string "PROFESSOR OAK'S starters are very\n"
+	.string "hard to raise so should\l"
+	.string "begin raising a WEEDLE!$"
+
+ViridianForest_Text_Hex_Maniac2::
+	.string "Wait, you're already CHAMPION?\p"
+	.string "Well, guess my plan of tricking\n"
+	.string "New Trainers to use Weaker POKEMON\l"
+	.string "so I can become CHAMPION is OVER!\p"
+	.string "So I'm gonna take it from YOU now!\p"
+    .string "Are you ready?$"
+
+ViridianForest_Text_Hex_Maniac3::
+    .string "Welp.$"
+
+ViridianForest_Text_Hex_Maniac4::
+	.string "You can't stop me, go away!\p"
+	.string "I ain't wasting my trip\n"
+	.string "from HOENN like that!\p"
+	.string "I'll be training to defeat you!$"
+
+
 `

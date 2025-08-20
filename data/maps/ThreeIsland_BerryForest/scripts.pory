@@ -83,7 +83,7 @@ ThreeIsland_BerryForest_EventScript_Lostelle::
 	waitse
 	playmoncry SPECIES_HYPNO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_HYPNO, 50
+	setwildbattle SPECIES_HYPNO, 55
 	dowildbattle
 	special QuestLog_CutRecording
 	applymovement LOCALID_LOSTELLE, Common_Movement_FacePlayer
@@ -209,13 +209,13 @@ ThreeIsland_BerryForest_Text_Rocket3Intro::
 	.string "I had a revelation.\p"
 	.string "The most important thing in this\n"
 	.string "world is pure, unadulterated power!\p"
-	.string "Witness the Power!$"
+	.string "WITNESS THE POWER!$"
 
 ThreeIsland_BerryForest_Text_Rocket3Defeat::
 	.string "…$"
 
 ThreeIsland_BerryForest_Text_Rocket3PostBattle::
-	.string "Do what you have to do...\l"
+	.string "Do what you have to do…\l"
 	.string "Fight the CRUEL KING!$"
 
 `

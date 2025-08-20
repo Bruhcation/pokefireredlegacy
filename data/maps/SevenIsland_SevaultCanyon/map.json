@@ -169,7 +169,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
-      "x": 7,
+      "x": 8,
       "y": 44,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -361,9 +361,9 @@
     },
     {
       "type": "hidden_item",
-      "x": 9,
-      "y": 43,
-      "elevation": 0,
+      "x": 8,
+      "y": 44,
+      "elevation": 3,
       "item": "ITEM_THICK_CLUB",
       "flag": "FLAG_GOTGREEN",
       "quantity": 1,

@@ -13,7 +13,7 @@ CeruleanCity_Gym_Text_ExplainTM03::
 
 CeruleanCity_Gym_Text_ExplainCascadeBadge::
     .string "The CASCADEBADGE makes all\n"
-    .string "POKéMON up to Lv. 30 obey.\p"
+    .string "POKéMON up to Lv. 36 obey.\p"
     .string "That includes even outsiders you\n"
     .string "got in trades.\p"
     .string "There's more. You can now use CUT\n"

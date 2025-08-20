@@ -108,4 +108,6 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_PAINTER]             = _("PAINTER"),
     [TRAINER_CLASS_SEVII_CHAMPION]      = _("SEVII MASTER"),
     [TRAINER_CLASS_JOHTO_LEADER]        = _("LEADER"),
+    [TRAINER_CLASS_GUARD]               = _("GUARD"),
+    [TRAINER_CLASS_NURSE]               = _("NURSE"),
 };

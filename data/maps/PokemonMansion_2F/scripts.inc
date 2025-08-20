@@ -165,18 +165,26 @@ PokemonMansion_2F_EventScript_PostOak::
 # 83 "data/maps/PokemonMansion_2F/scripts.pory"
 	waitmessage 
 # 84 "data/maps/PokemonMansion_2F/scripts.pory"
-	msgbox PokemonMansion_1F_Text_Mew
+	delay 40
 # 85 "data/maps/PokemonMansion_2F/scripts.pory"
-	release
+	msgbox PokemonMansion_1F_Text_Mew
 # 86 "data/maps/PokemonMansion_2F/scripts.pory"
-	end
+	waitmessage
 # 87 "data/maps/PokemonMansion_2F/scripts.pory"
-
+	setflag FLAG_AMONGUS
 # 88 "data/maps/PokemonMansion_2F/scripts.pory"
-PokemonMansion_2F_EventScript_NoOak::
+	clearflag FLAG_AHHH
 # 89 "data/maps/PokemonMansion_2F/scripts.pory"
-	msgbox PokemonMansion_1F_Text_NoOak
-# 90 "data/maps/PokemonMansion_2F/scripts.pory"
 	release
+# 90 "data/maps/PokemonMansion_2F/scripts.pory"
+	end
 # 91 "data/maps/PokemonMansion_2F/scripts.pory"
+
+# 92 "data/maps/PokemonMansion_2F/scripts.pory"
+PokemonMansion_2F_EventScript_NoOak::
+# 93 "data/maps/PokemonMansion_2F/scripts.pory"
+	msgbox PokemonMansion_1F_Text_NoOak
+# 94 "data/maps/PokemonMansion_2F/scripts.pory"
+	release
+# 95 "data/maps/PokemonMansion_2F/scripts.pory"
 	end

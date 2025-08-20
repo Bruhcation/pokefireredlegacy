@@ -214,8 +214,8 @@ FiveIsland_Meadow_Text_Gym3Post::
 	.string "the MASTER head south.\p"
 # 108 "data/maps/FiveIsland_Meadow/scripts.pory"
 	.string "Could he be at the\n"
+# 109 "data/maps/FiveIsland_Meadow/scripts.pory"
 	.string "MEMORIAL PILLAR?$"
-
 # 110 "data/maps/FiveIsland_Meadow/scripts.pory"
 
 # 111 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -339,68 +339,194 @@ FiveIsland_Meadow_EventScript_Beast::
 # 170 "data/maps/FiveIsland_Meadow/scripts.pory"
 	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, FiveIsland_Meadow_EventScript_Beast3
 # 171 "data/maps/FiveIsland_Meadow/scripts.pory"
-	special RoamingBeasts
+	call_if_unset FLAG_0x024, FiveIsland_Meadow_EventScript_BeastShow
 # 172 "data/maps/FiveIsland_Meadow/scripts.pory"
-	call_if_eq VAR_RESULT, TRUE, FiveIsland_Meadow_EventScript_GiveTicket
+	call_if_unset FLAG_0x025, FiveIsland_Meadow_EventScript_Entei
 # 173 "data/maps/FiveIsland_Meadow/scripts.pory"
-	msgbox FiveIsland_Meadow_Text_Beasts, MSGBOX_NPC
+	call_if_unset FLAG_0x022, FiveIsland_Meadow_EventScript_Raikou
 # 174 "data/maps/FiveIsland_Meadow/scripts.pory"
-	waitmessage
+	call_if_unset FLAG_0x026, FiveIsland_Meadow_EventScript_Suicune
 # 175 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setvar VAR_0x8004, SPECIES_RAIKOU
+	special RoamingBeasts
 # 176 "data/maps/FiveIsland_Meadow/scripts.pory"
-	special SetSeenMon
+	call_if_eq VAR_RESULT, TRUE, FiveIsland_Meadow_EventScript_GiveTicket
 # 177 "data/maps/FiveIsland_Meadow/scripts.pory"
-	showmonpic SPECIES_RAIKOU, 10, 3
-# 178 "data/maps/FiveIsland_Meadow/scripts.pory"
-	waitbuttonpress
-# 179 "data/maps/FiveIsland_Meadow/scripts.pory"
-	hidemonpic
-# 180 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setvar VAR_0x8004, SPECIES_ENTEI
-# 181 "data/maps/FiveIsland_Meadow/scripts.pory"
-	special SetSeenMon
-# 182 "data/maps/FiveIsland_Meadow/scripts.pory"
-	showmonpic SPECIES_ENTEI, 10, 3
-# 183 "data/maps/FiveIsland_Meadow/scripts.pory"
-	waitbuttonpress
-# 184 "data/maps/FiveIsland_Meadow/scripts.pory"
-	hidemonpic
-# 185 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setvar VAR_0x8004, SPECIES_SUICUNE
-# 186 "data/maps/FiveIsland_Meadow/scripts.pory"
-	special SetSeenMon
-# 187 "data/maps/FiveIsland_Meadow/scripts.pory"
-	showmonpic SPECIES_SUICUNE, 10, 3
-# 188 "data/maps/FiveIsland_Meadow/scripts.pory"
-	waitbuttonpress
-# 189 "data/maps/FiveIsland_Meadow/scripts.pory"
-	hidemonpic
-# 190 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Beasts22, MSGBOX_NPC
-# 191 "data/maps/FiveIsland_Meadow/scripts.pory"
+# 178 "data/maps/FiveIsland_Meadow/scripts.pory"
 	release
+# 179 "data/maps/FiveIsland_Meadow/scripts.pory"
+	end
+# 180 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 181 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Suicune::
+# 182 "data/maps/FiveIsland_Meadow/scripts.pory"
+	goto_if_set FLAG_CAUGHT_SUICUNE, FiveIsland_Meadow_EventScript_Suicune2
+# 183 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 184 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 185 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Suicune2::
+# 186 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Suicune, MSGBOX_NPC
+# 187 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setflag FLAG_0x026
+# 188 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special InitRoamer
+# 189 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 190 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 191 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_Text_Suicune::
 # 192 "data/maps/FiveIsland_Meadow/scripts.pory"
-	end
+	.string "Oh, you caught SUICUNE!\p"
 # 193 "data/maps/FiveIsland_Meadow/scripts.pory"
-
+	.string "Must of been a lot of work\n"
 # 194 "data/maps/FiveIsland_Meadow/scripts.pory"
-FiveIsland_Meadow_EventScript_GiveTicket::
+	.string "to catch that POKEMON!\p"
 # 195 "data/maps/FiveIsland_Meadow/scripts.pory"
-	msgbox FiveIsland_Meadow_Text_Beasts2, 
+	.string "Perhaps the next one will roaming\n"
 # 196 "data/maps/FiveIsland_Meadow/scripts.pory"
-	giveitem ITEM_MYSTIC_TICKET
+	.string "now that SUICUNE has been caught.\p"
 # 197 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	.string "Good Luck!$"
 # 198 "data/maps/FiveIsland_Meadow/scripts.pory"
-	releaseall
-# 199 "data/maps/FiveIsland_Meadow/scripts.pory"
-	end
-# 200 "data/maps/FiveIsland_Meadow/scripts.pory"
 
+# 199 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Entei::
+# 200 "data/maps/FiveIsland_Meadow/scripts.pory"
+	goto_if_set FLAG_CAUGHT_ENTEI, FiveIsland_Meadow_EventScript_Entei2
 # 201 "data/maps/FiveIsland_Meadow/scripts.pory"
-FiveIsland_Meadow_EventScript_Beast3::
+	return
 # 202 "data/maps/FiveIsland_Meadow/scripts.pory"
-	msgbox FiveIsland_Meadow_Text_Beasts2, MSGBOX_NPC
+
 # 203 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Entei2::
+# 204 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Entei, MSGBOX_NPC
+# 205 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setflag FLAG_0x025
+# 206 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special InitRoamer
+# 207 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 208 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 209 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_Text_Entei::
+# 210 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Oh, you caught ENTEI!\p"
+# 211 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Must of been a lot of work\n"
+# 212 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "to catch that POKEMON!\p"
+# 213 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Perhaps the next one will roaming\n"
+# 214 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "now that ENTEI has been caught.\p"
+# 215 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Good Luck!$"
+# 216 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 217 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Raikou::
+# 218 "data/maps/FiveIsland_Meadow/scripts.pory"
+	goto_if_set FLAG_CAUGHT_RAIKOU, FiveIsland_Meadow_EventScript_Raikou2
+# 219 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 220 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 221 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Raikou2::
+# 222 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Raikou, MSGBOX_NPC
+# 223 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setflag FLAG_0x022
+# 224 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special InitRoamer
+# 225 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 226 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 227 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_Text_Raikou::
+# 228 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Oh, you caught RAIKOU!\p"
+# 229 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Must of been a lot of work\n"
+# 230 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "to catch that POKEMON!\p"
+# 231 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Perhaps the next one will roaming\n"
+# 232 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "now that RAIKOU has been caught.\p"
+# 233 "data/maps/FiveIsland_Meadow/scripts.pory"
+	.string "Good Luck!$"
+# 234 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 235 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_BeastShow::
+# 236 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Beasts, MSGBOX_NPC
+# 237 "data/maps/FiveIsland_Meadow/scripts.pory"
+	waitmessage
+# 238 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setvar VAR_0x8004, SPECIES_RAIKOU
+# 239 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special SetSeenMon
+# 240 "data/maps/FiveIsland_Meadow/scripts.pory"
+	showmonpic SPECIES_RAIKOU, 10, 3
+# 241 "data/maps/FiveIsland_Meadow/scripts.pory"
+	waitbuttonpress
+# 242 "data/maps/FiveIsland_Meadow/scripts.pory"
+	hidemonpic
+# 243 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setvar VAR_0x8004, SPECIES_ENTEI
+# 244 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special SetSeenMon
+# 245 "data/maps/FiveIsland_Meadow/scripts.pory"
+	showmonpic SPECIES_ENTEI, 10, 3
+# 246 "data/maps/FiveIsland_Meadow/scripts.pory"
+	waitbuttonpress
+# 247 "data/maps/FiveIsland_Meadow/scripts.pory"
+	hidemonpic
+# 248 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setvar VAR_0x8004, SPECIES_SUICUNE
+# 249 "data/maps/FiveIsland_Meadow/scripts.pory"
+	special SetSeenMon
+# 250 "data/maps/FiveIsland_Meadow/scripts.pory"
+	showmonpic SPECIES_SUICUNE, 10, 3
+# 251 "data/maps/FiveIsland_Meadow/scripts.pory"
+	waitbuttonpress
+# 252 "data/maps/FiveIsland_Meadow/scripts.pory"
+	hidemonpic
+# 253 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setflag FLAG_0x024
+# 254 "data/maps/FiveIsland_Meadow/scripts.pory"
+	return
+# 255 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 256 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_GiveTicket::
+# 257 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Beasts2, 
+# 258 "data/maps/FiveIsland_Meadow/scripts.pory"
+	giveitem ITEM_MYSTIC_TICKET
+# 259 "data/maps/FiveIsland_Meadow/scripts.pory"
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+# 260 "data/maps/FiveIsland_Meadow/scripts.pory"
+	releaseall
+# 261 "data/maps/FiveIsland_Meadow/scripts.pory"
+	end
+# 262 "data/maps/FiveIsland_Meadow/scripts.pory"
+
+# 263 "data/maps/FiveIsland_Meadow/scripts.pory"
+FiveIsland_Meadow_EventScript_Beast3::
+# 264 "data/maps/FiveIsland_Meadow/scripts.pory"
+	msgbox FiveIsland_Meadow_Text_Beasts2, MSGBOX_NPC
+# 265 "data/maps/FiveIsland_Meadow/scripts.pory"
+	releaseall
+# 266 "data/maps/FiveIsland_Meadow/scripts.pory"
 	end

@@ -323,7 +323,7 @@ void StartMarowakBattle(void)
     if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
     {
         gBattleTypeFlags = BATTLE_TYPE_GHOST | BATTLE_TYPE_GHOST_UNVEILED;
-        CreateMonWithGenderNatureLetter(gEnemyParty, SPECIES_MAROWAK, 35, 31, MON_FEMALE, NATURE_SERIOUS, 0, 0);
+        CreateMonWithGenderNatureLetter(gEnemyParty, SPECIES_MAROWAK, 40, 31, MON_FEMALE, NATURE_SERIOUS, 0);
     }
     else
     {
@@ -559,18 +559,16 @@ static u16 GetSumOfPlayerPartyLevel(u8 numMons)
 
 static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
 {
-    const struct TrainerMon *party;
     u8 i;
     u8 sum;
     u32 count = numMons;
+    const struct Trainer *opponent = &gTrainers[opponentId];
 
-    party = gTrainers[opponentId].party.TrainerMon;
-
-    if (gTrainers[opponentId].partySize < count)
-        count = gTrainers[opponentId].partySize;
+    if (opponent->partySize < count)
+         count = opponent->partySize;
     sum = 0;
     for (i = 0; i < count; i++)
-        sum += party[i].lvl;
+        sum += opponent->party[i].lvl;
     return sum;
 }
 
@@ -1037,22 +1035,22 @@ static const u8 *GetTrainerCantBattleSpeech(void)
 u8 getLevelCap(void){
     u8 levelCap = 0;
     u16 nextLeader, i;
-    const struct TrainerMon *partyData;
+    const struct TrainerMon *partyData;    
     if (!FlagGet(FLAG_HARD) || FlagGet(FLAG_IS_CHAMPION))
         return 100;
     if (!FlagGet(FLAG_BADGE01_GET))
         nextLeader = TRAINER_LEADER_BROCK;
     else if (!FlagGet(FLAG_BADGE02_GET))
         nextLeader = TRAINER_LEADER_MISTY;
-    else if (!FlagGet(FLAG_BADGE03_GET))
+    else if (!FlagGet(FLAG_GYM3CAP))
         nextLeader = TRAINER_LEADER_LT_SURGE;
-    else if (!FlagGet(FLAG_BADGE04_GET))
+    else if (!FlagGet(FLAG_GYM4CAP))
         nextLeader = TRAINER_LEADER_ERIKA;
-    else if (!FlagGet(FLAG_BADGE05_GET))
+    else if (!FlagGet(FLAG_GYM5CAP))
         nextLeader = TRAINER_LEADER_KOGA;
-    else if (!FlagGet(FLAG_BADGE06_GET))
+    else if (!FlagGet(FLAG_GYM6CAP))
         nextLeader = TRAINER_LEADER_SABRINA;
-    else if (!FlagGet(FLAG_BADGE07_GET))
+    else if (!(FlagGet(FLAG_DEFEATED_BLAINE) || FlagGet(FLAG_DEFEATED_SABRINA) || FlagGet(FLAG_DEFEATED_ERIKA) || FlagGet(FLAG_DEFEATED_LT_SURGE) || FlagGet(FLAG_DEFEATED_KOGA)))
         nextLeader = TRAINER_LEADER_BLAINE;
     else if (!FlagGet(FLAG_BADGE08_GET))
         nextLeader = TRAINER_LEADER_GIOVANNI;
@@ -1067,7 +1065,7 @@ u8 getLevelCap(void){
     else if (!FlagGet(FLAG_IS_CHAMPION))
         nextLeader = TRAINER_CHAMPION_FIRST_CHARMANDER;
 
-    partyData = gTrainers[nextLeader].party.TrainerMon;
+    partyData = gTrainers[nextLeader].party;
     for (i = 0; i < gTrainers[nextLeader].partySize; i++){
         if (partyData[i].lvl > levelCap)
             levelCap = partyData[i].lvl;

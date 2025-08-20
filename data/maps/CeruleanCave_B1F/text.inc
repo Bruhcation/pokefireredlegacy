@@ -14,6 +14,6 @@ CeruleanCave_B1F_Text_SmithPostBattle::
     .string "to handle yourself in this cave.\p"
     .string "Good luck, nerd!\p"
     .string "And I hope you're not using\n"  
-    .string "GYARADOS, I'm starting to \l"  
-    .string "Hate that POKEMON.$"  
+    .string "GYARADOS - I'm starting to\l"  
+    .string "hate that POKéMON.$"  
 
