@@ -25,4 +25,8 @@ ViridianCity_PokemonCenter_1F_EventScript_Gentleman::
 ViridianCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox ViridianCity_PokemonCenter_1F_Text_PokeCentersHealMons, MSGBOX_NPC
 	end
+
+ViridianCity_PokemonCenter_1F_EventScript_Busy::
+	msgbox ViridianCity_PokemonCenter_1F_Text_PokeCenterBusy, MSGBOX_NPC
+	end
 `

@@ -8699,17 +8699,17 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .species = SPECIES_GEODUDE,
         .heldItem = ITEM_NONE,
         .moves = {MOVE_ROCK_THROW, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 128),
+        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 9),
     },
     {
-        .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
-        .lvl = 12,
+        .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+        .lvl = 11,
         .species = SPECIES_SLUGMA,
         .heldItem = ITEM_NONE,
-        .moves = {MOVE_ROCK_TOMB, MOVE_POUND, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_NONE, MOVE_POUND, MOVE_NONE, MOVE_NONE},
     },
     {
-        .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
+        .iv = TRAINER_PARTY_IVS(20, 10, 20, 0, 20, 20),
         .lvl = 14,
         .species = SPECIES_ONIX,
         .heldItem = ITEM_ORAN_BERRY,
@@ -8720,7 +8720,7 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
 static const struct TrainerMon sParty_LeaderMisty[] = {
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-        .lvl = 19,
+        .lvl = 18,
         .species = SPECIES_POLIWHIRL,
         .moves = {MOVE_WATER_PULSE, MOVE_MEGA_PUNCH, MOVE_NONE, MOVE_NONE},
     },
@@ -8728,7 +8728,7 @@ static const struct TrainerMon sParty_LeaderMisty[] = {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
         .lvl = 20,
         .species = SPECIES_GOLDEEN,
-        .moves = {MOVE_HORN_ATTACK, MOVE_SUPERSONIC, MOVE_PECK, MOVE_WATERFALL},
+        .moves = {MOVE_HORN_ATTACK, MOVE_NONE, MOVE_PECK, MOVE_WATERFALL},
     },
     {
         .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
@@ -8753,7 +8753,7 @@ static const struct TrainerMon sParty_LeaderLtSurge[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
-        .lvl = 24,
+        .lvl = 23,
         .species = SPECIES_PORYGON,
         .moves = {MOVE_SHOCK_WAVE, MOVE_NONE, MOVE_ICY_WIND, MOVE_SECRET_POWER},
     },
@@ -8797,7 +8797,7 @@ static const struct TrainerMon sParty_LeaderErika[] = {
 static const struct TrainerMon sParty_LeaderKoga[] = {
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-        .lvl = 42,
+        .lvl = 41,
         .species = SPECIES_CROBAT,
         .moves = {MOVE_TOXIC, MOVE_FLY, MOVE_BITE, MOVE_CONFUSE_RAY},
     },
@@ -8854,7 +8854,7 @@ static const struct TrainerMon sParty_LeaderBlaine[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 52,
+        .lvl = 51,
         .species = SPECIES_MAGCARGO,
         .heldItem = ITEM_QUICK_CLAW,
         .moves = {MOVE_FIRE_BLAST, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_BODY_SLAM},
