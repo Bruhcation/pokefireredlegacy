@@ -10,8 +10,6 @@
 
 #define CURSOR_DELAY 8
 
-#define DARK_DOWN_ARROW_OFFSET 256
-
 extern const struct OamData gOamData_AffineOff_ObjNormal_16x16;
 
 static void DecompressGlyph_NormalCopy1(u16 glyphId, bool32 isJapanese);
@@ -28,9 +26,12 @@ static void SpriteCB_TextCursor(struct Sprite *sprite);
 
 COMMON_DATA TextFlags gTextFlags = {0};
 
-static const u8 sDownArrowTiles[]    = INCBIN_U8("graphics/fonts/down_arrows.4bpp");
-static const u8 sDoubleArrowTiles1[] = INCBIN_U8("graphics/fonts/down_arrow_3.4bpp");
-static const u8 sDoubleArrowTiles2[] = INCBIN_U8("graphics/fonts/down_arrow_4.4bpp");
+static const u8 sDownArrowTiles[]         = INCBIN_U8("graphics/fonts/down_arrow.4bpp");
+static const u8 sDarkDownArrowTiles[]     = INCBIN_U8("graphics/fonts/down_arrow_RS.4bpp");
+static const u8 sTinyArrowTiles[]         = INCBIN_U8("graphics/fonts/down_arrow_2.4bpp");
+static const u8 sTinyDarkDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow_RS_2.4bpp");
+static const u8 sDoubleArrowTiles1[]       = INCBIN_U8("graphics/fonts/down_arrow_3.4bpp");
+static const u8 sDoubleArrowTiles2[]       = INCBIN_U8("graphics/fonts/down_arrow_4.4bpp");
 
 static const u8 sDownArrowYCoords[]           = { 0, 16, 32, 16 };
 static const u8 sWindowVerticalScrollSpeeds[] = {
@@ -496,7 +497,7 @@ void TextPrinterDrawDownArrow(struct TextPrinter *textPrinter)
                     arrowTiles = sDownArrowTiles;
                     break;
                 case 1:
-                    arrowTiles = &sDownArrowTiles[DARK_DOWN_ARROW_OFFSET];
+                    arrowTiles = sDarkDownArrowTiles;
                     break;
             }
 
@@ -604,7 +605,7 @@ void DrawDownArrow(u8 windowId, u16 x, u16 y, u8 bgColor, bool8 drawArrow, u8 *c
                     arrowTiles = sDownArrowTiles;
                     break;
                 case 1:
-                    arrowTiles = &sDownArrowTiles[DARK_DOWN_ARROW_OFFSET];
+                    arrowTiles = sDarkDownArrowTiles;
                     break;
             }
 
