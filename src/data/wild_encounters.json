@@ -6291,8 +6291,8 @@
             "encounter_rate": 2,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6311,13 +6311,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6326,28 +6326,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6360,8 +6360,8 @@
             "encounter_rate": 2,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6380,13 +6380,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6395,28 +6395,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6429,8 +6429,8 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6449,13 +6449,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6464,28 +6464,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6498,8 +6498,8 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6518,13 +6518,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6533,28 +6533,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6567,8 +6567,8 @@
             "encounter_rate": 6,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6587,13 +6587,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6602,28 +6602,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6636,8 +6636,8 @@
             "encounter_rate": 6,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6656,13 +6656,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6671,28 +6671,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6705,8 +6705,8 @@
             "encounter_rate": 8,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6725,13 +6725,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6740,28 +6740,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 28,
-                "max_level": 28,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
-              },
-              {
-                "min_level": 24,
-                "max_level": 24,
-                "species": "SPECIES_MISDREAVUS"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_CUBONE"
-              },
-              {
-                "min_level": 26,
-                "max_level": 26,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
                 "min_level": 30,
                 "max_level": 30,
+                "species": "SPECIES_CUBONE"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6774,8 +6774,8 @@
             "encounter_rate": 8,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6794,13 +6794,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6809,28 +6809,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 28,
-                "max_level": 28,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
-              },
-              {
-                "min_level": 24,
-                "max_level": 24,
-                "species": "SPECIES_MISDREAVUS"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_CUBONE"
-              },
-              {
-                "min_level": 26,
-                "max_level": 26,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
                 "min_level": 30,
                 "max_level": 30,
+                "species": "SPECIES_CUBONE"
+              },
+              {
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 31,
+                "max_level": 31,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6843,8 +6843,8 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6863,13 +6863,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6878,28 +6878,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 33,
+                "max_level": 33,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 33,
+                "max_level": 33,
                 "species": "SPECIES_CUBONE"
               }
             ]
@@ -6912,8 +6912,8 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 25,
+                "max_level": 25,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6932,13 +6932,13 @@
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GASTLY"
               },
               {
@@ -6947,28 +6947,28 @@
                 "species": "SPECIES_HAUNTER"
               },
               {
-                "min_level": 23,
-                "max_level": 23,
+                "min_level": 27,
+                "max_level": 27,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 33,
+                "max_level": 33,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_MISDREAVUS"
               },
               {
-                "min_level": 26,
-                "max_level": 26,
+                "min_level": 33,
+                "max_level": 33,
                 "species": "SPECIES_CUBONE"
               }
             ]

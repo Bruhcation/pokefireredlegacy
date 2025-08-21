@@ -8706,7 +8706,7 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .lvl = 11,
         .species = SPECIES_SLUGMA,
         .heldItem = ITEM_NONE,
-        .moves = {MOVE_NONE, MOVE_POUND, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_SMOG, MOVE_POUND, MOVE_NONE, MOVE_NONE},
     },
     {
         .iv = TRAINER_PARTY_IVS(20, 10, 20, 0, 20, 20),
