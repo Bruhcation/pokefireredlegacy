@@ -8,6 +8,10 @@ PalletTown_RivalsHouse_Text_HeardYouBattledRival::
     .string "a battle against {RIVAL}.\p"
     .string "I wish I'd seen that!$"
 
+PalletTown_RivalsHouse_Text_ForgotTownMap::
+    .string "DAISY: Oh {PLAYER},\n"
+    .string "I forgot to give you this!$"
+
 PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp::
     .string "Grandpa asked you to run an\n"
     .string "errand?\p"

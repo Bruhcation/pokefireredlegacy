@@ -26,7 +26,19 @@ static const struct TrainerMon sParty_AquaLeader[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMon sParty_AquaGruntM[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMon sParty_AquaGruntF[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMon sParty_RSRuinManiac[] = {DUMMY_TRAINER_MON};
-static const struct TrainerMon sParty_Interviewer[] = {DUMMY_TRAINER_MON};
+static const struct TrainerMon sParty_Interviewer[] = {
+    {
+        .iv = 0,
+        .lvl = 8,
+        .species = SPECIES_RATTATA,
+    },
+    {
+        .iv = 0,
+        .lvl = 8,
+        .species = SPECIES_PIDGEY,
+    },    
+
+};
 static const struct TrainerMon sParty_RSTuberF[] = {DUMMY_TRAINER_STARMIE};
 static const struct TrainerMon sParty_RSTuberM[] = {DUMMY_TRAINER_STARMIE};
 static const struct TrainerMon sParty_RSCooltrainerM[] = {DUMMY_TRAINER_MON_IV};
