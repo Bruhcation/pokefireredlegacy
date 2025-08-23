@@ -128,6 +128,14 @@ Route8_Text_EliRematchIntro::
 Route8_Text_AnneRematchIntro::
 	.string "ANNE: Our twin power powered up!$"
 
+Route1_Text_EliRematchIntro::
+	.string "ZOEY: Our twin power became even\n"
+	.string "better!$"
+
+Route1_Text_AnneRematchIntro::
+	.string "MIRA: Our twin power powered up!$"
+
+
 Route9_Text_AliciaRematchIntro::
 	.string "We're to battle again?\n"
 	.string "This time, you're mine!$"
