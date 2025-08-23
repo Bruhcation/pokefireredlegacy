@@ -4,7 +4,7 @@ Route6_NorthEntrance_MapScripts::
 
 Route6_NorthEntrance_EventScript_Guard::
 	msgbox Route6_NorthEntrance_Text_HiHowsItGoing, MSGBOX_NPC
-	goto_if_set FLAG_GUARD_TEA, Route6_NorthEntrance_EventScript_GiveTeaFight
+	goto_if_set FLAG_GUARD_TEA, Route6_NorthEntrance_EventScript_GiveTeaFightPre
 	goto_if_set FLAG_IS_CHAMPION, Route6_NorthEntrance_EventScript_Rematch
 	end
 
@@ -53,6 +53,10 @@ Route6_NorthEntrance_EventScript_GiveTeaFight::
 	removeitem ITEM_TEA
 	goto Route6_NorthEntrance_EventScript_GuardDrinkFightTea
 	end
+
+Route6_NorthEntrance_EventScript_GiveTeaFightPre::
+	goto_if_set FLAG_GOT_TEA, Route6_NorthEntrance_EventScript_GiveTeaFight
+	return
 
 Route6_NorthEntrance_EventScript_GuardDrinkFightTea::
 	msgbox Route5_SouthEntrance_Text_ThatFightTeaLooksTasty
