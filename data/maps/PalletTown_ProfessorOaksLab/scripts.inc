@@ -2231,7 +2231,7 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 # 1116 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 0
 # 1117 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_BULBASAUR
+	setvar PLAYER_STARTER_SPECIES, SPECIES_CHIKORITA
 # 1118 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_CHARMANDER
 # 1119 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2493,7 +2493,7 @@ PalletTown_ProfessorOaksLab_Movement_RivalWalksToSquirtle::
 # 1247 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 
 # 1248 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_TOTODILE
+PalletTown_ProfessorOaksLab_Movement_RivalWalksToBulbasaur::
 # 1249 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	walk_down
 # 1250 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2517,9 +2517,9 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 # 1259 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 1
 # 1260 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_SQUIRTLE
+	setvar PLAYER_STARTER_SPECIES, SPECIES_TOTODILE
 # 1261 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CYNDAQUIL
+	setvar RIVAL_STARTER_SPECIES, SPECIES_BULBASAUR
 # 1262 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_ID, LOCALID_BULBASAUR_BALL
 # 1263 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
@@ -2543,7 +2543,7 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 # 1272 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 2
 # 1273 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
-	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_SPECIES, SPECIES_CYNDAQUIL
 # 1274 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
 # 1275 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
