@@ -2,6 +2,7 @@ raw `
 .set LOCALID_GIOVANNI, 3
 .set LOCALID_GRUNT1,   4
 .set LOCALID_GRUNT2,   6
+.set LOCALID_GUY,      7
 
 SilphCo_11F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SilphCo_11F_OnLoad
@@ -77,6 +78,7 @@ SilphCo_11F_EventScript_BattleGiovanni::
 	removeobject LOCALID_GIOVANNI
 	removeobject LOCALID_GRUNT1
 	removeobject LOCALID_GRUNT2
+	addobject LOCALID_GUY
 	fadescreen FADE_FROM_BLACK
 	playbgm MUS_PEWTER, 0
 	setvar VAR_MAP_SCENE_SILPH_CO_11F, 1

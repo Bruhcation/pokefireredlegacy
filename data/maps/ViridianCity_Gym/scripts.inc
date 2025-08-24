@@ -71,9 +71,9 @@ ViridianCity_Gym_EventScript_GiveTM26::
 # 36 "data/maps/ViridianCity_Gym/scripts.pory"
 	msgbox ViridianCity_Gym_Text_ExplainTM26
 # 37 "data/maps/ViridianCity_Gym/scripts.pory"
-	release
+	waitmessage
 # 38 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+	return
 # 39 "data/maps/ViridianCity_Gym/scripts.pory"
 
 # 40 "data/maps/ViridianCity_Gym/scripts.pory"

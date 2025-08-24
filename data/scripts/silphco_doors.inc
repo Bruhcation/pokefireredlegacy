@@ -94,6 +94,15 @@ EventScript_Close6FDoor::
 	setmetatile 6, 16, METATILE_SilphCo_VerticalBarrier_BottomRight, 1
 	return
 
+EventScript_Close6FDoor2::
+	setmetatile 5, 6, METATILE_SilphCo_VerticalBarrier_TopLeft, 1
+	setmetatile 6, 6, METATILE_SilphCo_VerticalBarrier_TopRight, 1
+	setmetatile 5, 7, METATILE_SilphCo_VerticalBarrier_MidLeft, 1
+	setmetatile 6, 7, METATILE_SilphCo_VerticalBarrier_MidRight, 1
+	setmetatile 5, 8, METATILE_SilphCo_VerticalBarrier_BottomLeft, 1
+	setmetatile 6, 8, METATILE_SilphCo_VerticalBarrier_BottomRight, 1
+	return
+
 EventScript_Close7FDoor1::
 	setmetatile 11, 8, METATILE_SilphCo_HorizontalBarrier_TopLeft, 1
 	setmetatile 12, 8, METATILE_SilphCo_HorizontalBarrier_TopRight, 1
@@ -252,6 +261,15 @@ EventScript_Open5FDoor3::
 	setmetatile 19, 13, METATILE_SilphCo_Floor_ShadeFull, 0
 	setmetatile 18, 14, METATILE_SilphCo_Floor_WallLeftCorner, 0
 	setmetatile 19, 14, METATILE_SilphCo_Floor_WallRightCorner, 0
+	return
+
+EventScript_Open6FDoor2::
+	setmetatile 5, 6, METATILE_SilphCo_Wall_LeftEdge, 1
+	setmetatile 6, 6, METATILE_SilphCo_Wall_RightEdge, 1
+	setmetatile 5, 7, METATILE_SilphCo_Floor_ShadeFull, 0
+	setmetatile 6, 7, METATILE_SilphCo_Floor_ShadeFull, 0
+	setmetatile 5, 8, METATILE_SilphCo_Floor_WallLeftCorner, 0
+	setmetatile 6, 8, METATILE_SilphCo_Floor_WallRightCorner, 0
 	return
 
 EventScript_Open6FDoor::
@@ -506,6 +524,14 @@ SilphCo_11F_EventScript_Door::
 	goto EventScript_TryUnlockDoor
 	end
 
+SilphCo_6F_EventScript_Door2::
+	lockall
+	setvar VAR_TEMP_1, 21
+	setvar VAR_0x8004, FLAG_SILPH_6F_DOOR_2
+	goto_if_set FLAG_SILPH_6F_DOOR_2, EventScript_DoorUnlocked
+	goto EventScript_TryUnlockDoor
+	end
+
 EventScript_TryUnlockDoor::
 	goto_if_set FLAG_HIDE_SILPH_CO_5F_CARD_KEY, EventScript_OpenDoor
 	goto EventScript_NeedCardKey
@@ -535,6 +561,7 @@ EventScript_OpenDoor::
 	call_if_eq VAR_TEMP_1, 18, EventScript_Open9FDoor4
 	call_if_eq VAR_TEMP_1, 19, EventScript_Open10FDoor
 	call_if_eq VAR_TEMP_1, 20, EventScript_Open11FDoor
+	call_if_eq VAR_TEMP_1, 21, EventScript_Open6FDoor2
 	waitse
 	playse SE_UNLOCK
 	special DrawWholeMapView

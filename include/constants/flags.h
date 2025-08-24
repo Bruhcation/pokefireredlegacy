@@ -677,7 +677,7 @@
 #define FLAG_SILPH_9F_DOOR_4                             0x28B
 #define FLAG_SILPH_10F_DOOR                              0x28C
 #define FLAG_SILPH_11F_DOOR                              0x28D
-#define FLAG_0x28E                                       0x28E
+#define FLAG_SILPH_6F_DOOR_2                             0x28E
 #define FLAG_0x28F                                       0x28F
 #define FLAG_MET_STICKER_MAN                             0x290
 #define FLAG_PALLET_LADY_NOT_BLOCKING_SIGN               0x291

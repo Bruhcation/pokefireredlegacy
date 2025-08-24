@@ -7,6 +7,7 @@ EventScript_AfterWhiteOutHeal::
 	call_if_set FLAG_DEFEATED_BROCK, EventScript_AfterWhiteOutHealMsg
 	applymovement VAR_LAST_TALKED, Movement_Bow
 	waitmovement 0
+	goto EventScript_PkmnCenterNurse_PlayerTurn
 	fadedefaultbgm
 	releaseall
 	end
@@ -29,6 +30,7 @@ EventScript_AfterWhiteOutMomHeal::
 	msgbox Text_HadQuiteAnExperienceTakeRest
 	call EventScript_OutOfCenterPartyHeal
 	msgbox Text_MomExplainHPGetPotions
+	goto EventScript_PkmnCenterNurse_PlayerTurn
 	fadedefaultbgm
 	releaseall
 	end
