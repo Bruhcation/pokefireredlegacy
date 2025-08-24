@@ -274,6 +274,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SilphCo_6F_EventScript_FloorSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SilphCo_6F_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SilphCo_6F_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SilphCo_6F_EventScript_Door2"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SilphCo_6F_EventScript_Door2"
     }
   ]
 }

@@ -766,6 +766,30 @@ Route8_EventScript_RichRematch::
 	msgbox Route8_Text_RichPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route2_EventScript_Eli::
+	trainerbattle_double TRAINER_INTERVIEWER, Route1_Text_EliIntro, Route1_Text_EliDefeat, Route1_Text_EliNotEnoughMons
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route2_EventScript_EliRematch
+	msgbox Route1_Text_EliPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route2_EventScript_EliRematch::
+	trainerbattle_rematch_double TRAINER_INTERVIEWER, Route1_Text_EliRematchIntro, Route1_Text_EliDefeat, Route1_Text_EliNotEnoughMons
+	msgbox Route1_Text_EliPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route2_EventScript_Anne::
+	trainerbattle_double TRAINER_INTERVIEWER, Route1_Text_AnneIntro, Route1_Text_AnneDefeat, Route1_Text_AnneNotEnoughMons
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route2_EventScript_AnneRematch
+	msgbox Route1_Text_AnnePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route2_EventScript_AnneRematch::
+	trainerbattle_rematch_double TRAINER_INTERVIEWER, Route1_Text_AnneRematchIntro, Route1_Text_AnneDefeat, Route1_Text_AnneNotEnoughMons
+	msgbox Route1_Text_AnnePostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route8_EventScript_Eli::
 	trainerbattle_double TRAINER_TWINS_ELI_ANNE, Route8_Text_EliIntro, Route8_Text_EliDefeat, Route8_Text_EliNotEnoughMons
 	specialvar VAR_RESULT, ShouldTryRematchBattle

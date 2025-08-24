@@ -5,6 +5,7 @@ SilphCo_6F_MapScripts::
 
 SilphCo_6F_OnLoad::
 	call_if_unset FLAG_SILPH_6F_DOOR, EventScript_Close6FDoor
+	call_if_unset FLAG_SILPH_6F_DOOR_2, EventScript_Close6FDoor2
 	end
 
 SilphCo_6F_EventScript_WorkerM2::

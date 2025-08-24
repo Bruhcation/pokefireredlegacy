@@ -179,6 +179,16 @@
       "flag": "FLAG_HIDDEN_ITEM_ROUTE6_RARE_CANDY",
       "quantity": 1,
       "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_CHERI_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_HIDDEN_SURGE_CHERI_BERRY",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

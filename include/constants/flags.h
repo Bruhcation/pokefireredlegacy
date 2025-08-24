@@ -677,7 +677,7 @@
 #define FLAG_SILPH_9F_DOOR_4                             0x28B
 #define FLAG_SILPH_10F_DOOR                              0x28C
 #define FLAG_SILPH_11F_DOOR                              0x28D
-#define FLAG_0x28E                                       0x28E
+#define FLAG_SILPH_6F_DOOR_2                             0x28E
 #define FLAG_0x28F                                       0x28F
 #define FLAG_MET_STICKER_MAN                             0x290
 #define FLAG_PALLET_LADY_NOT_BLOCKING_SIGN               0x291
@@ -1072,8 +1072,8 @@
 #define FLAG_HIDDEN_ITEM_UNUSED_0x28                                       (FLAG_HIDDEN_ITEMS_START +  40)
 #define FLAG_HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE                               (FLAG_HIDDEN_ITEMS_START +  41)
 #define FLAG_HIDDEN_ITEM_ROUTE12_HYPER_POTION                              (FLAG_HIDDEN_ITEMS_START +  42)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x2B                                       (FLAG_HIDDEN_ITEMS_START +  43)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x2C                                       (FLAG_HIDDEN_ITEMS_START +  44)
+#define FLAG_HIDDEN_ITEM_ROUTE1_RARE_CANDY                                 (FLAG_HIDDEN_ITEMS_START +  43)
+#define FLAG_HIDDEN_ITEM_HIDDEN_SURGE_CHERI_BERRY                          (FLAG_HIDDEN_ITEMS_START +  44)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x2D                                       (FLAG_HIDDEN_ITEMS_START +  45)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x2E                                       (FLAG_HIDDEN_ITEMS_START +  46)
 #define FLAG_HIDDEN_ITEM_CELADON_CITY_PP_UP                                (FLAG_HIDDEN_ITEMS_START +  47)

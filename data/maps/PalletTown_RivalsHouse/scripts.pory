@@ -66,16 +66,19 @@ PalletTown_RivalsHouse_EventScript_GroomMon::
 	fadescreen FADE_FROM_BLACK
 	special BufferMonNickname
 	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDone
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_CantGroomEgg::
 	msgbox PalletTown_RivalsHouse_Text_CantGroomAnEgg
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_DeclineGrooming::
 	msgbox PalletTown_RivalsHouse_Text_DontNeedAnyGrooming
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
@@ -94,41 +97,66 @@ PalletTown_RivalsHouse_EventScript_RateMonFriendship::
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipLowest::
 	msgbox PalletTown_RivalsHouse_Text_WhyWouldMonHateYouSoMuch
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipLower::
 	msgbox PalletTown_RivalsHouse_Text_DontLikeWayItGlaresAtYou
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipLow::
 	msgbox PalletTown_RivalsHouse_Text_NotFamiliarWithYouYet
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipMid::
 	msgbox PalletTown_RivalsHouse_Text_ItsWarmingUpToYou
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipHigh::
 	msgbox PalletTown_RivalsHouse_Text_ItsQuiteFriendly
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipHigher::
 	msgbox PalletTown_RivalsHouse_Text_ItLooksVeryHappy
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_MonFriendshipHighest::
 	msgbox PalletTown_RivalsHouse_Text_CouldntLoveYouMore
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
 	release
 	end
 
 PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest::
 	msgbox PalletTown_RivalsHouse_Text_PleaseGiveMonsRest
+	release
+	end
+
+PalletTown_RivalsHouse_EventScript_ForgotTownMap::
+	msgbox PalletTown_RivalsHouse_Text_ForgotTownMap
+	closemessage
+	checkitemspace ITEM_TOWN_MAP
+	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
+	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	removeobject LOCALID_TOWN_MAP
+	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
+	delay 15
+	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
+	waitmovement 0
+	delay 12
+	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_ExplainTownMap
 	release
 	end
 
