@@ -778,11 +778,13 @@ BattleScript_KOFail::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectRazorWind::
-	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn
-	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_TwoTurnMovesSecondTurn
-	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
-	call BattleScriptFirstChargingTurn
-	goto BattleScript_MoveEnd
+	ppreduce
+	goto BattleScript_TwoTurnMovesSecondTurn
+	@jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn
+	@jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING, BattleScript_TwoTurnMovesSecondTurn
+	@setbyte sTWOTURN_STRINGID, B_MSG_TURN1_RAZOR_WIND
+	@call BattleScriptFirstChargingTurn
+	@goto BattleScript_MoveEnd
 
 BattleScript_TwoTurnMovesSecondTurn::
 	attackcanceler
@@ -996,6 +998,9 @@ BattleScript_EffectTransform::
 	attackanimation
 	waitanimation
 	printfromtable gTransformUsedStringIds
+	waitmessage B_WAIT_TIME_LONG
+	setprotectlike
+	printfromtable gProtectLikeUsedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

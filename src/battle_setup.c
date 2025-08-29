@@ -1049,7 +1049,7 @@ u8 getLevelCap(void){
     else if (!FlagGet(FLAG_GYM5CAP))
         nextLeader = TRAINER_LEADER_KOGA;
     else if (!FlagGet(FLAG_GYM6CAP))
-        nextLeader = TRAINER_LEADER_SABRINA;
+        nextLeader = TRAINER_COOLTRAINER_WARREN;
     else if (!(FlagGet(FLAG_DEFEATED_BLAINE) || FlagGet(FLAG_DEFEATED_SABRINA) || FlagGet(FLAG_DEFEATED_ERIKA) || FlagGet(FLAG_DEFEATED_LT_SURGE) || FlagGet(FLAG_DEFEATED_KOGA)))
         nextLeader = TRAINER_LEADER_BLAINE;
     else if (!FlagGet(FLAG_BADGE08_GET))

@@ -133,25 +133,25 @@ static const struct InGameTrade sInGameTrades[] = {
     }, 
     [INGAME_TRADE_ELECTRODE] = 
     {
-        .nickname = _("TRODE"),
-        .species = SPECIES_ELECTRODE,
-        .ivs = {31, 31, 31, 30, 31, 31},
-        .abilityNum = 1,
+        .nickname = _("CHAMPION"),
+        .species = SPECIES_MACHAMP,
+        .ivs = {25, 30, 25, 25, 25, 31},
+        .abilityNum = 0,
         .otId = 50298,
         .conditions = {30, 5, 5, 5, 5},
-        .personality = 0x06341016,
+        .personality = 0x151943d7,
         .heldItem = ITEM_NONE,
         .mailNum = 255,
         .otName = _("CLIFTON"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_GRIMER
+        .requestedSpecies = SPECIES_MUK
     }, 
     [INGAME_TRADE_TANGELA] = 
     {
-        .nickname = _("TANGENY"),
-        .species = SPECIES_DRATINI,
-        .ivs = {22, 17, 25, 16, 23, 20},
+        .nickname = _("DRAGONY"),
+        .species = SPECIES_DRAGONAIR,
+        .ivs = {25, 25, 25, 30, 26, 26},
         .abilityNum = 0,
         .otId = 60042,
         .conditions = {5, 5, 30, 5, 5},
@@ -161,13 +161,13 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("NORMA"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_KOFFING
+        .requestedSpecies = SPECIES_WEEZING
     },
     [INGAME_TRADE_SEEL] = 
     {
         .nickname = _("TED"),
         .species = SPECIES_TAUROS,
-        .ivs = {24, 15, 22, 16, 23, 22},
+        .ivs = {24, 30, 22, 30, 23, 22},
         .abilityNum = 0,
         .otId = 9853,
         .conditions = {5, 5, 5, 5, 30},
@@ -177,7 +177,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("GARETT"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_HOUNDOUR
+        .requestedSpecies = SPECIES_HOUNDOOM
     }
 };
 

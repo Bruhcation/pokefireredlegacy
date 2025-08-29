@@ -19,200 +19,208 @@ ViridianCity_Gym_EventScript_Giovanni::
 # 10 "data/maps/ViridianCity_Gym/scripts.pory"
 	goto_if_unset FLAG_GOT_TM26_FROM_GIOVANNI, ViridianCity_Gym_EventScript_GiveTM26
 # 11 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_GiovanniPostBattle
+	release
 # 12 "data/maps/ViridianCity_Gym/scripts.pory"
-	closemessage
+	end
 # 13 "data/maps/ViridianCity_Gym/scripts.pory"
-	fadescreen FADE_TO_BLACK
+
 # 14 "data/maps/ViridianCity_Gym/scripts.pory"
-	removeobject LOCALID_GIOVANNI
-# 15 "data/maps/ViridianCity_Gym/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 16 "data/maps/ViridianCity_Gym/scripts.pory"
-	release
-# 17 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
-# 18 "data/maps/ViridianCity_Gym/scripts.pory"
-
-# 19 "data/maps/ViridianCity_Gym/scripts.pory"
 ViridianCity_Gym_EventScript_DefeatedGiovanni::
-# 20 "data/maps/ViridianCity_Gym/scripts.pory"
+# 15 "data/maps/ViridianCity_Gym/scripts.pory"
 	famechecker FAMECHECKER_GIOVANNI, 3
-# 21 "data/maps/ViridianCity_Gym/scripts.pory"
+# 16 "data/maps/ViridianCity_Gym/scripts.pory"
 	setflag FLAG_HIDE_MISC_KANTO_ROCKETS
-# 22 "data/maps/ViridianCity_Gym/scripts.pory"
+# 17 "data/maps/ViridianCity_Gym/scripts.pory"
 	setflag FLAG_DEFEATED_LEADER_GIOVANNI
-# 23 "data/maps/ViridianCity_Gym/scripts.pory"
+# 18 "data/maps/ViridianCity_Gym/scripts.pory"
 	setflag FLAG_BADGE08_GET
-# 24 "data/maps/ViridianCity_Gym/scripts.pory"
+# 19 "data/maps/ViridianCity_Gym/scripts.pory"
 	setvar VAR_MAP_SCENE_ROUTE22, 3
-# 25 "data/maps/ViridianCity_Gym/scripts.pory"
+# 20 "data/maps/ViridianCity_Gym/scripts.pory"
 	clearflag FLAG_R23_GUYS
-# 26 "data/maps/ViridianCity_Gym/scripts.pory"
+# 21 "data/maps/ViridianCity_Gym/scripts.pory"
 	set_gym_trainers 8
-# 27 "data/maps/ViridianCity_Gym/scripts.pory"
+# 22 "data/maps/ViridianCity_Gym/scripts.pory"
 	goto ViridianCity_Gym_EventScript_GiveTM26
-# 28 "data/maps/ViridianCity_Gym/scripts.pory"
+# 23 "data/maps/ViridianCity_Gym/scripts.pory"
 	end
-# 29 "data/maps/ViridianCity_Gym/scripts.pory"
+# 24 "data/maps/ViridianCity_Gym/scripts.pory"
 
-# 30 "data/maps/ViridianCity_Gym/scripts.pory"
+# 25 "data/maps/ViridianCity_Gym/scripts.pory"
 ViridianCity_Gym_EventScript_GiveTM26::
-# 31 "data/maps/ViridianCity_Gym/scripts.pory"
+# 26 "data/maps/ViridianCity_Gym/scripts.pory"
 	msgbox ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis
-# 32 "data/maps/ViridianCity_Gym/scripts.pory"
+# 27 "data/maps/ViridianCity_Gym/scripts.pory"
 	checkitemspace ITEM_TM26
-# 33 "data/maps/ViridianCity_Gym/scripts.pory"
+# 28 "data/maps/ViridianCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, ViridianCity_Gym_EventScript_NoRoomForTM26
-# 34 "data/maps/ViridianCity_Gym/scripts.pory"
+# 29 "data/maps/ViridianCity_Gym/scripts.pory"
 	giveitem_msg ViridianCity_Gym_Text_ReceivedTM26FromGiovanni, ITEM_TM26
-# 35 "data/maps/ViridianCity_Gym/scripts.pory"
+# 30 "data/maps/ViridianCity_Gym/scripts.pory"
 	setflag FLAG_GOT_TM26_FROM_GIOVANNI
-# 36 "data/maps/ViridianCity_Gym/scripts.pory"
+# 31 "data/maps/ViridianCity_Gym/scripts.pory"
 	msgbox ViridianCity_Gym_Text_ExplainTM26
+# 32 "data/maps/ViridianCity_Gym/scripts.pory"
+	goto ViridianCity_Gym_EventScript_Leave
+# 33 "data/maps/ViridianCity_Gym/scripts.pory"
+	end
+# 34 "data/maps/ViridianCity_Gym/scripts.pory"
+
+# 35 "data/maps/ViridianCity_Gym/scripts.pory"
+ViridianCity_Gym_EventScript_Leave::
+# 36 "data/maps/ViridianCity_Gym/scripts.pory"
+	msgbox ViridianCity_Gym_Text_GiovanniPostBattle
 # 37 "data/maps/ViridianCity_Gym/scripts.pory"
-	waitmessage
+	closemessage
 # 38 "data/maps/ViridianCity_Gym/scripts.pory"
-	return
+	fadescreen FADE_TO_BLACK
 # 39 "data/maps/ViridianCity_Gym/scripts.pory"
-
+	removeobject LOCALID_GIOVANNI
 # 40 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_NoRoomForTM26::
+	fadescreen FADE_FROM_BLACK
 # 41 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_YouDoNotHaveSpace
+	release
 # 42 "data/maps/ViridianCity_Gym/scripts.pory"
-	release
+	end
 # 43 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 44 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_NoRoomForTM26::
 # 45 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Jason::
+	msgbox ViridianCity_Gym_Text_YouDoNotHaveSpace
 # 46 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_TAMER_JASON, ViridianCity_Gym_Text_JasonIntro, ViridianCity_Gym_Text_JasonDefeat
+	release
 # 47 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_JasonPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 48 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 49 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Jason::
 # 50 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Cole::
+	trainerbattle_single TRAINER_TAMER_JASON, ViridianCity_Gym_Text_JasonIntro, ViridianCity_Gym_Text_JasonDefeat
 # 51 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_TAMER_COLE, ViridianCity_Gym_Text_ColeIntro, ViridianCity_Gym_Text_ColeDefeat
+	msgbox ViridianCity_Gym_Text_JasonPostBattle, MSGBOX_AUTOCLOSE
 # 52 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_ColePostBattle, MSGBOX_AUTOCLOSE
+	end
 # 53 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 54 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Cole::
 # 55 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Atsushi::
+	trainerbattle_single TRAINER_TAMER_COLE, ViridianCity_Gym_Text_ColeIntro, ViridianCity_Gym_Text_ColeDefeat
 # 56 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_ATSUSHI, ViridianCity_Gym_Text_AtsushiIntro, ViridianCity_Gym_Text_AtsushiDefeat
+	msgbox ViridianCity_Gym_Text_ColePostBattle, MSGBOX_AUTOCLOSE
 # 57 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_AtsushiPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 58 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 59 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Atsushi::
 # 60 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Kiyo::
+	trainerbattle_single TRAINER_BLACK_BELT_ATSUSHI, ViridianCity_Gym_Text_AtsushiIntro, ViridianCity_Gym_Text_AtsushiDefeat
 # 61 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_KIYO, ViridianCity_Gym_Text_KiyoIntro, ViridianCity_Gym_Text_KiyoDefeat
+	msgbox ViridianCity_Gym_Text_AtsushiPostBattle, MSGBOX_AUTOCLOSE
 # 62 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 63 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 64 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Kiyo::
 # 65 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Takashi::
+	trainerbattle_single TRAINER_BLACK_BELT_KIYO, ViridianCity_Gym_Text_KiyoIntro, ViridianCity_Gym_Text_KiyoDefeat
 # 66 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_TAKASHI, ViridianCity_Gym_Text_TakashiIntro, ViridianCity_Gym_Text_TakashiDefeat
+	msgbox ViridianCity_Gym_Text_KiyoPostBattle, MSGBOX_AUTOCLOSE
 # 67 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_TakashiPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 68 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 69 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Takashi::
 # 70 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Samuel::
+	trainerbattle_single TRAINER_BLACK_BELT_TAKASHI, ViridianCity_Gym_Text_TakashiIntro, ViridianCity_Gym_Text_TakashiDefeat
 # 71 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_SAMUEL, ViridianCity_Gym_Text_SamuelIntro, ViridianCity_Gym_Text_SamuelDefeat
+	msgbox ViridianCity_Gym_Text_TakashiPostBattle, MSGBOX_AUTOCLOSE
 # 72 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 73 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 74 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Samuel::
 # 75 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Yuji::
+	trainerbattle_single TRAINER_COOLTRAINER_SAMUEL, ViridianCity_Gym_Text_SamuelIntro, ViridianCity_Gym_Text_SamuelDefeat
 # 76 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_YUJI, ViridianCity_Gym_Text_YujiIntro, ViridianCity_Gym_Text_YujiDefeat
+	msgbox ViridianCity_Gym_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
 # 77 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_YujiPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 78 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 79 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Yuji::
 # 80 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_Warren::
+	trainerbattle_single TRAINER_COOLTRAINER_YUJI, ViridianCity_Gym_Text_YujiIntro, ViridianCity_Gym_Text_YujiDefeat
 # 81 "data/maps/ViridianCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_WARREN, ViridianCity_Gym_Text_WarrenIntro, ViridianCity_Gym_Text_WarrenDefeat
+	msgbox ViridianCity_Gym_Text_YujiPostBattle, MSGBOX_AUTOCLOSE
 # 82 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 83 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+
 # 84 "data/maps/ViridianCity_Gym/scripts.pory"
-
+ViridianCity_Gym_EventScript_Warren::
 # 85 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_GymGuy::
+	trainerbattle_single TRAINER_COOLTRAINER_WARREN, ViridianCity_Gym_Text_WarrenIntro, ViridianCity_Gym_Text_WarrenDefeat
 # 86 "data/maps/ViridianCity_Gym/scripts.pory"
-	lock
+	msgbox ViridianCity_Gym_Text_WarrenPostBattle, MSGBOX_AUTOCLOSE
 # 87 "data/maps/ViridianCity_Gym/scripts.pory"
-	faceplayer
+	end
 # 88 "data/maps/ViridianCity_Gym/scripts.pory"
-	goto_if_set FLAG_DEFEATED_LEADER_GIOVANNI, ViridianCity_Gym_EventScript_GymGuyPostVictory
+
 # 89 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_GymGuyAdvice
+ViridianCity_Gym_EventScript_GymGuy::
 # 90 "data/maps/ViridianCity_Gym/scripts.pory"
-	release
+	lock
 # 91 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+	faceplayer
 # 92 "data/maps/ViridianCity_Gym/scripts.pory"
-
+	goto_if_set FLAG_DEFEATED_LEADER_GIOVANNI, ViridianCity_Gym_EventScript_GymGuyPostVictory
 # 93 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_GymGuyPostVictory::
+	msgbox ViridianCity_Gym_Text_GymGuyAdvice
 # 94 "data/maps/ViridianCity_Gym/scripts.pory"
-	famechecker FAMECHECKER_GIOVANNI, 4
-# 95 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_GymGuyPostVictory
-# 96 "data/maps/ViridianCity_Gym/scripts.pory"
 	release
+# 95 "data/maps/ViridianCity_Gym/scripts.pory"
+	end
+# 96 "data/maps/ViridianCity_Gym/scripts.pory"
+
 # 97 "data/maps/ViridianCity_Gym/scripts.pory"
-	end
+ViridianCity_Gym_EventScript_GymGuyPostVictory::
 # 98 "data/maps/ViridianCity_Gym/scripts.pory"
-
+	famechecker FAMECHECKER_GIOVANNI, 4
 # 99 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_GymStatue::
+	msgbox ViridianCity_Gym_Text_GymGuyPostVictory
 # 100 "data/maps/ViridianCity_Gym/scripts.pory"
-	lockall
+	release
 # 101 "data/maps/ViridianCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE08_GET, ViridianCity_Gym_EventScript_GymStatuePostVictory
-# 102 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_GymStatue
-# 103 "data/maps/ViridianCity_Gym/scripts.pory"
-	releaseall
-# 104 "data/maps/ViridianCity_Gym/scripts.pory"
 	end
-# 105 "data/maps/ViridianCity_Gym/scripts.pory"
+# 102 "data/maps/ViridianCity_Gym/scripts.pory"
 
+# 103 "data/maps/ViridianCity_Gym/scripts.pory"
+ViridianCity_Gym_EventScript_GymStatue::
+# 104 "data/maps/ViridianCity_Gym/scripts.pory"
+	lockall
+# 105 "data/maps/ViridianCity_Gym/scripts.pory"
+	goto_if_set FLAG_BADGE08_GET, ViridianCity_Gym_EventScript_GymStatuePostVictory
 # 106 "data/maps/ViridianCity_Gym/scripts.pory"
-ViridianCity_Gym_EventScript_GymStatuePostVictory::
+	msgbox ViridianCity_Gym_Text_GymStatue
 # 107 "data/maps/ViridianCity_Gym/scripts.pory"
-	msgbox ViridianCity_Gym_Text_GymStatuePlayerWon
-# 108 "data/maps/ViridianCity_Gym/scripts.pory"
 	releaseall
+# 108 "data/maps/ViridianCity_Gym/scripts.pory"
+	end
 # 109 "data/maps/ViridianCity_Gym/scripts.pory"
+
+# 110 "data/maps/ViridianCity_Gym/scripts.pory"
+ViridianCity_Gym_EventScript_GymStatuePostVictory::
+# 111 "data/maps/ViridianCity_Gym/scripts.pory"
+	msgbox ViridianCity_Gym_Text_GymStatuePlayerWon
+# 112 "data/maps/ViridianCity_Gym/scripts.pory"
+	releaseall
+# 113 "data/maps/ViridianCity_Gym/scripts.pory"
 	end

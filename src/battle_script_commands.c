@@ -6209,7 +6209,7 @@ static void Cmd_setprotectlike(void)
 
     if (sProtectSuccessRates[gDisableStructs[gBattlerAttacker].protectUses] >= Random() && notLastTurn)
     {
-        if (gBattleMoves[gCurrentMove].effect == EFFECT_PROTECT)
+        if (gBattleMoves[gCurrentMove].effect == EFFECT_PROTECT || gBattleMoves[gCurrentMove].effect == EFFECT_TRANSFORM)   
         {
             gProtectStructs[gBattlerAttacker].protected = 1;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_ITSELF;

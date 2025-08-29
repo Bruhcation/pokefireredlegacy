@@ -149,7 +149,7 @@ PowerPlant_EventScript_Electrode1::
 # 75 "data/maps/PowerPlant/scripts.pory"
 	faceplayer
 # 76 "data/maps/PowerPlant/scripts.pory"
-	setwildbattle SPECIES_ELECTRODE, 34
+	setwildbattle SPECIES_ELECTRODE, 45
 # 77 "data/maps/PowerPlant/scripts.pory"
 	waitse
 # 78 "data/maps/PowerPlant/scripts.pory"
@@ -201,7 +201,7 @@ PowerPlant_EventScript_Electrode2::
 # 101 "data/maps/PowerPlant/scripts.pory"
 	faceplayer
 # 102 "data/maps/PowerPlant/scripts.pory"
-	setwildbattle SPECIES_ELECTRODE, 34
+	setwildbattle SPECIES_ELECTRODE, 45
 # 103 "data/maps/PowerPlant/scripts.pory"
 	waitse
 # 104 "data/maps/PowerPlant/scripts.pory"

@@ -5,7 +5,12 @@ SixIsland_MapScripts::
 
 SixIsland_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_SIX_ISLAND
+	call_if_eq VAR_MAP_SCENE_SIX_ISLAND_POKEMON_CENTER_1F, 1, SixIsland_EventScript_ShowRival
 	end
+
+SixIsland_EventScript_ShowRival::
+	setflag FLAG_FIND_BLUE_LOL
+	return
 
 SixIsland_EventScript_Hiker::
 	msgbox SixIsland_Text_ThatWayToWaterPathRuinValley, MSGBOX_NPC
@@ -14,6 +19,22 @@ SixIsland_EventScript_Hiker::
 SixIsland_EventScript_Boy::
 	msgbox SixIsland_Text_SkyAtNightIsFantastic, MSGBOX_NPC
 	end
+
+SixIsland_EventScript_Boy2::
+	msgbox SixIsland_Text_Blue, MSGBOX_NPC
+	end
+
+SixIsland_EventScript_Boy3::
+	msgbox SixIsland_Text_Blue2, MSGBOX_NPC
+	end
+
+SixIsland_Text_Blue::
+    .string "Hey! Isn't that {RIVAL}\n"
+    .string "in that POKECENTER!$"
+
+SixIsland_Text_Blue2::
+    .string "I heard {RIVAL} used\n"
+    .string "to be the CHAMPION.$"
 
 SixIsland_EventScript_IslandSign::
 	msgbox SixIsland_Text_IslandSign, MSGBOX_SIGN
