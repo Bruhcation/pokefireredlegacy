@@ -125,9 +125,9 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 12,
-      "y": 15,
-      "elevation": 0,
+      "x": 11,
+      "y": 16,
+      "elevation": 3,
       "item": "ITEM_THICK_CLUB",
       "flag": "FLAG_HIDDEN_ITEM_THICK_CLUB",
       "quantity": 1,
