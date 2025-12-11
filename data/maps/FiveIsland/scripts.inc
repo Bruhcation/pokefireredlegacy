@@ -38,3 +38,21 @@ FiveIsland_EventScript_Fisher::
 	msgbox FiveIsland_Text_BeenGettingBusierAroundHere, MSGBOX_NPC
 # 20 "data/maps/FiveIsland/scripts.pory"
 	end
+# 21 "data/maps/FiveIsland/scripts.pory"
+
+# 22 "data/maps/FiveIsland/scripts.pory"
+FiveIsland_EventScript_Omar::
+# 23 "data/maps/FiveIsland/scripts.pory"
+	msgbox FiveIsland_Text_Omar, MSGBOX_NPC
+# 24 "data/maps/FiveIsland/scripts.pory"
+	end
+# 25 "data/maps/FiveIsland/scripts.pory"
+FiveIsland_Text_Omar::
+# 26 "data/maps/FiveIsland/scripts.pory"
+	.string "OMAR likes using POKéMON\n"
+# 27 "data/maps/FiveIsland/scripts.pory"
+	.string "he knows are truly terrible.\p"
+# 28 "data/maps/FiveIsland/scripts.pory"
+	.string "I can't tell if it was\n"
+# 29 "data/maps/FiveIsland/scripts.pory"
+	.string "his choice, or forced on him.$"

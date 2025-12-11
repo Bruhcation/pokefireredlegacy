@@ -67,6 +67,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SevenIsland_EventScript_Scientist",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
+      "x": 3,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SevenIsland_EventScript_Guy",
+      "flag": "FLAG_HIDE_SEVIIGUYS"
     }
   ],
   "warp_events": [

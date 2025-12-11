@@ -36,6 +36,19 @@ VermilionCity_EventScript_Woman::
 	msgbox VermilionCity_Text_GrimerMultipliesInSludge, MSGBOX_NPC
 	end
 
+VermilionCity_EventScript_Scientist::
+	msgbox VermilionCity_Text_Scientist, MSGBOX_NPC
+	end
+
+VermilionCity_Text_Scientist::
+	.string "Some POKéMON from the\n"
+	.string "neighboring Region followed\l"
+	.string "the SS ANNE to VERMILION.\p"
+	.string "Although,\n"
+	.string "we likely won't reach them\l"
+	.string "before the ship departs and\l"
+	.string "the pier closes.$"
+
 VermilionCity_EventScript_OldMan1::
 	lock
 	faceplayer

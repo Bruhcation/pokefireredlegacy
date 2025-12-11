@@ -51,7 +51,7 @@
 #define FLAG_0x024               0x024
 #define FLAG_0x025               0x025
 #define FLAG_0x026               0x026
-#define FLAG_0x027               0x027
+#define FLAG_SHINY_DITTO         0x027
 
 // Hide/show flags
 #define FLAG_HIDE_BULBASAUR_BALL                           0x028

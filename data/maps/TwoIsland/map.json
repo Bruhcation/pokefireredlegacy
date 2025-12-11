@@ -154,6 +154,20 @@
       "y": -4,
       "target_local_id": 1,
       "target_map": "MAP_TWO_ISLAND_CAPE_BRINK"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+      "x": 34,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "TwoIsland_EventScript_Casey",
+      "flag": "FLAG_HIDE_SEVIIGUYS"
     }
   ],
   "warp_events": [

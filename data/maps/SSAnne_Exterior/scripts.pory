@@ -35,13 +35,40 @@ SSAnne_Exterior_ExitSSAnne::
 
 SSAnne_Exterior_EventScript_Meowth::
 	msgbox SSAnne_Deck_Text_Meowth, MSGBOX_SIGN
+	goto_if_unset FLAG_SHINY_DITTO, SSAnne_Exterior_EventScript_Ditto
+	end
+
+SSAnne_Exterior_EventScript_Ditto::
+	playse SE_PIN
+	waitse
+	msgbox SSAnne_Deck_Text_Ditto, MSGBOX_SIGN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	delay 16
+	goto_if_questlog EventScript_ReleaseEnd
+	waitse
+	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SHINY_CREATION
+	setwildbattle SPECIES_DITTO, 40
+	dowildbattle
+	special QuestLog_CutRecording
+	goto SSAnne_Exterior_EventScript_Ditto2
+	end
+
+SSAnne_Exterior_EventScript_Ditto2::
+	msgbox SSAnne_Deck_Text_Meowth, MSGBOX_SIGN
+	setflag FLAG_SHINY_DITTO
+	release
 	end
 
 SSAnne_Deck_Text_Meowth::
-    .string "Sounds like something\n"  
-    .string "is under here,\p"  
+    .string "Sounds like something is under here\n"  
     .string "I should take a look.\p"  
     .string "Oh, it's just a MEOWTH.$"  
+
+SSAnne_Deck_Text_Ditto::
+    .string "Wait, is that a MEW?$"  
 
 SSAnne_Exterior_WalkDown::
 	applymovement OBJ_EVENT_ID_PLAYER, SSAnne_Exterior_Movement_WalkDown

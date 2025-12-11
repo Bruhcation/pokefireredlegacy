@@ -524,3 +524,27 @@ TwoIsland_EventScript_FastCurrentSign::
 	msgbox TwoIsland_Text_DangerFastCurrent, MSGBOX_SIGN
 # 263 "data/maps/TwoIsland/scripts.pory"
 	end
+# 264 "data/maps/TwoIsland/scripts.pory"
+
+# 265 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_EventScript_Casey::
+# 266 "data/maps/TwoIsland/scripts.pory"
+	msgbox TwoIsland_Text_Casey, MSGBOX_NPC
+# 267 "data/maps/TwoIsland/scripts.pory"
+	end
+# 268 "data/maps/TwoIsland/scripts.pory"
+
+# 269 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_Text_Casey::
+# 270 "data/maps/TwoIsland/scripts.pory"
+	.string "Casey brings fury into \n"
+# 271 "data/maps/TwoIsland/scripts.pory"
+	.string "her double battles,\l"
+# 272 "data/maps/TwoIsland/scripts.pory"
+	.string "while also using cute POKéMON\l"
+# 273 "data/maps/TwoIsland/scripts.pory"
+	.string "in a interesting way.\p"
+# 274 "data/maps/TwoIsland/scripts.pory"
+	.string "Perhaps I should work on.\p"
+# 275 "data/maps/TwoIsland/scripts.pory"
+	.string "my Double Battle Skills.$"
