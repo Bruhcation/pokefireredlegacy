@@ -73,84 +73,138 @@ SSAnne_Exterior_EventScript_Meowth::
 # 37 "data/maps/SSAnne_Exterior/scripts.pory"
 	msgbox SSAnne_Deck_Text_Meowth, MSGBOX_SIGN
 # 38 "data/maps/SSAnne_Exterior/scripts.pory"
-	end
+	goto_if_unset FLAG_SHINY_DITTO, SSAnne_Exterior_EventScript_Ditto
 # 39 "data/maps/SSAnne_Exterior/scripts.pory"
-
+	end
 # 40 "data/maps/SSAnne_Exterior/scripts.pory"
-SSAnne_Deck_Text_Meowth::
+
 # 41 "data/maps/SSAnne_Exterior/scripts.pory"
-    .string "Sounds like something\n"  
+SSAnne_Exterior_EventScript_Ditto::
 # 42 "data/maps/SSAnne_Exterior/scripts.pory"
-    .string "is under here,\p"  
+	playse SE_PIN
 # 43 "data/maps/SSAnne_Exterior/scripts.pory"
-    .string "I should take a look.\p"  
+	waitse
 # 44 "data/maps/SSAnne_Exterior/scripts.pory"
-    .string "Oh, it's just a MEOWTH.$"  
+	msgbox SSAnne_Deck_Text_Ditto, MSGBOX_SIGN
 # 45 "data/maps/SSAnne_Exterior/scripts.pory"
-
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 46 "data/maps/SSAnne_Exterior/scripts.pory"
-SSAnne_Exterior_WalkDown::
+	waitmovement 0
 # 47 "data/maps/SSAnne_Exterior/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, SSAnne_Exterior_Movement_WalkDown
+	delay 16
 # 48 "data/maps/SSAnne_Exterior/scripts.pory"
-	waitmovement 0
+	goto_if_questlog EventScript_ReleaseEnd
 # 49 "data/maps/SSAnne_Exterior/scripts.pory"
-	return
+	waitse
 # 50 "data/maps/SSAnne_Exterior/scripts.pory"
-
+	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 # 51 "data/maps/SSAnne_Exterior/scripts.pory"
-SSAnne_Exterior_WalkInPlaceDown::
+	waitmoncry
 # 52 "data/maps/SSAnne_Exterior/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	setflag FLAG_SHINY_CREATION
 # 53 "data/maps/SSAnne_Exterior/scripts.pory"
-	waitmovement 0
+	setwildbattle SPECIES_DITTO, 40
 # 54 "data/maps/SSAnne_Exterior/scripts.pory"
-	return
+	dowildbattle
 # 55 "data/maps/SSAnne_Exterior/scripts.pory"
-
+	special QuestLog_CutRecording
 # 56 "data/maps/SSAnne_Exterior/scripts.pory"
-SSAnne_Exterior_Movement_Exit::
+	goto SSAnne_Exterior_EventScript_Ditto2
 # 57 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
+	end
 # 58 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 59 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 60 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 61 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 62 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 63 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 64 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 65 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_up
-# 66 "data/maps/SSAnne_Exterior/scripts.pory"
-	step_end
-# 67 "data/maps/SSAnne_Exterior/scripts.pory"
 
+# 59 "data/maps/SSAnne_Exterior/scripts.pory"
+SSAnne_Exterior_EventScript_Ditto2::
+# 60 "data/maps/SSAnne_Exterior/scripts.pory"
+	msgbox SSAnne_Deck_Text_Meowth, MSGBOX_SIGN
+# 61 "data/maps/SSAnne_Exterior/scripts.pory"
+	setflag FLAG_SHINY_DITTO
+# 62 "data/maps/SSAnne_Exterior/scripts.pory"
+	release
+# 63 "data/maps/SSAnne_Exterior/scripts.pory"
+	end
+# 64 "data/maps/SSAnne_Exterior/scripts.pory"
+
+# 65 "data/maps/SSAnne_Exterior/scripts.pory"
+SSAnne_Deck_Text_Meowth::
+# 66 "data/maps/SSAnne_Exterior/scripts.pory"
+    .string "Sounds like something is under here\n"  
+# 67 "data/maps/SSAnne_Exterior/scripts.pory"
+    .string "I should take a look.\p"  
 # 68 "data/maps/SSAnne_Exterior/scripts.pory"
-SSAnne_Exterior_Movement_WalkDown::
+    .string "Oh, it's just a MEOWTH.$"  
 # 69 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+
 # 70 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+SSAnne_Deck_Text_Ditto::
 # 71 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+    .string "Wait, is that a MEW?$"  
 # 72 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+
 # 73 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+SSAnne_Exterior_WalkDown::
 # 74 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+	applymovement OBJ_EVENT_ID_PLAYER, SSAnne_Exterior_Movement_WalkDown
 # 75 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+	waitmovement 0
 # 76 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+	return
 # 77 "data/maps/SSAnne_Exterior/scripts.pory"
-	walk_down
+
 # 78 "data/maps/SSAnne_Exterior/scripts.pory"
+SSAnne_Exterior_WalkInPlaceDown::
+# 79 "data/maps/SSAnne_Exterior/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+# 80 "data/maps/SSAnne_Exterior/scripts.pory"
+	waitmovement 0
+# 81 "data/maps/SSAnne_Exterior/scripts.pory"
+	return
+# 82 "data/maps/SSAnne_Exterior/scripts.pory"
+
+# 83 "data/maps/SSAnne_Exterior/scripts.pory"
+SSAnne_Exterior_Movement_Exit::
+# 84 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 85 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 86 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 87 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 88 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 89 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 90 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 91 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 92 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_up
+# 93 "data/maps/SSAnne_Exterior/scripts.pory"
+	step_end
+# 94 "data/maps/SSAnne_Exterior/scripts.pory"
+
+# 95 "data/maps/SSAnne_Exterior/scripts.pory"
+SSAnne_Exterior_Movement_WalkDown::
+# 96 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 97 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 98 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 99 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 100 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 101 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 102 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 103 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 104 "data/maps/SSAnne_Exterior/scripts.pory"
+	walk_down
+# 105 "data/maps/SSAnne_Exterior/scripts.pory"
 	step_end

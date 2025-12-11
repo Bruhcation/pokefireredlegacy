@@ -792,3 +792,25 @@ ThreeIsland_EventScript_Biker6::
 	msgbox ThreeIsland_Text_IslandBelongsToUs, MSGBOX_NPC
 # 397 "data/maps/ThreeIsland/scripts.pory"
 	end
+# 398 "data/maps/ThreeIsland/scripts.pory"
+
+# 399 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_Cruel::
+# 400 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Cruel, MSGBOX_NPC
+# 401 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 402 "data/maps/ThreeIsland/scripts.pory"
+
+# 403 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Text_Cruel::
+# 404 "data/maps/ThreeIsland/scripts.pory"
+	.string "The CRUEL KING is really\n"
+# 405 "data/maps/ThreeIsland/scripts.pory"
+	.string "just an edgy acting child.\p"
+# 406 "data/maps/ThreeIsland/scripts.pory"
+	.string "Perhaps he is like this\n"
+# 407 "data/maps/ThreeIsland/scripts.pory"
+	.string "because of the time he\l"
+# 408 "data/maps/ThreeIsland/scripts.pory"
+	.string "spends in the Berry Forest.$"

@@ -116,5 +116,16 @@ OneIsland_EventScript_Giovanni::
 	fadescreen FADE_FROM_BLACK
 	end
 
+OneIsland_EventScript_Samal::
+	msgbox OneIsland_Text_Samal, MSGBOX_NPC
+	end
+
+OneIsland_Text_Samal::
+	.string "For a child, SAMAL really\n"
+	.string "likes intense workouts with\l"
+	.string "his POKéMON like a bodybuilder.\p"
+	.string "Guess it takes a lot\n"
+	.string "to be a SIGMA CHAMPION.$"
+
 
 `

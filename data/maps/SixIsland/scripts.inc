@@ -75,8 +75,28 @@ SixIsland_Text_Blue2::
 # 38 "data/maps/SixIsland/scripts.pory"
 
 # 39 "data/maps/SixIsland/scripts.pory"
-SixIsland_EventScript_IslandSign::
+SixIsland_EventScript_Speedy::
 # 40 "data/maps/SixIsland/scripts.pory"
-	msgbox SixIsland_Text_IslandSign, MSGBOX_SIGN
+	msgbox SixIsland_Text_Speedy, MSGBOX_NPC
 # 41 "data/maps/SixIsland/scripts.pory"
+	end
+# 42 "data/maps/SixIsland/scripts.pory"
+
+# 43 "data/maps/SixIsland/scripts.pory"
+SixIsland_Text_Speedy::
+# 44 "data/maps/SixIsland/scripts.pory"
+	.string "Sometimes I think SPEEDY is\n"
+# 45 "data/maps/SixIsland/scripts.pory"
+	.string "just putting on an act.\p"
+# 46 "data/maps/SixIsland/scripts.pory"
+	.string "He may be fast, but not as\n"
+# 47 "data/maps/SixIsland/scripts.pory"
+	.string "crazy as he seems.$"
+# 48 "data/maps/SixIsland/scripts.pory"
+
+# 49 "data/maps/SixIsland/scripts.pory"
+SixIsland_EventScript_IslandSign::
+# 50 "data/maps/SixIsland/scripts.pory"
+	msgbox SixIsland_Text_IslandSign, MSGBOX_SIGN
+# 51 "data/maps/SixIsland/scripts.pory"
 	end

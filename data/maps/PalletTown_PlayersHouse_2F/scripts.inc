@@ -57,50 +57,82 @@ PalletTown_PlayersHouse_2F_EventScript_Sign::
 # 29 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	msgbox PalletTown_PlayersHouse_2F_Text_PressLRForHelp, MSGBOX_SIGN
 # 30 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	end
+	call_if_set FLAG_NUZLOCKE, PalletTown_PlayersHouse_2F_EventScript_SignHardcore
 # 31 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-
+	call_if_set FLAG_HARD, PalletTown_PlayersHouse_2F_EventScript_SignHard
 # 32 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-PalletTown_PlayersHouse_2F_EventScript_PC::
+	call PalletTown_PlayersHouse_2F_EventScript_SignNormal
 # 33 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	goto_if_questlog EventScript_ReleaseEnd
+	end
 # 34 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	lockall
+
 # 35 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	setvar VAR_0x8004, HELPCONTEXT_BEDROOM_PC
+PalletTown_PlayersHouse_2F_EventScript_SignNormal::
 # 36 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special Script_SetHelpContext
+	msgbox PalletTown_PlayersHouse_2F_Text_Normal, MSGBOX_SIGN
 # 37 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	setvar VAR_0x8004, 1
+	end
 # 38 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special AnimatePcTurnOn
+
 # 39 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	playse SE_PC_ON
+PalletTown_PlayersHouse_2F_EventScript_SignHard::
 # 40 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	msgbox Text_PlayerBootedUpPC
+	msgbox PalletTown_PlayersHouse_2F_Text_Hard, MSGBOX_SIGN
 # 41 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special BedroomPC
+	end
 # 42 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	waitstate
+
 # 43 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special SetHelpContextForMap
+PalletTown_PlayersHouse_2F_EventScript_SignHardcore::
 # 44 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	releaseall
+	msgbox PalletTown_PlayersHouse_2F_Text_Hardcore, MSGBOX_SIGN
 # 45 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	end
 # 46 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 
 # 47 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
+
 # 48 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	setvar VAR_0x8004, 1
+PalletTown_PlayersHouse_2F_EventScript_PC::
 # 49 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	playse SE_PC_OFF
+	goto_if_questlog EventScript_ReleaseEnd
 # 50 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special AnimatePcTurnOff
+	lockall
 # 51 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special SetHelpContextForMap
+	setvar VAR_0x8004, HELPCONTEXT_BEDROOM_PC
 # 52 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	releaseall
+	special Script_SetHelpContext
 # 53 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	setvar VAR_0x8004, 1
+# 54 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special AnimatePcTurnOn
+# 55 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	playse SE_PC_ON
+# 56 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	msgbox Text_PlayerBootedUpPC
+# 57 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special BedroomPC
+# 58 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	waitstate
+# 59 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special SetHelpContextForMap
+# 60 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	releaseall
+# 61 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	end
+# 62 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+
+# 63 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
+# 64 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	setvar VAR_0x8004, 1
+# 65 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	playse SE_PC_OFF
+# 66 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special AnimatePcTurnOff
+# 67 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special SetHelpContextForMap
+# 68 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	releaseall
+# 69 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	end

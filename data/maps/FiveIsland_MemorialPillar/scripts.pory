@@ -301,6 +301,17 @@ FiveIsland_MemorialPillar_EventScript_CelebiQuest3::
 	release
 	end
 
+FiveIsland_MemorialPillar_EventScript_Frog::
+	msgbox FiveIsland_MemorialPillar_Text_Frog, MSGBOX_NPC
+	release
+	end
+
+FiveIsland_MemorialPillar_Text_Frog::
+	.string "I'm making a memorial for\n"
+	.string "my POLIWHIRI, he was so\l"
+	.string "bubbly and froggy!\p"
+	.string "I miss CHARILE so much!$"
+
 FiveIsland_MemorialPillar_Text_CelebiQuest::
 	.string "Once a lonely ONIX pined\n"
     .string "for a friend to join him\l"

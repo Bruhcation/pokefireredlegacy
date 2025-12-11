@@ -13,8 +13,12 @@ VermilionCity_House2_Text_ThisIsNoMon::
 	.string "to me!$"
 
 VermilionCity_House2_Text_ThankYou::
-	.string "Thank you!$"
+	.string "Thank you!\p"
+	.string "I heard someone say DUX may\n"
+	.string "learn a special move soon.$"
 
 VermilionCity_House2_Text_HowIsMyOldMon::
 	.string "How is my old {STR_VAR_2}?\p"
-	.string "My {STR_VAR_1} is doing great!$"
+	.string "My {STR_VAR_1} is doing great!\p"
+	.string "I heard someone say DUX may\n"
+	.string "learn a special move soon.$"

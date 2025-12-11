@@ -165,4 +165,14 @@ FourIsland_EventScript_IslandSign::
 FourIsland_EventScript_LoreleisHouseSign::
 	msgbox FourIsland_Text_LoreleisHouse, MSGBOX_SIGN
 	end
+
+FourIsland_EventScript_JJ::
+	msgbox FourIsland_Text_JJ, MSGBOX_SIGN
+	end
+
+FourIsland_Text_JJ::
+	.string "JJ treats his Fresh Water,\n"
+	.string "like it is something PRIME.\p"
+	.string "He sings an unbearable tune\n"
+	.string "the entire time with it.$"
 `

@@ -332,3 +332,23 @@ FourIsland_EventScript_LoreleisHouseSign::
 	msgbox FourIsland_Text_LoreleisHouse, MSGBOX_SIGN
 # 167 "data/maps/FourIsland/scripts.pory"
 	end
+# 168 "data/maps/FourIsland/scripts.pory"
+
+# 169 "data/maps/FourIsland/scripts.pory"
+FourIsland_EventScript_JJ::
+# 170 "data/maps/FourIsland/scripts.pory"
+	msgbox FourIsland_Text_JJ, MSGBOX_SIGN
+# 171 "data/maps/FourIsland/scripts.pory"
+	end
+# 172 "data/maps/FourIsland/scripts.pory"
+
+# 173 "data/maps/FourIsland/scripts.pory"
+FourIsland_Text_JJ::
+# 174 "data/maps/FourIsland/scripts.pory"
+	.string "JJ treats his Fresh Water,\n"
+# 175 "data/maps/FourIsland/scripts.pory"
+	.string "like it is something PRIME.\p"
+# 176 "data/maps/FourIsland/scripts.pory"
+	.string "He sings an unbearable tune\n"
+# 177 "data/maps/FourIsland/scripts.pory"
+	.string "the entire time with it.$"

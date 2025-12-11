@@ -1294,6 +1294,7 @@ VermilionCity_PokemonCenter_1F_EventScript_VSSeekerWoman::
 	end
 
 VermilionCity_PokemonCenter_1F_EventScript_ExplainVSSeeker::
+	call_if_unset FLAG_GOT_VS_SEEKER, VermilionCity_PokemonCenter_1F_EventScript_AmongUs
 	msgbox VermilionCity_PokemonCenter_1F_Text_ExplainVSSeeker
 	release
 	end
@@ -1304,6 +1305,7 @@ VermilionCity_PokemonCenter_1F_EventScript_ExplainVSSeeker::
 VermilionCity_PokemonCenter_1F_EventScript_UpgradeVSSeeker::
 	lock
 	faceplayer
+	call_if_unset FLAG_GOT_VS_SEEKER, VermilionCity_PokemonCenter_1F_EventScript_AmongUs
 	msgbox VermilionCity_PokemonCenter_1F_Text_Upgrade
 	setflag FLAG_VS_SEEKER_UPGRADE
 	playfanfare MUS_OBTAIN_KEY_ITEM
@@ -1315,6 +1317,14 @@ VermilionCity_PokemonCenter_1F_EventScript_UpgradeVSSeeker::
 	msgbox VermilionCity_PokemonCenter_1F_Text_ExplainUpgrade
 	release
 	end
+
+VermilionCity_PokemonCenter_1F_EventScript_AmongUs::
+	msgbox VermilionCity_PokemonCenter_1F_Text_UrgeToBattleSomeoneAgain
+	setflag FLAG_GOT_VS_SEEKER
+	giveitem ITEM_VS_SEEKER
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	msgbox VermilionCity_PokemonCenter_1F_Text_UseDeviceForRematches
+	return
 
 
 Std_PutItemAway::
