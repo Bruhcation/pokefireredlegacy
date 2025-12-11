@@ -9194,7 +9194,7 @@ static const struct TrainerMon sParty_RivalSilphBulbasaur[] = {
     {
         .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
         .lvl = 46,
-        .species = SPECIES_SCEPTILE
+        .species = SPECIES_SCEPTILE,
         .moves = {MOVE_GIGA_DRAIN, MOVE_LEAF_BLADE, MOVE_EXTREME_SPEED, MOVE_GROWTH},
     },
 };
@@ -9306,7 +9306,7 @@ static const struct TrainerMon sParty_RivalRoute22LateBulbasaur[] = {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
         .lvl = 55,
         .species = SPECIES_SCEPTILE,
-        .moves = {MOVE_LEAF_BLADE, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_EXTREME_SPEED,
+        .moves = {MOVE_LEAF_BLADE, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_EXTREME_SPEED},
     },
 };
 
