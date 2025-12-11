@@ -18,4 +18,13 @@ FiveIsland_EventScript_BugCatcher::
 FiveIsland_EventScript_Fisher::
 	msgbox FiveIsland_Text_BeenGettingBusierAroundHere, MSGBOX_NPC
 	end
+
+FiveIsland_EventScript_Omar::
+	msgbox FiveIsland_Text_Omar, MSGBOX_NPC
+	end
+FiveIsland_Text_Omar::
+	.string "OMAR likes using POKéMON\n"
+	.string "he knows are truly terrible.\p"
+	.string "I can't tell if it was\n"
+	.string "his choice, or forced on him.$"
 `

@@ -36,6 +36,16 @@ SixIsland_Text_Blue2::
     .string "I heard {RIVAL} used\n"
     .string "to be the CHAMPION.$"
 
+SixIsland_EventScript_Speedy::
+	msgbox SixIsland_Text_Speedy, MSGBOX_NPC
+	end
+
+SixIsland_Text_Speedy::
+	.string "Sometimes I think SPEEDY is\n"
+	.string "just putting on an act.\p"
+	.string "He may be fast, but not as\n"
+	.string "crazy as he seems.$"
+
 SixIsland_EventScript_IslandSign::
 	msgbox SixIsland_Text_IslandSign, MSGBOX_SIGN
 	end

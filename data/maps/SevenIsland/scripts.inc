@@ -38,3 +38,25 @@ SevenIsland_EventScript_Scientist::
 	msgbox SevenIsland_Text_IslandVirtuallyUntouched, MSGBOX_NPC
 # 20 "data/maps/SevenIsland/scripts.pory"
 	end
+# 21 "data/maps/SevenIsland/scripts.pory"
+
+# 22 "data/maps/SevenIsland/scripts.pory"
+SevenIsland_EventScript_Guy::
+# 23 "data/maps/SevenIsland/scripts.pory"
+	msgbox SevenIsland_Text_Guy, MSGBOX_NPC
+# 24 "data/maps/SevenIsland/scripts.pory"
+	end
+# 25 "data/maps/SevenIsland/scripts.pory"
+
+# 26 "data/maps/SevenIsland/scripts.pory"
+SevenIsland_Text_Guy::
+# 27 "data/maps/SevenIsland/scripts.pory"
+	.string "ARMSTRONG is pretty invincible.\p"
+# 28 "data/maps/SevenIsland/scripts.pory"
+	.string "I battled him but could not\n"
+# 29 "data/maps/SevenIsland/scripts.pory"
+	.string "hurt his POKéMON at all.\p"
+# 30 "data/maps/SevenIsland/scripts.pory"
+	.string "Training in the TANOBY RUINS\n"
+# 31 "data/maps/SevenIsland/scripts.pory"
+	.string "made him the man he is.$"

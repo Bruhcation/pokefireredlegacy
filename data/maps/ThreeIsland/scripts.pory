@@ -395,4 +395,15 @@ ThreeIsland_EventScript_IslandSign::
 ThreeIsland_EventScript_Biker6::
 	msgbox ThreeIsland_Text_IslandBelongsToUs, MSGBOX_NPC
 	end
+
+ThreeIsland_EventScript_Cruel::
+	msgbox ThreeIsland_Text_Cruel, MSGBOX_NPC
+	end
+
+ThreeIsland_Text_Cruel::
+	.string "The CRUEL KING is really\n"
+	.string "just an edgy acting child.\p"
+	.string "Perhaps he is like this\n"
+	.string "because of the time he\l"
+	.string "spends in the Berry Forest.$"
 `

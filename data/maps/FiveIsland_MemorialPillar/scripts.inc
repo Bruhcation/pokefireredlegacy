@@ -605,90 +605,112 @@ FiveIsland_MemorialPillar_EventScript_CelebiQuest3::
 # 303 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 
 # 304 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-FiveIsland_MemorialPillar_Text_CelebiQuest::
+FiveIsland_MemorialPillar_EventScript_Frog::
 # 305 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "Once a lonely ONIX pined\n"
+	msgbox FiveIsland_MemorialPillar_Text_Frog, MSGBOX_NPC
 # 306 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "for a friend to join him\l"
+	release
 # 307 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "by his side.\p"
+	end
 # 308 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "Then SQUIRTLE swam unto his shore\n"
+
 # 309 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "and forged a bond forevermore.\p"
+FiveIsland_MemorialPillar_Text_Frog::
 # 310 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "To the FOREST of BERRIES\n"
+	.string "I'm making a memorial for\n"
 # 311 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "they made their way\l"
+	.string "my POLIWHIRI, he was so\l"
 # 312 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "and found more friends\l"
+	.string "bubbly and froggy!\p"
 # 313 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "with whom to play…\p"
+	.string "I miss CHARILE so much!$"
 # 314 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "MEOWTH, NATU, LARVITAR,\n"
+
 # 315 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "DELIBIRD and CHARMANDER.\p"
+FiveIsland_MemorialPillar_Text_CelebiQuest::
 # 316 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "But then time fell upon the eve…\n"
+	.string "Once a lonely ONIX pined\n"
 # 317 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "With regret, they all did leave.\p"
+    .string "for a friend to join him\l"
 # 318 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "LARVITAR left for the\n"
+    .string "by his side.\p"
 # 319 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "canyon's peak…\p"
+    .string "Then SQUIRTLE swam unto his shore\n"
 # 320 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "MEOWTH headed to the\n"
+    .string "and forged a bond forevermore.\p"
 # 321 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "golden beach…\p"
+    .string "To the FOREST of BERRIES\n"
 # 322 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "CHARMANDER to the mountain\n"
+    .string "they made their way\l"
 # 323 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "of embers…\p"
+    .string "and found more friends\l"
 # 324 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "DELIBIRD down the ice cellar…\p"
+    .string "with whom to play…\p"
 # 325 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "NATU to its puzzled hole…\p"
+	.string "MEOWTH, NATU, LARVITAR,\n"
 # 326 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "SQUIRTLE beneath the fallen waves…\p"
+    .string "DELIBIRD and CHARMANDER.\p"
 # 327 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "And ONIX to its island home,\n"
+	.string "But then time fell upon the eve…\n"
 # 328 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "once again left all alone.\p"
+	.string "With regret, they all did leave.\p"
 # 329 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "Flowers, rocks, and One toe marks,\n"
+	.string "LARVITAR left for the\n"
 # 330 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "all decorate their homes.$"
+	.string "canyon's peak…\p"
 # 331 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "Should these friends again convene,\n"
+	.string "MEOWTH headed to the\n"
 # 332 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "they'll be welcomed by\l"
+	.string "golden beach…\p"
 # 333 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	.string "the fey of green.$"
+	.string "CHARMANDER to the mountain\n"
 # 334 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
+	.string "of embers…\p"
 # 335 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-FiveIsland_MemorialPillar_Text_CelebiQuest2::
+	.string "DELIBIRD down the ice cellar…\p"
 # 336 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "Lululalala!$"
+	.string "NATU to its puzzled hole…\p"
 # 337 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
+	.string "SQUIRTLE beneath the fallen waves…\p"
 # 338 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-FiveIsland_MemorialPillar_Text_CelebiQuest3::
+	.string "And ONIX to its island home,\n"
 # 339 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-    .string "What was that green thing?$"
+	.string "once again left all alone.\p"
 # 340 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
+	.string "Flowers, rocks, and One toe marks,\n"
 # 341 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-FiveIsland_MemorialPillar_Movement_Celebi::
+	.string "all decorate their homes.$"
 # 342 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
+	.string "Should these friends again convene,\n"
 # 343 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
+	.string "they'll be welcomed by\l"
 # 344 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
+	.string "the fey of green.$"
 # 345 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
+
 # 346 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
+FiveIsland_MemorialPillar_Text_CelebiQuest2::
 # 347 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+    .string "Lululalala!$"
+# 348 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
+# 349 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+FiveIsland_MemorialPillar_Text_CelebiQuest3::
+# 350 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+    .string "What was that green thing?$"
+# 351 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
+# 352 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+FiveIsland_MemorialPillar_Movement_Celebi::
+# 353 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
+# 354 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
+# 355 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
+# 356 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
+# 357 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
+# 358 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	step_end

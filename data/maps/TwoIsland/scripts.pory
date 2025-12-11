@@ -261,4 +261,17 @@ TwoIsland_EventScript_JoyfulGameCornerSign::
 TwoIsland_EventScript_FastCurrentSign::
 	msgbox TwoIsland_Text_DangerFastCurrent, MSGBOX_SIGN
 	end
+
+TwoIsland_EventScript_Casey::
+	msgbox TwoIsland_Text_Casey, MSGBOX_NPC
+	end
+
+TwoIsland_Text_Casey::
+	.string "Casey brings fury into \n"
+	.string "her double battles,\l"
+	.string "while also using cute POKéMON\l"
+	.string "in a interesting way.\p"
+	.string "Perhaps I should work on.\p"
+	.string "my Double Battle Skills.$"
+
 `

@@ -27,9 +27,9 @@ PalletTown_PlayersHouse_2F_EventScript_NES::
 
 PalletTown_PlayersHouse_2F_EventScript_Sign::
 	msgbox PalletTown_PlayersHouse_2F_Text_PressLRForHelp, MSGBOX_SIGN
-	goto_if_set FLAG_NUZLOCKE, PalletTown_PlayersHouse_2F_EventScript_SignHardcore
-	goto_if_set FLAG_HARD, PalletTown_PlayersHouse_2F_EventScript_SignHard
-	goto PalletTown_PlayersHouse_2F_EventScript_SignNormal
+	call_if_set FLAG_NUZLOCKE, PalletTown_PlayersHouse_2F_EventScript_SignHardcore
+	call_if_set FLAG_HARD, PalletTown_PlayersHouse_2F_EventScript_SignHard
+	call PalletTown_PlayersHouse_2F_EventScript_SignNormal
 	end
 
 PalletTown_PlayersHouse_2F_EventScript_SignNormal::
