@@ -1110,6 +1110,10 @@ PalletTown_ProfessorOaksLab_Movement_RivalExit::
 	walk_down
 	step_end
 
+PalletTown_ProfessorOaksLab_EventScript_Updatem::
+	lock
+	end
+
 PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 	lock
 	faceplayer
