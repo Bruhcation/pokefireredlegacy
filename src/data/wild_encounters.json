@@ -10224,8 +10224,8 @@
                 "species": "SPECIES_LEDYBA"
               },
               {
-                "min_level": 58,
-                "max_level": 58,
+                "min_level": 55,
+                "max_level": 55,
                 "species": "SPECIES_HERACROSS"
               },
               {
@@ -14189,13 +14189,78 @@
             "encounter_rate": 21,
             "mons": [
               {
+                "min_level": 54,
+                "max_level": 54,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 54,
+                "max_level": 54,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_SENTRET"
+              },
+              {
+                "min_level": 54,
+                "max_level": 54,
+                "species": "SPECIES_SNUBBULL"
+              },
+              {
+                "min_level": 56,
+                "max_level": 56,
+                "species": "SPECIES_HOPPIP"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_MILTANK"
+              },
+              {
+                "min_level": 56,
+                "max_level": 56,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 56,
+                "max_level": 56,
+                "species": "SPECIES_AIPOM"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_STANTLER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 2,
+            "mons": [
+              {
                 "min_level": 5,
-                "max_level": 20,
+                "max_level": 35,
                 "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 50,
-                "max_level": 60,
+                "max_level": 55,
                 "species": "SPECIES_HOPPIP"
               },
               {
@@ -14212,41 +14277,6 @@
                 "min_level": 35,
                 "max_level": 40,
                 "species": "SPECIES_TENTACRUEL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -14269,8 +14299,8 @@
                 "species": "SPECIES_HORSEA"
               },
               {
-                "min_level": 50,
-                "max_level": 60,
+                "min_level": 55,
+                "max_level": 55,
                 "species": "SPECIES_REMORAID"
               },
               {
@@ -14285,7 +14315,7 @@
               },
               {
                 "min_level": 55,
-                "max_level": 60,
+                "max_level": 55,
                 "species": "SPECIES_QWILFISH"
               },
               {
