@@ -253,4 +253,4 @@ OneIsland_Text_Samal::
 # 127 "data/maps/OneIsland/scripts.pory"
 	.string "Guess it takes a lot\n"
 # 128 "data/maps/OneIsland/scripts.pory"
-	.string "to be a SIGMA CHAMPION.$"
+	.string "to be a SLUGMA CHAMPION.$"
