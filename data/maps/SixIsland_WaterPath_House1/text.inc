@@ -17,6 +17,7 @@ SixIsland_WaterPath_House1_Text_ItsXInchesDeserveReward::
 SixIsland_WaterPath_House1_Text_WantToSeeBiggerOne::
     .string "I want to see a much, much bigger\n"
     .string "HERACROSS than that one.\p"
+    .string "I'll give you something EXTRA!\p"
     .string "Oh, how I adore them, big\n"
     .string "HERACROSS!$"
 

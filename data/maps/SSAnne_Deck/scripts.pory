@@ -20,6 +20,7 @@ SSAnne_Deck_EventScript_Donator::
 	checkitem ITEM_PEARL
 	giveitem ITEM_PEARL
 	setflag FLAG_APART_GAME
+	release
 	end
 
 SSAnne_Deck_EventScript_Donator2::
