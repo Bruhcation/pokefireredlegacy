@@ -48,10 +48,8 @@ TwoIsland_CapeBrink_Text_RematchClairPostBattle::
 TwoIsland_CapeBrink_Text_Caseno::
     .string "Hey! I'm just trying\n"
     .string "to enjoy the view!\p"
-    .string "Your stupid hat is\n"
-    .string "blocking it!\p"
-    .string "Look's like I'll\n"
-    .string "have to battle you!$"
+    .string "Your stupid hat is blocking it!\p"
+    .string "Look's like I'll have to battle you!$"
 
 TwoIsland_CapeBrink_Text_CasenoDefeat::
     .string "I guess the hat\n"
