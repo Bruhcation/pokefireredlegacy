@@ -25,8 +25,8 @@ SevenIsland_EventScript_Guy::
 
 SevenIsland_Text_Guy::
 	.string "ARMSTRONG is pretty invincible.\p"
-	.string "I battled him but could not\n"
-	.string "hurt his POKéMON at all.\p"
+	.string "I battled him and could not\n"
+	.string "hurt his POKéMON at all!\p"
 	.string "Training in the TANOBY RUINS\n"
 	.string "made him the man he is.$"
 
