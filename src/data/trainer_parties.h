@@ -9381,9 +9381,9 @@ static const struct TrainerMon sParty_ChampionFirstSquirtle[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 63,
-        .species = SPECIES_PIDGEOT,
-        .heldItem = ITEM_FOCUS_BAND,
-        .moves = {MOVE_SKY_ATTACK, MOVE_EXTREME_SPEED, MOVE_HYPER_BEAM, MOVE_TOXIC},
+        .species = SPECIES_MACHAMP,
+        .heldItem = ITEM_CHOICE_BAND,  
+        .moves = {MOVE_CROSS_CHOP, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_SUPERPOWER},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9449,17 +9449,17 @@ static const struct TrainerMon sParty_ChampionFirstCharmander[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_MACHAMP,
-        .heldItem = ITEM_CHOICE_BAND,  
-        .moves = {MOVE_CROSS_CHOP, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_SUPERPOWER},
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 62,
         .species = SPECIES_SCIZOR,
         .heldItem = ITEM_CHOICE_BAND,
-        .moves = {MOVE_METEOR_MASH, MOVE_TWINEEDLE, MOVE_BRICK_BREAK, MOVE_DOUBLE_EDGE},
+        .moves = {MOVE_METEOR_MASH, MOVE_TWINEEDLE, MOVE_WING_ATTACK, MOVE_BRICK_BREAK},
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_PIDGEOT,
+        .heldItem = ITEM_FOCUS_BAND,
+        .moves = {MOVE_SKY_ATTACK, MOVE_EXTREME_SPEED, MOVE_HYPER_BEAM, MOVE_TOXIC},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
