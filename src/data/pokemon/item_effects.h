@@ -320,6 +320,10 @@ const u8 sItemEffect_BrickPiece[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
+const u8 sItemEffect_PrismScale[6] = {
+    [4] = ITEM4_EVO_STONE,
+};
+
 static const u8 sItemEffect_CheriBerry[6] = {
     [3] = ITEM3_PARALYSIS,
 };
@@ -481,6 +485,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_DEEP_SEA_SCALE - ITEM_POTION]  = sItemEffect_DeepSeaScale,
     [ITEM_DEEP_SEA_TOOTH - ITEM_POTION]  = sItemEffect_DeepSeaTooth,
     [ITEM_BRICK_PIECE - ITEM_POTION]   = sItemEffect_BrickPiece,
+    [ITEM_PRISM_SCALE - ITEM_POTION]   = sItemEffect_PrismScale,
     [ITEM_POMEG_BERRY - ITEM_POTION] = sItemEffect_PomegBerry,
     [ITEM_KELPSY_BERRY - ITEM_POTION] = sItemEffect_KelpsyBerry,
     [ITEM_QUALOT_BERRY - ITEM_POTION] = sItemEffect_QualotBerry,

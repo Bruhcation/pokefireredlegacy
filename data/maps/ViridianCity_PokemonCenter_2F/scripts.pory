@@ -19,6 +19,56 @@ ViridianCity_PokemonCenter_2F_EventScript_EVCheck::
 	release
 	end
 
+ViridianCity_PokemonCenter_2F_EventScript_Pichu::
+	lock
+	faceplayer
+	goto_if_set FLAG_SURF_PIKACHU, ViridianCity_PokemonCenter_2F_EventScript_PostWhitney
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu
+	waitmessage
+	msgbox ViridianCity_PokemonCenter_2F_Text_Whitney, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ViridianCity_PokemonCenter_2F_EventScript_NoWhitney
+	trainerbattle_single TRAINER_RS_TUBER_F, ViridianCity_PokemonCenter_2F_Text_YesWhitney, ViridianCity_PokemonCenter_2F_Text_WhitneyDefeat, ViridianCity_PokemonCenter_2F_EventScript_Won, NO_MUSIC
+	release
+	end
+
+ViridianCity_PokemonCenter_2F_EventScript_Won::
+	setflag FLAG_SURF_PIKACHU
+	goto ViridianCity_PokemonCenter_2F_EventScript_PostWhitney
+	end
+
+ViridianCity_PokemonCenter_2F_EventScript_PostWhitney::
+	setflag FLAG_SURF_PIKACHU
+	goto_if_set FLAG_MYSTERY_GIFT_DONE, ViridianCity_PokemonCenter_2F_EventScript_End
+	goto MysteryEventScript_SurfPichu
+	release
+	end
+
+ViridianCity_PokemonCenter_2F_Text_YesWhitney::
+	.string "Yes! Let's battle!$"
+
+ViridianCity_PokemonCenter_2F_Text_WhitneyDefeat::
+	.string "Thank you!$"
+
+ViridianCity_PokemonCenter_2F_Text_Whitney::
+	.string "Battle me if you want\n"
+	.string "this special POKEMON EGG!$"
+
+ViridianCity_PokemonCenter_2F_EventScript_End::
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu
+	release
+	end
+
+ViridianCity_PokemonCenter_2F_EventScript_NoWhitney::
+	msgbox ViridianCity_PokemonCenter_2F_Text_NoWhitney
+	release
+	end
+
+ViridianCity_PokemonCenter_2F_Text_Pichu::
+	.string "Thank you for Playing\n"
+	.string "This POKEMON Rom hack!$"
+
+ViridianCity_PokemonCenter_2F_Text_NoWhitney::
+	.string "Not ready?$"
 
 @ The below 3 are unused and leftover from RS
 ViridianCity_PokemonCenter_2F_EventScript_Colosseum::

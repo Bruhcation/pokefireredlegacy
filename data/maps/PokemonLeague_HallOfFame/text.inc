@@ -16,8 +16,7 @@ PokemonLeague_HallOfFame_Text_OakCongratulations::
 PokemonLeague_HallOfFame_Text_OakCongratulations2::  
 	.string "OAK: Er-hem!\p"  
 	.string "Congratulations, {PLAYER}!\p"  
-	.string "Welcome back to the\n"  
-	.string "HALL OF FAME!\p"  
+	.string "Welcome back to the HALL OF FAME!\p"  
 	.string "Once again, we celebrate\n"  
 	.string "your triumph as CHAMP!\p"  
 	.string "Your dedication to\n"  

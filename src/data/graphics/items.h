@@ -532,6 +532,9 @@ const u32 gItemIconPalette_Stick[] = INCBIN_U32("graphics/items/icon_palettes/st
 const u32 gItemIcon_BrickPiece[] = INCBIN_U32("graphics/items/icons/brick_piece.4bpp.lz");
 const u32 gItemIconPalette_BrickPiece[] = INCBIN_U32("graphics/items/icon_palettes/brick_piece.gbapal.lz");
 
+const u32 gItemIcon_PrismScale[] = INCBIN_U32("graphics/items/icons/prism_scale.4bpp.lz");
+const u32 gItemIconPalette_PrismScale[] = INCBIN_U32("graphics/items/icon_palettes/prism_scale.gbapal.lz");
+
 const u32 gItemIcon_Scarf[] = INCBIN_U32("graphics/items/icons/scarf.4bpp.lz");
 const u32 gItemIconPalette_RedScarf[] = INCBIN_U32("graphics/items/icon_palettes/red_scarf.gbapal.lz");
 const u32 gItemIconPalette_BlueScarf[] = INCBIN_U32("graphics/items/icon_palettes/blue_scarf.gbapal.lz");

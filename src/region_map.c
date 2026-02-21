@@ -539,6 +539,8 @@ static const u8 sSeviiMapsecs[3][30] = {
         MAPSEC_BERRY_FOREST,
         MAPSEC_THREE_ISLE_PATH,
         MAPSEC_EMBER_SPA,
+        MAPSEC_DOWNSIDE_ROCK,
+        MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE,
         MAPSEC_NONE
     }, 
     [REGIONMAP_SEVII45 - 1] =
@@ -890,6 +892,7 @@ static const u8 sMapFlyDestinations[][3] = {
     [MAPSEC_SIX_ISLAND          - MAPSECS_KANTO] = {MAP(SIX_ISLAND),                            SPAWN_SIX_ISLAND},
     [MAPSEC_KINDLE_ROAD         - MAPSECS_KANTO] = {MAP(ONE_ISLAND_KINDLE_ROAD),                0},
     [MAPSEC_TREASURE_BEACH      - MAPSECS_KANTO] = {MAP(ONE_ISLAND_TREASURE_BEACH),             0},
+    [MAPSEC_DOWNSIDE_ROCK       - MAPSECS_KANTO] = {MAP(DOWNWARD_BEACH),                        0},
     [MAPSEC_CAPE_BRINK          - MAPSECS_KANTO] = {MAP(TWO_ISLAND_CAPE_BRINK),                 0},
     [MAPSEC_BOND_BRIDGE         - MAPSECS_KANTO] = {MAP(THREE_ISLAND_BOND_BRIDGE),              0},
     [MAPSEC_THREE_ISLE_PORT     - MAPSECS_KANTO] = {MAP(THREE_ISLAND_PORT),                     0},
@@ -924,6 +927,7 @@ static const u8 sMapFlyDestinations[][3] = {
     [MAPSEC_ALTERING_CAVE       - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_TANOBY_CHAMBERS     - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_THREE_ISLE_PATH     - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
+    [MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE      - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_TANOBY_KEY          - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
     [MAPSEC_BIRTH_ISLAND        - MAPSECS_KANTO] = {MAP(BIRTH_ISLAND_EXTERIOR),                 0},
     [MAPSEC_MONEAN_CHAMBER      - MAPSECS_KANTO] = {MAP(PALLET_TOWN),                           0},
@@ -3803,8 +3807,7 @@ u8 *GetMapName(u8 *dst0, u16 mapsec, u16 fill)
     u8 *dst;
     u16 i;
     u16 idx;
-    if ((idx = mapsec - MAPSECS_KANTO) <= MAPSEC_SPECIAL_AREA - MAPSECS_KANTO)
-    {
+    if ((idx = mapsec - MAPSECS_KANTO) < MAPSEC_NONE - MAPSECS_KANTO)    {
         if (IsCeladonDeptStoreMapsec(mapsec) == TRUE)
             dst = StringCopy(dst0, sMapsecName_CELADON_DEPT_);
         else

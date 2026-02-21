@@ -48,6 +48,24 @@ SaffronCity_Gym_EventScript_NoRoomForTM04::
 	end
 
 SaffronCity_Gym_EventScript_RematchSabrina::
+	setvar VAR_0x8004, FAMECHECKER_SABRINA
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, SaffronCity_Gym_EventScript_RematchSabrina2
+	msgbox SaffronCity_Gym_Text_SabrinaNoNoRematchBattle
+	release
+	end
+
+SaffronCity_Gym_Text_SabrinaNoNoRematchBattle::
+	.string "My psychic power feels your might.\p"
+	.string "Since our last battle,\n"
+	.string "I've grown stronger!\p"
+	.string "But I'm not ready yet.\p"
+	.string "In the mean time, filling\n"
+	.string "out my entry in your FAMECHECKER\l"
+	.string "could help you adapt to my\l"
+	.string "strengthened psychic powers!$"
+
+SaffronCity_Gym_EventScript_RematchSabrina2::
 	msgbox SaffronCity_Gym_Text_RematchSabrina, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SaffronCity_Gym_EventScript_NoRematchSabrina
 	trainerbattle_single TRAINER_LEADER_SABRINA2, SaffronCity_Gym_Text_RematchYesSabrina, SaffronCity_Gym_Text_RematchSabrinaDefeat, SaffronCity_Gym_EventScript_PostRematchSabrina, NO_MUSIC

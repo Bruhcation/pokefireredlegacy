@@ -160,6 +160,15 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "OneIsland_KindleRoad_EmberSpa_EventScript_SpaHeal"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "0",
+      "script": "OneIsland_EventScript_Reset"
     }
   ],
   "bg_events": [

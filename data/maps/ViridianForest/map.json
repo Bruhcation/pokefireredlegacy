@@ -195,7 +195,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "ViridianForest_EventScript_Hex_Maniac",
-      "flag": "FLAG_HIDE_SEVIIGUYS"
+      "flag": "FLAG_JIRACHI_WISH"
     }
   ],
   "warp_events": [

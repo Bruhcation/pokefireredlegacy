@@ -107,45 +107,45 @@ OneIsland_KindleRoad_EmberSpa_EventScript_SpaHeal::
 # 54 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
 # 55 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_Samal::
+OneIsland_EventScript_Reset::
 # 56 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	lock
+	setvar VAR_TEMP_1, 0
 # 57 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	faceplayer
+	release
 # 58 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	goto_if_set FLAG_SAMAL_DEFEATED, OneIsland_KindleRoad_EmberSpa_EventScript_RematchSamal
+	end
 # 59 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_Samal, MSGBOX_YESNO
+
 # 60 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal
+OneIsland_KindleRoad_EmberSpa_EventScript_Samal::
 # 61 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_SAMAL, OneIsland_KindleRoad_EmberSpa_Text_YesSamal, OneIsland_KindleRoad_EmberSpa_Text_SamalDefeat, OneIsland_KindleRoad_EmberSpa_EventScript_PostSamal, NO_MUSIC
+	lock
 # 62 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	release
+	faceplayer
 # 63 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	end
+	goto_if_set FLAG_SAMAL_DEFEATED, OneIsland_KindleRoad_EmberSpa_EventScript_RematchSamal
 # 64 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_Samal, MSGBOX_YESNO
 # 65 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_PostSamal::
+	goto_if_eq VAR_RESULT, NO, OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal
 # 66 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_SamalPostBattle
+	trainerbattle_single TRAINER_SAMAL, OneIsland_KindleRoad_EmberSpa_Text_YesSamal, OneIsland_KindleRoad_EmberSpa_Text_SamalDefeat, OneIsland_KindleRoad_EmberSpa_EventScript_PostSamal, NO_MUSIC
 # 67 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	setflag FLAG_SAMAL_DEFEATED
-# 68 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	cleartrainerflag TRAINER_SAMAL
-# 69 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	message Text_6Leaders
-# 70 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	release
-# 71 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+# 68 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	end
-# 72 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+# 69 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
-# 73 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_CantRematchSamal::
-# 74 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+# 70 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_EventScript_PostSamal::
+# 71 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	msgbox OneIsland_KindleRoad_EmberSpa_Text_SamalPostBattle
+# 72 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	setflag FLAG_SAMAL_DEFEATED
+# 73 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	cleartrainerflag TRAINER_SAMAL
+# 74 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	message Text_6Leaders
 # 75 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	release
 # 76 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
@@ -153,9 +153,9 @@ OneIsland_KindleRoad_EmberSpa_EventScript_CantRematchSamal::
 # 77 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
 # 78 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal::
+OneIsland_KindleRoad_EmberSpa_EventScript_CantRematchSamal::
 # 79 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_NoSamal
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_SamalPostBattle
 # 80 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	release
 # 81 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
@@ -163,94 +163,104 @@ OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal::
 # 82 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
 # 83 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_RematchSamal::
+OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal::
 # 84 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_RematchSamal, MSGBOX_YESNO
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_NoSamal
 # 85 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal
+	release
 # 86 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_SAMAL, OneIsland_KindleRoad_EmberSpa_Text_YesRematchSamal, OneIsland_KindleRoad_EmberSpa_Text_RematchSamalDefeat, OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal, NO_MUSIC
+	end
 # 87 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	release
+
 # 88 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	end
+OneIsland_KindleRoad_EmberSpa_EventScript_RematchSamal::
 # 89 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_RematchSamal, MSGBOX_YESNO
 # 90 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal::
+	goto_if_eq VAR_RESULT, NO, OneIsland_KindleRoad_EmberSpa_EventScript_NoSamal
 # 91 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_RematchSamalDefeat
+	trainerbattle_single TRAINER_SAMAL, OneIsland_KindleRoad_EmberSpa_Text_YesRematchSamal, OneIsland_KindleRoad_EmberSpa_Text_RematchSamalDefeat, OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal, NO_MUSIC
 # 92 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	cleartrainerflag TRAINER_SAMAL
-# 93 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	release
-# 94 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+# 93 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	end
-# 95 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+# 94 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
+# 95 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal::
 # 96 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_Gym1::
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_RematchSamalDefeat
 # 97 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_M, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
+	cleartrainerflag TRAINER_SAMAL
 # 98 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
+	release
 # 99 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	end
 # 100 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
 # 101 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro::
+OneIsland_KindleRoad_EmberSpa_EventScript_Gym1::
 # 102 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "Hey, you're in SLUGMA's\n"
+	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_M, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
 # 103 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "domain!$"
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 104 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
-# 105 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat::
-# 106 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "I failed you, SLUGMA…$"
-# 107 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
-# 108 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle::
-# 109 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "The MASTER and us are\n"
-# 110 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "big fans of SLUGMA.\l"
-# 111 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "They're as hot as\l"
-# 112 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "ONE ISLAND itself!$"
-# 113 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
-# 114 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_EventScript_Gym2::
-# 115 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_F, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
-# 116 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
-# 117 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	end
+# 105 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+
+# 106 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro::
+# 107 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "Hey, you're in SLUGMA's\n"
+# 108 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "domain!$"
+# 109 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+
+# 110 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat::
+# 111 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "I failed you, SLUGMA…$"
+# 112 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+
+# 113 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle::
+# 114 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "The MASTER and us are\n"
+# 115 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "big fans of SLUGMA.\l"
+# 116 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "They're as hot as\l"
+# 117 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "ONE ISLAND itself!$"
 # 118 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
 # 119 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro::
+OneIsland_KindleRoad_EmberSpa_EventScript_Gym2::
 # 120 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "Have you been to MT. EMBER,\n"
+	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_F, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
 # 121 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "and seen SLUGMA?$"
+	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 # 122 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-
+	end
 # 123 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat::
-# 124 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "SLUGMA would be proud!$"
-# 125 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 
+# 124 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro::
+# 125 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "Have you been to MT. EMBER,\n"
 # 126 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle::
+	.string "and seen SLUGMA?$"
 # 127 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	.string "Our MASTER is a certifed\n"
+
 # 128 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat::
+# 129 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "SLUGMA would be proud!$"
+# 130 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+
+# 131 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle::
+# 132 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
+	.string "Our MASTER is a certifed\n"
+# 133 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	.string "SLUGMA expert!$"

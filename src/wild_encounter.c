@@ -203,6 +203,251 @@ static u16 GetCurrentMapWildMonHeaderId(void)
         if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
             gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
         {
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE1) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE1))
+            {
+                i += VarGet(VAR_ROUTE1);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE2) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE2))
+            {
+                i += VarGet(VAR_ROUTE2);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE3) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE3))
+            {
+                i += VarGet(VAR_ROUTE3);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE4) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE4))
+            {
+                i += VarGet(VAR_ROUTE4);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE5) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE5))
+            {
+                i += VarGet(VAR_ROUTE5);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE6) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE6))
+            {
+                i += VarGet(VAR_ROUTE6);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE7) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE7))
+            {
+                i += VarGet(VAR_ROUTE7);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE8) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE8))
+            {
+                i += VarGet(VAR_ROUTE8);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE9) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE9))
+            {
+                i += VarGet(VAR_ROUTE9);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE10) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE10))
+            {
+                i += VarGet(VAR_ROUTE10);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE11) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE11))
+            {
+                i += VarGet(VAR_ROUTE11);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE12) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE12))
+            {
+                i += VarGet(VAR_ROUTE12);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE13) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE13))
+            {
+                i += VarGet(VAR_ROUTE13);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE14) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE14))
+            {
+                i += VarGet(VAR_ROUTE14);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE15) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE15))
+            {
+                i += VarGet(VAR_ROUTE15);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE16) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE16))
+            {
+                i += VarGet(VAR_ROUTE16);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE17) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE17))
+            {
+                i += VarGet(VAR_ROUTE17);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE18) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE18))
+            {
+                i += VarGet(VAR_ROUTE18);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE19) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE19))
+            {
+                i += VarGet(VAR_ROUTE19);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE20) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE20))
+            {
+                i += VarGet(VAR_ROUTE20);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE21_NORTH) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE21_NORTH))
+            {
+                i += VarGet(VAR_ROUTE21);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE21_SOUTH) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE21_SOUTH))
+            {
+                i += VarGet(VAR_ROUTE211);
+            }
+                if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE22) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE22))
+            {
+                i += VarGet(VAR_ROUTE22);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE24) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE24))
+            {
+                i += VarGet(VAR_ROUTE24);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE25) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE25))
+            {
+                i += VarGet(VAR_ROUTE25);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POWER_PLANT) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POWER_PLANT))
+            {
+                i += VarGet(VAR_POWERPLANT);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DIGLETTS_CAVE_B1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(DIGLETTS_CAVE_B1F))
+            {
+                i += VarGet(VAR_DIGLETTCAVE);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SAFARI_ZONE_CENTER) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SAFARI_ZONE_CENTER))
+            {
+                i += VarGet(VAR_SAFARIZONE);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VICTORY_ROAD_3F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(VICTORY_ROAD_3F))
+            {
+                i += VarGet(VAR_VICTORYROAD);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MT_MOON_1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MT_MOON_1F))
+            {
+                i += VarGet(VAR_MTMOON1F);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MT_MOON_B2F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(MT_MOON_B2F))
+            {
+                i += VarGet(VAR_MTMOONB2F);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROCK_TUNNEL_1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROCK_TUNNEL_1F))
+            {
+                i += VarGet(VAR_ROCK_TUNNEL);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROCK_TUNNEL_B1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROCK_TUNNEL_B1F))
+            {
+                i += VarGet(VAR_ROCK_TUNNEL2);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_1F))
+            {
+                i += VarGet(VAR_SEAFOAM1);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_B1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_1F))
+            {
+                i += VarGet(VAR_SEAFOAM2);
+            }
+                if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_B2F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_B2F))
+            {
+                i += VarGet(VAR_SEAFOAM3);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_B3F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_B3F))
+            {
+                i += VarGet(VAR_SEAFOAM4);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_B4F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_B4F))
+            {
+                i += VarGet(VAR_SEAFOAM5);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_TOWER_3F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_TOWER_3F))
+            {
+                i += VarGet(VAR_TOWER3);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_TOWER_4F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_TOWER_4F))
+            {
+                i += VarGet(VAR_TOWER4);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_TOWER_5F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_TOWER_5F))
+            {
+                i += VarGet(VAR_TOWER5);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_TOWER_6F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_TOWER_6F))
+            {
+                i += VarGet(VAR_TOWER6);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_TOWER_7F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_TOWER_7F))
+            {
+                i += VarGet(VAR_TOWER7);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_MANSION_1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_MANSION_1F))
+            {
+                i += VarGet(VAR_MANSION1);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_MANSION_2F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_MANSION_2F))
+            {
+                i += VarGet(VAR_MANSION2);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_MANSION_3F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_MANSION_3F))
+            {
+                i += VarGet(VAR_MANSION3);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(POKEMON_MANSION_B1F) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKEMON_MANSION_B1F))
+            {
+                i += VarGet(VAR_MANSIONB1F);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(CERULEAN_CITY) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(CERULEAN_CITY))
+            {
+                i += VarGet(VAR_CERULEAN);
+            }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VERMILION_CITY) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(VERMILION_CITY))
+            {
+                i += VarGet(VAR_VERMILION);
+            }
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_ALTERING_CAVE))
             {

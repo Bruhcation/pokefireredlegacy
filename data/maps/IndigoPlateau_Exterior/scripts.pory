@@ -188,4 +188,5 @@ IndigoPlateau_Exterior_Movement_OakLeave::
 IndigoPlateau_Exterior_Movement_OakExitBuilding::
 	walk_down
 	step_end
+
 `

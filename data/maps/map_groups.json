@@ -49,8 +49,7 @@
     "TradeCenter",
     "RecordCorner",
     "BattleColosseum_4P",
-    "UnionRoom",
-    "MtMoonConnect"
+    "UnionRoom"
   ],
   "gMapGroup_Dungeons": [
     "ViridianForest",
@@ -176,7 +175,11 @@
     "SixIsland_DottedHole_SapphireRoom",
     "SixIsland_PatternBush",
     "SixIsland_AlteringCave",
-    "RockTunnel_B2F"
+    "RockTunnel_B2F",
+    "DownwardBeach",
+    "MtMoonConnect",
+    "TwoIsland_SouthernCave",
+    "TwoIsland_SouthSide_Cave_B1F"
   ],
   "gMapGroup_SpecialArea": [
     "NavelRock_Exterior",
@@ -307,7 +310,8 @@
     "SevenIsland_TrainerTower",
     "SevenIsland_SevaultCanyon_Entrance",
     "SevenIsland_SevaultCanyon",
-    "SevenIsland_TanobyRuins"
+    "SevenIsland_TanobyRuins",
+    "DownwardBeachConnection"
   ],
   "gMapGroup_IndoorPallet": [
     "PalletTown_PlayersHouse_1F",

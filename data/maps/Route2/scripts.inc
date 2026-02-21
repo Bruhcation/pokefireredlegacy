@@ -20,3 +20,17 @@ Route2_EventScript_DiglettsCaveSign::
 	msgbox Route2_Text_DiglettsCave, MSGBOX_SIGN
 # 11 "data/maps/Route2/scripts.pory"
 	end
+# 12 "data/maps/Route2/scripts.pory"
+
+# 13 "data/maps/Route2/scripts.pory"
+Route2_EventScript_Skitty::
+# 14 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Text_Skitty, MSGBOX_NPC
+# 15 "data/maps/Route2/scripts.pory"
+	end
+# 16 "data/maps/Route2/scripts.pory"
+
+# 17 "data/maps/Route2/scripts.pory"
+Route2_Text_Skitty::
+# 18 "data/maps/Route2/scripts.pory"
+	.string "Hey, I saw a SKITTY here!\n$"

@@ -1,4 +1,146 @@
 raw `
+.set LOCALID_MIRAGE, 6
 Route21_South_MapScripts::
 	.byte 0
+
+Route21_South_EventScript_OrbingCheck::
+	lock
+	faceplayer
+	goto_if_unset FLAG_ORBING, Route21_South_EventScript_NeedOrb
+	goto_if_set FLAG_CAUGHT_KYOGRE, Route21_South_EventScript_End
+	goto_if_set FLAG_KYOGRE_CHECKED, Route21_South_EventScript_Orbing
+	msgbox Route21_South_Text_RegiceCheck
+	closemessage
+	goto_if_unset FLAG_ORBING, Route21_South_EventScript_NoEligiblePkmn
+	goto Route21_South_EventScript_Flag
+	release
+	end
+
+Route21_South_EventScript_NeedOrb::
+	msgbox Route21_South_Text_NeedOrb
+	release
+	end
+
+Route21_South_EventScript_NoEligiblePkmn::
+	msgbox Route21_South_Text_NoEligiblePkmn
+	release
+	end
+
+Route21_South_EventScript_Flag::
+	setflag FLAG_KYOGRE_CHECKED
+	goto Route21_South_EventScript_Orbing
+	end
+
+Route21_South_EventScript_Orbing::
+	msgbox Route21_South_Text_Whitney, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, Route21_South_EventScript_NoWhitney
+	trainerbattle_single TRAINER_AQUA_GRUNT_M, Route21_South_Text_YesWhitney, Route21_South_Text_PostWhitney, Route21_South_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+Route21_South_EventScript_PostWhitney::
+	special HealPlayerParty
+	msgbox Route21_South_Text_WhitneyPostBattle
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_KYOGRE, 70
+	waitse
+	playmoncry SPECIES_KYOGRE, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route21_South_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route21_South_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route21_South_EventScript_RanFromCelebi
+	setflag FLAG_CAUGHT_KYOGRE
+	clearflag FLAG_WATER_TRAINER
+	msgbox Route21_South_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK	
+	release
+	end
+
+Route21_South_EventScript_DefeatedCelebi::
+	setflag FLAG_CAUGHT_KYOGRE
+	clearflag FLAG_WATER_TRAINER
+	msgbox Route21_South_Text_EndWhitney
+	waitmessage
+	goto EventScript_RemoveStaticMon
+	end
+
+Route21_South_EventScript_RanFromCelebi::
+	setvar VAR_0x8004, SPECIES_KYOGRE
+	clearflag FLAG_WATER_TRAINER
+	msgbox Route21_South_Text_EndWhitney
+	waitmessage
+	goto EventScript_MonFlewAway
+	end
+
+Route21_South_EventScript_NoWhitney::
+	msgbox Route21_South_Text_NoWhitney
+	release
+	end
+
+Route21_South_EventScript_End::
+	clearflag FLAG_WATER_TRAINER
+	msgbox Route21_South_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK	
+	release
+	end
+
+Route21_South_Text_NeedOrb::
+	.string "You need the ORBING to face me.$"
+
+Route21_South_Text_NoEligiblePkmn::
+	.string "You have not meet the requirements.\p"
+	.string "Come back when you do.$"
+
+Route21_South_Text_RegiceCheck::
+	.string "Hello there {PLAYER}.\p"
+	.string "I am the Sea Mirage Trainer.\n"
+	.string "Beat me and you shall face a\l"
+	.string "special POKEMON.\p"
+	.string "But first, I want to see a\n"
+	.string "BLUE ORB, which is on a SAFFRON\l"
+	.string "fan club member.\p"
+	.string "He is trying to find someone,\n"
+	.string "that has battled the,\l"
+	.string "Many Strong Trainers around\n"
+	.string "the KANTO REGION.$"
+	
+Route21_South_Text_Whitney::
+	.string "So, you wish to face me?$"
+
+Route21_South_Text_YesWhitney::
+	.string "Very well! Prepare yourself!$"
+
+Route21_South_Text_PostWhitney::
+	.string "So you are worthy...$"
+
+Route21_South_Text_WhitneyPostBattle::
+	.string "Alright, you have bested me.\p"
+	.string "Be prepared to face REGICE!$"
+
+Route21_South_Text_EndWhitney::
+	.string "Goodbye.$"
+
+Route21_South_Text_NoWhitney::
+	.string "Alright, take your time.$"
+
 `

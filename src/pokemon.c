@@ -1630,6 +1630,7 @@ static const s8 sFriendshipEventDeltas[][3] =
     [FRIENDSHIP_EVENT_FAINT_SMALL]          = {-1, -1, -1 },
     [FRIENDSHIP_EVENT_FAINT_OUTSIDE_BATTLE] = {-5, -5, -10 },
     [FRIENDSHIP_EVENT_FAINT_LARGE]          = {-5, -5, -10 },
+    [FRIENDSHIP_EVENT_MAX_MASSAGE]          = {150, 100, 50}
 };
 
 #define HM_MOVES_END 0xFFFF
@@ -5306,6 +5307,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (gEvolutionTable[species][i].param <= beauty)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_FRIENDSHIP_BABY:
+                if (friendship >= 170)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             }
         }
         break;
@@ -6130,6 +6135,8 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_JOHTO_LEADER:
         case TRAINER_CLASS_SEVII_CHAMPION:
             return MUS_VS_GYM_LEADER;
+        case TRAINER_CLASS_MIRAGE_TRAINER:
+            return MUS_RS_VS_GYM_LEADER;
         case TRAINER_CLASS_BOSS:
         case TRAINER_CLASS_TEAM_ROCKET:
             return MUS_VS_TEAM_ROCKET;

@@ -1,1 +1,67 @@
-mapscripts RockTunnel_B2F_MapScripts {}
+raw`
+.set LOCALID_ANORITH_POKEBALL, 7
+RockTunnel_B2F_MapScripts::
+	.byte 0
+
+RockTunnel_B2F_EventScript_ClawBall::
+	lock
+	faceplayer
+	message RockTunnel_B2F_Text_ObtainedAnFossil
+	waitmessage
+	message RockTunnel_B2F_Text_However
+	waitmessage 
+	setvar VAR_TEMP_1, SPECIES_ANORITH
+	givemon SPECIES_ANORITH, 40
+	goto_if_eq VAR_RESULT, 0, RockTunnel_B2F_EventScript_GetClawParty
+	goto_if_eq VAR_RESULT, 1, RockTunnel_B2F_EventScript_GetClawPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+RockTunnel_B2F_EventScript_GetClawParty::
+	removeobject LOCALID_ANORITH_POKEBALL
+	playfanfare MUS_LEVEL_UP
+	message RockTunnel_B2F_Text_ObtainedAnClaw
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RockTunnel_B2F_EventScript_SetGotClaw
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto RockTunnel_B2F_EventScript_SetGotClaw
+	end
+
+RockTunnel_B2F_EventScript_GetClawPC::
+	removeobject LOCALID_ANORITH_POKEBALL
+	playfanfare MUS_LEVEL_UP
+	message RockTunnel_B2F_Text_ObtainedAnClaw
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, RockTunnel_B2F_EventScript_TransferClawToPC
+	call EventScript_NameReceivedBoxMon
+	goto RockTunnel_B2F_EventScript_TransferClawToPC
+	end
+
+RockTunnel_B2F_EventScript_TransferClawToPC::
+	call EventScript_TransferredToPC
+	goto RockTunnel_B2F_EventScript_SetGotClaw
+	end
+
+RockTunnel_B2F_EventScript_SetGotClaw::
+	setflag FLAG_GOT_CLAW
+	release
+	end
+
+RockTunnel_B2F_Text_ObtainedAnClaw::
+    .string "{PLAYER} obtained an ANORITH!$"
+
+RockTunnel_B2F_Text_ObtainedAnFossil::
+	.string "{PLAYER} obtained an CLAW FOSSIL!$"
+
+RockTunnel_B2F_Text_However::
+	.string "However, the CLAW FOSSIL\n"
+	.string "got magically revived in your hands!$"
+`

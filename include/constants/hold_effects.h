@@ -69,6 +69,7 @@
 #define HOLD_EFFECT_THICK_CLUB     65
 #define HOLD_EFFECT_STICK          66
 #define HOLD_EFFECT_BRICK_PIECE    67
+#define HOLD_EFFECT_PRISM_SCALE    68
 
 
 #endif // GUARD_HOLD_EFFECTS_H

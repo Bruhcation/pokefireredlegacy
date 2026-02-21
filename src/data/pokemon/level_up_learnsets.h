@@ -1470,11 +1470,13 @@ static const u16 sSeelLevelUpLearnset[] = {
     LEVEL_UP_MOVE(29, MOVE_REST),
     LEVEL_UP_MOVE(37, MOVE_TAKE_DOWN),
     LEVEL_UP_MOVE(41, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(45, MOVE_BODY_SLAM),
     LEVEL_UP_MOVE(49, MOVE_SAFEGUARD),
     LEVEL_UP_END
 };
 
 static const u16 sDewgongLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_SLACK_OFF),
     LEVEL_UP_MOVE( 1, MOVE_SIGNAL_BEAM),
     LEVEL_UP_MOVE( 1, MOVE_HEADBUTT),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
@@ -1489,6 +1491,7 @@ static const u16 sDewgongLevelUpLearnset[] = {
     LEVEL_UP_MOVE(32, MOVE_REST),
     LEVEL_UP_MOVE(36, MOVE_SHEER_COLD),
     LEVEL_UP_MOVE(42, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(45, MOVE_BODY_SLAM),
     LEVEL_UP_MOVE(51, MOVE_BLIZZARD),
     LEVEL_UP_MOVE(56, MOVE_HYDRO_PUMP),
     LEVEL_UP_MOVE(64, MOVE_SAFEGUARD),
@@ -6553,6 +6556,7 @@ static const u16 sMetagrossLevelUpLearnset[] = {
 
 static const u16 sRegirockLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 9, MOVE_ROCK_THROW),
     LEVEL_UP_MOVE(17, MOVE_CURSE),
     LEVEL_UP_MOVE(25, MOVE_IRON_DEFENSE),
@@ -6567,6 +6571,7 @@ static const u16 sRegirockLevelUpLearnset[] = {
 
 static const u16 sRegiceLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 9, MOVE_ICY_WIND),
     LEVEL_UP_MOVE(17, MOVE_CURSE),
     LEVEL_UP_MOVE(25, MOVE_AMNESIA),
@@ -6581,6 +6586,7 @@ static const u16 sRegiceLevelUpLearnset[] = {
 
 static const u16 sRegisteelLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
+    LEVEL_UP_MOVE( 1, MOVE_VICE_GRIP),
     LEVEL_UP_MOVE( 9, MOVE_METAL_CLAW),
     LEVEL_UP_MOVE(17, MOVE_CURSE),
     LEVEL_UP_MOVE(25, MOVE_AMNESIA),

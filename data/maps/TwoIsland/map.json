@@ -18,6 +18,11 @@
       "map": "MAP_TWO_ISLAND_CAPE_BRINK",
       "offset": 24,
       "direction": "up"
+    },
+    {
+      "map": "MAP_DOWNWARD_BEACH",
+      "offset": 0,
+      "direction": "emerge"
     }
   ],
   "object_events": [
@@ -103,7 +108,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_12"
+      "flag": "FLAG_TWO_ISLAND_TREE"
     },
     {
       "type": "object",
@@ -146,28 +151,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TwoIsland_EventScript_Boy",
       "flag": "0"
-    },
-    {
-      "type": "clone",
-      "graphics_id": "OBJ_EVENT_GFX_CLAIR",
-      "x": 39,
-      "y": -4,
-      "target_local_id": 1,
-      "target_map": "MAP_TWO_ISLAND_CAPE_BRINK"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-      "x": 34,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "TwoIsland_EventScript_Casey",
-      "flag": "FLAG_HIDE_SEVIIGUYS"
     }
   ],
   "warp_events": [
@@ -198,6 +181,13 @@
       "elevation": 3,
       "dest_map": "MAP_TWO_ISLAND_HARBOR",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -227,6 +217,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "TwoIsland_EventScript_FastCurrentSign"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TwoIsland_EventScript_CaveSign"
     }
   ]
 }

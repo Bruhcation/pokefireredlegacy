@@ -3177,6 +3177,8 @@ extern const u32 gItemIcon_Stick[];
 extern const u32 gItemIconPalette_Stick[];
 extern const u32 gItemIcon_BrickPiece[];
 extern const u32 gItemIconPalette_BrickPiece[];
+extern const u32 gItemIcon_PrismScale[];
+extern const u32 gItemIconPalette_PrismScale[];
 extern const u32 gItemIcon_Scarf[];
 extern const u32 gItemIconPalette_RedScarf[];
 extern const u32 gItemIconPalette_BlueScarf[];

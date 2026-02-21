@@ -1,4 +1,13 @@
 raw `
 Route21_North_MapScripts::
 	.byte 0
+
+Route21_North_EventScript_Clamperl::
+	msgbox Route21_North_Text_Clamperl, MSGBOX_NPC
+	end
+
+Route21_North_Text_Clamperl::
+	.string "I'm rarely fishing up\n"
+	.string "CLAMPERLS now for some reason...\l"
+	.string "Guess they got here!$"
 `

@@ -165,6 +165,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_15"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 18,
+      "y": 56,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route10_EventScript_Girl",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -291,6 +305,14 @@
       "flag": "FLAG_HIDDEN_ITEM_ROUTE10_LIGHTBALL",
       "quantity": 1,
       "underfoot": true
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 56,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route10_EventScript_Rock"
     }
   ]
 }

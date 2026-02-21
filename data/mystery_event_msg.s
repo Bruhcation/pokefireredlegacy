@@ -49,7 +49,7 @@ SurfPichu_GiveIfPossible:
 	vcall SurfPichu_GiveEgg
 	lock
 	faceplayer
-	vmessage sText_MysteryGiftEgg
+	vmessage sText_ReignitedMysteryGiftEgg
 	waitmessage
 	waitbuttonpress
 	playfanfare MUS_OBTAIN_ITEM
@@ -100,6 +100,12 @@ SurfPichu_Slot5:
 sText_MysteryGiftEgg:
 	.string "Thank you for using the MYSTERY\n"
 	.string "GIFT System.\p"
+	.string "From the POKéMON CENTER we\n"
+	.string "have a gift - a POKéMON EGG!\p"
+	.string "Please raise it with love and\n"
+	.string "kindness.$"
+
+sText_ReignitedMysteryGiftEgg:
 	.string "From the POKéMON CENTER we\n"
 	.string "have a gift - a POKéMON EGG!\p"
 	.string "Please raise it with love and\n"

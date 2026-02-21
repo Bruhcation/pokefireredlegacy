@@ -127,134 +127,170 @@ CeladonCity_Gym_EventScript_NoRoomForTM19::
 # 64 "data/maps/CeladonCity_Gym/scripts.pory"
 CeladonCity_Gym_EventScript_RematchErika::
 # 65 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_RematchErika, MSGBOX_YESNO
+	setvar VAR_0x8004, FAMECHECKER_ERIKA
 # 66 "data/maps/CeladonCity_Gym/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, CeladonCity_Gym_EventScript_NoRematchErika
+	callnative CheckFilledFameCheckerFor0x8004
 # 67 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LEADER_ERIKA2, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
+	goto_if_eq VAR_RESULT, TRUE, CeladonCity_Gym_EventScript_RematchErika2
 # 68 "data/maps/CeladonCity_Gym/scripts.pory"
-	release
+	msgbox CeladonCity_Gym_Text_ErikaNoNoRematchBattle
 # 69 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	release
 # 70 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	end
 # 71 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_PostRematchErika::
-# 72 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_ErikaPostRematchBattle
-# 73 "data/maps/CeladonCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_LEADER_ERIKA2   
-# 74 "data/maps/CeladonCity_Gym/scripts.pory"
-	release
-# 75 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
-# 76 "data/maps/CeladonCity_Gym/scripts.pory"
 
+# 72 "data/maps/CeladonCity_Gym/scripts.pory"
+CeladonCity_Gym_Text_ErikaNoNoRematchBattle::
+# 73 "data/maps/CeladonCity_Gym/scripts.pory"
+	.string "I hear you've grown much stronger.\p"
+# 74 "data/maps/CeladonCity_Gym/scripts.pory"
+	.string "It's truly inspiring!\p"
+# 75 "data/maps/CeladonCity_Gym/scripts.pory"
+	.string "But I'm doozing Off...\p"
+# 76 "data/maps/CeladonCity_Gym/scripts.pory"
+	.string "In the mean time, try and\n"
 # 77 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_NoRematchErika::
+	.string "fill out my entry on\l"
 # 78 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_ErikaNoRematchBattle
+	.string "the FAMECHECKER.\p"
 # 79 "data/maps/CeladonCity_Gym/scripts.pory"
-	release
+	.string "I would love for you to\n"
 # 80 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	.string "know me better!$"
 # 81 "data/maps/CeladonCity_Gym/scripts.pory"
 
 # 82 "data/maps/CeladonCity_Gym/scripts.pory"
-
+CeladonCity_Gym_EventScript_RematchErika2::
 # 83 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Kay::
+	msgbox CeladonCity_Gym_Text_RematchErika, MSGBOX_YESNO
 # 84 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LASS_KAY, CeladonCity_Gym_Text_KayIntro, CeladonCity_Gym_Text_KayDefeat
+	goto_if_eq VAR_RESULT, NO, CeladonCity_Gym_EventScript_NoRematchErika
 # 85 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_KayPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_LEADER_ERIKA2, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
 # 86 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	release
 # 87 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	end
 # 88 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Lisa::
+
 # 89 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LASS_LISA, CeladonCity_Gym_Text_LisaIntro, CeladonCity_Gym_Text_LisaDefeat
+CeladonCity_Gym_EventScript_PostRematchErika::
 # 90 "data/maps/CeladonCity_Gym/scripts.pory"
-	famechecker FAMECHECKER_ERIKA, 2
+	msgbox CeladonCity_Gym_Text_ErikaPostRematchBattle
 # 91 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_LisaPostBattle, MSGBOX_AUTOCLOSE
+	cleartrainerflag TRAINER_LEADER_ERIKA2   
 # 92 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	release
 # 93 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	end
 # 94 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Tina::
+
 # 95 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_PICNICKER_TINA, CeladonCity_Gym_Text_TinaIntro, CeladonCity_Gym_Text_TinaDefeat
+CeladonCity_Gym_EventScript_NoRematchErika::
 # 96 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_TinaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox CeladonCity_Gym_Text_ErikaNoRematchBattle
 # 97 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	release
 # 98 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	end
 # 99 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Bridget::
+
 # 100 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BEAUTY_BRIDGET, CeladonCity_Gym_Text_BridgetIntro, CeladonCity_Gym_Text_BridgetDefeat
+
 # 101 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_BridgetPostBattle, MSGBOX_AUTOCLOSE
+CeladonCity_Gym_EventScript_Kay::
 # 102 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	trainerbattle_single TRAINER_LASS_KAY, CeladonCity_Gym_Text_KayIntro, CeladonCity_Gym_Text_KayDefeat
 # 103 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	msgbox CeladonCity_Gym_Text_KayPostBattle, MSGBOX_AUTOCLOSE
 # 104 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Tamia::
+	end
 # 105 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BEAUTY_TAMIA, CeladonCity_Gym_Text_TamiaIntro, CeladonCity_Gym_Text_TamiaDefeat
+
 # 106 "data/maps/CeladonCity_Gym/scripts.pory"
-	famechecker FAMECHECKER_ERIKA, 3
+CeladonCity_Gym_EventScript_Lisa::
 # 107 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_TamiaPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_LASS_LISA, CeladonCity_Gym_Text_LisaIntro, CeladonCity_Gym_Text_LisaDefeat
 # 108 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	famechecker FAMECHECKER_ERIKA, 2
 # 109 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	msgbox CeladonCity_Gym_Text_LisaPostBattle, MSGBOX_AUTOCLOSE
 # 110 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Lori::
+	end
 # 111 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BEAUTY_LORI, CeladonCity_Gym_Text_LoriIntro, CeladonCity_Gym_Text_LoriDefeat
+
 # 112 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_LoriPostBattle, MSGBOX_AUTOCLOSE
+CeladonCity_Gym_EventScript_Tina::
 # 113 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	trainerbattle_single TRAINER_PICNICKER_TINA, CeladonCity_Gym_Text_TinaIntro, CeladonCity_Gym_Text_TinaDefeat
 # 114 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	msgbox CeladonCity_Gym_Text_TinaPostBattle, MSGBOX_AUTOCLOSE
 # 115 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_Mary::
+	end
 # 116 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_MARY, CeladonCity_Gym_Text_MaryIntro, CeladonCity_Gym_Text_MaryDefeat
+
 # 117 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_MaryPostBattle, MSGBOX_AUTOCLOSE
+CeladonCity_Gym_EventScript_Bridget::
 # 118 "data/maps/CeladonCity_Gym/scripts.pory"
-	end
+	trainerbattle_single TRAINER_BEAUTY_BRIDGET, CeladonCity_Gym_Text_BridgetIntro, CeladonCity_Gym_Text_BridgetDefeat
 # 119 "data/maps/CeladonCity_Gym/scripts.pory"
-
+	msgbox CeladonCity_Gym_Text_BridgetPostBattle, MSGBOX_AUTOCLOSE
 # 120 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_GymStatue::
-# 121 "data/maps/CeladonCity_Gym/scripts.pory"
-	lockall
-# 122 "data/maps/CeladonCity_Gym/scripts.pory"
-	goto_if_set FLAG_BADGE04_GET, CeladonCity_Gym_EventScript_GymStatuePostVictory
-# 123 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_GymStatue
-# 124 "data/maps/CeladonCity_Gym/scripts.pory"
-	releaseall
-# 125 "data/maps/CeladonCity_Gym/scripts.pory"
 	end
-# 126 "data/maps/CeladonCity_Gym/scripts.pory"
+# 121 "data/maps/CeladonCity_Gym/scripts.pory"
 
+# 122 "data/maps/CeladonCity_Gym/scripts.pory"
+CeladonCity_Gym_EventScript_Tamia::
+# 123 "data/maps/CeladonCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_BEAUTY_TAMIA, CeladonCity_Gym_Text_TamiaIntro, CeladonCity_Gym_Text_TamiaDefeat
+# 124 "data/maps/CeladonCity_Gym/scripts.pory"
+	famechecker FAMECHECKER_ERIKA, 3
+# 125 "data/maps/CeladonCity_Gym/scripts.pory"
+	msgbox CeladonCity_Gym_Text_TamiaPostBattle, MSGBOX_AUTOCLOSE
+# 126 "data/maps/CeladonCity_Gym/scripts.pory"
+	end
 # 127 "data/maps/CeladonCity_Gym/scripts.pory"
-CeladonCity_Gym_EventScript_GymStatuePostVictory::
+
 # 128 "data/maps/CeladonCity_Gym/scripts.pory"
-	msgbox CeladonCity_Gym_Text_GymStatuePlayerWon
+CeladonCity_Gym_EventScript_Lori::
 # 129 "data/maps/CeladonCity_Gym/scripts.pory"
-	releaseall
+	trainerbattle_single TRAINER_BEAUTY_LORI, CeladonCity_Gym_Text_LoriIntro, CeladonCity_Gym_Text_LoriDefeat
 # 130 "data/maps/CeladonCity_Gym/scripts.pory"
+	msgbox CeladonCity_Gym_Text_LoriPostBattle, MSGBOX_AUTOCLOSE
+# 131 "data/maps/CeladonCity_Gym/scripts.pory"
+	end
+# 132 "data/maps/CeladonCity_Gym/scripts.pory"
+
+# 133 "data/maps/CeladonCity_Gym/scripts.pory"
+CeladonCity_Gym_EventScript_Mary::
+# 134 "data/maps/CeladonCity_Gym/scripts.pory"
+	trainerbattle_single TRAINER_COOLTRAINER_MARY, CeladonCity_Gym_Text_MaryIntro, CeladonCity_Gym_Text_MaryDefeat
+# 135 "data/maps/CeladonCity_Gym/scripts.pory"
+	msgbox CeladonCity_Gym_Text_MaryPostBattle, MSGBOX_AUTOCLOSE
+# 136 "data/maps/CeladonCity_Gym/scripts.pory"
+	end
+# 137 "data/maps/CeladonCity_Gym/scripts.pory"
+
+# 138 "data/maps/CeladonCity_Gym/scripts.pory"
+CeladonCity_Gym_EventScript_GymStatue::
+# 139 "data/maps/CeladonCity_Gym/scripts.pory"
+	lockall
+# 140 "data/maps/CeladonCity_Gym/scripts.pory"
+	goto_if_set FLAG_BADGE04_GET, CeladonCity_Gym_EventScript_GymStatuePostVictory
+# 141 "data/maps/CeladonCity_Gym/scripts.pory"
+	msgbox CeladonCity_Gym_Text_GymStatue
+# 142 "data/maps/CeladonCity_Gym/scripts.pory"
+	releaseall
+# 143 "data/maps/CeladonCity_Gym/scripts.pory"
+	end
+# 144 "data/maps/CeladonCity_Gym/scripts.pory"
+
+# 145 "data/maps/CeladonCity_Gym/scripts.pory"
+CeladonCity_Gym_EventScript_GymStatuePostVictory::
+# 146 "data/maps/CeladonCity_Gym/scripts.pory"
+	msgbox CeladonCity_Gym_Text_GymStatuePlayerWon
+# 147 "data/maps/CeladonCity_Gym/scripts.pory"
+	releaseall
+# 148 "data/maps/CeladonCity_Gym/scripts.pory"
 	end

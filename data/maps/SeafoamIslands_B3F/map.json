@@ -112,6 +112,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SeafoamIslands_B3F_EventScript_ItemTM13",
       "flag": "FLAG_HIDE_SEAFOAM_ISLANDS_B3F_TM13"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SeafoamIslands_B3F_EventScript_OrbingCheck",
+      "flag": "FLAG_ICE_TRAINER"
     }
   ],
   "warp_events": [

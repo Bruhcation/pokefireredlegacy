@@ -205,8 +205,6 @@ TwoIsland_Items_ShopExpanded3::
 	.2byte ITEM_HONDEW_BERRY
 	.2byte ITEM_GREPA_BERRY
 	.2byte ITEM_TAMATO_BERRY
-	.2byte ITEM_DEEP_SEA_SCALE
-	.2byte ITEM_DEEP_SEA_TOOTH
 	.2byte ITEM_BRICK_PIECE
 	.2byte ITEM_CLEANSE_TAG
 	.2byte ITEM_METAL_POWDER
@@ -271,7 +269,17 @@ TwoIsland_Text_Casey::
 	.string "her double battles,\l"
 	.string "while also using cute POKéMON\l"
 	.string "in a interesting way.\p"
-	.string "Perhaps I should work on.\p"
+	.string "Perhaps I should work on\n"
 	.string "my Double Battle Skills.$"
+
+TwoIsland_EventScript_CaveSign::
+	msgbox TwoIsland_Text_CaveSign, MSGBOX_SIGN
+	end
+
+TwoIsland_Text_CaveSign::
+	.string "WARNING: Dangerous Path\n"
+	.string "South of here.\p"
+	.string "Beware of Dark Caves and\n"
+	.string "High Currents!$"
 
 `

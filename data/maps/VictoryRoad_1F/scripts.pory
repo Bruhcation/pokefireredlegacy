@@ -47,12 +47,30 @@ VictoryRoad_1F_EventScript_Naomi::
 	end
 
 VictoryRoad_1F_EventScript_Berke::
-	trainerbattle_single TRAINER_COOLTRAINER_BERKE, VictoryRoad_1F_Text_RolandoIntro, VictoryRoad_1F_Text_RolandoDefeat
-	msgbox VictoryRoad_1F_Text_RolandoPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_COOLTRAINER_BERKE, VictoryRoad_1F_Text_BerkeIntro, VictoryRoad_1F_Text_BerkeDefeat
+	msgbox VictoryRoad_1F_Text_BerkePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_1F_EventScript_Rolando::
 	trainerbattle_single TRAINER_COOLTRAINER_ROLANDO, VictoryRoad_1F_Text_RolandoIntro, VictoryRoad_1F_Text_RolandoDefeat
 	msgbox VictoryRoad_1F_Text_RolandoPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_1F_Text_BerkeIntro::
+	.string "Victory Road isnt for the weak.\p"
+	.string "Only trainers who have earned\n"
+	.string "every Badge belong here.\p"
+	.string "Lets see if you are truly\n"
+	.string "Elite Four material!$"
+
+VictoryRoad_1F_Text_BerkeDefeat::
+	.string "What?! I trained for this mountain…\p"
+	.string "How did you break through my team?$"
+
+VictoryRoad_1F_Text_BerkePostBattle::
+	.string "Heh… I get it now.\p"
+	.string "Strength isnt just levels,\n"
+	.string "its trust.\p"
+	.string "Go on,\n"
+	.string "The Leagues waiting for you.$"
 `

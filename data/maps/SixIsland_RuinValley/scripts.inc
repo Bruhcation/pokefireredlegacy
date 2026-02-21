@@ -21,206 +21,230 @@ SixIsland_RuinValley_OnLoad::
 # 11 "data/maps/SixIsland_RuinValley/scripts.pory"
 	call_if_set FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE, SixIsland_RuinValley_EventScript_OpenDottedHoleDoor
 # 12 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	setvar VAR_0x8004, FAMECHECKER_GIOVANNI
 # 13 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	callnative CheckFilledFameCheckerFor0x8004
 # 14 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_OpenDottedHoleDoor::
+	call_if_eq VAR_RESULT, TRUE, SixIsland_RuinValley_EventScript_ShowGiovanni
 # 15 "data/maps/SixIsland_RuinValley/scripts.pory"
-	setmetatile 24, 24, METATILE_SeviiIslands67_DottedHoleDoor_Open, 0
+	setflag FLAG_GIOVANNI4
 # 16 "data/maps/SixIsland_RuinValley/scripts.pory"
-	return
+	end
 # 17 "data/maps/SixIsland_RuinValley/scripts.pory"
 
 # 18 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_Scientist::
+SixIsland_RuinValley_EventScript_OpenDottedHoleDoor::
 # 19 "data/maps/SixIsland_RuinValley/scripts.pory"
-	lock
+	setmetatile 24, 24, METATILE_SeviiIslands67_DottedHoleDoor_Open, 0
 # 20 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_CantFigureOutHowToGetInside
+	return
 # 21 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_SCIENTIST, Common_Movement_FacePlayer
+
 # 22 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+SixIsland_RuinValley_EventScript_ShowGiovanni::
 # 23 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_IFoundThisPlace
+	goto_if_unset FLAG_SYS_CAN_LINK_WITH_RS, SixIsland_RuinValley_EventScript_HideGiovanniEnd
 # 24 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_SCIENTIST, Common_Movement_FaceOriginalDirection
+	clearflag FLAG_GIOVANNI4
 # 25 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+	end
 # 26 "data/maps/SixIsland_RuinValley/scripts.pory"
-	release
+
 # 27 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+SixIsland_RuinValley_EventScript_HideGiovanniEnd::
 # 28 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	end
 # 29 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_DottedHoleDoor::
+
 # 30 "data/maps/SixIsland_RuinValley/scripts.pory"
-	lockall
+SixIsland_RuinValley_EventScript_Scientist::
 # 31 "data/maps/SixIsland_RuinValley/scripts.pory"
-	goto_if_set FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE, SixIsland_RuinValley_EventScript_DottedHoleDoorOpen
-# 32 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_CheckDoorMoreThoroughly, MSGBOX_YESNO
-# 33 "data/maps/SixIsland_RuinValley/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_IgnoreDottedHoleDoor
-# 34 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_SeveralDotsOnTheDoor
-# 35 "data/maps/SixIsland_RuinValley/scripts.pory"
-	braillemessage Braille_Text_Cut
-# 36 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitbuttonpress
-# 37 "data/maps/SixIsland_RuinValley/scripts.pory"
-	releaseall
-# 38 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
-# 39 "data/maps/SixIsland_RuinValley/scripts.pory"
-
-# 40 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_DottedHoleDoorOpen::
-# 41 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_DoorIsOpen
-# 42 "data/maps/SixIsland_RuinValley/scripts.pory"
-	releaseall
-# 43 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
-# 44 "data/maps/SixIsland_RuinValley/scripts.pory"
-
-# 45 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_IgnoreDottedHoleDoor::
-# 46 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_LeftDoorAlone
-# 47 "data/maps/SixIsland_RuinValley/scripts.pory"
-	releaseall
-# 48 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
-# 49 "data/maps/SixIsland_RuinValley/scripts.pory"
-
-# 50 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_Giovanni::
-# 51 "data/maps/SixIsland_RuinValley/scripts.pory"
 	lock
+# 32 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_CantFigureOutHowToGetInside
+# 33 "data/maps/SixIsland_RuinValley/scripts.pory"
+	applymovement LOCALID_SCIENTIST, Common_Movement_FacePlayer
+# 34 "data/maps/SixIsland_RuinValley/scripts.pory"
+	waitmovement 0
+# 35 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_IFoundThisPlace
+# 36 "data/maps/SixIsland_RuinValley/scripts.pory"
+	applymovement LOCALID_SCIENTIST, Common_Movement_FaceOriginalDirection
+# 37 "data/maps/SixIsland_RuinValley/scripts.pory"
+	waitmovement 0
+# 38 "data/maps/SixIsland_RuinValley/scripts.pory"
+	release
+# 39 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 40 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 41 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_DottedHoleDoor::
+# 42 "data/maps/SixIsland_RuinValley/scripts.pory"
+	lockall
+# 43 "data/maps/SixIsland_RuinValley/scripts.pory"
+	goto_if_set FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE, SixIsland_RuinValley_EventScript_DottedHoleDoorOpen
+# 44 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_CheckDoorMoreThoroughly, MSGBOX_YESNO
+# 45 "data/maps/SixIsland_RuinValley/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_IgnoreDottedHoleDoor
+# 46 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_SeveralDotsOnTheDoor
+# 47 "data/maps/SixIsland_RuinValley/scripts.pory"
+	braillemessage Braille_Text_Cut
+# 48 "data/maps/SixIsland_RuinValley/scripts.pory"
+	waitbuttonpress
+# 49 "data/maps/SixIsland_RuinValley/scripts.pory"
+	releaseall
+# 50 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 51 "data/maps/SixIsland_RuinValley/scripts.pory"
+
 # 52 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitse
+SixIsland_RuinValley_EventScript_DottedHoleDoorOpen::
 # 53 "data/maps/SixIsland_RuinValley/scripts.pory"
-	playse SE_PIN	
+	msgbox SixIsland_RuinValley_Text_DoorIsOpen
 # 54 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_GIOVANNI, Common_Movement_ExclamationMarkDelay
+	releaseall
 # 55 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+	end
 # 56 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_Giovanni
+
 # 57 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+SixIsland_RuinValley_EventScript_IgnoreDottedHoleDoor::
 # 58 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_GIOVANNI, Common_Movement_FacePlayer
+	msgbox SixIsland_RuinValley_Text_LeftDoorAlone
 # 59 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_Giovanni2
+	releaseall
 # 60 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+	end
 # 61 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_GIOVANNI, Common_Movement_FaceLeft
+
 # 62 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_Giovanni3
+SixIsland_RuinValley_EventScript_Giovanni::
 # 63 "data/maps/SixIsland_RuinValley/scripts.pory"
-	waitmovement 0
+	lock
 # 64 "data/maps/SixIsland_RuinValley/scripts.pory"
-	applymovement LOCALID_GIOVANNI, Common_Movement_FacePlayer
+	waitse
 # 65 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_Giovanni4, MSGBOX_YESNO
+	playse SE_PIN	
 # 66 "data/maps/SixIsland_RuinValley/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_GiovanniNo
+	applymovement LOCALID_GIOVANNI, Common_Movement_ExclamationMarkDelay
 # 67 "data/maps/SixIsland_RuinValley/scripts.pory"
-	setvar VAR_FORCEANIM, 1
+	waitmovement 0
 # 68 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_JACKO, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
+	msgbox SixIsland_PatternBush_Text_Giovanni
 # 69 "data/maps/SixIsland_RuinValley/scripts.pory"
-	release
+	waitmovement 0
 # 70 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	applymovement LOCALID_GIOVANNI, Common_Movement_FacePlayer
 # 71 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	msgbox SixIsland_PatternBush_Text_Giovanni2
 # 72 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_PostGiovanni::
+	waitmovement 0
 # 73 "data/maps/SixIsland_RuinValley/scripts.pory"
-	setvar VAR_FORCEANIM, 0
+	applymovement LOCALID_GIOVANNI, Common_Movement_FaceLeft
 # 74 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_GiovanniPost
+	msgbox SixIsland_PatternBush_Text_Giovanni3
 # 75 "data/maps/SixIsland_RuinValley/scripts.pory"
-	setflag FLAG_GIOVANNI4
+	waitmovement 0
 # 76 "data/maps/SixIsland_RuinValley/scripts.pory"
-	removeobject 18
+	applymovement LOCALID_GIOVANNI, Common_Movement_FacePlayer
 # 77 "data/maps/SixIsland_RuinValley/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	msgbox SixIsland_PatternBush_Text_Giovanni4, MSGBOX_YESNO
 # 78 "data/maps/SixIsland_RuinValley/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_GiovanniNo
 # 79 "data/maps/SixIsland_RuinValley/scripts.pory"
-	release
+	setvar VAR_FORCEANIM, 1
 # 80 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	trainerbattle_single TRAINER_JACKO, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
 # 81 "data/maps/SixIsland_RuinValley/scripts.pory"
-
-# 82 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_GiovanniNo::
-# 83 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_PatternBush_Text_GiovanniNo
-# 84 "data/maps/SixIsland_RuinValley/scripts.pory"
 	release
+# 82 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 83 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 84 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_PostGiovanni::
 # 85 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	setvar VAR_FORCEANIM, 0
 # 86 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	msgbox SixIsland_PatternBush_Text_GiovanniPost
 # 87 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_Gym1::
+	setflag FLAG_GIOVANNI4
 # 88 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_EXPERT_M, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
+	removeobject 18
 # 89 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
+	fadescreen FADE_TO_BLACK
 # 90 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	fadescreen FADE_FROM_BLACK
 # 91 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket1Intro::
+	release
 # 92 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Hey, have you seen our MASTER\n"
-# 93 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "here somewhere?$"
-# 94 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket1Defeat::
-# 95 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Please help us!$"
-# 96 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket1PostBattle::
-# 97 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Our MASTER went into the\n"
-# 98 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "cave and he hasn't come out!\l"
-# 99 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "It's been two hours!$"
-# 100 "data/maps/SixIsland_RuinValley/scripts.pory"
-
-# 101 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_EventScript_Gym2::
-# 102 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_EXPERT_F, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
-# 103 "data/maps/SixIsland_RuinValley/scripts.pory"
-	msgbox SixIsland_RuinValley_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
-# 104 "data/maps/SixIsland_RuinValley/scripts.pory"
 	end
+# 93 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 94 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_GiovanniNo::
+# 95 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_PatternBush_Text_GiovanniNo
+# 96 "data/maps/SixIsland_RuinValley/scripts.pory"
+	release
+# 97 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 98 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 99 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_Gym1::
+# 100 "data/maps/SixIsland_RuinValley/scripts.pory"
+	trainerbattle_single TRAINER_EXPERT_M, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
+# 101 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
+# 102 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 103 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_Rocket1Intro::
+# 104 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Hey, have you seen our MASTER\n"
 # 105 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	.string "here somewhere?$"
 # 106 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket2Intro::
+SixIsland_RuinValley_Text_Rocket1Defeat::
 # 107 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "I've been standing here\n"
+	.string "Please help us!$"
 # 108 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "for two entire hours!$"
+SixIsland_RuinValley_Text_Rocket1PostBattle::
 # 109 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	.string "Our MASTER went into the\n"
 # 110 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket2Defeat::
+	.string "cave and he hasn't come out!\l"
 # 111 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "WAHHH!$"
+	.string "It's been two hours!$"
 # 112 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Rocket2PostBattle::
+
 # 113 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_Gym2::
+# 114 "data/maps/SixIsland_RuinValley/scripts.pory"
+	trainerbattle_single TRAINER_EXPERT_F, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
+# 115 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
+# 116 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 117 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 118 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_Rocket2Intro::
+# 119 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "I've been standing here\n"
+# 120 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "for two entire hours!$"
+# 121 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 122 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_Rocket2Defeat::
+# 123 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "WAHHH!$"
+# 124 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_Rocket2PostBattle::
+# 125 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "I can't take this anymore…$"

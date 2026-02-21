@@ -1,0 +1,30 @@
+raw `
+DownwardBeach_MapScripts::
+	.byte 0
+
+DownwardBeach_EventScript_Sign::
+	msgbox DownwardBeach_Text_Sign, MSGBOX_SIGN
+	release
+	end
+
+DownwardBeach_EventScript_Npc::
+	msgbox DownwardBeach_Text_Npc, MSGBOX_NPC
+	release
+	end
+
+DownwardBeach_Text_Sign::
+	.string "Welcome to Southside Rock\n"
+	.string "Training Spot of\l"
+	.string "SEVII MASTER CASEY.\p"
+	.string "Don't forget,\n"
+	.string "A SEVII MASTER\l"
+	.string "is the strongest trainer each\l"
+	.string "SEVII ISLAND has.$"
+
+DownwardBeach_Text_Npc::
+	.string "Sorry,\n"
+	.string "SEVII MASTER CASEY\l"
+	.string "isn't available right now.\p"
+	.string "In fact, all of the\n"
+	.string "SEVII MASTERS are unavailable.$"
+`

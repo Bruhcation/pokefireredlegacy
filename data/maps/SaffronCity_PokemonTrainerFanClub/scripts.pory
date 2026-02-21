@@ -289,8 +289,7 @@ SaffronCity_PokemonTrainerFanClub_EventScript_Gentleman::
 	end
 
 SaffronCity_PokemonTrainerFanClub_EventScript_Orb::
-	special BattleTrophy
-	call_if_eq VAR_RESULT, TRUE, SaffronCity_PokemonTrainerFanClub_EventScript_Orbing
+	goto_if_set FLAG_JIRACHI_WISH_GOT, SaffronCity_PokemonTrainerFanClub_EventScript_Orbing
 	return
 
 SaffronCity_PokemonTrainerFanClub_EventScript_Orbing::
@@ -308,10 +307,10 @@ SaffronCity_PokemonTrainerFanClub_EventScript_Orbing::
 SaffronCity_PokemonTrainerFanClub_Text_Orb::
 	.string "Oh, seems like you have gotten\n"
 	.string "quite popular for your battles\l"
-	.string "between very strong trainers.\p"
+	.string "between formidable trainers!\p"
 	.string "And for that I got you this Trophy,\n"
 	.string "An orb that represent's your\l"
-	.string "battles and whatnot!$"
+	.string "battle skills and whatnot!$"
 
 SaffronCity_PokemonTrainerFanClub_Text_Orb2::
 	.string "That orb may lead to\n"
@@ -324,11 +323,13 @@ SaffronCity_PokemonTrainerFanClub_EventScript_GentlemanPlayersFan::
 	specialvar VAR_RESULT, Script_GetNumFansOfPlayerInTrainerFanClub
 	goto_if_eq VAR_RESULT, 1, SaffronCity_PokemonTrainerFanClub_EventScript_GentlemanOnlyFan
 	msgbox SaffronCity_PokemonTrainerFanClub_Text_HadPleasureOfWatchingYouBattle
+	goto_if_unset FLAG_ORBING, SaffronCity_PokemonTrainerFanClub_EventScript_Orb
 	release
 	end
 
 SaffronCity_PokemonTrainerFanClub_EventScript_GentlemanOnlyFan::
 	msgbox SaffronCity_PokemonTrainerFanClub_Text_NeverSeenTrainerOfYourMagnificence
+	goto_if_unset FLAG_ORBING, SaffronCity_PokemonTrainerFanClub_EventScript_Orb
 	release
 	end
 

@@ -3,6 +3,7 @@ raw `
 .set LOCALID_GRUNT1,   4
 .set LOCALID_GRUNT2,   6
 .set LOCALID_GUY,      7
+.set LOCALID_MIRAGE,      8
 
 SilphCo_11F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SilphCo_11F_OnLoad
@@ -130,6 +131,144 @@ SilphCo_11F_Movement_PlayerFaceGiovanni::
 	delay_4
 	walk_in_place_faster_right
 	step_end
+
+SilphCo_11F_EventScript_OrbingCheck::
+	lock
+	faceplayer
+	goto_if_set FLAG_CAUGHT_REGISTEEL, SilphCo_11F_EventScript_End
+	goto_if_set FLAG_REGISTEEL_CHECKED, SilphCo_11F_EventScript_Orbing
+	msgbox SilphCo_11F_Text_RegiceCheck
+	closemessage
+	setvar VAR_0x8005, 1
+	special IsWailordInParty
+	goto_if_eq VAR_RESULT, 0, SilphCo_11F_EventScript_NoEligiblePkmn
+	setvar 0x8004, FAMECHECKER_AGATHA
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SilphCo_11F_EventScript_Flag
+	release
+	end
+
+SilphCo_11F_EventScript_NoEligiblePkmn::
+	msgbox SilphCo_11F_Text_NoEligiblePkmn
+	release
+	end
+
+SilphCo_11F_EventScript_Flag::
+	setflag FLAG_REGISTEEL_CHECKED
+	goto SilphCo_11F_EventScript_Orbing
+	end
+
+SilphCo_11F_EventScript_Orbing::
+	msgbox SilphCo_11F_Text_Whitney, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, SilphCo_11F_EventScript_NoWhitney
+	trainerbattle_single TRAINER_RS_COOLTRAINER_M, SilphCo_11F_Text_YesWhitney, SilphCo_11F_Text_PostWhitney, SilphCo_11F_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+SilphCo_11F_EventScript_PostWhitney::
+	special HealPlayerParty
+	msgbox SilphCo_11F_Text_WhitneyPostBattle
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_REGISTEEL, 70
+	waitse
+	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SilphCo_11F_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SilphCo_11F_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SilphCo_11F_EventScript_RanFromCelebi
+	setflag FLAG_CAUGHT_REGISTEEL
+	clearflag FLAG_STEEL_TRAINER
+	msgbox SilphCo_11F_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SilphCo_11F_EventScript_DefeatedCelebi::
+	setflag FLAG_CAUGHT_REGISTEEL
+	goto EventScript_RemoveStaticMon
+	clearflag FLAG_STEEL_TRAINER
+	msgbox SilphCo_11F_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK
+	end
+
+SilphCo_11F_EventScript_RanFromCelebi::
+	setvar VAR_0x8004, SPECIES_REGISTEEL
+	clearflag FLAG_STEEL_TRAINER
+	msgbox SilphCo_11F_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK
+	goto EventScript_MonFlewAway
+	end
+
+SilphCo_11F_EventScript_NoWhitney::
+	msgbox SilphCo_11F_Text_NoWhitney
+	release
+	end
+
+SilphCo_11F_EventScript_End::
+	clearflag FLAG_STEEL_TRAINER
+	msgbox SilphCo_11F_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SilphCo_11F_Text_NoEligiblePkmn::
+	.string "You have not meet the requirements.\p"
+	.string "Come back when you do.$"
+
+SilphCo_11F_Text_RegiceCheck::
+	.string "Hello there {PLAYER}.\p"
+	.string "I am the Steel Mirage Trainer.\p"
+	.string "Beat me and you shall face a\n"
+	.string "special POKEMON.\p"
+	.string "But first, I want to see a\n"
+	.string "GIANT WHALE,\l"
+	.string "and knowledge on the GHOST HAG.$"
+
+SilphCo_11F_Text_Whitney::
+	.string "So, you wish to face me?$"
+
+SilphCo_11F_Text_YesWhitney::
+	.string "Very well! Prepare yourself!$"
+
+SilphCo_11F_Text_PostWhitney::
+	.string "So you are worthy...$"
+
+SilphCo_11F_Text_WhitneyPostBattle::
+	.string "Alright, you have bested me.\p"
+	.string "Be prepared to face REGISTEEL!$"
+
+SilphCo_11F_Text_EndWhitney::
+	.string "Goodbye.$"
+
+SilphCo_11F_Text_NoWhitney::
+	.string "Alright, take your time.$"
 
 @ Unused
 SilphCo_11F_EventScript_Monitor::

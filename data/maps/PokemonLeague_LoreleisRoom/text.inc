@@ -10,19 +10,15 @@ PokemonLeague_LoreleisRoom_Text_Intro::
     .string "Are you ready?{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 PokemonLeague_LoreleisRoom_Text_RematchIntro::
-    .string "Back again?\n"  
-    .string "Impressive!\p"  
-    .string "Welcome back to the\n"  
-    .string "POKéMON LEAGUE!\p" 
-    .string "I thank you very much\n"  
-    .string "for beating those\l"  
-    .string "villains anywhere they go!\p"  
-    .string "But let's cut to the chase.\p"  
-    .string "Your past win means\n"  
-    .string "nothing now!\p"  
-    .string "Let's see if you've grown!\p"  
-    .string "Prepare for a chilling\n"  
-    .string "battle!\p"  
+	.string "Back again? Impressive!\p"
+	.string "Welcome back to the\n"
+	.string "POKéMON LEAGUE!\p"
+	.string "Thank you for beating those\n"
+	.string "villains anywhere they go!\p"
+	.string "But let's cut to the chase.\p"
+	.string "Your past win means nothing now!\p"
+	.string "Let's see if you've grown!\p"
+	.string "Prepare for a chilling battle!\p"
     .string "Are you ready?{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 PokemonLeague_LoreleisRoom_Text_Defeat::

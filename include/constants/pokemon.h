@@ -254,6 +254,7 @@
 #define FRIENDSHIP_EVENT_FAINT_SMALL          7
 #define FRIENDSHIP_EVENT_FAINT_OUTSIDE_BATTLE 8
 #define FRIENDSHIP_EVENT_FAINT_LARGE          9
+#define FRIENDSHIP_EVENT_MAX_MASSAGE          10
 
 #define MAX_FRIENDSHIP  255
 #define MAX_SHEEN       255
@@ -310,6 +311,7 @@
 #define EVO_LEVEL_NINJASK    13 // Pokémon reaches the specified level (special value for Ninjask)
 #define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
+#define EVO_FRIENDSHIP_BABY  16 // Pokémon levels up with friendship ≥ 150
 
 #define EVOS_PER_MON 5
 
