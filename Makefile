@@ -45,7 +45,7 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM := pokere$(BUILD_NAME).gba
+ROM := poke$(BUILD_NAME).gba
 OBJ_DIR := $(BUILD_DIR)/$(BUILD_NAME)
 
 ELF := $(ROM:.gba=.elf)
