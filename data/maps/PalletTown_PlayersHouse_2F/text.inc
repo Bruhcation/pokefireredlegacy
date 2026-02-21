@@ -10,6 +10,7 @@ PalletTown_PlayersHouse_2F_Text_PressLRForHelp::
 	.string "If your confused on what version\n"
 	.string "we are on,\l"
 	.string "we are on VERSION 1.5!\p"
+	.string "DUEL TYPE STARTERS PATCH.\p"
 	.ifdef FIRERED
 	.string "POKEMON FIRE RED: REIGNITED!$"
 	.else
