@@ -306,12 +306,6 @@ FiveIsland_MemorialPillar_EventScript_Frog::
 	release
 	end
 
-FiveIsland_MemorialPillar_Text_Frog::
-	.string "I'm making a memorial for\n"
-	.string "my POLIWHIRI, CHARILE\p"
-	.string "He was so bubbly and froggy!\p"
-	.string "I miss CHARILE so much!$"
-
 FiveIsland_MemorialPillar_Text_CelebiQuest::
 	.string "Once a lonely ONIX pined\n"
     .string "for a friend to join him\l"
@@ -347,7 +341,9 @@ FiveIsland_MemorialPillar_Text_CelebiQuest2::
     .string "Lululalala!$"
 
 FiveIsland_MemorialPillar_Text_CelebiQuest3::
-    .string "What was that green thing?$"
+    .string "What was that green thing?\p"
+    .string "It seemed like something?\n"
+    .string "Out of Berry Forest1$"
 
 FiveIsland_MemorialPillar_Movement_Celebi::
 	walk_down

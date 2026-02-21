@@ -173,6 +173,16 @@ gText_Oak_AreYouSure_Hardcore::
 	.string "Are you sure? Hard mode,\n"
 	.string "but POKéMON can't be revived.$"
 
+gPikachuIntro_Text_Page4::
+	.string "Thank you for Playing FIRERED\n"
+	.string "REIGNITED and LEAFGREEN REGROWN!\n"
+	.string "Version 1.5!\p"
+    .string "\n"
+	.string "This is a Romhack so if you wanted\n"
+	.string "to play the orignal games log off!\n"
+	.string "Check out the github for more\n"
+	.string "info on features!$"
+
 gPikachuIntro_Text_Page1::
     .string "In the world which you are about to\n"
     .string "enter, you will embark on a grand\n"

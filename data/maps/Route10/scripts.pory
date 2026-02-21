@@ -1,4 +1,6 @@
 raw `
+
+.set LOCALID_GIRL, 11
 Route10_MapScripts::
 	.byte 0
 
@@ -15,5 +17,187 @@ Route10_EventScript_SouthRockTunnelSign::
 
 Route10_EventScript_PowerPlantSign::
 	msgbox Route10_Text_PowerPlant, MSGBOX_SIGN
+	end
+
+Route10_EventScript_Girl::
+	goto_if_set FLAG_JIRACHI, Route10_EventScript_GirlSurpised
+	msgbox Route10_Text_Girl, MSGBOX_NPC
+	end
+
+Route10_EventScript_GirlSurpised::
+	msgbox Route10_Text_GirlSurprisedJirachi, MSGBOX_NPC
+	end
+
+Route10_EventScript_Rock::
+	goto_if_set FLAG_JIRACHI, Route10_EventScript_End
+	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, Route10_EventScript_Interact
+	msgbox Route10_Text_Rock, MSGBOX_SIGN
+	release
+	end
+
+Route10_EventScript_Interact::
+	msgbox Route10_Text_WeirdRock, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route10_EventScript_No
+	msgbox Route10_Text_Appeared
+	call Route10_EventScript_Jirachi
+	release
+	end
+
+Route10_EventScript_No::
+	msgbox Route10_Text_No, MSGBOX_NPC
+	release
+	end
+
+Route10_EventScript_End::
+	msgbox Route10_Text_CrackedRock, MSGBOX_SIGN
+	setflag FLAG_JIRACHI_WISH_GOT
+	release
+	end
+
+Route10_EventScript_Jirachi::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_GIRL, Common_Movement_ExclamationMark
+	applymovement LOCALID_GIRL, Common_Movement_FaceRight
+	playse SE_PIN
+	waitse
+	setwildbattle SPECIES_JIRACHI, 50
+	waitse
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	message Text_Gyaoo
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route10_EventScript_DefeatedJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route10_EventScript_RanFromJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route10_EventScript_RanFromJirachi
+	setflag FLAG_JIRACHI
+	msgbox Route10_Text_Wish
+	goto Route10_EventScript_HoennWish
+	release
+	end
+
+Route10_EventScript_DefeatedJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+    fadescreen FADE_TO_BLACK
+    fadescreen FADE_FROM_BLACK
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+	msgbox Route10_Text_WentBack
+	release
+	end
+
+Route10_EventScript_RanFromJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+    fadescreen FADE_TO_BLACK
+    fadescreen FADE_FROM_BLACK
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+	msgbox Route10_Text_WentBack
+	release
+	end
+
+Route10_Text_CrackedRock::
+	.string "The rock is cracked.\p"
+	.string "It looks like something was inside.$"
+
+Route10_Text_Girl::
+	.string "I kinda get weird vibes\n"
+	.string "from this rock.\p"
+	.string "It feels like this rock can\n"
+	.string "make wishes or something.$"
+
+Route10_Text_Rock::
+	.string "The weird rock is shaking a bit.$"
+
+Route10_Text_No::
+	.string "Guess Not.$"
+
+Route10_Text_WeirdRock::
+	.string "The weird rock is shaking a lot.\p"
+	.string "Will you Interact with it?$"
+
+Route10_Text_Appeared::
+	.string "Huh, something appeared?\n$"
+
+Route10_Text_Wish::
+	.string "A Wish was made subconsciously...\p"
+	.string "New POKEMON might be lurking\n"
+	.string "around the KANTO region.$"
+
+Route10_Text_GirlSurprisedJirachi::
+	.string "W-Was that a JIRACHI I saw?\p"
+	.string "I heard it can grant wishes!$"
+
+Route10_Text_WentBack::
+	.string "JIRACHI went back to\n"
+	.string "the rock it was sleeping in.$"
+
+Route10_EventScript_HoennWish::
+	setvar VAR_ROUTE1, 1
+	setvar VAR_ROUTE2, 1
+	setvar VAR_ROUTE3, 1
+	setvar VAR_ROUTE4, 1
+	setvar VAR_ROUTE5, 1
+	setvar VAR_ROUTE6, 1
+	setvar VAR_ROUTE7, 1
+	setvar VAR_ROUTE8, 1
+	setvar VAR_ROUTE9, 1
+	setvar VAR_ROUTE10, 1
+	setvar VAR_ROUTE11, 1
+	setvar VAR_ROUTE12, 1
+	setvar VAR_ROUTE13, 1
+	setvar VAR_ROUTE14, 1
+	setvar VAR_ROUTE15, 1
+	setvar VAR_ROUTE16, 1
+	setvar VAR_ROUTE17, 1
+	setvar VAR_ROUTE18, 1
+	setvar VAR_ROUTE19, 1
+	setvar VAR_ROUTE20, 1
+	setvar VAR_ROUTE21, 1
+	setvar VAR_ROUTE211, 1
+	setvar VAR_ROUTE22, 1
+	setvar VAR_ROUTE24, 1
+	setvar VAR_ROUTE25, 1
+	setvar VAR_MANSION1, 1
+	setvar VAR_MANSION2, 1
+	setvar VAR_MANSION3, 1
+	setvar VAR_MANSIONB1F, 1
+	setvar VAR_POWERPLANT, 1
+	setvar VAR_DIGLETTCAVE, 1
+	setvar VAR_SAFARIZONE, 1
+	setvar VAR_SEAFOAM1, 1
+	setvar VAR_SEAFOAM2, 1
+	setvar VAR_SEAFOAM3, 1
+	setvar VAR_SEAFOAM4, 1
+	setvar VAR_SEAFOAM5, 1
+	setvar VAR_TOWER3, 1
+	setvar VAR_TOWER4, 1
+	setvar VAR_TOWER5, 1
+	setvar VAR_TOWER6, 1
+	setvar VAR_TOWER7, 1
+	setvar VAR_CERULEAN, 1
+	setvar VAR_VERMILION, 1
+	clearflag FLAG_GOT_CLAW
+	clearflag FLAG_GOT_ROOT
+	clearflag FLAG_JIRACHI_WISH
+	clearflag FLAG_GROUND_TRAINER
+	clearflag FLAG_WATER_TRAINER              
+	clearflag FLAG_ICE_TRAINER         
+	clearflag FLAG_STEEL_TRAINER               
+	clearflag FLAG_BRO_TRAINER              
+	clearflag FLAG_SIS_TRAINER            
+	clearflag FLAG_ROCK_TRAINER              
+	clearflag FLAG_DRAGON_TRAINER  
+	setflag FLAG_JIRACHI_WISH_GOT
+	release
 	end
 `

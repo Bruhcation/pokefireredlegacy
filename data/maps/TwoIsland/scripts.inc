@@ -413,138 +413,154 @@ TwoIsland_Items_ShopExpanded3::
 # 207 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_TAMATO_BERRY
 # 208 "data/maps/TwoIsland/scripts.pory"
-	.2byte ITEM_DEEP_SEA_SCALE
-# 209 "data/maps/TwoIsland/scripts.pory"
-	.2byte ITEM_DEEP_SEA_TOOTH
-# 210 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_BRICK_PIECE
-# 211 "data/maps/TwoIsland/scripts.pory"
+# 209 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_CLEANSE_TAG
-# 212 "data/maps/TwoIsland/scripts.pory"
+# 210 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_METAL_POWDER
-# 213 "data/maps/TwoIsland/scripts.pory"
+# 211 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_SMOKE_BALL
-# 214 "data/maps/TwoIsland/scripts.pory"
+# 212 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_STICK
-# 215 "data/maps/TwoIsland/scripts.pory"
+# 213 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_KINGS_ROCK
-# 216 "data/maps/TwoIsland/scripts.pory"
+# 214 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_DRAGON_SCALE
-# 217 "data/maps/TwoIsland/scripts.pory"
+# 215 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_METAL_COAT
-# 218 "data/maps/TwoIsland/scripts.pory"
+# 216 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_SOOTHE_BELL
-# 219 "data/maps/TwoIsland/scripts.pory"
+# 217 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_MOON_STONE
-# 220 "data/maps/TwoIsland/scripts.pory"
+# 218 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_SUN_STONE
-# 221 "data/maps/TwoIsland/scripts.pory"
+# 219 "data/maps/TwoIsland/scripts.pory"
 	.2byte ITEM_NONE
+# 220 "data/maps/TwoIsland/scripts.pory"
+	release
+# 221 "data/maps/TwoIsland/scripts.pory"
+	end
 # 222 "data/maps/TwoIsland/scripts.pory"
-	release
+
 # 223 "data/maps/TwoIsland/scripts.pory"
-	end
-# 224 "data/maps/TwoIsland/scripts.pory"
-
-# 225 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_Sailor::
-# 226 "data/maps/TwoIsland/scripts.pory"
+# 224 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_FellowMovedFromCeladonCity, MSGBOX_NPC
+# 225 "data/maps/TwoIsland/scripts.pory"
+	end
+# 226 "data/maps/TwoIsland/scripts.pory"
+
 # 227 "data/maps/TwoIsland/scripts.pory"
-	end
-# 228 "data/maps/TwoIsland/scripts.pory"
-
-# 229 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_Woman::
-# 230 "data/maps/TwoIsland/scripts.pory"
+# 228 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_ShopkeepersBrotherWorksGameCorner, MSGBOX_NPC
+# 229 "data/maps/TwoIsland/scripts.pory"
+	end
+# 230 "data/maps/TwoIsland/scripts.pory"
+
 # 231 "data/maps/TwoIsland/scripts.pory"
-	end
-# 232 "data/maps/TwoIsland/scripts.pory"
-
-# 233 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_Beauty::
-# 234 "data/maps/TwoIsland/scripts.pory"
+# 232 "data/maps/TwoIsland/scripts.pory"
 	lock
-# 235 "data/maps/TwoIsland/scripts.pory"
+# 233 "data/maps/TwoIsland/scripts.pory"
 	faceplayer
-# 236 "data/maps/TwoIsland/scripts.pory"
+# 234 "data/maps/TwoIsland/scripts.pory"
 	famechecker FAMECHECKER_BRUNO, 4
-# 237 "data/maps/TwoIsland/scripts.pory"
+# 235 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_BrunoCameToIslandWhileBack
-# 238 "data/maps/TwoIsland/scripts.pory"
+# 236 "data/maps/TwoIsland/scripts.pory"
 	release
+# 237 "data/maps/TwoIsland/scripts.pory"
+	end
+# 238 "data/maps/TwoIsland/scripts.pory"
+
 # 239 "data/maps/TwoIsland/scripts.pory"
-	end
-# 240 "data/maps/TwoIsland/scripts.pory"
-
-# 241 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_SuperNerd::
-# 242 "data/maps/TwoIsland/scripts.pory"
+# 240 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_BuyRareItemsHere, MSGBOX_NPC
+# 241 "data/maps/TwoIsland/scripts.pory"
+	end
+# 242 "data/maps/TwoIsland/scripts.pory"
+
 # 243 "data/maps/TwoIsland/scripts.pory"
-	end
-# 244 "data/maps/TwoIsland/scripts.pory"
-
-# 245 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_Boy::
-# 246 "data/maps/TwoIsland/scripts.pory"
+# 244 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_OldWomanLivesOutOnCape, MSGBOX_NPC
+# 245 "data/maps/TwoIsland/scripts.pory"
+	end
+# 246 "data/maps/TwoIsland/scripts.pory"
+
 # 247 "data/maps/TwoIsland/scripts.pory"
-	end
-# 248 "data/maps/TwoIsland/scripts.pory"
-
-# 249 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_LittleBoy::
-# 250 "data/maps/TwoIsland/scripts.pory"
+# 248 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_HaveYouTriedJumpingGame, MSGBOX_NPC
+# 249 "data/maps/TwoIsland/scripts.pory"
+	end
+# 250 "data/maps/TwoIsland/scripts.pory"
+
 # 251 "data/maps/TwoIsland/scripts.pory"
-	end
-# 252 "data/maps/TwoIsland/scripts.pory"
-
-# 253 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_IslandSign::
-# 254 "data/maps/TwoIsland/scripts.pory"
+# 252 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_IslandSign, MSGBOX_SIGN
+# 253 "data/maps/TwoIsland/scripts.pory"
+	end
+# 254 "data/maps/TwoIsland/scripts.pory"
+
 # 255 "data/maps/TwoIsland/scripts.pory"
-	end
-# 256 "data/maps/TwoIsland/scripts.pory"
-
-# 257 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_JoyfulGameCornerSign::
-# 258 "data/maps/TwoIsland/scripts.pory"
+# 256 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_JoyfulGameCornerSign, MSGBOX_SIGN
+# 257 "data/maps/TwoIsland/scripts.pory"
+	end
+# 258 "data/maps/TwoIsland/scripts.pory"
+
 # 259 "data/maps/TwoIsland/scripts.pory"
-	end
-# 260 "data/maps/TwoIsland/scripts.pory"
-
-# 261 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_FastCurrentSign::
-# 262 "data/maps/TwoIsland/scripts.pory"
+# 260 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_DangerFastCurrent, MSGBOX_SIGN
+# 261 "data/maps/TwoIsland/scripts.pory"
+	end
+# 262 "data/maps/TwoIsland/scripts.pory"
+
 # 263 "data/maps/TwoIsland/scripts.pory"
-	end
-# 264 "data/maps/TwoIsland/scripts.pory"
-
-# 265 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_EventScript_Casey::
-# 266 "data/maps/TwoIsland/scripts.pory"
+# 264 "data/maps/TwoIsland/scripts.pory"
 	msgbox TwoIsland_Text_Casey, MSGBOX_NPC
-# 267 "data/maps/TwoIsland/scripts.pory"
+# 265 "data/maps/TwoIsland/scripts.pory"
 	end
-# 268 "data/maps/TwoIsland/scripts.pory"
+# 266 "data/maps/TwoIsland/scripts.pory"
 
-# 269 "data/maps/TwoIsland/scripts.pory"
+# 267 "data/maps/TwoIsland/scripts.pory"
 TwoIsland_Text_Casey::
-# 270 "data/maps/TwoIsland/scripts.pory"
+# 268 "data/maps/TwoIsland/scripts.pory"
 	.string "Casey brings fury into \n"
-# 271 "data/maps/TwoIsland/scripts.pory"
+# 269 "data/maps/TwoIsland/scripts.pory"
 	.string "her double battles,\l"
-# 272 "data/maps/TwoIsland/scripts.pory"
+# 270 "data/maps/TwoIsland/scripts.pory"
 	.string "while also using cute POKéMON\l"
-# 273 "data/maps/TwoIsland/scripts.pory"
+# 271 "data/maps/TwoIsland/scripts.pory"
 	.string "in a interesting way.\p"
-# 274 "data/maps/TwoIsland/scripts.pory"
-	.string "Perhaps I should work on.\p"
-# 275 "data/maps/TwoIsland/scripts.pory"
+# 272 "data/maps/TwoIsland/scripts.pory"
+	.string "Perhaps I should work on\n"
+# 273 "data/maps/TwoIsland/scripts.pory"
 	.string "my Double Battle Skills.$"
+# 274 "data/maps/TwoIsland/scripts.pory"
+
+# 275 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_EventScript_CaveSign::
+# 276 "data/maps/TwoIsland/scripts.pory"
+	msgbox TwoIsland_Text_CaveSign, MSGBOX_SIGN
+# 277 "data/maps/TwoIsland/scripts.pory"
+	end
+# 278 "data/maps/TwoIsland/scripts.pory"
+
+# 279 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_Text_CaveSign::
+# 280 "data/maps/TwoIsland/scripts.pory"
+	.string "WARNING: Dangerous Path\n"
+# 281 "data/maps/TwoIsland/scripts.pory"
+	.string "South of here.\p"
+# 282 "data/maps/TwoIsland/scripts.pory"
+	.string "Beware of Dark Caves and\n"
+# 283 "data/maps/TwoIsland/scripts.pory"
+	.string "High Currents!$"

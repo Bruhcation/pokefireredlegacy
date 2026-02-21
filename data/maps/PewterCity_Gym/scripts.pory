@@ -38,6 +38,27 @@ PewterCity_Gym_EventScript_NoRoomForTM39::
 	end
 
 PewterCity_Gym_EventScript_RematchBrock::
+	setvar VAR_0x8004, FAMECHECKER_BROCK
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, PewterCity_Gym_EventScript_RematchBrock2
+	msgbox PewterCity_Gym_Text_BrockNoNoRematchBattle
+	release
+	end
+
+PewterCity_Gym_Text_BrockNoNoRematchBattle::
+	.string "Hey there {PLAYER}, congrats\n"
+	.string "on your win to become the CHAMPION!\p"
+	.string "It must of taken lots of\n"
+	.string "strength and hard will to get to\l"
+	.string "where you are today!\p"
+	.string "Well, I want to have a rematch,\n"
+	.string "But I ain't ready yet.\p"
+	.string "In the mean time, get that\n"
+	.string "Rocky FAME CHECKER filled out!\p"
+	.string "My Rocky FAME CHECKER Entry\n"
+	.string "to be specific.$"
+
+PewterCity_Gym_EventScript_RematchBrock2::
 	msgbox PewterCity_Gym_Text_RematchBrock, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, PewterCity_Gym_EventScript_NoRematchBrock
 	trainerbattle_single TRAINER_BROCK2, PewterCity_Gym_Text_RematchYesBrock, PewterCity_Gym_Text_RematchBrockDefeat, PewterCity_Gym_EventScript_PostRematchBrock, NO_MUSIC

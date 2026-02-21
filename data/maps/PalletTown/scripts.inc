@@ -914,3 +914,61 @@ PalletTown_EventScript_SignLadyStartShowSign::
 	release
 # 458 "data/maps/PalletTown/scripts.pory"
 	end
+# 459 "data/maps/PalletTown/scripts.pory"
+
+# 460 "data/maps/PalletTown/scripts.pory"
+PalletTown_EventScript_Science::
+# 461 "data/maps/PalletTown/scripts.pory"
+	msgbox PalletTown_EventScript_Hoenn
+# 462 "data/maps/PalletTown/scripts.pory"
+	waitmessage
+# 463 "data/maps/PalletTown/scripts.pory"
+	setvar VAR_0x8004, SPECIES_TREECKO
+# 464 "data/maps/PalletTown/scripts.pory"
+	special SetSeenMon
+# 465 "data/maps/PalletTown/scripts.pory"
+	showmonpic SPECIES_TREECKO, 10, 3
+# 466 "data/maps/PalletTown/scripts.pory"
+	waitbuttonpress
+# 467 "data/maps/PalletTown/scripts.pory"
+	hidemonpic
+# 468 "data/maps/PalletTown/scripts.pory"
+	setvar VAR_0x8004, SPECIES_TORCHIC
+# 469 "data/maps/PalletTown/scripts.pory"
+	special SetSeenMon
+# 470 "data/maps/PalletTown/scripts.pory"
+	showmonpic SPECIES_TORCHIC, 10, 3
+# 471 "data/maps/PalletTown/scripts.pory"
+	waitbuttonpress
+# 472 "data/maps/PalletTown/scripts.pory"
+	hidemonpic
+# 473 "data/maps/PalletTown/scripts.pory"
+	setvar VAR_0x8004, SPECIES_MUDKIP
+# 474 "data/maps/PalletTown/scripts.pory"
+	special SetSeenMon
+# 475 "data/maps/PalletTown/scripts.pory"
+	showmonpic SPECIES_MUDKIP, 10, 3
+# 476 "data/maps/PalletTown/scripts.pory"
+	waitbuttonpress
+# 477 "data/maps/PalletTown/scripts.pory"
+	hidemonpic
+# 478 "data/maps/PalletTown/scripts.pory"
+	releaseall
+# 479 "data/maps/PalletTown/scripts.pory"
+	end
+# 480 "data/maps/PalletTown/scripts.pory"
+
+# 481 "data/maps/PalletTown/scripts.pory"
+PalletTown_EventScript_Hoenn::
+# 482 "data/maps/PalletTown/scripts.pory"
+	.string "I've have came here to KANTO\n"
+# 483 "data/maps/PalletTown/scripts.pory"
+	.string "to show PROFESSOR OAK\l"
+# 484 "data/maps/PalletTown/scripts.pory"
+	.string "some special POKEMON from\l"
+# 485 "data/maps/PalletTown/scripts.pory"
+	.string "the HOENN region.\p"
+# 486 "data/maps/PalletTown/scripts.pory"
+	.string "I'll lend you a look\n"
+# 487 "data/maps/PalletTown/scripts.pory"
+	.string "of them!$"

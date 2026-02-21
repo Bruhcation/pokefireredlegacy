@@ -274,13 +274,13 @@ SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	playfanfare MUS_OBTAIN_KEY_ITEM
 	giveitem ITEM_RED_ORB
-	setflag FLAG_0x020
+	setflag FLAG_SHINY_STARTER
 	waitmessage
 	waitfanfare 
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_Orbing
 	delay_16
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_Goodbye
-	release
+	releaseall
 	end
 
 SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney::
@@ -296,8 +296,7 @@ SixIsland_DottedHole_SapphireRoom_Text_Ren::
 	.string "Call me surpised that\n"
 	.string "you got this face and managed\l"
 	.string "to find this orb's purpose!\p"
-	.string "In terms of what I am,\n"
-	.string "don't worry.\p"
+	.string "In terms of what I am, don't worry.\p"
 	.string "All I know is that I want\n"
 	.string "a battle with you, if you want.$"
 
@@ -312,12 +311,12 @@ SixIsland_DottedHole_SapphireRoom_Text_Whitney::
 SixIsland_DottedHole_SapphireRoom_Text_NoWhitney::
 	.string "Guess you need more\n"
 	.string "time to train than,\l"
-	.string "take your time!$"
+	.string "take your time!$"	
 
 SixIsland_DottedHole_SapphireRoom_Text_PostWhitney::
 	.string "Wow! What a amazing battle!\n"
-	.string "From Red to Blue, this\l"
-	.string "battle is Green all around!$"
+	.string "From Red to Blue,\l"
+	.string "this battle is Green all around!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_Orbing::
 	.string "This orb if exposed\n"
@@ -332,7 +331,7 @@ SixIsland_DottedHole_SapphireRoom_Text_YesWhitney::
 	.string "Alright.\n"
 	.string "May this battle not be blue,\l"
 	.string "May this battle be red in hype,\l"
-	.string "and green in success!$"
+	.string "and may be green in success!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle::
 	.string "Ok, guess I gotta give\n"
@@ -345,4 +344,5 @@ SixIsland_DottedHole_SapphireRoom_Text_Goodbye::
 	.string "you should be able to read\l"
 	.string "the connections from this battle.\p"
 	.string "...\n"
-	.string "Goodbye {PLAYER}$"`
+	.string "Goodbye {PLAYER}$"
+`

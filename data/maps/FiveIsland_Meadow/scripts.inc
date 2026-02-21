@@ -339,13 +339,13 @@ FiveIsland_Meadow_EventScript_Beast::
 # 170 "data/maps/FiveIsland_Meadow/scripts.pory"
 	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, FiveIsland_Meadow_EventScript_Beast3
 # 171 "data/maps/FiveIsland_Meadow/scripts.pory"
-	call_if_unset FLAG_0x024, FiveIsland_Meadow_EventScript_BeastShow
+	call_if_unset FLAG_SEEN_BEAST, FiveIsland_Meadow_EventScript_BeastShow
 # 172 "data/maps/FiveIsland_Meadow/scripts.pory"
-	call_if_unset FLAG_0x025, FiveIsland_Meadow_EventScript_Entei
+	call_if_unset FLAG_ENTEI_FLAG, FiveIsland_Meadow_EventScript_Entei
 # 173 "data/maps/FiveIsland_Meadow/scripts.pory"
-	call_if_unset FLAG_0x022, FiveIsland_Meadow_EventScript_Raikou
+	call_if_unset FLAG_RAIKOU_FLAG, FiveIsland_Meadow_EventScript_Raikou
 # 174 "data/maps/FiveIsland_Meadow/scripts.pory"
-	call_if_unset FLAG_0x026, FiveIsland_Meadow_EventScript_Suicune
+	call_if_unset FLAG_SUICANE_FLAG, FiveIsland_Meadow_EventScript_Suicune
 # 175 "data/maps/FiveIsland_Meadow/scripts.pory"
 	special RoamingBeasts
 # 176 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -371,7 +371,7 @@ FiveIsland_Meadow_EventScript_Suicune2::
 # 186 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Suicune, MSGBOX_NPC
 # 187 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setflag FLAG_0x026
+	setflag FLAG_SUICANE_FLAG
 # 188 "data/maps/FiveIsland_Meadow/scripts.pory"
 	special InitRoamer
 # 189 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -407,7 +407,7 @@ FiveIsland_Meadow_EventScript_Entei2::
 # 204 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Entei, MSGBOX_NPC
 # 205 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setflag FLAG_0x025
+	setflag FLAG_ENTEI_FLAG
 # 206 "data/maps/FiveIsland_Meadow/scripts.pory"
 	special InitRoamer
 # 207 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -443,7 +443,7 @@ FiveIsland_Meadow_EventScript_Raikou2::
 # 222 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Raikou, MSGBOX_NPC
 # 223 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setflag FLAG_0x022
+	setflag FLAG_RAIKOU_FLAG
 # 224 "data/maps/FiveIsland_Meadow/scripts.pory"
 	special InitRoamer
 # 225 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -503,7 +503,7 @@ FiveIsland_Meadow_EventScript_BeastShow::
 # 252 "data/maps/FiveIsland_Meadow/scripts.pory"
 	hidemonpic
 # 253 "data/maps/FiveIsland_Meadow/scripts.pory"
-	setflag FLAG_0x024
+	setflag FLAG_SEEN_BEAST
 # 254 "data/maps/FiveIsland_Meadow/scripts.pory"
 	return
 # 255 "data/maps/FiveIsland_Meadow/scripts.pory"

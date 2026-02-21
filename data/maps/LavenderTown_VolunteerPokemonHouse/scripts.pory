@@ -5,6 +5,7 @@ LavenderTown_VolunteerPokemonHouse_MapScripts::
 LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
 	lock
 	faceplayer
+	goto_if_unset FLAG_JIRACHI_WISH, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck
 	goto_if_set FLAG_GOT_POKE_FLUTE, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis
 	checkitemspace ITEM_POKE_FLUTE
@@ -14,6 +15,51 @@ LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_ExplainPokeFlute
 	release
 	end
+
+LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck::
+	goto_if_set FLAG_GOT_SOUL_DEW, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
+	setvar VAR_0x8004, FAMECHECKER_MRFUJI
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewGiven
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
+	release
+	end
+
+LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewGiven::
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping
+	checkitemspace ITEM_SOUL_DEW
+	giveitem ITEM_SOUL_DEW
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Restaurant_EventScript_NoRoomForCoinCase
+	setflag FLAG_GOT_SOUL_DEW
+	clearflag FLAG_SECOND_SOUL_DEW
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2
+	release
+	end
+
+LavenderTown_VolunteerPokemonHouse_Text_FameCheckerNotEnough::
+	.string "PLACEHOLDER.$"
+
+LavenderTown_VolunteerPokemonHouse_Text_GotDew::
+	.string "{PLAYER} received the SOUL DEW!$"
+
+LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping::
+	.string "Woah, I saw that you completed\n"
+	.string "my entry on the FAMECHECKER.\p"
+	.string "I appreciate your enthusiasm,\n"
+	.string "and hope you are more willing\l"
+	.string "to treat POKEMON much more better\l"
+	.string "than before!\p"
+	.string "Well, for you enthusiasm, I found\n"
+	.string "a special POKEMON Item\l"
+	.string "in my research!$"
+
+LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2::
+	.string "It's belongs to the\n"
+	.string "Legendary POKEMONS,\l"
+	.string "LATIOS and LATIAS.\p"
+	.string "They left it behind and I\n"
+	.string "couldn't give it back,\l"
+	.string "So I'll let you return it to them!$"
 
 LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute::
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou

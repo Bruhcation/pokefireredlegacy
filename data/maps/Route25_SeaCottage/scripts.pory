@@ -125,7 +125,82 @@ Route25_SeaCottage_EventScript_NoRoomForSSTicket::
 	end
 
 Route25_SeaCottage_EventScript_BillGoLookAtPC::
+	setvar VAR_0x8004, FAMECHECKER_BILL
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, Route25_SeaCottage_EventScript_BillCastform
 	msgbox Route25_SeaCottage_Text_CheckOutRareMonsOnPC
+	release
+	end
+
+Route25_SeaCottage_EventScript_BillCastform::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_CASTFORM, Route25_SeaCottage_EventScript_SetGotEevee
+	msgbox Route25_SeaCottage_Text_WhatsThisMonOnPC
+	waitmessage
+	setvar VAR_TEMP_1, SPECIES_CASTFORM
+	givemon SPECIES_CASTFORM, 25
+	goto_if_eq VAR_RESULT, 0, Route25_SeaCottage_EventScript_GetEeveeParty
+	goto_if_eq VAR_RESULT, 1, Route25_SeaCottage_EventScript_GetEeveePC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+Route25_SeaCottage_EventScript_GetEeveeParty::
+	playfanfare MUS_LEVEL_UP
+	message Route25_SeaCottage_Text_ObtainedAnEevee
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route25_SeaCottage_EventScript_SetGotEevee
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto Route25_SeaCottage_EventScript_SetGotEevee
+	end
+
+Route25_SeaCottage_EventScript_GetEeveePC::
+	playfanfare MUS_LEVEL_UP
+	message Route25_SeaCottage_Text_ObtainedAnEevee
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route25_SeaCottage_EventScript_TransferEeveeToPC
+	call EventScript_NameReceivedBoxMon
+	goto Route25_SeaCottage_EventScript_TransferEeveeToPC
+	end
+
+Route25_SeaCottage_EventScript_TransferEeveeToPC::
+	call EventScript_TransferredToPC
+	goto Route25_SeaCottage_EventScript_SetGotEevee
+	end
+
+Route25_SeaCottage_Text_ObtainedAnEevee::
+	.string "{PLAYER} obtained CASTFORM!$"
+
+Route25_SeaCottage_Text_WhatsThisMonOnPC::
+	.string "Oh hey there {PLAYER}, I sense you\n"
+	.string "completed my FAME CHECKER!\p"
+	.string "Guess you really like me!\p"
+	.string "Well I actually got a gift\n"
+	.string "for you for what you did!\p"
+	.string "It's a POKEMON from the Hoenn\n"
+	.string "Region which LANETTE gifted me.\p"
+	.string "I actually got a few of them,\n"
+	.string "and I'm giving you one of them!$"
+
+Route25_SeaCottage_Text_WhatsThisMonOnPC2::
+	.string "It's the weather POKEMON CASTFORM!\p"
+	.string "I hope you enjoy it!\p"
+	.string "And thanks for helping my friend\n"
+	.string "CELIO with his Linking Machine.\p"
+	.string "It meant a lot to him and\n"
+	.string "I thank you for that.$"
+
+Route25_SeaCottage_EventScript_SetGotEevee::
+	setflag FLAG_GOT_CASTFORM
+	msgbox Route25_SeaCottage_Text_WhatsThisMonOnPC2
 	release
 	end
 

@@ -34,7 +34,7 @@ Route15_WestEntrance_2F_EventScript_Aide::
 	goto_if_lt VAR_0x8006, REQUIRED_CAUGHT_MONS, Aide_EventScript_HaventCaughtEnough
 	msgbox Route15_WestEntrance_2F_Text_GreatHereYouGo
 	setvar VAR_TEMP_1, SPECIES_SKARMORY
-	givemon SPECIES_SKARMORY, 40
+	givemon SPECIES_SKARMORY, 35
 	goto_if_eq VAR_RESULT, 0, Route15_WestEntrance_2F_ReceiveAideSkarmory
 	goto_if_eq VAR_RESULT, 1, Route15_WestEntrance_2F_ReceiveAideSkarmoryPC
 	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon

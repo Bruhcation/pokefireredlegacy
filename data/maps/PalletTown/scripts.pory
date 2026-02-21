@@ -456,4 +456,33 @@ PalletTown_EventScript_SignLadyStartShowSign::
 	call PalletTown_EventScript_SignLadyShowSign
 	release
 	end
+
+PalletTown_EventScript_Science::
+	msgbox PalletTown_EventScript_Hoenn
+	waitmessage
+	setvar VAR_0x8004, SPECIES_TREECKO
+	special SetSeenMon
+	showmonpic SPECIES_TREECKO, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_TORCHIC
+	special SetSeenMon
+	showmonpic SPECIES_TORCHIC, 10, 3
+	waitbuttonpress
+	hidemonpic
+	setvar VAR_0x8004, SPECIES_MUDKIP
+	special SetSeenMon
+	showmonpic SPECIES_MUDKIP, 10, 3
+	waitbuttonpress
+	hidemonpic
+	releaseall
+	end
+
+PalletTown_EventScript_Hoenn::
+	.string "I've have came here to KANTO\n"
+	.string "to show PROFESSOR OAK\l"
+	.string "some special POKEMON from\l"
+	.string "the HOENN region.\p"
+	.string "I'll lend you a look\n"
+	.string "of them!$"
 `

@@ -47,4 +47,59 @@ SixIsland_AlteringCave_EventScript_PostRematchSpike::
 	cleartrainerflag TRAINER_SPIKE
 	release
 	end
+
+
+SixIsland_AlteringCave_EventScript_Credits::
+	msgbox SixIsland_AlteringCave_Text_Credits, MSGBOX_SIGN
+	release
+	end
+
+SixIsland_AlteringCave_EventScript_Credits2::
+	msgbox SixIsland_AlteringCave_Text_Credits2, MSGBOX_SIGN
+	release
+	end
+
+SixIsland_AlteringCave_EventScript_Credits3::
+	msgbox SixIsland_AlteringCave_Text_Credits3, MSGBOX_SIGN
+	release
+	end
+
+SixIsland_AlteringCave_EventScript_Credits4::
+	msgbox SixIsland_AlteringCave_Text_Credits4, MSGBOX_SIGN
+	release
+	end
+
+SixIsland_AlteringCave_Text_Credits::
+	.string "FRLG REIGNITED AND REGROWN\n"
+	.string "FULL CREDITS:\p"
+	.string "HACK CREATOR: SPIKECATION\n"
+	.string "TEXT ASSISTER: THEREALTEAMPLAYER$"
+
+SixIsland_AlteringCave_Text_Credits2::
+	.string "HACKS THAT HELPED IN MAKING\n"
+	.string "THIS HACK:\p"
+	.string "FRLG PLUS:\n"
+	.string "DEOKISHISU\p"
+	.string "EMERALD AND YELLOW LEGACY:\n"
+	.string "SMITHPLAYSPOKEMON and CRZ SHADOWS\p"
+	.string "CHARLES FIRERED\n"
+	.string "CELIA'S STUPID ROMHACK\l"
+	.string "POKEMON FIREGOLD\l"
+	.string "POKEMON CRYSTAL DUST$"
+
+SixIsland_AlteringCave_Text_Credits3::
+	.string "PLAYTESTERS:\p"
+	.string "BLAZETORRENT\n"
+	.string "BASEDTUXEDOMAN\l"
+	.string "KEWAUN$"
+
+
+SixIsland_AlteringCave_Text_Credits4::
+	.string "OTHER:\p"
+	.string "PRET TEAM\n"
+	.string "TEAM AQUA HIDEOUT\l"
+	.string "PROJECT PALLADIUM TEAM\l"
+	.string "INVIS (HMA DISCORD)\p"
+	.string "MORE ON THE GITHUB\n$"
+
 `

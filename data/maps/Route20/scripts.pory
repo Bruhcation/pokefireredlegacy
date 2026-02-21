@@ -35,4 +35,69 @@ Route20_EventScript_SeafoamIslandsSign::
 Route20_EventScript_Slowbro::
 	msgbox Route20_Text_Slowbro, MSGBOX_SIGN
 	end
+
+Route20_Mart_EventScript_Clerk::
+	goto_if_questlog EventScript_ReleaseEnd
+	lock
+	faceplayer
+	goto_if_set FLAG_WAILORD_SHOWN, Route20_Mart_EventScript_Shop
+	msgbox Route20_Text_MayIHelpYou
+	waitmessage
+	setvar VAR_0x8005, 1
+	special IsWailordInParty
+	goto_if_eq VAR_RESULT, 0, SeafoamIslands_B3F_EventScript_NoEligiblePkmn
+	setflag FLAG_WAILORD_SHOWN
+	msgbox Route20_Text_ThankYouForShowingWailord
+	goto Route20_Mart_EventScript_Shop
+	release
+	end
+
+Route20_Mart_EventScript_Shop::
+	goto_if_questlog EventScript_ReleaseEnd
+	lock
+	faceplayer
+	message Text_MayIHelpYou
+	waitmessage
+	pokemart Route20_Mart_Items
+	msgbox Text_PleaseComeAgain
+	release
+	end
+
+	.align 2
+Route20_Mart_Items::
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_NONE
+	release
+	end
+
+Route20_Text_ThankYouForShowingWailord::
+	.string "Oh wow, you are a true FIsher!\n"
+	.string "Help yourself on these items!$"
+
+Route20_Text_MayIHelpYou::
+	.string "It has never been so surreal\n"
+	.string "to see the seas see new POKEMON.\p"
+	.string "However some of these POKEMON\n"
+	.string "need foreign Items from HOENN\l"
+	.string "to evolve them. However,\l"
+	.string "I'm selling them, but I\l"
+	.string "want to see a great FISHER.\p"
+	.string "Show me a Wailord and I'll\n"
+	.string "like you buy them!$"
+
+Route20_EventScript_Relicanth::
+	msgbox Route20_Text_Relicanth, MSGBOX_NPC
+	end
+
+
+Route20_Text_Relicanth::
+	.string "I don't know why,\n"
+	.string "but I saw a RELICANTH in\l"
+	.string "the waters.\p"
+	.string "They are normally not\n"
+	.string "native in the KANTO region and\l"
+	.string "were actually thought to\l"
+	.string "be extinct until recently.$"
 `

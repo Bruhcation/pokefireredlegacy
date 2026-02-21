@@ -9,11 +9,23 @@ SixIsland_RuinValley_MapScripts::
 
 SixIsland_RuinValley_OnLoad::
 	call_if_set FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE, SixIsland_RuinValley_EventScript_OpenDottedHoleDoor
+	setvar VAR_0x8004, FAMECHECKER_GIOVANNI
+	callnative CheckFilledFameCheckerFor0x8004
+	call_if_eq VAR_RESULT, TRUE, SixIsland_RuinValley_EventScript_ShowGiovanni
+	setflag FLAG_GIOVANNI4
 	end
 
 SixIsland_RuinValley_EventScript_OpenDottedHoleDoor::
 	setmetatile 24, 24, METATILE_SeviiIslands67_DottedHoleDoor_Open, 0
 	return
+
+SixIsland_RuinValley_EventScript_ShowGiovanni::
+	goto_if_unset FLAG_SYS_CAN_LINK_WITH_RS, SixIsland_RuinValley_EventScript_HideGiovanniEnd
+	clearflag FLAG_GIOVANNI4
+	end
+
+SixIsland_RuinValley_EventScript_HideGiovanniEnd::
+	end
 
 SixIsland_RuinValley_EventScript_Scientist::
 	lock

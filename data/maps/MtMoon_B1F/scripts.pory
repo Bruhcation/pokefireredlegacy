@@ -1,4 +1,13 @@
 raw `
 MtMoon_B1F_MapScripts::
 	.byte 0
+
+MtMoon_B1F_EventScript_Sableye::
+	msgbox MtMoon_B1F_Text_Sableye, MSGBOX_NPC
+	end
+
+MtMoon_B1F_Text_Sableye::
+	.string "I sense Sableye in these rocks.\n"
+	.string "I can't sense why it's in these\l"
+	.string "rocks now?$"
 `

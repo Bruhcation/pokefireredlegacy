@@ -8,25 +8,6 @@ ViridianCity_School_EventScript_PokemonJournal::
 	release
 	end
 
-EventScript_PokemonJournalUnused1::
-	lock
-	faceplayer
-	famechecker FAMECHECKER_DAISY, 1
-	famechecker FAMECHECKER_OAK, 4
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	msgbox PokemonJournal_Text_SpecialFeatureProfOak
-	release
-	end
-
-EventScript_PokemonJournalUnused2::
-	lock
-	faceplayer
-	famechecker FAMECHECKER_DAISY, 4
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	msgbox PokemonJournal_Text_SpecialFeatureProfOak
-	release
-	end
-
 FourIsland_PokemonCenter_1F_EventScript_PokemonJournal::
 	lockall
 	famechecker FAMECHECKER_DAISY, 5

@@ -5,7 +5,7 @@ MtEmber_RubyPath_B5F_MapScripts::
 MtEmber_RubyPath_B5F_EventScript_BrailleMessage::
 	lockall
 	setvar VAR_0x8005, 130
-	goto_if_set FLAG_0x020, MtEmber_RubyPath_B5F_EventScript_Pokemon
+	goto_if_set FLAG_SHINY_STARTER, MtEmber_RubyPath_B5F_EventScript_Pokemon
 	braillemessage_wait Braille_Text_Everything
 	braillemessage_wait Braille_Text_HasMeaning1
 	braillemessage_wait Braille_Text_Existence
@@ -52,7 +52,7 @@ MtEmber_RubyPath_B5F_EventScript_NoWhitney::
 	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
 
 MtEmber_RubyPath_B5F_Text_Mon::
-	.string "There's a Pokemon sealed\n"
+	.string "There's a Pokemon sealed in this\n"
 	.string "in this room.$"
 	.string "Want to release it?$"
 
@@ -93,7 +93,7 @@ MtEmber_RubyPath_B5F_EventScript_Pokemon2::
 
 MtEmber_RubyPath_B5F_EventScript_Pokemon3::
 	msgbox MtEmber_RubyPath_B5F_Text_SummonMon2
-	clearflag FLAG_0x020
+	clearflag FLAG_SHINY_STARTER
 	release
 	end
 

@@ -263,6 +263,23 @@ VermilionCity_Gym_EventScript_NoRoomForTM34::
 	end
 
 VermilionCity_Gym_EventScript_RematchSurge::
+	setvar VAR_0x8004, FAMECHECKER_LTSURGE
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, VermilionCity_Gym_EventScript_RematchSurge2
+	msgbox VermilionCity_Gym_Text_SurgeNoNoRematchBattle
+	release
+	end
+
+VermilionCity_Gym_Text_SurgeNoNoRematchBattle::
+	.string "Hey Kid, I heard the news!\n"
+	.string "Guess that surge in your heart\l"
+	.string "made all the difference!\p"
+	.string "I want to have a electric rematch,\n"
+	.string "but I'm not ready yet.\p"
+	.string "In the meantime, shock the\n"
+	.string "FAMECHECKER all my info!$"
+
+VermilionCity_Gym_EventScript_RematchSurge2::
 	msgbox VermilionCity_Gym_Text_RematchSurge, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VermilionCity_Gym_EventScript_NoRematchSurge
 	trainerbattle_single TRAINER_SURGE2, VermilionCity_Gym_Text_RematchYesSurge, VermilionCity_Gym_Text_RematchSurgeDefeat, VermilionCity_Gym_EventScript_PostRematchSurge, NO_MUSIC

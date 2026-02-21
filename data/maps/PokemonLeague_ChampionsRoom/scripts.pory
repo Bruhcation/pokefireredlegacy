@@ -139,10 +139,12 @@ PokemonLeague_ChampionsRoom_EventScript_OakCongratulations2::
 
 PokemonLeague_ChampionsRoom_EventScript_PostBattle::
 	msgbox PokemonLeague_ChampionsRoom_Text_PostBattle
+	setflag FLAG_IS_CHAMPION
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_PostBattle2::
 	msgbox PokemonLeague_ChampionsRoom_Text_PostBattle2
+	clearflag FLAG_SHOW_ELITE_FOUR
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_Battle::

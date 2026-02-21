@@ -80,19 +80,13 @@ PokemonLeague_ChampionsRoom_Text_OakCongratulations::
 
 PokemonLeague_ChampionsRoom_Text_OakCongratulations2::
     .string "OAK: So, you won again!\p"  
-
     .string "Congratulations!\n"  
     .string "Still the CHAMP, I see!\p"  
-
     .string "You've returned,\n"  
-    .string "proving your strength\l"  
-    .string "once again!\p"  
-
+    .string "proving your strength once again!\p"  
     .string "Your bond with your POKéMON\n"  
     .string "is truly inspiring!\p"  
-
-    .string "{PLAYER}, you're\n"  
-    .string "a true CHAMPION!$"  
+    .string "{PLAYER}, you're a true CHAMPION!$"  
 
 PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
     .string "OAK: {RIVAL}…\n"
@@ -110,24 +104,15 @@ PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival::
 
 PokemonLeague_ChampionsRoom_Text_OakImDisappointedRival2::
     .string "OAK: Ah, {RIVAL}…\p"  
-
-    .string "I had hoped for a\n"  
-    .string "better outcome.\p"  
-
+    .string "I had hoped for a better outcome.\p"  
     .string "But I see you have\n"  
     .string "fallen short once more!\p"  
-
     .string "Remember, {RIVAL},\p"  
-
     .string "It's not just about\n"  
-    .string "strength in battle,\p"  
-
-    .string "but also about the\n"  
-    .string "bond you share with\l"  
-    .string "your POKéMON.\p"  
-
-    .string "Reflect on this,\n"  
-    .string "and grow stronger!$"  
+    .string "strength in battle,\l"  
+    .string "but also about the\l"  
+	.string "bond you share with your POKéMON.\p"
+    .string "Reflect on this, and grow stronger!$"  
 
 PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe::
     .string "OAK: {PLAYER}.\p"
@@ -140,12 +125,8 @@ PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe::
 
 PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe2::
     .string "OAK: {PLAYER}!\p"  
-
-    .string "Your triumph is\n"  
-    .string "not yours alone!\p"  
-
+    .string "Your triumph is not yours alone!\p"  
     .string "Your bond with your POKéMON\n"  
     .string "is a lesson for us all!\p"  
-
-    .string "{PLAYER}, let's\n"  
-    .string "celebrate your achievement!$"  
+    .string "{PLAYER},\n"  
+    .string "let's celebrate your achievement!$"  

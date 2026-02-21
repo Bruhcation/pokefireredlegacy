@@ -1,8 +1,211 @@
 raw `
+.set LOCALID_BRO, 2
+.set LOCALID_SIS, 3
 Route5_MapScripts::
 	.byte 0
 
 Route5_EventScript_UndergroundPathSign::
 	msgbox Route5_Text_UndergroundPathSign, MSGBOX_SIGN
 	end
+
+Route5_EventScript_Bro::
+	lock 
+	faceplayer
+	goto_if_set FLAG_CAUGHT_LATIOS, Route5_EventScript_End
+	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostWhitney
+	goto_if_set FLAG_LATIOS_CHECKED, Route5_EventScript_Orbing
+	goto Route5_EventScript_OrbingCheck
+
+Route5_EventScript_Sis::
+	lock 
+	faceplayer
+	goto_if_set FLAG_CAUGHT_LATIAS, Route5_EventScript_End
+	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostWhitneyLatias
+	goto_if_set FLAG_LATIOS_CHECKED, Route5_EventScript_Orbing
+	goto Route5_EventScript_OrbingCheck
+
+Route5_EventScript_OrbingCheck::
+	goto_if_set FLAG_LATIOS_CHECKED, Route5_EventScript_Orbing
+	msgbox Route5_Text_RegiceCheck
+	closemessage
+	setvar VAR_0x8005, 1
+	setvar 0x8004, FAMECHECKER_OAK
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, Route5_EventScript_Flag
+	goto Route5_EventScript_NoEligiblePkmn
+	release
+	end
+
+Route5_EventScript_NoEligiblePkmn::
+	msgbox Route5_Text_NoEligiblePkmn
+	release
+	end
+
+Route5_EventScript_Flag::
+	setvar 0x8004, FAMECHECKER_DAISY
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, FALSE, Route5_EventScript_NoEligiblePkmn
+	special LatiosRequirements
+	goto_if_eq VAR_RESULT, FALSE, Route5_EventScript_NoEligiblePkmn
+	setflag FLAG_LATIOS_CHECKED
+	goto Route5_EventScript_Orbing
+	end
+
+Route5_EventScript_Orbing::
+	msgbox Route5_Text_Whitney, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoWhitney
+	trainerbattle_single TRAINER_RS_RUIN_MANIAC, Route5_Text_YesWhitney, Route5_Text_PostWhitney, Route5_EventScript_PostFlags, NO_MUSIC
+	release
+	end
+
+Route5_EventScript_PostFlags::
+	setflag FLAG_BEAT_TWINS
+	msgbox Route5_Text_YouWon
+	release
+	end
+
+Route5_EventScript_PostWhitney::
+	special HealPlayerParty
+	msgbox Route5_Text_WhitneyPostBattle, MSGBOX_YESNO
+	closemessage
+	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoWhitney
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_LATIOS, 70
+	waitse
+	playmoncry SPECIES_LATIOS, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route5_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route5_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route5_EventScript_RanFromCelebi
+	setflag FLAG_CAUGHT_LATIOS
+	setflag FLAG_BRO_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	release
+	end
+
+Route5_EventScript_PostWhitneyLatias::
+	special HealPlayerParty
+	msgbox Route5_Text_WhitneyPostBattle
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_LATIAS, 70
+	waitse
+	playmoncry SPECIES_LATIAS, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route5_EventScript_DefeatedLatias
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route5_EventScript_RanFromLatias
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route5_EventScript_RanFromLatias
+	setflag FLAG_CAUGHT_LATIAS
+	setflag FLAG_SIS_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	release
+	end
+
+Route5_EventScript_DefeatedCelebi::
+	setflag FLAG_CAUGHT_LATIOS
+	setflag FLAG_BRO_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	goto EventScript_RemoveStaticMon
+	end
+
+Route5_EventScript_RanFromCelebi::
+	setvar VAR_0x8004, SPECIES_LATIOS
+	setflag FLAG_BRO_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	goto EventScript_MonFlewAway
+	end
+
+Route5_EventScript_DefeatedLatias::
+	setflag FLAG_CAUGHT_LATIAS
+	setflag FLAG_SIS_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	goto EventScript_RemoveStaticMon
+	end
+
+Route5_EventScript_RanFromLatias::
+	setvar VAR_0x8004, SPECIES_LATIAS
+	setflag FLAG_SIS_TRAINER
+	msgbox Route5_Text_EndWhitney
+	waitmessage
+	goto EventScript_MonFlewAway
+	end
+
+Route5_EventScript_NoWhitney::
+	msgbox Route5_Text_NoWhitney
+	release
+	end
+
+Route5_EventScript_End::
+	msgbox Route5_Text_EndWhitney
+	release
+	end
+
+Route5_Text_NoEligiblePkmn::
+	.string "You have not meet the requirements.\p"
+	.string "Come back when you do.$"
+
+Route5_Text_RegiceCheck::
+	.string "Hello there {PLAYER}.\p"
+	.string "We are the JET TWINS.\p"
+	.string "Beat us and you shall face two\n"
+	.string "special POKEMON.\p"
+	.string "But first, I want to see a\n"
+	.string "Knowledge on the DAISY flower,\l"
+	.string "and the OAK tree.\p"
+	.string "As well as the REGIS\n"
+	.string "and the ALIEN.$"
+
+Route5_Text_Whitney::
+	.string "So, you wish to face us?$"
+
+Route5_Text_YesWhitney::
+	.string "Very well! Prepare yourself!$"
+
+Route5_Text_PostWhitney::
+	.string "So you are worthy...$"
+
+Route5_Text_YouWon::
+	.string "Talk to us again to\n"
+	.string "face LATIOS and LATIAS.$"
+
+Route5_Text_WhitneyPostBattle::
+	.string "Alright, you have bested me.\p"
+	.string "Be prepared to face IT!$"
+
+Route5_Text_EndWhitney::
+	.string "You had one chance,\n"
+	.string "Goodbye.$"
+
+Route5_Text_NoWhitney::
+	.string "Alright, take your time.$"
 `

@@ -43,6 +43,37 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SixIsland_AlteringCave_EventScript_Credits4"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SixIsland_AlteringCave_EventScript_Credits3"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SixIsland_AlteringCave_EventScript_Credits2"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SixIsland_AlteringCave_EventScript_Credits"
+    }
   ]
 }

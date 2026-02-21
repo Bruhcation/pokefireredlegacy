@@ -89,7 +89,10 @@ static const u16 sDexAreas_Sevii1[][2] = {
 
 static const u16 sDexAreas_Sevii2[][2] = {
 	{ MAPSEC_CAPE_BRINK, DEX_AREA_CAPE_BRINK },
-	{ MAPSEC_TWO_ISLAND, DEX_AREA_TWO_ISLAND }    
+	{ MAPSEC_TWO_ISLAND, DEX_AREA_TWO_ISLAND },
+	{ MAPSEC_DOWNSIDE_ROCK, DEX_AREA_DOWNSIDE_ROCK },
+	{ MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE, DEX_AREA_SOUTHSIDE_CAVE }        
+ 
 };
 
 static const u16 sDexAreas_Sevii3[][2] = {

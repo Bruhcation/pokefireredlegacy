@@ -1,5 +1,6 @@
 raw `
 .equ NUM_BOULDERS_PRESENT, VAR_TEMP_2
+.set LOCALID_MIRAGE, 8
 
 SeafoamIslands_B3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SeafoamIslands_B3F_OnTransition
@@ -94,4 +95,141 @@ SeafoamIslands_B3F_Movement_RideCurrentClose::
 	walk_fast_down
 	walk_fast_down
 	step_end
+
+SeafoamIslands_B3F_EventScript_OrbingCheck::
+	lock
+	faceplayer
+	goto_if_set FLAG_CAUGHT_REGICE, SeafoamIslands_B3F_EventScript_End
+	goto_if_set FLAG_REGICE_CHECKED, SeafoamIslands_B3F_EventScript_Orbing
+	msgbox SeafoamIslands_B3F_Text_RegiceCheck
+	closemessage
+	setvar VAR_0x8005, 1
+	special IsDodrioInParty
+	goto_if_eq VAR_RESULT, 0, SeafoamIslands_B3F_EventScript_NoEligiblePkmn
+	setvar 0x8004, FAMECHECKER_LORELEI
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SeafoamIslands_B3F_EventScript_Flag
+	release
+	end
+
+SeafoamIslands_B3F_EventScript_NoEligiblePkmn::
+	msgbox SeafoamIslands_B3F_Text_NoEligiblePkmn
+	release
+	end
+
+SeafoamIslands_B3F_EventScript_Flag::
+	setflag FLAG_REGICE_CHECKED
+	goto SeafoamIslands_B3F_EventScript_Orbing
+	end
+
+SeafoamIslands_B3F_EventScript_Orbing::
+	msgbox SeafoamIslands_B3F_Text_Whitney, MSGBOX_YESNO
+	closemessage
+	delay 40
+	goto_if_eq VAR_RESULT, NO, SeafoamIslands_B3F_EventScript_NoWhitney
+	trainerbattle_single TRAINER_RS_COOLTRAINER_F, SeafoamIslands_B3F_Text_YesWhitney, SeafoamIslands_B3F_Text_PostWhitney, SeafoamIslands_B3F_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+SeafoamIslands_B3F_EventScript_PostWhitney::
+	special HealPlayerParty
+	msgbox SeafoamIslands_B3F_Text_WhitneyPostBattle
+	waitmessage
+	goto SeafoamIslands_B3F_EventScript_Regice
+
+SeafoamIslands_B3F_EventScript_Regice::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_REGICE, 70
+	waitse
+	playmoncry SPECIES_REGICE, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SeafoamIslands_B3F_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SeafoamIslands_B3F_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SeafoamIslands_B3F_EventScript_RanFromCelebi
+	setflag FLAG_CAUGHT_REGICE
+	clearflag FLAG_ICE_TRAINER
+	msgbox SeafoamIslands_B3F_Text_EndWhitney
+	waitmessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK	
+	release
+	end
+
+SeafoamIslands_B3F_EventScript_DefeatedCelebi::
+	setflag FLAG_CAUGHT_REGICE
+	clearflag FLAG_ICE_TRAINER
+	msgbox SeafoamIslands_B3F_Text_EndWhitney
+	waitmessage
+	goto EventScript_RemoveStaticMon
+	end
+
+SeafoamIslands_B3F_EventScript_RanFromCelebi::
+	setvar VAR_0x8004, SPECIES_REGICE
+	msgbox SeafoamIslands_B3F_Text_EndWhitney
+	waitmessage
+	goto EventScript_MonFlewAway
+	end
+
+SeafoamIslands_B3F_EventScript_NoWhitney::
+	msgbox SeafoamIslands_B3F_Text_NoWhitney
+	release
+	end
+
+SeafoamIslands_B3F_EventScript_End::
+	msgbox SeafoamIslands_B3F_Text_EndWhitney
+	waitmessage
+	clearflag FLAG_ICE_TRAINER
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MIRAGE
+	fadescreen FADE_FROM_BLACK	
+	release
+	end
+
+SeafoamIslands_B3F_Text_NoEligiblePkmn::
+	.string "You have not meet the requirements.\p"
+	.string "Come back when you do.$"
+
+SeafoamIslands_B3F_Text_RegiceCheck::
+	.string "Hello there {PLAYER}.\p"
+	.string "I am the Frozen Mirage Trainer.\p"
+	.string "Beat me and you shall face a\n"
+	.string "special POKEMON.\p"
+	.string "But first, I want to see a\n"
+	.string "Three Headed Mascot,\l"
+	.string "and knowledge on the Ice queen.$"
+
+SeafoamIslands_B3F_Text_Whitney::
+	.string "So, you wish to face me?$"
+	.string "Better Save First,\l$"
+	.string "One chance at REGICE.$"
+
+SeafoamIslands_B3F_Text_YesWhitney::
+	.string "Very well! Prepare yourself!$"
+
+SeafoamIslands_B3F_Text_PostWhitney::
+	.string "So you are worthy...$"
+
+SeafoamIslands_B3F_Text_WhitneyPostBattle::
+	.string "Alright, you have bested me.\p"
+	.string "Be prepared to face REGICE!$"
+
+SeafoamIslands_B3F_Text_EndWhitney::
+	.string "Goodbye.$"
+
+SeafoamIslands_B3F_Text_NoWhitney::
+	.string "Alright, take your time.$"
 `

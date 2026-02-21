@@ -37,6 +37,24 @@ CeruleanCity_Gym_EventScript_NoRoomForTM03::
 	end
 
 CeruleanCity_Gym_EventScript_RematchMisty::
+	setvar VAR_0x8004, FAMECHECKER_MISTY
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, CeruleanCity_Gym_EventScript_RematchMisty2
+	msgbox CeruleanCity_Gym_Text_MistyNoNoRematchBattle
+	release
+	end
+
+CeruleanCity_Gym_Text_MistyNoNoRematchBattle::
+	.string "{PLAYER}? Your the CHAMPION now?\p"
+	.string "Guess your wits came from\n"
+	.string "your fight against me!\p"
+	.string "Well, I can't do a rematch\n"
+	.string "at this time right now.\p"
+	.string "But you can get to know me,\n"
+	.string "by filling out my entry\l"
+	.string "on the FAMECHECKER!$"
+
+CeruleanCity_Gym_EventScript_RematchMisty2::
 	msgbox CeruleanCity_Gym_Text_RematchMisty, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeruleanCity_Gym_EventScript_NoRematchMisty
 	trainerbattle_single TRAINER_MISTY2, CeruleanCity_Gym_Text_RematchYesMisty, CeruleanCity_Gym_Text_RematchMistyDefeat, CeruleanCity_Gym_EventScript_PostRematchMisty, NO_MUSIC

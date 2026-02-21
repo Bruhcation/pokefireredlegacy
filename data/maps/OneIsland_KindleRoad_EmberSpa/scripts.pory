@@ -52,6 +52,11 @@ OneIsland_KindleRoad_EmberSpa_EventScript_SpaHeal::
 	releaseall
 	end
 
+OneIsland_EventScript_Reset::
+	setvar VAR_TEMP_1, 0
+	release
+	end
+
 OneIsland_KindleRoad_EmberSpa_EventScript_Samal::
 	lock
 	faceplayer
