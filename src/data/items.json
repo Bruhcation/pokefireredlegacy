@@ -3633,17 +3633,17 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
-      "holdEffect": "HOLD_EFFECT_NONE",
+      "english": "PRISM SCALE",
+      "itemId": "ITEM_PRISM_SCALE",
+      "price": 2100,
+      "holdEffect": "HOLD_EFFECT_PRISM_SCALE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "A mysterious scale that causes \\na certain Pokémon to evolve.\\nIt shines in rainbow colors.",
       "importance": 0,
       "registrability": 0,
       "pocket": "POCKET_ITEMS",
-      "type": "ITEM_TYPE_BAG_MENU",
-      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
+      "type": "ITEM_TYPE_PARTY_MENU",
+      "fieldUseFunc": "FieldUseFunc_EvoItem",
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0
@@ -4417,7 +4417,7 @@
       "secondaryId": 1
     },
     {
-      "english": "RE ORB",
+      "english": "RED ORB",
       "itemId": "ITEM_RED_ORB",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
@@ -4433,7 +4433,7 @@
       "secondaryId": 0
     },
     {
-      "english": "BATTLE ORB",
+      "english": "BLUE ORB",
       "itemId": "ITEM_BLUE_ORB",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",

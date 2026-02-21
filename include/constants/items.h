@@ -235,7 +235,7 @@
 #define ITEM_THICK_CLUB 224
 #define ITEM_STICK 225
 #define ITEM_BRICK_PIECE 226
-#define ITEM_0E3 227
+#define ITEM_PRISM_SCALE 227
 #define ITEM_0E4 228
 #define ITEM_0E5 229
 #define ITEM_0E6 230
@@ -462,6 +462,6 @@
 #define IS_POKEMON_ITEM(item) (((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX) \
 || (item) == ITEM_KINGS_ROCK || (item) == ITEM_DRAGON_SCALE || (item) == ITEM_METAL_COAT \
 || (item) == ITEM_UP_GRADE   || (item) == ITEM_BRICK_PIECE || (item) == ITEM_DEEP_SEA_TOOTH \
-|| (item) == ITEM_DEEP_SEA_SCALE)
+|| (item) == ITEM_DEEP_SEA_SCALE || (item) == ITEM_PRISM_SCALE)
 
 #endif  // GUARD_CONSTANTS_ITEMS_H

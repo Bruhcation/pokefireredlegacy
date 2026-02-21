@@ -64,19 +64,60 @@ VictoryRoad_3F_EventScript_Ray::
 	end
 
 VictoryRoad_3F_EventScript_Brooke::
-	trainerbattle_single TRAINER_COOLTRAINER_BROOKE, VictoryRoad_3F_Text_CarolineIntro, VictoryRoad_3F_Text_CarolineDefeat
-	msgbox VictoryRoad_3F_Text_CarolinePostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_COOLTRAINER_BROOKE, VictoryRoad_3F_Text_BrookeIntro, VictoryRoad_3F_Text_BrookeDefeat
+	msgbox VictoryRoad_3F_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_3F_Text_BrookeIntro::
+	.string "You made it this far? Impressive.\p"
+	.string "You might of made mistakes\n"
+	.string "on your journey,\l"
+	.string "But Victory Road doesn't\l"
+	.string "forgive mistakes!$"
+
+VictoryRoad_3F_Text_BrookeDefeat::
+	.string "That… that was flawless…\p"
+	.string "You battle with confidence.$"
+
+VictoryRoad_3F_Text_BrookePostBattle::
+	.string "But The Elite Four\n"
+	.string "won't go easy on you!$"
 
 VictoryRoad_3F_EventScript_Shannon::
-	trainerbattle_single TRAINER_COOLTRAINER_SHANNON, VictoryRoad_3F_Text_AlexaIntro, VictoryRoad_3F_Text_AlexaDefeat
-	msgbox VictoryRoad_3F_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_COOLTRAINER_SHANNON, VictoryRoad_3F_Text_ShannonIntro, VictoryRoad_3F_Text_ShannonDefeat
+	msgbox VictoryRoad_3F_Text_ShannonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+VictoryRoad_3F_Text_ShannonIntro::
+	.string "I've been training here every day.\n"
+	.string "Let's see if your\l"
+	.string "journey measures up!$"
+
+VictoryRoad_3F_Text_ShannonDefeat::
+	.string "I trained so hard… and still lost!$"
+
+VictoryRoad_3F_Text_ShannonPostBattle::
+	.string "Your bond with your\n"
+	.string "Pokémon is clear.\l"
+	.string "That's what true strength\l"
+	.string "looks like.$"
+
 VictoryRoad_3F_EventScript_Austina::
-	trainerbattle_single TRAINER_COOLTRAINER_AUSTINA, VictoryRoad_3F_Text_AlexaIntro, VictoryRoad_3F_Text_AlexaDefeat
-	msgbox VictoryRoad_3F_Text_RayPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_COOLTRAINER_AUSTINA, VictoryRoad_3F_Text_AustinaIntro, VictoryRoad_3F_Text_AustinaDefeat
+	msgbox VictoryRoad_3F_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_3F_Text_AustinaIntro::
+	.string "The air here feels different..\n"
+	.string "Intense...\p"
+	.string "Show me your power!$"
+
+VictoryRoad_3F_Text_AustinaDefeat::
+	.string "I couldn't keep up with you…!$"
+
+VictoryRoad_3F_Text_AustinaPostBattle::
+	.string "Don't hold back at the League.\n"
+	.string "Battle like you did just now!$"
 
 VictoryRoad_3F_EventScript_Tyra::
 	trainerbattle_double TRAINER_COOL_COUPLE_RAY_TYRA, VictoryRoad_3F_Text_TyraIntro, VictoryRoad_3F_Text_TyraDefeat, VictoryRoad_3F_Text_TyraNotEnoughMons

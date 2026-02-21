@@ -95,8 +95,8 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special RockCheck
+	def_special TmCheck
 	def_special GetDeoxys
 	def_special CheckGotAllItems
 	def_special CheckBeatJohto
@@ -270,7 +270,7 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special DaisyMassageServicesMax
 	def_special CreatePCMenu
 	def_special HallOfFamePCBeginFade
 	def_special ShowDiploma
@@ -310,9 +310,9 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special PlayerHasGrassPokemonInParty
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special CheckFilledFameCheckerFor0x8006
 	def_special IsStarterFirstStageInParty
-	def_special NullFieldSpecial
+	def_special IsRelicanthInParty
 	def_special IsThereRoomInAnyBoxForMorePokemon
 	def_special NullFieldSpecial
 	def_special DrawElevatorCurrentFloorWindow
@@ -325,7 +325,7 @@ gSpecials::
 	def_special StartRegiBattle
 	def_special SetUpTrainerMovement
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special LatiosRequirements
 	def_special StartDroughtWeatherBlend
 	def_special DoDiveWarp
 	def_special DoFallWarp
@@ -334,7 +334,7 @@ gSpecials::
 	def_special SetEReaderTrainerGfxId
 	def_special StartSouthernIslandBattle
 	def_special NullFieldSpecial
-	def_special NullFieldSpecial
+	def_special IsWailordInParty
 	def_special BattleTrophy
 	def_special GetPartyMonSpecies
 	def_special IsSelectedMonEgg

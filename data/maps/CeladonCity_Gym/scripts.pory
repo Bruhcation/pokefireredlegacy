@@ -62,6 +62,24 @@ CeladonCity_Gym_EventScript_NoRoomForTM19::
 	end
 
 CeladonCity_Gym_EventScript_RematchErika::
+	setvar VAR_0x8004, FAMECHECKER_ERIKA
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, CeladonCity_Gym_EventScript_RematchErika2
+	msgbox CeladonCity_Gym_Text_ErikaNoNoRematchBattle
+	release
+	end
+
+CeladonCity_Gym_Text_ErikaNoNoRematchBattle::
+	.string "I hear you've grown much stronger.\p"
+	.string "It's truly inspiring!\p"
+	.string "But I'm doozing Off...\p"
+	.string "In the mean time, try and\n"
+	.string "fill out my entry on\l"
+	.string "the FAMECHECKER.\p"
+	.string "I would love for you to\n"
+	.string "know me better!$"
+
+CeladonCity_Gym_EventScript_RematchErika2::
 	msgbox CeladonCity_Gym_Text_RematchErika, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeladonCity_Gym_EventScript_NoRematchErika
 	trainerbattle_single TRAINER_LEADER_ERIKA2, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC

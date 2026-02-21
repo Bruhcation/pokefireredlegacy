@@ -419,7 +419,11 @@ FuchsiaCity_WardensHouse_EventScript_ItemRareCandy::
 	end
 
 TwoIsland_EventScript_ItemRevive::
-	finditem ITEM_REVIVE
+	finditem ITEM_MAX_REVIVE
+	end
+
+DownwardBeach_EventScript_ItemRevive::
+	finditem ITEM_PP_UP
 	end
 
 ThreeIsland_EventScript_ItemZinc::

@@ -9,7 +9,7 @@ PalletTown_PlayersHouse_2F_Text_PressLRForHelp::
     .string "Press the L or R Button!\p"
 	.string "If your confused on what version\n"
 	.string "we are on,\l"
-	.string "we are on VERSION 1.4!\p"
+	.string "we are on VERSION 1.5!\p"
 	.ifdef FIRERED
 	.string "POKEMON FIRE RED: REIGNITED!$"
 	.else

@@ -110,4 +110,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_JOHTO_LEADER]        = _("LEADER"),
     [TRAINER_CLASS_GUARD]               = _("GUARD"),
     [TRAINER_CLASS_NURSE]               = _("NURSE"),
+    [TRAINER_CLASS_MIRAGE_TRAINER]      = _("MIRAGE"),
 };

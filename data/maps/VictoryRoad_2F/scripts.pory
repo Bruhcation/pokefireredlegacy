@@ -86,9 +86,24 @@ VictoryRoad_2F_EventScript_Gregory::
 	end
 
 VictoryRoad_2F_EventScript_Julie::
-	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_GregoryIntro, VictoryRoad_2F_Text_GregoryDefeat
-	msgbox VictoryRoad_2F_Text_GregoryPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_JulieIntro, VictoryRoad_2F_Text_JulieDefeat
+	msgbox VictoryRoad_2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_2F_Text_JulieIntro::
+	.string "Victory Road tests\n"
+	.string "more than strength.\p"
+	.string "It tests resolve.\p"
+	.string "Show me you have both!$"
+
+VictoryRoad_2F_Text_JulieDefeat::
+	.string "No way...\n"
+	.string "I pushed myself to the limit…!$"
+
+VictoryRoad_2F_Text_JuliePostBattle::
+	.string "You have earned this win.\n"
+	.string "Keep going,\l"
+	.string "the Pokémon League is just ahead.$"
 
 
 VictoryRoad_2F_EventScript_Vincent::

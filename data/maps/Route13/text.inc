@@ -133,7 +133,6 @@ Route13_Text_MayIHelpYou::
     .string "Want to buy some FLUTES?$"
 
 
-
 Route13_Text_PleaseComeAgain::
     .string "Feel free to come back\n"
     .string "if you want.$"
@@ -142,9 +141,9 @@ Route13_Text_Whitney::
     .string "This place is full of cute\n"
     .string "POKéMON!\p"
     .string "I'm visiting KANTO in search\n"  
-    .string "of more cute POKéMON, as\l"  
-    .string "I want to become a GYM\l"  
-    .string "LEADER one day!\p"  
+    .string "of more cute POKéMON,\l"  
+    .string "as I want to become a GYM LEADER\l"  
+    .string "one day!\p"  
     .string "And I think that opportunity\n"  
     .string "is gonna open up sooner\l"  
     .string "rather than later!\p"  

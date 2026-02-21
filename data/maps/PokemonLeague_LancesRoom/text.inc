@@ -45,15 +45,17 @@ PokemonLeague_LancesRoom_Text_PostBattle::
     .string "you.\p"
     .string "He is the real POKéMON LEAGUE\n"
     .string "CHAMPION.$"
+	.string "But there's still\n"
+	.string "one challenge yet!\p"
+	.string "{RIVAL}!\p"
+	.string "He has grown must stronger\n"
+	.string "than before.\p"
+	.string "Best of luck to you, {PLAYER}!$"
 
 PokemonLeague_LancesRoom_Text_Defeat2::
     .string "Incredible!\p"  
-
-    .string "Your strength keeps\n"  
-    .string "growing.\p"  
-
-    .string "Truly, you are a POKéMON master\n"  
-    .string "now.$"  
+    .string "Your strength keeps growing.\p"  
+    .string "Truly, you're a POKéMON master now!\p"  
 
 PokemonLeague_LancesRoom_Text_PostBattle2::
     .string "As the reigning CHAMPION,\n"  

@@ -94,6 +94,24 @@ CinnabarIsland_Gym_EventScript_NoRoomForTM38::
 	end
 
 CinnabarIsland_Gym_EventScript_RematchBlaine::
+	setvar VAR_0x8004, FAMECHECKER_BLAINE
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_Gym_EventScript_RematchBlaine2
+	msgbox CinnabarIsland_Gym_Text_BlaineNoNoRematchBattle
+	release
+	end
+
+CinnabarIsland_Gym_Text_BlaineNoNoRematchBattle::
+	.string "Ah! The CHAMP!\p"
+	.string "I've stoked my flames hotter\n"
+	.string "than ever before!\p"
+	.string "However my Inferno hasn't\n"
+	.string "been set let, so give me some time.\p"
+	.string "In the mean time fill in my entry\p"
+	.string "in the FAMECHECKER to know\p"
+	.string "more trivia about my Inferno!$"
+
+CinnabarIsland_Gym_EventScript_RematchBlaine2::
 	msgbox CinnabarIsland_Gym_Text_RematchBlaine, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CinnabarIsland_Gym_EventScript_NoRematchBlaine
 	trainerbattle_single TRAINER_LEADER_BLAINE2, CinnabarIsland_Gym_Text_RematchYesBlaine, CinnabarIsland_Gym_Text_RematchBlaineDefeat, CinnabarIsland_Gym_EventScript_PostRematchBlaine, NO_MUSIC

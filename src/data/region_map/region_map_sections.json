@@ -91,7 +91,6 @@
     {
       "map_section": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
-      "name_clone": true,
       "x": 8,
       "y": 3,
       "width": 1,
@@ -100,7 +99,6 @@
     {
       "map_section": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
-      "name_clone": true,
       "x": 18,
       "y": 3,
       "width": 1,
@@ -341,7 +339,6 @@
     {
       "map_section": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,
@@ -522,6 +519,22 @@
       "y": 7,
       "width": 1,
       "height": 2
+    },
+    {
+      "map_section": "MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE",
+      "name": "SOUTHSIDE CAVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DOWNSIDE_ROCK",
+      "name": "SOUTHSIDE ROCK",
+      "x": 10,
+      "y": 11,
+      "width": 1,
+      "height": 1
     },
     {
       "map_section": "MAPSEC_BOND_BRIDGE",
@@ -734,7 +747,6 @@
     {
       "map_section": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
-      "name_clone": true,
       "x": 0,
       "y": 0,
       "width": 1,

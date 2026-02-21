@@ -17,17 +17,17 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_POKE_MANIAC",
-      "x": 39,
-      "y": 27,
+      "graphics_id": "OBJ_EVENT_GFX_RUIN_MANIAC",
+      "x": 53,
+      "y": 41,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DiglettsCave_B1F_EventScript_Freddy",
-      "flag": "FLAG_HIDE_EASTER"
+      "script": "DiglettsCave_B1F_EventScript_OrbingCheck",
+      "flag": "FLAG_GROUND_TRAINER"
     }
   ],
   "warp_events": [

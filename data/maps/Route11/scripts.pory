@@ -5,4 +5,13 @@ Route11_MapScripts::
 Route11_EventScript_DiglettsCaveSign::
 	msgbox Route11_Text_DiglettsCave, MSGBOX_SIGN
 	end
+	
+Route11_EventScript_Kecleon::
+	msgbox Route11_Text_Kecleon, MSGBOX_NPC
+	end
+
+Route11_Text_Kecleon::
+	.string "I've been noticing a few\n"
+	.string "hidden KECLEON on this route.\p"
+	.string "They appeared all of a sudden.$"
 `

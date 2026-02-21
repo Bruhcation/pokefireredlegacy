@@ -172,7 +172,7 @@ FourIsland_EventScript_JJ::
 
 FourIsland_Text_JJ::
 	.string "JJ treats his Fresh Water,\n"
-	.string "like it is something PRIME.\p"
+	.string "like it is something prime.\p"
 	.string "He sings an unbearable tune\n"
 	.string "the entire time with it.$"
 `

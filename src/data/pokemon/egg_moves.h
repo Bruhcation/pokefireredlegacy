@@ -246,6 +246,7 @@ const u16 gEggMoves[] = {
     egg_moves(SLOWPOKE,
               MOVE_SAFEGUARD,
               MOVE_BELLY_DRUM,
+              MOVE_SLACK_OFF,
               MOVE_FUTURE_SIGHT,
               MOVE_STOMP,
               MOVE_MUD_SPORT,

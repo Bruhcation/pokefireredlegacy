@@ -52,6 +52,24 @@ FuchsiaCity_Gym_EventScript_NoRoomForTM06::
 	end
 
 FuchsiaCity_Gym_EventScript_RematchKoga::
+	setvar VAR_0x8004, FAMECHECKER_KOGA
+	callnative CheckFilledFameCheckerFor0x8004
+	goto_if_eq VAR_RESULT, TRUE, FuchsiaCity_Gym_EventScript_RematchKoga2
+	msgbox FuchsiaCity_Gym_Text_KogaNoNoRematchBattle
+	release
+	end
+
+FuchsiaCity_Gym_Text_KogaNoNoRematchBattle::
+	.string "Fwahahaha! CHAMPION, huh?\p"
+	.string "I commend your strength,\n"
+	.string "but I'm doing Ninja duties\l"
+	.string "at the moment.\p"
+	.string "In the meantime, you should\n"
+	.string "get to know fill out my\l"
+	.string "entry on the FAMECHECKER.\p"
+	.string "Get to know how a Ninja works.$"
+
+FuchsiaCity_Gym_EventScript_RematchKoga2::
 	msgbox FuchsiaCity_Gym_Text_RematchKoga, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, FuchsiaCity_Gym_EventScript_NoRematchKoga
 	trainerbattle_single TRAINER_LEADER_KOGA2, FuchsiaCity_Gym_Text_RematchYesKoga, FuchsiaCity_Gym_Text_RematchKogaDefeat, FuchsiaCity_Gym_EventScript_PostRematchKoga, NO_MUSIC

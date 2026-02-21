@@ -559,6 +559,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_AQUA_ADMIN, 10},
     {TRAINER_CLASS_AQUA_LEADER, 20},
     {TRAINER_CLASS_BOSS, 25},
+    {TRAINER_CLASS_MIRAGE_TRAINER, 50},
     { 0xFF, 5},
 };
 

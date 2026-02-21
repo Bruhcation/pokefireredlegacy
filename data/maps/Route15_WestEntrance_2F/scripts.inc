@@ -71,7 +71,7 @@ Route15_WestEntrance_2F_EventScript_Aide::
 # 36 "data/maps/Route15_WestEntrance_2F/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_SKARMORY
 # 37 "data/maps/Route15_WestEntrance_2F/scripts.pory"
-	givemon SPECIES_SKARMORY, 40
+	givemon SPECIES_SKARMORY, 35
 # 38 "data/maps/Route15_WestEntrance_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, 0, Route15_WestEntrance_2F_ReceiveAideSkarmory
 # 39 "data/maps/Route15_WestEntrance_2F/scripts.pory"

@@ -5,4 +5,63 @@ CeladonCity_Condominiums_Roof_MapScripts::
 CeladonCity_Condominiums_Roof_EventScript_Sign::
 	msgbox CeladonCity_Condominiums_Roof_Text_IKnowEverything, MSGBOX_SIGN
 	end
+
+CeladonCity_Condominiums_Roof_EventScript_Whitney::
+	lock
+	faceplayer
+	goto_if_set TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_EventScript_PostWhitney
+	goto_if_set FLAG_PIKER_DEFEATED, CeladonCity_Condominiums_Roof_EventScript_EndWhitney
+	msgbox CeladonCity_Condominiums_Roof_Text_Whitney, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeladonCity_Condominiums_Roof_EventScript_NoWhitney
+	trainerbattle_single TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_Text_YesWhitney, CeladonCity_Condominiums_Roof_Text_WhitneyDefeat, CeladonCity_Condominiums_Roof_EventScript_PostWhitney, NO_MUSIC
+	release
+	end
+
+CeladonCity_Condominiums_Roof_EventScript_PostWhitney::
+	msgbox CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle
+	giveitem ITEM_SOUL_DEW
+	goto_if_eq VAR_RESULT, FALSE, Route12_FishingHouse_EventScript_NoRoomForNetBall
+	setflag FLAG_PIKER_DEFEATED
+	release
+	end
+
+CeladonCity_Condominiums_Roof_EventScript_EndWhitney::
+	msgbox CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle
+	release
+	end
+
+
+CeladonCity_Condominiums_Roof_EventScript_NoWhitney::
+	msgbox CeladonCity_Condominiums_Roof_Text_NoWhitney
+	release
+	end
+
+CeladonCity_Condominiums_Roof_Text_Whitney::
+	.string "Hey! What are you doing here!\n"
+	.string "I may be rich but I like\l"
+	.string "to sit here on the roof\l"
+	.string "and do nothing!\p"
+	.string "It is not of your buisness!\n"
+	.string "Or are you look for my SOUL DEW?$"
+
+CeladonCity_Condominiums_Roof_Text_ReceivedSoulDew::
+	.string "{PLAYER} received the SOUL DEW!$"
+
+CeladonCity_Condominiums_Roof_Text_NoWhitney::
+	.string "Ok, go away.$"
+
+CeladonCity_Condominiums_Roof_Text_YesWhitney::
+	.string "Well you are not going to get it!\n"
+	.string "At least not without a fight!$"
+	
+CeladonCity_Condominiums_Roof_Text_WhitneyDefeat::
+	.string "Welp.$"
+
+CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle::
+	.string "Welp I got a lot of money\n"
+	.string "to buy some more SOUL DEWS.\p"
+	.string "I don't even have a LATIOS\n"
+	.string "or LATIAS to use it on.\p"
+	.string "Now, LEAVE ME ALONE!$"
 `
+

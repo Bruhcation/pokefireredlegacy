@@ -313,7 +313,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
       "x": 27,
-      "y": 4,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -327,7 +327,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
       "x": 23,
-      "y": 2,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -355,7 +355,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
       "x": 24,
-      "y": 7,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -368,8 +368,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
-      "x": 27,
-      "y": 6,
+      "x": 25,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -378,6 +378,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_11"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 23,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RockTunnel_B1F_EventScript_OrbingCheck",
+      "flag": "FLAG_ROCK_TRAINER"
     }
   ],
   "warp_events": [

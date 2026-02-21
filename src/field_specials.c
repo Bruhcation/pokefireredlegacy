@@ -2079,7 +2079,7 @@ bool8 BufferTMHMMoveName(void)
 void RunMassageCooldownStepCounter(void)
 {
     u16 count = VarGet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER);
-    if (count < 350)
+    if (count < 250)
         VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, count + 1);
 }
 
@@ -2087,6 +2087,34 @@ void DaisyMassageServices(void)
 {
     AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
     VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
+}
+
+void DaisyMassageServicesMax(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MAX_MASSAGE);
+    VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
+}
+
+void CheckFilledFameCheckerFor0x8006(void)
+{
+    u32 i;
+    u8 who = gSpecialVar_0x8006;
+
+    if(who < NUM_FAMECHECKER_PERSONS)
+    {
+        for (i = 0; i < 6; i++)
+        {
+            if (!((gSaveBlock1Ptr->fameChecker[who].flavorTextFlags >> i) & 1))
+            {
+                gSpecialVar_Result = FALSE;
+                return;
+            }
+        }
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    gSpecialVar_Result = FALSE;
+    return;
 }
 
 static const u16 sEliteFourLightingPalettes[][16] = {
@@ -2686,7 +2714,75 @@ void GetDeoxys(void)  //UNUSED
     }
 }
 
+void TmCheck(void)
+{
+    if (FlagGet(FLAG_GOT_TM03_FROM_MISTY) &&
+        FlagGet(FLAG_GOT_TM04_FROM_SABRINA) &&
+        FlagGet(FLAG_GOT_TM06_FROM_KOGA) &&
+        FlagGet(FLAG_GOT_TM16_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM19_FROM_ERIKA) &&
+        FlagGet(FLAG_GOT_TM20_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM26_FROM_GIOVANNI) &&
+        FlagGet(FLAG_GOT_TM27) &&
+        FlagGet(FLAG_GOT_TM28_FROM_ROCKET) &&
+        FlagGet(FLAG_GOT_TM29_FROM_MR_PSYCHIC) &&
+        FlagGet(FLAG_GOT_TM34_FROM_SURGE) &&
+        FlagGet(FLAG_GOT_TM33_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM38_FROM_BLAINE) &&
+        FlagGet(FLAG_GOT_TM39_FROM_BROCK) &&
+        FlagGet(FLAG_GOT_TM42_AT_MEMORIAL_PILLAR))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
 
+void RockCheck(void)
+{
+    if (FlagGet(FLAG_ROCK_ROUTE_4) &&
+        FlagGet(FLAG_ROCK_MTMOON) &&
+        FlagGet(FLAG_ROCK_MTMOON2) &&
+        FlagGet(FLAG_GOT_TM16_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM19_FROM_ERIKA) &&
+        FlagGet(FLAG_GOT_TM20_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM26_FROM_GIOVANNI) &&
+        FlagGet(FLAG_GOT_TM27) &&
+        FlagGet(FLAG_GOT_TM28_FROM_ROCKET) &&
+        FlagGet(FLAG_GOT_TM29_FROM_MR_PSYCHIC) &&
+        FlagGet(FLAG_GOT_TM34_FROM_SURGE) &&
+        FlagGet(FLAG_GOT_TM33_FROM_THIRSTY_GIRL) &&
+        FlagGet(FLAG_GOT_TM38_FROM_BLAINE) &&
+        FlagGet(FLAG_GOT_TM39_FROM_BROCK) &&
+        FlagGet(FLAG_GOT_TM42_AT_MEMORIAL_PILLAR))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void LatiosRequirements(void)
+{
+    if (FlagGet(FLAG_CAUGHT_REGICE) &&
+        FlagGet(FLAG_CAUGHT_REGISTEEL) &&
+        FlagGet(FLAG_CAUGHT_REGIROCK) &&
+        FlagGet(FLAG_FOUGHT_DEOXYS))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
 void BattleTrophy(void)
 {
     if (FlagGet(TRAINER_ARMSTRONG) &&

@@ -20,6 +20,7 @@
 #define INGAME_TRADE_TANGELA   7
 #define INGAME_TRADE_SEEL      8
 
+
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
 #define CANT_TRADE_LAST_MON        1

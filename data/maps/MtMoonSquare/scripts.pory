@@ -1,5 +1,7 @@
 raw `
 
+.set LOCALID_LILEEP_POKEBALL, 7
+
 MtMoonSquare_MapScripts::
 	.byte 0
 
@@ -55,4 +57,66 @@ MtMoonSquare_EventScript_Nidorino::
 	waitmoncry
 	release
 	end
+
+MtMoonSquare_EventScript_ClawBall::
+	lock
+	faceplayer
+	message MtMoonSquare_Text_ObtainedAnFossil
+	waitmessage
+	message MtMoonSquare_Text_However
+	waitmessage
+	setvar VAR_TEMP_1, SPECIES_LILEEP
+	givemon SPECIES_LILEEP, 40
+	goto_if_eq VAR_RESULT, 0, MtMoonSquare_EventScript_GetClawParty
+	goto_if_eq VAR_RESULT, 1, MtMoonSquare_EventScript_GetClawPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+MtMoonSquare_EventScript_GetClawParty::
+	removeobject LOCALID_LILEEP_POKEBALL
+	playfanfare MUS_LEVEL_UP
+	message MtMoonSquare_Text_ObtainedAnClaw
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MtMoonSquare_EventScript_SetGotClaw
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto MtMoonSquare_EventScript_SetGotClaw
+	end
+
+MtMoonSquare_EventScript_GetClawPC::
+	removeobject LOCALID_LILEEP_POKEBALL
+	playfanfare MUS_LEVEL_UP
+	message MtMoonSquare_Text_ObtainedAnClaw
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MtMoonSquare_EventScript_TransferClawToPC
+	call EventScript_NameReceivedBoxMon
+	goto MtMoonSquare_EventScript_TransferClawToPC
+	end
+
+MtMoonSquare_EventScript_TransferClawToPC::
+	call EventScript_TransferredToPC
+	goto MtMoonSquare_EventScript_SetGotClaw
+	end
+
+MtMoonSquare_EventScript_SetGotClaw::
+	setflag FLAG_GOT_ROOT
+	release
+	end
+
+MtMoonSquare_Text_ObtainedAnClaw::
+    .string "{PLAYER} obtained an LILEEP!$"
+
+MtMoonSquare_Text_ObtainedAnFossil::
+	.string "{PLAYER} obtained an ROOT FOSSIL!$"
+
+MtMoonSquare_Text_However::
+	.string "However, the ROOT FOSSIL\n"
+	.string "got magically revived in your hands!$"
 `

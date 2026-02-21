@@ -149,3 +149,10 @@ FiveIsland_MemorialPillar_Text_RematchOmanPostBattle::
     .string "than I possibly could've.\p"
     .string "I know I can grow stronger.\n"  
     .string "It's just a matter of time.$"  
+
+FiveIsland_MemorialPillar_Text_Frog::
+	.string "I'm making a memorial for\n"
+	.string "my POLIWHIRI, CHARILE\p"
+	.string "He was so bubbly and froggy!\p"
+	.string "I miss CHARILE so much!$"
+

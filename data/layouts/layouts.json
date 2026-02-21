@@ -4440,6 +4440,54 @@
       "secondary_tileset": "gTileset_GenericBuilding2",
       "border_filepath": "data/layouts/FishermansHouse/border.bin",
       "blockdata_filepath": "data/layouts/FishermansHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DOWNWARD_BEACH",
+      "name": "DownwardBeach_Layout",
+      "width": 40,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeviiIslands123",
+      "border_filepath": "data/layouts/DownwardBeach/border.bin",
+      "blockdata_filepath": "data/layouts/DownwardBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_DOWNWARD_BEACH_CONNECTION",
+      "name": "DownwardBeachConnection_Layout",
+      "width": 10,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SeviiIslands123",
+      "border_filepath": "data/layouts/DownwardBeachConnection/border.bin",
+      "blockdata_filepath": "data/layouts/DownwardBeachConnection/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWO_ISLAND_SOUTHERN_CAVE",
+      "name": "TwoIsland_SouthernCave_Layout",
+      "width": 25,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/TwoIsland_SouthernCave/border.bin",
+      "blockdata_filepath": "data/layouts/TwoIsland_SouthernCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWO_ISLAND_SOUTH_SIDE_CAVE_B1F",
+      "name": "TwoIsland_SouthSide_Cave_B1F_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/TwoIsland_SouthSide_Cave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/TwoIsland_SouthSide_Cave_B1F/map.bin"
     }
   ]
 }

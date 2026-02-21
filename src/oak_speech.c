@@ -364,6 +364,7 @@ static const u8 sTextColor_DarkGray[] = { 0, 2, 3, 0 };
 
 enum
 {
+    PIKACHU_INTRO_PAGE_4,
     PIKACHU_INTRO_PAGE_1,
     PIKACHU_INTRO_PAGE_2,
     PIKACHU_INTRO_PAGE_3,
@@ -374,7 +375,8 @@ static const u8 *const sPikachuIntro_Strings[NUM_PIKACHU_INTRO_PAGES] =
 {
     [PIKACHU_INTRO_PAGE_1] = gPikachuIntro_Text_Page1,
     [PIKACHU_INTRO_PAGE_2] = gPikachuIntro_Text_Page2,
-    [PIKACHU_INTRO_PAGE_3] = gPikachuIntro_Text_Page3
+    [PIKACHU_INTRO_PAGE_3] = gPikachuIntro_Text_Page3,
+    [PIKACHU_INTRO_PAGE_4] = gPikachuIntro_Text_Page4
 };
 
 #define GFX_TAG_PLATFORM     0x1000
@@ -992,10 +994,10 @@ static void Task_PikachuIntro_LoadPage1(u8 taskId)
         PutWindowTilemap(tTextboxWindowId);
         FillWindowPixelBuffer(tTextboxWindowId, PIXEL_FILL(0));
         CopyWindowToVram(tTextboxWindowId, COPYWIN_FULL);
-        sOakSpeechResources->currentPage = PIKACHU_INTRO_PAGE_1;
+        sOakSpeechResources->currentPage = PIKACHU_INTRO_PAGE_4;
         gMain.state = PIKACHU_INTRO_SET_GPU_REGS;
         tBlendTarget = 16;
-        AddTextPrinterParameterized4(tTextboxWindowId, FONT_NORMAL, 3, 5, 1, 0, sTextColor_DarkGray, 0, sPikachuIntro_Strings[PIKACHU_INTRO_PAGE_1]);
+        AddTextPrinterParameterized4(tTextboxWindowId, FONT_NORMAL, 3, 5, 1, 0, sTextColor_DarkGray, 0, sPikachuIntro_Strings[PIKACHU_INTRO_PAGE_4]);
         tTextCursorSpriteId = CreateTextCursorSprite(0, 226, 145, 0, 0);
         gSprites[tTextCursorSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         gSprites[tTextCursorSpriteId].oam.priority = 0;
@@ -1030,7 +1032,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
             }
             else // B_BUTTON
             {
-                if (sOakSpeechResources->currentPage != PIKACHU_INTRO_PAGE_1)
+                if (sOakSpeechResources->currentPage != PIKACHU_INTRO_PAGE_4)
                     sOakSpeechResources->currentPage--;
                 else
                     break;
@@ -1055,7 +1057,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
         {
             FillWindowPixelBuffer(tTextboxWindowId, PIXEL_FILL(0));
             AddTextPrinterParameterized4(tTextboxWindowId, FONT_NORMAL, 3, 5, 1, 0, sTextColor_DarkGray, 0, sPikachuIntro_Strings[sOakSpeechResources->currentPage]);
-            if (sOakSpeechResources->currentPage == PIKACHU_INTRO_PAGE_1)
+            if (sOakSpeechResources->currentPage == PIKACHU_INTRO_PAGE_4)
             {
                 ClearTopBarWindow();
                 TopBarWindowPrintString(gText_ABUTTONNext, 0, 1);

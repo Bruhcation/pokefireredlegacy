@@ -168,10 +168,10 @@ FiveIsland_Meadow_Items::
 
 FiveIsland_Meadow_EventScript_Beast::
 	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, FiveIsland_Meadow_EventScript_Beast3
-	call_if_unset FLAG_0x024, FiveIsland_Meadow_EventScript_BeastShow
-	call_if_unset FLAG_0x025, FiveIsland_Meadow_EventScript_Entei
-	call_if_unset FLAG_0x022, FiveIsland_Meadow_EventScript_Raikou
-	call_if_unset FLAG_0x026, FiveIsland_Meadow_EventScript_Suicune
+	call_if_unset FLAG_SEEN_BEAST, FiveIsland_Meadow_EventScript_BeastShow
+	call_if_unset FLAG_ENTEI_FLAG, FiveIsland_Meadow_EventScript_Entei
+	call_if_unset FLAG_RAIKOU_FLAG, FiveIsland_Meadow_EventScript_Raikou
+	call_if_unset FLAG_SUICANE_FLAG, FiveIsland_Meadow_EventScript_Suicune
 	special RoamingBeasts
 	call_if_eq VAR_RESULT, TRUE, FiveIsland_Meadow_EventScript_GiveTicket
 	msgbox FiveIsland_Meadow_Text_Beasts22, MSGBOX_NPC
@@ -184,7 +184,7 @@ FiveIsland_Meadow_EventScript_Suicune::
 
 FiveIsland_Meadow_EventScript_Suicune2::
 	msgbox FiveIsland_Meadow_Text_Suicune, MSGBOX_NPC
-	setflag FLAG_0x026
+	setflag FLAG_SUICANE_FLAG
 	special InitRoamer
 	return
 
@@ -202,7 +202,7 @@ FiveIsland_Meadow_EventScript_Entei::
 
 FiveIsland_Meadow_EventScript_Entei2::
 	msgbox FiveIsland_Meadow_Text_Entei, MSGBOX_NPC
-	setflag FLAG_0x025
+	setflag FLAG_ENTEI_FLAG
 	special InitRoamer
 	return
 
@@ -220,7 +220,7 @@ FiveIsland_Meadow_EventScript_Raikou::
 
 FiveIsland_Meadow_EventScript_Raikou2::
 	msgbox FiveIsland_Meadow_Text_Raikou, MSGBOX_NPC
-	setflag FLAG_0x022
+	setflag FLAG_RAIKOU_FLAG
 	special InitRoamer
 	return
 
@@ -250,7 +250,7 @@ FiveIsland_Meadow_EventScript_BeastShow::
 	showmonpic SPECIES_SUICUNE, 10, 3
 	waitbuttonpress
 	hidemonpic
-	setflag FLAG_0x024
+	setflag FLAG_SEEN_BEAST
 	return
 
 FiveIsland_Meadow_EventScript_GiveTicket::
