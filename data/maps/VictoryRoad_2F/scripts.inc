@@ -175,20 +175,50 @@ VictoryRoad_2F_EventScript_Gregory::
 # 88 "data/maps/VictoryRoad_2F/scripts.pory"
 VictoryRoad_2F_EventScript_Julie::
 # 89 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_GregoryIntro, VictoryRoad_2F_Text_GregoryDefeat
+	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_JulieIntro, VictoryRoad_2F_Text_JulieDefeat
 # 90 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_GregoryPostBattle, MSGBOX_AUTOCLOSE
+	msgbox VictoryRoad_2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
 # 91 "data/maps/VictoryRoad_2F/scripts.pory"
 	end
 # 92 "data/maps/VictoryRoad_2F/scripts.pory"
 
 # 93 "data/maps/VictoryRoad_2F/scripts.pory"
-
+VictoryRoad_2F_Text_JulieIntro::
 # 94 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Vincent::
+	.string "Victory Road tests\n"
 # 95 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_TAMER_VINCENT, VictoryRoad_2F_Text_VincentIntro, VictoryRoad_2F_Text_VincentDefeat
+	.string "more than strength.\p"
 # 96 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
+	.string "It tests resolve.\p"
 # 97 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "Show me you have both!$"
+# 98 "data/maps/VictoryRoad_2F/scripts.pory"
+
+# 99 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_Text_JulieDefeat::
+# 100 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "No way...\n"
+# 101 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "I pushed myself to the limit…!$"
+# 102 "data/maps/VictoryRoad_2F/scripts.pory"
+
+# 103 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_Text_JuliePostBattle::
+# 104 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "You have earned this win.\n"
+# 105 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "Keep going,\l"
+# 106 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "the Pokémon League is just ahead.$"
+# 107 "data/maps/VictoryRoad_2F/scripts.pory"
+
+# 108 "data/maps/VictoryRoad_2F/scripts.pory"
+
+# 109 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_EventScript_Vincent::
+# 110 "data/maps/VictoryRoad_2F/scripts.pory"
+	trainerbattle_single TRAINER_TAMER_VINCENT, VictoryRoad_2F_Text_VincentIntro, VictoryRoad_2F_Text_VincentDefeat
+# 111 "data/maps/VictoryRoad_2F/scripts.pory"
+	msgbox VictoryRoad_2F_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
+# 112 "data/maps/VictoryRoad_2F/scripts.pory"
 	end

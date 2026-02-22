@@ -262,9 +262,9 @@ static const struct TrainerMon sParty_Interviewer[] = {
 static const struct TrainerMon sParty_RSTuberF[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 5,
+        .lvl = 10,
         .species = SPECIES_PIKACHU,
-        .moves = {MOVE_CHARM, MOVE_THUNDER_SHOCK, MOVE_SURF, MOVE_TAIL_WHIP},
+        .moves = {MOVE_CHARM, MOVE_THUNDER_SHOCK, MOVE_SURF, MOVE_THUNDER_WAVE},
     },    
 };
 static const struct TrainerMon sParty_RSTuberM[] = {
@@ -565,7 +565,7 @@ static const struct TrainerMon sParty_RSBlackBelt[] =
 {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 75,
+        .lvl = 70,
         .species = SPECIES_VENUSAUR,
         .heldItem = ITEM_LEFTOVERS,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
@@ -575,7 +575,7 @@ static const struct TrainerMon sParty_RSBlackBelt[] =
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 75,
+        .lvl = 70,
         .species = SPECIES_CHARIZARD,
         .heldItem = ITEM_CHARCOAL,
         .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS),
@@ -585,11 +585,21 @@ static const struct TrainerMon sParty_RSBlackBelt[] =
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 75,
+        .lvl = 70,
         .species = SPECIES_BLASTOISE,
         .heldItem = ITEM_LEFTOVERS,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_MIRROR_COAT, MOVE_IRON_DEFENSE},
+        .ev = TRAINER_PARTY_EVS(255, 255, 255, 255, 255, 255),
+        .isShiny = TRUE,
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 30),
+        .lvl = 100,
+        .species = SPECIES_UNOWN,
+        .heldItem = ITEM_WHITE_HERB,
+        .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS),
+        .moves = {MOVE_HIDDEN_POWER, MOVE_SUPERPOWER, MOVE_NATURE_POWER, MOVE_ANCIENT_POWER},
         .ev = TRAINER_PARTY_EVS(255, 255, 255, 255, 255, 255),
         .isShiny = TRUE,
     },
@@ -14775,7 +14785,6 @@ static const struct TrainerMon sParty_DragonTamer[] = {
         .heldItem = ITEM_LUM_BERRY,
         .moves = {MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_AGILITY},
         .ev = TRAINER_PARTY_EVS(252, 128, 0, 0, 128, 0),
-
     },
 };
 

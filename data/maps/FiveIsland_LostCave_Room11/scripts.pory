@@ -1,4 +1,92 @@
 raw `
 FiveIsland_LostCave_Room11_MapScripts::
 	.byte 0
+
+FiveIsland_LostCave_Room11_EventScript_Armstrong::
+	goto_if_set FLAG_ARMSTRONG_CLONE, FiveIsland_LostCave_Room11_EventScript_RematchArmstrong
+	msgbox FiveIsland_LostCave_Room11_Text_Armstrong, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room11_EventScript_NoArmstrong
+	trainerbattle_single TRAINER_DRAGON_TAMER, FiveIsland_LostCave_Room11_Text_YesArmstrong, FiveIsland_LostCave_Room11_Text_ArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostArmstrong, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room11_EventScript_PostArmstrong::
+	msgbox FiveIsland_LostCave_Room11_Text_ArmstrongPostBattle
+	setflag FLAG_ARMSTRONG_CLONE
+	cleartrainerflag TRAINER_DRAGON_TAMER
+	release
+	end
+
+FiveIsland_LostCave_Room11_EventScript_NoArmstrong::
+	msgbox FiveIsland_LostCave_Room11_Text_NoArmstrong
+	release
+	end
+
+FiveIsland_LostCave_Room11_EventScript_RematchArmstrong::
+	msgbox FiveIsland_LostCave_Room11_Text_RematchArmstrong, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room11_EventScript_NoArmstrong
+	trainerbattle_single TRAINER_DRAGON_TAMER, FiveIsland_LostCave_Room11_Text_YesRematchArmstrong, FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostRematchArmstrong, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room11_EventScript_PostRematchArmstrong::
+	msgbox FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat
+	cleartrainerflag TRAINER_DRAGON_TAMER
+	release
+	end
+
+FiveIsland_LostCave_Room11_Text_Armstrong::
+	.string "Hey there {PLAYER}.\n"
+	.string "Just letting you know I'm\l"
+	.string "not real.\p"
+	.string "I'm a manifestation of ARMSTRONG.\n"
+	.string "The one the creator wanted\l"
+	.string "to face somewhere else.\p"
+	.string "An epic battle of all proportions!\n"
+	.string "A true battle of strength!\p"
+	.string "So, do you wish to face me?$"
+
+FiveIsland_LostCave_Room11_Text_ArmstrongDefeat::
+	.string "How did I lose?$"
+
+FiveIsland_LostCave_Room11_Text_ArmstrongPostBattle::
+	.string "Congratulations.\p"
+	.string "Your strength transcends\n"
+	.string "anything the Creator gets to\l"
+	.string "throw at you now.\p"
+	.string "Consider yourself a\n"
+	.string "POKEMON MASTER!\p"
+	.string "{PLAYER}!$"
+
+FiveIsland_LostCave_Room11_Text_NoArmstrong::
+	.string "You're not strong enough.$"
+
+FiveIsland_LostCave_Room11_Text_YesArmstrong::
+	.string "Let the ending battle begin!$"
+
+FiveIsland_LostCave_Room11_Text_RematchArmstrong::
+    .string "You want to battle again?$"
+
+
+FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat::
+    .string "As expected…$"
+
+FiveIsland_LostCave_Room11_Text_YesRematchArmstrong::
+    .string "I already know the result.$"
+
+FiveIsland_LostCave_Room11_Text_RematchArmstrongPostBattle::
+	.string "I guess I'll let you know\n"
+	.string "who I'm based off of.\p"
+	.string "It's SENATOR ARMSTRONG.\n"
+	.string "You can find more about me\l"
+	.string "somewhere else...\p"
+	.string "There wasn't much else\n"
+	.string "for the creator to base\l"
+	.string "on for this hack besides\l"
+	.string "the JOHTO GYM Leaders,\l"
+	.string "Who are supposed to be weaker\l"
+	.string "than the KANTO GYM Leaders.\p"
+	.string "So a lot of new ideas\n"
+	.string "had to be made which you saw.$"
+
 `

@@ -60,6 +60,7 @@ static void InitBerryPouchFromBattle(void);
 static void InitTeachyTvFromBag(void);
 static void Task_InitTeachyTvFromField(u8 taskId);
 static void Task_UseRepel(u8 taskId);
+void Cycle_Through_Repels(void);
 static void RemoveUsedItem(void);
 static void Task_UsedBlackWhiteFlute(u8 taskId);
 static void ItemUseOnFieldCB_EscapeRope(u8 taskId);
@@ -569,6 +570,23 @@ static void Task_UseRepel(u8 taskId)
         RemoveUsedItem();
         DisplayItemMessageInBag(taskId, FONT_NORMAL, gStringVar4, Task_ReturnToBagFromContextMenu);
     }
+}
+
+void Cycle_Through_Repels(void)
+{
+    u16 RepelCycle[] = {ITEM_REPEL, ITEM_SUPER_REPEL, ITEM_MAX_REPEL};    
+    u8 i = 0;
+
+    while (gSpecialVar_Result == FALSE){
+        gSpecialVar_Result = CheckBagHasItem(RepelCycle[i],1);
+        if (gSpecialVar_Result == TRUE)
+            VarSet(VAR_REPEL_LAST_USED, RepelCycle[i]);
+        i++;
+        if (i > 2)
+            return;
+     }
+
+    return;
 }
 
 static void RemoveUsedItem(void)

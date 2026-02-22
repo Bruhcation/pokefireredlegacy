@@ -21,6 +21,8 @@ SixIsland_RuinValley_EventScript_OpenDottedHoleDoor::
 
 SixIsland_RuinValley_EventScript_ShowGiovanni::
 	goto_if_unset FLAG_SYS_CAN_LINK_WITH_RS, SixIsland_RuinValley_EventScript_HideGiovanniEnd
+	goto_if_unset FLAG_HIDE_ADMIN, SixIsland_RuinValley_EventScript_HideGiovanniEnd
+	goto_if_unset FLAG_HIDE_ADMIN2, SixIsland_RuinValley_EventScript_HideGiovanniEnd
 	clearflag FLAG_GIOVANNI4
 	end
 

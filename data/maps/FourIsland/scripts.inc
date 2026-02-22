@@ -347,7 +347,7 @@ FourIsland_Text_JJ::
 # 174 "data/maps/FourIsland/scripts.pory"
 	.string "JJ treats his Fresh Water,\n"
 # 175 "data/maps/FourIsland/scripts.pory"
-	.string "like it is something PRIME.\p"
+	.string "like it is something prime.\p"
 # 176 "data/maps/FourIsland/scripts.pory"
 	.string "He sings an unbearable tune\n"
 # 177 "data/maps/FourIsland/scripts.pory"
