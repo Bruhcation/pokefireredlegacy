@@ -274,8 +274,8 @@
 #define FLAG_SECOND_SOUL_DEW             0x0FF
 #define FLAG_BEAT_TWINS               0x100
 #define FLAG_TWO_ISLAND_TREE             0x101
-#define FLAG_0x102               0x102
-#define FLAG_0x103               0x103
+#define FLAG_ARMSTRONG_CLONE              0x102
+#define FLAG_DEFEATED_OAK_REMATCH             0x103
 #define FLAG_0x104               0x104
 #define FLAG_0x105               0x105
 #define FLAG_0x106               0x106

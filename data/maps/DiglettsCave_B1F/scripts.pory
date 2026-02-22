@@ -8,41 +8,6 @@ DiglettsCave_B1F_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F
 	end
 
-DiglettsCave_B1F_EventScript_Freddy::
-	lock
-	faceplayer
-	goto_if_set FLAG_DEFEATED_FREDDY, DiglettsCave_B1F_EventScript_RematchFreddy
-	msgbox DiglettsCave_B1F_Text_Freddy, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoFreddy
-	trainerbattle_single TRAINER_FREDDY, DiglettsCave_B1F_Text_YesFreddy, DiglettsCave_B1F_Text_FreddyDefeat, DiglettsCave_B1F_EventScript_PostFreddy, NO_MUSIC
-	release
-	end
-
-DiglettsCave_B1F_EventScript_PostFreddy::
-	msgbox DiglettsCave_B1F_Text_FreddyPostBattle
-	setflag FLAG_DEFEATED_FREDDY
-	cleartrainerflag TRAINER_FREDDY
-	release
-	end
-
-DiglettsCave_B1F_EventScript_NoFreddy::
-	msgbox DiglettsCave_B1F_Text_NoFreddy
-	release
-	end
-
-DiglettsCave_B1F_EventScript_RematchFreddy::
-	msgbox DiglettsCave_B1F_Text_RematchFreddy, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoFreddy
-	trainerbattle_single TRAINER_FREDDY, DiglettsCave_B1F_Text_YesFreddy, DiglettsCave_B1F_Text_RematchFreddyDefeat, DiglettsCave_B1F_EventScript_PostRematchFreddy, NO_MUSIC
-	release
-	end
-
-DiglettsCave_B1F_EventScript_PostRematchFreddy::
-	msgbox DiglettsCave_B1F_Text_PostRematchFreddy
-	cleartrainerflag TRAINER_FREDDY
-	release
-	end
-
 DiglettsCave_B1F_EventScript_OrbingCheck::
 	lock
 	faceplayer

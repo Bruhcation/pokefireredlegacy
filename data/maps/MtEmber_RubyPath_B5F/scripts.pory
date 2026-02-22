@@ -46,7 +46,7 @@ MtEmber_RubyPath_B5F_EventScript_NoWhitney::
 	playmoncry SPECIES_BLASTOISE, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SHINY_CREATION
-	setwildbattle SPECIES_BLASTOISE, 75
+	setwildbattle SPECIES_BLASTOISE, 70
 	dowildbattle
 	special QuestLog_CutRecording
 	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
@@ -78,13 +78,13 @@ MtEmber_RubyPath_B5F_EventScript_Pokemon2::
 	playmoncry SPECIES_CHARIZARD, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SHINY_CREATION
-	setwildbattle SPECIES_CHARIZARD, 75
+	setwildbattle SPECIES_CHARIZARD, 70
 	.else
 	.ifdef LEAFGREEN
 	playmoncry SPECIES_VENUSAUR, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SHINY_CREATION
-	setwildbattle SPECIES_VENUSAUR, 75
+	setwildbattle SPECIES_VENUSAUR, 70
 	.endif
 	.endif
 	dowildbattle

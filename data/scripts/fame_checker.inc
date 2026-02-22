@@ -241,6 +241,26 @@ LavenderTown_PokemonCenter_1F_EventScript_BaldingMan::
 	release
 	end
 
+EventScript_PokemonJournalUnused1::
+	lock
+	faceplayer
+	famechecker FAMECHECKER_DAISY, 1
+	famechecker FAMECHECKER_OAK, 4
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox PokemonJournal_Text_SpecialFeatureProfOak
+	release
+	end
+
+EventScript_PokemonJournalUnused2::
+	lock
+	faceplayer
+	famechecker FAMECHECKER_DAISY, 4
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox PokemonJournal_Text_SpecialFeatureProfOak
+	release
+	end
+
+
 CinnabarIsland_PokemonCenter_1F_EventScript_PokemonJournalMrFuji::
 	lock
 	faceplayer

@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -28,6 +28,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FiveIsland_LostCave_Room11_EventScript_ItemLaxIncense",
       "flag": "FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM11_LAX_INCENSE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FiveIsland_LostCave_Room11_EventScript_Armstrong",
+      "flag": "FLAG_HIDE_EASTER"
     }
   ],
   "warp_events": [
@@ -39,6 +53,10 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -1,4 +1,64 @@
 raw `
 FiveIsland_LostCave_Room14_MapScripts::
 	.byte 0
+
+FiveIsland_LostCave_Room14_EventScript_Freddy::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_FREDDY, FiveIsland_LostCave_Room14_EventScript_RematchFreddy
+	msgbox FiveIsland_LostCave_Room14_Text_Freddy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room14_EventScript_NoFreddy
+	trainerbattle_single TRAINER_FREDDY, FiveIsland_LostCave_Room14_Text_YesFreddy, FiveIsland_LostCave_Room14_Text_FreddyDefeat, FiveIsland_LostCave_Room14_EventScript_PostFreddy, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room14_EventScript_PostFreddy::
+	msgbox FiveIsland_LostCave_Room14_Text_FreddyPostBattle
+	setflag FLAG_DEFEATED_FREDDY
+	cleartrainerflag TRAINER_FREDDY
+	release
+	end
+
+FiveIsland_LostCave_Room14_EventScript_NoFreddy::
+	msgbox FiveIsland_LostCave_Room14_Text_NoFreddy
+	release
+	end
+
+FiveIsland_LostCave_Room14_EventScript_RematchFreddy::
+	msgbox FiveIsland_LostCave_Room14_Text_RematchFreddy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room14_EventScript_NoFreddy
+	trainerbattle_single TRAINER_FREDDY, FiveIsland_LostCave_Room14_Text_YesFreddy, FiveIsland_LostCave_Room14_Text_RematchFreddyDefeat, FiveIsland_LostCave_Room14_EventScript_PostRematchFreddy, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room14_EventScript_PostRematchFreddy::
+	msgbox FiveIsland_LostCave_Room14_Text_PostRematchFreddy
+	cleartrainerflag TRAINER_FREDDY
+	release
+	end
+
+FiveIsland_LostCave_Room14_Text_Freddy::
+    .string "Har Har Har Har Har.$"
+
+FiveIsland_LostCave_Room14_Text_FreddyDefeat::
+    .string "Har Har Har Har Har!$"
+
+FiveIsland_LostCave_Room14_Text_FreddyPostBattle::
+    .string "Har Har Har Har Har!$"
+
+FiveIsland_LostCave_Room14_Text_NoFreddy::
+    .string "Har Har Har Har Har!$"
+
+FiveIsland_LostCave_Room14_Text_YesFreddy::
+    .string "Har Har Har Har Har!$"
+
+FiveIsland_LostCave_Room14_Text_RematchFreddy::
+    .string "Har Har Har Har Har?$"
+
+
+FiveIsland_LostCave_Room14_Text_RematchFreddyDefeat::
+    .string "Har!$"
+
+FiveIsland_LostCave_Room14_Text_PostRematchFreddy::
+    .string "Har Har Har.$"
 `

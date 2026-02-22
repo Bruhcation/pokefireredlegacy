@@ -97,9 +97,9 @@ VictoryRoad_1F_EventScript_Naomi::
 # 49 "data/maps/VictoryRoad_1F/scripts.pory"
 VictoryRoad_1F_EventScript_Berke::
 # 50 "data/maps/VictoryRoad_1F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_BERKE, VictoryRoad_1F_Text_RolandoIntro, VictoryRoad_1F_Text_RolandoDefeat
+	trainerbattle_single TRAINER_COOLTRAINER_BERKE, VictoryRoad_1F_Text_BerkeIntro, VictoryRoad_1F_Text_BerkeDefeat
 # 51 "data/maps/VictoryRoad_1F/scripts.pory"
-	msgbox VictoryRoad_1F_Text_RolandoPostBattle, MSGBOX_AUTOCLOSE
+	msgbox VictoryRoad_1F_Text_BerkePostBattle, MSGBOX_AUTOCLOSE
 # 52 "data/maps/VictoryRoad_1F/scripts.pory"
 	end
 # 53 "data/maps/VictoryRoad_1F/scripts.pory"
@@ -112,3 +112,39 @@ VictoryRoad_1F_EventScript_Rolando::
 	msgbox VictoryRoad_1F_Text_RolandoPostBattle, MSGBOX_AUTOCLOSE
 # 57 "data/maps/VictoryRoad_1F/scripts.pory"
 	end
+# 58 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 59 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_BerkeIntro::
+# 60 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Victory Road isnt for the weak.\p"
+# 61 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Only trainers who have earned\n"
+# 62 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "every Badge belong here.\p"
+# 63 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Lets see if you are truly\n"
+# 64 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Elite Four material!$"
+# 65 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 66 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_BerkeDefeat::
+# 67 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "What?! I trained for this mountain…\p"
+# 68 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "How did you break through my team?$"
+# 69 "data/maps/VictoryRoad_1F/scripts.pory"
+
+# 70 "data/maps/VictoryRoad_1F/scripts.pory"
+VictoryRoad_1F_Text_BerkePostBattle::
+# 71 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Heh… I get it now.\p"
+# 72 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Strength isnt just levels,\n"
+# 73 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "its trust.\p"
+# 74 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "Go on,\n"
+# 75 "data/maps/VictoryRoad_1F/scripts.pory"
+	.string "The Leagues waiting for you.$"

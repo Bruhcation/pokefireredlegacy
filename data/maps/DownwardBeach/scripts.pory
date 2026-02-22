@@ -13,7 +13,7 @@ DownwardBeach_EventScript_Npc::
 	end
 
 DownwardBeach_Text_Sign::
-	.string "Welcome to Southside Rock\n"
+	.string "Welcome to SOUTHSIDE ROCK\n"
 	.string "Training Spot of\l"
 	.string "SEVII MASTER CASEY.\p"
 	.string "Don't forget,\n"

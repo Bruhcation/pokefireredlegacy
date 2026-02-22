@@ -131,38 +131,120 @@ VictoryRoad_3F_EventScript_Ray::
 # 66 "data/maps/VictoryRoad_3F/scripts.pory"
 VictoryRoad_3F_EventScript_Brooke::
 # 67 "data/maps/VictoryRoad_3F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_BROOKE, VictoryRoad_3F_Text_CarolineIntro, VictoryRoad_3F_Text_CarolineDefeat
+	trainerbattle_single TRAINER_COOLTRAINER_BROOKE, VictoryRoad_3F_Text_BrookeIntro, VictoryRoad_3F_Text_BrookeDefeat
 # 68 "data/maps/VictoryRoad_3F/scripts.pory"
-	msgbox VictoryRoad_3F_Text_CarolinePostBattle, MSGBOX_AUTOCLOSE
+	msgbox VictoryRoad_3F_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
 # 69 "data/maps/VictoryRoad_3F/scripts.pory"
 	end
 # 70 "data/maps/VictoryRoad_3F/scripts.pory"
 
 # 71 "data/maps/VictoryRoad_3F/scripts.pory"
-VictoryRoad_3F_EventScript_Shannon::
+VictoryRoad_3F_Text_BrookeIntro::
 # 72 "data/maps/VictoryRoad_3F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_SHANNON, VictoryRoad_3F_Text_AlexaIntro, VictoryRoad_3F_Text_AlexaDefeat
+	.string "You made it this far? Impressive.\p"
 # 73 "data/maps/VictoryRoad_3F/scripts.pory"
-	msgbox VictoryRoad_3F_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
+	.string "You might of made mistakes\n"
 # 74 "data/maps/VictoryRoad_3F/scripts.pory"
-	end
+	.string "on your journey,\l"
 # 75 "data/maps/VictoryRoad_3F/scripts.pory"
-
+	.string "But Victory Road doesn't\l"
 # 76 "data/maps/VictoryRoad_3F/scripts.pory"
-VictoryRoad_3F_EventScript_Austina::
+	.string "forgive mistakes!$"
 # 77 "data/maps/VictoryRoad_3F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_AUSTINA, VictoryRoad_3F_Text_AlexaIntro, VictoryRoad_3F_Text_AlexaDefeat
-# 78 "data/maps/VictoryRoad_3F/scripts.pory"
-	msgbox VictoryRoad_3F_Text_RayPostBattle, MSGBOX_AUTOCLOSE
-# 79 "data/maps/VictoryRoad_3F/scripts.pory"
-	end
-# 80 "data/maps/VictoryRoad_3F/scripts.pory"
 
+# 78 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_BrookeDefeat::
+# 79 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "That… that was flawless…\p"
+# 80 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "You battle with confidence.$"
 # 81 "data/maps/VictoryRoad_3F/scripts.pory"
-VictoryRoad_3F_EventScript_Tyra::
+
 # 82 "data/maps/VictoryRoad_3F/scripts.pory"
-	trainerbattle_double TRAINER_COOL_COUPLE_RAY_TYRA, VictoryRoad_3F_Text_TyraIntro, VictoryRoad_3F_Text_TyraDefeat, VictoryRoad_3F_Text_TyraNotEnoughMons
+VictoryRoad_3F_Text_BrookePostBattle::
 # 83 "data/maps/VictoryRoad_3F/scripts.pory"
-	msgbox VictoryRoad_3F_Text_TyraPostBattle, MSGBOX_AUTOCLOSE
+	.string "But The Elite Four\n"
 # 84 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "won't go easy on you!$"
+# 85 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 86 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_EventScript_Shannon::
+# 87 "data/maps/VictoryRoad_3F/scripts.pory"
+	trainerbattle_single TRAINER_COOLTRAINER_SHANNON, VictoryRoad_3F_Text_ShannonIntro, VictoryRoad_3F_Text_ShannonDefeat
+# 88 "data/maps/VictoryRoad_3F/scripts.pory"
+	msgbox VictoryRoad_3F_Text_ShannonPostBattle, MSGBOX_AUTOCLOSE
+# 89 "data/maps/VictoryRoad_3F/scripts.pory"
+	end
+# 90 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 91 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_ShannonIntro::
+# 92 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "I've been training here every day.\n"
+# 93 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Let's see if your\l"
+# 94 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "journey measures up!$"
+# 95 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 96 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_ShannonDefeat::
+# 97 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "I trained so hard… and still lost!$"
+# 98 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 99 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_ShannonPostBattle::
+# 100 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Your bond with your\n"
+# 101 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Pokémon is clear.\l"
+# 102 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "That's what true strength\l"
+# 103 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "looks like.$"
+# 104 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 105 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_EventScript_Austina::
+# 106 "data/maps/VictoryRoad_3F/scripts.pory"
+	trainerbattle_single TRAINER_COOLTRAINER_AUSTINA, VictoryRoad_3F_Text_AustinaIntro, VictoryRoad_3F_Text_AustinaDefeat
+# 107 "data/maps/VictoryRoad_3F/scripts.pory"
+	msgbox VictoryRoad_3F_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
+# 108 "data/maps/VictoryRoad_3F/scripts.pory"
+	end
+# 109 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 110 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_AustinaIntro::
+# 111 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "The air here feels different..\n"
+# 112 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Intense...\p"
+# 113 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Show me your power!$"
+# 114 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 115 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_AustinaDefeat::
+# 116 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "I couldn't keep up with you…!$"
+# 117 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 118 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_Text_AustinaPostBattle::
+# 119 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Don't hold back at the League.\n"
+# 120 "data/maps/VictoryRoad_3F/scripts.pory"
+	.string "Battle like you did just now!$"
+# 121 "data/maps/VictoryRoad_3F/scripts.pory"
+
+# 122 "data/maps/VictoryRoad_3F/scripts.pory"
+VictoryRoad_3F_EventScript_Tyra::
+# 123 "data/maps/VictoryRoad_3F/scripts.pory"
+	trainerbattle_double TRAINER_COOL_COUPLE_RAY_TYRA, VictoryRoad_3F_Text_TyraIntro, VictoryRoad_3F_Text_TyraDefeat, VictoryRoad_3F_Text_TyraNotEnoughMons
+# 124 "data/maps/VictoryRoad_3F/scripts.pory"
+	msgbox VictoryRoad_3F_Text_TyraPostBattle, MSGBOX_AUTOCLOSE
+# 125 "data/maps/VictoryRoad_3F/scripts.pory"
 	end

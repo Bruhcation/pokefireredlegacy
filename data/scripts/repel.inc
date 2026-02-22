@@ -1,6 +1,7 @@
 EventScript_RepelWoreOff::
 	lockall
 	checkitem VAR_REPEL_LAST_USED, 1
+	callnative Cycle_Through_Repels
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_RepelWoreOff_NoMoreRepels
 	msgbox Text_RepelWoreOff_UseAnother, MSGBOX_YESNO

@@ -1,4 +1,77 @@
 raw `
 FiveIsland_LostCave_Room13_MapScripts::
 	.byte 0
-`
+
+FiveIsland_LostCave_Room13_EventScript_Oak::
+	goto_if_set FLAG_DEFEATED_OAK_REMATCH, FiveIsland_LostCave_Room13_EventScript_RematchOak
+	cleartrainerflag TRAINER_OAK2
+	msgbox FiveIsland_LostCave_Room13_Text_Oak, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room13_EventScript_NoOak
+	trainerbattle_single TRAINER_OAK2, FiveIsland_LostCave_Room13_Text_YesOak, FiveIsland_LostCave_Room13_Text_OakDefeat, FiveIsland_LostCave_Room13_EventScript_PostOak, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room13_EventScript_PostOak::
+	msgbox FiveIsland_LostCave_Room13_Text_OakPostBattle
+	setflag FLAG_DEFEATED_OAK_REMATCH
+	cleartrainerflag TRAINER_OAK2
+	release
+	end
+
+FiveIsland_LostCave_Room13_EventScript_CantRematchOak::
+	msgbox FiveIsland_LostCave_Room13_Text_OakPostBattle
+	release
+	end
+
+FiveIsland_LostCave_Room13_EventScript_NoOak::
+	msgbox FiveIsland_LostCave_Room13_Text_NoOak
+	release
+	end
+
+FiveIsland_LostCave_Room13_EventScript_RematchOak::
+	msgbox FiveIsland_LostCave_Room13_Text_RematchOak, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room13_EventScript_NoOak
+	trainerbattle_single TRAINER_OAK2, FiveIsland_LostCave_Room13_Text_YesRematchOak, FiveIsland_LostCave_Room13_Text_RematchOakDefeat, FiveIsland_LostCave_Room13_EventScript_PostRematchOak, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room13_EventScript_PostRematchOak::
+	msgbox FiveIsland_LostCave_Room13_Text_RematchOakDefeat
+	cleartrainerflag TRAINER_OAK2
+	release
+	end
+
+FiveIsland_LostCave_Room13_Text_Oak::
+	.string "Oh, Hi there {PLAYER}!\n"
+	.string "I might of gotten a little lost...\p"
+	.string "I might not even be myself!\p"
+	.string "But anyways, do you want to rematch\n"
+	.string "my strongest team?$"
+
+FiveIsland_LostCave_Room13_Text_OakDefeat::
+	.string "As expected, {PLAYER}!$"
+
+FiveIsland_LostCave_Room13_Text_OakPostBattle::
+	.string "I'm beginning to feel a\n"
+	.string "little more real after\l"
+	.string "this battle!$"
+
+FiveIsland_LostCave_Room13_Text_NoOak::
+	.string "I'll get out of here soon!$"
+
+FiveIsland_LostCave_Room13_Text_YesOak::
+	.string "Alright, lets battle!$"
+
+FiveIsland_LostCave_Room13_Text_RematchOak::
+	.string "Want to go at it again?$"
+
+FiveIsland_LostCave_Room13_Text_RematchOakDefeat::
+	.string "As expected, {PLAYER}!$"
+
+FiveIsland_LostCave_Room13_Text_YesRematchOak::
+	.string "Alright, lets battle!$"
+
+FiveIsland_LostCave_Room13_Text_RematchOakPostBattle::
+	.string "I'm beginning to feel a\n"
+	.string "little more real after\l"
+	.string "this battle!$"`

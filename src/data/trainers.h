@@ -430,7 +430,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_SwimmingTriathleteF),
     },
     [TRAINER_DRAGON_TAMER] = {
-        .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
+        .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .trainerName = gExpandedPlaceholder_Empty,
@@ -449,7 +449,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_FatGuy),
     },
     [TRAINER_FREDDY] = {
-        .trainerClass = TRAINER_CLASS_POKEMANIAC,
+        .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_POKEMANIAC,
         .trainerName = COMPOUND_STRING("FREDDY"),
@@ -458,7 +458,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Freddy),
     },
     [TRAINER_OWL] = {
-        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BIRD_KEEPER,
         .trainerName = COMPOUND_STRING("OWL"),
