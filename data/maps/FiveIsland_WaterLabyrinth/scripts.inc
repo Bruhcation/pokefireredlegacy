@@ -221,7 +221,7 @@ FiveIsland_WaterLabyrinth_EventScript_HeartScale::
 # 111 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
 	faceplayer
 # 112 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
-	goto_if_set FLAG_SHOPJOHTO, FiveIsland_WaterLabyrinth_EventScript_HeartScale2
+	goto_if_unset FLAG_SHOPJOHTO, FiveIsland_WaterLabyrinth_EventScript_HeartScale2
 # 113 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
 	msgbox FiveIsland_WaterLabyrinth_Text_Heartscale
 # 114 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"

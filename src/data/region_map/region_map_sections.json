@@ -523,8 +523,8 @@
     {
       "map_section": "MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE",
       "name": "SOUTHSIDE CAVE",
-      "x": 0,
-      "y": 0,
+      "x": 10,
+      "y": 9,
       "width": 1,
       "height": 1
     },
