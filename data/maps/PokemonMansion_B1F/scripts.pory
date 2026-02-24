@@ -41,7 +41,7 @@ PokemonMansion_B1F_EventScript_Mew::
 	setwildbattle SPECIES_MEW, 50 
 	waitse
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
-	message Text_Gyaoo
+	message PokemonMansion_B1F_Text_Gyaoo
 	waitmessage
 	waitmoncry
 	delay 10
@@ -58,6 +58,9 @@ PokemonMansion_B1F_EventScript_Mew::
 	setflag FLAG_FOUGHT_MEW
 	release
 	end
+
+PokemonMansion_B1F_Text_Gyaoo::
+	.string "Mew!$"
 
 PokemonMansion_B1F_EventScript_DefeatedMew::
 	setvar VAR_0x8004, SPECIES_MEW

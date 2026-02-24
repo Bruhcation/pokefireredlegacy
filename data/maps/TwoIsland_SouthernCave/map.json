@@ -19,8 +19,8 @@
   ],
   "warp_events": [
     {
-      "x": 12,
-      "y": 2,
+      "x": 1,
+      "y": 5,
       "elevation": 3,
       "dest_map": "MAP_TWO_ISLAND",
       "dest_warp_id": "4"
@@ -40,8 +40,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 11,
-      "y": 3,
+      "x": 2,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_TWO_ISLAND_SOUTH_SIDE_CAVE_B1F",
       "dest_warp_id": "0"
@@ -101,6 +101,48 @@
       "elevation": 0,
       "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "17"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_TWO_ISLAND_SOUTHERN_CAVE",
+      "dest_warp_id": "15"
     }
   ],
   "coord_events": [

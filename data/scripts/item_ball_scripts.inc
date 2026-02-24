@@ -555,7 +555,7 @@ FourIsland_EventScript_ItemStarPiece::
 	end
 
 FourIsland_EventScript_ItemStardust::
-	finditem ITEM_STARDUST
+	finditem ITEM_FOCUS_BAND
 	end
 
 OneIsland_KindleRoad_EventScript_ItemEther::
@@ -571,7 +571,7 @@ OneIsland_KindleRoad_EventScript_ItemCarbos::
 	end
 
 FiveIsland_Meadow_EventScript_ItemMaxPotion::
-	finditem ITEM_PP_UP
+	finditem ITEM_BRIGHT_POWDER
 	end
 
 FiveIsland_Meadow_EventScript_ItemPPUp::
@@ -591,7 +591,7 @@ SixIsland_OutcastIsland_EventScript_ItemPPUp::
 	end
 
 SixIsland_WaterPath_EventScript_ItemElixir::
-	finditem ITEM_ELIXIR
+	finditem ITEM_MAX_ELIXIR
 	end
 
 SixIsland_WaterPath_EventScript_ItemDragonScale::
