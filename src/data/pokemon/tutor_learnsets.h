@@ -743,11 +743,13 @@ static const u16 sTutorLearnsets[] =
     [SPECIES_EXEGGCUTE] = TUTOR(MOVE_DOUBLE_EDGE)
                         | TUTOR(MOVE_MIMIC)
                         | TUTOR(MOVE_DREAM_EATER)
+                        | TUTOR(MOVE_SOFT_BOILED)
                         | TUTOR(MOVE_EXPLOSION)
                         | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_EXEGGUTOR] = TUTOR(MOVE_DOUBLE_EDGE)
                         | TUTOR(MOVE_MIMIC)
+                        | TUTOR(MOVE_SOFT_BOILED)
                         | TUTOR(MOVE_DREAM_EATER)
                         | TUTOR(MOVE_EXPLOSION)
                         | TUTOR(MOVE_SUBSTITUTE),

@@ -2629,6 +2629,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     }
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
         attack *= 2;
+    if (attackerHoldEffect == HOLD_EFFECT_LUCKY_PUNCH && (attacker->species == SPECIES_CHANSEY))
+        attack *= 2;
     // Are effects of weather negated with cloud nine or air lock
     if (WEATHER_HAS_EFFECT2)
     {

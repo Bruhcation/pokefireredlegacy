@@ -85,7 +85,7 @@ PokemonMansion_B1F_EventScript_Mew::
 # 43 "data/maps/PokemonMansion_B1F/scripts.pory"
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 # 44 "data/maps/PokemonMansion_B1F/scripts.pory"
-	message Text_Gyaoo
+	message PokemonMansion_B1F_Text_Gyaoo
 # 45 "data/maps/PokemonMansion_B1F/scripts.pory"
 	waitmessage
 # 46 "data/maps/PokemonMansion_B1F/scripts.pory"
@@ -121,72 +121,78 @@ PokemonMansion_B1F_EventScript_Mew::
 # 61 "data/maps/PokemonMansion_B1F/scripts.pory"
 
 # 62 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_DefeatedMew::
+PokemonMansion_B1F_Text_Gyaoo::
 # 63 "data/maps/PokemonMansion_B1F/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MEW
+	.string "Mew!$"
 # 64 "data/maps/PokemonMansion_B1F/scripts.pory"
-	setflag FLAG_FOUGHT_MEW
+
 # 65 "data/maps/PokemonMansion_B1F/scripts.pory"
-	goto EventScript_RemoveStaticMon
+PokemonMansion_B1F_EventScript_DefeatedMew::
 # 66 "data/maps/PokemonMansion_B1F/scripts.pory"
-	end
-# 67 "data/maps/PokemonMansion_B1F/scripts.pory"
-
-# 68 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_RanFromMew::
-# 69 "data/maps/PokemonMansion_B1F/scripts.pory"
 	setvar VAR_0x8004, SPECIES_MEW
-# 70 "data/maps/PokemonMansion_B1F/scripts.pory"
+# 67 "data/maps/PokemonMansion_B1F/scripts.pory"
 	setflag FLAG_FOUGHT_MEW
+# 68 "data/maps/PokemonMansion_B1F/scripts.pory"
+	goto EventScript_RemoveStaticMon
+# 69 "data/maps/PokemonMansion_B1F/scripts.pory"
+	end
+# 70 "data/maps/PokemonMansion_B1F/scripts.pory"
+
 # 71 "data/maps/PokemonMansion_B1F/scripts.pory"
-	goto EventScript_MonFlewAway
+PokemonMansion_B1F_EventScript_RanFromMew::
 # 72 "data/maps/PokemonMansion_B1F/scripts.pory"
-	end
+	setvar VAR_0x8004, SPECIES_MEW
 # 73 "data/maps/PokemonMansion_B1F/scripts.pory"
-
+	setflag FLAG_FOUGHT_MEW
 # 74 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_Statue::
+	goto EventScript_MonFlewAway
 # 75 "data/maps/PokemonMansion_B1F/scripts.pory"
-	lockall
+	end
 # 76 "data/maps/PokemonMansion_B1F/scripts.pory"
-	setvar VAR_0x8004, 3
+
 # 77 "data/maps/PokemonMansion_B1F/scripts.pory"
-	call PokemonMansion_EventScript_SecretSwitch
+PokemonMansion_B1F_EventScript_Statue::
 # 78 "data/maps/PokemonMansion_B1F/scripts.pory"
-	playse SE_UNLOCK
+	lockall
 # 79 "data/maps/PokemonMansion_B1F/scripts.pory"
-	special DrawWholeMapView
+	setvar VAR_0x8004, 3
 # 80 "data/maps/PokemonMansion_B1F/scripts.pory"
-	waitse
+	call PokemonMansion_EventScript_SecretSwitch
 # 81 "data/maps/PokemonMansion_B1F/scripts.pory"
-	releaseall
+	playse SE_UNLOCK
 # 82 "data/maps/PokemonMansion_B1F/scripts.pory"
-	end
+	special DrawWholeMapView
 # 83 "data/maps/PokemonMansion_B1F/scripts.pory"
-
+	waitse
 # 84 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_DiarySep1st::
+	releaseall
 # 85 "data/maps/PokemonMansion_B1F/scripts.pory"
-	msgbox PokemonMansion_B1F_Text_MewtwoIsFarTooPowerful, MSGBOX_SIGN
+	end
 # 86 "data/maps/PokemonMansion_B1F/scripts.pory"
-	end
+
 # 87 "data/maps/PokemonMansion_B1F/scripts.pory"
-
+PokemonMansion_B1F_EventScript_DiarySep1st::
 # 88 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_Lewis::
+	msgbox PokemonMansion_B1F_Text_MewtwoIsFarTooPowerful, MSGBOX_SIGN
 # 89 "data/maps/PokemonMansion_B1F/scripts.pory"
-	trainerbattle_single TRAINER_BURGLAR_LEWIS, PokemonMansion_B1F_Text_LewisIntro, PokemonMansion_B1F_Text_LewisDefeat
-# 90 "data/maps/PokemonMansion_B1F/scripts.pory"
-	msgbox PokemonMansion_B1F_Text_LewisPostBattle, MSGBOX_AUTOCLOSE
-# 91 "data/maps/PokemonMansion_B1F/scripts.pory"
 	end
-# 92 "data/maps/PokemonMansion_B1F/scripts.pory"
+# 90 "data/maps/PokemonMansion_B1F/scripts.pory"
 
+# 91 "data/maps/PokemonMansion_B1F/scripts.pory"
+PokemonMansion_B1F_EventScript_Lewis::
+# 92 "data/maps/PokemonMansion_B1F/scripts.pory"
+	trainerbattle_single TRAINER_BURGLAR_LEWIS, PokemonMansion_B1F_Text_LewisIntro, PokemonMansion_B1F_Text_LewisDefeat
 # 93 "data/maps/PokemonMansion_B1F/scripts.pory"
-PokemonMansion_B1F_EventScript_Ivan::
+	msgbox PokemonMansion_B1F_Text_LewisPostBattle, MSGBOX_AUTOCLOSE
 # 94 "data/maps/PokemonMansion_B1F/scripts.pory"
-	trainerbattle_single TRAINER_SCIENTIST_IVAN, PokemonMansion_B1F_Text_IvanIntro, PokemonMansion_B1F_Text_IvanDefeat
+	end
 # 95 "data/maps/PokemonMansion_B1F/scripts.pory"
-	msgbox PokemonMansion_B1F_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
+
 # 96 "data/maps/PokemonMansion_B1F/scripts.pory"
+PokemonMansion_B1F_EventScript_Ivan::
+# 97 "data/maps/PokemonMansion_B1F/scripts.pory"
+	trainerbattle_single TRAINER_SCIENTIST_IVAN, PokemonMansion_B1F_Text_IvanIntro, PokemonMansion_B1F_Text_IvanDefeat
+# 98 "data/maps/PokemonMansion_B1F/scripts.pory"
+	msgbox PokemonMansion_B1F_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
+# 99 "data/maps/PokemonMansion_B1F/scripts.pory"
 	end

@@ -39,7 +39,7 @@ ThreeIsland_BerryForest_EventScript_Celebi::
 	setwildbattle SPECIES_CELEBI, 50
 	waitse
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
-	message Text_Gyaoo
+	message ThreeIsland_BerryForest_Text_Gyaoo
 	waitmessage
 	waitmoncry
 	delay 10
@@ -57,6 +57,9 @@ ThreeIsland_BerryForest_EventScript_Celebi::
 	clearflag FLAG_SPAWN_CELEBI
 	release
 	end
+
+ThreeIsland_BerryForest_Text_Gyaoo::
+	.string "Celebi!$"
 
 ThreeIsland_BerryForest_EventScript_DefeatedCelebi::
 	setflag FLAG_FOUGHT_CELEBI
