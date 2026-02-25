@@ -33,6 +33,13 @@ FuchsiaCity_EventScript_Youngster::
 	msgbox FuchsiaCity_Text_ItemBallInThere, MSGBOX_NPC
 	end
 
+FuchsiaCity_EventScript_Pokemon::
+	msgbox FuchsiaCity_Text_Pokemon, MSGBOX_NPC
+	end
+
+FuchsiaCity_Text_Pokemon::
+	.string "!$"
+
 FuchsiaCity_EventScript_Lass::
 	lock
 	faceplayer

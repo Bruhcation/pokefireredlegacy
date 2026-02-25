@@ -4284,14 +4284,14 @@ static const struct TrainerMon sParty_SailorDwayne[] = {
 
 static const struct TrainerMon sParty_CamperLiam[] = {
     {
-        .iv = 0,
+        .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
         .lvl = 10,
         .species = SPECIES_GEODUDE,
         .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_NONE, MOVE_NONE},
     },
     {
-        .iv = 0,
-        .lvl = 11,
+        .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+        .lvl = 12,
         .species = SPECIES_SANDSHREW,
         .moves = {MOVE_SCRATCH, MOVE_DEFENSE_CURL, MOVE_SAND_ATTACK, MOVE_NONE},
     },
@@ -9176,25 +9176,26 @@ static const struct TrainerMon sParty_EliteFourLance[] = {
 static const struct TrainerMon sParty_LeaderBrock[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 13,
+        .lvl = 12,
         .species = SPECIES_GEODUDE,
         .heldItem = ITEM_NONE,
         .moves = {MOVE_ROCK_THROW, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 9),
     },
     {
-        .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
-        .lvl = 11,
-        .species = SPECIES_SLUGMA,
-        .heldItem = ITEM_NONE,
-        .moves = {MOVE_SMOG, MOVE_POUND, MOVE_NONE, MOVE_NONE},
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(20, 10, 20, 0, 20, 20),
+        .iv = TRAINER_PARTY_IVS(20, 20, 20, 31, 31, 20),
         .lvl = 14,
         .species = SPECIES_ONIX,
         .heldItem = ITEM_ORAN_BERRY,
-        .moves = {MOVE_DRAGON_BREATH, MOVE_BIND, MOVE_ROCK_TOMB, MOVE_TACKLE},
+        .nature = TRAINER_PARTY_NATURE(NATURE_LONELY),
+        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BIND},
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(25, 31, 25, 25, 25, 25),
+        .lvl = 13,
+        .species = SPECIES_KABUTO,
+        .heldItem = ITEM_NONE,
+        .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
+        .moves = {MOVE_ROCK_THROW, MOVE_ROCK_TOMB, MOVE_MEGA_DRAIN, MOVE_RAPID_SPIN},
     },
 }; //I hate Brock
 
@@ -9203,7 +9204,7 @@ static const struct TrainerMon sParty_LeaderMisty[] = {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
         .lvl = 18,
         .species = SPECIES_POLIWHIRL,
-        .moves = {MOVE_WATER_PULSE, MOVE_MEGA_PUNCH, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_WATER_PULSE, MOVE_MEGA_PUNCH, MOVE_KARATE_CHOP, MOVE_NONE},
     },
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -9352,7 +9353,7 @@ static const struct TrainerMon sParty_LeaderBlaine[] = {
 static const struct TrainerMon sParty_LeaderSabrina[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 49,
+        .lvl = 47,
         .species = SPECIES_MR_MIME,
         .heldItem = ITEM_FOCUS_BAND,
         .moves = {MOVE_ICE_PUNCH, MOVE_PSYCHIC, MOVE_BATON_PASS, MOVE_CALM_MIND},
