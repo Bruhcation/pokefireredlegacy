@@ -1,6 +1,7 @@
 EventScript_SetDefeatedEliteFourFlagsVars::
 	clearflag FLAG_HIDE_POSTGAME_GOSSIPERS
 	clearflag FLAG_HIDE_POSTGAME_TRAINERS
+	setflag FLAG_HIDE_CERULEAN_CAVE_GUARD
 	call EventScript_ResetEliteFour
 	special Script_UpdateTrainerFanClubGameClear
 	specialvar VAR_RESULT, IsNationalPokedexEnabled

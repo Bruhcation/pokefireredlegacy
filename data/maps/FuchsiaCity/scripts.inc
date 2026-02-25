@@ -69,212 +69,226 @@ FuchsiaCity_EventScript_Youngster::
 # 35 "data/maps/FuchsiaCity/scripts.pory"
 
 # 36 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_Lass::
+FuchsiaCity_EventScript_Pokemon::
 # 37 "data/maps/FuchsiaCity/scripts.pory"
-	lock
+	msgbox FuchsiaCity_Text_Pokemon, MSGBOX_NPC
 # 38 "data/maps/FuchsiaCity/scripts.pory"
-	faceplayer
+	end
 # 39 "data/maps/FuchsiaCity/scripts.pory"
-	famechecker FAMECHECKER_KOGA, 3
+
 # 40 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_MyFatherIsGymLeader
+FuchsiaCity_Text_Pokemon::
 # 41 "data/maps/FuchsiaCity/scripts.pory"
-	release
+	.string "!$"
 # 42 "data/maps/FuchsiaCity/scripts.pory"
-	end
+
 # 43 "data/maps/FuchsiaCity/scripts.pory"
-
+FuchsiaCity_EventScript_Lass::
 # 44 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_CitySign::
+	lock
 # 45 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_CitySign, MSGBOX_SIGN
+	faceplayer
 # 46 "data/maps/FuchsiaCity/scripts.pory"
-	end
+	famechecker FAMECHECKER_KOGA, 3
 # 47 "data/maps/FuchsiaCity/scripts.pory"
-
+	msgbox FuchsiaCity_Text_MyFatherIsGymLeader
 # 48 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_SafariZoneSign::
+	release
 # 49 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_SafariZoneSign, MSGBOX_SIGN
+	end
 # 50 "data/maps/FuchsiaCity/scripts.pory"
-	end
+
 # 51 "data/maps/FuchsiaCity/scripts.pory"
-
+FuchsiaCity_EventScript_CitySign::
 # 52 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_SafariGameSign::
+	msgbox FuchsiaCity_Text_CitySign, MSGBOX_SIGN
 # 53 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_SafariGameSign, MSGBOX_SIGN
+	end
 # 54 "data/maps/FuchsiaCity/scripts.pory"
-	end
+
 # 55 "data/maps/FuchsiaCity/scripts.pory"
-
+FuchsiaCity_EventScript_SafariZoneSign::
 # 56 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_WardensHomeSign::
+	msgbox FuchsiaCity_Text_SafariZoneSign, MSGBOX_SIGN
 # 57 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_WardensHomeSign, MSGBOX_SIGN
+	end
 # 58 "data/maps/FuchsiaCity/scripts.pory"
-	end
+
 # 59 "data/maps/FuchsiaCity/scripts.pory"
-
+FuchsiaCity_EventScript_SafariGameSign::
 # 60 "data/maps/FuchsiaCity/scripts.pory"
-@ Unused
+	msgbox FuchsiaCity_Text_SafariGameSign, MSGBOX_SIGN
 # 61 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_SafariZoneOfficeSign::
-# 62 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_SafariZoneOfficeSign, MSGBOX_SIGN
-# 63 "data/maps/FuchsiaCity/scripts.pory"
 	end
-# 64 "data/maps/FuchsiaCity/scripts.pory"
+# 62 "data/maps/FuchsiaCity/scripts.pory"
 
+# 63 "data/maps/FuchsiaCity/scripts.pory"
+FuchsiaCity_EventScript_WardensHomeSign::
+# 64 "data/maps/FuchsiaCity/scripts.pory"
+	msgbox FuchsiaCity_Text_WardensHomeSign, MSGBOX_SIGN
 # 65 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_GymSign::
+	end
 # 66 "data/maps/FuchsiaCity/scripts.pory"
-	lockall
+
 # 67 "data/maps/FuchsiaCity/scripts.pory"
-	famechecker FAMECHECKER_KOGA, 0
+@ Unused
 # 68 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_GymSign
+FuchsiaCity_EventScript_SafariZoneOfficeSign::
 # 69 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+	msgbox FuchsiaCity_Text_SafariZoneOfficeSign, MSGBOX_SIGN
 # 70 "data/maps/FuchsiaCity/scripts.pory"
 	end
 # 71 "data/maps/FuchsiaCity/scripts.pory"
 
 # 72 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_ChanseySign::
+FuchsiaCity_EventScript_GymSign::
 # 73 "data/maps/FuchsiaCity/scripts.pory"
 	lockall
 # 74 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_CHANSEY
+	famechecker FAMECHECKER_KOGA, 0
 # 75 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	msgbox FuchsiaCity_Text_GymSign
 # 76 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_CHANSEY, 10, 3
+	releaseall
 # 77 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_ChanseySign
+	end
 # 78 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
+
 # 79 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+FuchsiaCity_EventScript_ChanseySign::
 # 80 "data/maps/FuchsiaCity/scripts.pory"
-	end
+	lockall
 # 81 "data/maps/FuchsiaCity/scripts.pory"
-
+	setvar VAR_0x8004, SPECIES_CHANSEY
 # 82 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_VoltorbSign::
+	special SetSeenMon
 # 83 "data/maps/FuchsiaCity/scripts.pory"
-	lockall
+	showmonpic SPECIES_CHANSEY, 10, 3
 # 84 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_VOLTORB
+	msgbox FuchsiaCity_Text_ChanseySign
 # 85 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	hidemonpic
 # 86 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_VOLTORB, 10, 3
+	releaseall
 # 87 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_VoltorbSign
+	end
 # 88 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
+
 # 89 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+FuchsiaCity_EventScript_VoltorbSign::
 # 90 "data/maps/FuchsiaCity/scripts.pory"
-	end
+	lockall
 # 91 "data/maps/FuchsiaCity/scripts.pory"
-
+	setvar VAR_0x8004, SPECIES_VOLTORB
 # 92 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_KangaskhanSign::
+	special SetSeenMon
 # 93 "data/maps/FuchsiaCity/scripts.pory"
-	lockall
+	showmonpic SPECIES_VOLTORB, 10, 3
 # 94 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_KANGASKHAN
+	msgbox FuchsiaCity_Text_VoltorbSign
 # 95 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	hidemonpic
 # 96 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_KANGASKHAN, 10, 3
+	releaseall
 # 97 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_KangaskhanSign
+	end
 # 98 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
+
 # 99 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+FuchsiaCity_EventScript_KangaskhanSign::
 # 100 "data/maps/FuchsiaCity/scripts.pory"
-	end
+	lockall
 # 101 "data/maps/FuchsiaCity/scripts.pory"
-
+	setvar VAR_0x8004, SPECIES_KANGASKHAN
 # 102 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_SlowpokeSign::
+	special SetSeenMon
 # 103 "data/maps/FuchsiaCity/scripts.pory"
-	lockall
+	showmonpic SPECIES_KANGASKHAN, 10, 3
 # 104 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_SLOWPOKE
+	msgbox FuchsiaCity_Text_KangaskhanSign
 # 105 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	hidemonpic
 # 106 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_SLOWPOKE, 10, 3
+	releaseall
 # 107 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_SlowpokeSign
+	end
 # 108 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
+
 # 109 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+FuchsiaCity_EventScript_SlowpokeSign::
 # 110 "data/maps/FuchsiaCity/scripts.pory"
-	end
+	lockall
 # 111 "data/maps/FuchsiaCity/scripts.pory"
-
+	setvar VAR_0x8004, SPECIES_SLOWPOKE
 # 112 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_LaprasSign::
+	special SetSeenMon
 # 113 "data/maps/FuchsiaCity/scripts.pory"
-	lockall
+	showmonpic SPECIES_SLOWPOKE, 10, 3
 # 114 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_LAPRAS
+	msgbox FuchsiaCity_Text_SlowpokeSign
 # 115 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	hidemonpic
 # 116 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_LAPRAS, 10, 3
+	releaseall
 # 117 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_LaprasSign
+	end
 # 118 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
+
 # 119 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
+FuchsiaCity_EventScript_LaprasSign::
 # 120 "data/maps/FuchsiaCity/scripts.pory"
-	end
-# 121 "data/maps/FuchsiaCity/scripts.pory"
-
-# 122 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_FossilMonSign::
-# 123 "data/maps/FuchsiaCity/scripts.pory"
 	lockall
+# 121 "data/maps/FuchsiaCity/scripts.pory"
+	setvar VAR_0x8004, SPECIES_LAPRAS
+# 122 "data/maps/FuchsiaCity/scripts.pory"
+	special SetSeenMon
+# 123 "data/maps/FuchsiaCity/scripts.pory"
+	showmonpic SPECIES_LAPRAS, 10, 3
 # 124 "data/maps/FuchsiaCity/scripts.pory"
-	goto_if_set FLAG_GOT_DOME_FOSSIL, FuchsiaCity_EventScript_OmanyteSign
+	msgbox FuchsiaCity_Text_LaprasSign
 # 125 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_KABUTO
+	hidemonpic
 # 126 "data/maps/FuchsiaCity/scripts.pory"
-	special SetSeenMon
+	releaseall
 # 127 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_KABUTO, 10, 3
-# 128 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_KabutoSign
-# 129 "data/maps/FuchsiaCity/scripts.pory"
-	hidemonpic
-# 130 "data/maps/FuchsiaCity/scripts.pory"
-	releaseall
-# 131 "data/maps/FuchsiaCity/scripts.pory"
 	end
-# 132 "data/maps/FuchsiaCity/scripts.pory"
+# 128 "data/maps/FuchsiaCity/scripts.pory"
 
+# 129 "data/maps/FuchsiaCity/scripts.pory"
+FuchsiaCity_EventScript_FossilMonSign::
+# 130 "data/maps/FuchsiaCity/scripts.pory"
+	lockall
+# 131 "data/maps/FuchsiaCity/scripts.pory"
+	goto_if_set FLAG_GOT_DOME_FOSSIL, FuchsiaCity_EventScript_OmanyteSign
+# 132 "data/maps/FuchsiaCity/scripts.pory"
+	setvar VAR_0x8004, SPECIES_KABUTO
 # 133 "data/maps/FuchsiaCity/scripts.pory"
-FuchsiaCity_EventScript_OmanyteSign::
-# 134 "data/maps/FuchsiaCity/scripts.pory"
-	setvar VAR_0x8004, SPECIES_OMANYTE
-# 135 "data/maps/FuchsiaCity/scripts.pory"
 	special SetSeenMon
+# 134 "data/maps/FuchsiaCity/scripts.pory"
+	showmonpic SPECIES_KABUTO, 10, 3
+# 135 "data/maps/FuchsiaCity/scripts.pory"
+	msgbox FuchsiaCity_Text_KabutoSign
 # 136 "data/maps/FuchsiaCity/scripts.pory"
-	showmonpic SPECIES_OMANYTE, 10, 3
-# 137 "data/maps/FuchsiaCity/scripts.pory"
-	msgbox FuchsiaCity_Text_OmanyteSign
-# 138 "data/maps/FuchsiaCity/scripts.pory"
 	hidemonpic
-# 139 "data/maps/FuchsiaCity/scripts.pory"
+# 137 "data/maps/FuchsiaCity/scripts.pory"
 	releaseall
+# 138 "data/maps/FuchsiaCity/scripts.pory"
+	end
+# 139 "data/maps/FuchsiaCity/scripts.pory"
+
 # 140 "data/maps/FuchsiaCity/scripts.pory"
+FuchsiaCity_EventScript_OmanyteSign::
+# 141 "data/maps/FuchsiaCity/scripts.pory"
+	setvar VAR_0x8004, SPECIES_OMANYTE
+# 142 "data/maps/FuchsiaCity/scripts.pory"
+	special SetSeenMon
+# 143 "data/maps/FuchsiaCity/scripts.pory"
+	showmonpic SPECIES_OMANYTE, 10, 3
+# 144 "data/maps/FuchsiaCity/scripts.pory"
+	msgbox FuchsiaCity_Text_OmanyteSign
+# 145 "data/maps/FuchsiaCity/scripts.pory"
+	hidemonpic
+# 146 "data/maps/FuchsiaCity/scripts.pory"
+	releaseall
+# 147 "data/maps/FuchsiaCity/scripts.pory"
 	end

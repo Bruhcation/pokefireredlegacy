@@ -159,9 +159,7 @@ CeruleanCity_Text_ThisIsCeruleanCave::
     .string "be allowed inside there.\p"
     .string "You'd have to be strong enough to\n"
     .string "become the POKéMON LEAGUE\l"
-    .string "CHAMPION for starters.\p"
-    .string "And, you would have to have\n"
-    .string "made a great achievement.$"
+    .string "CHAMPION for starters.$"
 
 CeruleanCity_Text_CitySign::
     .string "CERULEAN CITY\n"
