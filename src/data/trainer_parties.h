@@ -9185,11 +9185,10 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .moves = {MOVE_ROCK_THROW, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
     },
     {
-        .iv = TRAINER_PARTY_IVS(20, 20, 20, 31, 31, 20),
+        .iv = TRAINER_PARTY_IVS(20, 30, 20, 31, 31, 20),
         .lvl = 14,
         .species = SPECIES_ONIX,
         .heldItem = ITEM_ORAN_BERRY,
-        .nature = TRAINER_PARTY_NATURE(NATURE_LONELY),
         .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BIND},
     },
     {
@@ -9198,7 +9197,7 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .species = SPECIES_KABUTO,
         .heldItem = ITEM_NONE,
         .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
-        .moves = {MOVE_ROCK_THROW, MOVE_ROCK_TOMB, MOVE_MEGA_DRAIN, MOVE_RAPID_SPIN},
+        .moves = {MOVE_ROCK_THROW, MOVE_ROCK_TOMB, MOVE_ABSORB, MOVE_SCRATCH},
     },
 }; //I hate Brock
 
