@@ -5,7 +5,6 @@ LavenderTown_VolunteerPokemonHouse_MapScripts::
 LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
 	lock
 	faceplayer
-	goto_if_unset FLAG_JIRACHI_WISH, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck
 	goto_if_set FLAG_GOT_POKE_FLUTE, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis
 	checkitemspace ITEM_POKE_FLUTE
@@ -17,11 +16,15 @@ LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
 	end
 
 LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck::
-	goto_if_set FLAG_GOT_SOUL_DEW, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
+	goto_if_set FLAG_GOT_SOUL_DEW, LavenderTown_VolunteerPokemonHouse_EventScript_End
 	setvar VAR_0x8004, FAMECHECKER_MRFUJI
 	callnative CheckFilledFameCheckerFor0x8004
 	goto_if_eq VAR_RESULT, TRUE, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewGiven
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
+	release
+	end
+
+LavenderTown_VolunteerPokemonHouse_EventScript_End::
 	release
 	end
 
@@ -63,6 +66,7 @@ LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2::
 
 LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute::
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
+	goto_if_unset FLAG_JIRACHI_WISH, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck
 	release
 	end
 
