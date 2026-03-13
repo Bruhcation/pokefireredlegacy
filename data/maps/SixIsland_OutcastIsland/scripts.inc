@@ -35,7 +35,7 @@ SixIsland_OutcastIsland_UpdateAlteringCaveMewtwo::
 # 18 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 SixIsland_OutcastIsland_UpdateAlteringCave::
 # 19 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	random 8
+	random 10
 # 20 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 	goto_if_eq VAR_RESULT, 0, SetAlteringCave0
 # 21 "data/maps/SixIsland_OutcastIsland/scripts.pory"
@@ -53,64 +53,80 @@ SixIsland_OutcastIsland_UpdateAlteringCave::
 # 27 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 	goto_if_eq VAR_RESULT, 7, SetAlteringCave7
 # 28 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
+	goto_if_eq VAR_RESULT, 8, SetAlteringCave8
 # 29 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave0::
+	goto_if_eq VAR_RESULT, 9, SetAlteringCave9
 # 30 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+	return
 # 31 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
+SetAlteringCave0::
 # 32 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave1::
-# 33 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 1
-# 34 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 35 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave2::
-# 36 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 2
-# 37 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 38 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave3::
-# 39 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 3
-# 40 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 41 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave4::
-# 42 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 4
-# 43 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 44 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave5::
-# 45 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 5
-# 46 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 47 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave6::
-# 48 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 6
-# 49 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	return
-# 50 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SetAlteringCave7::
-# 51 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 7
-# 52 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SixIsland_OutcastIsland_AlteringCaveDefault::
-# 53 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+# 33 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 34 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave1::
+# 35 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 1
+# 36 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 37 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave2::
+# 38 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 2
+# 39 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 40 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave3::
+# 41 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 3
+# 42 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 43 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave4::
+# 44 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 4
+# 45 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 46 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave5::
+# 47 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 5
+# 48 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 49 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave6::
+# 50 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 6
+# 51 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 52 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave7::
+# 53 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 7
 # 54 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 	return
 # 55 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 
 # 56 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-SixIsland_OutcastIsland_EventScript_AlteringCaveDefault::
+SetAlteringCave8::
 # 57 "data/maps/SixIsland_OutcastIsland/scripts.pory"
-	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+	setvar VAR_ALTERING_CAVE_WILD_SET, 8
 # 58 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 59 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+
+# 60 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SetAlteringCave9::
+# 61 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 9
+# 62 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	return
+# 63 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+
+# 64 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+SixIsland_OutcastIsland_EventScript_AlteringCaveDefault::
+# 65 "data/maps/SixIsland_OutcastIsland/scripts.pory"
+	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+# 66 "data/maps/SixIsland_OutcastIsland/scripts.pory"
 	return

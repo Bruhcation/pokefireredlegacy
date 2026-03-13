@@ -6,9 +6,9 @@ RockTunnel_B2F_MapScripts::
 RockTunnel_B2F_EventScript_ClawBall::
 	lock
 	faceplayer
-	message RockTunnel_B2F_Text_ObtainedAnFossil
+	msgbox RockTunnel_B2F_Text_ObtainedAnFossil
 	waitmessage
-	message RockTunnel_B2F_Text_However
+	msgbox RockTunnel_B2F_Text_However
 	waitmessage 
 	setvar VAR_TEMP_1, SPECIES_ANORITH
 	givemon SPECIES_ANORITH, 40
