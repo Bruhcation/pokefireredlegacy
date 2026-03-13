@@ -434,6 +434,8 @@ struct BattleStruct
     u8 wishPerishSongState;
     u8 wishPerishSongBattlerId;
     u8 lastAttackerToFaintOpponent;
+    bool8 checkedMoveBoostedByAbility:1;
+    bool8 checkedMagmaArmor:1;
     // align 4
     union {
         struct LinkBattlerHeader linkBattlerHeader;

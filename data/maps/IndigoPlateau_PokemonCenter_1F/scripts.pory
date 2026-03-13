@@ -1,5 +1,5 @@
 raw `
-.set LOCALID_DOOR_GUARD, 4
+.set LOCALID_DOOR_GUARD, 5
 
 IndigoPlateau_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, IndigoPlateau_PokemonCenter_1F_OnTransition
