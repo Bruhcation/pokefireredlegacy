@@ -1,6 +1,7 @@
 raw `
 .set LOCALID_BOULDER1, 11
 .set LOCALID_BOULDER2, 12
+.set LOCALID_MOLTRES_TRAINER, 15
 
 VictoryRoad_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, VictoryRoad_2F_OnLoad
@@ -69,6 +70,42 @@ VictoryRoad_2F_EventScript_Dawson::
 	trainerbattle_single TRAINER_POKEMANIAC_DAWSON, VictoryRoad_2F_Text_DawsonIntro, VictoryRoad_2F_Text_DawsonDefeat
 	msgbox VictoryRoad_2F_Text_DawsonPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+VictoryRoad_2F_EventScript_Moltres::
+	goto_if_set FLAG_FOUGHT_MOLTRES, VictoryRoad_2F_EventScript_MoltresDefeated
+	msgbox VictoryRoad_2F_Text_NoMoltresPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_2F_EventScript_MoltresDefeated::
+	trainerbattle_single TRAINER_BUG_CATCHER_3, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
+	msgbox VictoryRoad_2F_Text_MoltresPostBattle, MSGBOX_AUTOCLOSE
+	checkitemspace ITEM_TM38
+	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38
+	giveitem ITEM_TM38	
+	setflag FLAG_MOLTRES_TRAINER
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MOLTRES_TRAINER
+	fadescreen FADE_FROM_BLACK
+	end
+
+VictoryRoad_2F_Text_NoMoltresPostBattle::
+	.string "Ahh! There's no Moltres here!$"
+
+VictoryRoad_2F_Text_MoltresIntro::
+	.string "Wait you actually fought MOLTRES?\p"
+	.string "Well than, let me test your\n"
+	.string "abilities!$"
+
+VictoryRoad_2F_Text_MoltresDefeat::
+	.string "You were worthy!$"
+
+VictoryRoad_2F_Text_MoltresPostBattle::
+	.string "I was trying to find MOLTRES\n"
+	.string "for a long time.\p"
+	.string "But I think i'll give up\n"
+	.string "after fighting you!\p"
+	.string "Take this TM meant for\n"
+	.string "a great MOLTRES!$"
 
 VictoryRoad_2F_EventScript_Daisuke::
 	trainerbattle_single TRAINER_BLACK_BELT_DAISUKE, VictoryRoad_2F_Text_DaisukeIntro, VictoryRoad_2F_Text_DaisukeDefeat

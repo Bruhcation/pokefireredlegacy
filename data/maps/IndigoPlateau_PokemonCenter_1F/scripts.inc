@@ -1,7 +1,7 @@
 # 1 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 
 # 2 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
-.set LOCALID_DOOR_GUARD, 4
+.set LOCALID_DOOR_GUARD, 5
 # 3 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 
 # 4 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"

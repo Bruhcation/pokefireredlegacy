@@ -54,10 +54,15 @@ PalletTown_PlayersHouse_2F_EventScript_PC::
 	special AnimatePcTurnOn
 	playse SE_PC_ON
 	msgbox Text_PlayerBootedUpPC
+	goto_if_set FLAG_SYS_GAME_CLEAR, EventScript_PalletTown_PlayersHouse_2F_CheckPlayersPC_GameCleared
 	special BedroomPC
 	waitstate
 	special SetHelpContextForMap
 	releaseall
+	end
+
+EventScript_PalletTown_PlayersHouse_2F_CheckPlayersPC_GameCleared::
+	goto EventScript_PCMainMenu_PlayerRoom
 	end
 
 EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::

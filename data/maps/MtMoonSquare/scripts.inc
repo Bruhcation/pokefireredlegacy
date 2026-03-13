@@ -125,11 +125,11 @@ MtMoonSquare_EventScript_ClawBall::
 # 63 "data/maps/MtMoonSquare/scripts.pory"
 	faceplayer
 # 64 "data/maps/MtMoonSquare/scripts.pory"
-	message MtMoonSquare_Text_ObtainedAnFossil
+	msgbox MtMoonSquare_Text_ObtainedAnFossil
 # 65 "data/maps/MtMoonSquare/scripts.pory"
 	waitmessage
 # 66 "data/maps/MtMoonSquare/scripts.pory"
-	message MtMoonSquare_Text_However
+	msgbox MtMoonSquare_Text_However
 # 67 "data/maps/MtMoonSquare/scripts.pory"
 	waitmessage
 # 68 "data/maps/MtMoonSquare/scripts.pory"

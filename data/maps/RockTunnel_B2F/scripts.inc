@@ -15,11 +15,11 @@ RockTunnel_B2F_EventScript_ClawBall::
 # 8 "data/maps/RockTunnel_B2F/scripts.pory"
 	faceplayer
 # 9 "data/maps/RockTunnel_B2F/scripts.pory"
-	message RockTunnel_B2F_Text_ObtainedAnFossil
+	msgbox RockTunnel_B2F_Text_ObtainedAnFossil
 # 10 "data/maps/RockTunnel_B2F/scripts.pory"
 	waitmessage
 # 11 "data/maps/RockTunnel_B2F/scripts.pory"
-	message RockTunnel_B2F_Text_However
+	msgbox RockTunnel_B2F_Text_However
 # 12 "data/maps/RockTunnel_B2F/scripts.pory"
 	waitmessage 
 # 13 "data/maps/RockTunnel_B2F/scripts.pory"
