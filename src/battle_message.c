@@ -410,6 +410,8 @@ const u8 sText_PkmnGoodComeBack[] = _("{B_BUFF1}, good!\nCome back!");
 static const u8 sText_Trainer1WithdrewPkmn[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME}\nwithdrew {B_BUFF1}!");
 static const u8 sText_LinkTrainer1WithdrewPkmn[] = _("{B_LINK_OPPONENT1_NAME} withdrew\n{B_BUFF1}!");
 static const u8 sText_LinkTrainer2WithdrewPkmn[] = _("{B_LINK_SCR_TRAINER_NAME} withdrew\n{B_BUFF1}!");
+static const u8 sText_AttackBoostedByAbility[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE}\nwas boosted by {B_ATK_ABILITY}!"); // Added new Ability Effect to provide text for Overgrow, Blaze, Torrent and Swarm
+static const u8 sText_MagmaArmorActivated[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY} reduced\nthe damage from {B_CURRENT_MOVE}!"); // Added new Battle result message to provide text for Magma Armor activation
 static const u8 sText_WildPkmnPrefix[] = _("Wild ");
 static const u8 sText_FoePkmnPrefix[] = _("Foe ");
 static const u8 sText_FoePkmnPrefix2[] = _("Foe");
@@ -895,7 +897,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_TRAINER1MON1COMEBACK - BATTLESTRINGS_TABLE_START]          = sText_Trainer1RecallPkmn1,
     [STRINGID_TRAINER1WINTEXT - BATTLESTRINGS_TABLE_START]               = sText_Trainer1WinText,
     [STRINGID_TRAINER1MON2COMEBACK - BATTLESTRINGS_TABLE_START]          = sText_Trainer1RecallPkmn2,
-    [STRINGID_TRAINER1MON1AND2COMEBACK - BATTLESTRINGS_TABLE_START]      = sText_Trainer1RecallBoth
+    [STRINGID_TRAINER1MON1AND2COMEBACK - BATTLESTRINGS_TABLE_START]      = sText_Trainer1RecallBoth,
+    [STRINGID_ATTACKBOOSTEDBYABILITY - BATTLESTRINGS_TABLE_START]        = sText_AttackBoostedByAbility,
+    [STRINGID_MAGMAARMORACTIVATED - BATTLESTRINGS_TABLE_START]           = sText_MagmaArmorActivated,
 };
 
 const u16 gMissStringIds[] =

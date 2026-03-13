@@ -61,9 +61,9 @@ MtMoonSquare_EventScript_Nidorino::
 MtMoonSquare_EventScript_ClawBall::
 	lock
 	faceplayer
-	message MtMoonSquare_Text_ObtainedAnFossil
+	msgbox MtMoonSquare_Text_ObtainedAnFossil
 	waitmessage
-	message MtMoonSquare_Text_However
+	msgbox MtMoonSquare_Text_However
 	waitmessage
 	setvar VAR_TEMP_1, SPECIES_LILEEP
 	givemon SPECIES_LILEEP, 40

@@ -2898,7 +2898,7 @@ static const struct TrainerMon sParty_LeaderSabrina2[] = {
         .lvl = 66,
         .species = SPECIES_HYPNO,
         .heldItem = ITEM_FOCUS_BAND,
-        .moves = {MOVE_FIRE_PUNCH, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_FIRE_PUNCH},
+        .moves = {MOVE_FIRE_PUNCH, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_PSYCHIC},
         .ev = TRAINER_PARTY_EVS(84, 84, 84, 84, 84, 84),
     },  
     {

@@ -154,6 +154,7 @@ static void CursorCB_Cancel1(u8 taskId);
 static void CursorCB_Item(u8 taskId);
 static void CursorCB_Give(u8 taskId);
 static void CursorCB_TakeItem(u8 taskId);
+static void CursorCb_MoveItem(u8 taskId);
 static void CursorCB_Mail(u8 taskId);
 static void CursorCB_Read(u8 taskId);
 static void CursorCB_TakeMail(u8 taskId);
@@ -2549,6 +2550,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_ITEM:
         window = sItemGiveTakeWindowTemplate;
         break;
+    case SELECTWINDOW_PYRAMID:
+        window = sItemPyramidTakeTossWindowTemplate;
+        break;
     case SELECTWINDOW_MAIL:
         window = sMailReadTakeWindowTemplate;
         break;
@@ -4416,8 +4420,6 @@ static void GetMedicineItemEffectMessage(u16 item)
 
 static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
 {
-    if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA)
-        return FALSE;
     return TRUE;
 }
 
@@ -6505,9 +6507,7 @@ static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
     switch (effectType)
     {
     case ITEM_EFFECT_HP_EV:
-        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_SHEDINJA)
-            return GetMonData(mon, MON_DATA_HP_EV);
-        break;
+        return GetMonData(mon, MON_DATA_HP_EV);
     case ITEM_EFFECT_ATK_EV:
         return GetMonData(mon, MON_DATA_ATK_EV);
     case ITEM_EFFECT_DEF_EV:
@@ -6544,5 +6544,127 @@ static void ItemEffectToStatString(u8 effectType, u8 *dest)
     case ITEM_EFFECT_SPDEF_EV:
         StringCopy(dest, gText_ItemEffect_SpDef);
         break;
+    }
+}
+
+void CursorCb_MoveItemCallback(u8 taskId)
+{
+    u16 item1, item2;
+    u8 buffer[100];
+
+    if (gPaletteFade.active || MenuHelpers_ShouldWaitForLinkRecv())
+        return;
+
+    switch (PartyMenuButtonHandler(&gPartyMenu.slotId2))
+    {
+    case 2:     // User hit B or A while on Cancel
+        HandleChooseMonCancel(taskId, &gPartyMenu.slotId2);
+        break;
+    case 1:     // User hit A on a Pokemon
+        // Pokemon can't give away items to eggs or themselves
+        if (GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_IS_EGG)
+            || gPartyMenu.slotId == gPartyMenu.slotId2)
+        {
+            PlaySE(SE_FAILURE);
+            return;
+        }
+
+        if(GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) >= ITEM_ORANGE_MAIL && GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) <= ITEM_RETRO_MAIL)
+        {
+            PlaySE(SE_FAILURE);
+            return;
+        }
+
+        PlaySE(SE_SELECT);
+        gPartyMenu.action = PARTY_ACTION_CHOOSE_MON;
+
+        // look up held items
+        item1 = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM);
+        item2 = GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM);
+
+        // swap the held items
+        SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM, &item2);
+        SetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM, &item1);
+
+        // update the held item icons
+        UpdatePartyMonHeldItemSprite(
+            &gPlayerParty[gPartyMenu.slotId],
+            &sPartyMenuBoxes[gPartyMenu.slotId]
+        );
+
+        UpdatePartyMonHeldItemSprite(
+            &gPlayerParty[gPartyMenu.slotId2],
+            &sPartyMenuBoxes[gPartyMenu.slotId2]
+        );
+
+        // create the string describing the move
+        if (item2 == ITEM_NONE)
+        {
+            GetMonNickname(&gPlayerParty[gPartyMenu.slotId2], gStringVar1);
+            CopyItemName(item1, gStringVar2);
+            StringExpandPlaceholders(gStringVar4, gText_PkmnWasGivenItem);
+        }
+        else
+        {
+            GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
+            CopyItemName(item1, gStringVar2);
+            StringExpandPlaceholders(buffer, gText_XsYAnd);
+
+            StringAppend(buffer, gText_XsYWereSwapped);
+            GetMonNickname(&gPlayerParty[gPartyMenu.slotId2], gStringVar1);
+            CopyItemName(item2, gStringVar2);
+            StringExpandPlaceholders(gStringVar4, buffer);
+        }
+
+        // display the string
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+
+        // update colors of selected boxes, move selection cursor to second mon
+        AnimatePartySlot(gPartyMenu.slotId, 0);
+        gPartyMenu.slotId = gPartyMenu.slotId2;
+        AnimatePartySlot(gPartyMenu.slotId2, 1);
+
+        // return to the main party menu
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_UpdateHeldItemSprite;
+        break;
+    }
+}
+
+void CursorCb_MoveItem(u8 taskId)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = GetMonData(mon, MON_DATA_HELD_ITEM);
+
+    PlaySE(SE_SELECT);
+
+    // delete old windows
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+
+    if (GetMonData(mon, MON_DATA_HELD_ITEM) != ITEM_NONE)
+    {
+        gPartyMenu.action = PARTY_ACTION_SWITCH;
+
+        // show "Move {STR_VAR_2} to where?" in bottom left
+        CopyItemName(item, gStringVar2);
+        DisplayPartyMenuStdMessage(PARTY_MSG_MOVE_ITEM_WHERE);
+        // update color of first selected box
+        AnimatePartySlot(gPartyMenu.slotId, 1);
+
+        // set up callback
+        gPartyMenu.slotId2 = gPartyMenu.slotId;
+        gTasks[taskId].func = CursorCb_MoveItemCallback;
+    }
+    else
+    {
+        // create and display string about lack of hold item
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnNotHolding);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+
+        // return to the main party menu
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
 }

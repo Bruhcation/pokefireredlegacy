@@ -111,28 +111,38 @@ PalletTown_PlayersHouse_2F_EventScript_PC::
 # 56 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	msgbox Text_PlayerBootedUpPC
 # 57 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special BedroomPC
+	goto_if_set FLAG_SYS_GAME_CLEAR, EventScript_PalletTown_PlayersHouse_2F_CheckPlayersPC_GameCleared
 # 58 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	waitstate
+	special BedroomPC
 # 59 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special SetHelpContextForMap
+	waitstate
 # 60 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	releaseall
-# 61 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	end
-# 62 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-
-# 63 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
-# 64 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	setvar VAR_0x8004, 1
-# 65 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	playse SE_PC_OFF
-# 66 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
-	special AnimatePcTurnOff
-# 67 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	special SetHelpContextForMap
-# 68 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+# 61 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	releaseall
+# 62 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	end
+# 63 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+
+# 64 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+EventScript_PalletTown_PlayersHouse_2F_CheckPlayersPC_GameCleared::
+# 65 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	goto EventScript_PCMainMenu_PlayerRoom
+# 66 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	end
+# 67 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+
+# 68 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+EventScript_PalletTown_PlayersHouse_2F_ShutDownPC::
 # 69 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	setvar VAR_0x8004, 1
+# 70 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	playse SE_PC_OFF
+# 71 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special AnimatePcTurnOff
+# 72 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	special SetHelpContextForMap
+# 73 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
+	releaseall
+# 74 "data/maps/PalletTown_PlayersHouse_2F/scripts.pory"
 	end

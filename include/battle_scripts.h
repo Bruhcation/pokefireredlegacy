@@ -229,7 +229,8 @@ extern const u8 BattleScript_GhostBallDodge[];
 extern const u8 BattleScript_OldMan_Pokedude_CaughtMessage[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
 extern const u8 BattleScript_BattleTowerTrainerBattleWon[];
-
+extern const u8 BattleScript_AttackBoostedByAbility[];  // Added new Ability Effect to provide text for Overgrow, Blaze, Torrent and Swarm
+extern const u8 BattleScript_MagmaArmorActivated[];     // Added new Battle result message to provide text for Magma Armor activation
 extern const u8 *const gBattleScriptsForMoveEffects[];
 extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
