@@ -294,8 +294,8 @@
 #define FLAG_BERRY_FOREST_TREE_4             0x113
 #define FLAG_BERRY_FOREST_TREE_5             0x114
 #define FLAG_BERRY_FOREST_TREE_6             0x115
-#define FLAG_0x116               0x116
-#define FLAG_0x117               0x117
+#define FLAG_FLAGCHANGEFORBUILD               0x116
+#define FLAG_FLAGFLAG            0x117
 #define FLAG_0x118               0x118
 #define FLAG_0x119               0x119
 #define FLAG_0x11A               0x11A
