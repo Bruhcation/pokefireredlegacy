@@ -448,6 +448,11 @@ static u16 GetCurrentMapWildMonHeaderId(void)
             {
                 i += VarGet(VAR_VERMILION);
             }
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VIRIDIAN_FOREST) &&
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(VIRIDIAN_FOREST))
+            {
+                i += VarGet(VAR_VIRFOREST);
+            }
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SIX_ISLAND_ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(SIX_ISLAND_ALTERING_CAVE))
             {
