@@ -51,6 +51,9 @@ Route10_EventScript_No::
 Route10_EventScript_End::
 	msgbox Route10_Text_CrackedRock, MSGBOX_SIGN
 	setflag FLAG_JIRACHI_WISH_GOT
+	setvar VAR_MTMOONB2F, 1
+	setvar VAR_MTMOON1F, 1
+	setvar VAR_VIRFOREST, 1
 	release
 	end
 
@@ -189,6 +192,9 @@ Route10_EventScript_HoennWish::
 	setvar VAR_TOWER7, 1
 	setvar VAR_CERULEAN, 1
 	setvar VAR_VERMILION, 1
+	setvar VAR_MTMOONB2F, 1
+	setvar VAR_MTMOON1F, 1
+	setvar VAR_VIRFOREST, 1
 	clearflag FLAG_GOT_CLAW
 	clearflag FLAG_GOT_ROOT
 	clearflag FLAG_JIRACHI_WISH
