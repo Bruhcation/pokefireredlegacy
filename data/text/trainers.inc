@@ -129,11 +129,11 @@ Route8_Text_AnneRematchIntro::
 	.string "ANNE: Our twin power powered up!$"
 
 Route1_Text_EliRematchIntro::
-	.string "ZOEY: Our twin power became even\n"
+	.string "ZOE: Our twin power became even\n"
 	.string "better!$"
 
 Route1_Text_AnneRematchIntro::
-	.string "MIRA: Our twin power powered up!$"
+	.string "MAO: Our twin power powered up!$"
 
 
 Route9_Text_AliciaRematchIntro::

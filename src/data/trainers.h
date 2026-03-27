@@ -55,7 +55,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
-        .trainerName = COMPOUND_STRING("ZOEY & MIA"),
+        .trainerName = COMPOUND_STRING("ZOE & MAO"),
         .doubleBattle = TRUE,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),

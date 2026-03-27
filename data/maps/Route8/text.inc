@@ -109,34 +109,34 @@ Route8_Text_UndergroundPathSign::
     .string "CELADON CITY - LAVENDER TOWN$"
 
 Route1_Text_EliIntro::
-    .string "ZOEY: Twin power is fantastic.\n"
+    .string "ZOE: Twin power is fantastic.\n"
     .string "Did you know?$"
 
 Route1_Text_EliDefeat::
-    .string "ZOEY: But…\n"
+    .string "ZOE: But…\n"
     .string "We used our twin power…$"
 
 Route1_Text_EliPostBattle::
-    .string "ZOEY: I caught my POKéMON with\n"
-    .string "MIRA!$"
+    .string "ZOE: I caught my POKéMON with\n"
+    .string "MAO!$"
 
 Route1_Text_EliNotEnoughMons::
-    .string "ZOEY: We can't battle if you don't\n"
+    .string "ZOE: We can't battle if you don't\n"
     .string "have two POKéMON.$"
 
 Route1_Text_AnneIntro::
-    .string "MIRA: We'll shock you with our twin\n"
+    .string "MAO: We'll shock you with our twin\n"
     .string "power!$"
 
 Route1_Text_AnneDefeat::
-    .string "MIRA: Our twin power…$"
+    .string "MAO: Our twin power…$"
 
 Route1_Text_AnnePostBattle::
-    .string "MIRA: I'm playing in the grass with\n"
-    .string "ELI.$"
+    .string "MAO: I'm playing in the grass with\n"
+    .string "ZOE.$"
 
 Route1_Text_AnneNotEnoughMons::
-    .string "MIRA: Hi, hi! Let's battle!\n"
+    .string "MAO: Hi, hi! Let's battle!\n"
     .string "But bring two POKéMON.$"
 
 Route8_Text_EliIntro::
