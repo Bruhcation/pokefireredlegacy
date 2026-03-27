@@ -73,6 +73,8 @@ VictoryRoad_2F_EventScript_Dawson::
 
 VictoryRoad_2F_EventScript_Moltres::
 	goto_if_set FLAG_FOUGHT_MOLTRES, VictoryRoad_2F_EventScript_MoltresDefeated
+	lock
+	faceplayer
 	msgbox VictoryRoad_2F_Text_NoMoltresPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -83,6 +85,7 @@ VictoryRoad_2F_EventScript_MoltresDefeated::
 	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38
 	giveitem ITEM_TM38	
 	setflag FLAG_MOLTRES_TRAINER
+	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MOLTRES_TRAINER
 	fadescreen FADE_FROM_BLACK
