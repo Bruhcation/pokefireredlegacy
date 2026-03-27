@@ -149,150 +149,156 @@ VictoryRoad_2F_EventScript_Moltres::
 # 75 "data/maps/VictoryRoad_2F/scripts.pory"
 	goto_if_set FLAG_FOUGHT_MOLTRES, VictoryRoad_2F_EventScript_MoltresDefeated
 # 76 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_NoMoltresPostBattle, MSGBOX_AUTOCLOSE
+	lock
 # 77 "data/maps/VictoryRoad_2F/scripts.pory"
-	end
+	faceplayer
 # 78 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	msgbox VictoryRoad_2F_Text_NoMoltresPostBattle, MSGBOX_AUTOCLOSE
 # 79 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_MoltresDefeated::
-# 80 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_BUG_CATCHER_3, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
-# 81 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_MoltresPostBattle, MSGBOX_AUTOCLOSE
-# 82 "data/maps/VictoryRoad_2F/scripts.pory"
-	checkitemspace ITEM_TM38
-# 83 "data/maps/VictoryRoad_2F/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38
-# 84 "data/maps/VictoryRoad_2F/scripts.pory"
-	giveitem ITEM_TM38	
-# 85 "data/maps/VictoryRoad_2F/scripts.pory"
-	setflag FLAG_MOLTRES_TRAINER
-# 86 "data/maps/VictoryRoad_2F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 87 "data/maps/VictoryRoad_2F/scripts.pory"
-	removeobject LOCALID_MOLTRES_TRAINER
-# 88 "data/maps/VictoryRoad_2F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 89 "data/maps/VictoryRoad_2F/scripts.pory"
 	end
-# 90 "data/maps/VictoryRoad_2F/scripts.pory"
+# 80 "data/maps/VictoryRoad_2F/scripts.pory"
 
+# 81 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_EventScript_MoltresDefeated::
+# 82 "data/maps/VictoryRoad_2F/scripts.pory"
+	trainerbattle_single TRAINER_BUG_CATCHER_3, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
+# 83 "data/maps/VictoryRoad_2F/scripts.pory"
+	msgbox VictoryRoad_2F_Text_MoltresPostBattle, MSGBOX_AUTOCLOSE
+# 84 "data/maps/VictoryRoad_2F/scripts.pory"
+	checkitemspace ITEM_TM38
+# 85 "data/maps/VictoryRoad_2F/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38
+# 86 "data/maps/VictoryRoad_2F/scripts.pory"
+	giveitem ITEM_TM38	
+# 87 "data/maps/VictoryRoad_2F/scripts.pory"
+	setflag FLAG_MOLTRES_TRAINER
+# 88 "data/maps/VictoryRoad_2F/scripts.pory"
+	closemessage
+# 89 "data/maps/VictoryRoad_2F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 90 "data/maps/VictoryRoad_2F/scripts.pory"
+	removeobject LOCALID_MOLTRES_TRAINER
 # 91 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_NoMoltresPostBattle::
+	fadescreen FADE_FROM_BLACK
 # 92 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Ahh! There's no Moltres here!$"
+	end
 # 93 "data/maps/VictoryRoad_2F/scripts.pory"
 
 # 94 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_MoltresIntro::
+VictoryRoad_2F_Text_NoMoltresPostBattle::
 # 95 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Wait you actually fought MOLTRES?\p"
+	.string "Ahh! There's no Moltres here!$"
 # 96 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Well than, let me test your\n"
-# 97 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "abilities!$"
-# 98 "data/maps/VictoryRoad_2F/scripts.pory"
 
+# 97 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_Text_MoltresIntro::
+# 98 "data/maps/VictoryRoad_2F/scripts.pory"
+	.string "Wait you actually fought MOLTRES?\p"
 # 99 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_MoltresDefeat::
+	.string "Well than, let me test your\n"
 # 100 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "You were worthy!$"
+	.string "abilities!$"
 # 101 "data/maps/VictoryRoad_2F/scripts.pory"
 
 # 102 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_MoltresPostBattle::
+VictoryRoad_2F_Text_MoltresDefeat::
 # 103 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "I was trying to find MOLTRES\n"
+	.string "You were worthy!$"
 # 104 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "for a long time.\p"
+
 # 105 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "But I think i'll give up\n"
+VictoryRoad_2F_Text_MoltresPostBattle::
 # 106 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "after fighting you!\p"
+	.string "I was trying to find MOLTRES\n"
 # 107 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Take this TM meant for\n"
+	.string "for a long time.\p"
 # 108 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "a great MOLTRES!$"
+	.string "But I think i'll give up\n"
 # 109 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	.string "after fighting you!\p"
 # 110 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Daisuke::
+	.string "Take this TM meant for\n"
 # 111 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_BLACK_BELT_DAISUKE, VictoryRoad_2F_Text_DaisukeIntro, VictoryRoad_2F_Text_DaisukeDefeat
+	.string "a great MOLTRES!$"
 # 112 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
+
 # 113 "data/maps/VictoryRoad_2F/scripts.pory"
-	end
+VictoryRoad_2F_EventScript_Daisuke::
 # 114 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	trainerbattle_single TRAINER_BLACK_BELT_DAISUKE, VictoryRoad_2F_Text_DaisukeIntro, VictoryRoad_2F_Text_DaisukeDefeat
 # 115 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Nelson::
+	msgbox VictoryRoad_2F_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
 # 116 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
+	end
 # 117 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
+
 # 118 "data/maps/VictoryRoad_2F/scripts.pory"
-	end
+VictoryRoad_2F_EventScript_Nelson::
 # 119 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
 # 120 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Gregory::
+	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
 # 121 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_JUGGLER_GREGORY, VictoryRoad_2F_Text_GregoryIntro, VictoryRoad_2F_Text_GregoryDefeat
+	end
 # 122 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_GregoryPostBattle, MSGBOX_AUTOCLOSE
+
 # 123 "data/maps/VictoryRoad_2F/scripts.pory"
-	end
+VictoryRoad_2F_EventScript_Gregory::
 # 124 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	trainerbattle_single TRAINER_JUGGLER_GREGORY, VictoryRoad_2F_Text_GregoryIntro, VictoryRoad_2F_Text_GregoryDefeat
 # 125 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Julie::
+	msgbox VictoryRoad_2F_Text_GregoryPostBattle, MSGBOX_AUTOCLOSE
 # 126 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_JulieIntro, VictoryRoad_2F_Text_JulieDefeat
-# 127 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
-# 128 "data/maps/VictoryRoad_2F/scripts.pory"
 	end
+# 127 "data/maps/VictoryRoad_2F/scripts.pory"
+
+# 128 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_EventScript_Julie::
 # 129 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	trainerbattle_single TRAINER_COOLTRAINER_JULIE, VictoryRoad_2F_Text_JulieIntro, VictoryRoad_2F_Text_JulieDefeat
 # 130 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_JulieIntro::
+	msgbox VictoryRoad_2F_Text_JuliePostBattle, MSGBOX_AUTOCLOSE
 # 131 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Victory Road tests\n"
+	end
 # 132 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "more than strength.\p"
+
 # 133 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "It tests resolve.\p"
+VictoryRoad_2F_Text_JulieIntro::
 # 134 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Show me you have both!$"
+	.string "Victory Road tests\n"
 # 135 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	.string "more than strength.\p"
 # 136 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_JulieDefeat::
+	.string "It tests resolve.\p"
 # 137 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "No way...\n"
+	.string "Show me you have both!$"
 # 138 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "I pushed myself to the limit…!$"
+
 # 139 "data/maps/VictoryRoad_2F/scripts.pory"
-
+VictoryRoad_2F_Text_JulieDefeat::
 # 140 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_Text_JuliePostBattle::
+	.string "No way...\n"
 # 141 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "You have earned this win.\n"
+	.string "I pushed myself to the limit…!$"
 # 142 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "Keep going,\l"
+
 # 143 "data/maps/VictoryRoad_2F/scripts.pory"
-	.string "the Pokémon League is just ahead.$"
+VictoryRoad_2F_Text_JuliePostBattle::
 # 144 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	.string "You have earned this win.\n"
 # 145 "data/maps/VictoryRoad_2F/scripts.pory"
-
+	.string "Keep going,\l"
 # 146 "data/maps/VictoryRoad_2F/scripts.pory"
-VictoryRoad_2F_EventScript_Vincent::
+	.string "the Pokémon League is just ahead.$"
 # 147 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_TAMER_VINCENT, VictoryRoad_2F_Text_VincentIntro, VictoryRoad_2F_Text_VincentDefeat
+
 # 148 "data/maps/VictoryRoad_2F/scripts.pory"
-	msgbox VictoryRoad_2F_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
+
 # 149 "data/maps/VictoryRoad_2F/scripts.pory"
+VictoryRoad_2F_EventScript_Vincent::
+# 150 "data/maps/VictoryRoad_2F/scripts.pory"
+	trainerbattle_single TRAINER_TAMER_VINCENT, VictoryRoad_2F_Text_VincentIntro, VictoryRoad_2F_Text_VincentDefeat
+# 151 "data/maps/VictoryRoad_2F/scripts.pory"
+	msgbox VictoryRoad_2F_Text_VincentPostBattle, MSGBOX_AUTOCLOSE
+# 152 "data/maps/VictoryRoad_2F/scripts.pory"
 	end
