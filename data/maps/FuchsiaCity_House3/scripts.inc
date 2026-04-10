@@ -127,7 +127,7 @@ FuchsiaCity_House3_Poison::
 # 64 "data/maps/FuchsiaCity_House3/scripts.pory"
 FuchsiaCity_House3_Text_Eva::
 # 65 "data/maps/FuchsiaCity_House3/scripts.pory"
-	.string "Fighting while poison may buff\n"
+	.string "Fighting while poisoned may buff\n"
 # 66 "data/maps/FuchsiaCity_House3/scripts.pory"
 	.string "your POKEMON in the long run!\p"
 # 67 "data/maps/FuchsiaCity_House3/scripts.pory"

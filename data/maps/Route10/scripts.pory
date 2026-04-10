@@ -54,6 +54,9 @@ Route10_EventScript_End::
 	setvar VAR_MTMOONB2F, 1
 	setvar VAR_MTMOON1F, 1
 	setvar VAR_VIRFOREST, 1
+	setvar VAR_ROCK_TUNNEL, 1
+	setvar VAR_ROCK_TUNNEL2, 1
+	setvar VAR_VICTORYROAD, 1
 	release
 	end
 
@@ -195,6 +198,9 @@ Route10_EventScript_HoennWish::
 	setvar VAR_MTMOONB2F, 1
 	setvar VAR_MTMOON1F, 1
 	setvar VAR_VIRFOREST, 1
+	setvar VAR_ROCK_TUNNEL, 1
+	setvar VAR_ROCK_TUNNEL2, 1
+	setvar VAR_VICTORYROAD, 1
 	clearflag FLAG_GOT_CLAW
 	clearflag FLAG_GOT_ROOT
 	clearflag FLAG_JIRACHI_WISH
