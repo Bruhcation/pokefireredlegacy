@@ -111,312 +111,324 @@ Route10_EventScript_End::
 # 56 "data/maps/Route10/scripts.pory"
 	setvar VAR_VIRFOREST, 1
 # 57 "data/maps/Route10/scripts.pory"
-	release
+	setvar VAR_ROCK_TUNNEL, 1
 # 58 "data/maps/Route10/scripts.pory"
-	end
+	setvar VAR_ROCK_TUNNEL2, 1
 # 59 "data/maps/Route10/scripts.pory"
-
+	setvar VAR_VICTORYROAD, 1
 # 60 "data/maps/Route10/scripts.pory"
-Route10_EventScript_Jirachi::
+	release
 # 61 "data/maps/Route10/scripts.pory"
-	goto_if_questlog EventScript_ReleaseEnd
+	end
 # 62 "data/maps/Route10/scripts.pory"
-	special QuestLog_CutRecording
+
 # 63 "data/maps/Route10/scripts.pory"
-	lock
+Route10_EventScript_Jirachi::
 # 64 "data/maps/Route10/scripts.pory"
-	faceplayer
+	goto_if_questlog EventScript_ReleaseEnd
 # 65 "data/maps/Route10/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	special QuestLog_CutRecording
 # 66 "data/maps/Route10/scripts.pory"
-	applymovement LOCALID_GIRL, Common_Movement_ExclamationMark
+	lock
 # 67 "data/maps/Route10/scripts.pory"
-	applymovement LOCALID_GIRL, Common_Movement_FaceRight
+	faceplayer
 # 68 "data/maps/Route10/scripts.pory"
-	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 # 69 "data/maps/Route10/scripts.pory"
-	waitse
+	applymovement LOCALID_GIRL, Common_Movement_ExclamationMark
 # 70 "data/maps/Route10/scripts.pory"
-	setwildbattle SPECIES_JIRACHI, 50
+	applymovement LOCALID_GIRL, Common_Movement_FaceRight
 # 71 "data/maps/Route10/scripts.pory"
-	waitse
+	playse SE_PIN
 # 72 "data/maps/Route10/scripts.pory"
-	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	waitse
 # 73 "data/maps/Route10/scripts.pory"
-	message Route10_Text_Gyaoo
+	setwildbattle SPECIES_JIRACHI, 50
 # 74 "data/maps/Route10/scripts.pory"
-	waitmessage
+	waitse
 # 75 "data/maps/Route10/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
 # 76 "data/maps/Route10/scripts.pory"
-	delay 10
+	message Route10_Text_Gyaoo
 # 77 "data/maps/Route10/scripts.pory"
-	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitmessage
 # 78 "data/maps/Route10/scripts.pory"
-	waitbuttonpress
+	waitmoncry
 # 79 "data/maps/Route10/scripts.pory"
-	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	delay 10
 # 80 "data/maps/Route10/scripts.pory"
-	special StartLegendaryBattle
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
 # 81 "data/maps/Route10/scripts.pory"
-	waitstate
+	waitbuttonpress
 # 82 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 83 "data/maps/Route10/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	special StartLegendaryBattle
 # 84 "data/maps/Route10/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route10_EventScript_DefeatedJirachi
+	waitstate
 # 85 "data/maps/Route10/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route10_EventScript_RanFromJirachi
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 86 "data/maps/Route10/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route10_EventScript_RanFromJirachi
+	specialvar VAR_RESULT, GetBattleOutcome
 # 87 "data/maps/Route10/scripts.pory"
-	setflag FLAG_JIRACHI
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route10_EventScript_DefeatedJirachi
 # 88 "data/maps/Route10/scripts.pory"
-	msgbox Route10_Text_Wish
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route10_EventScript_RanFromJirachi
 # 89 "data/maps/Route10/scripts.pory"
-	goto Route10_EventScript_HoennWish
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route10_EventScript_RanFromJirachi
 # 90 "data/maps/Route10/scripts.pory"
-	release
+	setflag FLAG_JIRACHI
 # 91 "data/maps/Route10/scripts.pory"
-	end
+	msgbox Route10_Text_Wish
 # 92 "data/maps/Route10/scripts.pory"
-
+	goto Route10_EventScript_HoennWish
 # 93 "data/maps/Route10/scripts.pory"
-Route10_EventScript_DefeatedJirachi::
+	release
 # 94 "data/maps/Route10/scripts.pory"
-	setvar VAR_0x8004, SPECIES_JIRACHI
+	end
 # 95 "data/maps/Route10/scripts.pory"
-    fadescreen FADE_TO_BLACK
+
 # 96 "data/maps/Route10/scripts.pory"
-    fadescreen FADE_FROM_BLACK
+Route10_EventScript_DefeatedJirachi::
 # 97 "data/maps/Route10/scripts.pory"
-    bufferspeciesname STR_VAR_1, VAR_0x8004
-# 98 "data/maps/Route10/scripts.pory"
-	msgbox Route10_Text_WentBack
-# 99 "data/maps/Route10/scripts.pory"
-	release
-# 100 "data/maps/Route10/scripts.pory"
-	end
-# 101 "data/maps/Route10/scripts.pory"
-
-# 102 "data/maps/Route10/scripts.pory"
-Route10_EventScript_RanFromJirachi::
-# 103 "data/maps/Route10/scripts.pory"
 	setvar VAR_0x8004, SPECIES_JIRACHI
-# 104 "data/maps/Route10/scripts.pory"
+# 98 "data/maps/Route10/scripts.pory"
     fadescreen FADE_TO_BLACK
-# 105 "data/maps/Route10/scripts.pory"
+# 99 "data/maps/Route10/scripts.pory"
     fadescreen FADE_FROM_BLACK
-# 106 "data/maps/Route10/scripts.pory"
+# 100 "data/maps/Route10/scripts.pory"
     bufferspeciesname STR_VAR_1, VAR_0x8004
-# 107 "data/maps/Route10/scripts.pory"
+# 101 "data/maps/Route10/scripts.pory"
 	msgbox Route10_Text_WentBack
-# 108 "data/maps/Route10/scripts.pory"
+# 102 "data/maps/Route10/scripts.pory"
 	release
-# 109 "data/maps/Route10/scripts.pory"
+# 103 "data/maps/Route10/scripts.pory"
 	end
-# 110 "data/maps/Route10/scripts.pory"
+# 104 "data/maps/Route10/scripts.pory"
 
+# 105 "data/maps/Route10/scripts.pory"
+Route10_EventScript_RanFromJirachi::
+# 106 "data/maps/Route10/scripts.pory"
+	setvar VAR_0x8004, SPECIES_JIRACHI
+# 107 "data/maps/Route10/scripts.pory"
+    fadescreen FADE_TO_BLACK
+# 108 "data/maps/Route10/scripts.pory"
+    fadescreen FADE_FROM_BLACK
+# 109 "data/maps/Route10/scripts.pory"
+    bufferspeciesname STR_VAR_1, VAR_0x8004
+# 110 "data/maps/Route10/scripts.pory"
+	msgbox Route10_Text_WentBack
 # 111 "data/maps/Route10/scripts.pory"
-Route10_Text_Gyaoo::
+	release
 # 112 "data/maps/Route10/scripts.pory"
-	.string "Jirachi!$"
+	end
 # 113 "data/maps/Route10/scripts.pory"
 
 # 114 "data/maps/Route10/scripts.pory"
-Route10_Text_CrackedRock::
+Route10_Text_Gyaoo::
 # 115 "data/maps/Route10/scripts.pory"
-	.string "The rock is cracked.\p"
+	.string "Jirachi!$"
 # 116 "data/maps/Route10/scripts.pory"
-	.string "It looks like something was inside.$"
+
 # 117 "data/maps/Route10/scripts.pory"
-
+Route10_Text_CrackedRock::
 # 118 "data/maps/Route10/scripts.pory"
-Route10_Text_Girl::
+	.string "The rock is cracked.\p"
 # 119 "data/maps/Route10/scripts.pory"
-	.string "I kinda get weird vibes\n"
+	.string "It looks like something was inside.$"
 # 120 "data/maps/Route10/scripts.pory"
-	.string "from this rock.\p"
-# 121 "data/maps/Route10/scripts.pory"
-	.string "It feels like this rock can\n"
-# 122 "data/maps/Route10/scripts.pory"
-	.string "make wishes or something.$"
-# 123 "data/maps/Route10/scripts.pory"
 
+# 121 "data/maps/Route10/scripts.pory"
+Route10_Text_Girl::
+# 122 "data/maps/Route10/scripts.pory"
+	.string "I kinda get weird vibes\n"
+# 123 "data/maps/Route10/scripts.pory"
+	.string "from this rock.\p"
 # 124 "data/maps/Route10/scripts.pory"
-Route10_Text_Rock::
+	.string "It feels like this rock can\n"
 # 125 "data/maps/Route10/scripts.pory"
-	.string "The weird rock is shaking a bit.$"
+	.string "make wishes or something.$"
 # 126 "data/maps/Route10/scripts.pory"
 
 # 127 "data/maps/Route10/scripts.pory"
-Route10_Text_No::
+Route10_Text_Rock::
 # 128 "data/maps/Route10/scripts.pory"
-	.string "Guess Not.$"
+	.string "The weird rock is shaking a bit.$"
 # 129 "data/maps/Route10/scripts.pory"
 
 # 130 "data/maps/Route10/scripts.pory"
-Route10_Text_WeirdRock::
+Route10_Text_No::
 # 131 "data/maps/Route10/scripts.pory"
-	.string "The weird rock is shaking a lot.\p"
+	.string "Guess Not.$"
 # 132 "data/maps/Route10/scripts.pory"
-	.string "Will you Interact with it?$"
-# 133 "data/maps/Route10/scripts.pory"
 
+# 133 "data/maps/Route10/scripts.pory"
+Route10_Text_WeirdRock::
 # 134 "data/maps/Route10/scripts.pory"
-Route10_Text_Appeared::
+	.string "The weird rock is shaking a lot.\p"
 # 135 "data/maps/Route10/scripts.pory"
-	.string "Huh, something appeared?\n$"
+	.string "Will you Interact with it?$"
 # 136 "data/maps/Route10/scripts.pory"
 
 # 137 "data/maps/Route10/scripts.pory"
-Route10_Text_Wish::
+Route10_Text_Appeared::
 # 138 "data/maps/Route10/scripts.pory"
-	.string "A Wish was made subconsciously...\p"
+	.string "Huh, something appeared?\n$"
 # 139 "data/maps/Route10/scripts.pory"
-	.string "New POKEMON might be lurking\n"
+
 # 140 "data/maps/Route10/scripts.pory"
-	.string "around the KANTO region.$"
+Route10_Text_Wish::
 # 141 "data/maps/Route10/scripts.pory"
-
+	.string "A Wish was made subconsciously...\p"
 # 142 "data/maps/Route10/scripts.pory"
-Route10_Text_GirlSurprisedJirachi::
+	.string "New POKEMON might be lurking\n"
 # 143 "data/maps/Route10/scripts.pory"
-	.string "W-Was that a JIRACHI I saw?\p"
+	.string "around the KANTO region.$"
 # 144 "data/maps/Route10/scripts.pory"
-	.string "I heard it can grant wishes!$"
+
 # 145 "data/maps/Route10/scripts.pory"
-
+Route10_Text_GirlSurprisedJirachi::
 # 146 "data/maps/Route10/scripts.pory"
-Route10_Text_WentBack::
+	.string "W-Was that a JIRACHI I saw?\p"
 # 147 "data/maps/Route10/scripts.pory"
-	.string "JIRACHI went back to\n"
+	.string "I heard it can grant wishes!$"
 # 148 "data/maps/Route10/scripts.pory"
-	.string "the rock it was sleeping in.$"
-# 149 "data/maps/Route10/scripts.pory"
 
+# 149 "data/maps/Route10/scripts.pory"
+Route10_Text_WentBack::
 # 150 "data/maps/Route10/scripts.pory"
-Route10_EventScript_HoennWish::
+	.string "JIRACHI went back to\n"
 # 151 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE1, 1
+	.string "the rock it was sleeping in.$"
 # 152 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE2, 1
+
 # 153 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE3, 1
+Route10_EventScript_HoennWish::
 # 154 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE4, 1
+	setvar VAR_ROUTE1, 1
 # 155 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE5, 1
+	setvar VAR_ROUTE2, 1
 # 156 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE6, 1
+	setvar VAR_ROUTE3, 1
 # 157 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE7, 1
+	setvar VAR_ROUTE4, 1
 # 158 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE8, 1
+	setvar VAR_ROUTE5, 1
 # 159 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE9, 1
+	setvar VAR_ROUTE6, 1
 # 160 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE10, 1
+	setvar VAR_ROUTE7, 1
 # 161 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE11, 1
+	setvar VAR_ROUTE8, 1
 # 162 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE12, 1
+	setvar VAR_ROUTE9, 1
 # 163 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE13, 1
+	setvar VAR_ROUTE10, 1
 # 164 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE14, 1
+	setvar VAR_ROUTE11, 1
 # 165 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE15, 1
+	setvar VAR_ROUTE12, 1
 # 166 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE16, 1
+	setvar VAR_ROUTE13, 1
 # 167 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE17, 1
+	setvar VAR_ROUTE14, 1
 # 168 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE18, 1
+	setvar VAR_ROUTE15, 1
 # 169 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE19, 1
+	setvar VAR_ROUTE16, 1
 # 170 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE20, 1
+	setvar VAR_ROUTE17, 1
 # 171 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE21, 1
+	setvar VAR_ROUTE18, 1
 # 172 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE211, 1
+	setvar VAR_ROUTE19, 1
 # 173 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE22, 1
+	setvar VAR_ROUTE20, 1
 # 174 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE24, 1
+	setvar VAR_ROUTE21, 1
 # 175 "data/maps/Route10/scripts.pory"
-	setvar VAR_ROUTE25, 1
+	setvar VAR_ROUTE211, 1
 # 176 "data/maps/Route10/scripts.pory"
-	setvar VAR_MANSION1, 1
+	setvar VAR_ROUTE22, 1
 # 177 "data/maps/Route10/scripts.pory"
-	setvar VAR_MANSION2, 1
+	setvar VAR_ROUTE24, 1
 # 178 "data/maps/Route10/scripts.pory"
-	setvar VAR_MANSION3, 1
+	setvar VAR_ROUTE25, 1
 # 179 "data/maps/Route10/scripts.pory"
-	setvar VAR_MANSIONB1F, 1
+	setvar VAR_MANSION1, 1
 # 180 "data/maps/Route10/scripts.pory"
-	setvar VAR_POWERPLANT, 1
+	setvar VAR_MANSION2, 1
 # 181 "data/maps/Route10/scripts.pory"
-	setvar VAR_DIGLETTCAVE, 1
+	setvar VAR_MANSION3, 1
 # 182 "data/maps/Route10/scripts.pory"
-	setvar VAR_SAFARIZONE, 1
+	setvar VAR_MANSIONB1F, 1
 # 183 "data/maps/Route10/scripts.pory"
-	setvar VAR_SEAFOAM1, 1
+	setvar VAR_POWERPLANT, 1
 # 184 "data/maps/Route10/scripts.pory"
-	setvar VAR_SEAFOAM2, 1
+	setvar VAR_DIGLETTCAVE, 1
 # 185 "data/maps/Route10/scripts.pory"
-	setvar VAR_SEAFOAM3, 1
+	setvar VAR_SAFARIZONE, 1
 # 186 "data/maps/Route10/scripts.pory"
-	setvar VAR_SEAFOAM4, 1
+	setvar VAR_SEAFOAM1, 1
 # 187 "data/maps/Route10/scripts.pory"
-	setvar VAR_SEAFOAM5, 1
+	setvar VAR_SEAFOAM2, 1
 # 188 "data/maps/Route10/scripts.pory"
-	setvar VAR_TOWER3, 1
+	setvar VAR_SEAFOAM3, 1
 # 189 "data/maps/Route10/scripts.pory"
-	setvar VAR_TOWER4, 1
+	setvar VAR_SEAFOAM4, 1
 # 190 "data/maps/Route10/scripts.pory"
-	setvar VAR_TOWER5, 1
+	setvar VAR_SEAFOAM5, 1
 # 191 "data/maps/Route10/scripts.pory"
-	setvar VAR_TOWER6, 1
+	setvar VAR_TOWER3, 1
 # 192 "data/maps/Route10/scripts.pory"
-	setvar VAR_TOWER7, 1
+	setvar VAR_TOWER4, 1
 # 193 "data/maps/Route10/scripts.pory"
-	setvar VAR_CERULEAN, 1
+	setvar VAR_TOWER5, 1
 # 194 "data/maps/Route10/scripts.pory"
-	setvar VAR_VERMILION, 1
+	setvar VAR_TOWER6, 1
 # 195 "data/maps/Route10/scripts.pory"
-	setvar VAR_MTMOONB2F, 1
+	setvar VAR_TOWER7, 1
 # 196 "data/maps/Route10/scripts.pory"
-	setvar VAR_MTMOON1F, 1
+	setvar VAR_CERULEAN, 1
 # 197 "data/maps/Route10/scripts.pory"
-	setvar VAR_VIRFOREST, 1
+	setvar VAR_VERMILION, 1
 # 198 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_GOT_CLAW
+	setvar VAR_MTMOONB2F, 1
 # 199 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_GOT_ROOT
+	setvar VAR_MTMOON1F, 1
 # 200 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_JIRACHI_WISH
+	setvar VAR_VIRFOREST, 1
 # 201 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_GROUND_TRAINER
+	setvar VAR_ROCK_TUNNEL, 1
 # 202 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_WATER_TRAINER              
+	setvar VAR_ROCK_TUNNEL2, 1
 # 203 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_ICE_TRAINER         
+	setvar VAR_VICTORYROAD, 1
 # 204 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_STEEL_TRAINER               
+	clearflag FLAG_GOT_CLAW
 # 205 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_BRO_TRAINER              
+	clearflag FLAG_GOT_ROOT
 # 206 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_SIS_TRAINER            
+	clearflag FLAG_JIRACHI_WISH
 # 207 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_ROCK_TRAINER              
+	clearflag FLAG_GROUND_TRAINER
 # 208 "data/maps/Route10/scripts.pory"
-	clearflag FLAG_DRAGON_TRAINER  
+	clearflag FLAG_WATER_TRAINER              
 # 209 "data/maps/Route10/scripts.pory"
-	setflag FLAG_JIRACHI_WISH_GOT
+	clearflag FLAG_ICE_TRAINER         
 # 210 "data/maps/Route10/scripts.pory"
-	release
+	clearflag FLAG_STEEL_TRAINER               
 # 211 "data/maps/Route10/scripts.pory"
+	clearflag FLAG_BRO_TRAINER              
+# 212 "data/maps/Route10/scripts.pory"
+	clearflag FLAG_SIS_TRAINER            
+# 213 "data/maps/Route10/scripts.pory"
+	clearflag FLAG_ROCK_TRAINER              
+# 214 "data/maps/Route10/scripts.pory"
+	clearflag FLAG_DRAGON_TRAINER  
+# 215 "data/maps/Route10/scripts.pory"
+	setflag FLAG_JIRACHI_WISH_GOT
+# 216 "data/maps/Route10/scripts.pory"
+	release
+# 217 "data/maps/Route10/scripts.pory"
 	end

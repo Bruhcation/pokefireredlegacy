@@ -62,8 +62,9 @@ FuchsiaCity_House3_Poison::
 	end
 
 FuchsiaCity_House3_Text_Eva::
-	.string "Fighting while poison may buff\n"
-	.string "your POKEMON in the long run!\p"
+	.string "Fighting while poisoned buffs\n"
+	.string "POKEMON with GUTS and\l"
+	.string "the move facade.\p"
 	.string "And my DROWZEE can do that\n"
 	.string "in one move!$"
 
