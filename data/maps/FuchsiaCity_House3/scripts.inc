@@ -127,16 +127,18 @@ FuchsiaCity_House3_Poison::
 # 64 "data/maps/FuchsiaCity_House3/scripts.pory"
 FuchsiaCity_House3_Text_Eva::
 # 65 "data/maps/FuchsiaCity_House3/scripts.pory"
-	.string "Fighting while poison may buff\n"
+	.string "Fighting while poisoned buffs\n"
 # 66 "data/maps/FuchsiaCity_House3/scripts.pory"
-	.string "your POKEMON in the long run!\p"
+	.string "POKEMON with GUTS and\l"
 # 67 "data/maps/FuchsiaCity_House3/scripts.pory"
-	.string "And my DROWZEE can do that\n"
+	.string "the move facade.\p"
 # 68 "data/maps/FuchsiaCity_House3/scripts.pory"
-	.string "in one move!$"
+	.string "And my DROWZEE can do that\n"
 # 69 "data/maps/FuchsiaCity_House3/scripts.pory"
-
+	.string "in one move!$"
 # 70 "data/maps/FuchsiaCity_House3/scripts.pory"
-FuchsiaCity_House3_Text_EvaPostBattle::
+
 # 71 "data/maps/FuchsiaCity_House3/scripts.pory"
+FuchsiaCity_House3_Text_EvaPostBattle::
+# 72 "data/maps/FuchsiaCity_House3/scripts.pory"
 	.string "You can come back for more!$"
