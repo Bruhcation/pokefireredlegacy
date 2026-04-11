@@ -2761,7 +2761,7 @@
         },
         {
           "map": "MAP_VICTORY_ROAD_3F",
-          "base_label": "sVictoryRoad_3F_2",
+          "base_label": "sVictoryRoad3F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -6289,7 +6289,7 @@
         },
         {
           "map": "MAP_ROCK_TUNNEL_B1F",
-          "base_label": "sRockTunnel_B1F_2",
+          "base_label": "sRockTunnelB1F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -6526,7 +6526,7 @@
         },
         {
           "map": "MAP_SEAFOAM_ISLANDS_1F",
-          "base_label": "sSeafoamIslands_1F_2",
+          "base_label": "sSeafoamIslands1F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -6733,7 +6733,7 @@
         },
         {
           "map": "MAP_SEAFOAM_ISLANDS_B1F",
-          "base_label": "sSeafoamIslands_B1F_2",
+          "base_label": "sSeafoamIslandsB1F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -7248,7 +7248,7 @@
         },
         {
           "map": "MAP_SEAFOAM_ISLANDS_B3F",
-          "base_label": "sSeafoamIslands_B3F_2",
+          "base_label": "sSeafoamIslandsB3F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -7710,7 +7710,7 @@
         },
         {
           "map": "MAP_SEAFOAM_ISLANDS_B4F",
-          "base_label": "sSeafoamIslands_B4F_2",
+          "base_label": "sSeafoamIslandsB4F_2",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
@@ -8002,7 +8002,7 @@
         },
         {
           "map": "MAP_POKEMON_TOWER_3F",
-          "base_label": "sPokemonTower_3F_2",
+          "base_label": "sPokemonTower3F_2",
           "land_mons": {
             "encounter_rate": 2,
             "mons": [
@@ -8209,7 +8209,7 @@
         },
         {
           "map": "MAP_POKEMON_TOWER_4F",
-          "base_label": "sPokemonTower_4F_2",
+          "base_label": "sPokemonTower4F_2",
           "land_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -8416,7 +8416,7 @@
         },
         {
           "map": "MAP_POKEMON_TOWER_5F",
-          "base_label": "sPokemonTower_5F_2",
+          "base_label": "sPokemonTower5F_2",
           "land_mons": {
             "encounter_rate": 6,
             "mons": [
@@ -8623,7 +8623,7 @@
         },
         {
           "map": "MAP_POKEMON_TOWER_6F",
-          "base_label": "sPokemonTower_6F_2",
+          "base_label": "sPokemonTower6F_2",
           "land_mons": {
             "encounter_rate": 8,
             "mons": [
