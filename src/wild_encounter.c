@@ -374,7 +374,7 @@ static u16 GetCurrentMapWildMonHeaderId(void)
                 i += VarGet(VAR_SEAFOAM1);
             }
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SEAFOAM_ISLANDS_B1F) &&
-                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_1F))
+                gSaveBlock1Ptr->location.mapNum == MAP_NUM(SEAFOAM_ISLANDS_B1F))
             {
                 i += VarGet(VAR_SEAFOAM2);
             }
