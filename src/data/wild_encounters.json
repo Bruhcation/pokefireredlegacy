@@ -6939,6 +6939,75 @@
           }
         },
         {
+          "map": "MAP_SEAFOAM_ISLANDS_B2F",
+          "base_label": "sSeafoamIslandsB2F_2",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_SEEL"
+              },
+              {
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_SPHEAL"
+              },
+              {
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_SMOOCHUM"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_SLOWBRO"
+              },
+              {
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 41,
+                "max_level": 41,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_SLOWBRO"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 42,
+                "max_level": 42,
+                "species": "SPECIES_SLOWBRO"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_SEAFOAM_ISLANDS_B3F",
           "base_label": "sSeafoamIslandsB3F_FireRed",
           "land_mons": {
