@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FiveIsland_LostCave_Room12_EventScript_Owl",
-      "flag": "FLAG_HIDE_EASTER"
+      "flag": "FLAG_MIRAGE_FLAG"
     }
   ],
   "warp_events": [
