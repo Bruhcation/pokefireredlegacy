@@ -2829,3 +2829,87 @@ SevenIsland_TanobyRuins_EventScript_CliffordRematch::
 	trainerbattle_rematch TRAINER_GENTLEMAN_CLIFFORD, SevenIsland_TanobyRuins_Text_CliffordRematchIntro, SevenIsland_TanobyRuins_Text_CliffordDefeat
 	msgbox SevenIsland_TanobyRuins_Text_CliffordPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+SevenIsland_TanobyRuins_EventScript_Keith::
+	trainerbattle_single TRAINER_BIRD_KEEPER_KEITH, SevenIsland_TanobyRuins_Text_KeithIntro, SevenIsland_TanobyRuins_Text_KeithDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SevenIsland_TanobyRuins_EventScript_RematchKeith
+	msgbox SevenIsland_TanobyRuins_Text_KeithPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SevenIsland_TanobyRuins_EventScript_RematchKeith::
+	trainerbattle_rematch TRAINER_BIRD_KEEPER_KEITH, SevenIsland_TanobyRuins_Text_RematchKeithIntro, SevenIsland_TanobyRuins_Text_KeithDefeat
+	msgbox SevenIsland_TanobyRuins_Text_KeithPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SevenIsland_TanobyRuins_Text_KeithIntro::
+	.string "My bird Pokémon fly through these\n"
+	.string "island ruins with ease!\p"
+
+SevenIsland_TanobyRuins_Text_KeithDefeat::
+	.string "The echoes in these chambers\n"
+	.string "must’ve thrown off my focus.$"
+
+SevenIsland_TanobyRuins_Text_KeithPostBattle::
+	.string "Exploring these ruins with birds\n"
+	.string "makes for the best experience!$"
+
+SevenIsland_TanobyRuins_Text_RematchKeithIntro::
+	.string "My birds are ready for\n"
+	.string "flight again!$"
+
+FiveIsland_WaterLabyrinth_EventScript_Lauren::
+	trainerbattle_single TRAINER_BEAUTY_LAUREN, FiveIsland_WaterLabyrinth_Text_LaurenIntro, FiveIsland_WaterLabyrinth_Text_LaurenDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, FiveIsland_WaterLabyrinth_EventScript_RematchLauren
+	msgbox FiveIsland_WaterLabyrinth_Text_LaurenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FiveIsland_WaterLabyrinth_EventScript_RematchLauren::
+	trainerbattle_rematch TRAINER_BEAUTY_LAUREN, FiveIsland_WaterLabyrinth_Text_RematchLaurenIntro, FiveIsland_WaterLabyrinth_Text_LaurenDefeat
+	msgbox FiveIsland_WaterLabyrinth_Text_LaurenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FiveIsland_WaterLabyrinth_Text_LaurenIntro::
+	.string "Ugh…\n"
+	.string "these currents are ruining\l"
+	.string "my hair!$"
+
+FiveIsland_WaterLabyrinth_Text_LaurenDefeat::
+	.string "Oh, honestly…\n"
+	.string "now I’m tired and defeated.$"
+
+FiveIsland_WaterLabyrinth_Text_LaurenPostBattle::
+	.string "I came here for a relaxing swim,\n"
+	.string "not to get trapped between\l"
+	.string "slippery rocks all day.$"
+
+FiveIsland_WaterLabyrinth_Text_RematchLaurenIntro::
+	.string "I'm still stuck in this labyrath!$"
+
+Route21_South_EventScript_Chase::
+	trainerbattle_single TRAINER_CUE_BALL_CHASE, Route21_South_Text_ChaseIntro, Route21_South_Text_ChaseDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_RematchChase
+	msgbox Route21_South_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route21_South_EventScript_RematchChase::
+	trainerbattle_rematch TRAINER_CUE_BALL_CHASE, Route21_South_Text_RematchChaseIntro, Route21_South_Text_ChaseDefeat
+	msgbox Route21_South_EventScript_RematchChase, MSGBOX_AUTOCLOSE
+	end
+
+Route21_South_Text_ChaseIntro::
+	.string "I'm actually a CUE BALL you know!$"
+
+Route21_South_Text_ChaseDefeat::
+	.string "Cheap Shot!$"
+
+Route21_South_Text_ChasePostBattle::
+	.string "I can swim good for a CUE BALL!$"
+
+Route21_South_Text_RematchChaseIntro::
+	.string "You better stay upfloat or else!$"
+
+
+

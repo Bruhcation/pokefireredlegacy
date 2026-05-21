@@ -26,6 +26,84 @@ SixIsland_GreenPath_EventScript_RematchPaul::
 	msgbox SixIsland_GreenPath_Text_PaulPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+SixIsland_GreenPath_EventScript_Hannah::
+	trainerbattle_single TRAINER_PICNICKER_HANNAH, SixIsland_GreenPath_Text_HannahIntro, SixIsland_GreenPath_Text_HannahDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SixIsland_GreenPath_EventScript_RematchHannah
+	msgbox SixIsland_GreenPath_Text_HannahPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_EventScript_RematchHannah::
+	trainerbattle_rematch TRAINER_PICNICKER_HANNAH, SixIsland_GreenPath_Text_RematchHannahIntro, SixIsland_GreenPath_Text_HannahDefeat
+	msgbox SixIsland_GreenPath_Text_HannahPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_Text_HannahIntro::
+	.string "This island is sooo pretty!\n"
+	.string "And I'm aching for a battle!$"
+
+SixIsland_GreenPath_Text_HannahDefeat::
+	.string "Aww… there goes my island mood!$"
+
+SixIsland_GreenPath_Text_HannahPostBattle::
+	.string "These wild islands are a sight\n"
+	.string "to behold!$"
+
+SixIsland_GreenPath_Text_RematchHannahIntro::
+	.string "Aching for a battle again?$"
+
+SixIsland_GreenPath_EventScript_John::
+	trainerbattle_single TRAINER_TAMER_JOHN, SixIsland_GreenPath_Text_JohnIntro, SixIsland_GreenPath_Text_JohnDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SixIsland_GreenPath_EventScript_RematchJohn
+	msgbox SixIsland_GreenPath_Text_JohnPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_EventScript_RematchJohn::
+	trainerbattle_rematch TRAINER_TAMER_JOHN, SixIsland_GreenPath_Text_RematchJohnIntro, SixIsland_GreenPath_Text_JohnDefeat
+	msgbox SixIsland_GreenPath_Text_JohnPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_Text_JohnIntro::
+	.string "My POKEMON will whip you up\n"
+	.string "on this island!$"
+
+SixIsland_GreenPath_Text_JohnDefeat::
+	.string "Looks like I got whipped.$"
+
+SixIsland_GreenPath_Text_JohnPostBattle::
+	.string "My Rhydon can somehow use Surf.\p"
+	.string "That how I got on this island!$"
+
+SixIsland_GreenPath_Text_RematchJohnIntro::
+	.string "Ready for another whipping?$"
+
+SixIsland_GreenPath_EventScript_Walter::
+	trainerbattle_single TRAINER_GENTLEMAN_WALTER, SixIsland_GreenPath_Text_WalterIntro, SixIsland_GreenPath_Text_WalterDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SixIsland_GreenPath_EventScript_RematchWalter
+	msgbox SixIsland_GreenPath_Text_WalterPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_EventScript_RematchWalter::
+	trainerbattle_rematch TRAINER_GENTLEMAN_WALTER, SixIsland_GreenPath_Text_RematchWalterIntro, SixIsland_GreenPath_Text_WalterDefeat
+	msgbox SixIsland_GreenPath_Text_WalterPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_GreenPath_Text_WalterIntro::
+	.string "Why are you here?\p"
+	.string "You somehow got business on\n"
+	.string "this island?$"
+
+SixIsland_GreenPath_Text_WalterDefeat::
+	.string "You might not be one of them.$"
+
+SixIsland_GreenPath_Text_WalterPostBattle::
+	.string "Well, I guess I can trust you.$"
+
+SixIsland_GreenPath_Text_RematchWalterIntro::
+	.string "I'm up for another battle.$"
+
 SixIsland_GreenPath_Text_RematchPaulIntro::
 	.string "Time for another Island Battle!$"
 
