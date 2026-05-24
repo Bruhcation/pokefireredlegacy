@@ -1,6 +1,19 @@
 raw `
 FiveIsland_LostCave_Room1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FiveIsland_LostCave_Room1_OnTransition
 	.byte 0
+
+FiveIsland_LostCave_Room1_OnTransition::
+	goto_if_set FLAG_HIDE_EASTER, FiveIsland_LostCave_Room1_EventScript_Mirage
+	end
+
+FiveIsland_LostCave_Room1_EventScript_Mirage::
+	goto_if_set FLAG_JIRACHI_WISH_GOT, FiveIsland_LostCave_Room1_EventScript_MirageShow
+	end
+
+FiveIsland_LostCave_Room1_EventScript_MirageShow::
+	setflag FLAG_MIRAGE_FLAG
+	end
 
 FiveIsland_LostCave_Room1_EventScript_Lawson::
 	trainerbattle_single TRAINER_RUIN_MANIAC_LAWSON, FiveIsland_LostCave_Room1_Text_LawsonIntro, FiveIsland_LostCave_Room1_Text_LawsonDefeat

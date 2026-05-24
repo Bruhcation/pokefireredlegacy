@@ -109,6 +109,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route21_South_EventScript_OrbingCheck",
       "flag": "FLAG_WATER_TRAINER"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+      "x": 18,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "Route21_South_EventScript_Chase",
+      "flag": "0"
     }
   ],
   "warp_events": [

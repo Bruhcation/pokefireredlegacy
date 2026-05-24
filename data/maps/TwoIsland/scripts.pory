@@ -279,8 +279,7 @@ TwoIsland_EventScript_CaveSign::
 TwoIsland_Text_CaveSign::
 	.string "WARNING: Dangerous Path\n"
 	.string "South of here.\p"
-	.string "Beware of Dark Caves,\n"
-	.string "Holes, and\l"
+	.string "Beware of Dark Caves, Holes, and\n"
 	.string "High Currents!$"
 
 `

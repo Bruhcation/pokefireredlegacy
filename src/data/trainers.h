@@ -2489,7 +2489,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CUE_BALL_CHASE] = {
         .trainerClass = TRAINER_CLASS_CUE_BALL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CUE_BALL,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
         .trainerName = COMPOUND_STRING("CHASE"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {},
@@ -3838,7 +3838,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_COOLTRAINER_PAUL] = {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
         .trainerName = COMPOUND_STRING("PAUL"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {ITEM_FULL_RESTORE}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE),
@@ -3946,7 +3946,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_COOLTRAINER_BROOKE] = {
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL | F_TRAINER_FEMALE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
         .trainerName = COMPOUND_STRING("BROOKE"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {ITEM_FULL_RESTORE}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE),
@@ -4100,9 +4100,9 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GentlemanTucker),
     },
     [TRAINER_GENTLEMAN_NORTON] = {
-        .trainerClass = TRAINER_CLASS_GENTLEMAN,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
-        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
         .trainerName = COMPOUND_STRING("NORTON"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {},

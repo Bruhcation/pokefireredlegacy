@@ -12,6 +12,81 @@ DownwardBeach_EventScript_Npc::
 	release
 	end
 
+DownwardBeach_EventScript_Reed::
+	trainerbattle_single TRAINER_BIRD_KEEPER_REED, DownwardBeach_Text_ReedIntro, DownwardBeach_Text_ReedDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, DownwardBeach_EventScript_RematchReed
+	msgbox DownwardBeach_Text_ReedPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DownwardBeach_EventScript_RematchReed::
+	trainerbattle_rematch TRAINER_BIRD_KEEPER_REED, DownwardBeach_Text_RematchReedIntro, DownwardBeach_Text_ReedDefeat
+	msgbox DownwardBeach_Text_ReedPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DownwardBeach_Text_ReedIntro::
+	.string "My birds soar farther than\n"
+	.string "the ocean horizon!$"
+
+DownwardBeach_Text_ReedDefeat::
+	.string "Even tailwinds can't carry me\n"
+	.string "to victory every time…$"
+
+DownwardBeach_Text_ReedPostBattle::
+	.string "Out here on the island,\n"
+	.string "the wind makes my birds\l"
+	.string "stronger every day$"
+
+DownwardBeach_Text_RematchReedIntro::
+	.string "Wanna soar the skies again?$"
+
+DownwardBeach_EventScript_Randall::
+	trainerbattle_single TRAINER_ROCKER_RANDALL, DownwardBeach_Text_RandallIntro, DownwardBeach_Text_RandallDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, DownwardBeach_EventScript_RematchRandall
+	msgbox DownwardBeach_Text_RandallPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DownwardBeach_EventScript_RematchRandall::
+	trainerbattle_rematch TRAINER_ROCKER_RANDALL, DownwardBeach_Text_RematchRandallIntro, DownwardBeach_Text_RandallDefeat
+	msgbox DownwardBeach_Text_RandallPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DownwardBeach_Text_RandallIntro::
+	.string "Yo!\p"
+	.string "The waves on this island\n"
+	.string "got a wicked rhythm!\p"
+	.string "Think you can handle the volume?!$"
+
+DownwardBeach_Text_RandallDefeat::
+	.string "You totally blew out my speakers!$"
+
+DownwardBeach_Text_RandallPostBattle::
+	.string "My Pokémon and I jam to the\n"
+	.string "crashing waves every night!$"
+
+DownwardBeach_Text_RematchRandallIntro::
+	.string "Ready to rock again?$"
+
+DownwardBeach_EventScript_Norton::
+	trainerbattle_single TRAINER_GENTLEMAN_NORTON, DownwardBeach_Text_NortonIntro, DownwardBeach_Text_NortonDefeat
+	msgbox DownwardBeach_Text_NortonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DownwardBeach_Text_NortonIntro::
+	.string "Good heavens…\p"
+	.string "these caverns are riddled\n"
+	.string "with holes!$"
+
+DownwardBeach_Text_NortonDefeat::
+	.string "My word…\p"
+	.string "I appear to have stumbled\n"
+	.string "into defeat as well.$"
+
+DownwardBeach_Text_NortonPostBattle::
+	.string "One can never tell what\n"
+	.string "may be lurking beneath.$"
+
 DownwardBeach_Text_Sign::
 	.string "Welcome to SOUTHSIDE ROCK\n"
 	.string "Training Spot of\l"
@@ -23,8 +98,7 @@ DownwardBeach_Text_Sign::
 
 DownwardBeach_Text_Npc::
 	.string "Sorry,\n"
-	.string "SEVII MASTER CASEY\l"
-	.string "isn't available right now.\p"
-	.string "In fact, all of the\n"
-	.string "SEVII MASTERS are unavailable.$"
+	.string "This cave is currently\l"
+	.string "being cleared of rocks and is\l"
+	.string "unavailable at the moment.$"
 `
