@@ -2789,7 +2789,7 @@
       "id": "LAYOUT_SIX_ISLAND_GREEN_PATH",
       "name": "SixIsland_GreenPath_Layout",
       "width": 72,
-      "height": 20,
+      "height": 50,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -2800,7 +2800,7 @@
     {
       "id": "LAYOUT_SIX_ISLAND_WATER_PATH",
       "name": "SixIsland_WaterPath_Layout",
-      "width": 24,
+      "width": 64,
       "height": 100,
       "border_width": 2,
       "border_height": 2,
