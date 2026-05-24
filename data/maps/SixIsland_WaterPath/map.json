@@ -48,14 +48,14 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-      "x": 11,
-      "y": 52,
+      "x": 51,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "SixIsland_WaterPath_EventScript_Edward",
       "flag": "0"
     },
@@ -164,6 +164,34 @@
       "y": 7,
       "target_local_id": 2,
       "target_map": "MAP_SIX_ISLAND_GREEN_PATH"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
+      "x": 45,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "10",
+      "script": "SixIsland_WaterPath_EventScript_Owen",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+      "x": 31,
+      "y": 49,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 10,
+      "movement_range_y": 10,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "10",
+      "script": "SixIsland_WaterPath_EventScript_Brooke",
+      "flag": "0"
     }
   ],
   "warp_events": [

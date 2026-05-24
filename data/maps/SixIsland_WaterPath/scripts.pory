@@ -10,6 +10,59 @@ SixIsland_WaterPath_EventScript_RouteSign::
 	msgbox SixIsland_WaterPath_Text_RouteSign, MSGBOX_SIGN
 	end
 
+SixIsland_WaterPath_EventScript_Brooke::
+	trainerbattle_single TRAINER_COOLTRAINER_BROOKE, SixIsland_WaterPath_Text_BrookeIntro, SixIsland_WaterPath_Text_BrookeDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SixIsland_WaterPath_EventScript_BrookeRematch
+	msgbox SixIsland_WaterPath_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_WaterPath_EventScript_BrookeRematch::
+	trainerbattle_rematch TRAINER_COOLTRAINER_BROOKE, SixIsland_WaterPath_Text_RematchBrookeIntro, SixIsland_WaterPath_Text_BrookeDefeat
+	msgbox SixIsland_WaterPath_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_WaterPath_Text_BrookeIntro::
+	.string "Just so you know,\n"
+	.string "I am a very COOLTRAINER!$"
+
+SixIsland_WaterPath_Text_BrookeDefeat::
+	.string "Not again!$"
+
+SixIsland_WaterPath_Text_BrookePostBattle::
+	.string "I tried to pass VICTORY ROAD once.\p"
+	.string "It didn't go well for me so I\n"
+	.string "settled for the SEVII ISLANDS.$"
+
+SixIsland_WaterPath_Text_RematchBrookeIntro::
+	.string "I'm still swimming Strong!$"
+
+SixIsland_WaterPath_Text_OwenIntro::
+	.string "This island is great for Training!\p"
+	.string "Guess you also figured!$"
+
+SixIsland_WaterPath_Text_OwenDefeat::
+	.string "Great Work!$"
+
+SixIsland_WaterPath_Text_OwenPostBattle::
+	.string "I've been training here for a while.\p"
+	.string "I'm getting stronger every day!$"
+
+SixIsland_WaterPath_EventScript_Owen::
+	trainerbattle_single TRAINER_COOLTRAINER_OWEN, SixIsland_WaterPath_Text_OwenIntro, SixIsland_WaterPath_Text_OwenDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, SixIsland_WaterPath_EventScript_OwenRematch
+	msgbox SixIsland_WaterPath_Text_OwenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_WaterPath_EventScript_OwenRematch::
+	trainerbattle_rematch TRAINER_COOLTRAINER_OWEN, SixIsland_WaterPath_Text_RematchOwenIntro, SixIsland_WaterPath_Text_OwenDefeat
+	msgbox SixIsland_WaterPath_Text_OwenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_WaterPath_Text_RematchOwenIntro::
+	.string "Back for more Training?$"
+
 SixIsland_WaterPath_EventScript_TMGUY::
 	goto_if_questlog EventScript_ReleaseEnd
 	lock
