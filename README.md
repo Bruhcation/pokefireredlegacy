@@ -149,6 +149,8 @@ Credits:
 
 - Numerous Pret Tutorials
 
+- Human Gamer: Colored Natures: https://github.com/HumanGamer/pokefirered_edit
+
 Item Locations:
 
 Sludge Bomb	Sliph Co		
