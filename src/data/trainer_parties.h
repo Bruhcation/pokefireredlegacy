@@ -2634,7 +2634,7 @@ static const struct TrainerMon sParty_LeaderBrock2[] = {
         .lvl = 66,
         .species = SPECIES_AERODACTYL,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_SKY_ATTACK, MOVE_ANCIENT_POWER, MOVE_EARTHQUAKE, MOVE_DOUBLE_EDGE},
+        .moves = {MOVE_SKY_ATTACK, MOVE_ANCIENT_POWER, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST},
         .ev = TRAINER_PARTY_EVS(84, 84, 84, 84, 84, 84),
     },  
     {
@@ -15194,7 +15194,7 @@ static const struct TrainerMon sParty_EliteFourLance2[] = {
         .species = SPECIES_AERODACTYL,
         .heldItem = ITEM_SOFT_SAND,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_ROCK_SLIDE, MOVE_SKY_ATTACK, MOVE_EARTHQUAKE},
+        .moves = {MOVE_FIRE_BLAST, MOVE_ROCK_SLIDE, MOVE_SKY_ATTACK, MOVE_EARTHQUAKE},
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
     },
     {
