@@ -2727,7 +2727,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] = {
         .fgColor = TEXT_DYNAMIC_COLOR_4,
         .bgColor = TEXT_DYNAMIC_COLOR_5,
         .shadowColor = TEXT_DYNAMIC_COLOR_6,
-    }
+    },
 };
 
 static const u8 sNpcTextColorToFont[] = 

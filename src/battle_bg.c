@@ -707,6 +707,13 @@ void LoadBattleMenuWindowGfx(void)
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 14] = RGB(31, 31, 31);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 15] = RGB( 26,  26,  25);
     CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 12], &gPlttBufferFaded[BG_PLTT_ID(5) + 12], PLTT_SIZEOF(4));
+	
+	// Add colors for type effectiveness indicators using positions 1-3
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 1] = RGB(24,  8,  8); // Red for not very effective
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 2] = RGB(31, 16, 16); // Light red
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 3] = RGB( 8, 24,  8); // Green for super effective  
+	
+	CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 1], &gPlttBufferFaded[BG_PLTT_ID(5) + 1], PLTT_SIZEOF(3));
 
     if (gBattleTypeFlags & (BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_POKEDUDE))
     {
