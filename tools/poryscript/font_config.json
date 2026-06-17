@@ -160,7 +160,7 @@
         "ö": 6,
         "ü": 6,
         "{TALL_PLUS}": 0,
-        "{PLAYER}": 42,
+        "{PLAYER}": 56,
         "{STR_VAR_1}": 80,
         "{STR_VAR_2}": 80,
         "{STR_VAR_3}": 80,
@@ -334,7 +334,7 @@
         "ö": 6,
         "ü": 6,
         "{TALL_PLUS}": 0,
-        "{PLAYER}": 42,
+        "{PLAYER}": 56,
         "{STR_VAR_1}": 80,
         "{STR_VAR_2}": 80,
         "{STR_VAR_3}": 80,
@@ -344,18 +344,5 @@
         "$": 0
       }
     }
-  },
-  "textReplacements": [
-    {"pattern": "\\e", "replacement": "é"},
-    {"pattern": "\\.", "replacement": "…"},
-    {"pattern": "\\au", "replacement": "{UP_ARROW}"},
-    {"pattern": "\\ad", "replacement": "{DOWN_ARROW}"},
-    {"pattern": "\\ar", "replacement": "{RIGHT_ARROW}"},
-    {"pattern": "\\al", "replacement": "{LEFT_ARROW}"},
-    {"pattern": "\\m", "replacement": "♂"},
-    {"pattern": "\\f", "replacement": "♀"},
-    {"pattern": "\\qo", "replacement": "“"},
-    {"pattern": "\\qc", "replacement": "”"},
-    {"pattern": "\\\\h(\\d+)", "replacement": "{PAUSE_$1}", "regex": true}
-  ]
+  }
 }

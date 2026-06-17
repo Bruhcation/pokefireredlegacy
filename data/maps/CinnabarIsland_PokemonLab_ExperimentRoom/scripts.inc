@@ -401,7 +401,7 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveOmanyte::
 # 201 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
 	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_FossilMonBackToLife
 # 202 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
-	givemon SPECIES_OMANYTE, 40
+	givemon SPECIES_OMANYTE, 44
 # 203 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
 	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
 # 204 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
@@ -423,7 +423,7 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveKabuto::
 # 212 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
 	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_FossilMonBackToLife
 # 213 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
-	givemon SPECIES_KABUTO, 40
+	givemon SPECIES_KABUTO, 44
 # 214 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
 	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
 # 215 "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.pory"
