@@ -95,6 +95,7 @@ static void MoveSelectionDisplayMoveNames(void);
 static void HandleMoveSwitching(void);
 static void WaitForMonSelection(void);
 static void CompleteWhenChoseItem(void);
+static u32 GetTypeEffectivenessMultiplier(u8 atkType, u8 defType1, u8 defType2);
 static void Task_LaunchLvlUpAnim(u8 taskId);
 static void Task_PrepareToGiveExpWithExpBar(u8 taskId);
 static void DestroyExpTaskAndCompleteOnInactiveTextPrinter(u8 taskId);
@@ -306,6 +307,16 @@ static void HandleInputChooseAction(void)
             PlaySE(SE_SELECT);
             BtlController_EmitTwoReturnValues(1, B_ACTION_CANCEL_PARTNER, 0);
             PlayerBufferExecCompleted();
+        }
+		else
+        {
+            if(!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) //if wild, pressing B moves cursor to run
+            {
+                PlaySE(SE_SELECT);
+                ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
+                gActionSelectionCursor[gActiveBattler] = 3;
+                ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
+            }
         }
     }
     else if (JOY_NEW(START_BUTTON))
@@ -1470,17 +1481,80 @@ static void MoveSelectionDisplayMoveDescription(void)
      CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_FULL);
  }
 
+static u32 GetTypeEffectivenessMultiplier(u8 atkType, u8 defType1, u8 defType2)
+{
+    s32 i = 0;
+    u32 multiplier = TYPE_MUL_NORMAL;
+
+    while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE)
+    {
+        if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
+        {
+            i += 3;
+            continue;
+        }
+        else if (TYPE_EFFECT_ATK_TYPE(i) == atkType)
+        {
+            // check type1
+            if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
+                multiplier = (multiplier * TYPE_EFFECT_MULTIPLIER(i)) / 10;
+            // check type2
+            if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
+                multiplier = (multiplier * TYPE_EFFECT_MULTIPLIER(i)) / 10;
+        }
+        i += 3;
+    }
+
+    return multiplier;
+}
+
 static void MoveSelectionDisplayMoveType(void)
 {
     u8 *txtPtr;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
+    u8 moveType = gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type;
+    u32 effectiveness = TYPE_MUL_NORMAL;
+    u8 opponentBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
+
+    // Calculate type effectiveness against opponent Pokemon
+    if (gBattleMons[opponentBattler].hp != 0)
+    {
+        effectiveness = GetTypeEffectivenessMultiplier(moveType, gBattleMons[opponentBattler].type1, gBattleMons[opponentBattler].type2);
+    }
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
-    *txtPtr++ = EXT_CTRL_CODE_BEGIN;
-    *txtPtr++ = 6;
-    *txtPtr++ = 1;
     txtPtr = StringCopy(txtPtr, gText_MoveInterfaceDynamicColors);
-    StringCopy(txtPtr, gTypeNames[gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type]);
+
+    // Add colored type name based on effectiveness
+    if (effectiveness > TYPE_MUL_NORMAL)
+    {
+        // Super effective - use green
+        *txtPtr++ = EXT_CTRL_CODE_BEGIN;
+        *txtPtr++ = EXT_CTRL_CODE_COLOR;
+        *txtPtr++ = 0x53; // Palette 5, color 3 (green)
+        txtPtr = StringCopy(txtPtr, gTypeNames[moveType]);
+        *txtPtr++ = EXT_CTRL_CODE_BEGIN;
+        *txtPtr++ = EXT_CTRL_CODE_COLOR;
+        *txtPtr++ = 0x5E; // Reset to white
+    }
+    else if (effectiveness < TYPE_MUL_NORMAL)
+    {
+        // Not very effective - use red
+        *txtPtr++ = EXT_CTRL_CODE_BEGIN;
+        *txtPtr++ = EXT_CTRL_CODE_COLOR;
+        *txtPtr++ = 0x51; // Palette 5, color 1 (red)
+        txtPtr = StringCopy(txtPtr, gTypeNames[moveType]);
+        *txtPtr++ = EXT_CTRL_CODE_BEGIN;
+        *txtPtr++ = EXT_CTRL_CODE_COLOR;
+        *txtPtr++ = 0x5E; // Reset to white
+    }
+    else
+    {
+        // Normal effectiveness - default color
+        txtPtr = StringCopy(txtPtr, gTypeNames[moveType]);
+    }
+
+    *txtPtr = EOS;
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
 }
 
