@@ -24,11 +24,7 @@
 	.byte \index
 	.byte \gfx
 	.byte OBJ_KIND_NORMAL
-<<<<<<< HEAD
-	.2byte \gfx
-=======
 	.space 1  @ Padding
->>>>>>> parent of cfb38fe1d (Overworld plus)
 	.2byte \x, \y
 	.byte \elevation
 	.byte \movement_type
