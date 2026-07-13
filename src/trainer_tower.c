@@ -42,15 +42,15 @@ struct TrainerTowerOpponent
 
 struct SinglesTrainerInfo
 {
-    u16 objGfx;
+    u8 objGfx;
     u8 facilityClass;
     bool8 gender;
 };
 
 struct DoublesTrainerInfo
 {
-    u16 objGfx1;
-    u16 objGfx2;
+    u8 objGfx1;
+    u8 objGfx2;
     u8 facilityClass;
     bool8 gender1;
     bool8 gender2;
@@ -568,8 +568,7 @@ static void InitTrainerTowerFloor(void)
 static void SetTrainerTowerNPCGraphics(void)
 {
     s32 i, j;
-    u16 trainerGfx1, trainerGfx2;
-    u8 facilityClass;
+    u8 trainerGfx1, trainerGfx2, facilityClass;
     switch (CURR_FLOOR.challengeType)
     {
     case CHALLENGE_TYPE_SINGLE:

@@ -96,7 +96,7 @@ struct WirelessLink_Group
 struct UnionRoomObject
 {
     u8 state;
-    u16 gfxId;
+    u8 gfxId;
     s8 animState;
     u8 schedAnim;
 };
