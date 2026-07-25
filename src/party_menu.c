@@ -3372,6 +3372,12 @@ static void SwitchPartyMon(void)
     struct Pokemon *mon1, *mon2;
     struct Pokemon *monBuffer;
 
+    if (gPartyMenu.slotId == VarGet(VAR_SURF_MON_SLOT))
+        VarSet(VAR_SURF_MON_SLOT, gPartyMenu.slotId2);
+    else if (gPartyMenu.slotId2 == VarGet(VAR_SURF_MON_SLOT))
+        VarSet(VAR_SURF_MON_SLOT, gPartyMenu.slotId);
+
+
     menuBoxes[0] = &sPartyMenuBoxes[gPartyMenu.slotId];
     menuBoxes[1] = &sPartyMenuBoxes[gPartyMenu.slotId2];
     mon1 = &gPlayerParty[gPartyMenu.slotId];

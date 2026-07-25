@@ -34,9 +34,9 @@ static void UpdateFeetInFlowingWaterFieldEffect(struct Sprite *sprite);
 static void UpdateAshFieldEffect_Step0(struct Sprite *sprite);
 static void UpdateAshFieldEffect_Step1(struct Sprite *sprite);
 static void UpdateAshFieldEffect_Step2(struct Sprite *sprite);
-static void SynchroniseSurfAnim(struct ObjectEvent * objectEvent, struct Sprite *sprite);
-static void SynchroniseSurfPosition(struct ObjectEvent * objectEvent, struct Sprite *sprite);
-static void CreateBobbingEffect(struct ObjectEvent * objectEvent, struct Sprite *linkedSprite, struct Sprite *sprite);
+void SynchroniseSurfAnim(struct ObjectEvent * objectEvent, struct Sprite *sprite);
+void SynchroniseSurfPosition(struct ObjectEvent * objectEvent, struct Sprite *sprite);
+void CreateBobbingEffect(struct ObjectEvent * objectEvent, struct Sprite *linkedSprite, struct Sprite *sprite);
 static void SpriteCB_UnderwaterSurfBlob(struct Sprite *sprite);
 static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx, u8 paletteNum);
 u32 FldEff_Shadow(void);
@@ -1167,7 +1167,7 @@ void UpdateSurfBlobFieldEffect(struct Sprite *sprite)
     sprite->oam.priority = playerSprite->oam.priority;
 }
 
-static void SynchroniseSurfAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+void SynchroniseSurfAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     u8 surfBlobDirectionAnims[] = {
         [DIR_NONE] = 0,
@@ -1205,7 +1205,7 @@ void SynchroniseSurfPosition(struct ObjectEvent *playerObject, struct Sprite *su
     }
 }
 
-static void CreateBobbingEffect(struct ObjectEvent *objectEvent, struct Sprite *playerSprite, struct Sprite *surfBlobSprite)
+void CreateBobbingEffect(struct ObjectEvent *objectEvent, struct Sprite *playerSprite, struct Sprite *surfBlobSprite)
 {
     u16 intervals[] = {7, 15};
     u8 bobState = GetSurfBlob_BobState(surfBlobSprite);
@@ -1226,8 +1226,8 @@ static void CreateBobbingEffect(struct ObjectEvent *objectEvent, struct Sprite *
             else
                 playerSprite->y2 = surfBlobSprite->sPlayerOffset + surfBlobSprite->y2;
 
-            if (surfBlobSprite->animCmdIndex != 0)
-                playerSprite->y2++;
+            // if (surfBlobSprite->animCmdIndex != 0)
+            //     playerSprite->y2++;
 
             surfBlobSprite->x = playerSprite->x;
             surfBlobSprite->y = playerSprite->y + 8;

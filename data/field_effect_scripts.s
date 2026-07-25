@@ -109,7 +109,7 @@ gFldEffScript_Ash::
 	end 
 
 gFldEffScript_SurfBlob::
-	callnative FldEff_SurfBlob
+	callnative CreateSurfablePokemonSprite
 	end 
 
 gFldEffScript_UseSurf::
