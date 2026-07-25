@@ -837,6 +837,7 @@ const u8 gText_PokeSum_EggHatch_LongTime[] = _("It looks like this\nEGG will tak
 const u8 gText_PokeSum_EggHatch_SomeTime[] = _("What will hatch\nfrom this? It will\ntake some time.");
 const u8 gText_PokeSum_EggHatch_Soon[] = _("It occasionally\nmoves. It should\nhatch soon.");
 const u8 gText_PokeSum_EggHatch_AlmostReady[] = _("It's making sounds.\nIt's almost ready\nto hatch!");
+const u8 gText_PokeSum_Wild[] = _("WILD");
 const u8 gText_PokeSum_ATrade[] = _("a trade");
 const u8 gText_Somewhere[] = _("Somewhere");
 const u8 gText_PokeSum_PageName_PokemonInfo[] = _("POKéMON INFO");
