@@ -35,6 +35,7 @@
 #include "pokemon_storage_system.h"
 #include "constants/sound.h"
 #include "battle_setup.h"
+#include "battle.h"
 
 // needs conflicting header to match (curIndex is s8 in the function, but has to be defined as u8 here)
 extern s16 SeekToNextMonInBox(struct BoxPokemon * boxMons, u8 curIndex, u8 maxIndex, u8 flags);
@@ -328,6 +329,10 @@ static EWRAM_DATA u8 sLastViewedMonIndex = 0;
 static EWRAM_DATA u8 sMoveSelectionCursorPos = 0;
 static EWRAM_DATA u8 sMoveSwapCursorPos = 0;
 static EWRAM_DATA struct MonPicBounceState * sMonPicBounceState = NULL;
+
+static EWRAM_DATA bool8 sRestrictSummaryIndices = FALSE;
+static EWRAM_DATA u8 sAllowedSummaryIndex1 = 0;
+static EWRAM_DATA u8 sAllowedSummaryIndex2 = 0;
 
 extern const u32 gSummaryScreen_PageSkills_Tilemap[];
 extern const u32 gSummaryScreen_PageMoves_Tilemap[];
@@ -918,6 +923,8 @@ static const u8 sLevelNickTextColors[][3] =
     {0, 11, 10},
     {0, 1, 10}, // Nature Up
     {0, 7, 10}, // Nature Down
+    {0, 1, 10}, // 8 - Red (trainer-owned) — fg=238,49,0 red / shadow=pale cream (soft outline)
+    {0, 5, 10}, // 9 - Green (wild, catchable) — fg=123,205,82 green / shadow=pale cream (soft outline)
 };
 
 static const u8 ALIGNED(4) sMultiBattlePartyOrder[] =
@@ -989,6 +996,7 @@ void ShowPokemonSummaryScreen(struct Pokemon * party, u8 cursorPos, u8 lastIdx, 
     }
 
     sLastViewedMonIndex = cursorPos;
+    sRestrictSummaryIndices = FALSE;
 
     sMoveSelectionCursorPos = 0;
     sMoveSwapCursorPos = 0;
@@ -1294,6 +1302,16 @@ static void Task_PokeSum_FlipPages(u8 taskId)
 
         break;
     case 7:
+        if (sMonSummaryScreen->monList.mons == gEnemyParty)
+        {
+            BufferSelectedMonData(&sMonSummaryScreen->currentMon);
+            BufferMonInfo();
+            if (!sMonSummaryScreen->isEgg)
+            {
+                BufferMonSkills();
+                BufferMonMoves();
+            }
+        }
         PokeSum_PrintRightPaneText();
         if (sMonSummaryScreen->curPageIndex != PSS_PAGE_MOVES_INFO)
             PokeSum_PrintBottomPaneText();
@@ -2129,7 +2147,17 @@ static void BufferMonInfo(void)
         if (StringCompare(sMonSummaryScreen->summary.nicknameStrBuf, gSpeciesNames[dexNum]) == 0)
             StringCopy(sMonSummaryScreen->summary.genderSymbolStrBuf, gString_Dummy);
 
-    GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_OT_NAME, tempStr);
+    if (sMonSummaryScreen->monList.mons == gEnemyParty && !(gBattleTypeFlags & BATTLE_TYPE_GHOST))
+    {
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            StringCopy(tempStr, gTrainers[gTrainerBattleOpponent_A].trainerName);
+        else
+            StringCopy(tempStr, gText_PokeSum_Wild);
+    }
+    else
+    {
+        GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_OT_NAME, tempStr);
+    }
     StringCopyN_Multibyte(sMonSummaryScreen->summary.otNameStrBuf, tempStr, PLAYER_NAME_LENGTH);
 
     ConvertInternationalString(sMonSummaryScreen->summary.otNameStrBuf, GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_LANGUAGE));
@@ -2429,6 +2457,12 @@ static void PrintMonLevelNickOnWindow2(const u8 * str)
 {
     FillWindowPixelBuffer(sMonSummaryScreen->windowIds[POKESUM_WIN_LVL_NICK], 0);
 
+    if (sMonSummaryScreen->monList.mons == gEnemyParty)
+    {
+        BufferSelectedMonData(&sMonSummaryScreen->currentMon);
+        BufferMonInfo();
+    }
+
     if (!sMonSummaryScreen->isEgg)
     {
         if (sMonSummaryScreen->curPageIndex != PSS_PAGE_MOVES_INFO)
@@ -2473,7 +2507,9 @@ static void PrintInfoPage(void)
     if (!sMonSummaryScreen->isEgg)
     {
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47 + sMonSkillsPrinterXpos->unk00, 5, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.dexNumStrBuf);
-        AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47, 49, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.otNameStrBuf);
+        AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47, 49,
+        sLevelNickTextColors[(sMonSummaryScreen->monList.mons == gEnemyParty && !(gBattleTypeFlags & BATTLE_TYPE_GHOST)) ? ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) ? 8 : 9) : 0],
+        TEXT_SKIP_DRAW, sMonSummaryScreen->summary.otNameStrBuf);
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47, 64, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.unk306C);
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 47, 79, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.itemNameStrBuf);
     }
@@ -3410,6 +3446,13 @@ static void PokeSum_PrintMonTypeIcons(void)
 u8 GetLastViewedMonIndex(void)
 {
     return sLastViewedMonIndex;
+}
+
+void SetAllowedSummaryMonIndices(u8 index1, u8 index2)
+{
+    sRestrictSummaryIndices = TRUE;
+    sAllowedSummaryIndex1 = index1;
+    sAllowedSummaryIndex2 = index2;
 }
 
 u8 GetMoveSlotToReplace(void)
@@ -5017,6 +5060,19 @@ static s8 SeekToNextMonInSingleParty(s8 direction)
 {
     struct Pokemon * partyMons = sMonSummaryScreen->monList.mons;
     s8 seekDelta = 0;
+
+    if (sRestrictSummaryIndices)
+    {
+        while (TRUE)
+        {
+            seekDelta += direction;
+            if (0 > sLastViewedMonIndex + seekDelta || sLastViewedMonIndex + seekDelta > sMonSummaryScreen->lastIndex)
+                return -1;
+            if (sLastViewedMonIndex + seekDelta == sAllowedSummaryIndex1
+                || sLastViewedMonIndex + seekDelta == sAllowedSummaryIndex2)
+                return sLastViewedMonIndex + seekDelta;
+        }
+    }
 
     if (sMonSummaryScreen->curPageIndex == 0)
     {

@@ -6697,3 +6697,24 @@ void CursorCb_MoveItem(u8 taskId)
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
 }
+
+void ShowOpponentPartyMenuInBattle(void)
+{
+    u8 battler1 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    u8 idx1 = gBattlerPartyIndexes[battler1];
+    u8 idx2 = idx1;
+    u8 cursorPos, lastIdx;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+    {
+        u8 battler2 = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+        idx2 = gBattlerPartyIndexes[battler2];
+    }
+
+    cursorPos = (idx1 < idx2) ? idx1 : idx2;
+    lastIdx = (idx1 > idx2) ? idx1 : idx2;
+
+    ShowPokemonSummaryScreen(gEnemyParty, cursorPos, lastIdx, SetCB2ToReshowScreenAfterMenu, PSS_MODE_NORMAL);
+    SetAllowedSummaryMonIndices(idx1, idx2);
+    ReshowBattleScreenDummy();
+}

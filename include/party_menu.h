@@ -85,5 +85,6 @@ void ChooseMonForDaycare(void);
 void ChoosePartyMonByMenuType(u8 menuType);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV2(u8 taskId, TaskFunc task);
+void ShowOpponentPartyMenuInBattle(void);
 
 #endif // GUARD_PARTY_MENU_H

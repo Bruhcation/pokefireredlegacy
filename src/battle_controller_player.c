@@ -85,6 +85,9 @@ static void PlayerHandleLinkStandbyMsg(void);
 static void PlayerHandleResetActionMoveSelection(void);
 static void PlayerHandleCmd55(void);
 static void PlayerCmdEnd(void);
+static void WaitForOpponentSelection(void);
+static void CheckOpponentParty(void);
+static void OpenOpponentParty(void);
 
 static void PlayerBufferRunCommand(void);
 static void HandleInputChooseTarget(void);
@@ -324,6 +327,11 @@ static void HandleInputChooseAction(void)
     else if (JOY_NEW(START_BUTTON))
     {
         SwapHpBarsWithHpText();
+    }
+    else if (JOY_NEW(SELECT_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        CheckOpponentParty();
     }
 }
 
@@ -3135,5 +3143,34 @@ static void PreviewDeterminativeMoveTargets(void)
             break;
         }
         BeginNormalPaletteFade(bitMask, 8, startY, 0, RGB_WHITE);
+    }
+}
+
+static void CheckOpponentParty(void)
+{
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    gBattlerControllerFuncs[gActiveBattler] = OpenOpponentParty;
+}
+
+static void OpenOpponentParty(void)
+{
+    if (!gPaletteFade.active)
+    {
+        gBattlerControllerFuncs[gActiveBattler] = WaitForOpponentSelection;
+        FreeAllWindowBuffers();
+        ShowOpponentPartyMenuInBattle();
+    }
+}
+
+static void WaitForOpponentSelection(void)
+{
+    if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
+    {
+        gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].healthboxIsBouncing = FALSE;
+        gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].battlerIsBouncing = FALSE;
+        DoBounceEffect(gActiveBattler, BOUNCE_HEALTHBOX, 7, 1);
+        DoBounceEffect(gActiveBattler, BOUNCE_MON, 7, 1);
+        gBattlerControllerFuncs[gActiveBattler] = PlayerBufferRunCommand;
+        gBattleControllerExecFlags |= gBitTable[gActiveBattler];
     }
 }
