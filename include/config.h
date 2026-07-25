@@ -59,6 +59,10 @@
 #define UNITS_METRIC
 #endif // ENGLISH
 
+// Replace the remaining-PP number with a type effectiveness arrow (+STAB marker)
+// on the move selection screen, once a target is known.
+#define B_SHOW_EFFECTIVENESS TRUE
+
 // Crashes may occur due to section reordering in the modern build,
 // so we force BUGFIX here.
 #if MODERN
