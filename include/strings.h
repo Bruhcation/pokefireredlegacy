@@ -1018,7 +1018,25 @@ extern const u8 gText_Next[];
 extern const u8 gText_CancelPreviousData[];
 extern const u8 gText_Area[];
 extern const u8 gText_Size[];
+extern const u8 gText_DexEvolvesInto[];
+extern const u8 gText_DexEvoUnknown[];
 extern const u8 gText_AreaUnknown[];
+extern const u8 gText_DexTradeHolding[];
+extern const u8 gText_DexNewLine[];
+extern const u8 gText_DexIndirectMarker[];
+extern const u8 gText_EvolutionsPreviousData[];
+extern const u8 gText_DexEvolvesIntoHeader[];
+extern const u8 gText_DexDoesntEvolveHeader[];
+extern const u8 gText_DexColon[];
+extern const u8 gText_DexLevel[];
+extern const u8 gText_DexIsReached[];
+extern const u8 gText_DexIsUsed[];
+extern const u8 gText_DexHighFriendship[];
+extern const u8 gText_DexTraded[];
+extern const u8 gText_DexAtkGreater[];
+extern const u8 gText_DexAtkEqual[];
+extern const u8 gText_DexAtkLess[];
+extern const u8 gText_DexShedinjaNote[];
 
 // daycare
 extern const u8 gText_Lv[];
