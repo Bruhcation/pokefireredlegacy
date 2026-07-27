@@ -5932,6 +5932,16 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
     }
 }
 
+bool32 CanSpeciesLearnTMHM(u16 species, u8 tm)
+{
+    if (species == SPECIES_NONE || species == SPECIES_EGG)
+        return FALSE;
+    else if (tm < 32)
+        return sTMHMLearnsets[species][0] & (1 << tm);
+    else
+        return sTMHMLearnsets[species][1] & (1 << (tm - 32));
+}
+
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
 {
     u16 learnedMoves[MAX_MON_MOVES];

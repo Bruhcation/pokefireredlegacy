@@ -16,6 +16,8 @@ extern const struct CompressedSpritePalette gSpritePalette_Bag;
 extern const struct CompressedSpriteSheet gBagSwapSpriteSheet;
 extern const struct CompressedSpritePalette gBagSwapSpritePalette;
 
+extern const struct SpriteTemplate sSpriteTemplate_ItemIcon;
+
 void ResetItemMenuIconState(void);
 void CreateSwapLine(void);
 void DestroyItemMenuIcon(bool8 a0);

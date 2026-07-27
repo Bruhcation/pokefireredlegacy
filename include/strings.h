@@ -1037,6 +1037,26 @@ extern const u8 gText_DexAtkGreater[];
 extern const u8 gText_DexAtkEqual[];
 extern const u8 gText_DexAtkLess[];
 extern const u8 gText_DexShedinjaNote[];
+extern const u8 gText_DexMoveEggPrefix[];
+extern const u8 gText_DexMoveLvPrefix[];
+extern const u8 gText_DexMoveTMPrefix[];
+extern const u8 gText_DexMoveHMPrefix[];
+extern const u8 gText_DexMoveTutorPrefix[];
+extern const u8 gText_DexMoveSpace[];
+extern const u8 gText_DexPowerLabel[];
+extern const u8 gText_DexAccLabel[];
+extern const u8 gText_DexThreeHyphens[];
+extern const u8 gText_DexArrowMark[];
+extern const u8 gText_MovesPreviousData[];
+extern const u8 gText_SelectAbility[];
+extern const u8 gText_SelectStats[];
+extern const u8 gText_DexStatHP[];
+extern const u8 gText_DexStatAtk[];
+extern const u8 gText_DexStatDef[];
+extern const u8 gText_DexStatSpA[];
+extern const u8 gText_DexStatSpD[];
+extern const u8 gText_DexStatSpe[];
+extern const u8 gText_DexStatTotal[];
 
 // daycare
 extern const u8 gText_Lv[];
