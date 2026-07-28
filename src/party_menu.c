@@ -264,8 +264,8 @@ static bool16 IsMonAllowedInDodrioBerryPicking(struct Pokemon *mon);
 static void Task_CancelParticipationYesNo(u8 taskId);
 static void Task_HandleCancelParticipationYesNoInput(u8 taskId);
 static void Task_TryCreateSelectionWindow(u8 taskId);
-static u16 GetTutorMove(u8 tutor);
-static bool8 CanLearnTutorMove(u16 species, u8 tutor);
+u16 GetTutorMove(u8 tutor);
+bool8 CanLearnTutorMove(u16 species, u8 tutor);
 static void CreateSelectionWindow(void);
 static bool8 ShouldUseChooseMonText(void);
 static void UpdatePartyMonHPBar(u8 spriteId, struct Pokemon *mon);
@@ -1915,7 +1915,7 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
         return CAN_LEARN_MOVE;
 }
 
-static u16 GetTutorMove(u8 tutor)
+u16 GetTutorMove(u8 tutor)
 {
     switch (tutor)
     {
@@ -1930,7 +1930,7 @@ static u16 GetTutorMove(u8 tutor)
     }
 }
 
-static bool8 CanLearnTutorMove(u16 species, u8 tutor)
+bool8 CanLearnTutorMove(u16 species, u8 tutor)
 {
     switch (tutor)
     {

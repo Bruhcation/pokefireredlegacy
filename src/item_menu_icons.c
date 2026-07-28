@@ -185,7 +185,7 @@ static const union AnimCmd *const sAnims_ItemIcon[] = {
     sAnim_ItemIcon
 };
 
-static const struct SpriteTemplate sSpriteTemplate_ItemIcon = {
+const struct SpriteTemplate sSpriteTemplate_ItemIcon = {
     .tileTag = TAG_ITEM_ICON,
     .paletteTag = TAG_ITEM_ICON,
     .oam = &sOamData_ItemIcon,
