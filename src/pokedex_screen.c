@@ -3662,6 +3662,8 @@ u8 DexScreen_DrawMonEvolutionPage(void)
     FillBgTilemapBufferRect_Palette0(2, 0, 0, 0, 30, 20);
     FillBgTilemapBufferRect_Palette0(1, 0, 0, 0, 30, 20);
 
+    FillBgTilemapBufferRect_Palette0(0, 30, 5, 6, 20, 1);
+
     if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE))
         DexScreen_CollectEvolutionChain(species, chainSpecies, chainEvo, chainDepth, &chainCount, 0);
 
@@ -4358,6 +4360,9 @@ u8 DexScreen_DrawMonStatsPage(void)
 
     DexScreen_BuildMoveList(species);
     DexScreen_InitMoveListMenuItems();
+
+    FillBgTilemapBufferRect_Palette0(0, 31, 13, 4, 1, 9);
+    // FillBgTilemapBufferRect_Palette0(0, 30, 7, 14, 18, 1);  Wasn't feeling how this line looked
 
     // Both windows created before ListMenuInit, so its init-time cursor callback has somewhere to draw
     sPokedexScreenData->windowIds[0] = AddWindow(&sWindowTemplate_MoveList);
