@@ -27,7 +27,7 @@
 #include "constants/pokemon.h"
 #include "constants/items.h"
 
-extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
+extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
 struct EvoInfo
 {
