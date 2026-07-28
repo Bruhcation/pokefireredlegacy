@@ -740,7 +740,7 @@ static bool8 UpdatePoisonStepCounter(void)
             case FLDPSN_NONE:
                 return FALSE;
             case FLDPSN_PSN:
-                return FALSE;
+                return AnyMonSurvivedFieldPoison();
             case FLDPSN_FNT:
                 return TRUE;
             }

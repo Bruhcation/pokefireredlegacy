@@ -340,6 +340,11 @@ struct SaveBlock2
               u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
               u16 optionsBattleSceneOff:1; // whether battle animations are disabled
               u16 regionMapZoom:1; // whether the map is zoomed in
+              u16 optionsEnemySummary:1; // whether the enemy's summary can be viewed with SELECT in battle
+              u16 optionsMoveEffectiveness:2; // OPTIONS_MOVE_EFFECTIVENESS_[ARROWS/COLOR/BOTH/OFF]
+              u16 optionsSurvivePoison:1; // whether POKéMON can survive poison damage outside of battle at 1 HP
+              u16 optionsFollowPokemon:1; // whether the lead POKéMON follows the player on the field
+              u16 optionsSurfPokemon:1; // whether the SURF blob sprite is replaced with the surfing POKéMON's sprite
     /*0x018*/ struct Pokedex pokedex;
     /*0x090*/ u8 filler_90[0x8];
     /*0x098*/ struct Time localTimeOffset;

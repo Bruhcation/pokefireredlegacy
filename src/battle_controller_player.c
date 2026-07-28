@@ -1452,6 +1452,8 @@ static void MoveSelectionDisplayPpNumber(void)
     txtPtr = ConvertIntToDecimalStringN(txtPtr, moveInfo->maxPp[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
 
 #if B_SHOW_EFFECTIVENESS == TRUE
+    if (gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_ARROWS
+     || gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_BOTH)
     {
         u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
         u8 moveType = gBattleMoves[move].type;
@@ -1605,11 +1607,13 @@ static void MoveSelectionDisplayMoveType(void)
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
     u8 moveType = gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type;
     u32 effectiveness = GetTargetTypeEffectiveness(moveType);
+    bool8 showColor = (gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_COLOR
+                     || gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_BOTH);
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     txtPtr = StringCopy(txtPtr, gText_MoveInterfaceDynamicColors);
 
-    if (effectiveness > TYPE_MUL_NORMAL)
+    if (showColor && effectiveness > TYPE_MUL_NORMAL)
     {
         *txtPtr++ = EXT_CTRL_CODE_BEGIN;
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
@@ -1619,7 +1623,7 @@ static void MoveSelectionDisplayMoveType(void)
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
         *txtPtr++ = 0x5E;
     }
-    else if (effectiveness < TYPE_MUL_NORMAL)
+    else if (showColor && effectiveness < TYPE_MUL_NORMAL)
     {
         *txtPtr++ = EXT_CTRL_CODE_BEGIN;
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
