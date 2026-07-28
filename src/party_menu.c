@@ -405,6 +405,7 @@ static bool8 MonCanEvolve(void);
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType);
 static void ItemEffectToStatString(u8 effectType, u8 *dest);
 static void Task_WaitRareCandyMessage(u8 taskId);
+static u8 GetFieldMoveHmIndex(u16 move);
 
 
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
@@ -2994,6 +2995,24 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
+// Returns the CanMonLearnTMHM() "tm" index for the given HM move, or 0xFF if it's not
+// one of the 7 badge-gated HMs (i.e. it's Teleport/Dig/Milk Drink/Soft-Boiled/Sweet Scent,
+// which the FIELD MOVES hack option intentionally does not apply to).
+static u8 GetFieldMoveHmIndex(u16 move)
+{
+    switch (move)
+    {
+    case MOVE_CUT:        return ITEM_HM01_CUT - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_FLY:         return ITEM_HM02_FLY - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_SURF:        return ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_STRENGTH:    return ITEM_HM04_STRENGTH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_FLASH:       return ITEM_HM05_FLASH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_ROCK_SMASH:  return ITEM_HM06_ROCK_SMASH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_WATERFALL:   return ITEM_HM07_WATERFALL - ITEM_TM01_FOCUS_PUNCH;
+    default:               return 0xFF;
+    }
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
@@ -3001,24 +3020,36 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SUMMARY);
 
-    for (i = 0; i < MAX_MON_MOVES; ++i)
+    for (j = 0; sFieldMoves[j] != FIELD_MOVE_END; ++j)
     {
-        for (j = 0; sFieldMoves[j] != FIELD_MOVE_END; ++j)
+        bool8 knowsMove = FALSE;
+        for (i = 0; i < MAX_MON_MOVES; ++i)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+                knowsMove = TRUE;
                 break;
             }
         }
+
+        if (knowsMove)
+        {
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+        }
+        else if (gSaveBlock2Ptr->optionsFieldMoveLearnset)
+        {
+            u8 hmIndex = GetFieldMoveHmIndex(sFieldMoves[j]);
+            if (hmIndex != 0xFF && CanMonLearnTMHM(&mons[slotId], hmIndex))
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+        }
     }
     if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SWITCH);
-    if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_MAIL);
-    else
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_ITEM);
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_CANCEL1);
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SWITCH);
+        if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_MAIL);
+        else
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_ITEM);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_CANCEL1);
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)

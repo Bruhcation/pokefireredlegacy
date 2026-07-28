@@ -45,6 +45,7 @@ enum
     HACKMENUITEM_SURVIVEPOISON,
     HACKMENUITEM_FOLLOWPOKEMON,
     HACKMENUITEM_SURFPOKEMON,
+    HACKMENUITEM_FIELDMOVELEARNSET,
     HACKMENUITEM_BACK,
     HACKMENUITEM_COUNT
 };
@@ -194,7 +195,7 @@ static const u8 *const sBattleMenuItemsNames[BATTLEMENUITEM_COUNT] =
 };
 
 // Items inside the HACK OPTIONS submenu. 0 = not cyclable (BACK just exits the submenu).
-static const u16 sHackOptionsItemCounts[HACKMENUITEM_COUNT] = {2, 4, 2, 2, 2, 0};
+static const u16 sHackOptionsItemCounts[HACKMENUITEM_COUNT] = {2, 4, 2, 2, 2, 2, 0};
 
 static const u8 *const sHackOptionsItemsNames[HACKMENUITEM_COUNT] =
 {
@@ -203,6 +204,7 @@ static const u8 *const sHackOptionsItemsNames[HACKMENUITEM_COUNT] =
     [HACKMENUITEM_SURVIVEPOISON]     = gText_SurvivePoison,
     [HACKMENUITEM_FOLLOWPOKEMON]     = gText_FollowPokemon,
     [HACKMENUITEM_SURFPOKEMON]       = gText_SurfPokemon,
+    [HACKMENUITEM_FIELDMOVELEARNSET] = gText_FieldMoveLearnset,
     [HACKMENUITEM_BACK]              = gText_Back,
 };
 
@@ -276,6 +278,12 @@ static const u8 *const sSurfPokemonOptions[] =
     gText_BattleSceneOff
 };
 
+static const u8 *const sFieldMoveLearnsetOptions[] =
+{
+    gText_BattleSceneOn,
+    gText_BattleSceneOff
+};
+
 static const u8 sOptionMenuPickSwitchCancelTextColor[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 static const u8 sOptionMenuTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_RED};
 
@@ -318,6 +326,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->hackOption[HACKMENUITEM_SURVIVEPOISON] = gSaveBlock2Ptr->optionsSurvivePoison;
     sOptionMenuPtr->hackOption[HACKMENUITEM_FOLLOWPOKEMON] = gSaveBlock2Ptr->optionsFollowPokemon;
     sOptionMenuPtr->hackOption[HACKMENUITEM_SURFPOKEMON] = !FlagGet(FLAG_ENABLE_SURFOVERWORLD);
+    sOptionMenuPtr->hackOption[HACKMENUITEM_FIELDMOVELEARNSET] = gSaveBlock2Ptr->optionsFieldMoveLearnset;
     
     for (i = 0; i < MENUITEM_COUNT - 1; i++)
     {
@@ -714,6 +723,9 @@ static void BufferOptionMenuString(u8 selection)
         case HACKMENUITEM_SURFPOKEMON:
             AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, sSurfPokemonOptions[sOptionMenuPtr->hackOption[selection]]);
             break;
+        case HACKMENUITEM_FIELDMOVELEARNSET:
+            AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, sFieldMoveLearnsetOptions[sOptionMenuPtr->hackOption[selection]]);
+            break;
         default: // HACKMENUITEM_BACK: no value column
             break;
         }
@@ -789,6 +801,8 @@ static void CloseAndSaveOptionMenu(u8 taskId)
         FlagSet(FLAG_ENABLE_SURFOVERWORLD);
     else
         FlagClear(FLAG_ENABLE_SURFOVERWORLD);
+    
+    gSaveBlock2Ptr->optionsFieldMoveLearnset = sOptionMenuPtr->hackOption[HACKMENUITEM_FIELDMOVELEARNSET];
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);
 }

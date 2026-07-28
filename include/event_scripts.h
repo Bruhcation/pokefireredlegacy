@@ -946,6 +946,8 @@ extern const u8 Help_Text_SurfingPokemonTerm[];
 extern const u8 Help_Text_DefineSurfingPokemon[];
 extern const u8 Help_Text_StabTerm[];
 extern const u8 Help_Text_DefineStab[];
+extern const u8 Help_Text_FieldMoveLearnsetTerm[];
+extern const u8 Help_Text_DefineFieldMoveLearnset[];
 extern const u8 Help_Text_RegisterKeyItem[];
 extern const u8 Help_Text_UsingBall[];
 extern const u8 Help_Text_UsingBait[];

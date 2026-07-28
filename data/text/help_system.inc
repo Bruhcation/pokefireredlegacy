@@ -1955,3 +1955,11 @@ Help_Text_DefineStab::
 	.string "Same-Type Attack Bonus. Increases\n"
 	.string "the power of moves that match the\l"
 	.string "POKéMON's own type by x1.5.$"
+
+Help_Text_FieldMoveLearnsetTerm::
+	.string "FIELD MOVES$"
+
+Help_Text_DefineFieldMoveLearnset::
+	.string "Lets a POKéMON that can LEARN an\n"
+	.string "HM move use it without knowing it.\l"
+	.string "Still requires the right badge.$"

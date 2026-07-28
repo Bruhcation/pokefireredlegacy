@@ -959,6 +959,7 @@ extern const u8 gText_MoveEffectivenessLabel[];
 extern const u8 gText_SurvivePoison[];
 extern const u8 gText_FollowPokemon[];
 extern const u8 gText_SurfPokemon[];
+extern const u8 gText_FieldMoveLearnset[];
 extern const u8 gText_MoveEffectivenessArrows[];
 extern const u8 gText_MoveEffectivenessColor[];
 extern const u8 gText_MoveEffectivenessBoth[];

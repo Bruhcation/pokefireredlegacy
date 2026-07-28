@@ -18,6 +18,9 @@
 #include "battle_interface.h"
 #include "battle_message.h"
 #include "battle_script_commands.h"
+#include "battle_util.h"
+#include "constants/battle_move_effects.h"
+#include "constants/hold_effects.h"
 #include "reshow_battle_screen.h"
 #include "constants/battle_anim.h"
 #include "constants/items.h"
@@ -94,7 +97,7 @@ static void HandleInputChooseTarget(void);
 static void MoveSelectionDisplayPpNumber(void);
 static void MoveSelectionDisplayPpString(void);
 static void MoveSelectionDisplayMoveType(void);
-static u32 GetTargetTypeEffectiveness(u8 moveType);   // <-- add this line
+static u32 GetTargetTypeEffectiveness(u8 moveType);
 static void MoveSelectionDisplayMoveDescription(void);
 static void MoveSelectionDisplayMoveNames(void);
 static void HandleMoveSwitching(void);
@@ -118,6 +121,9 @@ static void Task_CreateLevelUpVerticalStripes(u8 taskId);
 // static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit, bool8);
 static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit);
 static void EndDrawPartyStatusSummary(void);
+static bool8 IsFieldSportActive(u32 status3Flag);
+static u16 GetDynamicMoveDescPower(u16 move, u8 attacker);
+static u16 GetDynamicMoveDescAccuracy(u16 move, u8 attacker, u8 defender);
 
 static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
 {
@@ -1504,12 +1510,123 @@ static void MoveSelectionDisplayPpNumber(void)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
 }
 
+struct MoveDescStatFraction { u8 dividend; u8 divisor; };
+static const struct MoveDescStatFraction sMoveDescAccStageRatios[] =
+{
+    { 33, 100}, { 36, 100}, { 43, 100}, { 50, 100}, { 60, 100}, { 75, 100},
+    {  1,   1},
+    {133, 100}, {166, 100}, {  2,   1}, {233, 100}, {133,  50}, {  3,   1},
+};
+
+static bool8 IsFieldSportActive(u32 status3Flag)
+{
+    u8 i;
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (gStatuses3[i] & status3Flag)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Mirrors the power modifiers applied in CalculateBaseDamage (pokemon.c)
+static u16 GetDynamicMoveDescPower(u16 move, u8 attacker)
+{
+    u16 power = gBattleMoves[move].power;
+    u8 type = gBattleMoves[move].type;
+
+    if (power < 2)
+        return power;
+
+    if (type == TYPE_ELECTRIC && IsFieldSportActive(STATUS3_MUDSPORT))
+        power /= 2;
+    if (type == TYPE_FIRE && IsFieldSportActive(STATUS3_WATERSPORT))
+        power /= 2;
+    if (type == TYPE_GRASS && gBattleMons[attacker].ability == ABILITY_OVERGROW && gBattleMons[attacker].hp <= (gBattleMons[attacker].maxHP / 3))
+        power = (150 * power) / 100;
+    if (type == TYPE_FIRE && gBattleMons[attacker].ability == ABILITY_BLAZE && gBattleMons[attacker].hp <= (gBattleMons[attacker].maxHP / 3))
+        power = (150 * power) / 100;
+    if (type == TYPE_WATER && gBattleMons[attacker].ability == ABILITY_TORRENT && gBattleMons[attacker].hp <= (gBattleMons[attacker].maxHP / 3))
+        power = (150 * power) / 100;
+    if (type == TYPE_BUG && gBattleMons[attacker].ability == ABILITY_SWARM && gBattleMons[attacker].hp <= (gBattleMons[attacker].maxHP / 3))
+        power = (150 * power) / 100;
+    if (type == TYPE_NORMAL && gBattleMons[attacker].ability == ABILITY_COLOR_CHANGE)
+        power = (150 * power) / 100;
+
+    if (power < 1)
+        power = 1;
+
+    return power;
+}
+
+// Mirrors the accuracy formula in Cmd_accuracycheck (battle_script_commands.c)
+static u16 GetDynamicMoveDescAccuracy(u16 move, u8 attacker, u8 defender)
+{
+    u8 type = gBattleMoves[move].type;
+    u8 moveAcc = gBattleMoves[move].accuracy;
+    s8 buff;
+    u16 calc;
+    u8 holdEffect, param;
+
+    if (moveAcc == 0)
+        return 0;
+
+    if ((gBattleMons[defender].status2 & STATUS2_FORESIGHT) || (gBattleMons[attacker].ability == ABILITY_ILLUMINATE))
+        buff = gBattleMons[attacker].statStages[STAT_ACC];
+    else
+        buff = gBattleMons[attacker].statStages[STAT_ACC] + DEFAULT_STAT_STAGE - gBattleMons[defender].statStages[STAT_EVASION];
+
+    if (buff < MIN_STAT_STAGE)
+        buff = MIN_STAT_STAGE;
+    if (buff > MAX_STAT_STAGE)
+        buff = MAX_STAT_STAGE;
+
+    if (WEATHER_HAS_EFFECT && gBattleWeather & B_WEATHER_SUN && gBattleMoves[move].effect == EFFECT_THUNDER)
+        moveAcc = 50;
+
+    calc = sMoveDescAccStageRatios[buff].dividend * moveAcc;
+    calc /= sMoveDescAccStageRatios[buff].divisor;
+
+    if (gBattleMons[attacker].ability == ABILITY_COMPOUND_EYES)
+        calc = (calc * 130) / 100;
+    if (WEATHER_HAS_EFFECT && gBattleMons[defender].ability == ABILITY_SAND_VEIL && gBattleWeather & B_WEATHER_SANDSTORM)
+        calc = (calc * 80) / 100;
+    if (gBattleMons[attacker].ability == ABILITY_HUSTLE && IS_TYPE_PHYSICAL(type))
+        calc = (calc * 80) / 100;
+
+    if (gBattleMons[defender].item == ITEM_ENIGMA_BERRY)
+    {
+        holdEffect = gEnigmaBerries[defender].holdEffect;
+        param = gEnigmaBerries[defender].holdEffectParam;
+    }
+    else
+    {
+        holdEffect = ItemId_GetHoldEffect(gBattleMons[defender].item);
+        param = ItemId_GetHoldEffectParam(gBattleMons[defender].item);
+    }
+
+    if (holdEffect == HOLD_EFFECT_EVASION_UP)
+        calc = (calc * (100 - param)) / 100;
+    if (gBattleMons[defender].ability == ABILITY_STENCH)
+        calc = (calc * (100 - param)) / 100;
+
+    if (calc > 100)
+        calc = 100;
+    if (calc < 1)
+        calc = 1;
+
+    return calc;
+}
+
 static void MoveSelectionDisplayMoveDescription(void)
  {
      struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleBufferA[gActiveBattler][4]);
      u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
-     u16 pwr = gBattleMoves[move].power;
-     u16 acc = gBattleMoves[move].accuracy;
+     u8 defender = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
+     u16 basePwr = gBattleMoves[move].power;
+     u16 baseAcc = gBattleMoves[move].accuracy;
+     u16 pwr = GetDynamicMoveDescPower(move, gActiveBattler);
+     u16 acc = GetDynamicMoveDescAccuracy(move, gActiveBattler, defender);
      s16 pri = gBattleMoves[move].priority;
      u8 pwr_num[3], acc_num[3], pri_num[3], i;
      u8 pwr_desc[7] = _("PWR: ");
@@ -1518,6 +1635,10 @@ static void MoveSelectionDisplayMoveDescription(void)
      u8 pwr_start[] = _("{CLEAR_TO 0x03}");
      u8 acc_start[] = _("{CLEAR_TO 0x38}");
      u8 pri_start[] = _("{CLEAR_TO 0x6D}");
+     u8 color_green[] = {EXT_CTRL_CODE_BEGIN, EXT_CTRL_CODE_COLOR, 0x53, EOS};
+     u8 color_red[]   = {EXT_CTRL_CODE_BEGIN, EXT_CTRL_CODE_COLOR, 0x51, EOS};
+     u8 color_reset[] = {EXT_CTRL_CODE_BEGIN, EXT_CTRL_CODE_COLOR, 0x5C, EOS};
+
      LoadStdWindowFrameGfx();
      DrawStdWindowFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
      if (pwr < 2)
@@ -1531,10 +1652,22 @@ static void MoveSelectionDisplayMoveDescription(void)
      ConvertIntToDecimalStringN(pri_num, pri, STR_CONV_MODE_LEFT_ALIGN, 2);
      StringCopy(gDisplayedStringBattle, pwr_start);
      StringAppend(gDisplayedStringBattle, pwr_desc);
+     if (pwr > basePwr)
+         StringAppend(gDisplayedStringBattle, color_green);
+     else if (pwr < basePwr)
+         StringAppend(gDisplayedStringBattle, color_red);
      StringAppend(gDisplayedStringBattle, pwr_num);
+     if (pwr != basePwr)
+         StringAppend(gDisplayedStringBattle, color_reset);
      StringAppend(gDisplayedStringBattle, acc_start);
      StringAppend(gDisplayedStringBattle, acc_desc);
+     if (acc > baseAcc)
+         StringAppend(gDisplayedStringBattle, color_green);
+     else if (acc < baseAcc && acc != 0)
+         StringAppend(gDisplayedStringBattle, color_red);
      StringAppend(gDisplayedStringBattle, acc_num);
+     if (acc != baseAcc)
+         StringAppend(gDisplayedStringBattle, color_reset);
      StringAppend(gDisplayedStringBattle, pri_start);
      StringAppend(gDisplayedStringBattle, pri_desc);
      StringAppend(gDisplayedStringBattle, pri_num);

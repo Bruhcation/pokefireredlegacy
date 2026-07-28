@@ -447,6 +447,7 @@ enum
     HELP_TERM_FOLLOWING_POKEMON,
     HELP_TERM_SURFING_POKEMON,
     HELP_TERM_STAB,
+    HELP_TERM_FIELD_MOVE_LEARNSET,
 };
 
 static const u8 *const sHelpSystemTermTextPtrs[] = {
@@ -499,7 +500,8 @@ static const u8 *const sHelpSystemTermTextPtrs[] = {
     [HELP_TERM_SURVIVE_POISON]     = Help_Text_SurvivePoisonTerm,
     [HELP_TERM_FOLLOWING_POKEMON]  = Help_Text_FollowingPokemonTerm,
     [HELP_TERM_SURFING_POKEMON]    = Help_Text_SurfingPokemonTerm,
-    [HELP_TERM_STAB]               = Help_Text_StabTerm
+    [HELP_TERM_STAB]               = Help_Text_StabTerm,
+    [HELP_TERM_FIELD_MOVE_LEARNSET] = Help_Text_FieldMoveLearnsetTerm
 };
 
 static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
@@ -552,7 +554,8 @@ static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
     [HELP_TERM_SURVIVE_POISON]     = Help_Text_DefineSurvivePoison,
     [HELP_TERM_FOLLOWING_POKEMON]  = Help_Text_DefineFollowingPokemon,
     [HELP_TERM_SURFING_POKEMON]    = Help_Text_DefineSurfingPokemon,
-    [HELP_TERM_STAB]               = Help_Text_DefineStab
+    [HELP_TERM_STAB]               = Help_Text_DefineStab,
+    [HELP_TERM_FIELD_MOVE_LEARNSET] = Help_Text_DefineFieldMoveLearnset
 };
 
 // Submenu IDs for TOPIC_ABOUT_GAME
@@ -856,6 +859,7 @@ static const u8 sTerms_HackOptions[] = {
     HELP_TERM_SURVIVE_POISON,
     HELP_TERM_FOLLOWING_POKEMON,
     HELP_TERM_SURFING_POKEMON,
+    HELP_TERM_FIELD_MOVE_LEARNSET,
     HELP_END
 };
 

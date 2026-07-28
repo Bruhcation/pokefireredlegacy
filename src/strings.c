@@ -902,6 +902,7 @@ const u8 gText_MoveEffectivenessLabel[] = _("EFFECTIVENESS");
 const u8 gText_SurvivePoison[] = _("SURVIVE POISON");
 const u8 gText_FollowPokemon[] = _("FOLLOW POKéMON");
 const u8 gText_SurfPokemon[] = _("SURF POKéMON");
+const u8 gText_FieldMoveLearnset[] = _("FIELD MOVES");
 const u8 gText_MoveEffectivenessArrows[] = _("ARROWS");
 const u8 gText_MoveEffectivenessColor[] = _("COLOR");
 const u8 gText_MoveEffectivenessBoth[] = _("BOTH");
