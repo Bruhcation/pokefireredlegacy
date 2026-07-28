@@ -298,7 +298,11 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     {
         gFieldInputRecord.pressedSelectButton = TRUE;
         //New Registered Items Menu
-        if (gSaveBlock1Ptr->registeredItems[0].itemId != ITEM_NONE)
+        if (gSaveBlock1Ptr->registeredItemListCount == 1)
+        {
+            UseRegisteredKeyItemOnField(1);
+        }
+        else if (gSaveBlock1Ptr->registeredItemListCount > 1)
         {
             TxRegItemsMenu_OpenMenu();
         }
