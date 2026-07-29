@@ -108,6 +108,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void);
 static void ReturnFromBattleToOverworld(void);
 static void TryEvolvePokemon(void);
 static void WaitForEvoSceneToFinish(void);
+static bool8 partyMonHoldDoublePrizeEffect(void);
 
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
@@ -2222,7 +2223,10 @@ static void BattleStartClearSetData(void)
     if (gBattleStruct->safariEscapeFactor <= 1)
         gBattleStruct->safariEscapeFactor = 2;
     gBattleStruct->wildVictorySong = 0;
-    gBattleStruct->moneyMultiplier = 1;
+    if (partyMonHoldDoublePrizeEffect())
+        gBattleStruct->moneyMultiplier = 2;
+    else
+        gBattleStruct->moneyMultiplier = 1;
 
     for (i = 0; i < 8; i++)
     {
@@ -4425,4 +4429,16 @@ static void HandleAction_ActionFinished(void)
     gBattleCommunication[ACTIONS_CONFIRMED_COUNT] = 0;
     gBattleScripting.multihitMoveEffect = 0;
     gBattleResources->battleScriptsStack->size = 0;
+}
+
+static bool8 partyMonHoldDoublePrizeEffect(void)
+{
+    int i;
+    for (i = 0; i < PARTY_SIZE; i++){
+        u8 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+
+        if (ItemId_GetHoldEffect(item) == HOLD_EFFECT_DOUBLE_PRIZE)
+            return TRUE;
+    }
+    return FALSE;
 }
