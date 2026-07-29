@@ -1558,7 +1558,7 @@ void ResetContextNpcTextColor(void)
 
 u8 ContextNpcGetTextColor(void)
 {
-    u16 gfxId;
+    u8 gfxId;
     if (gSpecialVar_TextColor != NPC_TEXT_COLOR_DEFAULT)
     {
         // A text color has been specified, use that
