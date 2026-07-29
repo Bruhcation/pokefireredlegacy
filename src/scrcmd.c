@@ -1850,6 +1850,26 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext * ctx)
             break;
         }
     }
+    if (gSpecialVar_Result == PARTY_SIZE && !gSaveBlock2Ptr->optionsFieldMoveLearnset)
+    {
+        u8 hmIndex = GetFieldMoveHmIndex(moveId);
+        if (hmIndex != 0xFF)
+        {
+            for (i = 0; i < PARTY_SIZE; i++)
+            {
+                u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+                if (!species)
+                    break;
+                if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanMonLearnTMHM(&gPlayerParty[i], hmIndex)
+                && !(GetMonData(&gPlayerParty[i], MON_DATA_DEAD) && FlagGet(FLAG_NUZLOCKE)))
+                {
+                    gSpecialVar_Result = i;
+                    gSpecialVar_0x8004 = species;
+                    break;
+                }
+            }
+        }
+    }
     return FALSE;
 }
 

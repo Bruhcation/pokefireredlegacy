@@ -1197,7 +1197,7 @@ bool8 PartyHasMonWithSurf(void)
                 break;
             if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
                 return TRUE;
-            if (gSaveBlock2Ptr->optionsFieldMoveLearnset && CanMonLearnTMHM(&gPlayerParty[i], ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH))
+            if (!gSaveBlock2Ptr->optionsFieldMoveLearnset && CanMonLearnTMHM(&gPlayerParty[i], ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH))
                 return TRUE;
         }
     }

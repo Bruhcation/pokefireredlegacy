@@ -405,7 +405,8 @@ static bool8 MonCanEvolve(void);
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType);
 static void ItemEffectToStatString(u8 effectType, u8 *dest);
 static void Task_WaitRareCandyMessage(u8 taskId);
-static u8 GetFieldMoveHmIndex(u16 move);
+static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move);
+static bool8 IsFieldMoveTriggeredFromOverworld(u16 move);
 
 
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
@@ -2998,7 +2999,7 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 // Returns the CanMonLearnTMHM() "tm" index for the given HM move, or 0xFF if it's not
 // one of the 7 badge-gated HMs (i.e. it's Teleport/Dig/Milk Drink/Soft-Boiled/Sweet Scent,
 // which the FIELD MOVES hack option intentionally does not apply to).
-static u8 GetFieldMoveHmIndex(u16 move)
+u8 GetFieldMoveHmIndex(u16 move)
 {
     switch (move)
     {
@@ -3013,43 +3014,91 @@ static u8 GetFieldMoveHmIndex(u16 move)
     }
 }
 
+// Cut/Strength/Surf/Rock Smash/Waterfall can be triggered directly from the overworld
+// (checkpartymove / PartyHasMonWithSurf), so the FIELD MOVES option intentionally does NOT
+// list them here via the can-learn bypass - only via genuinely knowing them.
+static bool8 IsFieldMoveTriggeredFromOverworld(u16 move)
+{
+    switch (move)
+    {
+    case MOVE_CUT:
+    case MOVE_STRENGTH:
+    case MOVE_SURF:
+    case MOVE_ROCK_SMASH:
+    case MOVE_WATERFALL:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+// Checks whether a species could ever learn this field move, regardless of how it's taught:
+// HM (Flash/Fly), TM (Dig), or level-up only (Teleport/Sweet Scent/Milk Drink/Soft-Boiled).
+static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move)
+{
+    u8 hmIndex = GetFieldMoveHmIndex(move);
+    int i;
+
+    if (hmIndex != 0xFF)
+        return CanMonLearnTMHM(mon, hmIndex) != 0;
+
+    if (move == MOVE_DIG)
+        return CanMonLearnTMHM(mon, ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH) != 0;
+
+    for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
+    {
+        if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == move)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    u16 knownMovesMask = 0;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SUMMARY);
 
+    // Pass 1: moves the mon actually knows always get shown (can never exceed MAX_MON_MOVES).
+    // Remembers which sFieldMoves indices matched so Pass 2 never has to re-scan the moveset.
     for (j = 0; sFieldMoves[j] != FIELD_MOVE_END; ++j)
     {
-        bool8 knowsMove = FALSE;
         for (i = 0; i < MAX_MON_MOVES; ++i)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                knowsMove = TRUE;
+                knownMovesMask |= 1 << j;
+                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
                 break;
             }
         }
+    }
 
-        if (knowsMove)
+    // Pass 2: fill any remaining slots with can-learn (but not known, and not overworld-triggered) moves
+    if (!gSaveBlock2Ptr->optionsFieldMoveLearnset)
+    {
+        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, NULL);
+        if (species != SPECIES_EGG)
         {
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
-        }
-        else if (gSaveBlock2Ptr->optionsFieldMoveLearnset)
-        {
-            u8 hmIndex = GetFieldMoveHmIndex(sFieldMoves[j]);
-            if (hmIndex != 0xFF && CanMonLearnTMHM(&mons[slotId], hmIndex))
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+            for (j = 0; sFieldMoves[j] != FIELD_MOVE_END && sPartyMenuInternal->numActions < 1 + MAX_MON_MOVES; ++j)
+            {
+                if (!(knownMovesMask & (1 << j)) && !IsFieldMoveTriggeredFromOverworld(sFieldMoves[j]))
+                {
+                    if (CanMonLearnFieldMove(&mons[slotId], species, sFieldMoves[j]))
+                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+                }
+            }
         }
     }
     if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SWITCH);
-        if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_MAIL);
-        else
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_ITEM);
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_CANCEL1);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SWITCH);
+    if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_MAIL);
+    else
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_ITEM);
+    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_CANCEL1);
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)
