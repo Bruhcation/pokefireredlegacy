@@ -70,7 +70,6 @@ enum {
 #define DISC_CASE_DISTANCE 20 // The total number of pixels a disc travels vertically in/out of the case
 #define DISC_Y_MOVE 10 // The number of pixels a disc travels vertically per movement step
 
-#define TAG_DISC 400
 
 #define DISC_HIDDEN 0xFF // When no TM/HM is selected, hide the disc sprite
 
@@ -174,7 +173,7 @@ static void HandleCreateYesNoMenu(u8 taskId, const struct YesNoFuncTable * ptrs)
 static u8 AddContextMenu(u8 * windowId, u8 windowIndex);
 static void RemoveContextMenu(u8 * windowId);
 static u8 CreateDiscSprite(u16 itemId);
-static void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx);
+void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx);
 static void TintDiscpriteByType(u8 type);
 static void SetDiscSpritePosition(struct Sprite *sprite, u8 tmIdx);
 static void SwapDisc(u8 spriteId, u16 itemId);
@@ -377,13 +376,13 @@ static const union AnimCmd *const sAnims_Disc[] = {
     [ANIM_HM] = sAnim_HM
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_Disc = {
+const struct CompressedSpriteSheet sSpriteSheet_Disc = {
     .data = gTMCaseDisc_Gfx,
     .size = 0x400,
     .tag = TAG_DISC
 };
 
-static const struct SpriteTemplate sSpriteTemplate_Disc = {
+const struct SpriteTemplate sSpriteTemplate_Disc = {
     .tileTag = TAG_DISC,
     .paletteTag = TAG_DISC,
     .oam = &sTMSpriteOamData,
@@ -393,7 +392,7 @@ static const struct SpriteTemplate sSpriteTemplate_Disc = {
     .callback = SpriteCallbackDummy
 };
 
-static const u16 sTMSpritePaletteOffsetByType[NUMBER_OF_MON_TYPES] = {
+const u16 sTMSpritePaletteOffsetByType[NUMBER_OF_MON_TYPES] = {
     [TYPE_NORMAL]   = 0x000,
     [TYPE_FIRE]     = 0x010,
     [TYPE_WATER]    = 0x020,
@@ -1638,7 +1637,7 @@ static u8 CreateDiscSprite(u16 itemId)
     }
 }
 
-static void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx)
+void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx)
 {
     if (tmIdx >= NUM_TECHNICAL_MACHINES)
         StartSpriteAnim(sprite, ANIM_HM);

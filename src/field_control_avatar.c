@@ -31,6 +31,8 @@
 #include "constants/maps.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/region_map_sections.h"
+//New Registered Items Menu
+#include "tx_registered_items_menu.h"
 
 #define SIGNPOST_POKECENTER 0
 #define SIGNPOST_POKEMART 1
@@ -291,9 +293,19 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+    //if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+	if (input->pressedSelectButton)//New Registered Item Menu
     {
         gFieldInputRecord.pressedSelectButton = TRUE;
+        //New Registered Items Menu
+        if (gSaveBlock1Ptr->registeredItems[0].itemId != ITEM_NONE)
+        {
+            TxRegItemsMenu_OpenMenu();
+        }
+        else
+        {
+            ScriptContext_SetupScript(EventScript_BagItemCanBeRegistered);
+        }
         return TRUE;
     }
 

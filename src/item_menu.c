@@ -36,6 +36,9 @@
 #include "constants/quest_log.h"
 #include "constants/global.h"
 #include "event_data.h"
+//New Registered Items Menu
+#include "tx_registered_items_menu.h"
+#include "script_menu.h"
 
 static const u16 sItemsByType[ITEMS_COUNT];
 void BagMenu_Print(u8, u8, const u8*, u8, u8, u8, u8, u8, u8);
@@ -127,6 +130,7 @@ static void Task_SelectQuantityToToss(u8 taskId);
 static void Task_TossItem_Yes(u8 taskId);
 static void Task_WaitAB_RedrawAndReturnToBag(u8 taskId);
 static void Task_ItemMenuAction_ToggleSelect(u8 taskId);
+static void Task_ItemMenuAction_ToggleCancelSelect(u8 taskId);//New Registered Items Menu
 static void Task_ItemMenuAction_Give(u8 taskId);
 static void Task_PrintThereIsNoPokemon(u8 taskId);
 static void Task_ItemMenuAction_Cancel(u8 taskId);
@@ -182,6 +186,9 @@ static s8 CompareItemsByMost(struct ItemSlot* itemSlot1, struct ItemSlot* itemSl
 static s8 CompareItemsByType(struct ItemSlot* itemSlot1, struct ItemSlot* itemSlot2);
 static s8 CompareItemsById(struct ItemSlot* itemSlot1, struct ItemSlot* itemSlot2);
 
+//New Registered Item Menu
+static void ResetRegisteredItem(u16 itemId);
+
 static const struct BgTemplate sBgTemplates[2] = {
     {
         .bg = 0,
@@ -230,7 +237,7 @@ static const struct MenuAction sItemMenuContextActions[] = {
     [ITEMMENUACTION_OPEN] =         {gOtherText_Open, {.void_u8 = Task_ItemMenuAction_Use}},
     [ITEMMENUACTION_OPEN_BERRIES] = {gOtherText_Open, {.void_u8 = Task_ItemMenuAction_BattleUse}},
     [ITEMMENUACTION_WALK] =         {gOtherText_Walk, {.void_u8 = Task_ItemMenuAction_Use}},
-    [ITEMMENUACTION_DESELECT] =     {gOtherText_Deselect, {.void_u8 = Task_ItemMenuAction_ToggleSelect}},
+    [ITEMMENUACTION_DESELECT] =     {gOtherText_Deselect, {.void_u8 = Task_ItemMenuAction_ToggleCancelSelect}},
     [ITEMMENUACTION_BY_NAME] =      {sMenuText_ByName, ItemMenu_SortByName},
     [ITEMMENUACTION_BY_TYPE] =      {sMenuText_ByType, ItemMenu_SortByType},
     [ITEMMENUACTION_BY_AMOUNT] =    {sMenuText_ByAmount, ItemMenu_SortByAmount},
@@ -747,7 +754,8 @@ static void BagListMenuItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringExpandPlaceholders(gStringVar4, gText_TimesStrVar1);
             BagPrintTextOnWindow(windowId, FONT_SMALL, gStringVar4, 0x6e, y, 0, 0, 0xFF, 1);
         }
-        else if (gSaveBlock1Ptr->registeredItem != ITEM_NONE && gSaveBlock1Ptr->registeredItem == bagItemId)
+        //New Registered Items Menu
+        else if (TxRegItemsMenu_CheckRegisteredHasItem(bagItemId))
         {
             BlitBitmapToWindow(windowId, sBlit_SelectButton, 0x70, y, 0x18, 0x10);
         }
@@ -1451,7 +1459,9 @@ static void OpenContextMenu(u8 taskId)
                 sContextMenuItemsPtr = sContextMenuItemsBuffer;
                 sContextMenuNumItems = 3;
                 sContextMenuItemsBuffer[2] = ITEMMENUACTION_CANCEL;
-                if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
+                //if (gSaveBlock1Ptr->registeredItem == gSpecialVar_ItemId)
+                //New Registered Items Menu
+                if (TxRegItemsMenu_CheckRegisteredHasItem(gSpecialVar_ItemId))
                     sContextMenuItemsBuffer[1] = ITEMMENUACTION_DESELECT;
                 else
                     sContextMenuItemsBuffer[1] = ITEMMENUACTION_REGISTER;
@@ -1641,16 +1651,62 @@ static void Task_WaitAB_RedrawAndReturnToBag(u8 taskId)
     }
 }
 
+static const u8 gText_TooManyRegistered[] = _("You already have too\nmany items registered!{PAUSE_UNTIL_PRESS}");
+static void Task_ItemMenuAction_Cancel_RegisterFull(u8 taskId)
+{
+    s16* data = gTasks[taskId].data;
+
+    HideBagWindow(10);
+    HideBagWindow(6);
+    PutWindowTilemap(0);
+    PutWindowTilemap(1);
+    ScheduleBgCopyTilemapToVram(0);
+    bag_menu_print_cursor_(gTasks[taskId].data[0], 1);
+    StringExpandPlaceholders(gStringVar4, gText_TooManyRegistered);
+    DisplayItemMessageInBag(taskId, FONT_NORMAL, gStringVar4, Task_ReturnToBagFromContextMenu);
+}
+
 static void Task_ItemMenuAction_ToggleSelect(u8 taskId)
+{
+	//New Registered Items Menu
+    u16 itemId;
+    s16 *data = gTasks[taskId].data;
+	u8 i;
+    u8 slot = 0xFF;
+	
+    itemId = BagGetItemIdByPocketPosition(gBagMenuState.pocket + 1, data[1]);
+    if (TxRegItemsMenu_AddRegisteredItem(gSpecialVar_ItemId))
+    {
+        DestroyListMenuTask(data[0], &gBagMenuState.cursorPos[gBagMenuState.pocket], &gBagMenuState.itemsAbove[gBagMenuState.pocket]);
+        Bag_BuildListMenuTemplate(gBagMenuState.pocket);
+        data[0] = ListMenuInit(&gMultiuseListMenuTemplate, gBagMenuState.cursorPos[gBagMenuState.pocket], gBagMenuState.itemsAbove[gBagMenuState.pocket]);
+        CopyWindowToVram(0, COPYWIN_MAP);
+        Task_ItemMenuAction_Cancel(taskId);
+    }
+    else
+        {
+        DestroyListMenuTask(data[0], &gBagMenuState.cursorPos[gBagMenuState.pocket], &gBagMenuState.itemsAbove[gBagMenuState.pocket]);
+        Bag_BuildListMenuTemplate(gBagMenuState.pocket);
+        data[0] = ListMenuInit(&gMultiuseListMenuTemplate, gBagMenuState.cursorPos[gBagMenuState.pocket], gBagMenuState.itemsAbove[gBagMenuState.pocket]);
+        CopyWindowToVram(0, COPYWIN_MAP);
+        Task_ItemMenuAction_Cancel_RegisterFull(taskId);
+    }
+    //if (TxRegItemsMenu_AddRegisteredItem(gSpecialVar_ItemId))
+        //Task_ItemMenuAction_FinishRegister(taskId);
+    //else
+        //Task_ItemMenuAction_FailRegister(taskId);
+}
+
+//New Registered Items Menu
+static void Task_ItemMenuAction_ToggleCancelSelect(u8 taskId)
 {
     u16 itemId;
     s16 *data = gTasks[taskId].data;
-    itemId = BagGetItemIdByPocketPosition(gBagMenuState.pocket + 1, data[1]);
-    if (gSaveBlock1Ptr->registeredItem == itemId)
-        gSaveBlock1Ptr->registeredItem = ITEM_NONE;
-    else
-        gSaveBlock1Ptr->registeredItem = itemId;
 
+    itemId = BagGetItemIdByPocketPosition(gBagMenuState.pocket + 1, data[1]);
+
+    ResetRegisteredItem(itemId);
+    //gTasks[taskId].func = ItemMenu_FinishRegister;
     DestroyListMenuTask(data[0], &gBagMenuState.cursorPos[gBagMenuState.pocket], &gBagMenuState.itemsAbove[gBagMenuState.pocket]);
     Bag_BuildListMenuTemplate(gBagMenuState.pocket);
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, gBagMenuState.cursorPos[gBagMenuState.pocket], gBagMenuState.itemsAbove[gBagMenuState.pocket]);
@@ -2080,27 +2136,64 @@ static void Task_TryDoItemDeposit(u8 taskId)
     }
 }
 
-bool8 UseRegisteredKeyItemOnField(void)
+//New Registered Items Menu
+bool8 UseRegisteredKeyItemOnField(u8 button)
 {
     u8 taskId;
+	u16 registeredItem;
+	
     if (InUnionRoom() == TRUE)
         return FALSE;
     DismissMapNamePopup();
     ChangeBgY(0, 0, 0);
-    if (gSaveBlock1Ptr->registeredItem != ITEM_NONE)
+	
+    if (button >= 2 && button <= REGISTERED_ITEMS_MAX+2)
+        registeredItem = gSaveBlock1Ptr->registeredItems[button-2].itemId;
+    else
     {
-        if (CheckBagHasItem(gSaveBlock1Ptr->registeredItem, 1) == TRUE)
+        switch (button)
+        {
+        case 0:
+            //registeredItem = gSaveBlock1Ptr->registeredItemSelect;
+            registeredItem = gSaveBlock1Ptr->registeredItems[0].itemId;
+            break;
+        case 1:
+            //return TRUE;
+            registeredItem = gSaveBlock1Ptr->registeredItems[0].itemId;
+            break;
+        default:
+            return FALSE;
+        }
+    }
+
+    if (registeredItem != ITEM_NONE)
+    {
+        if (CheckBagHasItem(registeredItem, 1) == TRUE)
         {
             LockPlayerFieldControls();
             FreezeObjectEvents();
             HandleEnforcedLookDirectionOnPlayerStopMoving();
             StopPlayerAvatar();
-            gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItem;
-            taskId = CreateTask(ItemId_GetFieldFunc(gSaveBlock1Ptr->registeredItem), 8);
+            gSpecialVar_ItemId = registeredItem;
+            taskId = CreateTask(ItemId_GetFieldFunc(registeredItem), 8);
             gTasks[taskId].data[3] = 1;
             return TRUE;
         }
-        gSaveBlock1Ptr->registeredItem = ITEM_NONE;
+        else
+        {
+            switch (button)
+            {
+            case 0:
+                //gSaveBlock1Ptr->registeredItemSelect = ITEM_NONE;
+                gSaveBlock1Ptr->registeredItems[0].itemId = ITEM_NONE;
+                break;
+            case 1:
+                break;
+            default:
+                gSaveBlock1Ptr->registeredItems[button-2].itemId = ITEM_NONE;
+                break;
+            }
+        }
     }
     ScriptContext_SetupScript(EventScript_BagItemCanBeRegistered);
     return TRUE;
@@ -2126,7 +2219,9 @@ static void BackUpPlayerBag(void)
     memcpy(sBackupPlayerBag->bagPocket_Items, gSaveBlock1Ptr->bagPocket_Items, BAG_ITEMS_COUNT * sizeof(struct ItemSlot));
     memcpy(sBackupPlayerBag->bagPocket_KeyItems, gSaveBlock1Ptr->bagPocket_KeyItems, BAG_KEYITEMS_COUNT * sizeof(struct ItemSlot));
     memcpy(sBackupPlayerBag->bagPocket_PokeBalls, gSaveBlock1Ptr->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT * sizeof(struct ItemSlot));
-    sBackupPlayerBag->registeredItem = gSaveBlock1Ptr->registeredItem;
+    //sBackupPlayerBag->registeredItem = gSaveBlock1Ptr->registeredItem;
+	//New Registered Items Menu
+    sBackupPlayerBag->registeredItem = gSaveBlock1Ptr->registeredItems[0].itemId;
     sBackupPlayerBag->pocket = gBagMenuState.pocket;
     for (i = 0; i < 3; i++)
     {
@@ -2136,7 +2231,9 @@ static void BackUpPlayerBag(void)
     ClearItemSlots(gSaveBlock1Ptr->bagPocket_Items, BAG_ITEMS_COUNT);
     ClearItemSlots(gSaveBlock1Ptr->bagPocket_KeyItems, BAG_KEYITEMS_COUNT);
     ClearItemSlots(gSaveBlock1Ptr->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT);
-    gSaveBlock1Ptr->registeredItem = ITEM_NONE;
+    //gSaveBlock1Ptr->registeredItem = ITEM_NONE;
+    //New Registered Items Menu
+    gSaveBlock1Ptr->registeredItems[0].itemId = ITEM_NONE;
     ResetBagCursorPositions();
 }
 
@@ -2146,7 +2243,9 @@ static void RestorePlayerBag(void)
     memcpy(gSaveBlock1Ptr->bagPocket_Items, sBackupPlayerBag->bagPocket_Items, BAG_ITEMS_COUNT * sizeof(struct ItemSlot));
     memcpy(gSaveBlock1Ptr->bagPocket_KeyItems, sBackupPlayerBag->bagPocket_KeyItems, BAG_KEYITEMS_COUNT * sizeof(struct ItemSlot));
     memcpy(gSaveBlock1Ptr->bagPocket_PokeBalls, sBackupPlayerBag->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT * sizeof(struct ItemSlot));
-    gSaveBlock1Ptr->registeredItem = sBackupPlayerBag->registeredItem;
+    //gSaveBlock1Ptr->registeredItem = sBackupPlayerBag->registeredItem;
+    //New Registered Items Menu
+    gSaveBlock1Ptr->registeredItems[0].itemId = sBackupPlayerBag->registeredItem;
     gBagMenuState.pocket = sBackupPlayerBag->pocket;
     for (i = 0; i < 3; i++)
     {
@@ -2290,7 +2389,9 @@ static void Task_Bag_TeachyTvRegister(u8 taskId)
             break;
         case 408:
             PlaySE(SE_SELECT);
-            gSaveBlock1Ptr->registeredItem = gSpecialVar_ItemId;
+            //gSaveBlock1Ptr->registeredItem = gSpecialVar_ItemId;
+            //New Registered Items Menu
+            gSaveBlock1Ptr->registeredItems[0].itemId = gSpecialVar_ItemId;
             HideBagWindow(10);
             HideBagWindow(6);
             PutWindowTilemap(0);
@@ -2455,6 +2556,16 @@ static void Task_Bag_TeachyTvTMs(u8 taskId)
         }
         data[8]++;
     }
+}
+
+//New Registered Items Menu
+static void ResetRegisteredItem(u16 itemId)
+{
+    u8 i;
+    if (gSaveBlock1Ptr->registeredItems[0].itemId == itemId)
+        gSaveBlock1Ptr->registeredItems[0].itemId = ITEM_NONE;//This must be changed to ITEM_NONE to fix the display error of the first registered item.
+    else
+        TxRegItemsMenu_RemoveRegisteredItem(itemId);
 }
 
 // bag sorting

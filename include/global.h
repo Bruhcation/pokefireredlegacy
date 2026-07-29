@@ -12,6 +12,10 @@
 #include "constants/easy_chat.h"
 #include "constants/rgb.h"
 
+//New Registered Items Menu
+#include "constants/items.h"
+#define REGISTERED_ITEMS_MAX 16
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
@@ -397,6 +401,12 @@ struct ItemSlot
     u16 quantity;
 };
 
+//New Registered Items Menu
+struct RegisteredItemSlot
+{
+    u16 itemId;
+};
+
 struct Pokeblock
 {
     u8 color;
@@ -767,7 +777,7 @@ struct SaveBlock1
     /*0x0038*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x0290*/ u32 money;
     /*0x0294*/ u16 coins;
-    /*0x0296*/ u16 registeredItem; // registered for use with SELECT button
+    ///*0x0296*/ u16 registeredItem; // registered for use with SELECT button
     /*0x0298*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x0310*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x03b8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
@@ -813,6 +823,9 @@ struct SaveBlock1
     /*0x3D24*/ u8 unused_3D24[16];
     /*0x3D34*/ u32 towerChallengeId;
     /*0x3D38*/ struct TrainerTower trainerTower[NUM_TOWER_CHALLENGE_TYPES];
+               u8 registeredItemLastSelected:4; //max 16 items
+               u8 registeredItemListCount:4;
+               struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];//New Registered Items Menu
 }; // size: 0x3D68
 
 struct MapPosition

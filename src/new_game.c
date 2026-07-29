@@ -29,6 +29,8 @@
 #include "berry_powder.h"
 #include "pokemon_jump.h"
 #include "event_scripts.h"
+//New Registered Items Menu
+#include "tx_registered_items_menu.h"
 
 // this file's functions
 static void ResetMiniGamesResults(void);
@@ -136,8 +138,10 @@ void NewGameInitData(void)
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
     ClearRoamerData();
-    gSaveBlock1Ptr->registeredItem = 0;
+    //gSaveBlock1Ptr->registeredItem = 0;
+	gSaveBlock1Ptr->registeredItems[0].itemId = 0;   //New Registered Items Menu
     ClearBag();
+	TxRegItemsMenu_RegisteredItemsMenuNewGame();  //New Registered Items Menu
     NewGameInitPCItems();
     ClearEnigmaBerries();
     InitEasyChatPhrases();
