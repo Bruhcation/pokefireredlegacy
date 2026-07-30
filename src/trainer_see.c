@@ -57,6 +57,24 @@ static const TrainerApproachFunc sDirectionalApproachDistanceFuncs[] = {
     GetTrainerApproachDistanceEast
 };
 
+// TODO: Credit https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
+static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
+
+static const struct SpriteFrameImage sSpriteImageTable_Emotes[] =
+{
+    overworld_frame(sEmotion_Gfx, 2, 2, 0), overworld_frame(sEmotion_Gfx, 2, 2, 1), // FOLLOWER_EMOTION_HAPPY
+    overworld_frame(sEmotion_Gfx, 2, 2, 2), overworld_frame(sEmotion_Gfx, 2, 2, 3), // FOLLOWER_EMOTION_NEUTRAL
+    overworld_frame(sEmotion_Gfx, 2, 2, 4), overworld_frame(sEmotion_Gfx, 2, 2, 5), // FOLLOWER_EMOTION_SAD
+    overworld_frame(sEmotion_Gfx, 2, 2, 6), overworld_frame(sEmotion_Gfx, 2, 2, 7), // FOLLOWER_EMOTION_UPSET
+    overworld_frame(sEmotion_Gfx, 2, 2, 8), overworld_frame(sEmotion_Gfx, 2, 2, 9), // FOLLOWER_EMOTION_ANGRY
+    overworld_frame(sEmotion_Gfx, 2, 2, 10), overworld_frame(sEmotion_Gfx, 2, 2, 11), // FOLLOWER_EMOTION_PENSIVE
+    overworld_frame(sEmotion_Gfx, 2, 2, 12), overworld_frame(sEmotion_Gfx, 2, 2, 13), // FOLLOWER_EMOTION_LOVE
+    overworld_frame(sEmotion_Gfx, 2, 2, 14), overworld_frame(sEmotion_Gfx, 2, 2, 15), // FOLLOWER_EMOTION_SURPRISE
+    overworld_frame(sEmotion_Gfx, 2, 2, 16), overworld_frame(sEmotion_Gfx, 2, 2, 17), // FOLLOWER_EMOTION_CURIOUS
+    overworld_frame(sEmotion_Gfx, 2, 2, 18), overworld_frame(sEmotion_Gfx, 2, 2, 19), // FOLLOWER_EMOTION_MUSIC
+    overworld_frame(sEmotion_Gfx, 2, 2, 20), overworld_frame(sEmotion_Gfx, 2, 2, 21), // FOLLOWER_EMOTION_POISONED
+};
+
 // bool8 func(u8 taskId, struct Task *task, struct ObjectEvent * trainerObj)
 // Returns TRUE to run the next func immediately
 // Returns FALSE to delay the next func to the next frame
@@ -83,6 +101,138 @@ static const TrainerSeeFunc sTrainerSeeFuncList2[] = {
     TrainerSeeFunc_BeginJumpOutOfAsh,
     TrainerSeeFunc_WaitJumpOutOfAsh,
     TrainerSeeFunc_EndJumpOutOfAsh
+};
+
+static const struct OamData sOamData_Emoticons = {
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(16x16),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteFrameImage sSpriteImages_Emoticons[] = {
+    {sGfx_Emoticons + 0x000, 0x80},
+    {sGfx_Emoticons + 0x040, 0x80},
+    {sGfx_Emoticons + 0x080, 0x80},
+
+    {sGfx_Emoticons + 0x180, 0x80},
+    {sGfx_Emoticons + 0x1C0, 0x80},
+    {sGfx_Emoticons + 0x200, 0x80},
+
+    {sGfx_Emoticons + 0x0C0, 0x80},
+    {sGfx_Emoticons + 0x100, 0x80},
+    {sGfx_Emoticons + 0x140, 0x80},
+
+    {sGfx_Emoticons + 0x240, 0x80},
+    {sGfx_Emoticons + 0x280, 0x80},
+    {sGfx_Emoticons + 0x2C0, 0x80},
+
+    {sGfx_Emoticons + 0x300, 0x80},
+    {sGfx_Emoticons + 0x340, 0x80},
+    {sGfx_Emoticons + 0x380, 0x80},
+};
+
+static const union AnimCmd sAnimCmd_ExclamationMark1[] = {
+    ANIMCMD_FRAME( 0,  4),
+    ANIMCMD_FRAME( 1,  4),
+    ANIMCMD_FRAME( 2, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_DoubleExclMark[] = {
+    ANIMCMD_FRAME( 6,  4),
+    ANIMCMD_FRAME( 7,  4),
+    ANIMCMD_FRAME( 8, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_X[] = {
+    ANIMCMD_FRAME( 3,  4),
+    ANIMCMD_FRAME( 4,  4),
+    ANIMCMD_FRAME( 5, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_SmileyFace[] = {
+    ANIMCMD_FRAME( 9,  4),
+    ANIMCMD_FRAME(10,  4),
+    ANIMCMD_FRAME(11, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_QuestionMark[] = {
+    ANIMCMD_FRAME(12,  4),
+    ANIMCMD_FRAME(13,  4),
+    ANIMCMD_FRAME(14, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Emotes0[] = {
+    ANIMCMD_FRAME(0*2, 30), ANIMCMD_FRAME(0*2+1, 25), ANIMCMD_FRAME(0*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes1[] = {
+    ANIMCMD_FRAME(1*2, 30), ANIMCMD_FRAME(1*2+1, 25), ANIMCMD_FRAME(1*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes2[] = {
+    ANIMCMD_FRAME(2*2, 30), ANIMCMD_FRAME(2*2+1, 25), ANIMCMD_FRAME(2*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes3[] = {
+    ANIMCMD_FRAME(3*2, 30), ANIMCMD_FRAME(3*2+1, 25), ANIMCMD_FRAME(3*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes4[] = {
+    ANIMCMD_FRAME(4*2, 30), ANIMCMD_FRAME(4*2+1, 25), ANIMCMD_FRAME(4*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes5[] = {
+    ANIMCMD_FRAME(5*2, 30), ANIMCMD_FRAME(5*2+1, 25), ANIMCMD_FRAME(5*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes6[] = {
+    ANIMCMD_FRAME(6*2, 30), ANIMCMD_FRAME(6*2+1, 25), ANIMCMD_FRAME(6*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes7[] = {
+    ANIMCMD_FRAME(7*2, 30), ANIMCMD_FRAME(7*2+1, 25), ANIMCMD_FRAME(7*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes8[] = {
+    ANIMCMD_FRAME(8*2, 30), ANIMCMD_FRAME(8*2+1, 25), ANIMCMD_FRAME(8*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes9[] = {
+    ANIMCMD_FRAME(9*2, 30), ANIMCMD_FRAME(9*2+1, 25), ANIMCMD_FRAME(9*2, 30), ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_Emotes10[] = {
+    ANIMCMD_FRAME(10*2, 30), ANIMCMD_FRAME(10*2+1, 25), ANIMCMD_FRAME(10*2, 30), ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_Emotes[] = {
+    sSpriteAnim_Emotes0,
+    sSpriteAnim_Emotes1,
+    sSpriteAnim_Emotes2,
+    sSpriteAnim_Emotes3,
+    sSpriteAnim_Emotes4,
+    sSpriteAnim_Emotes5,
+    sSpriteAnim_Emotes6,
+    sSpriteAnim_Emotes7,
+    sSpriteAnim_Emotes8,
+    sSpriteAnim_Emotes9,
+    sSpriteAnim_Emotes10,
+};
+
+static const struct SpriteTemplate sSpriteTemplate_Emote =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_EMOTES,
+    .oam = &sOamData_Emoticons,
+    .anims = sSpriteAnimTable_Emotes,
+    .images = sSpriteImageTable_Emotes,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_TrainerIcons
 };
 
 bool8 CheckForTrainersWantingBattle(void)
@@ -562,79 +712,6 @@ static void Task_DestroyTrainerApproachTask(u8 taskId)
 #define sData4      data[4]
 #define sFldEffId   data[7]
 
-static const struct OamData sOamData_Emoticons = {
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 1,
-    .paletteNum = 0,
-    .affineParam = 0,
-};
-
-static const struct SpriteFrameImage sSpriteImages_Emoticons[] = {
-    {sGfx_Emoticons + 0x000, 0x80},
-    {sGfx_Emoticons + 0x040, 0x80},
-    {sGfx_Emoticons + 0x080, 0x80},
-
-    {sGfx_Emoticons + 0x180, 0x80},
-    {sGfx_Emoticons + 0x1C0, 0x80},
-    {sGfx_Emoticons + 0x200, 0x80},
-
-    {sGfx_Emoticons + 0x0C0, 0x80},
-    {sGfx_Emoticons + 0x100, 0x80},
-    {sGfx_Emoticons + 0x140, 0x80},
-
-    {sGfx_Emoticons + 0x240, 0x80},
-    {sGfx_Emoticons + 0x280, 0x80},
-    {sGfx_Emoticons + 0x2C0, 0x80},
-
-    {sGfx_Emoticons + 0x300, 0x80},
-    {sGfx_Emoticons + 0x340, 0x80},
-    {sGfx_Emoticons + 0x380, 0x80},
-};
-
-static const union AnimCmd sAnimCmd_ExclamationMark1[] = {
-    ANIMCMD_FRAME( 0,  4),
-    ANIMCMD_FRAME( 1,  4),
-    ANIMCMD_FRAME( 2, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_DoubleExclMark[] = {
-    ANIMCMD_FRAME( 6,  4),
-    ANIMCMD_FRAME( 7,  4),
-    ANIMCMD_FRAME( 8, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_X[] = {
-    ANIMCMD_FRAME( 3,  4),
-    ANIMCMD_FRAME( 4,  4),
-    ANIMCMD_FRAME( 5, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_SmileyFace[] = {
-    ANIMCMD_FRAME( 9,  4),
-    ANIMCMD_FRAME(10,  4),
-    ANIMCMD_FRAME(11, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_QuestionMark[] = {
-    ANIMCMD_FRAME(12,  4),
-    ANIMCMD_FRAME(13,  4),
-    ANIMCMD_FRAME(14, 52),
-    ANIMCMD_END
-};
-
 static const union AnimCmd *const sSpriteAnimTable_Emoticons[] = {
     sAnimCmd_ExclamationMark1,
     sAnimCmd_DoubleExclMark,
@@ -695,10 +772,22 @@ u8 FldEff_SmileyFaceIcon(void)
 
 u8 FldEff_QuestionMarkIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x52);
+    u8 spriteId;
+
+    if (gFieldEffectArguments[7] >= 0) {
+        // Use follower emotes
+        u8 emotion = gFieldEffectArguments[7];
+        spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+        if (spriteId == MAX_SPRITES)
+            return 0;
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON_AND_EMOTE, emotion);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+        return 0;
+    }
+    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 4);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON_AND_EMOTE, 4);
 
     return 0;
 }

@@ -20350,8 +20350,8 @@
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20360,8 +20360,8 @@
                 "species": "SPECIES_MEOWTH"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20419,8 +20419,8 @@
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20429,8 +20429,8 @@
                 "species": "SPECIES_MEOWTH"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20488,8 +20488,8 @@
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_ABRA"
               },
               {

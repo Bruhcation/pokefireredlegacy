@@ -100,10 +100,10 @@ static const struct WindowTemplate TxRegItemsMenu_WindowTemplates[1] =
         .bg = 0,
         .tilemapLeft = 1, //0
         .tilemapTop = 13,
-        .width = 28, //30
+        .width = 14, //30
         .height = 6, //7
         .paletteNum = 15,
-        .baseBlock = 0x0002
+        .baseBlock = 0x0001
     },
 };
 

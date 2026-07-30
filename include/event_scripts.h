@@ -7,6 +7,34 @@
 
 #include "global.h"
 
+//follower
+extern const u8 EventScript_Follower[];
+extern const u8 EventScript_FollowerEnd[];
+extern const u8 EventScript_FollowerGeneric[];
+extern const u8 EventScript_FollowerLovesYou[];
+
+extern const u8 EventScript_FollowerIsShivering[];
+extern const u8 EventScript_FollowerNostalgia[];
+extern const u8 EventScript_FollowerHopping[];
+extern const u8 EventScript_FollowerJumpOnPlayer[];
+extern const u8 EventScript_FollowerCuddling[];
+extern const u8 EventScript_FollowerShiverCuddling[];
+extern const u8 EventScript_FollowerGetCloser[];
+extern const u8 EventScript_FollowerPokingPlayer[];
+extern const u8 EventScript_FollowerLookAround[];
+extern const u8 EventScript_FollowerLookAway[];
+extern const u8 EventScript_FollowerLookAwayBark[];
+extern const u8 EventScript_FollowerLookAwayPoke[];
+extern const u8 EventScript_FollowerPokeGround[];
+extern const u8 EventScript_FollowerStartled[];
+extern const u8 EventScript_FollowerFastHopping[];
+extern const u8 EventScript_FollowerDizzy[];
+extern const u8 EventScript_FollowerLookAroundScared[];
+extern const u8 EventScript_FollowerDance[];
+extern const u8 EventScript_FollowerFaceUp[];
+extern const u8 EventScript_FollowerFaceResult[];
+extern const u8 EnterPokeballMovement[];
+
 extern const u8 gTVBravoTrainerText00[];
 extern const u8 gTVBravoTrainerText01[];
 extern const u8 gTVBravoTrainerText02[];
@@ -900,6 +928,26 @@ extern const u8 Help_Text_UsingWithdrawItem2[];
 extern const u8 Help_Text_UsingDepositItem2[];
 extern const u8 Help_Text_UsingMailbox2[];
 extern const u8 Help_Text_UsingRun[];
+extern const u8 Help_Text_UsingEnemySummary[];
+extern const u8 Help_Text_UsingMoveEffectiveness[];
+extern const u8 Help_Text_UsingMoveDescription[];
+extern const u8 Help_Text_HowToUseEnemySummary[];
+extern const u8 Help_Text_HowToUseMoveEffectiveness[];
+extern const u8 Help_Text_HowToUseMoveDescription[];
+extern const u8 Help_Text_EnemySummaryTerm[];
+extern const u8 Help_Text_DefineEnemySummary[];
+extern const u8 Help_Text_MoveEffectivenessTerm[];
+extern const u8 Help_Text_DefineMoveEffectiveness[];
+extern const u8 Help_Text_SurvivePoisonTerm[];
+extern const u8 Help_Text_DefineSurvivePoison[];
+extern const u8 Help_Text_FollowingPokemonTerm[];
+extern const u8 Help_Text_DefineFollowingPokemon[];
+extern const u8 Help_Text_SurfingPokemonTerm[];
+extern const u8 Help_Text_DefineSurfingPokemon[];
+extern const u8 Help_Text_StabTerm[];
+extern const u8 Help_Text_DefineStab[];
+extern const u8 Help_Text_FieldMoveLearnsetTerm[];
+extern const u8 Help_Text_DefineFieldMoveLearnset[];
 extern const u8 Help_Text_RegisterKeyItem[];
 extern const u8 Help_Text_UsingBall[];
 extern const u8 Help_Text_UsingBait[];
@@ -1127,6 +1175,7 @@ extern const u8 Help_Text_TypeMatchupOwnPokemonBug[];
 extern const u8 EventScript_FldEffStrength[];
 extern const u8 EventScript_FailSweetScent[];
 extern const u8 EventScript_FldEffRockSmash[];
+extern const u8 EventScript_UseDig[];
 
 extern const u8 SafariZone_EventScript_TimesUp[];
 extern const u8 SafariZone_EventScript_RetirePrompt[];
@@ -1261,5 +1310,8 @@ extern const u8 TradeCenter_EventScript_Chair0[];
 extern const u8 TradeCenter_EventScript_Chair1[];
 extern const u8 TradeCenter_ConfirmLeaveRoom[];
 extern const u8 TradeCenter_TerminateLink[];
+
+extern const u8 Common_Movement_FollowerSafeStart[];
+extern const u8 Common_Movement_FollowerSafeEnd[];
 
 #endif //GUARD_EVENT_SCRIPTS_H

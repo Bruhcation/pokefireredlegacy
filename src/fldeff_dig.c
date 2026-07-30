@@ -1,10 +1,12 @@
 #include "global.h"
+#include "event_scripts.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "fldeff.h"
 #include "item_use.h"
 #include "overworld.h"
 #include "party_menu.h"
+#include "script.h"
 
 static void FieldCallback_Dig(void);
 static void StartDigFieldEffect(void);
@@ -23,8 +25,9 @@ bool8 SetUpFieldMove_Dig(void)
 static void FieldCallback_Dig(void)
 {
     Overworld_ResetStateAfterDigEscRope();
-    FieldEffectStart(FLDEFF_USE_DIG);
+    // FieldEffectStart(FLDEFF_USE_DIG);
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseDig);
 }
 
 bool8 FldEff_UseDig(void)

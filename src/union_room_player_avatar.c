@@ -29,7 +29,7 @@ static void SetUnionRoomObjectFacingDirection(s32 member, s32 leaderId, u8 direc
 
 // + 2 is just to match, those elements are empty and never read
 // Graphics ids should correspond with the classes in gUnionRoomFacilityClasses
-static const u8 sUnionRoomObjGfxIds[GENDER_COUNT][NUM_UNION_ROOM_CLASSES + 2] = {
+static const u16 sUnionRoomObjGfxIds[GENDER_COUNT][NUM_UNION_ROOM_CLASSES] = {
     [MALE]   = {
         OBJ_EVENT_GFX_COOLTRAINER_M,
         OBJ_EVENT_GFX_BLACKBELT,

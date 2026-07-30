@@ -29,6 +29,7 @@
 #include "constants/items.h"
 #include "constants/game_stat.h"
 #include "constants/field_weather.h"
+#include "constants/event_objects.h"
 
 #define tItemCount data[1]
 #define tItemId data[5]
@@ -794,7 +795,8 @@ static void BuyMenuCollectObjectEventData(void)
         for (x = 0; x < 7; x++)
         {
             u8 eventObjId = GetObjectEventIdByPosition(facingX - 3 + x, facingY - 2 + y, elevation);
-            if (eventObjId != OBJECT_EVENTS_COUNT)
+            // skip if invalid or an overworld pokemon that is not following the player
+            if (eventObjId != OBJECT_EVENTS_COUNT && !(gObjectEvents[eventObjId].active && gObjectEvents[eventObjId].graphicsId >= OBJ_EVENT_GFX_MON_BASE && gObjectEvents[eventObjId].localId != OBJ_EVENT_ID_FOLLOWER))
             {
                 sViewportObjectEvents[num][OBJECT_EVENT_ID] = eventObjId;
                 sViewportObjectEvents[num][X_COORD] = x;
@@ -826,6 +828,12 @@ static void BuyMenuDrawObjectEvents(void)
 {
     u8 i, spriteId;
     const struct ObjectEventGraphicsInfo *graphicsInfo;
+    u8 weatherTemp = gWeatherPtr->palProcessingState;
+
+    // This function runs during fadeout, so the weather palette processing state must be temporarily changed,
+    // so that time-blending will work properly
+    if (weatherTemp == WEATHER_PAL_STATE_SCREEN_FADING_OUT)
+        gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
@@ -841,6 +849,9 @@ static void BuyMenuDrawObjectEvents(void)
             2);
         StartSpriteAnim(&gSprites[spriteId], sViewportObjectEvents[i][ANIM_NUM]);
     }
+
+    gWeatherPtr->palProcessingState = weatherTemp; // restore weather state
+    CpuFastCopy(gPlttBufferFaded + 16*16, gPlttBufferUnfaded + 16*16, PLTT_BUFFER_SIZE);
 }
 
 static void BuyMenuCopyTilemapData(void)

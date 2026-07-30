@@ -90,7 +90,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mom;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Celio;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeachyTVHost;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymGuy;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ItemBall;
+// const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ItemBall;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TownMap;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokedex;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CutTree;
@@ -178,7 +178,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chuck;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jasmine;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pryce;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clair;
-
+// Begin pokemon event objects
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jolteon;
@@ -284,7 +286,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CELIO]                    = &gObjectEventGraphicsInfo_Celio,
     [OBJ_EVENT_GFX_TEACHY_TV_HOST]           = &gObjectEventGraphicsInfo_TeachyTVHost,
     [OBJ_EVENT_GFX_GYM_GUY]                  = &gObjectEventGraphicsInfo_GymGuy,
-    [OBJ_EVENT_GFX_ITEM_BALL]                = &gObjectEventGraphicsInfo_ItemBall,
+    // [OBJ_EVENT_GFX_ITEM_BALL]                = &gObjectEventGraphicsInfo_ItemBall,
     [OBJ_EVENT_GFX_TOWN_MAP]                 = &gObjectEventGraphicsInfo_TownMap,
     [OBJ_EVENT_GFX_POKEDEX]                  = &gObjectEventGraphicsInfo_Pokedex,
     [OBJ_EVENT_GFX_CUT_TREE]                 = &gObjectEventGraphicsInfo_CutTree,
@@ -372,15 +374,17 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JASMINE]                  = &gObjectEventGraphicsInfo_Jasmine,
     [OBJ_EVENT_GFX_PRYCE]                    = &gObjectEventGraphicsInfo_Pryce,
     [OBJ_EVENT_GFX_CLAIR]                    = &gObjectEventGraphicsInfo_Clair,
-    [OBJ_EVENT_GFX_EEVEE] = &gObjectEventGraphicsInfo_Eevee,
-    [OBJ_EVENT_GFX_JOLTEON] = &gObjectEventGraphicsInfo_Jolteon,
-    [OBJ_EVENT_GFX_FLAREON] = &gObjectEventGraphicsInfo_Flareon,
-    [OBJ_EVENT_GFX_VAPOREON] = &gObjectEventGraphicsInfo_Vaporeon,
-    [OBJ_EVENT_GFX_ESPEON] = &gObjectEventGraphicsInfo_Espeon,
-    [OBJ_EVENT_GFX_UMBREON] = &gObjectEventGraphicsInfo_Umbreon,
-    [OBJ_EVENT_GFX_CHARIZARD] = &gObjectEventGraphicsInfo_Charizard,
-    [OBJ_EVENT_GFX_BLASTOISE] = &gObjectEventGraphicsInfo_Blastoise,
-    [OBJ_EVENT_GFX_VENUSAUR] = &gObjectEventGraphicsInfo_Venusaur,
-    [OBJ_EVENT_GFX_SUDOWOODO] = &gObjectEventGraphicsInfo_Sudowoodo,
-    [OBJ_EVENT_GFX_HEX_MANIAC] = &gObjectEventGraphicsInfo_Hex_Maniac,
+    [OBJ_EVENT_GFX_EEVEE] 					 = &gObjectEventGraphicsInfo_Eevee,
+    [OBJ_EVENT_GFX_JOLTEON] 				 = &gObjectEventGraphicsInfo_Jolteon,
+    [OBJ_EVENT_GFX_FLAREON] 				 = &gObjectEventGraphicsInfo_Flareon,
+    [OBJ_EVENT_GFX_VAPOREON] 				 = &gObjectEventGraphicsInfo_Vaporeon,
+    [OBJ_EVENT_GFX_ESPEON] 					 = &gObjectEventGraphicsInfo_Espeon,
+    [OBJ_EVENT_GFX_UMBREON] 				 = &gObjectEventGraphicsInfo_Umbreon,
+    [OBJ_EVENT_GFX_CHARIZARD]   			 = &gObjectEventGraphicsInfo_Charizard,
+    [OBJ_EVENT_GFX_BLASTOISE]   			 = &gObjectEventGraphicsInfo_Blastoise,
+    [OBJ_EVENT_GFX_VENUSAUR] 				 = &gObjectEventGraphicsInfo_Venusaur,
+    [OBJ_EVENT_GFX_SUDOWOODO]   			 = &gObjectEventGraphicsInfo_Sudowoodo,
+    [OBJ_EVENT_GFX_HEX_MANIAC]  			 = &gObjectEventGraphicsInfo_Hex_Maniac,
+	[OBJ_EVENT_GFX_POKE_BALL]   			 = &gObjectEventGraphicsInfo_PokeBall,
+    [OBJ_EVENT_GFX_OW_MON] 					 = &gObjectEventGraphicsInfo_Follower,
 };

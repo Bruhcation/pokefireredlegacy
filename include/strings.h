@@ -84,6 +84,7 @@ extern const u8 gText_Confirm3[];
 extern const u8 gText_Cancel4[];
 extern const u8 gText_IsThisTheCorrectTime[];
 extern const u8 gText_PkmnFainted3[];
+extern const u8 gText_PkmnSurvivedPoison[];
 extern const u8 gText_Coins[];
 extern const u8 gText_EggNickname[];
 extern const u8 gText_MenuPokemon[];
@@ -951,6 +952,17 @@ extern const u8 gText_ButtonTypeLR[];
 extern const u8 gText_ButtonTypeLEqualsA[];
 extern const u8 gText_Option[];
 extern const u8 gText_FrameType[];
+extern const u8 gText_HackOptions[];
+extern const u8 gText_Back[];
+extern const u8 gText_EnemySummary[];
+extern const u8 gText_MoveEffectivenessLabel[];
+extern const u8 gText_SurvivePoison[];
+extern const u8 gText_FollowPokemon[];
+extern const u8 gText_SurfPokemon[];
+extern const u8 gText_FieldMoveLearnset[];
+extern const u8 gText_MoveEffectivenessArrows[];
+extern const u8 gText_MoveEffectivenessColor[];
+extern const u8 gText_MoveEffectivenessBoth[];
 extern const u8 gTextJP_Type[];
 extern const u8 gText_PickSwitchCancel[];
 
@@ -1143,6 +1155,7 @@ extern const u8 gText_CantWriteMailHere[];
 extern const u8 gText_DepositHowManyStrVars1[];
 extern const u8 gText_DepositedStrVar2StrVar1s[];
 extern const u8 gText_NoRoomToStoreItems[];
+extern const u8 gText_MonBallWasChanged[];
 
 // union_room_battle
 extern const u8 gText_CommStandbyAwaitingOtherPlayer[];
@@ -1554,6 +1567,9 @@ extern const u8 gText_PokeSum_Controls_PickSwitch[];
 extern const u8 gText_PokeSum_Controls_Pick[];
 extern const u8 gText_PokeSum_NoData[];
 extern const u8 gText_PokeSum_Controls_PageDetail[];
+extern const u8 gText_PokeSum_Controls_PageIV[];
+extern const u8 gText_PokeSum_Controls_PageEV[];
+extern const u8 gText_PokeSum_Controls_PageStats[];
 extern const u8 gText_PokeSum_DexNoUnknown[];
 extern const u8 gText_PokeSum_Item_None[];
 extern const u8 gText_PokeSum_OneHyphen[];
@@ -1595,6 +1611,7 @@ extern const u8 gText_PokeSum_EggOrigin_Trade[];
 extern const u8 gText_PokeSum_EggOrigin_NicePlace[];
 extern const u8 gText_PokeSum_EggOrigin_Spa[];
 extern const u8 gText_PokeSum_EggOrigin_Trade[];
+extern const u8 gText_PokeSum_Wild[];
 
 // Move Items in Party Menu
 extern const u8 gMenuText_Move[];

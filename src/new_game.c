@@ -68,6 +68,10 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_HELP;
+    gSaveBlock2Ptr->optionsEnemySummary = 0; // ON
+    gSaveBlock2Ptr->optionsMoveEffectiveness = OPTIONS_MOVE_EFFECTIVENESS_BOTH;
+    gSaveBlock2Ptr->optionsSurvivePoison = 1; // OFF
+    gSaveBlock2Ptr->optionsFollowPokemon = 0; // ON
 }
 
 static void ClearPokedexFlags(void)
@@ -156,6 +160,7 @@ void NewGameInitData(void)
     ResetTrainerTowerResults();
     nuzlockePrev ? FlagSet(FLAG_NUZLOCKE) : FlagClear(FLAG_NUZLOCKE);
     hardPrev ? FlagSet(FLAG_HARD) : FlagClear(FLAG_HARD);
+    FlagSet(FLAG_ENABLE_SURFOVERWORLD); // ON by default
 }
 
 static void ResetMiniGamesResults(void)

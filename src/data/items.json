@@ -27,7 +27,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 0,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 0
@@ -43,7 +43,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 1,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 1
@@ -59,7 +59,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 2,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 2
@@ -75,7 +75,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 3,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 3
@@ -91,7 +91,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 4,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 4
@@ -107,7 +107,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 5,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 5
@@ -123,7 +123,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 6,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 6
@@ -139,7 +139,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 7,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 7
@@ -155,7 +155,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 8,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 8
@@ -171,7 +171,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 9,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 9
@@ -187,7 +187,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 10,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 10
@@ -203,7 +203,7 @@
       "registrability": 0,
       "pocket": "POCKET_POKE_BALLS",
       "type": 11,
-      "fieldUseFunc": "NULL",
+      "fieldUseFunc": "FieldUseFunc_PokeBall",
       "battleUsage": 2,
       "battleUseFunc": "BattleUseFunc_PokeBallEtc",
       "secondaryId": 11

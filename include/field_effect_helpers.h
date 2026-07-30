@@ -19,7 +19,9 @@ void SetSurfBlob_DontSyncAnim(u8 spriteId, bool8 value);
 void StartAshFieldEffect(s16, s16, u16, s16);
 void StartRevealDisguise(struct ObjectEvent *);
 bool8 UpdateRevealDisguise(struct ObjectEvent *);
+// void SetUpReflection(struct ObjectEvent *, struct Sprite *, u8);
 void SetUpReflection(struct ObjectEvent *, struct Sprite *, u8);
+void SetUpShadow(struct ObjectEvent *, struct Sprite *);
 u32 StartFieldEffectForObjectEvent(u8, struct ObjectEvent *);
 u8 FindTallGrassFieldEffectSpriteId(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y);
 void ShowWarpArrowSprite(u8 spriteId, u8 direction, s16 x, s16 y);
@@ -40,5 +42,8 @@ void UpdateLongGrassFieldEffect(struct Sprite *sprite);
 void UpdateSandPileFieldEffect(struct Sprite *sprite);
 void UpdateDisguiseFieldEffect(struct Sprite *sprite);
 void UpdateHotSpringsWaterFieldEffect(struct Sprite *sprite);
+void SynchroniseSurfAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+void SynchroniseSurfPosition(struct ObjectEvent *playerObject, struct Sprite *surfBlobSprite);
+void CreateBobbingEffect(struct ObjectEvent *objectEvent, struct Sprite *playerSprite, struct Sprite *surfBlobSprite);
 
 #endif //GUARD_FIELD_EFFECT_HELPERS_H
