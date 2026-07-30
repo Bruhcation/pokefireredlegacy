@@ -232,6 +232,31 @@ COMMON_DATA u8 gMultiUsePlayerCursor = 0;
 COMMON_DATA u8 gNumberOfMovesToChoose = 0;
 COMMON_DATA u8 gBattleControllerData[MAX_BATTLERS_COUNT] = {0};
 
+static const struct TrainerBall gTrainerBallTable[] =
+{
+    {TRAINER_CLASS_HIKER,          ITEM_POKE_BALL},
+    {TRAINER_CLASS_FISHERMAN,      ITEM_NEST_BALL},
+    {TRAINER_CLASS_SWIMMER_M,      ITEM_DIVE_BALL},
+    {TRAINER_CLASS_SWIMMER_F,      ITEM_DIVE_BALL},
+    {TRAINER_CLASS_BIRD_KEEPER,    ITEM_NEST_BALL},
+    {TRAINER_CLASS_BUG_CATCHER,    ITEM_NET_BALL},
+    {TRAINER_CLASS_PKMN_BREEDER,   ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_PKMN_RANGER,    ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_COOLTRAINER,    ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_EXPERT,         ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_BLACK_BELT,     ITEM_GREAT_BALL},
+    {TRAINER_CLASS_COLLECTOR,      ITEM_REPEAT_BALL},
+    {TRAINER_CLASS_SCIENTIST,      ITEM_GREAT_BALL},
+    {TRAINER_CLASS_GENTLEMAN,      ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_BEAUTY,         ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_TEAM_ROCKET,    ITEM_POKE_BALL},
+    {TRAINER_CLASS_BOSS,           ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_LEADER,         ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_ELITE_FOUR,     ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_CHAMPION,       ITEM_PREMIER_BALL},
+    {0xFF,                         ITEM_POKE_BALL}
+};
+
 static const struct ScanlineEffectParams sIntroScanlineParams16Bit =
 {
     &REG_BG3HOFS, SCANLINE_EFFECT_DMACNT_16BIT, 1
@@ -1543,6 +1568,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
     u32 personalityValue;
     s32 i;
+    s32 j;
     u32 monsCount;
     const struct Trainer *trainer;
 
@@ -1560,13 +1586,21 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
             else if (trainer->encounterMusic_gender & F_TRAINER_FEMALE)
-                personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
+                personalityValue = 0x78;
             else
-                personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
+                personalityValue = 0x88;
 
             personalityValue += CalcCRC32((const u8 *)&trainer->party[i], sizeof(*trainer->party)) << 8;
             CreateTrainerMon(&party[i], trainer, i, personalityValue, 0);
             CalculateMonStats(&party[i]);
+
+            for (j = 0; gTrainerBallTable[j].classId != 0xFF; j++)
+            {
+                if (gTrainerBallTable[j].classId == trainer->trainerClass)
+                    break;
+            }
+            SetMonData(&party[i], MON_DATA_POKEBALL, &gTrainerBallTable[j].ball);
+
         }
         gBattleTypeFlags |= trainer->doubleBattle;
     }

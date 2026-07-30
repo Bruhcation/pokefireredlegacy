@@ -1155,6 +1155,7 @@ extern const u8 gText_CantWriteMailHere[];
 extern const u8 gText_DepositHowManyStrVars1[];
 extern const u8 gText_DepositedStrVar2StrVar1s[];
 extern const u8 gText_NoRoomToStoreItems[];
+extern const u8 gText_MonBallWasChanged[];
 
 // union_room_battle
 extern const u8 gText_CommStandbyAwaitingOtherPlayer[];
@@ -1566,6 +1567,9 @@ extern const u8 gText_PokeSum_Controls_PickSwitch[];
 extern const u8 gText_PokeSum_Controls_Pick[];
 extern const u8 gText_PokeSum_NoData[];
 extern const u8 gText_PokeSum_Controls_PageDetail[];
+extern const u8 gText_PokeSum_Controls_PageIV[];
+extern const u8 gText_PokeSum_Controls_PageEV[];
+extern const u8 gText_PokeSum_Controls_PageStats[];
 extern const u8 gText_PokeSum_DexNoUnknown[];
 extern const u8 gText_PokeSum_Item_None[];
 extern const u8 gText_PokeSum_OneHyphen[];
