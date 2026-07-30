@@ -67,5 +67,6 @@ enum PokemonSummaryScreenStat
 #define TAG_PSS_UNK_8C 0x8C
 #define TAG_PSS_UNK_96 0x96
 #define TAG_PSS_UNK_A0 0xA0
+#define TAG_PSS_UNK_AA 0xAA
 
 #endif // GUARD_POKEMON_SUMMARY_SCREEN_H

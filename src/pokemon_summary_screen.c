@@ -143,6 +143,9 @@ static s8 SeekToNextMonInSingleParty(s8 direction);
 static s8 SeekToNextMonInMultiParty(s8 direction);
 static int GetColorIndexForStatNature(s8 natureMod);
 static void PrintNatureArrow(u8 x, u8 y, s8 natureStat);
+static void HideShowFriendshipHeart(u8 invisible);
+static void CreateFriendshipIconObj(u16, u16);
+static void UpdateFriendshipHeartIfNotEgg(void);
 
 struct PokemonSummaryScreenData
 {
@@ -318,13 +321,12 @@ struct ShinyStarObjData
     u16 palTag; /* 0x06 */
 };
 
-static EWRAM_DATA struct PokemonSummaryScreenData * sMonSummaryScreen = NULL;
-static EWRAM_DATA struct Struct203B144 * sMonSkillsPrinterXpos = NULL;
-static EWRAM_DATA struct MoveSelectionCursor * sMoveSelectionCursorObjs[4] = {};
-static EWRAM_DATA struct MonStatusIconObj * sStatusIcon = NULL;
-static EWRAM_DATA struct HpBarObjs * sHpBarObjs = NULL;
-static EWRAM_DATA struct ExpBarObjs * sExpBarObjs = NULL;
-static EWRAM_DATA struct PokerusIconObj * sPokerusIconObj = NULL;
+struct FriendshipIconObjData
+{
+    struct Sprite *sprite;
+    u16 tileTag;
+    u16 palTag;
+};
 
 // Cycled by pressing A on the Skills page: base stats -> IVs -> EVs -> back to base stats.
 enum
@@ -334,8 +336,17 @@ enum
     PSS_STATS_DISPLAY_EV,
     PSS_STATS_DISPLAY_COUNT,
 };
+
+static EWRAM_DATA struct PokemonSummaryScreenData * sMonSummaryScreen = NULL;
+static EWRAM_DATA struct Struct203B144 * sMonSkillsPrinterXpos = NULL;
+static EWRAM_DATA struct MoveSelectionCursor * sMoveSelectionCursorObjs[4] = {};
+static EWRAM_DATA struct MonStatusIconObj * sStatusIcon = NULL;
+static EWRAM_DATA struct HpBarObjs * sHpBarObjs = NULL;
+static EWRAM_DATA struct ExpBarObjs * sExpBarObjs = NULL;
+static EWRAM_DATA struct PokerusIconObj * sPokerusIconObj = NULL;
 static EWRAM_DATA u8 sPSS_StatsDisplayMode = PSS_STATS_DISPLAY_NORMAL;
 static EWRAM_DATA struct ShinyStarObjData * sShinyStarObjData = NULL;
+static EWRAM_DATA struct FriendshipIconObjData * sFriendshipIconObjData = NULL;
 static EWRAM_DATA u8 sLastViewedMonIndex = 0;
 static EWRAM_DATA u8 sMoveSelectionCursorPos = 0;
 static EWRAM_DATA u8 sMoveSwapCursorPos = 0;
@@ -608,6 +619,41 @@ static const union AnimCmd * const sPokerusIconObjAnimTable[] =
 
 static const u16 sPokerusIconObjPal[] = INCBIN_U16("graphics/summary_screen/pokerus_cured.gbapal");
 static const u32 sPokerusIconObjTiles[] = INCBIN_U32("graphics/summary_screen/pokerus_cured.4bpp.lz");
+
+static const struct OamData sFriendshipIconOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0
+};
+
+static const union AnimCmd sFriendshipAnim0[] = { ANIMCMD_FRAME(0, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim1[] = { ANIMCMD_FRAME(1, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim2[] = { ANIMCMD_FRAME(2, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim3[] = { ANIMCMD_FRAME(3, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim4[] = { ANIMCMD_FRAME(4, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim5[] = { ANIMCMD_FRAME(5, 0), ANIMCMD_END };
+static const union AnimCmd sFriendshipAnim6[] = { ANIMCMD_FRAME(6, 0), ANIMCMD_END };
+
+static const union AnimCmd * const sFriendshipAnimTable[] =
+{
+    sFriendshipAnim0, sFriendshipAnim1, sFriendshipAnim2,
+    sFriendshipAnim3, sFriendshipAnim4, sFriendshipAnim5, sFriendshipAnim6
+};
+
+static const u16 sFriendshipIconPal[] = INCBIN_U16("graphics/summary_screen/heart.gbapal");
+static const u32 sFriendshipIconTiles[] = INCBIN_U32("graphics/summary_screen/heart.4bpp.lz");
+
+static const u16 sFriendshipLevelToThreshold[] = { 0, 42, 85, 128, 170, 212, 250 };
 
 static const struct OamData sStarObjOamData =
 {
@@ -1682,6 +1728,7 @@ static void PokeSum_HideSpritesBeforePageFlip(void)
             ShowOrHideStatusIcon(TRUE);
             HideShowPokerusIcon(TRUE);
             HideShowShinyStar(TRUE);
+            HideShowFriendshipHeart(TRUE);
         }
 
         break;
@@ -1691,6 +1738,7 @@ static void PokeSum_HideSpritesBeforePageFlip(void)
         ShowOrHideStatusIcon(TRUE);
         HideShowPokerusIcon(TRUE);
         HideShowShinyStar(TRUE);
+        HideShowFriendshipHeart(TRUE);
         break;
     }
 }
@@ -1724,6 +1772,7 @@ static void PokeSum_ShowSpritesBeforePageFlip(void)
             HideShowPokerusIcon(FALSE);
             PokeSum_ShowOrHideMonIconSprite(FALSE);
             HideShowShinyStar(FALSE);
+            HideShowFriendshipHeart(FALSE);
         }
 
         break;
@@ -1734,6 +1783,7 @@ static void PokeSum_ShowSpritesBeforePageFlip(void)
         ShowOrHideBallIconObj(FALSE);
         HideShowPokerusIcon(FALSE);
         HideShowShinyStar(FALSE);
+        HideShowFriendshipHeart(FALSE);
         break;
     }
 }
@@ -2415,6 +2465,7 @@ static u8 PokeSum_HandleCreateSprites(void)
     {
     case 0:
         CreateShinyStarObj(TAG_PSS_UNK_A0, TAG_PSS_UNK_A0);
+        CreateFriendshipIconObj(TAG_PSS_UNK_AA, TAG_PSS_UNK_AA);
         break;
     case 1:
         CreatePokerusIconObj(TAG_PSS_UNK_96, TAG_PSS_UNK_96);
@@ -4980,6 +5031,91 @@ static void HideShowPokerusIcon(bool8 invisible)
     }
 }
 
+static void CreateFriendshipIconObj(u16 tileTag, u16 palTag)
+{
+    u16 spriteId;
+    void *gfxBufferPtr;
+
+    sFriendshipIconObjData = AllocZeroed(sizeof(struct FriendshipIconObjData));
+    gfxBufferPtr = AllocZeroed(0x20 * 7); // 7 frames, 8x8 4bpp each
+
+    LZ77UnCompWram(sFriendshipIconTiles, gfxBufferPtr);
+
+    if (sFriendshipIconObjData != NULL)
+    {
+        struct SpriteSheet sheet = { .data = gfxBufferPtr, .size = 0x20 * 7, .tag = tileTag };
+        struct SpritePalette palette = { .data = sFriendshipIconPal, .tag = palTag };
+        struct SpriteTemplate template = {
+            .tileTag = tileTag,
+            .paletteTag = palTag,
+            .oam = &sFriendshipIconOamData,
+            .anims = sFriendshipAnimTable,
+            .images = NULL,
+            .affineAnims = gDummySpriteAffineAnimTable,
+            .callback = SpriteCallbackDummy,
+        };
+
+        LoadSpriteSheet(&sheet);
+        LoadSpritePalette(&palette);
+        spriteId = CreateSprite(&template, 106, 75, 0);
+        sFriendshipIconObjData->sprite = &gSprites[spriteId];
+        sFriendshipIconObjData->tileTag = tileTag;
+        sFriendshipIconObjData->palTag = palTag;
+    }
+
+    HideShowFriendshipHeart(TRUE);
+    UpdateFriendshipHeartIfNotEgg();
+
+    FREE_AND_SET_NULL_IF_SET(gfxBufferPtr);
+}
+
+static void DestroyFriendshipIconObj(void)
+{
+    if (sFriendshipIconObjData->sprite != NULL)
+        DestroySpriteAndFreeResources(sFriendshipIconObjData->sprite);
+
+    FREE_AND_SET_NULL_IF_SET(sFriendshipIconObjData);
+}
+
+static void HideShowFriendshipHeart(bool8 invisible)
+{
+    if (!sMonSummaryScreen->isEgg)
+        sFriendshipIconObjData->sprite->invisible = invisible;
+    else
+        sFriendshipIconObjData->sprite->invisible = TRUE;
+
+    if (sMonSummaryScreen->curPageIndex == PSS_PAGE_MOVES_INFO)
+    {
+        sFriendshipIconObjData->sprite->x = 8;
+        sFriendshipIconObjData->sprite->y = 36;
+    }
+    else
+    {
+        sFriendshipIconObjData->sprite->x = 106;
+        sFriendshipIconObjData->sprite->y = 75;
+    }
+}
+
+static void UpdateFriendshipHeartIfNotEgg(void)
+{
+    if (!sMonSummaryScreen->isEgg)
+    {
+        u16 friendship = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_FRIENDSHIP);
+        u8 level = 0;
+
+        while (level + 1 < ARRAY_COUNT(sFriendshipLevelToThreshold)
+        && friendship >= sFriendshipLevelToThreshold[level + 1])
+            level++;
+
+        StartSpriteAnim(sFriendshipIconObjData->sprite, level);
+        HideShowFriendshipHeart(FALSE);
+    }
+    else
+    {
+        HideShowFriendshipHeart(TRUE);
+    }
+}
+
 static void CreateShinyStarObj(u16 tileTag, u16 palTag)
 {
     u16 spriteId;
@@ -5071,6 +5207,7 @@ static void PokeSum_DestroySprites(void)
     DestroyMonStatusIconObj();
     DestroyPokerusIconObj();
     DestroyShinyStarObj();
+    DestroyFriendshipIconObj();
     ResetSpriteData();
 }
 
@@ -5087,6 +5224,7 @@ static void PokeSum_CreateSprites(void)
     UpdateMonStatusIconObj();
     ShowPokerusIconObjIfHasOrHadPokerus();
     ShowShinyStarObjIfMonShiny();
+    UpdateFriendshipHeartIfNotEgg();
 }
 
 static void PokeSum_CreateMonMarkingsSprite(void)
