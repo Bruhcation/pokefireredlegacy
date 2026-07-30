@@ -110,8 +110,8 @@ struct BackupMapLayout
 struct ObjectEventTemplate
 {
     u8 localId;
+    u8 graphicsId;
     u8 kind; // The "kind" field determines how to access objUnion union below.
-	u16 graphicsId;
     s16 x, y;
     union {
         struct {
@@ -265,7 +265,6 @@ struct ObjectEvent
     /*0x20*/        u8 previousMovementDirection;
     /*0x21*/        u8 directionSequenceIndex;
     /*0x22*/        u8 playerCopyableMovement;
-    /*0x23*/        u8 spriteId;
     /*size = 0x24*/
 };
 
