@@ -17,3 +17,8 @@ SevenIsland_PokemonCenter_1F_Text_CheckOutTrainerTower::
     .string "If you're confident, you should\n"
     .string "check out TRAINER TOWER.$"
 
+SevenIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Sei...\n"
+    .string "Sei...\n"
+	.string "...\l"
+    .string "Cham!$"

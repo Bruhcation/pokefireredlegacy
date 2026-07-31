@@ -31,7 +31,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_CLEFAIRY",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CLEFAIRY)",
       "x": 11,
       "y": 8,
       "elevation": 0,
@@ -45,7 +45,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORINO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORINO)",
       "x": 2,
       "y": 2,
       "elevation": 0,
@@ -59,7 +59,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORAN_F",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_F)",
       "x": 19,
       "y": 2,
       "elevation": 0,
@@ -73,7 +73,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_JIGGLYPUFF",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(JIGGLYPUFF)",
       "x": 9,
       "y": 1,
       "elevation": 0,
@@ -87,7 +87,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORAN_M",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_M)",
       "x": 10,
       "y": 4,
       "elevation": 0,

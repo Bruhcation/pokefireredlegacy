@@ -63,3 +63,5 @@ FourIsland_PokemonCenter_1F_Text_NewPokemonJournalHasntArrived::
     .string "The new POKéMON JOURNAL hasn't\n"
     .string "arrived on this island?$"
 
+FourIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Sei? Cham...$"

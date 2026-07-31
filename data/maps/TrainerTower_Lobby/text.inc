@@ -118,3 +118,5 @@ TrainerTower_Lobby_Text_StairsTougherThanAnyBattle::
     .string "Never mind battling! These stairs…\n"
     .string "They're tougher than any battle…$"
 
+TrainerTower_Lobby_Text_TTChansey::
+    .string "CHANSEY: Sei Sei!$"

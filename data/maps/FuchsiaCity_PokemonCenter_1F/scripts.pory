@@ -25,4 +25,13 @@ FuchsiaCity_PokemonCenter_1F_EventScript_CooltrainerF::
 FuchsiaCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox FuchsiaCity_PokemonCenter_1F_Text_VisitSafariZoneForPokedex, MSGBOX_NPC
 	end
+
+FuchsiaCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox FuchsiaCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

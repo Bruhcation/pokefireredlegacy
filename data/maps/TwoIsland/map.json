@@ -165,6 +165,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DownwardBeach_EventScript_Npc",
       "flag": "FLAG_SYS_CAN_LINK_WITH_RS"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEOWTH)",
+      "x": 29,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "TwoIsland_EventScript_ClerkMeowth",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
+      "x": 36,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "TwoIsland_EventScript_HaveYouTriedJumpingGameEevee",
+      "flag": "0"
     }
   ],
   "warp_events": [

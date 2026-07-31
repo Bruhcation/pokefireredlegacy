@@ -25,4 +25,13 @@ CeladonCity_PokemonCenter_1F_EventScript_CooltrainerF::
 CeladonCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox CeladonCity_PokemonCenter_1F_Text_GoToCyclingRoadIfIHadBike, MSGBOX_NPC
 	end
+
+CeladonCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox CeladonCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

@@ -84,3 +84,8 @@ TwoIsland_Text_HaveYouTriedJumpingGame::
     .string "Did you know that?\n"
     .string "Boing!$"
 
+TwoIsland_Text_ClerkMeowth::
+	.string "MEOWTH: Meow!!$"
+
+TwoIsland_Text_HaveYouTriedJumpingGameEevee::
+	.string "EEVEE: Eevi!$"

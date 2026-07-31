@@ -1,6 +1,5 @@
 EventScript_PkmnCenterNurse::
 	goto_if_questlog EventScript_ReleaseEnd
-	goto_if_set FLAG_DONE_POKECENTER_FIRST_USE, Common_EventScript_PkmnCenterNurse_Continue
 	message Text_WelcomeWantToHealPkmn
 	waitmessage
 	multichoice 19, 8, MULTICHOICE_YES_NO, FALSE | (TRUE << 1)
@@ -8,11 +7,6 @@ EventScript_PkmnCenterNurse::
 	case 0, EventScript_PkmnCenterNurse_HealPkmn
 	case 1 EventScript_PkmnCenterNurse_Goodbye
 	case SCR_MENU_CANCEL, EventScript_PkmnCenterNurse_Goodbye
-	setflag FLAG_DONE_POKECENTER_FIRST_USE
-	case 0, EventScript_PkmnCenterNurse_HealPkmn
-
-Common_EventScript_PkmnCenterNurse_Continue::
-	goto EventScript_PkmnCenterNurse_HealPkmn
 	end
 
 EventScript_PkmnCenterNurse_HealPkmn::
@@ -21,7 +15,6 @@ EventScript_PkmnCenterNurse_HealPkmn::
 	waitmessage
 	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
 	special SetUsedPkmnCenterQuestLogEvent
-	setflag FLAG_DONE_POKECENTER_FIRST_USE
 	goto EventScript_PkmnCenterNurse_ReturnPkmn
 	end
 

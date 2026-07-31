@@ -21,4 +21,13 @@ FiveIsland_PokemonCenter_1F_EventScript_Chef::
 FiveIsland_PokemonCenter_1F_EventScript_CooltrainerF::
 	msgbox FiveIsland_PokemonCenter_1F_Text_YoureOnQuestToCatchEveryMon, MSGBOX_NPC
 	end
+
+FiveIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox FiveIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

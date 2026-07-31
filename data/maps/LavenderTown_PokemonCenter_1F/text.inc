@@ -14,3 +14,6 @@ LavenderTown_PokemonCenter_1F_Text_PeoplePayForCuboneSkulls::
     .string "wears skulls, right?\p"
     .string "People will pay a lot for one.$"
 
+LavenderTown_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Chan chan!$"
+

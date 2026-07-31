@@ -12,3 +12,6 @@ TwoIsland_PokemonCenter_1F_Text_OldLadyLivesOutOnCape::
     .string "She's been there since I don't know\n"
     .string "when.$"
 
+TwoIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Sei... Sei...\n"
+    .string "Cham!$"

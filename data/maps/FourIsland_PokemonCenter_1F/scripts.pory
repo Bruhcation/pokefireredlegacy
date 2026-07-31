@@ -25,4 +25,13 @@ FourIsland_PokemonCenter_1F_EventScript_Woman::
 FourIsland_PokemonCenter_1F_EventScript_Gentleman::
 	msgbox FourIsland_PokemonCenter_1F_Text_NewPokemonJournalHasntArrived, MSGBOX_NPC
 	end
+
+FourIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox FourIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

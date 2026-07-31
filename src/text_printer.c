@@ -121,10 +121,10 @@ void RunTextPrinters(void)
         if (sTextPrinters[i].active)
         {
             u16 renderCmd = RenderFont(&sTextPrinters[i]);
+            CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
             switch (renderCmd)
             {
             case RENDER_PRINT:
-                CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
             case RENDER_UPDATE:
                 if (sTextPrinters[i].callback != NULL)
                     sTextPrinters[i].callback(&sTextPrinters[i].printerTemplate, renderCmd);

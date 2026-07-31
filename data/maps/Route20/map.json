@@ -182,7 +182,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SLOWBRO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWBRO)",
       "x": 78,
       "y": 11,
       "elevation": 0,

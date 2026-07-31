@@ -47,30 +47,30 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SLOWPOKE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWPOKE)",
       "x": 36,
-      "y": 15,
+      "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_SLOWER",
-      "movement_range_x": 4,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooSlowpoke",
       "flag": "0"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VOLTORB",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VOLTORB)",
       "x": 33,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooVoltorb",
       "flag": "0"
     },
     {
@@ -89,16 +89,16 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
-      "x": 39,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
+      "x": 26,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooChansey",
       "flag": "0"
     },
     {
@@ -126,7 +126,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooLapras",
       "flag": "0"
     },
     {
@@ -154,21 +154,21 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooOmanyte",
       "flag": "0"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_KANGASKHAN",
-      "x": 16,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KANGASKHAN)",
+      "x": 15,
+      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 4,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_SLOWER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FuchsiaCity_EventScript_Pokemon",
+      "script": "FuchsiaCity_EventScript_ZooKangaskhan",
       "flag": "0"
     },
     {
@@ -198,6 +198,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FuchsiaCity_EventScript_Lass",
       "flag": "FLAG_HIDE_POSTGAME_GOSSIPERS"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
+      "x": 41,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND_SLOWER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FuchsiaCity_EventScript_ZooTauros",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
+      "x": 38,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FuchsiaCity_EventScript_ZooGrowlithe",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULPIX)",
+      "x": 40,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FuchsiaCity_EventScript_ZooVulpix",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FuchsiaCity_EventScript_ZooPsyduck",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -314,54 +370,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "FuchsiaCity_EventScript_WardensHomeSign"
-    },
-    {
-      "type": "sign",
-      "x": 35,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_VoltorbSign"
-    },
-    {
-      "type": "sign",
-      "x": 38,
-      "y": 16,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_SlowpokeSign"
-    },
-    {
-      "type": "sign",
-      "x": 41,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_ChanseySign"
-    },
-    {
-      "type": "sign",
-      "x": 17,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_KangaskhanSign"
-    },
-    {
-      "type": "sign",
-      "x": 11,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_FossilMonSign"
-    },
-    {
-      "type": "sign",
-      "x": 17,
-      "y": 18,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FuchsiaCity_EventScript_LaprasSign"
     },
     {
       "type": "sign",

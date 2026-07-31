@@ -525,6 +525,7 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_CHARIZARD                   0x1129
 #define OBJ_EVENT_PAL_TAG_BLASTOISE                   0x1130
 #define OBJ_EVENT_PAL_TAG_VENUSAUR                    0x1131
+#define OBJ_EVENT_PAL_TAG_OFFICER_JENNY               0x116B
 //#define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #if OW_GFX_COMPRESS
@@ -570,66 +571,67 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Chuck,                   OBJ_EVENT_PAL_TAG_CHUCK},
     {gObjectEventPal_Jasmine,                 OBJ_EVENT_PAL_TAG_JASMINE},
     {gObjectEventPal_Pryce,                   OBJ_EVENT_PAL_TAG_PRYCE},
-    {gObjectEventPal_Clair,               OBJ_EVENT_PAL_TAG_CLAIR},
-    {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
-    {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
-    {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},
-    {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4},
-    {gObjectEventPal_Charizard,                  OBJ_EVENT_PAL_TAG_CHARIZARD},
-    {gObjectEventPal_Blastoise,                  OBJ_EVENT_PAL_TAG_BLASTOISE},
-    {gObjectEventPal_Venusaur,                  OBJ_EVENT_PAL_TAG_VENUSAUR},
-	{gObjectEventPal_CastformSunny, OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY},
-    {gObjectEventPal_CastformRainy, OBJ_EVENT_PAL_TAG_CASTFORM_RAINY},
-    {gObjectEventPal_CastformSnowy, OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY},
+    {gObjectEventPal_Clair,                   OBJ_EVENT_PAL_TAG_CLAIR},
+    {gObjectEventPal_Npc1,                    OBJ_EVENT_PAL_TAG_NPC_1},
+    {gObjectEventPal_Npc2,                    OBJ_EVENT_PAL_TAG_NPC_2},
+    {gObjectEventPal_Npc3,                    OBJ_EVENT_PAL_TAG_NPC_3},
+    {gObjectEventPal_Npc4,                    OBJ_EVENT_PAL_TAG_NPC_4},
+    {gObjectEventPal_Charizard,               OBJ_EVENT_PAL_TAG_CHARIZARD},
+    {gObjectEventPal_Blastoise,               OBJ_EVENT_PAL_TAG_BLASTOISE},
+    {gObjectEventPal_Venusaur,                OBJ_EVENT_PAL_TAG_VENUSAUR},
+	{gObjectEventPal_CastformSunny,           OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY},
+    {gObjectEventPal_CastformRainy,           OBJ_EVENT_PAL_TAG_CASTFORM_RAINY},
+    {gObjectEventPal_CastformSnowy,           OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY},
+    {gObjectEventPal_OfficerJenny,            OBJ_EVENT_PAL_TAG_OFFICER_JENNY},
     #if OW_MON_POKEBALLS
     // Vanilla
-    {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
-    {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
-    {gObjectEventPal_GreatBall,             OBJ_EVENT_PAL_TAG_BALL_GREAT},
-    {gObjectEventPal_SafariBall,            OBJ_EVENT_PAL_TAG_BALL_SAFARI},
-    {gObjectEventPal_NetBall,               OBJ_EVENT_PAL_TAG_BALL_NET},
-    {gObjectEventPal_DiveBall,              OBJ_EVENT_PAL_TAG_BALL_DIVE},
-    {gObjectEventPal_NestBall,              OBJ_EVENT_PAL_TAG_BALL_NEST},
-    {gObjectEventPal_RepeatBall,            OBJ_EVENT_PAL_TAG_BALL_REPEAT},
-    {gObjectEventPal_TimerBall,             OBJ_EVENT_PAL_TAG_BALL_TIMER},
-    {gObjectEventPal_LuxuryBall,            OBJ_EVENT_PAL_TAG_BALL_LUXURY},
-    {gObjectEventPal_PremierBall,           OBJ_EVENT_PAL_TAG_BALL_PREMIER},
+    {gObjectEventPal_MasterBall,              OBJ_EVENT_PAL_TAG_BALL_MASTER},
+    {gObjectEventPal_UltraBall,               OBJ_EVENT_PAL_TAG_BALL_ULTRA},
+    {gObjectEventPal_GreatBall,               OBJ_EVENT_PAL_TAG_BALL_GREAT},
+    {gObjectEventPal_SafariBall,              OBJ_EVENT_PAL_TAG_BALL_SAFARI},
+    {gObjectEventPal_NetBall,                 OBJ_EVENT_PAL_TAG_BALL_NET},
+    {gObjectEventPal_DiveBall,                OBJ_EVENT_PAL_TAG_BALL_DIVE},
+    {gObjectEventPal_NestBall,                OBJ_EVENT_PAL_TAG_BALL_NEST},
+    {gObjectEventPal_RepeatBall,              OBJ_EVENT_PAL_TAG_BALL_REPEAT},
+    {gObjectEventPal_TimerBall,               OBJ_EVENT_PAL_TAG_BALL_TIMER},
+    {gObjectEventPal_LuxuryBall,              OBJ_EVENT_PAL_TAG_BALL_LUXURY},
+    {gObjectEventPal_PremierBall,             OBJ_EVENT_PAL_TAG_BALL_PREMIER},
     // Gen IV/Sinnoh pokeballs
     #ifdef ITEM_DUSK_BALL
-    {gObjectEventPal_DuskBall,              OBJ_EVENT_PAL_TAG_BALL_DUSK},
-    {gObjectEventPal_HealBall,              OBJ_EVENT_PAL_TAG_BALL_HEAL},
-    {gObjectEventPal_QuickBall,             OBJ_EVENT_PAL_TAG_BALL_QUICK},
-    {gObjectEventPal_CherishBall,           OBJ_EVENT_PAL_TAG_BALL_CHERISH},
+    {gObjectEventPal_DuskBall,                OBJ_EVENT_PAL_TAG_BALL_DUSK},
+    {gObjectEventPal_HealBall,                OBJ_EVENT_PAL_TAG_BALL_HEAL},
+    {gObjectEventPal_QuickBall,               OBJ_EVENT_PAL_TAG_BALL_QUICK},
+    {gObjectEventPal_CherishBall,             OBJ_EVENT_PAL_TAG_BALL_CHERISH},
     #endif
     #ifdef ITEM_PARK_BALL
-    {gObjectEventPal_ParkBall,              OBJ_EVENT_PAL_TAG_BALL_PARK},
+    {gObjectEventPal_ParkBall,                OBJ_EVENT_PAL_TAG_BALL_PARK},
     #endif
     // Gen II/Johto Apricorn pokeballs
     #ifdef ITEM_FAST_BALL
-    {gObjectEventPal_FastBall,              OBJ_EVENT_PAL_TAG_BALL_FAST},
-    {gObjectEventPal_LevelBall,             OBJ_EVENT_PAL_TAG_BALL_LEVEL},
-    {gObjectEventPal_LureBall,              OBJ_EVENT_PAL_TAG_BALL_LURE},
-    {gObjectEventPal_HeavyBall,             OBJ_EVENT_PAL_TAG_BALL_HEAVY},
-    {gObjectEventPal_LoveBall,              OBJ_EVENT_PAL_TAG_BALL_LOVE},
-    {gObjectEventPal_FriendBall,            OBJ_EVENT_PAL_TAG_BALL_FRIEND},
-    {gObjectEventPal_MoonBall,              OBJ_EVENT_PAL_TAG_BALL_MOON},
-    {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
+    {gObjectEventPal_FastBall,                OBJ_EVENT_PAL_TAG_BALL_FAST},
+    {gObjectEventPal_LevelBall,               OBJ_EVENT_PAL_TAG_BALL_LEVEL},
+    {gObjectEventPal_LureBall,                OBJ_EVENT_PAL_TAG_BALL_LURE},
+    {gObjectEventPal_HeavyBall,               OBJ_EVENT_PAL_TAG_BALL_HEAVY},
+    {gObjectEventPal_LoveBall,                OBJ_EVENT_PAL_TAG_BALL_LOVE},
+    {gObjectEventPal_FriendBall,              OBJ_EVENT_PAL_TAG_BALL_FRIEND},
+    {gObjectEventPal_MoonBall,                OBJ_EVENT_PAL_TAG_BALL_MOON},
+    {gObjectEventPal_SportBall,               OBJ_EVENT_PAL_TAG_BALL_SPORT},
     #endif
     // Gen V
     #ifdef ITEM_DREAM_BALL
-    {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
+    {gObjectEventPal_DreamBall,               OBJ_EVENT_PAL_TAG_BALL_DREAM},
     #endif
     // Gen VII
     #ifdef ITEM_BEAST_BALL
-    {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
+    {gObjectEventPal_BeastBall,               OBJ_EVENT_PAL_TAG_BALL_BEAST},
     #endif
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
-    {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},
+    {gObjectEventPal_StrangeBall,             OBJ_EVENT_PAL_TAG_BALL_STRANGE},
     #endif
     #endif
-    {gObjectEventPal_Substitute, OBJ_EVENT_PAL_TAG_SUBSTITUTE},
-    {gObjectEventPaletteEmotes, OBJ_EVENT_PAL_TAG_EMOTES},
+    {gObjectEventPal_Substitute,              OBJ_EVENT_PAL_TAG_SUBSTITUTE},
+    {gObjectEventPaletteEmotes,               OBJ_EVENT_PAL_TAG_EMOTES},
     {},
 };
 

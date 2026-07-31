@@ -18,3 +18,5 @@ SaffronCity_PokemonCenter_1F_Text_TeamRocketTookOff::
     .string "We can go out safely again!\l"
     .string "That's great!$"
 
+SaffronCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Cham? Sei!$"

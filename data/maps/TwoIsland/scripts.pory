@@ -282,4 +282,21 @@ TwoIsland_Text_CaveSign::
 	.string "Beware of Dark Caves, Holes, and\n"
 	.string "High Currents!$"
 
+TwoIsland_EventScript_ClerkMeowth::
+	lock
+	faceplayer
+	playmoncry SPECIES_MEOWTH, 0
+	msgbox TwoIsland_Text_ClerkMeowth
+	waitmoncry
+	release
+	end
+
+TwoIsland_EventScript_HaveYouTriedJumpingGameEevee::
+	lock
+	faceplayer
+	playmoncry SPECIES_EEVEE, 0
+	msgbox TwoIsland_Text_HaveYouTriedJumpingGameEevee
+	waitmoncry
+	release
+	end
 `

@@ -21,4 +21,13 @@ TwoIsland_PokemonCenter_1F_EventScript_GBAKid::
 TwoIsland_PokemonCenter_1F_EventScript_BugCatcher::
 	msgbox TwoIsland_PokemonCenter_1F_Text_OldLadyLivesOutOnCape, MSGBOX_NPC
 	end
+
+TwoIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox TwoIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

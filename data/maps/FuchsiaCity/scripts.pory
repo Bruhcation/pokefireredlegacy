@@ -145,4 +145,94 @@ FuchsiaCity_EventScript_OmanyteSign::
 	hidemonpic
 	releaseall
 	end
+
+FuchsiaCity_EventScript_ZooKangaskhan::
+	lock
+	faceplayer
+	playmoncry SPECIES_KANGASKHAN, 0
+	msgbox FuchsiaCity_Text_ZooKangaskhan
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooSlowpoke::
+	lock
+	faceplayer
+	playmoncry SPECIES_SLOWPOKE, 0
+	msgbox FuchsiaCity_Text_ZooSlowpoke
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox FuchsiaCity_Text_ZooChansey
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooGrowlithe::
+	lock
+	faceplayer
+	playmoncry SPECIES_GROWLITHE, 0
+	msgbox FuchsiaCity_Text_ZooGrowlithe
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooVulpix::
+	lock
+	faceplayer
+	playmoncry SPECIES_VULPIX, 0
+	msgbox FuchsiaCity_Text_ZooVulpix
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooVoltorb::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, 0
+	msgbox FuchsiaCity_Text_ZooVoltorb
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooLapras::
+	lock
+	faceplayer
+	playmoncry SPECIES_LAPRAS, 0
+	msgbox FuchsiaCity_Text_ZooLapras
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooTauros::
+	lock
+	faceplayer
+	playmoncry SPECIES_TAUROS, 0
+	msgbox FuchsiaCity_Text_ZooTauros
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooPsyduck::
+	lock
+	faceplayer
+	playmoncry SPECIES_PSYDUCK, 0
+	msgbox FuchsiaCity_Text_ZooPsyduck
+	waitmoncry
+	release
+	end
+
+FuchsiaCity_EventScript_ZooOmanyte::
+	lock
+	faceplayer
+	playmoncry SPECIES_OMANYTE, 0
+	msgbox FuchsiaCity_Text_ZooOmanyte
+	waitmoncry
+	release
+	end
 `

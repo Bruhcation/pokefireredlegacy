@@ -17,3 +17,6 @@ ThreeIsland_PokemonCenter_1F_Text_AlwaysBerriesInBerryForest::
     .string "You can always find some BERRIES\n"
     .string "on the ground in BERRY FOREST.$"
 
+ThreeIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Cham Cham Cham Sei\n"
+	.string "Chansey!$"

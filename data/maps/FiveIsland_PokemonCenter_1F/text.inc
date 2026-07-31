@@ -8,3 +8,5 @@ FiveIsland_PokemonCenter_1F_Text_YoureOnQuestToCatchEveryMon::
     .string "…How incredible. Please tell me if\n"
     .string "you catch a strong one!$"
 
+FiveIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Cha Cham!$"

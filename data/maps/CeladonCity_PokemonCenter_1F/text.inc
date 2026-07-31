@@ -13,3 +13,6 @@ CeladonCity_PokemonCenter_1F_Text_GoToCyclingRoadIfIHadBike::
     .string "If I had a BIKE, I would go to\n"
     .string "CYCLING ROAD!$"
 
+CeladonCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Sei sei sei!$"
+

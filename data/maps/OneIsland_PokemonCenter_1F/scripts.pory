@@ -568,4 +568,13 @@ OneIsland_PokemonCenter_1F_Movement_BillExit::
 	walk_left
 	walk_down
 	step_end
+
+OneIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox OneIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

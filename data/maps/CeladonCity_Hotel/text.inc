@@ -16,3 +16,5 @@ CeladonCity_Hotel_Text_SisBroughtMeOnVacation::
     .string "Yippee! I'm on vacation!\n"
     .string "My sis brought me along! Awesome!$"
 
+CeladonCity_Hotel_Text_ChillingMeowth::
+	.string "MEOWTH: Mewoh!$"

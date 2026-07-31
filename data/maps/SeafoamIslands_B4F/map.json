@@ -45,7 +45,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ARTICUNO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARTICUNO)",
       "x": 9,
       "y": 2,
       "elevation": 4,
@@ -87,7 +87,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SLOWPOKE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWPOKE)",
       "x": 12,
       "y": 18,
       "elevation": 0,

@@ -34,4 +34,13 @@ SaffronCity_PokemonCenter_1F_EventScript_YoungsterRocketsGone::
 	msgbox SaffronCity_PokemonCenter_1F_Text_TeamRocketTookOff
 	release
 	end
+
+SaffronCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox SaffronCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

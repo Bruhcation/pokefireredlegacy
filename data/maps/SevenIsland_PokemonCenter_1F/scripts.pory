@@ -25,4 +25,13 @@ SevenIsland_PokemonCenter_1F_EventScript_Sailor::
 SevenIsland_PokemonCenter_1F_EventScript_Beauty::
 	msgbox SevenIsland_PokemonCenter_1F_Text_CheckOutTrainerTower, MSGBOX_NPC
 	end
+
+SevenIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox SevenIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

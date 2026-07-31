@@ -25,3 +25,6 @@ CeruleanCity_PokemonCenter_1F_Text_TryTradingUpstairs::
     .string "The POKéMON you get in trades grow\n"
     .string "quickly, too.$"
 
+CeruleanCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Seey!$"
+

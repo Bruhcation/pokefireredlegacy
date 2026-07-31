@@ -196,11 +196,11 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_DODUO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DODUO)",
       "x": 15,
       "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",

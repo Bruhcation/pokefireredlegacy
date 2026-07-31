@@ -140,4 +140,13 @@ CinnabarIsland_PokemonCenter_1F_Movement_PlayerExitWest::
 	delay_16
 	walk_down
 	step_end
+
+CinnabarIsland_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox CinnabarIsland_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

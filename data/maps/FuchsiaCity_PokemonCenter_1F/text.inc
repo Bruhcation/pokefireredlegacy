@@ -16,3 +16,5 @@ FuchsiaCity_PokemonCenter_1F_Text_VisitSafariZoneForPokedex::
     .string "All sorts of rare POKéMON breed\n"
     .string "there.$"
 
+FuchsiaCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Chan... Chan!$"

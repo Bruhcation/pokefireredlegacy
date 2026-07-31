@@ -4,3 +4,5 @@ DiglettsCave_NorthEntrance_RockTunnelPitchBlack::
     .string "If I could get a POKéMON to use\n"
     .string "FLASH and light it up…$"
 
+DiglettsCave_NorthEntrance_SadOnix::
+    .string "ONIX: Gruh...$"

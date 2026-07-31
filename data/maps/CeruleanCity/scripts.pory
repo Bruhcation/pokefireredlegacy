@@ -397,4 +397,26 @@ CeruleanCity_EventScript_GymSign::
 	msgbox CeruleanCity_Text_GymSign
 	releaseall
 	end
+
+CeruleanCity_EventScript_CuteOddishGirl::
+	msgbox CeruleanCity_Text_CuteOddishGirl, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_Oddish::
+	lock
+	faceplayer
+	playmoncry SPECIES_ODDISH, 0
+	msgbox CeruleanCity_Text_Oddish
+	waitmoncry
+	release
+	end
+
+CeruleanCity_EventScript_OfficerJennyGrowlithe::
+	lock
+	faceplayer
+	playmoncry SPECIES_GROWLITHE, 0
+	msgbox CeruleanCity_Text_OfficerJennyGrowlithe
+	waitmoncry
+	release
+	end
 `

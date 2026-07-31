@@ -29,4 +29,13 @@ ViridianCity_PokemonCenter_1F_EventScript_Youngster::
 ViridianCity_PokemonCenter_1F_EventScript_Busy::
 	msgbox ViridianCity_PokemonCenter_1F_Text_PokeCenterBusy, MSGBOX_NPC
 	end
+
+ViridianCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox ViridianCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

@@ -43,4 +43,13 @@ PewterCity_PokemonCenter_1F_EventScript_GBAKid1::
 PewterCity_PokemonCenter_1F_EventScript_GBAKid2::
 	msgbox PewterCity_PokemonCenter_1F_Text_TradingPikachuWithKid, MSGBOX_NPC
 	end
+
+PewterCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox PewterCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

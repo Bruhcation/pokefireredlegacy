@@ -409,4 +409,13 @@ CinnabarIsland_EventScript_GymSign::
 	msgbox CinnabarIsland_Text_GymSign
 	releaseall
 	end
+
+CinnabarIsland_EventScript_ScientistsExperimentInMansionStaryu::
+	lock
+	faceplayer
+	playmoncry SPECIES_STARYU, 0
+	msgbox CinnabarIsland_Text_ScientistsExperimentInMansionStaryu
+	waitmoncry
+	release
+	end
 `

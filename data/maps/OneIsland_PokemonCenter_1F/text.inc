@@ -358,3 +358,5 @@ OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKantoAndHoenn::
 OneIsland_PokemonCenter_1F_Text_ObtainedTriPass::
     .string "Obtained the TRI-PASS!$"
 
+OneIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Cha Cha Chan!$"

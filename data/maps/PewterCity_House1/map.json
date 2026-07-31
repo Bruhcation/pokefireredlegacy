@@ -13,7 +13,7 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -45,11 +45,11 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_NIDORAN_M",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_M)",
       "x": 6,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -81,6 +81,10 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

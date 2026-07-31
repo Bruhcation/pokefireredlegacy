@@ -76,12 +76,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedFieldMove = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_OFFICER_JENNY,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
+    .paletteSlot = PALSLOT_NPC_2,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,

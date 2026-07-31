@@ -34,3 +34,6 @@ SixIsland_PokemonCenter_1F_Text_RivalImpossibleToGetAllMonsAroundHere::
     .string "That's that, then!\n"
     .string "Smell ya later!$"
 
+SixIsland_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Se Sei!$"
+

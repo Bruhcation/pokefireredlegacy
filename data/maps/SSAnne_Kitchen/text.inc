@@ -46,3 +46,11 @@ SSAnne_Kitchen_Text_PrimeBeefsteak::
     .string "But, have I enough fillets du\n"
     .string "beef?$"
 
+SSAnne_Kitchen_Text_CookingChef::
+    .string "Having a FIRE POKéMON helps a lot\n"
+	.string "in the kitchen!$"
+
+SSAnne_Kitchen_Text_CookingChefCharmeleon::
+    .string "CHARMELON: Char Char!$"
+
+

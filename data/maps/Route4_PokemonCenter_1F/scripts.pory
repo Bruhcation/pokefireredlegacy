@@ -153,4 +153,13 @@ Route4_PokemonCenter_1F_EventScript_Newspaper::
 	msgbox Route4_PokemonCenter_1F_Text_ItsANewspaper
 	release
 	end
+
+Route4_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox Route4_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

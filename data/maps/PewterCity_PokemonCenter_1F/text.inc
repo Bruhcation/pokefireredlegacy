@@ -25,3 +25,5 @@ PewterCity_PokemonCenter_1F_Text_TradingPikachuWithKid::
     .string "I had two PIKACHU, so I figured\n"
     .string "I might as well trade one.$"
 
+PewterCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Chan!$"

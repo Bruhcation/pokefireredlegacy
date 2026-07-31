@@ -154,3 +154,6 @@ Route14_Text_JanPostBattle::
 Route14_Text_JanNotEnoughMons::
     .string "JAN: You want to battle?\n"
     .string "You don't have enough POKéMON.$"
+
+Route14_Text_HealWomanChansey::
+	.string "CHANSEY: Chan!$"

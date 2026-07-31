@@ -57,3 +57,6 @@ VermilionCity_PokemonCenter_1F_Text_ExplainUpgrade::
 
 VermilionCity_PokemonCenter_1F_Text_SeekerUpgrade::
     .string "The VS SEEKER got an Upgrade!$"
+
+VermilionCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Chan... Sei!$"

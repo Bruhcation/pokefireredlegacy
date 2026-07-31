@@ -25,4 +25,13 @@ VermilionCity_PokemonCenter_1F_EventScript_Hiker::
 VermilionCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox VermilionCity_PokemonCenter_1F_Text_AllMonWeakToSpecificTypes, MSGBOX_NPC
 	end
+
+VermilionCity_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox VermilionCity_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

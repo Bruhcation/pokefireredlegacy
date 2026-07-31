@@ -25,4 +25,13 @@ LavenderTown_PokemonCenter_1F_EventScript_Lass::
 LavenderTown_PokemonCenter_1F_EventScript_Youngster::
 	msgbox LavenderTown_PokemonCenter_1F_Text_PeoplePayForCuboneSkulls, MSGBOX_NPC
 	end
+
+LavenderTown_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox LavenderTown_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

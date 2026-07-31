@@ -105,4 +105,26 @@ CeladonCity_EventScript_PrizeExchangeSign::
 CeladonCity_EventScript_GameCornerSign::
 	msgbox CeladonCity_Text_GameCornerSign, MSGBOX_SIGN
 	end
+
+CeladonCity_EventScript_GotMyKoffingInCinnabarKoffing::
+	lock
+	faceplayer
+	playmoncry SPECIES_KOFFING, 0
+	msgbox CeladonCity_Text_GotMyKoffingInCinnabarKoffing
+	waitmoncry
+	release
+	end
+
+CeladonCity_EventScript_LostTrainer::
+	msgbox CeladonCity_Text_LostTrainer, MSGBOX_NPC
+	end
+
+CeladonCity_EventScript_LostTrainerRaticate::
+	lock
+	faceplayer
+	playmoncry SPECIES_RATICATE, 0
+	msgbox CeladonCity_Text_LostTrainerRaticate
+	waitmoncry
+	release
+	end
 `

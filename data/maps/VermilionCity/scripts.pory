@@ -294,4 +294,30 @@ VermilionCity_EventScript_Psyduck::
 	waitmoncry
 	release
 	end
+
+VermilionCity_EventScript_OfficerJenny::
+	msgbox VermilionCity_Text_OfficerJenny, MSGBOX_NPC
+	end
+
+VermilionCity_EventScript_OfficerJennySquirtle::
+	lock
+	faceplayer
+	playmoncry SPECIES_SQUIRTLE, 0
+	msgbox VermilionCity_Text_OfficerJennySquirtle
+	waitmoncry
+	release
+	end
+
+VermilionCity_EventScript_DreamingKid::
+	msgbox VermilionCity_Text_DreamingKid, MSGBOX_NPC
+	end
+
+VermilionCity_EventScript_DreamingKidMagikarp::
+	lock
+	faceplayer
+	playmoncry SPECIES_MAGIKARP, 0
+	msgbox VermilionCity_Text_DreamingKidMagikarp
+	waitmoncry
+	release
+	end
 `

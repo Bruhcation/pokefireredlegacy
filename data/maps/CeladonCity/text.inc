@@ -1,7 +1,8 @@
 CeladonCity_Text_GotMyKoffingInCinnabar::
-    .string "I got my KOFFING in CINNABAR.\p"
-    .string "It's usually nice, but it breathes\n"
-    .string "poison when it's angry.$"
+	.string "I got my KOFFING in CINNABAR. It\n"
+	.string "spews out poison gas when it gets\l"
+	.string "angry... but it's usually very\n"
+	.string "sweet-I promise!$"
 
 CeladonCity_Text_GymIsGreatFullOfWomen::
     .string "Heheh! This GYM is great!\n"
@@ -127,3 +128,12 @@ CeladonCity_Text_SomeoneStoleSilphScope::
     .string "But I lost sight of him!\n"
     .string "Where'd he go?$"
 
+CeladonCity_Text_GotMyKoffingInCinnabarKoffing::
+	.string "KOFFING: Gasss...$"
+
+CeladonCity_Text_LostTrainer::
+	.string "I this the way to the GYM?\n"
+	.string "I'm so confused...$"
+
+CeladonCity_Text_LostTrainerRaticate::
+	.string "RATICATE: Dit dit!$"

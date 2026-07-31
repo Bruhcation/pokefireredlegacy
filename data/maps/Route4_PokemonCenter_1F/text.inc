@@ -55,4 +55,5 @@ Route4_PokemonCenter_1F_Text_ItsANewspaper::
 Route4_PokemonCenter_1F_Text_BabyMons::
     .string "It's a PLACEHOLDER.$"
 
-
+Route4_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Sei sei!$"

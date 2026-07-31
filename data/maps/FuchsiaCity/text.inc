@@ -128,4 +128,32 @@ FuchsiaCity_Text_MyFatherIsGymLeader::
     .string "as well as him.\p"
     .string "He hopes to join the ELITE FOUR!$"
 
+FuchsiaCity_Text_ZooKangaskhan::
+	.string "KANGASKHAN: Mamaaa!$"
 
+FuchsiaCity_Text_ZooSlowpoke::
+	.string "SLOWPOKE: Slooow?$"
+
+FuchsiaCity_Text_ZooChansey::
+	.string "CHANSEY: Seee!$"
+
+FuchsiaCity_Text_ZooGrowlithe::
+	.string "GROWLITHE: Haooo.$"
+
+FuchsiaCity_Text_ZooVulpix::
+	.string "VULPIX: Awoo.$"
+
+FuchsiaCity_Text_ZooVoltorb::
+	.string "VOLTORB: No oorb...$"
+
+FuchsiaCity_Text_ZooLapras::
+	.string "LAPRAS: Wa! Wa!$"
+
+FuchsiaCity_Text_ZooTauros::
+	.string "TAUROS: Frrrmph!$"
+
+FuchsiaCity_Text_ZooPsyduck::
+	.string "PSYDUCK: Yai yai!$"
+
+FuchsiaCity_Text_ZooOmanyte::
+	.string "OMANYTE: Squeeb.$"

@@ -18,3 +18,6 @@ ViridianCity_PokemonCenter_1F_Text_PokeCentersHealMons::
 
 ViridianCity_PokemonCenter_1F_Text_PokeCenterBusy::
     .string "Sorry, we will be open soon.$"
+
+ViridianCity_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "CHANSEY: Chan!$"
