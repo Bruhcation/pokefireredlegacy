@@ -175,8 +175,8 @@ gText_Oak_AreYouSure_Hardcore::
 
 gPikachuIntro_Text_Page4::
 	.string "Thank you for Playing FIRERED\n"
-	.string "REIGNITED and LEAFGREEN REGROWN!\n"
-	.string "Version 1.5!\p"
+	.string "REIGNITED and LEAFGREEN REGROWN\n"
+	.string "PLUS! Version 1.0!\p"
     .string "\n"
 	.string "This is a Romhack so if you wanted\n"
 	.string "to play the orignal games log off!\n"
