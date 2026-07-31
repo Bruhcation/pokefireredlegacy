@@ -15,9 +15,17 @@ So I decided to enhance this project a bit more to my tastes with the following 
 * Added help menus for literally all of this except the pokedex.
 * Added a new menu config option to toggle literally every single one of these options ON and OFF whenever you want, with the exception of the pokedex upgrade.
 * Added arrows on the summary page to better symbolize nature stat differences.
+* Added IV and EV checking on the summary page, works with enemy summary.
+* Pokeballs being usable from the bag to change the pokeball the pokemon is in.
+* Trainer Class Based Poké Balls.
+* Added a heart on the summary to show how much friendship you have with the pokemon.
+* Changed Abra's max level encounter to be level 20 so it can learn PSYBEAM once it evolves to KADABRA at 21.
+* Added some new NPCs with pokemons to emulate how Lets Go Pikachu does it, adding some more life to the world.
+* Changed guards to Officer Jenny
+* Made text faster all around.
 
 **Currently I'm working on the following:**
-* EV/IV checking in the stats page.
+* Secret!
 
 <br>
 
