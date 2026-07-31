@@ -774,7 +774,7 @@ u8 FldEff_QuestionMarkIcon(void)
 {
     u8 spriteId;
 
-    if (gFieldEffectArguments[7] >= 0) {
+    if ((s32)gFieldEffectArguments[7] >= 0) {
         // Use follower emotes
         u8 emotion = gFieldEffectArguments[7];
         spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
