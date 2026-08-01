@@ -938,6 +938,7 @@ const u8 gText_ButtonTypeLEqualsA[] = _("L=A");
 const u8 gText_ButtonTypeLR[] = _("LR");
 const u8 gText_FrameType[] = _("TYPE");
 const u8 gText_HackOptions[] = _("HACK OPTIONS");
+const u8 gText_DevOnly[] = _("INACCESSIBLE");
 const u8 gText_Back[] = _("BACK");
 const u8 gText_EnemySummary[] = _("ENEMY SUMMARY");
 const u8 gText_MoveEffectivenessLabel[] = _("EFFECTIVENESS");

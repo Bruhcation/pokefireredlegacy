@@ -953,6 +953,7 @@ extern const u8 gText_ButtonTypeLEqualsA[];
 extern const u8 gText_Option[];
 extern const u8 gText_FrameType[];
 extern const u8 gText_HackOptions[];
+extern const u8 gText_DevOnly[];
 extern const u8 gText_Back[];
 extern const u8 gText_EnemySummary[];
 extern const u8 gText_MoveEffectivenessLabel[];

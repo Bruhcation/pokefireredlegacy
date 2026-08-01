@@ -570,66 +570,66 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Chuck,                   OBJ_EVENT_PAL_TAG_CHUCK},
     {gObjectEventPal_Jasmine,                 OBJ_EVENT_PAL_TAG_JASMINE},
     {gObjectEventPal_Pryce,                   OBJ_EVENT_PAL_TAG_PRYCE},
-    {gObjectEventPal_Clair,               OBJ_EVENT_PAL_TAG_CLAIR},
-    {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
-    {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
-    {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},
-    {gObjectEventPal_Npc4,                  OBJ_EVENT_PAL_TAG_NPC_4},
-    {gObjectEventPal_Charizard,                  OBJ_EVENT_PAL_TAG_CHARIZARD},
-    {gObjectEventPal_Blastoise,                  OBJ_EVENT_PAL_TAG_BLASTOISE},
-    {gObjectEventPal_Venusaur,                  OBJ_EVENT_PAL_TAG_VENUSAUR},
-	{gObjectEventPal_CastformSunny, OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY},
-    {gObjectEventPal_CastformRainy, OBJ_EVENT_PAL_TAG_CASTFORM_RAINY},
-    {gObjectEventPal_CastformSnowy, OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY},
+    {gObjectEventPal_Clair,                   OBJ_EVENT_PAL_TAG_CLAIR},
+    {gObjectEventPal_Npc1,                    OBJ_EVENT_PAL_TAG_NPC_1},
+    {gObjectEventPal_Npc2,                    OBJ_EVENT_PAL_TAG_NPC_2},
+    {gObjectEventPal_Npc3,                    OBJ_EVENT_PAL_TAG_NPC_3},
+    {gObjectEventPal_Npc4,                    OBJ_EVENT_PAL_TAG_NPC_4},
+    {gObjectEventPal_Charizard,               OBJ_EVENT_PAL_TAG_CHARIZARD},
+    {gObjectEventPal_Blastoise,               OBJ_EVENT_PAL_TAG_BLASTOISE},
+    {gObjectEventPal_Venusaur,                OBJ_EVENT_PAL_TAG_VENUSAUR},
+	{gObjectEventPal_CastformSunny,           OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY},
+    {gObjectEventPal_CastformRainy,           OBJ_EVENT_PAL_TAG_CASTFORM_RAINY},
+    {gObjectEventPal_CastformSnowy,           OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY},
     #if OW_MON_POKEBALLS
     // Vanilla
-    {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
-    {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
-    {gObjectEventPal_GreatBall,             OBJ_EVENT_PAL_TAG_BALL_GREAT},
-    {gObjectEventPal_SafariBall,            OBJ_EVENT_PAL_TAG_BALL_SAFARI},
-    {gObjectEventPal_NetBall,               OBJ_EVENT_PAL_TAG_BALL_NET},
-    {gObjectEventPal_DiveBall,              OBJ_EVENT_PAL_TAG_BALL_DIVE},
-    {gObjectEventPal_NestBall,              OBJ_EVENT_PAL_TAG_BALL_NEST},
-    {gObjectEventPal_RepeatBall,            OBJ_EVENT_PAL_TAG_BALL_REPEAT},
-    {gObjectEventPal_TimerBall,             OBJ_EVENT_PAL_TAG_BALL_TIMER},
-    {gObjectEventPal_LuxuryBall,            OBJ_EVENT_PAL_TAG_BALL_LUXURY},
-    {gObjectEventPal_PremierBall,           OBJ_EVENT_PAL_TAG_BALL_PREMIER},
+    {gObjectEventPal_MasterBall,              OBJ_EVENT_PAL_TAG_BALL_MASTER},
+    {gObjectEventPal_UltraBall,               OBJ_EVENT_PAL_TAG_BALL_ULTRA},
+    {gObjectEventPal_GreatBall,               OBJ_EVENT_PAL_TAG_BALL_GREAT},
+    {gObjectEventPal_SafariBall,              OBJ_EVENT_PAL_TAG_BALL_SAFARI},
+    {gObjectEventPal_NetBall,                 OBJ_EVENT_PAL_TAG_BALL_NET},
+    {gObjectEventPal_DiveBall,                OBJ_EVENT_PAL_TAG_BALL_DIVE},
+    {gObjectEventPal_NestBall,                OBJ_EVENT_PAL_TAG_BALL_NEST},
+    {gObjectEventPal_RepeatBall,              OBJ_EVENT_PAL_TAG_BALL_REPEAT},
+    {gObjectEventPal_TimerBall,               OBJ_EVENT_PAL_TAG_BALL_TIMER},
+    {gObjectEventPal_LuxuryBall,              OBJ_EVENT_PAL_TAG_BALL_LUXURY},
+    {gObjectEventPal_PremierBall,             OBJ_EVENT_PAL_TAG_BALL_PREMIER},
     // Gen IV/Sinnoh pokeballs
     #ifdef ITEM_DUSK_BALL
-    {gObjectEventPal_DuskBall,              OBJ_EVENT_PAL_TAG_BALL_DUSK},
-    {gObjectEventPal_HealBall,              OBJ_EVENT_PAL_TAG_BALL_HEAL},
-    {gObjectEventPal_QuickBall,             OBJ_EVENT_PAL_TAG_BALL_QUICK},
-    {gObjectEventPal_CherishBall,           OBJ_EVENT_PAL_TAG_BALL_CHERISH},
+    {gObjectEventPal_DuskBall,                OBJ_EVENT_PAL_TAG_BALL_DUSK},
+    {gObjectEventPal_HealBall,                OBJ_EVENT_PAL_TAG_BALL_HEAL},
+    {gObjectEventPal_QuickBall,               OBJ_EVENT_PAL_TAG_BALL_QUICK},
+    {gObjectEventPal_CherishBall,             OBJ_EVENT_PAL_TAG_BALL_CHERISH},
     #endif
     #ifdef ITEM_PARK_BALL
-    {gObjectEventPal_ParkBall,              OBJ_EVENT_PAL_TAG_BALL_PARK},
+    {gObjectEventPal_ParkBall,                OBJ_EVENT_PAL_TAG_BALL_PARK},
     #endif
     // Gen II/Johto Apricorn pokeballs
     #ifdef ITEM_FAST_BALL
-    {gObjectEventPal_FastBall,              OBJ_EVENT_PAL_TAG_BALL_FAST},
-    {gObjectEventPal_LevelBall,             OBJ_EVENT_PAL_TAG_BALL_LEVEL},
-    {gObjectEventPal_LureBall,              OBJ_EVENT_PAL_TAG_BALL_LURE},
-    {gObjectEventPal_HeavyBall,             OBJ_EVENT_PAL_TAG_BALL_HEAVY},
-    {gObjectEventPal_LoveBall,              OBJ_EVENT_PAL_TAG_BALL_LOVE},
-    {gObjectEventPal_FriendBall,            OBJ_EVENT_PAL_TAG_BALL_FRIEND},
-    {gObjectEventPal_MoonBall,              OBJ_EVENT_PAL_TAG_BALL_MOON},
-    {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
+    {gObjectEventPal_FastBall,                OBJ_EVENT_PAL_TAG_BALL_FAST},
+    {gObjectEventPal_LevelBall,               OBJ_EVENT_PAL_TAG_BALL_LEVEL},
+    {gObjectEventPal_LureBall,                OBJ_EVENT_PAL_TAG_BALL_LURE},
+    {gObjectEventPal_HeavyBall,               OBJ_EVENT_PAL_TAG_BALL_HEAVY},
+    {gObjectEventPal_LoveBall,                OBJ_EVENT_PAL_TAG_BALL_LOVE},
+    {gObjectEventPal_FriendBall,              OBJ_EVENT_PAL_TAG_BALL_FRIEND},
+    {gObjectEventPal_MoonBall,                OBJ_EVENT_PAL_TAG_BALL_MOON},
+    {gObjectEventPal_SportBall,               OBJ_EVENT_PAL_TAG_BALL_SPORT},
     #endif
     // Gen V
     #ifdef ITEM_DREAM_BALL
-    {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
+    {gObjectEventPal_DreamBall,               OBJ_EVENT_PAL_TAG_BALL_DREAM},
     #endif
     // Gen VII
     #ifdef ITEM_BEAST_BALL
-    {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
+    {gObjectEventPal_BeastBall,               OBJ_EVENT_PAL_TAG_BALL_BEAST},
     #endif
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
-    {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},
+    {gObjectEventPal_StrangeBall,             OBJ_EVENT_PAL_TAG_BALL_STRANGE},
     #endif
     #endif
-    {gObjectEventPal_Substitute, OBJ_EVENT_PAL_TAG_SUBSTITUTE},
-    {gObjectEventPaletteEmotes, OBJ_EVENT_PAL_TAG_EMOTES},
+    {gObjectEventPal_Substitute,              OBJ_EVENT_PAL_TAG_SUBSTITUTE},
+    {gObjectEventPaletteEmotes,               OBJ_EVENT_PAL_TAG_EMOTES},
     {},
 };
 
@@ -1958,7 +1958,7 @@ u8 SpawnSpecialObjectEvent(struct ObjectEventTemplate *objectEventTemplate)
     return TrySpawnObjectEventTemplate(objectEventTemplate, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
 }
 
-int SpawnSpecialObjectEventParameterized(u8 graphicsId, u8 movementBehavior, u8 localId, s16 x, s16 y, u8 elevation)
+int SpawnSpecialObjectEventParameterized(u16 graphicsId, u8 movementBehavior, u8 localId, s16 x, s16 y, u8 elevation)
 {
     struct ObjectEventTemplate objectEventTemplate;
 
@@ -2080,7 +2080,7 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, SpriteCallback callback, s16 x, s1
 #define sVirtualObjId   data[0]
 #define sVirtualObjElev data[1]
 
-u8 CreateVirtualObject(u8 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction)
+u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction)
 {
     u8 spriteId;
     struct Sprite *sprite;
@@ -2961,7 +2961,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
     objectEvent->graphicsId = graphicsId;
 }
 
-void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 graphicsId)
+void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {
     u8 objectEventId;
 
@@ -2994,7 +2994,7 @@ void PlayerObjectTurn(struct PlayerAvatar *playerAvatar, u8 direction)
     ObjectEventTurn(&gObjectEvents[playerAvatar->objectEventId], direction);
 }
 
-const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
+const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
 {
     u32 form = 0;
 
@@ -10948,7 +10948,7 @@ void TurnVirtualObject(u8 virtualObjId, u8 direction)
     }
 }
 
-void SetVirtualObjectGraphics(u8 virtualObjId, u8 direction)
+void SetVirtualObjectGraphics(u8 virtualObjId, u16 graphicsId)
 {
     int spriteId = GetVirtualObjectSpriteId(virtualObjId);
 

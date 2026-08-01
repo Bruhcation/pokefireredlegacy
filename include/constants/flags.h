@@ -296,7 +296,7 @@
 #define FLAG_BERRY_FOREST_TREE_5             0x114
 #define FLAG_BERRY_FOREST_TREE_6             0x115
 #define FLAG_MIRAGE_FLAG               0x116
-#define FLAG_0x117               0x117
+#define FLAG_HACK_OPTION_MENU               0x117
 #define FLAG_0x118               0x118
 #define FLAG_0x119               0x119
 #define FLAG_0x11A               0x11A

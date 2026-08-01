@@ -118,6 +118,7 @@ OneIsland_EventScript_Giovanni::
 
 OneIsland_EventScript_Samal::
 	msgbox OneIsland_Text_Samal, MSGBOX_NPC
+	setflag FLAG_SHOW_HIDDEN_POWER
 	end
 
 OneIsland_Text_Samal::

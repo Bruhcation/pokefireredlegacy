@@ -301,6 +301,7 @@ static void Cmd_settypetoterrain(void);
 static void Cmd_pursuitdoubles(void);
 static void Cmd_snatchsetbattlers(void);
 static void Cmd_removelightscreenreflect(void);
+static bool8 CheckCaughtAllUnown(void);
 static void Cmd_handleballthrow(void);
 static void Cmd_givecaughtmon(void);
 static void Cmd_trysetcaughtmondexflags(void);
@@ -9774,6 +9775,47 @@ static void Cmd_trysetcaughtmondexflags(void)
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr += 5;
     }
+   if (species == SPECIES_UNOWN) // Check unown forms
+    {
+        u16 letter = GetUnownLetterByPersonality(personality);
+        if (letter == 0)
+        {
+            letter = SPECIES_UNOWN;
+            FlagSet(FLAG_CAUGHT_UNOWN_A); // Check unown A seperately since there's no dex flag for it
+        }
+        else
+        {
+            letter += (SPECIES_UNOWN_B - 1);
+            species = letter;
+            if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+            {
+                HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
+            }
+        }
+        if (CheckCaughtAllUnown())
+        {
+            FlagSet(FLAG_SHOW_HIDDEN_POWER); // Unlock hidden power type in the party menu
+        }
+    }
+}
+
+static bool8 CheckCaughtAllUnown(void)
+{
+    u32 startUnown = SPECIES_UNOWN_B;
+    u32 endUnown = SPECIES_UNOWN_QMARK;
+    u16 species;
+    if (!FlagGet(FLAG_CAUGHT_UNOWN_A)) // Check unown A seperately since there's no dex flag for it
+    {
+        return FALSE;
+    }
+    for (species = startUnown; species <= endUnown; species++)
+    {
+        if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT)) // Loop through all unown forms
+        {
+            return FALSE;
+        }
+    }
+    return TRUE; // All Unown are caught
 }
 
 static void Cmd_displaydexinfo(void)

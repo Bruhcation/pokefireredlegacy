@@ -335,8 +335,13 @@ void CB2_OptionsMenuFromStartMenu(void)
     }
     for (i = 0; i < HACKMENUITEM_COUNT - 1; i++)
     {
-        if (sHackOptionsItemCounts[i] != 0 && sOptionMenuPtr->hackOption[i] > (sHackOptionsItemCounts[i]) - 1)
-            sOptionMenuPtr->hackOption[i] = 0;
+        if (FlagGet(FLAG_HACK_OPTION_MENU))
+        {
+            if (sHackOptionsItemCounts[i] != 0 && sOptionMenuPtr->hackOption[i] > (sHackOptionsItemCounts[i]) - 1)
+                sOptionMenuPtr->hackOption[i] = 0;
+        }
+        else
+            break; // don't allow access to the hack options if the flag isn't set
     }
     for (i = 0; i < BATTLEMENUITEM_COUNT - 1; i++)
     {
@@ -651,10 +656,15 @@ static u8 OptionMenu_ProcessInput(void)
         }
         else if (sOptionMenuPtr->menuLevel == OPTIONMENU_LEVEL_MAIN && sOptionMenuPtr->cursorPos == MENUITEM_HACKOPTIONS)
         {
-            sOptionMenuPtr->menuLevel = OPTIONMENU_LEVEL_HACK;
-            sOptionMenuPtr->cursorPos = 0;
-            SetHelpContextDontCheckBattle(HELPCONTEXT_HACK_OPTIONS);
-            return 5;
+            if (FlagGet(FLAG_HACK_OPTION_MENU))
+                {
+                sOptionMenuPtr->menuLevel = OPTIONMENU_LEVEL_HACK;
+                sOptionMenuPtr->cursorPos = 0;
+                SetHelpContextDontCheckBattle(HELPCONTEXT_HACK_OPTIONS);
+                return 5;
+                }
+            else
+                return 1;
         }
         else if (sOptionMenuPtr->menuLevel == OPTIONMENU_LEVEL_HACK && sOptionMenuPtr->cursorPos == HACKMENUITEM_BACK)
         {
@@ -770,8 +780,12 @@ static void BufferOptionMenuString(u8 selection)
             AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, str);
             break;
         case MENUITEM_HACKOPTIONS:
+        if (FlagGet(FLAG_HACK_OPTION_MENU))
             AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, gText_SelectorArrow2);
-            break;
+        else
+            AddTextPrinterParameterized3(1, FONT_NORMAL, x, y, dst, -1, gText_DevOnly);
+        break;
+
         default: // MENUITEM_CANCEL: no value column
             break;
         }

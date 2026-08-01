@@ -337,8 +337,8 @@ static void HandleInputChooseAction(void)
     }
     else if (JOY_NEW(SELECT_BUTTON))
     {
-        PlaySE(SE_SELECT);
-        CheckOpponentParty();
+        //PlaySE(SE_SELECT);
+        //CheckOpponentParty();
     }
 }
 
