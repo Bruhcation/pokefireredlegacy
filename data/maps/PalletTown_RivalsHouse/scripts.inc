@@ -422,3 +422,77 @@ PalletTown_RivalsHouse_EventScript_Picture::
 	msgbox PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy, MSGBOX_SIGN
 # 212 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	end
+# 213 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 214 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_Charizard::
+# 215 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	lock
+# 216 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	faceplayer
+# 217 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitse
+# 218 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	playmoncry SPECIES_CHARIZARD, CRY_MODE_NORMAL
+# 219 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_Charizard, MSGBOX_NPC
+# 220 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitmoncry
+# 221 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 222 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 223 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 224 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_Blastoise::
+# 225 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	lock
+# 226 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	faceplayer
+# 227 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitse
+# 228 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	playmoncry SPECIES_BLASTOISE, CRY_MODE_NORMAL
+# 229 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_Blastoise, MSGBOX_NPC
+# 230 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitmoncry
+# 231 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 232 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 233 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 234 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_Venusaur::
+# 235 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	lock
+# 236 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	faceplayer
+# 237 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitse
+# 238 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	playmoncry SPECIES_VENUSAUR, CRY_MODE_NORMAL
+# 239 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_Venusaur, MSGBOX_NPC
+# 240 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitmoncry
+# 241 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 242 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 243 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 244 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Charizard::
+# 245 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	.string "Zard!$"
+# 246 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Blastoise::
+# 247 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	.string "Blastoise!$"
+# 248 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Venusaur::
+# 249 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	.string "Saur!$"
