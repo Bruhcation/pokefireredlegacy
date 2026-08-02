@@ -820,3 +820,21 @@ CinnabarIsland_EventScript_GymSign::
 	releaseall
 # 411 "data/maps/CinnabarIsland/scripts.pory"
 	end
+# 412 "data/maps/CinnabarIsland/scripts.pory"
+
+# 413 "data/maps/CinnabarIsland/scripts.pory"
+CinnabarIsland_EventScript_ScientistsExperimentInMansionStaryu::
+# 414 "data/maps/CinnabarIsland/scripts.pory"
+	lock
+# 415 "data/maps/CinnabarIsland/scripts.pory"
+	faceplayer
+# 416 "data/maps/CinnabarIsland/scripts.pory"
+	playmoncry SPECIES_STARYU, 0
+# 417 "data/maps/CinnabarIsland/scripts.pory"
+	msgbox CinnabarIsland_Text_ScientistsExperimentInMansionStaryu
+# 418 "data/maps/CinnabarIsland/scripts.pory"
+	waitmoncry
+# 419 "data/maps/CinnabarIsland/scripts.pory"
+	release
+# 420 "data/maps/CinnabarIsland/scripts.pory"
+	end

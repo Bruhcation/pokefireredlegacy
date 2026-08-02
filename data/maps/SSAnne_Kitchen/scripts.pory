@@ -49,4 +49,17 @@ SSAnne_Kitchen_EventScript_Chef6::
 SSAnne_Kitchen_EventScript_Chef7::
 	msgbox SSAnne_Kitchen_Text_OnlyGetToPeelOnions, MSGBOX_NPC
 	end
+
+SSAnne_Kitchen_EventScript_CookingChef::
+	msgbox SSAnne_Kitchen_Text_CookingChef, MSGBOX_NPC
+	end
+
+SSAnne_Kitchen_EventScript_CookingChefCharmeleon::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHARMELEON, 0
+	msgbox SSAnne_Kitchen_Text_CookingChefCharmeleon
+	waitmoncry
+	release
+	end
 `

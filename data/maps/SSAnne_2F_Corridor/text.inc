@@ -35,3 +35,9 @@ SSAnne_2F_Corridor_Text_RivalPostBattle::
     .string "You should go see him, too.\n"
     .string "Smell ya!$"
 
+SSAnne_2F_Corridor_Text_AfraidOfBoats::
+    .string "I think my POKéMON is afraid of\n"
+	.string "ships...$"
+
+SSAnne_2F_Corridor_Text_Ekans::
+    .string "EKANS: Ekansss...$"

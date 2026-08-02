@@ -48,3 +48,23 @@ Route14_Text_HealWoman1::
 Route14_Text_HealWoman2::
 # 25 "data/maps/Route14/scripts.pory"
 	.string "Stay strong, TRAINER!$"
+# 26 "data/maps/Route14/scripts.pory"
+
+# 27 "data/maps/Route14/scripts.pory"
+
+# 28 "data/maps/Route14/scripts.pory"
+Route14_EventScript_HealWomanChansey::
+# 29 "data/maps/Route14/scripts.pory"
+	lock
+# 30 "data/maps/Route14/scripts.pory"
+	faceplayer
+# 31 "data/maps/Route14/scripts.pory"
+	playmoncry SPECIES_CHANSEY, 0
+# 32 "data/maps/Route14/scripts.pory"
+	msgbox Route14_Text_HealWomanChansey
+# 33 "data/maps/Route14/scripts.pory"
+	waitmoncry
+# 34 "data/maps/Route14/scripts.pory"
+	release
+# 35 "data/maps/Route14/scripts.pory"
+	end

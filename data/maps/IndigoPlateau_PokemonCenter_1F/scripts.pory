@@ -105,4 +105,30 @@ IndigoPlateau_PokemonCenter_1F_TMGUY::
 	end
 
 
+IndigoPlateau_PokemonCenter_1F_EventScript_TrainMore::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TrainMore, MSGBOX_NPC
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_TrainMoreGengar::
+	lock
+	faceplayer
+	playmoncry SPECIES_GENGAR, 0
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TrainMoreGengar
+	waitmoncry
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_AlmostReady::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_AlmostReady, MSGBOX_NPC
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_AlmostReadyAlakazam::
+	lock
+	faceplayer
+	playmoncry SPECIES_ALAKAZAM, 0
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_AlmostReadyAlakazam
+	waitmoncry
+	release
+	end
+
 `

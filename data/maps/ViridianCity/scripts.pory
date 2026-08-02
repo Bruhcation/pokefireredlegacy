@@ -290,5 +290,18 @@ ViridianCity_EventScript_PostRematchPokedude::
 	cleartrainerflag TRAINER_POKEDUDE
 	release
 	end
+
+ViridianCity_EventScript_OddishGirl::
+	msgbox ViridianCity_Text_OddishGirl, MSGBOX_NPC
+	end
+
+ViridianCity_EventScript_Oddish::
+	lock
+	faceplayer
+	playmoncry SPECIES_ODDISH, 0
+	msgbox ViridianCity_Text_Oddish
+	waitmoncry
+	release
+	end
 `
 

@@ -21,3 +21,10 @@ CeladonCity_DepartmentStore_5F_Text_HereForStatEnhancers::
 CeladonCity_DepartmentStore_5F_Text_Drugstore::
     .string "5F: DRUGSTORE$"
 
+CeladonCity_Text_MatchingOutfits::
+	.string "What do you think about matching\n"
+	.string "outfits, little GLOOM?$"
+
+CeladonCity_Text_MatchingOutfitsGloom::
+	.string "GLOOM: Ooom!$"
+

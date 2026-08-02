@@ -3643,6 +3643,9 @@ u8 DexScreen_DrawMonEvolutionPage(void)
     u8 chainDepth[5];
     int chainCount = 0;
 
+    sSavedReservedSpritePaletteCount = gReservedSpritePaletteCount;
+    gReservedSpritePaletteCount = 0;
+
     width = 28;
     height = 14;
     left = 0;
@@ -3701,6 +3704,7 @@ static u8 DexScreen_DestroyEvolutionScreenResources(void)
 {
     DexScreen_RemoveWindow(&sPokedexScreenData->windowIds[0]);
     DexScreen_DestroyEvolutionIcons();
+    gReservedSpritePaletteCount = sSavedReservedSpritePaletteCount;
     return 0;
 }
 

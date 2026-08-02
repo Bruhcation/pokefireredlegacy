@@ -582,3 +582,29 @@ ViridianCity_EventScript_PostRematchPokedude::
 	release
 # 292 "data/maps/ViridianCity/scripts.pory"
 	end
+# 293 "data/maps/ViridianCity/scripts.pory"
+
+# 294 "data/maps/ViridianCity/scripts.pory"
+ViridianCity_EventScript_OddishGirl::
+# 295 "data/maps/ViridianCity/scripts.pory"
+	msgbox ViridianCity_Text_OddishGirl, MSGBOX_NPC
+# 296 "data/maps/ViridianCity/scripts.pory"
+	end
+# 297 "data/maps/ViridianCity/scripts.pory"
+
+# 298 "data/maps/ViridianCity/scripts.pory"
+ViridianCity_EventScript_Oddish::
+# 299 "data/maps/ViridianCity/scripts.pory"
+	lock
+# 300 "data/maps/ViridianCity/scripts.pory"
+	faceplayer
+# 301 "data/maps/ViridianCity/scripts.pory"
+	playmoncry SPECIES_ODDISH, 0
+# 302 "data/maps/ViridianCity/scripts.pory"
+	msgbox ViridianCity_Text_Oddish
+# 303 "data/maps/ViridianCity/scripts.pory"
+	waitmoncry
+# 304 "data/maps/ViridianCity/scripts.pory"
+	release
+# 305 "data/maps/ViridianCity/scripts.pory"
+	end

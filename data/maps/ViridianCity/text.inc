@@ -181,4 +181,12 @@ ViridianCity_Text_PostRematchPokedude::
     .string "on your journey?\p"
     .string "I wish you the best!$"
 
+ViridianCity_Text_OddishGirl::
+    .string "Just wandering around with your\n"
+    .string "POKéMON can be so much fun!\p"
+    .string "...But you already know that,\n"
+    .string "right?$"
+
+ViridianCity_Text_Oddish::
+    .string "ODDISH: Compaaah!$"
 
