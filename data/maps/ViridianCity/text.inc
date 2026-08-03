@@ -24,9 +24,9 @@ ViridianCity_Text_ExplainCaterpieWeedle::
     .string "POKéMON are born with a set of\n"  
     .string "IVs, while EVs are gained from\l"  
     .string "defeating other POKéMON.\p"  
-    .string "The top floor of the POKéMON\n"  
-    .string "CENTER has people who can check\l"  
-    .string "both of them for you.$"  
+    .string "You can check them out in\n"  
+    .string "your POKEMON's page with\l"  
+    .string "the A BUTTON.$"  
 
 ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "Oh, Grandpa!\n"
