@@ -22,34 +22,34 @@ ViridianCity_PokemonCenter_2F_EventScript_EVCheck::
 ViridianCity_PokemonCenter_2F_EventScript_Pichu::
 	lock
 	faceplayer
-	goto_if_set FLAG_SURF_PIKACHU, ViridianCity_PokemonCenter_2F_EventScript_PostWhitney
+	goto_if_set FLAG_SURF_PIKACHU, ViridianCity_PokemonCenter_2F_EventScript_PostPichu
 	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu
 	waitmessage
-	msgbox ViridianCity_PokemonCenter_2F_Text_Whitney, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, ViridianCity_PokemonCenter_2F_EventScript_NoWhitney
-	trainerbattle_single TRAINER_RS_TUBER_F, ViridianCity_PokemonCenter_2F_Text_YesWhitney, ViridianCity_PokemonCenter_2F_Text_WhitneyDefeat, ViridianCity_PokemonCenter_2F_EventScript_Won, NO_MUSIC
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ViridianCity_PokemonCenter_2F_EventScript_NoPichu
+	trainerbattle_single TRAINER_RS_TUBER_F, ViridianCity_PokemonCenter_2F_Text_YesPichu, ViridianCity_PokemonCenter_2F_Text_PichuDefeat, ViridianCity_PokemonCenter_2F_EventScript_Won, NO_MUSIC
 	release
 	end
 
 ViridianCity_PokemonCenter_2F_EventScript_Won::
 	setflag FLAG_SURF_PIKACHU
-	goto ViridianCity_PokemonCenter_2F_EventScript_PostWhitney
+	goto ViridianCity_PokemonCenter_2F_EventScript_PostPichu
 	end
 
-ViridianCity_PokemonCenter_2F_EventScript_PostWhitney::
+ViridianCity_PokemonCenter_2F_EventScript_PostPichu::
 	setflag FLAG_SURF_PIKACHU
 	goto_if_set FLAG_MYSTERY_GIFT_DONE, ViridianCity_PokemonCenter_2F_EventScript_End
 	goto MysteryEventScript_SurfPichu
 	release
 	end
 
-ViridianCity_PokemonCenter_2F_Text_YesWhitney::
+ViridianCity_PokemonCenter_2F_Text_YesPichu::
 	.string "Yes! Let's battle!$"
 
-ViridianCity_PokemonCenter_2F_Text_WhitneyDefeat::
+ViridianCity_PokemonCenter_2F_Text_PichuDefeat::
 	.string "Thank you!$"
 
-ViridianCity_PokemonCenter_2F_Text_Whitney::
+ViridianCity_PokemonCenter_2F_Text_Pichu::
 	.string "Battle me if you want\n"
 	.string "this special POKEMON EGG!$"
 
@@ -58,16 +58,16 @@ ViridianCity_PokemonCenter_2F_EventScript_End::
 	release
 	end
 
-ViridianCity_PokemonCenter_2F_EventScript_NoWhitney::
-	msgbox ViridianCity_PokemonCenter_2F_Text_NoWhitney
+ViridianCity_PokemonCenter_2F_EventScript_NoPichu::
+	msgbox ViridianCity_PokemonCenter_2F_Text_NoPichu
 	release
 	end
 
-ViridianCity_PokemonCenter_2F_Text_Pichu::
+ViridianCity_PokemonCenter_2F_Text_Pichu2::
 	.string "Thank you for Playing\n"
 	.string "This POKEMON Rom hack!$"
 
-ViridianCity_PokemonCenter_2F_Text_NoWhitney::
+ViridianCity_PokemonCenter_2F_Text_NoPichu::
 	.string "Not ready?$"
 
 @ The below 3 are unused and leftover from RS

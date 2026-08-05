@@ -4,6 +4,7 @@ raw `
 .set LOCALID_GRUNT2,   6
 .set LOCALID_GUY,      7
 .set LOCALID_MIRAGE,      8
+.set LOCALID_REGISTEEL, 9
 
 SilphCo_11F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SilphCo_11F_OnLoad
@@ -187,6 +188,7 @@ SilphCo_11F_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_REGISTEEL
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SilphCo_11F_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SilphCo_11F_EventScript_RanFromCelebi
@@ -227,6 +229,16 @@ SilphCo_11F_EventScript_NoWhitney::
 	msgbox SilphCo_11F_Text_NoWhitney
 	release
 	end
+
+SilphCo_11F_EventScript_Registeel::
+	lock
+	faceplayer
+	msgbox SilphCo_11F_Text_Registeel, MSGBOX_NPC
+	release
+	end
+
+SilphCo_11F_Text_Registeel::
+	.string "REGISTEEL!$"
 
 SilphCo_11F_EventScript_End::
 	clearflag FLAG_STEEL_TRAINER

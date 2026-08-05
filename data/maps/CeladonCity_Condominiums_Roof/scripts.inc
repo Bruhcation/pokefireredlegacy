@@ -15,21 +15,21 @@ CeladonCity_Condominiums_Roof_EventScript_Sign::
 # 8 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 9 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_EventScript_Whitney::
+CeladonCity_Condominiums_Roof_EventScript_Siker::
 # 10 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	lock
 # 11 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	faceplayer
 # 12 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	goto_if_set TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_EventScript_PostWhitney
+	goto_if_set TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_EventScript_PostSiker
 # 13 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	goto_if_set FLAG_PIKER_DEFEATED, CeladonCity_Condominiums_Roof_EventScript_EndWhitney
+	goto_if_set FLAG_PIKER_DEFEATED, CeladonCity_Condominiums_Roof_EventScript_EndSiker
 # 14 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	msgbox CeladonCity_Condominiums_Roof_Text_Whitney, MSGBOX_YESNO
+	msgbox CeladonCity_Condominiums_Roof_Text_Siker, MSGBOX_YESNO
 # 15 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, CeladonCity_Condominiums_Roof_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, CeladonCity_Condominiums_Roof_EventScript_NoSiker
 # 16 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	trainerbattle_single TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_Text_YesWhitney, CeladonCity_Condominiums_Roof_Text_WhitneyDefeat, CeladonCity_Condominiums_Roof_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_Text_YesSiker, CeladonCity_Condominiums_Roof_Text_SikerDefeat, CeladonCity_Condominiums_Roof_EventScript_PostSiker, NO_MUSIC
 # 17 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	release
 # 18 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -37,9 +37,9 @@ CeladonCity_Condominiums_Roof_EventScript_Whitney::
 # 19 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 20 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_EventScript_PostWhitney::
+CeladonCity_Condominiums_Roof_EventScript_PostSiker::
 # 21 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	msgbox CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle
+	msgbox CeladonCity_Condominiums_Roof_Text_SikerPostBattle
 # 22 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	giveitem ITEM_SOUL_DEW
 # 23 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -53,9 +53,9 @@ CeladonCity_Condominiums_Roof_EventScript_PostWhitney::
 # 27 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 28 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_EventScript_EndWhitney::
+CeladonCity_Condominiums_Roof_EventScript_EndSiker::
 # 29 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	msgbox CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle
+	msgbox CeladonCity_Condominiums_Roof_Text_SikerPostBattle
 # 30 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	release
 # 31 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -65,9 +65,9 @@ CeladonCity_Condominiums_Roof_EventScript_EndWhitney::
 # 33 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 34 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_EventScript_NoWhitney::
+CeladonCity_Condominiums_Roof_EventScript_NoSiker::
 # 35 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	msgbox CeladonCity_Condominiums_Roof_Text_NoWhitney
+	msgbox CeladonCity_Condominiums_Roof_Text_NoSiker
 # 36 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	release
 # 37 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -75,7 +75,7 @@ CeladonCity_Condominiums_Roof_EventScript_NoWhitney::
 # 38 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 39 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_Text_Whitney::
+CeladonCity_Condominiums_Roof_Text_Siker::
 # 40 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	.string "Hey! What are you doing here!\n"
 # 41 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -97,13 +97,13 @@ CeladonCity_Condominiums_Roof_Text_ReceivedSoulDew::
 # 49 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 50 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_Text_NoWhitney::
+CeladonCity_Condominiums_Roof_Text_NoSiker::
 # 51 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	.string "Ok, go away.$"
 # 52 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 53 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_Text_YesWhitney::
+CeladonCity_Condominiums_Roof_Text_YesSiker::
 # 54 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	.string "Well you are not going to get it!\n"
 # 55 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -111,13 +111,13 @@ CeladonCity_Condominiums_Roof_Text_YesWhitney::
 # 56 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	
 # 57 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_Text_WhitneyDefeat::
+CeladonCity_Condominiums_Roof_Text_SikerDefeat::
 # 58 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	.string "Welp.$"
 # 59 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 
 # 60 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-CeladonCity_Condominiums_Roof_Text_WhitneyPostBattle::
+CeladonCity_Condominiums_Roof_Text_SikerPostBattle::
 # 61 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	.string "Welp I got a lot of money\n"
 # 62 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"

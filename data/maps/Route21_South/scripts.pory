@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_MIRAGE, 6
+.set LOCALID_KYOGRE, 7
 Route21_South_MapScripts::
 	.byte 0
 
@@ -32,17 +33,17 @@ Route21_South_EventScript_Flag::
 	end
 
 Route21_South_EventScript_Orbing::
-	msgbox Route21_South_Text_Whitney, MSGBOX_YESNO
+	msgbox Route21_South_Text_Water, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, Route21_South_EventScript_NoWhitney
-	trainerbattle_single TRAINER_AQUA_GRUNT_M, Route21_South_Text_YesWhitney, Route21_South_Text_PostWhitney, Route21_South_EventScript_PostWhitney, NO_MUSIC
+	goto_if_eq VAR_RESULT, NO, Route21_South_EventScript_NoWater
+	trainerbattle_single TRAINER_AQUA_GRUNT_M, Route21_South_Text_YesWater, Route21_South_Text_PostWater, Route21_South_EventScript_PostWater, NO_MUSIC
 	release
 	end
 
-Route21_South_EventScript_PostWhitney::
+Route21_South_EventScript_PostWater::
 	special HealPlayerParty
-	msgbox Route21_South_Text_WhitneyPostBattle
+	msgbox Route21_South_Text_WaterPostBattle
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -59,13 +60,14 @@ Route21_South_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_KYOGRE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route21_South_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route21_South_EventScript_RanFromCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route21_South_EventScript_RanFromCelebi
 	setflag FLAG_CAUGHT_KYOGRE
 	clearflag FLAG_WATER_TRAINER
-	msgbox Route21_South_Text_EndWhitney
+	msgbox Route21_South_Text_EndWater
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -76,7 +78,7 @@ Route21_South_EventScript_PostWhitney::
 Route21_South_EventScript_DefeatedCelebi::
 	setflag FLAG_CAUGHT_KYOGRE
 	clearflag FLAG_WATER_TRAINER
-	msgbox Route21_South_Text_EndWhitney
+	msgbox Route21_South_Text_EndWater
 	waitmessage
 	goto EventScript_RemoveStaticMon
 	end
@@ -84,19 +86,19 @@ Route21_South_EventScript_DefeatedCelebi::
 Route21_South_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_KYOGRE
 	clearflag FLAG_WATER_TRAINER
-	msgbox Route21_South_Text_EndWhitney
+	msgbox Route21_South_Text_EndWater
 	waitmessage
 	goto EventScript_MonFlewAway
 	end
 
-Route21_South_EventScript_NoWhitney::
-	msgbox Route21_South_Text_NoWhitney
+Route21_South_EventScript_NoWater::
+	msgbox Route21_South_Text_NoWater
 	release
 	end
 
 Route21_South_EventScript_End::
 	clearflag FLAG_WATER_TRAINER
-	msgbox Route21_South_Text_EndWhitney
+	msgbox Route21_South_Text_EndWater
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -104,8 +106,18 @@ Route21_South_EventScript_End::
 	release
 	end
 
+Route21_South_EventScript_Kyogre::
+	lock
+	faceplayer
+	msgbox Route21_South_Text_Kyogre, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_Kyogre::
+	.string "KYO!$"
+
 Route21_South_Text_NeedOrb::
-	.string "You need the ORBING to face me.$"
+	.string "You need the BLUE ORB to face me.$"
 
 Route21_South_Text_NoEligiblePkmn::
 	.string "You have not meet the requirements.\p"
@@ -124,23 +136,23 @@ Route21_South_Text_RegiceCheck::
 	.string "Many Strong Trainers around\n"
 	.string "the KANTO REGION.$"
 	
-Route21_South_Text_Whitney::
+Route21_South_Text_Water::
 	.string "So, you wish to face me?$"
 
-Route21_South_Text_YesWhitney::
+Route21_South_Text_YesWater::
 	.string "Very well! Prepare yourself!$"
 
-Route21_South_Text_PostWhitney::
+Route21_South_Text_PostWater::
 	.string "So you are worthy...$"
 
-Route21_South_Text_WhitneyPostBattle::
+Route21_South_Text_WaterPostBattle::
 	.string "Alright, you have bested me.\p"
 	.string "Be prepared to face REGICE!$"
 
-Route21_South_Text_EndWhitney::
+Route21_South_Text_EndWater::
 	.string "Goodbye.$"
 
-Route21_South_Text_NoWhitney::
+Route21_South_Text_NoWater::
 	.string "Alright, take your time.$"
 
 `

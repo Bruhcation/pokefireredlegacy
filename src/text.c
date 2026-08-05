@@ -633,7 +633,6 @@ u16 RenderText(struct TextPrinter *textPrinter)
     u16 currChar;
     s32 width;
     s32 widthHelper;
-    u8 repeats;
 
     switch (textPrinter->state)
     {
@@ -656,26 +655,7 @@ u16 RenderText(struct TextPrinter *textPrinter)
             textPrinter->delayCounter = 1;
         else
             textPrinter->delayCounter = textPrinter->textSpeed;
-        if (gTextFlags.autoScroll)
-            textPrinter->delayCounter = 1;
-        else
-            textPrinter->delayCounter = textPrinter->textSpeed;
 
-        switch (gSaveBlock2Ptr->optionsTextSpeed)
-        {
-            case OPTIONS_TEXT_SPEED_SLOW:
-                repeats = 1;
-                break;
-            case OPTIONS_TEXT_SPEED_MID:
-                repeats = 2;
-                break;
-            case OPTIONS_TEXT_SPEED_FAST:
-            default:
-                repeats = 4;
-                break;
-        }
-
-        do {
 
 
         currChar = *textPrinter->printerTemplate.currentChar;
@@ -878,9 +858,6 @@ u16 RenderText(struct TextPrinter *textPrinter)
             else
                 textPrinter->printerTemplate.currentX += gGlyphInfo.width;
         }
-        repeats--;
-
-        } while (repeats > 0);
 
         return RENDER_PRINT;
     case RENDER_STATE_WAIT:

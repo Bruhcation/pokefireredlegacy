@@ -138,18 +138,18 @@ Route17_Text_Paxton::
     .string "I'm way above your level!\p"
     .string "Do you feel like losing?$"
 
-Route17_Text_WhitneyDefeat::
+Route17_Text_PaxtonDefeat::
     .string "…$"
 
-Route17_Text_WhitneyPostBattle::
+Route17_Text_PaxtonPostBattle::
     .string "Guess you really are that strong.\n"
     .string "I feel embarrassed.$"
 
-Route17_Text_NoWhitney::
+Route17_Text_NoPaxton::
     .string "Aww, looks like the\n"
     .string "CHAMPION isn't as strong\l"
     .string "as he seems.$"
 
-Route17_Text_YesWhitney::
+Route17_Text_YesPaxton::
     .string "Prepare to lose!$"
 
