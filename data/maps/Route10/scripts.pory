@@ -14,7 +14,6 @@ Route10_EventScript_NorthRockTunnelSign::
 
 Route10_EventScript_SouthRockTunnelSign::
 	msgbox Route10_Text_RockTunnel, MSGBOX_SIGN
-	setflag FLAG_HACK_OPTION_MENU
 	end
 
 Route10_EventScript_PowerPlantSign::

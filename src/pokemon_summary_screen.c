@@ -19,6 +19,7 @@
 #include "battle_main.h"
 #include "scanline_effect.h"
 #include "constants/moves.h"
+#include "constants/flags.h"
 #include "dynamic_placeholder_text_util.h"
 #include "constants/region_map_sections.h"
 #include "region_map.h"
@@ -2411,6 +2412,9 @@ static void BufferMonMoves(void)
 
 static void BufferMonMoveI(u8 i)
 {
+    bool8 showRealHiddenPower;
+    u32 hiddenPowerPower = 0;
+
     if (i < 4)
         sMonSummaryScreen->moveIds[i] = GetMonMoveBySlotId(&sMonSummaryScreen->currentMon, i);
 
@@ -2426,8 +2430,31 @@ static void BufferMonMoveI(u8 i)
     }
 
     sMonSummaryScreen->numMoves++;
-    sMonSummaryScreen->moveTypes[i] = gBattleMoves[sMonSummaryScreen->moveIds[i]].type;
-    StringCopy(sMonSummaryScreen->summary.moveNameStrBufs[i], gMoveNames[sMonSummaryScreen->moveIds[i]]);
+    showRealHiddenPower = (sMonSummaryScreen->moveIds[i] == MOVE_HIDDEN_POWER && FlagGet(FLAG_SHOW_HIDDEN_POWER));
+    if (showRealHiddenPower)
+    {
+        struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+        u32 hpIv = GetMonData(mon, MON_DATA_HP_IV);
+        u32 atkIv = GetMonData(mon, MON_DATA_ATK_IV);
+        u32 defIv = GetMonData(mon, MON_DATA_DEF_IV);
+        u32 speedIv = GetMonData(mon, MON_DATA_SPEED_IV);
+        u32 spAtkIv = GetMonData(mon, MON_DATA_SPATK_IV);
+        u32 spDefIv = GetMonData(mon, MON_DATA_SPDEF_IV);
+        u32 typeBits = ((hpIv & 1) << 0) | ((atkIv & 1) << 1) | ((defIv & 1) << 2)
+                     | ((speedIv & 1) << 3) | ((spAtkIv & 1) << 4) | ((spDefIv & 1) << 5);
+        u32 powerBits = ((hpIv & 2) >> 1) | ((atkIv & 2) << 0) | ((defIv & 2) << 1)
+                      | ((speedIv & 2) << 2) | ((spAtkIv & 2) << 3) | ((spDefIv & 2) << 4);
+        u8 type = ((NUMBER_OF_MON_TYPES - 3) * typeBits) / 63 + 1;
+        if (type >= TYPE_MYSTERY)
+            type++;
+        sMonSummaryScreen->moveTypes[i] = type;
+        hiddenPowerPower = (40 * powerBits) / 63 + 30;
+    }
+    else
+    {
+        sMonSummaryScreen->moveTypes[i] = gBattleMoves[sMonSummaryScreen->moveIds[i]].type;
+    }
+        StringCopy(sMonSummaryScreen->summary.moveNameStrBufs[i], gMoveNames[sMonSummaryScreen->moveIds[i]]);
 
     if (i >= 4 && sMonSummaryScreen->mode == PSS_MODE_SELECT_MOVE)
     {
@@ -2448,7 +2475,9 @@ static void BufferMonMoveI(u8 i)
     sMonSkillsPrinterXpos->curPp[i] = GetRightAlignXpos_NDigits(2, sMonSummaryScreen->summary.moveCurPpStrBufs[i]);
     sMonSkillsPrinterXpos->maxPp[i] = GetRightAlignXpos_NDigits(2, sMonSummaryScreen->summary.moveMaxPpStrBufs[i]);
 
-    if (gBattleMoves[sMonSummaryScreen->moveIds[i]].power <= 1)
+    if (showRealHiddenPower)
+        ConvertIntToDecimalStringN(sMonSummaryScreen->summary.movePowerStrBufs[i], hiddenPowerPower, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    else if (gBattleMoves[sMonSummaryScreen->moveIds[i]].power <= 1)
         StringCopy(sMonSummaryScreen->summary.movePowerStrBufs[i], gText_ThreeHyphens);
     else
         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.movePowerStrBufs[i], gBattleMoves[sMonSummaryScreen->moveIds[i]].power, STR_CONV_MODE_RIGHT_ALIGN, 3);

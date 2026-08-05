@@ -98,3 +98,10 @@ CinnabarIsland_Text_ScientistVolcano::
 
 CinnabarIsland_Text_ScientistsExperimentInMansionStaryu::
 	.string "STARYU: Yuuu...$"
+
+CinnabarIsland_Text_AreYouSureSailToOneIsland::
+    .string "Are you sure you want to go to\n"
+    .string "the SEVII ISLANDS?\p"
+    .string "You won't be able to come back\n"
+    .string "until the job is done.$"
+

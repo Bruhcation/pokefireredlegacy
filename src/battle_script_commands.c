@@ -9775,13 +9775,14 @@ static void Cmd_trysetcaughtmondexflags(void)
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr += 5;
     }
-   if (species == SPECIES_UNOWN) // Check unown forms
+
+    if (species == SPECIES_UNOWN) // Check unown forms
     {
         u16 letter = GetUnownLetterByPersonality(personality);
         if (letter == 0)
         {
             letter = SPECIES_UNOWN;
-            FlagSet(FLAG_CAUGHT_UNOWN_A); // Check unown A seperately since there's no dex flag for it
+            FlagSet(FLAG_CAUGHT_UNOWN_A); // Check unown A separately since there's no dex flag for it
         }
         else
         {
@@ -9804,7 +9805,7 @@ static bool8 CheckCaughtAllUnown(void)
     u32 startUnown = SPECIES_UNOWN_B;
     u32 endUnown = SPECIES_UNOWN_QMARK;
     u16 species;
-    if (!FlagGet(FLAG_CAUGHT_UNOWN_A)) // Check unown A seperately since there's no dex flag for it
+    if (!FlagGet(FLAG_CAUGHT_UNOWN_A)) // Check unown A separately since there's no dex flag for it
     {
         return FALSE;
     }
