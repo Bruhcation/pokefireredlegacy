@@ -310,3 +310,45 @@ Route21_South_Text_EndWater::
 Route21_South_Text_NoWater::
 # 156 "data/maps/Route21_South/scripts.pory"
 	.string "Alright, take your time.$"
+# 157 "data/maps/Route21_South/scripts.pory"
+
+# 158 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_ChaseIntro::
+# 159 "data/maps/Route21_South/scripts.pory"
+	.string "I'm actually a CUE BALL you know!$"
+# 160 "data/maps/Route21_South/scripts.pory"
+
+# 161 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_ChaseDefeat::
+# 162 "data/maps/Route21_South/scripts.pory"
+	.string "Cheap Shot!$"
+# 163 "data/maps/Route21_South/scripts.pory"
+
+# 164 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_ChasePostBattle::
+# 165 "data/maps/Route21_South/scripts.pory"
+	.string "I can swim good for a CUE BALL!$"
+# 166 "data/maps/Route21_South/scripts.pory"
+
+# 167 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_RematchChaseIntro::
+# 168 "data/maps/Route21_South/scripts.pory"
+	.string "You better stay upfloat or else!$"
+# 169 "data/maps/Route21_South/scripts.pory"
+
+# 170 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_ChaseKyogre::
+# 171 "data/maps/Route21_South/scripts.pory"
+	.string "Uh oh! I have to keep upfloat,\n"
+# 172 "data/maps/Route21_South/scripts.pory"
+	.string "or else KYOGRES Waves will\l"
+# 173 "data/maps/Route21_South/scripts.pory"
+	.string "get to me!$"
+# 174 "data/maps/Route21_South/scripts.pory"
+
+# 175 "data/maps/Route21_South/scripts.pory"
+Route21_South_Text_ChaseKyogre2::
+# 176 "data/maps/Route21_South/scripts.pory"
+	.string "Sigh... I was worried there for\n"
+# 177 "data/maps/Route21_South/scripts.pory"
+	.string "a second.$"

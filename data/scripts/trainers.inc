@@ -3026,8 +3026,9 @@ Route21_South_EventScript_ChaseKyogre2::
 
 Route21_South_EventScript_RematchChase::
 	trainerbattle_rematch TRAINER_CUE_BALL_CHASE, Route21_South_Text_RematchChaseIntro, Route21_South_Text_ChaseDefeat
-	msgbox Route21_South_EventScript_RematchChase, MSGBOX_AUTOCLOSE
+	msgbox Route21_South_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
 	end
+
 
 
 

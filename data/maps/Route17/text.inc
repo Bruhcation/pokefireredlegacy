@@ -134,9 +134,9 @@ Route17_Text_Paxton::
     .string "Well,\n"
     .string "I'm not sorry for what I did\l"
     .string "on those islands,\l"
-    .string "and I have been training too!\n"
-    .string "I'm way above your level!\p"
-    .string "Do you feel like losing?$"
+    .string "but I'm still weaker!$"
+    .string "So i'll sit back in my Motorcycle...$"
+
 
 Route17_Text_PaxtonDefeat::
     .string "…$"

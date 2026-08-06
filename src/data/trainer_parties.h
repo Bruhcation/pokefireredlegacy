@@ -4859,17 +4859,17 @@ static const struct TrainerMon sParty_SuperNerd3[] = {
 static const struct TrainerMon sParty_SuperNerdErik[] = {
     {
         .iv = 0,
-        .lvl = 49,
+        .lvl = 47,
         .species = SPECIES_VULPIX,
     },
     {
         .iv = 0,
-        .lvl = 49,
+        .lvl = 47,
         .species = SPECIES_FLAREON,
     },
     {
         .iv = 0,
-        .lvl = 49,
+        .lvl = 47,
         .species = SPECIES_NINETALES,
     },
 };
@@ -4877,27 +4877,27 @@ static const struct TrainerMon sParty_SuperNerdErik[] = {
 static const struct TrainerMon sParty_SuperNerdAvery[] = {
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_PONYTA,
     },
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_CHARMELEON,
     },
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_VULPIX,
     },
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_GROWLITHE,
     },
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_HOUNDOUR,
     },
 };
@@ -4905,12 +4905,12 @@ static const struct TrainerMon sParty_SuperNerdAvery[] = {
 static const struct TrainerMon sParty_SuperNerdDerek[] = {
     {
         .iv = 0,
-        .lvl = 51,
+        .lvl = 48,
         .species = SPECIES_RAPIDASH,
     },
     {
         .iv = 0,
-        .lvl = 51,
+        .lvl = 48,
         .species = SPECIES_MAGMAR,
     },
 };
@@ -4918,12 +4918,12 @@ static const struct TrainerMon sParty_SuperNerdDerek[] = {
 static const struct TrainerMon sParty_SuperNerdZac[] = {
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_ARCANINE,
     },
     {
         .iv = 0,
-        .lvl = 52,
+        .lvl = 48,
         .species = SPECIES_NINETALES,
     },
 };
@@ -5443,17 +5443,17 @@ static const struct TrainerMon sParty_Burglar3[] = {
 static const struct TrainerMon sParty_BurglarQuinn[] = {
     {
         .iv = 0,
-        .lvl = 48,
+        .lvl = 46,
         .species = SPECIES_CHARMELEON,
     },
     {
         .iv = 0,
-        .lvl = 48,
+        .lvl = 46,
         .species = SPECIES_HOUNDOOM
     },
     {
         .iv = 0,
-        .lvl = 48,
+        .lvl = 46,
         .species = SPECIES_NINETALES,
     },
 };
@@ -5461,7 +5461,7 @@ static const struct TrainerMon sParty_BurglarQuinn[] = {
 static const struct TrainerMon sParty_BurglarRamon[] = {
     {
         .iv = 0,
-        .lvl = 51,
+        .lvl = 50,
         .species = SPECIES_RAPIDASH,
     },
 };
@@ -5469,12 +5469,12 @@ static const struct TrainerMon sParty_BurglarRamon[] = {
 static const struct TrainerMon sParty_BurglarDusty[] = {
     {
         .iv = 0,
-        .lvl = 51,
+        .lvl = 50,
         .species = SPECIES_MAGBY,
     },
     {
         .iv = 0,
-        .lvl = 51,
+        .lvl = 48,
         .species = SPECIES_FLAREON,
     },
 };

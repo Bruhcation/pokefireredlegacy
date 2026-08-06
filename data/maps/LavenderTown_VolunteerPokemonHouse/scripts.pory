@@ -34,7 +34,6 @@ LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewGiven::
 	giveitem ITEM_SOUL_DEW
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Restaurant_EventScript_NoRoomForCoinCase
 	setflag FLAG_GOT_SOUL_DEW
-	clearflag FLAG_SECOND_SOUL_DEW
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2
 	release
 	end

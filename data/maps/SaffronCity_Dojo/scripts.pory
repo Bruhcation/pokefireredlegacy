@@ -178,7 +178,6 @@ SaffronCity_Dojo_EventScript_PostRematchKarate::
 	end
 	
 SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
-	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Dojo_EventScript_MasterKoichiRematch
 	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
 	release
 	end
