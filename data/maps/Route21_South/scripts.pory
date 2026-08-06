@@ -155,4 +155,25 @@ Route21_South_Text_EndWater::
 Route21_South_Text_NoWater::
 	.string "Alright, take your time.$"
 
+Route21_South_Text_ChaseIntro::
+	.string "I'm actually a CUE BALL you know!$"
+
+Route21_South_Text_ChaseDefeat::
+	.string "Cheap Shot!$"
+
+Route21_South_Text_ChasePostBattle::
+	.string "I can swim good for a CUE BALL!$"
+
+Route21_South_Text_RematchChaseIntro::
+	.string "You better stay upfloat or else!$"
+
+Route21_South_Text_ChaseKyogre::
+	.string "Uh oh! I have to keep upfloat,\n"
+	.string "or else KYOGRES Waves will\l"
+	.string "get to me!$"
+
+Route21_South_Text_ChaseKyogre2::
+	.string "Sigh... I was worried there for\n"
+	.string "a second.$"
+
 `

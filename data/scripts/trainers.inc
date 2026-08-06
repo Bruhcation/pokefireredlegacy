@@ -1987,7 +1987,7 @@ Route21_North_Text_SpencerKyogre::
 	.string "KYOGRE... The King of the Sea.$"
 
 Route21_South_Text_SpenserKyogre2::
-	.string "You won?s$"
+	.string "You won?$"
 
 Route21_South_EventScript_Jack::
 	trainerbattle_single TRAINER_SWIMMER_MALE_JACK, Route21_South_Text_JackIntro, Route21_South_Text_JackDefeat
@@ -3024,31 +3024,12 @@ Route21_South_EventScript_ChaseKyogre2::
 	release
 	end
 
-Route21_South_Text_ChaseKyogre::
-	.string "Uh oh! I have to keep upfloat,\n"
-	.string "or else KYOGRES Waves will\l"
-	.string "get to me!$"
-
-Route21_South_Text_ChaseKyogre2::
-	.string "Sigh... I was worried there for\n"
-	.string "a second.$"
-
 Route21_South_EventScript_RematchChase::
 	trainerbattle_rematch TRAINER_CUE_BALL_CHASE, Route21_South_Text_RematchChaseIntro, Route21_South_Text_ChaseDefeat
 	msgbox Route21_South_EventScript_RematchChase, MSGBOX_AUTOCLOSE
 	end
 
-Route21_South_Text_ChaseIntro::
-	.string "I'm actually a CUE BALL you know!$"
 
-Route21_South_Text_ChaseDefeat::
-	.string "Cheap Shot!$"
-
-Route21_South_Text_ChasePostBattle::
-	.string "I can swim good for a CUE BALL!$"
-
-Route21_South_Text_RematchChaseIntro::
-	.string "You better stay upfloat or else!$"
 
 
 

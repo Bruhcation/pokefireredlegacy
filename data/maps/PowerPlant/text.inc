@@ -1,10 +1,10 @@
 PowerPlant_Text_CraigIntro::
-    .string "I'm trying to complete my\n"  
-    .string "POKéDEX, for a game I'm\l"  
-    .string "making based on POKéMON.\p"  
+    .string "I'm trying to complete my POKéDEX,\n"  
+    .string "for a game I'm making \l"  
+    .string "based on POKéMON.\p"  
     .string "How about this…\p"  
-    .string "We battle, winner gets the\n"  
-    .string "bird.$"  
+    .string "We battle,\n"  
+    .string "winner gets the bird.$"  
 
 
 PowerPlant_Text_CraigDefeat::

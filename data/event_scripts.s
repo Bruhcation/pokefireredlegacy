@@ -1110,6 +1110,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_SIS_TRAINER            
 	setflag FLAG_ROCK_TRAINER              
 	setflag FLAG_DRAGON_TRAINER  
+	setflag FLAG_SECOND_SOUL_DEW
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 250
 	end
 

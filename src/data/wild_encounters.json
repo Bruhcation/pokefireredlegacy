@@ -20865,7 +20865,7 @@
               },
               {
                 "min_level": 15,
-                "max_level": 18,
+                "max_level": 20,
                 "species": "SPECIES_SLOWPOKE"
               },
               {
@@ -21818,8 +21818,8 @@
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 15,
-                "max_level": 18,
+                "min_level": 20,
+                "max_level": 20,
                 "species": "SPECIES_SLOWPOKE"
               },
               {

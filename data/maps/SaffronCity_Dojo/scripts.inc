@@ -123,7 +123,7 @@ SaffronCity_Dojo_EventScript_GiveHitmon::
 # 62 "data/maps/SaffronCity_Dojo/scripts.pory"
 	call_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_Shiny
 # 63 "data/maps/SaffronCity_Dojo/scripts.pory"
-	givemon VAR_TEMP_1, 25
+	givemon VAR_TEMP_1, 30
 # 64 "data/maps/SaffronCity_Dojo/scripts.pory"
 	goto_if_eq VAR_RESULT, 0, SaffronCity_Dojo_EventScript_ReceivedHitmonParty
 # 65 "data/maps/SaffronCity_Dojo/scripts.pory"
