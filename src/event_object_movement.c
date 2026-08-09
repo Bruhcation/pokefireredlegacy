@@ -1841,9 +1841,7 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     isDynamicPalette = (spriteTemplate->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC);
     if (!isDynamicPalette)
     {
-        if (graphicsInfo->paletteSlot == PALSLOT_PLAYER)
-            LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-        else if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
+        if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
             LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
         else
             LoadObjectEventPalette(spriteTemplate->paletteTag);
@@ -2808,24 +2806,22 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
     #endif
 
     isDynamicPalette = (spriteTemplate.paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC);
-if (!isDynamicPalette)
-{
-    if (graphicsInfo->paletteSlot == PALSLOT_PLAYER)
-        LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-    else if (graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
-        LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-    else
-        LoadObjectEventPalette(spriteTemplate.paletteTag);
-}
+    if (!isDynamicPalette)
+    {
+        if (graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
+            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+        else
+            LoadObjectEventPalette(spriteTemplate.paletteTag);
+    }
 
-spriteId = CreateSprite(&spriteTemplate, 0, 0, 0);
-if (spriteId != MAX_SPRITES)
-{
-    sprite = &gSprites[spriteId];
-    if (isDynamicPalette)
-        sprite->oam.paletteNum = LoadDynamicFollowerPalette(OW_SPECIES(objectEvent), OW_FORM(objectEvent), objectEvent->shiny);
-    else if (graphicsInfo->paletteSlot == PALSLOT_PLAYER || graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
-        sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+    spriteId = CreateSprite(&spriteTemplate, 0, 0, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        sprite = &gSprites[spriteId];
+        if (isDynamicPalette)
+            sprite->oam.paletteNum = LoadDynamicFollowerPalette(OW_SPECIES(objectEvent), OW_FORM(objectEvent), objectEvent->shiny);
+        else if (graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
+            sprite->oam.paletteNum = graphicsInfo->paletteSlot;
 
     #if OW_GFX_COMPRESS
     if (sprite->usingSheet)
@@ -2906,14 +2902,12 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
     u8 var3;
 
     if (graphicsInfo->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
-{
-    if (graphicsInfo->paletteSlot == PALSLOT_PLAYER && objectEvent->localId == OBJ_EVENT_ID_PLAYER)
-        PatchObjectPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-    else if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-        LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-    else
-        LoadObjectEventPalette(graphicsInfo->paletteTag);
-}
+    {
+        if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
+            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
+        else
+            LoadObjectEventPalette(graphicsInfo->paletteTag);
+    }
 
     var = sprite->images->size / TILE_SIZE_4BPP;
     if (!sprite->usingSheet)
@@ -2931,7 +2925,7 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
     sprite->anims = graphicsInfo->anims;
     sprite->subspriteTables = graphicsInfo->subspriteTables;
     if (graphicsInfo->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC
-    && ((graphicsInfo->paletteSlot == PALSLOT_PLAYER && objectEvent->localId == OBJ_EVENT_ID_PLAYER) || graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL))
+    && graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
     sprite->oam.paletteNum = graphicsInfo->paletteSlot;
     if (!sprite->usingSheet)
     {
@@ -3110,6 +3104,16 @@ u8 LoadObjectEventPalette(u16 paletteTag)
         return i;
     return TryLoadObjectPalette(&sObjectEventSpritePalettes[i]);
 }
+
+void ReloadPlayerObjectEventPalette(void)
+{
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[playerObj->spriteId];
+    const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(playerObj->graphicsId);
+    if (graphicsInfo->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
+        sprite->oam.paletteNum = LoadObjectEventPalette(graphicsInfo->paletteTag);
+}
+
 // Unused
 void LoadObjectEventPaletteSet(u16 *paletteTags)
 {

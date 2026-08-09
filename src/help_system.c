@@ -280,8 +280,6 @@ enum
     HELP_USING_BAIT,
     HELP_USING_ROCK,
     HELP_USING_HALL_OF_FAME,
-    HELP_USING_ENEMY_SUMMARY,
-    HELP_USING_MOVE_EFFECTIVENESS,
     HELP_USING_MOVE_DESCRIPTION,
 };
 
@@ -335,8 +333,6 @@ static const u8 *const sHelpSystemMenuTopicTextPtrs[] = {
     [HELP_USING_BAIT]                   = Help_Text_UsingBait,
     [HELP_USING_ROCK]                   = Help_Text_UsingRock,
     [HELP_USING_HALL_OF_FAME]           = Help_Text_UsingHallOfFame,
-    [HELP_USING_ENEMY_SUMMARY]          = Help_Text_UsingEnemySummary,
-    [HELP_USING_MOVE_EFFECTIVENESS]     = Help_Text_UsingMoveEffectiveness,
     [HELP_USING_MOVE_DESCRIPTION]       = Help_Text_UsingMoveDescription
 };
 
@@ -390,8 +386,6 @@ static const u8 *const sHelpSystemHowToUseMenuTextPtrs[] = {
     [HELP_USING_BAIT]                   = Help_Text_HowToUseBait,
     [HELP_USING_ROCK]                   = Help_Text_HowToUseRock,
     [HELP_USING_HALL_OF_FAME]           = Help_Text_HowToUseHallOfFame,
-    [HELP_USING_ENEMY_SUMMARY]          = Help_Text_HowToUseEnemySummary,
-    [HELP_USING_MOVE_EFFECTIVENESS]     = Help_Text_HowToUseMoveEffectiveness,
     [HELP_USING_MOVE_DESCRIPTION]       = Help_Text_HowToUseMoveDescription
 };
 
@@ -441,13 +435,7 @@ enum
     HELP_TERM_ID_NO2,
     HELP_TERM_MONEY2,
     HELP_TERM_BADGES2,
-    HELP_TERM_ENEMY_SUMMARY,
-    HELP_TERM_MOVE_EFFECTIVENESS,
-    HELP_TERM_SURVIVE_POISON,
-    HELP_TERM_FOLLOWING_POKEMON,
-    HELP_TERM_SURFING_POKEMON,
     HELP_TERM_STAB,
-    HELP_TERM_FIELD_MOVE_LEARNSET,
 };
 
 static const u8 *const sHelpSystemTermTextPtrs[] = {
@@ -495,13 +483,7 @@ static const u8 *const sHelpSystemTermTextPtrs[] = {
     [HELP_TERM_ID_NO2]         = Help_Text_IDNo2,
     [HELP_TERM_MONEY2]         = Help_Text_Money2,
     [HELP_TERM_BADGES2]        = Help_Text_Badges2,
-    [HELP_TERM_ENEMY_SUMMARY]      = Help_Text_EnemySummaryTerm,
-    [HELP_TERM_MOVE_EFFECTIVENESS] = Help_Text_MoveEffectivenessTerm,
-    [HELP_TERM_SURVIVE_POISON]     = Help_Text_SurvivePoisonTerm,
-    [HELP_TERM_FOLLOWING_POKEMON]  = Help_Text_FollowingPokemonTerm,
-    [HELP_TERM_SURFING_POKEMON]    = Help_Text_SurfingPokemonTerm,
-    [HELP_TERM_STAB]               = Help_Text_StabTerm,
-    [HELP_TERM_FIELD_MOVE_LEARNSET] = Help_Text_FieldMoveLearnsetTerm
+    [HELP_TERM_STAB]           = Help_Text_StabTerm
 };
 
 static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
@@ -549,13 +531,7 @@ static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
     [HELP_TERM_ID_NO2]         = Help_Text_DefineIDNo2,
     [HELP_TERM_MONEY2]         = Help_Text_DefineMoney2,
     [HELP_TERM_BADGES2]        = Help_Text_DefineBadges2,
-    [HELP_TERM_ENEMY_SUMMARY]      = Help_Text_DefineEnemySummary,
-    [HELP_TERM_MOVE_EFFECTIVENESS] = Help_Text_DefineMoveEffectiveness,
-    [HELP_TERM_SURVIVE_POISON]     = Help_Text_DefineSurvivePoison,
-    [HELP_TERM_FOLLOWING_POKEMON]  = Help_Text_DefineFollowingPokemon,
-    [HELP_TERM_SURFING_POKEMON]    = Help_Text_DefineSurfingPokemon,
-    [HELP_TERM_STAB]               = Help_Text_DefineStab,
-    [HELP_TERM_FIELD_MOVE_LEARNSET] = Help_Text_DefineFieldMoveLearnset
+    [HELP_TERM_STAB]               = Help_Text_DefineStab
 };
 
 // Submenu IDs for TOPIC_ABOUT_GAME
@@ -854,12 +830,6 @@ static const u8 sTerms_BattleOptions[] = {
 
 // Terms shown while browsing the HACK OPTIONS submenu
 static const u8 sTerms_HackOptions[] = {
-    HELP_TERM_ENEMY_SUMMARY,
-    HELP_TERM_MOVE_EFFECTIVENESS,
-    HELP_TERM_SURVIVE_POISON,
-    HELP_TERM_FOLLOWING_POKEMON,
-    HELP_TERM_SURFING_POKEMON,
-    HELP_TERM_FIELD_MOVE_LEARNSET,
     HELP_END
 };
 
@@ -1339,8 +1309,6 @@ static const u8 sHowTo_WildBattle[] = {
     HELP_USING_AN_ITEM, 
     HELP_USING_POKEBALL, 
     HELP_USING_RUN, 
-    HELP_USING_ENEMY_SUMMARY,
-    HELP_USING_MOVE_EFFECTIVENESS,
     HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
@@ -1393,8 +1361,6 @@ static const u8 sHowTo_TrainerBattleSingle[] = {
     HELP_USING_BAG2, 
     HELP_USING_AN_ITEM, 
     HELP_USING_RUN, 
-    HELP_USING_ENEMY_SUMMARY,
-    HELP_USING_MOVE_EFFECTIVENESS,
     HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
@@ -1447,8 +1413,6 @@ static const u8 sHowTo_TrainerBattleDouble[] = {
     HELP_USING_BAG2, 
     HELP_USING_AN_ITEM, 
     HELP_USING_RUN, 
-    HELP_USING_ENEMY_SUMMARY,
-    HELP_USING_MOVE_EFFECTIVENESS,
     HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
@@ -1700,7 +1664,7 @@ static const u8 *const sHelpSystemSubmenuItemLists[HELPCONTEXT_COUNT * (TOPIC_CO
     NULL,                          sHowTo_BedroomPCItems,      NULL,                       NULL,                    NULL, // HELPCONTEXT_BEDROOM_PC_ITEMS
     NULL,                          sHowTo_BedroomPCMailbox,    NULL,                       NULL,                    NULL, // HELPCONTEXT_BEDROOM_PC_MAILBOX
     NULL,                          NULL,                       NULL,                       NULL,                    NULL, // HELPCONTEXT_UNUSED
-    [HELPCONTEXT_HACK_OPTIONS * 5 + TOPIC_TERMS]   = sTerms_HackOptions,
+    NULL,                          NULL,                       NULL,                       NULL,                    NULL,  // HELPCONTEXT_UNUSED
     [HELPCONTEXT_BATTLE_OPTIONS * 5 + TOPIC_TERMS] = sTerms_BattleOptions,
 };
 
@@ -1762,7 +1726,6 @@ static const bool8 sHelpSystemContextTopicFlags[HELPCONTEXT_COUNT + 1][TOPIC_COU
     [HELPCONTEXT_BEDROOM_PC_ITEMS]      = CONTEXT_TOPIC_FLAGS(FALSE,  TRUE, FALSE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_BEDROOM_PC_MAILBOX]    = CONTEXT_TOPIC_FLAGS(FALSE,  TRUE, FALSE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_UNUSED]                = {},
-    [HELPCONTEXT_HACK_OPTIONS]          = CONTEXT_TOPIC_FLAGS(FALSE, FALSE,  TRUE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_BATTLE_OPTIONS]        = CONTEXT_TOPIC_FLAGS(FALSE, FALSE,  TRUE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_COUNT]                 = {}
 };
@@ -2219,8 +2182,6 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
             return FlagGet(FLAG_GOT_BICYCLE);
         case HELP_USING_HALL_OF_FAME:
             return FlagGet(FLAG_SYS_GAME_CLEAR);
-        case HELP_USING_ENEMY_SUMMARY:
-        case HELP_USING_MOVE_EFFECTIVENESS:
         case HELP_USING_MOVE_DESCRIPTION:
             return TRUE;
         }

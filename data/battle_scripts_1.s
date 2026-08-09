@@ -1122,7 +1122,6 @@ BattleScript_EffectSkyAttack::
 	setbyte sB_ANIM_TURN, 1
 	clearstatusfromeffect BS_ATTACKER
 	orword gHitMarker, HITMARKER_NO_PPDEDUCT
-	setmoveeffect MOVE_EFFECT_FLINCH
 	goto BattleScript_HitFromAccCheck
 	@goto BattleScript_TwoTurnMovesSecondTurn
 	@jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_TwoTurnMovesSecondTurn

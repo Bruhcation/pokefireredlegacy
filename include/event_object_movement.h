@@ -120,6 +120,7 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16);
 void SetObjectInvisibility(u8 localId, u8 mapNum, u8 mapGroup, u8 state);
 void FreeAndReserveObjectSpritePalettes(void);
 u8 LoadObjectEventPalette(u16 paletteTag);
+void ReloadPlayerObjectEventPalette(void);
 void SetObjectPositionByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y);
 void ResetObjectSubpriority(u8 localId, u8 mapNum, u8 mapGroup);
 void SetObjectSubpriority(u8 localId, u8 mapNum, u8 mapGroup, u8 subpriority);

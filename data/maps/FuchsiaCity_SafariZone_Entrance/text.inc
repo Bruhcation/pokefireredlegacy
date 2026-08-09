@@ -17,6 +17,19 @@ FuchsiaCity_SafariZone_Entrance_Text_PlayerReceived30SafariBalls::
     .string "{PLAYER} received 30 SAFARI BALLS\n"
     .string "from the attendant.$"
 
+FuchsiaCity_SafariZone_Entrance_Text_PlayerReceived1SafariBall::
+    .string "{PLAYER} received 1 SAFARI BALL\n"
+    .string "from the attendant.$"
+
+FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoneyAgain::
+    .string "Like I said! No Money, No Entry!$"
+
+FuchsiaCity_SafariZone_Entrance_Text_AlrightYouCanGo::
+	.string "Read my lips. NO! Get it?\p"
+	.string "You're persistent aren't you?\p"
+	.string "Ok you can go in for free,\n"
+	.string "but you only get 1 ball!$"
+
 FuchsiaCity_SafariZone_Entrance_Text_CallYouOnPAWhenYouRunOut::
     .string "We'll call you on the PA when you\n"
     .string "run out of time or SAFARI BALLS.\p"

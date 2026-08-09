@@ -97,7 +97,6 @@ static void HandleInputChooseTarget(void);
 static void MoveSelectionDisplayPpNumber(void);
 static void MoveSelectionDisplayPpString(void);
 static void MoveSelectionDisplayMoveType(void);
-static u32 GetTargetTypeEffectiveness(u8 moveType);
 static void MoveSelectionDisplayMoveDescription(void);
 static void MoveSelectionDisplayMoveNames(void);
 static void HandleMoveSwitching(void);
@@ -770,6 +769,7 @@ static void HandleMoveSwitching(void)
             gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseMove;
         gMoveSelectionCursor[gActiveBattler] = gMultiUsePlayerCursor;
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
+        MoveSelectionDisplayPpString();
         MoveSelectionDisplayPpNumber();
         MoveSelectionDisplayMoveType();
     }
@@ -782,6 +782,7 @@ static void HandleMoveSwitching(void)
             gBattlerControllerFuncs[gActiveBattler] = OakOldManHandleInputChooseMove;
         else
             gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseMove;
+        MoveSelectionDisplayPpString();
         MoveSelectionDisplayPpNumber();
         MoveSelectionDisplayMoveType();
     }
@@ -1452,61 +1453,9 @@ static void MoveSelectionDisplayPpNumber(void)
     SetPpNumbersPaletteInMoveSelection();
     moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
 
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePP); // "PP"
-    txtPtr = ConvertIntToDecimalStringN(txtPtr, moveInfo->currentPp[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
-    *txtPtr++ = CHAR_SLASH;
-    txtPtr = ConvertIntToDecimalStringN(txtPtr, moveInfo->maxPp[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
-
-#if B_SHOW_EFFECTIVENESS == TRUE
-    if (gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_ARROWS
-     || gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_BOTH)
-    {
-        u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
-        u8 moveType = gBattleMoves[move].type;
-        u32 effectiveness = GetTargetTypeEffectiveness(moveType);
-        bool8 stab = (moveType == gBattleMons[gActiveBattler].type1 || moveType == gBattleMons[gActiveBattler].type2);
-
-        *txtPtr++ = CHAR_SPACE;
-
-        if (effectiveness > TYPE_MUL_NORMAL)
-        {
-            *txtPtr++ = EXT_CTRL_CODE_BEGIN;
-            *txtPtr++ = EXT_CTRL_CODE_COLOR;
-            *txtPtr++ = 0x53; // green
-            *txtPtr++ = CHAR_UP_ARROW;
-        }
-        else if (effectiveness > 0 && effectiveness < TYPE_MUL_NORMAL)
-        {
-            *txtPtr++ = EXT_CTRL_CODE_BEGIN;
-            *txtPtr++ = EXT_CTRL_CODE_COLOR;
-            *txtPtr++ = 0x51; // red
-            *txtPtr++ = CHAR_DOWN_ARROW;
-        }
-        else if (effectiveness == 0)
-        {
-            *txtPtr++ = EXT_CTRL_CODE_BEGIN;
-            *txtPtr++ = EXT_CTRL_CODE_COLOR;
-            *txtPtr++ = 0x54; // gray
-            *txtPtr++ = CHAR_HYPHEN;
-            *txtPtr++ = CHAR_HYPHEN;
-        }
-        else
-        {
-            // reserve the same slot width as the arrow (8px) so "+" doesn't shift
-            *txtPtr++ = CHAR_SPACE;
-            *txtPtr++ = CHAR_SPACE; // roughly matches 8px of the arrow slot at 5px/char
-        }
-
-        *txtPtr++ = EXT_CTRL_CODE_BEGIN;
-        *txtPtr++ = EXT_CTRL_CODE_COLOR;
-        *txtPtr++ = 0x5C; // reset to black
-
-        if (stab)
-            *txtPtr++ = CHAR_PLUS;
-    }
-#endif
-
-    *txtPtr = EOS;
+    txtPtr = ConvertIntToDecimalStringN(gDisplayedStringBattle, moveInfo->currentPp[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
+    *txtPtr = CHAR_SLASH;
+    ConvertIntToDecimalStringN(++txtPtr, moveInfo->maxPp[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
 }
 
@@ -1704,49 +1653,23 @@ static u32 GetTypeEffectivenessMultiplier(u8 atkType, u8 defType1, u8 defType2)
     return multiplier;
 }
 
-static u32 GetTargetTypeEffectiveness(u8 moveType)
-{
-    u8 opponentBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
-    u32 effectiveness = TYPE_MUL_NORMAL;
-    bool8 gotEffectiveness = FALSE;
-
-    if (gBattleMons[opponentBattler].hp != 0)
-    {
-        effectiveness = GetTypeEffectivenessMultiplier(moveType, gBattleMons[opponentBattler].type1, gBattleMons[opponentBattler].type2);
-        gotEffectiveness = TRUE;
-    }
-
-    // In doubles (not multi battle), also weigh in the second foe and show
-    // whichever result is more useful to know about.
-    if (IsDoubleBattle() && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
-    {
-        u8 partnerOpponentBattler = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(opponentBattler)));
-
-        if (partnerOpponentBattler != opponentBattler && gBattleMons[partnerOpponentBattler].hp != 0)
-        {
-            u32 partnerEffectiveness = GetTypeEffectivenessMultiplier(moveType, gBattleMons[partnerOpponentBattler].type1, gBattleMons[partnerOpponentBattler].type2);
-
-            if (!gotEffectiveness || partnerEffectiveness > effectiveness)
-                effectiveness = partnerEffectiveness;
-        }
-    }
-
-    return effectiveness;
-}
-
 static void MoveSelectionDisplayMoveType(void)
 {
     u8 *txtPtr;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
     u8 moveType = gBattleMoves[moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]].type;
-    u32 effectiveness = GetTargetTypeEffectiveness(moveType);
-    bool8 showColor = (gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_COLOR
-                     || gSaveBlock2Ptr->optionsMoveEffectiveness == OPTIONS_MOVE_EFFECTIVENESS_BOTH);
+    u32 effectiveness = TYPE_MUL_NORMAL;
+    u8 opponentBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
+
+    if (gBattleMons[opponentBattler].hp != 0)
+    {
+        effectiveness = GetTypeEffectivenessMultiplier(moveType, gBattleMons[opponentBattler].type1, gBattleMons[opponentBattler].type2);
+    }
 
     txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
     txtPtr = StringCopy(txtPtr, gText_MoveInterfaceDynamicColors);
 
-    if (showColor && effectiveness > TYPE_MUL_NORMAL)
+    if (effectiveness > TYPE_MUL_NORMAL)
     {
         *txtPtr++ = EXT_CTRL_CODE_BEGIN;
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
@@ -1756,7 +1679,7 @@ static void MoveSelectionDisplayMoveType(void)
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
         *txtPtr++ = 0x5E;
     }
-    else if (showColor && effectiveness < TYPE_MUL_NORMAL)
+    else if (effectiveness < TYPE_MUL_NORMAL)
     {
         *txtPtr++ = EXT_CTRL_CODE_BEGIN;
         *txtPtr++ = EXT_CTRL_CODE_COLOR;
@@ -2831,6 +2754,7 @@ void InitMoveSelectionsVarsAndStrings(void)
     MoveSelectionDisplayMoveNames();
     gMultiUsePlayerCursor = 0xFF;
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
+    MoveSelectionDisplayPpString();
     MoveSelectionDisplayPpNumber();
     MoveSelectionDisplayMoveType();
 }

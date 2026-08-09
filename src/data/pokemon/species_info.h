@@ -1150,7 +1150,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 73,
         .baseAttack    = 71,
-        .baseDefense   = 70,
+        .baseDefense   = 75,
         .baseSpeed     = 101,
         .baseSpAttack  = 100,
         .baseSpDefense = 100,

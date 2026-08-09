@@ -573,7 +573,7 @@ FiveIsland_WaterLabyrinth_Text_NeedMushroomOrTwoToLearnMove::
 # 287 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
 	.string "If your POKéMON need to learn an EGG\n"
 # 288 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
-	.string "move, come back with a HEART SCALE.p"
+	.string "move, come back with a HEART SCALE.\p"
 # 289 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"
 	.string "I heard there's some south of\n"
 # 290 "data/maps/FiveIsland_WaterLabyrinth/scripts.pory"

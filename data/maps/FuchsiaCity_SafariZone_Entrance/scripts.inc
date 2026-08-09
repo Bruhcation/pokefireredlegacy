@@ -321,94 +321,156 @@ FuchsiaCity_SafariZone_Entrance_EventScript_CheckSpaceForMons::
 # 161 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
 FuchsiaCity_SafariZone_Entrance_EventScript_NotEnoughMoney::
 # 162 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	msgbox FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoney
+	goto_if_set FLAG_NO_MONEY_SAFARI_ZONE2, FuchsiaCity_SafariZone_Entrance_EventScript_AlrightYouCanGo
 # 163 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	goto FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack
+	goto_if_set FLAG_NO_MONEY_SAFARI_ZONE, FuchsiaCity_SafariZone_Entrance_EventScript_YouNeedToPay
 # 164 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	end
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoney
 # 165 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
+	setflag FLAG_NO_MONEY_SAFARI_ZONE
 # 166 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack::
+	goto FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack
 # 167 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	closemessage
+	end
 # 168 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	hidemoneybox
+
 # 169 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, FuchsiaCity_SafariZone_Entrance_Movement_ForceBack
+FuchsiaCity_SafariZone_Entrance_EventScript_YouNeedToPay::
 # 170 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	waitmovement 0
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoneyAgain
 # 171 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	releaseall
+	setflag FLAG_NO_MONEY_SAFARI_ZONE2
 # 172 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	end
+	goto FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack
 # 173 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
-# 174 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_Movement_ForceBack::
-# 175 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_down
-# 176 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	step_end
-# 177 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
-# 178 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneMid::
-# 179 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 180 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 181 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	step_end
-# 182 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
-# 183 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneRight::
-# 184 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 185 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_left
-# 186 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 187 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	step_end
-# 188 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
-# 189 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneLeft::
-# 190 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 191 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_right
-# 192 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	walk_up
-# 193 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	step_end
-# 194 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-
-# 195 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_EventScript_InfoAttendant::
-# 196 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	lock
-# 197 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	faceplayer
-# 198 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	msgbox FuchsiaCity_SafariZone_Entrance_Text_FirstTimeAtSafariZone, MSGBOX_YESNO
-# 199 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, FuchsiaCity_SafariZone_Entrance_EventScript_ExplainSafariZone
-# 200 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	msgbox FuchsiaCity_SafariZone_Entrance_Text_SorryYoureARegularHere
-# 201 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	release
-# 202 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
 	end
-# 203 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+# 174 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
 
+# 175 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_EventScript_AlrightYouCanGo::
+# 176 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_AlrightYouCanGo
+# 177 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	clearflag FLAG_NO_MONEY_SAFARI_ZONE
+# 178 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	clearflag FLAG_NO_MONEY_SAFARI_ZONE2
+# 179 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+# 180 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	playfanfare MUS_LEVEL_UP
+# 181 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	message FuchsiaCity_SafariZone_Entrance_Text_PlayerReceived1SafariBall
+# 182 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	waitfanfare
+# 183 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	call EventScript_RestorePrevTextColor
+# 184 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_CallYouOnPAWhenYouRunOut
+# 185 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	closemessage
+# 186 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	hidemoneybox
+# 187 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	call_if_eq VAR_TEMP_2, 0, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneMid
+# 188 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	call_if_eq VAR_TEMP_2, 1, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneRight
+# 189 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	call_if_eq VAR_TEMP_2, 2, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneLeft
+# 190 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	special EnterSafariModePoor
+# 191 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 2
+# 192 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	warp MAP_SAFARI_ZONE_CENTER, 255, 26, 30
+# 193 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	waitstate
+# 194 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	end
+# 195 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 196 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 197 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack::
+# 198 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	closemessage
+# 199 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	hidemoneybox
+# 200 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, FuchsiaCity_SafariZone_Entrance_Movement_ForceBack
+# 201 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	waitmovement 0
+# 202 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	releaseall
+# 203 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	end
 # 204 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-FuchsiaCity_SafariZone_Entrance_EventScript_ExplainSafariZone::
+
 # 205 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	msgbox FuchsiaCity_SafariZone_Entrance_Text_ExplainSafariZone
+FuchsiaCity_SafariZone_Entrance_Movement_ForceBack::
 # 206 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
-	release
+	walk_down
 # 207 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	step_end
+# 208 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 209 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneMid::
+# 210 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 211 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 212 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	step_end
+# 213 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 214 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneRight::
+# 215 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 216 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_left
+# 217 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 218 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	step_end
+# 219 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 220 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_Movement_EnterSafariZoneLeft::
+# 221 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 222 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_right
+# 223 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	walk_up
+# 224 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	step_end
+# 225 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 226 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_EventScript_InfoAttendant::
+# 227 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	lock
+# 228 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	faceplayer
+# 229 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_FirstTimeAtSafariZone, MSGBOX_YESNO
+# 230 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, FuchsiaCity_SafariZone_Entrance_EventScript_ExplainSafariZone
+# 231 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_SorryYoureARegularHere
+# 232 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	release
+# 233 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	end
+# 234 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+
+# 235 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+FuchsiaCity_SafariZone_Entrance_EventScript_ExplainSafariZone::
+# 236 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_ExplainSafariZone
+# 237 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
+	release
+# 238 "data/maps/FuchsiaCity_SafariZone_Entrance/scripts.pory"
 	end

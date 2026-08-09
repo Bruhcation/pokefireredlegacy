@@ -285,7 +285,7 @@ FiveIsland_WaterLabyrinth_Text_HandedOverOneBigMushroom::
 
 FiveIsland_WaterLabyrinth_Text_NeedMushroomOrTwoToLearnMove::
 	.string "If your POKéMON need to learn an EGG\n"
-	.string "move, come back with a HEART SCALE.p"
+	.string "move, come back with a HEART SCALE.\p"
 	.string "I heard there's some south of\n"
 	.string "Seven Island!$"
 

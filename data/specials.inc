@@ -217,7 +217,7 @@ gSpecials::
 	def_special EnterSafariMode
 	def_special ExitSafariMode
 	def_special NullFieldSpecial  @ Misc Hoenn specials
-	def_special NullFieldSpecial
+	def_special EnterSafariModePoor
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial

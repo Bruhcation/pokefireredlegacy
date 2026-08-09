@@ -159,9 +159,40 @@ FuchsiaCity_SafariZone_Entrance_EventScript_CheckSpaceForMons::
 	end
 
 FuchsiaCity_SafariZone_Entrance_EventScript_NotEnoughMoney::
+	goto_if_set FLAG_NO_MONEY_SAFARI_ZONE2, FuchsiaCity_SafariZone_Entrance_EventScript_AlrightYouCanGo
+	goto_if_set FLAG_NO_MONEY_SAFARI_ZONE, FuchsiaCity_SafariZone_Entrance_EventScript_YouNeedToPay
 	msgbox FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoney
+	setflag FLAG_NO_MONEY_SAFARI_ZONE
 	goto FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack
 	end
+
+FuchsiaCity_SafariZone_Entrance_EventScript_YouNeedToPay::
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_OopsNotEnoughMoneyAgain
+	setflag FLAG_NO_MONEY_SAFARI_ZONE2
+	goto FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack
+	end
+
+FuchsiaCity_SafariZone_Entrance_EventScript_AlrightYouCanGo::
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_AlrightYouCanGo
+	clearflag FLAG_NO_MONEY_SAFARI_ZONE
+	clearflag FLAG_NO_MONEY_SAFARI_ZONE2
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_SafariZone_Entrance_Text_PlayerReceived1SafariBall
+	waitfanfare
+	call EventScript_RestorePrevTextColor
+	msgbox FuchsiaCity_SafariZone_Entrance_Text_CallYouOnPAWhenYouRunOut
+	closemessage
+	hidemoneybox
+	call_if_eq VAR_TEMP_2, 0, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneMid
+	call_if_eq VAR_TEMP_2, 1, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneRight
+	call_if_eq VAR_TEMP_2, 2, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneLeft
+	special EnterSafariModePoor
+	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 2
+	warp MAP_SAFARI_ZONE_CENTER, 255, 26, 30
+	waitstate
+	end
+
 
 FuchsiaCity_SafariZone_Entrance_EventScript_ForcePlayerBack::
 	closemessage

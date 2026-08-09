@@ -17396,9 +17396,9 @@
                 "species": "SPECIES_WOOPER"
               },
               {
-                "min_level": 59,
-                "max_level": 59,
-                "species": "SPECIES_FEAROW"
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_SUDOWOODO"
               },
               {
                 "min_level": 56,
@@ -17550,9 +17550,9 @@
                 "species": "SPECIES_WOOPER"
               },
               {
-                "min_level": 59,
-                "max_level": 59,
-                "species": "SPECIES_FEAROW"
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_SUDOWOODO"
               },
               {
                 "min_level": 56,
