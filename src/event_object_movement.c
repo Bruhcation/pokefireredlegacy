@@ -1841,10 +1841,7 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     isDynamicPalette = (spriteTemplate->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC);
     if (!isDynamicPalette)
     {
-        if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-        else
-            LoadObjectEventPalette(spriteTemplate->paletteTag);
+        LoadObjectEventPalette(spriteTemplate->paletteTag);
     }
 
     if (objectEvent->movementType == MOVEMENT_TYPE_INVISIBLE)
@@ -1873,10 +1870,6 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     sprite = &gSprites[spriteId];
     if (isDynamicPalette)
         sprite->oam.paletteNum = LoadDynamicFollowerPalette(OW_SPECIES(objectEvent), OW_FORM(objectEvent), objectEvent->shiny);
-    else if (graphicsInfo->paletteSlot == PALSLOT_PLAYER || graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-        sprite->oam.paletteNum = graphicsInfo->paletteSlot;
-    // else
-    //     sprite->oam.paletteNum = graphicsInfo->paletteSlot;
 
     #if OW_GFX_COMPRESS
     if (sprite->usingSheet)
@@ -2075,6 +2068,55 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, SpriteCallback callback, s16 x, s1
     return spriteId;
 }
 
+#define PAL_TAG_REFLECTION_OFFSET 0x2000 // reflection tag value is paletteTag + 0x2000
+#define PAL_RAW_REFLECTION_OFFSET 0x4000 // raw reflection tag is paletteNum + 0x4000
+#define REFLECTION_PAL_TAG(tag, num) ((tag) == TAG_NONE ? (num) + PAL_RAW_REFLECTION_OFFSET : (tag) + PAL_TAG_REFLECTION_OFFSET)
+
+// Apply a blue tint effect to a palette
+static void ApplyPondFilter(u8 paletteNum, u16 *dest)
+{
+    u32 i, r, g, b;
+    u16 *src = gPlttBufferUnfaded + OBJ_PLTT_ID(paletteNum);
+    *dest++ = *src++; // copy transparency
+    for (i = 0; i < 16 - 1; i++)
+    {
+        r = GET_R(src[i]);
+        g = GET_G(src[i]);
+        b = GET_B(src[i]);
+        b += 10;
+        if (b > 31)
+            b = 31;
+        *dest++ = RGB2(r, g, b);
+    }
+}
+
+// Loads a dynamically-filtered reflection palette for a virtual object based
+// on whatever the source object's normal palette is *currently* loaded as,
+// rather than assuming a fixed destination slot. Falls back to the normal
+// (unfiltered) palette if the source isn't currently loaded anywhere.
+static u8 LoadVirtualObjectReflectionPalette(u16 paletteTag)
+{
+    u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
+    u16 reflectionTag;
+    u8 reflectionPaletteNum;
+
+    if (paletteNum == 0xFF)
+        return LoadObjectEventPalette(paletteTag);
+
+    reflectionTag = REFLECTION_PAL_TAG(paletteTag, paletteNum);
+    reflectionPaletteNum = IndexOfSpritePaletteTag(reflectionTag);
+    if (reflectionPaletteNum == 0xFF)
+    {
+        u16 filteredData[16];
+        struct SpritePalette filteredPal = {.tag = reflectionTag, .data = filteredData};
+        ApplyPondFilter(paletteNum, filteredData);
+        reflectionPaletteNum = LoadSpritePalette(&filteredPal);
+        ApplyGlobalFieldPaletteTint(reflectionPaletteNum);
+        UpdateSpritePaletteWithWeather(reflectionPaletteNum);
+    }
+    return reflectionPaletteNum;
+}
+
 #define sVirtualObjId   data[0]
 #define sVirtualObjElev data[1]
 
@@ -2107,13 +2149,9 @@ u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevati
         sprite->coordOffsetEnabled = TRUE;
         sprite->sVirtualObjId = virtualObjId;
         sprite->sVirtualObjElev = elevation;
-        if (graphicsInfo->paletteSlot == PALSLOT_PLAYER)
-            LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-        else if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
 
         if (graphicsInfo->paletteSlot == PALSLOT_PLAYER || graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-            sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+            sprite->oam.paletteNum = LoadVirtualObjectReflectionPalette(graphicsInfo->paletteTag);
 
         if (subspriteTables != NULL)
         {
@@ -2808,10 +2846,7 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
     isDynamicPalette = (spriteTemplate.paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC);
     if (!isDynamicPalette)
     {
-        if (graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
-            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-        else
-            LoadObjectEventPalette(spriteTemplate.paletteTag);
+        LoadObjectEventPalette(spriteTemplate.paletteTag);
     }
 
     spriteId = CreateSprite(&spriteTemplate, 0, 0, 0);
@@ -2820,8 +2855,6 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
         sprite = &gSprites[spriteId];
         if (isDynamicPalette)
             sprite->oam.paletteNum = LoadDynamicFollowerPalette(OW_SPECIES(objectEvent), OW_FORM(objectEvent), objectEvent->shiny);
-        else if (graphicsInfo->paletteSlot >= PALSLOT_NPC_SPECIAL)
-            sprite->oam.paletteNum = graphicsInfo->paletteSlot;
 
     #if OW_GFX_COMPRESS
     if (sprite->usingSheet)
@@ -2903,10 +2936,7 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
 
     if (graphicsInfo->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC)
     {
-        if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
-        else
-            LoadObjectEventPalette(graphicsInfo->paletteTag);
+        LoadObjectEventPalette(graphicsInfo->paletteTag);
     }
 
     var = sprite->images->size / TILE_SIZE_4BPP;
@@ -2924,9 +2954,6 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
     sprite->images = graphicsInfo->images;
     sprite->anims = graphicsInfo->anims;
     sprite->subspriteTables = graphicsInfo->subspriteTables;
-    if (graphicsInfo->paletteTag != OBJ_EVENT_PAL_TAG_DYNAMIC
-    && graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-    sprite->oam.paletteNum = graphicsInfo->paletteSlot;
     if (!sprite->usingSheet)
     {
         s32 var2;

@@ -12,6 +12,7 @@
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "graphics.h"
 
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
 #define PAL_TAG_REFLECTION_OFFSET 0x2000 // reflection tag value is paletteTag + 0x2000
@@ -49,7 +50,6 @@ void SetUpReflection(struct ObjectEvent *objectEvent, struct Sprite *sprite, boo
     reflectionSprite->callback = UpdateObjectReflectionSprite;
     reflectionSprite->oam.priority = 3;
     reflectionSprite->oam.paletteNum = gReflectionEffectPaletteMap[reflectionSprite->oam.paletteNum];
-    reflectionSprite->usingSheet = TRUE;
     reflectionSprite->anims = gDummySpriteAnimTable;
     StartSpriteAnim(reflectionSprite, 0);
     reflectionSprite->affineAnims = gDummySpriteAffineAnimTable;
@@ -127,7 +127,6 @@ static void ApplyIceFilter(u8 paletteNum, u16 *dest) {
 static void LoadObjectRegularReflectionPalette(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    u8 paletteIndex = sprite->oam.paletteNum;
 
     if (graphicsInfo->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC)
     {
@@ -144,20 +143,29 @@ static void LoadObjectRegularReflectionPalette(struct ObjectEvent *objectEvent, 
                 ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
             paletteNum = LoadSpritePalette(&filteredPal);
             ApplyGlobalFieldPaletteTint(paletteNum);
-            UpdateSpritePaletteWithWeather(paletteNum);
+            // UpdateSpritePaletteWithWeather(paletteNum);
         }
         sprite->oam.paletteNum = paletteNum;
         sprite->oam.objMode = ST_OAM_OBJ_BLEND;
     }
     else if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE)
     {
-        if (graphicsInfo->paletteSlot == PALSLOT_PLAYER)
-            LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, paletteIndex);
-        else if (graphicsInfo->paletteSlot == PALSLOT_NPC_SPECIAL)
-            LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, paletteIndex);
-        else
-            PatchObjectPalette(GetObjectPaletteTag(paletteIndex), paletteIndex);
-        UpdateSpritePaletteWithWeather(paletteIndex);
+        const struct Sprite *mainSprite = &gSprites[objectEvent->spriteId];
+        u16 baseTag = graphicsInfo->paletteTag;
+        u16 paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
+        u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
+        if (paletteNum >= 16) { // Not already loaded; build filtered palette
+            u16 filteredData[16];
+            struct SpritePalette filteredPal = {.tag = paletteTag, .data = filteredData};
+            if (sprite->data[7] == FALSE)
+                ApplyPondFilter(mainSprite->oam.paletteNum, filteredData);
+            else
+                ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
+            paletteNum = LoadSpritePalette(&filteredPal);
+            ApplyGlobalFieldPaletteTint(paletteNum);
+        }
+        sprite->oam.paletteNum = paletteNum;
+        sprite->oam.objMode = ST_OAM_OBJ_BLEND;
     }
 }
 
@@ -173,12 +181,12 @@ static void LoadObjectHighBridgeReflectionPalette(struct ObjectEvent * objectEve
         struct SpritePalette bluePalette = {.tag = HIGH_BRIDGE_PAL_TAG, .data = blueData};
         CpuFill16(0x55C9, blueData, PLTT_SIZE_4BPP);
         sprite->oam.paletteNum = LoadSpritePalette(&bluePalette);
-        UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+        // UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
     }
     else if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE)
     {
-        PatchObjectPalette(graphicsInfo->reflectionPaletteTag, sprite->oam.paletteNum);
-        UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+        sprite->oam.paletteNum = LoadObjectEventPalette(graphicsInfo->reflectionPaletteTag);
+        // UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
     }
 }
 
@@ -212,14 +220,31 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
                 else
                     ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
                 paletteNum = LoadSpritePalette(&filteredPal);
-                UpdateSpritePaletteWithWeather(paletteNum);
+                // UpdateSpritePaletteWithWeather(paletteNum);
             }
             reflectionSprite->oam.paletteNum = paletteNum;
         }
     }
     else
     {
-        reflectionSprite->oam.paletteNum = gReflectionEffectPaletteMap[mainSprite->oam.paletteNum];
+        const struct ObjectEventGraphicsInfo *regularGraphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
+        u16 baseTag = regularGraphicsInfo->paletteTag;
+        u16 paletteTag = REFLECTION_PAL_TAG(baseTag, mainSprite->oam.paletteNum);
+        u8 paletteNum = IndexOfSpritePaletteTag(paletteTag);
+        if (paletteNum >= 16) { // Build filtered palette
+            u16 filteredData[16];
+            struct SpritePalette filteredPal = {.tag = paletteTag, .data = filteredData};
+            reflectionSprite->inUse = FALSE;
+            FieldEffectFreePaletteIfUnused(reflectionSprite->oam.paletteNum);
+            reflectionSprite->inUse = TRUE;
+            if (reflectionSprite->data[7] == FALSE)
+                ApplyPondFilter(mainSprite->oam.paletteNum, filteredData);
+            else
+                ApplyIceFilter(mainSprite->oam.paletteNum, filteredData);
+            paletteNum = LoadSpritePalette(&filteredPal);
+            ApplyGlobalFieldPaletteTint(paletteNum);
+        }
+        reflectionSprite->oam.paletteNum = paletteNum;
     }
 
     reflectionSprite->oam.shape = mainSprite->oam.shape;
@@ -315,11 +340,29 @@ const u16 gShadowVerticalOffsets[] = {
     [SHADOW_SIZE_XL] = 16
 };
 
+// Shadow sprites only ever draw with palette index 0 (transparent) or 15
+// (the visible silhouette). Rather than reuse weather's own light/misty
+// palette and rely on gamma shift to darken it — which only works while
+// weather with active darkening is running — give the shadow a fixed, always-
+// dark color of its own so it looks correct regardless of weather/location.
+static const u16 sShadowPalette[16] = {
+    RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0),
+    RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0),
+    RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0),
+    RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(0, 0, 0), RGB2(6, 6, 8),
+};
+
 u32 FldEff_Shadow(void)
 {
     u8 objectEventId;
     const struct ObjectEventGraphicsInfo * graphicsInfo;
     u8 spriteId;
+
+    if (IndexOfSpritePaletteTag(FLDEFF_PAL_TAG_SHADOW) == 0xFF)
+    {
+        struct SpritePalette shadowPal = {.tag = FLDEFF_PAL_TAG_SHADOW, .data = sShadowPalette};
+        LoadSpritePalette(&shadowPal);
+    }
 
     objectEventId = GetObjectEventIdByLocalIdAndMap(gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
     graphicsInfo = GetObjectEventGraphicsInfo(gObjectEvents[objectEventId].graphicsId);

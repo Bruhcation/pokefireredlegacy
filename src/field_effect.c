@@ -521,6 +521,8 @@ void FieldEffectFreePaletteIfUnused(u8 paletteNum)
     u16 paletteTag = GetSpritePaletteTagByPaletteNum(paletteNum);
     if (paletteTag == TAG_NONE)
         return;
+    if (paletteNum == gWeatherPtr->weatherPicSpritePalIndex)
+        return;
     for (i = 0; i < MAX_SPRITES; i++)
     {
         if (gSprites[i].inUse && gSprites[i].oam.paletteNum == paletteNum)

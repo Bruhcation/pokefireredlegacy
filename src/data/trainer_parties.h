@@ -4543,6 +4543,7 @@ static const struct TrainerMon sParty_PicnickerCarol[] = {
         .iv = 0,
         .lvl = 26,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
 };
 
@@ -6865,6 +6866,7 @@ static const struct TrainerMon sParty_BirdKeeperDonald[] = {
         .iv = 0,
         .lvl = 33,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
 };
 
@@ -6891,6 +6893,7 @@ static const struct TrainerMon sParty_BirdKeeperEdwin[] = {
         .iv = 0,
         .lvl = 33,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = 0,
@@ -6948,6 +6951,7 @@ static const struct TrainerMon sParty_BirdKeeperJacob[] = {
         .iv = 0,
         .lvl = 32,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = 0,
@@ -7010,6 +7014,7 @@ static const struct TrainerMon sParty_BirdKeeperKeith[] = {
         .iv = 0,
         .lvl = 63,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = 0,
@@ -7046,6 +7051,7 @@ static const struct TrainerMon sParty_BirdKeeperMitch[] = {
         .iv = 0,
         .lvl = 31,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = 0,
@@ -11956,6 +11962,7 @@ static const struct TrainerMon sParty_BirdKeeperMilo[] = {
         .iv = 0,
         .lvl = 60,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
 };
 
@@ -12770,6 +12777,7 @@ static const struct TrainerMon sParty_YoungsterCordell[] = {
         .iv = 0,
         .lvl = 64,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = 0,
@@ -13867,6 +13875,7 @@ static const struct TrainerMon sParty_BirdKeeperJacob2[] = {
         .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
         .lvl = 36,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
@@ -13890,6 +13899,7 @@ static const struct TrainerMon sParty_BirdKeeperJacob3[] = {
         .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
         .lvl = 57,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
     {
         .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -14401,6 +14411,7 @@ static const struct TrainerMon sParty_BirdKeeperMilo2[] = {
         .iv = 0,
         .lvl = 62,
         .species = SPECIES_FARFETCHD,
+        .heldItem = ITEM_STICK,
     },
 };
 
