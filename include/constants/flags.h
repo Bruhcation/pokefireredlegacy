@@ -299,8 +299,8 @@
 #define FLAG_HACK_OPTION_MENU               0x117
 #define FLAG_NO_MONEY_SAFARI_ZONE               0x118
 #define FLAG_NO_MONEY_SAFARI_ZONE2               0x119
-#define FLAG_0x11A               0x11A
-#define FLAG_0x11B               0x11B
+#define FLAG_FIVE_ISLAND_TREE             0x11A
+#define FLAG_MOVE_TUTOR_TAUGHT_SHARPEN    0x11B
 #define FLAG_0x11C               0x11C
 #define FLAG_0x11D               0x11D
 #define FLAG_0x11E               0x11E

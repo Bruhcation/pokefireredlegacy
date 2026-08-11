@@ -8823,7 +8823,7 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_CUBONE"
+                "species": "SPECIES_GENGAR"
               }
             ]
           }
@@ -8892,7 +8892,7 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_CUBONE"
+                "species": "SPECIES_GENGAR"
               }
             ]
           }
@@ -29435,7 +29435,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_RHYHORN"
+                "species": "SPECIES_SANDSHREW"
               },
               {
                 "min_level": 21,

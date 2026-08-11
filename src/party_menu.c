@@ -1951,7 +1951,7 @@ bool8 CanLearnTutorMove(u16 species, u8 tutor)
         else
             return FALSE;
     default:
-        if (sTutorLearnsets[species] & (1 << tutor))
+        if (sTutorLearnsets[species] & ((u64) 1 << tutor))
             return TRUE;
         else
             return FALSE;
