@@ -208,3 +208,57 @@ IndigoPlateau_PokemonCenter_1F_TMGUY::
 	release
 # 105 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 	end
+# 106 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 107 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 108 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_TrainMore::
+# 109 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TrainMore, MSGBOX_NPC
+# 110 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	end
+# 111 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 112 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_TrainMoreGengar::
+# 113 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	lock
+# 114 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	faceplayer
+# 115 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	playmoncry SPECIES_GENGAR, 0
+# 116 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TrainMoreGengar
+# 117 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	waitmoncry
+# 118 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	release
+# 119 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	end
+# 120 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 121 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_AlmostReady::
+# 122 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_AlmostReady, MSGBOX_NPC
+# 123 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	end
+# 124 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 125 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_AlmostReadyAlakazam::
+# 126 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	lock
+# 127 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	faceplayer
+# 128 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	playmoncry SPECIES_ALAKAZAM, 0
+# 129 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_AlmostReadyAlakazam
+# 130 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	waitmoncry
+# 131 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	release
+# 132 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	end

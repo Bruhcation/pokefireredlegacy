@@ -93,6 +93,8 @@
 #define MON_DATA_SPDEF2                   88
 #define MON_DATA_FORME                    89
 #define MON_DATA_DEAD                     90
+#define MON_DATA_NATURE                   91
+#define MON_DATA_HIDDEN_NATURE            92
 
 
 #define BEST_IV_SPREAD_HIDDEN_POWER_BUG      {31, 31, 31, 30, 31, 30}
@@ -263,7 +265,7 @@
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
-#define MAX_PER_STAT_EVS 255
+#define MAX_PER_STAT_EVS 252
 #define MAX_TOTAL_EVS 510
 #define EV_ITEM_RAISE_LIMIT 100
 

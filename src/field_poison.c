@@ -5,6 +5,7 @@
 #include "field_message_box.h"
 #include "script.h"
 #include "event_data.h"
+#include "event_object_movement.h"
 #include "fldeff.h"
 #include "party_menu.h"
 #include "field_poison.h"
@@ -55,6 +56,26 @@ static bool32 MonFaintedFromPoison(u8 partyIdx)
     return FALSE;
 }
 
+static EWRAM_DATA u8 sPoisonSurvivedPartyFlags = 0;
+
+static bool32 MonSurvivedFromPoison(u8 partyIdx)
+{
+    return (sPoisonSurvivedPartyFlags & (1 << partyIdx)) != 0;
+}
+
+static void ShowMonSurvivedPoisonMessage(u8 partyIdx)
+{
+    struct Pokemon *pokemon = gPlayerParty + partyIdx;
+    GetMonData(pokemon, MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    sPoisonSurvivedPartyFlags &= ~(1 << partyIdx);
+}
+
+bool8 AnyMonSurvivedFieldPoison(void)
+{
+    return sPoisonSurvivedPartyFlags != 0;
+}
+
 #define tState   data[0]
 #define tPartyId data[1]
 
@@ -73,6 +94,13 @@ static void Task_TryFieldPoisonWhiteOut(u8 taskId)
                 tState++;
                 return;
             }
+            else if (MonSurvivedFromPoison(tPartyId))
+            {
+                ShowMonSurvivedPoisonMessage(tPartyId);
+                ShowFieldMessage(gText_PkmnSurvivedPoison);
+                tState++;
+                return;
+            }
         }
         tState = 2;
         break;
@@ -84,7 +112,10 @@ static void Task_TryFieldPoisonWhiteOut(u8 taskId)
         if (AllMonsFainted())
             gSpecialVar_Result = TRUE;
         else
+        {
             gSpecialVar_Result = FALSE;
+            UpdateFollowingPokemon();
+        }
         ScriptContext_Enable();
         DestroyTask(taskId);
         break;
@@ -105,13 +136,34 @@ s32 DoPoisonFieldEffect(void)
     struct Pokemon *pokemon = gPlayerParty;
     u32 numPoisoned = 0;
     u32 numFainted = 0;
+    sPoisonSurvivedPartyFlags = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
         {
             hp = GetMonData(pokemon, MON_DATA_HP);
-            if (hp == 0 || --hp == 0)
+            if (hp == 0)
+            {
                 numFainted++;
+            }
+            else
+            {
+                --hp;
+                if (hp == 0)
+                {
+                    if (!gSaveBlock2Ptr->optionsSurvivePoison)
+                    {
+                        u32 status = STATUS1_NONE;
+                        hp = 1;
+                        sPoisonSurvivedPartyFlags |= 1 << i;
+                        SetMonData(pokemon, MON_DATA_STATUS, &status);
+                    }
+                    else
+                    {
+                        numFainted++;
+                    }
+                }
+            }
             SetMonData(pokemon, MON_DATA_HP, &hp);
             numPoisoned++;
         }

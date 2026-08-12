@@ -14,6 +14,7 @@ static const u16 sTutorMoves[TUTOR_MOVE_COUNT] =
     [TUTOR_MOVE_THUNDER_WAVE] = MOVE_THUNDER_WAVE,
     [TUTOR_MOVE_EXPLOSION] = MOVE_EXPLOSION,
     [TUTOR_MOVE_ROCK_SLIDE] = MOVE_ROCK_SLIDE,
+    [TUTOR_MOVE_SHARPEN] = MOVE_SHARPEN,
     [TUTOR_MOVE_SUBSTITUTE] = MOVE_SUBSTITUTE,
 };
 
@@ -149,10 +150,12 @@ static const u16 sTutorLearnsets[] =
 
     [SPECIES_SPEAROW] = TUTOR(MOVE_DOUBLE_EDGE)
                       | TUTOR(MOVE_MIMIC)
+                      | TUTOR(MOVE_SHARPEN)
                       | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_FEAROW] = TUTOR(MOVE_DOUBLE_EDGE)
                      | TUTOR(MOVE_MIMIC)
+                     | TUTOR(MOVE_SHARPEN)
                      | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_EKANS] = TUTOR(MOVE_BODY_SLAM)
@@ -692,6 +695,7 @@ static const u16 sTutorLearnsets[] =
                    | TUTOR(MOVE_MIMIC)
                    | TUTOR(MOVE_EXPLOSION)
                    | TUTOR(MOVE_ROCK_SLIDE)
+                   | TUTOR(MOVE_SHARPEN)
                    | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_DROWZEE] = TUTOR(MOVE_MEGA_PUNCH)
@@ -911,6 +915,7 @@ static const u16 sTutorLearnsets[] =
                       | TUTOR(MOVE_DOUBLE_EDGE)
                       | TUTOR(MOVE_COUNTER)
                       | TUTOR(MOVE_MIMIC)
+                      | TUTOR(MOVE_SHARPEN)
                       | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_JYNX] = TUTOR(MOVE_MEGA_PUNCH)
@@ -997,6 +1002,7 @@ static const u16 sTutorLearnsets[] =
                       | TUTOR(MOVE_MIMIC)
                       | TUTOR(MOVE_DREAM_EATER)
                       | TUTOR(MOVE_THUNDER_WAVE)
+                      | TUTOR(MOVE_SHARPEN)
                       | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_OMANYTE] = TUTOR(MOVE_BODY_SLAM)
@@ -1025,6 +1031,7 @@ static const u16 sTutorLearnsets[] =
                        | TUTOR(MOVE_SEISMIC_TOSS)
                        | TUTOR(MOVE_MIMIC)
                        | TUTOR(MOVE_ROCK_SLIDE)
+                       | TUTOR(MOVE_SHARPEN)
                        | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_AERODACTYL] = TUTOR(MOVE_DOUBLE_EDGE)
@@ -1100,6 +1107,7 @@ static const u16 sTutorLearnsets[] =
                   | TUTOR(MOVE_THUNDER_WAVE)
                   | TUTOR(MOVE_EXPLOSION)
                   | TUTOR(MOVE_ROCK_SLIDE)
+                  | TUTOR(MOVE_SHARPEN)
                   | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_CHIKORITA] = TUTOR(MOVE_SWORDS_DANCE)
@@ -1513,6 +1521,7 @@ static const u16 sTutorLearnsets[] =
                       | TUTOR(MOVE_MIMIC)
                       | TUTOR(MOVE_EXPLOSION)
                       | TUTOR(MOVE_ROCK_SLIDE)
+                      | TUTOR(MOVE_SHARPEN)
                       | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_SNUBBULL] = TUTOR(MOVE_MEGA_PUNCH)
@@ -1548,6 +1557,7 @@ static const u16 sTutorLearnsets[] =
                      | TUTOR(MOVE_DOUBLE_EDGE)
                      | TUTOR(MOVE_COUNTER)
                      | TUTOR(MOVE_MIMIC)
+                     | TUTOR(MOVE_SHARPEN)
                      | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_SHUCKLE] = TUTOR(MOVE_BODY_SLAM)
@@ -1693,6 +1703,7 @@ static const u16 sTutorLearnsets[] =
                        | TUTOR(MOVE_MIMIC)
                        | TUTOR(MOVE_DREAM_EATER)
                        | TUTOR(MOVE_THUNDER_WAVE)
+                       | TUTOR(MOVE_SHARPEN)
                        | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_STANTLER] = TUTOR(MOVE_BODY_SLAM)

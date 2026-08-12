@@ -10,5 +10,6 @@ enum {
 };
 
 s32 DoPoisonFieldEffect(void);
+bool8 AnyMonSurvivedFieldPoison(void);
 
 #endif //GUARD_FIELD_POISON_H

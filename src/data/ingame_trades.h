@@ -133,9 +133,9 @@ static const struct InGameTrade sInGameTrades[] = {
     }, 
     [INGAME_TRADE_ELECTRODE] = 
     {
-        .nickname = _("CHAMPION"),
-        .species = SPECIES_MACHAMP,
-        .ivs = {25, 30, 25, 25, 25, 31},
+        .nickname = _("BIGMAN"),
+        .species = SPECIES_SLOWBRO,
+        .ivs = {25, 30, 25, 30, 25, 31},
         .abilityNum = 0,
         .otId = 50298,
         .conditions = {30, 5, 5, 5, 5},

@@ -239,18 +239,20 @@ OneIsland_EventScript_Samal::
 # 120 "data/maps/OneIsland/scripts.pory"
 	msgbox OneIsland_Text_Samal, MSGBOX_NPC
 # 121 "data/maps/OneIsland/scripts.pory"
-	end
+	setflag FLAG_SHOW_HIDDEN_POWER
 # 122 "data/maps/OneIsland/scripts.pory"
-
+	end
 # 123 "data/maps/OneIsland/scripts.pory"
-OneIsland_Text_Samal::
+
 # 124 "data/maps/OneIsland/scripts.pory"
-	.string "For a child, SAMAL really\n"
+OneIsland_Text_Samal::
 # 125 "data/maps/OneIsland/scripts.pory"
-	.string "likes intense workouts with\l"
+	.string "For a child, SAMAL really\n"
 # 126 "data/maps/OneIsland/scripts.pory"
-	.string "his POKéMON like a bodybuilder.\p"
+	.string "likes intense workouts with\l"
 # 127 "data/maps/OneIsland/scripts.pory"
-	.string "Guess it takes a lot\n"
+	.string "his POKéMON like a bodybuilder.\p"
 # 128 "data/maps/OneIsland/scripts.pory"
+	.string "Guess it takes a lot\n"
+# 129 "data/maps/OneIsland/scripts.pory"
 	.string "to be a SLUGMA CHAMPION.$"

@@ -141,66 +141,110 @@ SixIsland_AlteringCave_EventScript_Credits4::
 # 71 "data/maps/SixIsland_AlteringCave/scripts.pory"
 
 # 72 "data/maps/SixIsland_AlteringCave/scripts.pory"
-SixIsland_AlteringCave_Text_Credits::
+SixIsland_AlteringCave_EventScript_Jvtrovao::
 # 73 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "FRLG REIGNITED AND REGROWN\n"
+	msgbox SixIsland_AlteringCave_Text_Jvtrovao, MSGBOX_NPC
 # 74 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "FULL CREDITS:\p"
+	release
 # 75 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "HACK CREATOR: SPIKECATION\n"
+	end
 # 76 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "TEXT ASSISTER: THEREALTEAMPLAYER$"
+
 # 77 "data/maps/SixIsland_AlteringCave/scripts.pory"
-
+SixIsland_AlteringCave_Text_Jvtrovao::
 # 78 "data/maps/SixIsland_AlteringCave/scripts.pory"
-SixIsland_AlteringCave_Text_Credits2::
+	.string "It's nice to relax in a cave\n"
 # 79 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "HACKS THAT HELPED IN MAKING\n"
+	.string "after coding for so long.\p"
 # 80 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "THIS HACK:\p"
+	.string "Wouldn't you agree this\n"
 # 81 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "FRLG PLUS:\n"
+	.string "cave is nice?$"
 # 82 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "DEOKISHISU\p"
+
 # 83 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "EMERALD AND YELLOW LEGACY:\n"
+SixIsland_AlteringCave_EventScript_Spell::
 # 84 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "SMITHPLAYSPOKEMON and CRZ SHADOWS\p"
+	msgbox SixIsland_AlteringCave_Text_Spell, MSGBOX_NPC
 # 85 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "CHARLES FIRERED\n"
+	release
 # 86 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "CELIA'S STUPID ROMHACK\l"
+	end
 # 87 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "POKEMON FIREGOLD\l"
+
 # 88 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "POKEMON CRYSTAL DUST$"
+SixIsland_AlteringCave_Text_Spell::
 # 89 "data/maps/SixIsland_AlteringCave/scripts.pory"
-
+	.string "I'm reading this script,\n"
 # 90 "data/maps/SixIsland_AlteringCave/scripts.pory"
-SixIsland_AlteringCave_Text_Credits3::
+	.string "and there are so many\l"
 # 91 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "PLAYTESTERS:\p"
+	.string "spelling mistakes!$"
 # 92 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "BLAZETORRENT\n"
+
 # 93 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "BASEDTUXEDOMAN\l"
+SixIsland_AlteringCave_Text_Credits::
 # 94 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "KEWAUN$"
+	.string "FRLG REIGNITED AND REGROWN\n"
 # 95 "data/maps/SixIsland_AlteringCave/scripts.pory"
-
+	.string "FULL CREDITS:\p"
 # 96 "data/maps/SixIsland_AlteringCave/scripts.pory"
-
+	.string "HACK CREATOR: SPIKECATION\n"
 # 97 "data/maps/SixIsland_AlteringCave/scripts.pory"
-SixIsland_AlteringCave_Text_Credits4::
+	.string "CODE CONTRIBUTOR: JVTROVAO\n"
 # 98 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "OTHER:\p"
+	.string "TEXT ASSISTER: THEREALTEAMPLAYER$"
 # 99 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "PRET TEAM\n"
+
 # 100 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "TEAM AQUA HIDEOUT\l"
+SixIsland_AlteringCave_Text_Credits2::
 # 101 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "PROJECT PALLADIUM TEAM\l"
+	.string "HACKS THAT HELPED IN MAKING\n"
 # 102 "data/maps/SixIsland_AlteringCave/scripts.pory"
-	.string "INVIS (HMA DISCORD)\p"
+	.string "THIS HACK:\p"
 # 103 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "FRLG PLUS:\n"
+# 104 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "DEOKISHISU\p"
+# 105 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "EMERALD AND YELLOW LEGACY:\n"
+# 106 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "SMITHPLAYSPOKEMON and CRZ SHADOWS\p"
+# 107 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "CHARLES FIRERED\n"
+# 108 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "CELIA'S STUPID ROMHACK\l"
+# 109 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "POKEMON FIREGOLD\l"
+# 110 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "POKEMON CRYSTAL DUST$"
+# 111 "data/maps/SixIsland_AlteringCave/scripts.pory"
+
+# 112 "data/maps/SixIsland_AlteringCave/scripts.pory"
+SixIsland_AlteringCave_Text_Credits3::
+# 113 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "PLAYTESTERS:\p"
+# 114 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "BLAZETORRENT\n"
+# 115 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "BASEDTUXEDOMAN\l"
+# 116 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "KEWAUN$"
+# 117 "data/maps/SixIsland_AlteringCave/scripts.pory"
+
+# 118 "data/maps/SixIsland_AlteringCave/scripts.pory"
+
+# 119 "data/maps/SixIsland_AlteringCave/scripts.pory"
+SixIsland_AlteringCave_Text_Credits4::
+# 120 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "OTHER:\p"
+# 121 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "PRET TEAM\n"
+# 122 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "TEAM AQUA HIDEOUT\l"
+# 123 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "PROJECT PALLADIUM TEAM\l"
+# 124 "data/maps/SixIsland_AlteringCave/scripts.pory"
+	.string "INVIS (HMA DISCORD)\p"
+# 125 "data/maps/SixIsland_AlteringCave/scripts.pory"
 	.string "MORE ON THE GITHUB\n$"

@@ -26,6 +26,7 @@
 // NOTE: mini_printf supports a custom pretty printing formatter to display preproc encoded strings. (%S)
 //       some libc distributions (especially dkp arm-libc) will fail to link pretty printing.
 #define PRETTY_PRINT_HANDLER (PRETTY_PRINT_OFF)
+// #define PRETTY_PRINT_HANDLER (PRETTY_PRINT_MINI_PRINTF) I was debbuging
 
 // Use this switch to choose a handler for printf output.
 // NOTE: These will only work on the respective emulators and should not be used in a productive environment.
@@ -33,6 +34,7 @@
 //       AGB_PRINT is supported on respective debug units.
 
 #define LOG_HANDLER (LOG_HANDLER_AGB_PRINT)
+// #define LOG_HANDLER (LOG_HANDLER_MGBA_PRINT) I was debbuging
 #endif // NDEBUG
 
 // Define the game version for use elsewhere
@@ -56,6 +58,10 @@
 #else
 #define UNITS_METRIC
 #endif // ENGLISH
+
+// Replace the remaining-PP number with a type effectiveness arrow (+STAB marker)
+// on the move selection screen, once a target is known.
+#define B_SHOW_EFFECTIVENESS TRUE
 
 // Crashes may occur due to section reordering in the modern build,
 // so we force BUGFIX here.

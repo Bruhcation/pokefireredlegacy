@@ -1704,3 +1704,55 @@ PewterCity_Movement_WalkInPlaceLeft::
 	walk_in_place_left
 # 853 "data/maps/PewterCity/scripts.pory"
 	step_end
+# 854 "data/maps/PewterCity/scripts.pory"
+
+# 855 "data/maps/PewterCity/scripts.pory"
+PewterCity_EventScript_HappyGirl::
+# 856 "data/maps/PewterCity/scripts.pory"
+	msgbox PewterCity_Text_HappyGirl, MSGBOX_NPC
+# 857 "data/maps/PewterCity/scripts.pory"
+	end
+# 858 "data/maps/PewterCity/scripts.pory"
+
+# 859 "data/maps/PewterCity/scripts.pory"
+PewterCity_EventScript_HappyGirlButterfree::
+# 860 "data/maps/PewterCity/scripts.pory"
+	lock
+# 861 "data/maps/PewterCity/scripts.pory"
+	faceplayer
+# 862 "data/maps/PewterCity/scripts.pory"
+	playmoncry SPECIES_BUTTERFREE, 0
+# 863 "data/maps/PewterCity/scripts.pory"
+	msgbox PewterCity_Text_HappyGirlButterfree
+# 864 "data/maps/PewterCity/scripts.pory"
+	waitmoncry
+# 865 "data/maps/PewterCity/scripts.pory"
+	release
+# 866 "data/maps/PewterCity/scripts.pory"
+	end
+# 867 "data/maps/PewterCity/scripts.pory"
+
+# 868 "data/maps/PewterCity/scripts.pory"
+PewterCity_EventScript_RelaxingHiker::
+# 869 "data/maps/PewterCity/scripts.pory"
+	msgbox PewterCity_Text_RelaxingHiker, MSGBOX_NPC
+# 870 "data/maps/PewterCity/scripts.pory"
+	end
+# 871 "data/maps/PewterCity/scripts.pory"
+
+# 872 "data/maps/PewterCity/scripts.pory"
+PewterCity_EventScript_RelaxingHikerGeodude::
+# 873 "data/maps/PewterCity/scripts.pory"
+	lock
+# 874 "data/maps/PewterCity/scripts.pory"
+	faceplayer
+# 875 "data/maps/PewterCity/scripts.pory"
+	playmoncry SPECIES_GEODUDE, 0
+# 876 "data/maps/PewterCity/scripts.pory"
+	msgbox PewterCity_Text_RelaxingHikerGeodude
+# 877 "data/maps/PewterCity/scripts.pory"
+	waitmoncry
+# 878 "data/maps/PewterCity/scripts.pory"
+	release
+# 879 "data/maps/PewterCity/scripts.pory"
+	end

@@ -566,3 +566,31 @@ CeladonCity_DepartmentStore_Roof_EventScript_ExitVendingMachine::
 	releaseall
 # 284 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
 	end
+# 285 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+
+# 286 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+
+# 287 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+CeladonCity_DepartmentStore_Roof_EventScript_Feeding::
+# 288 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	msgbox CeladonCity_DepartmentStore_Roof_Text_Feeding, MSGBOX_NPC
+# 289 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	end
+# 290 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+
+# 291 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+CeladonCity_DepartmentStore_Roof_EventScript_FeedingPidgey::
+# 292 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	lock
+# 293 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	faceplayer
+# 294 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	playmoncry SPECIES_PIDGEY, 0
+# 295 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	msgbox CeladonCity_DepartmentStore_Roof_Text_FeedingPidgey
+# 296 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	waitmoncry
+# 297 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	release
+# 298 "data/maps/CeladonCity_DepartmentStore_Roof/scripts.pory"
+	end

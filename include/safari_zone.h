@@ -11,6 +11,7 @@ void SetSafariZoneFlag(void);
 void ResetSafariZoneFlag(void);
 
 void EnterSafariMode(void);
+void EnterSafariModePoor(void);
 void ExitSafariMode(void);
 
 bool8 SafariZoneTakeStep(void);

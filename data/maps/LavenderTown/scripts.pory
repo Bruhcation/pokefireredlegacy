@@ -83,5 +83,16 @@ LavenderTown_EventScript_PostRematchKaren::
 	release
 	end
 
+LavenderTown_EventScript_IncenseWoman::
+	msgbox LavenderTown_Text_IncenseWoman, MSGBOX_NPC
+	end
 
+LavenderTown_EventScript_IncenseWomanNidoranF::
+	lock
+	faceplayer
+	playmoncry SPECIES_NIDORAN_F, 0
+	msgbox LavenderTown_Text_IncenseWomanNidoranF
+	waitmoncry
+	release
+	end
 `

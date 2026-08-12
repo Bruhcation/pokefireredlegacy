@@ -346,3 +346,29 @@ SSAnne_2F_Corridor_EventScript_Sailor::
 	msgbox SSAnne_2F_Corridor_Text_ThisShipIsLuxuryLiner, MSGBOX_NPC
 # 174 "data/maps/SSAnne_2F_Corridor/scripts.pory"
 	end
+# 175 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+
+# 176 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+SSAnne_2F_Corridor_EventScript_AfraidOfBoats::
+# 177 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	msgbox SSAnne_2F_Corridor_Text_AfraidOfBoats, MSGBOX_NPC
+# 178 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	end
+# 179 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+
+# 180 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+SSAnne_2F_Corridor_EventScript_Ekans::
+# 181 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	lock
+# 182 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	faceplayer
+# 183 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	playmoncry SPECIES_EKANS, 0
+# 184 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	msgbox SSAnne_2F_Corridor_Text_Ekans
+# 185 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	waitmoncry
+# 186 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	release
+# 187 "data/maps/SSAnne_2F_Corridor/scripts.pory"
+	end

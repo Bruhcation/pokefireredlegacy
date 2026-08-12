@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_MIRAGE, 1
+.set LOCALID_GROUDON, 2
 DiglettsCave_B1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_B1F_OnTransition
 	.byte 0
@@ -27,7 +28,7 @@ DiglettsCave_B1F_EventScript_NeedOrb::
 	end
 
 DiglettsCave_B1F_Text_NeedOrb::
-	.string "You need the ORBING to face me.$"
+	.string "You need the RED ORB to face me.$"
 
 DiglettsCave_B1F_EventScript_NoEligiblePkmn::
 	msgbox DiglettsCave_B1F_Text_NoEligiblePkmn
@@ -40,17 +41,17 @@ DiglettsCave_B1F_EventScript_Flag::
 	end
 
 DiglettsCave_B1F_EventScript_Orbing::
-	msgbox DiglettsCave_B1F_Text_Whitney, MSGBOX_YESNO
+	msgbox DiglettsCave_B1F_Text_Ground, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoWhitney
-	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesWhitney, DiglettsCave_B1F_Text_PostWhitney, DiglettsCave_B1F_EventScript_PostWhitney, NO_MUSIC
+	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoGround
+	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
 	release
 	end
 
-DiglettsCave_B1F_EventScript_PostWhitney::
+DiglettsCave_B1F_EventScript_PostGround::
 	special HealPlayerParty
-	msgbox DiglettsCave_B1F_Text_WhitneyPostBattle
+	msgbox DiglettsCave_B1F_Text_GroundPostBattle
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -67,13 +68,14 @@ DiglettsCave_B1F_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_GROUDON
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DiglettsCave_B1F_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DiglettsCave_B1F_EventScript_RanFromCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DiglettsCave_B1F_EventScript_RanFromCelebi
 	setflag FLAG_CAUGHT_GROUDON
 	clearflag FLAG_GROUND_TRAINER
-	msgbox DiglettsCave_B1F_Text_EndWhitney
+	msgbox DiglettsCave_B1F_Text_EndGround
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -84,7 +86,7 @@ DiglettsCave_B1F_EventScript_PostWhitney::
 DiglettsCave_B1F_EventScript_DefeatedCelebi::
 	clearflag FLAG_GROUND_TRAINER
 	setflag FLAG_CAUGHT_GROUDON
-	msgbox DiglettsCave_B1F_Text_EndWhitney
+	msgbox DiglettsCave_B1F_Text_EndGround
 	waitmessage
 	goto EventScript_RemoveStaticMon
 	end
@@ -92,25 +94,35 @@ DiglettsCave_B1F_EventScript_DefeatedCelebi::
 DiglettsCave_B1F_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_GROUDON
 	clearflag FLAG_GROUND_TRAINER
-	msgbox DiglettsCave_B1F_Text_EndWhitney
+	msgbox DiglettsCave_B1F_Text_EndGround
 	waitmessage
 	goto EventScript_MonFlewAway
 	end
 
-DiglettsCave_B1F_EventScript_NoWhitney::
-	msgbox DiglettsCave_B1F_Text_NoWhitney
+DiglettsCave_B1F_EventScript_NoGround::
+	msgbox DiglettsCave_B1F_Text_NoGround
 	release
 	end
 
 DiglettsCave_B1F_EventScript_End::
 	clearflag FLAG_GROUND_TRAINER
-	msgbox DiglettsCave_B1F_Text_EndWhitney
+	msgbox DiglettsCave_B1F_Text_EndGround
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
 	fadescreen FADE_FROM_BLACK	
 	release
 	end
+
+DiglettsCave_B1F_EventScript_Groudon::
+	lock
+	faceplayer
+	msgbox DiglettsCave_B1F_Text_Groudon, MSGBOX_NPC
+	release
+	end
+
+DiglettsCave_B1F_Text_Groudon::
+	.string "GROUR!!!$"
 
 DiglettsCave_B1F_Text_NoEligiblePkmn::
 	.string "You have not meet the requirements.\p"
@@ -126,23 +138,23 @@ DiglettsCave_B1F_Text_RegiceCheck::
 	.string "to the BLUE ORB.\p"
 	.string "Ask the Sea Mirage Trainer.$"
 
-DiglettsCave_B1F_Text_Whitney::
+DiglettsCave_B1F_Text_Ground::
 	.string "So, you wish to face me?$"
 
-DiglettsCave_B1F_Text_YesWhitney::
+DiglettsCave_B1F_Text_YesGround::
 	.string "Very well! Prepare yourself!$"
 
-DiglettsCave_B1F_Text_PostWhitney::
+DiglettsCave_B1F_Text_PostGround::
 	.string "So you are worthy...$"
 
-DiglettsCave_B1F_Text_WhitneyPostBattle::
+DiglettsCave_B1F_Text_GroundPostBattle::
 	.string "Alright, you have bested me.\p"
 	.string "Be prepared to face GROUDON!$"
 
-DiglettsCave_B1F_Text_EndWhitney::
+DiglettsCave_B1F_Text_EndGround::
 	.string "Goodbye.$"
 
-DiglettsCave_B1F_Text_NoWhitney::
+DiglettsCave_B1F_Text_NoGround::
 	.string "Alright, take your time.$"
 
 

@@ -1,4 +1,4 @@
-raw `
+raw`
 .equ REQUIRED_CAUGHT_MONS, 50
 
 Route15_WestEntrance_2F_MapScripts::
@@ -24,6 +24,7 @@ Route15_WestEntrance_2F_EventScript_Aide::
 	lock
 	faceplayer
 	call Route15_WestEntrance_2F_EventScript_GetAideRequestInfo
+	goto_if_set FLAG_GOT_HM08, Route15_WestEntrance_2F_EventScript_AlreadyGotExpShare
 	goto_if_set FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE, Route15_WestEntrance_2F_EventScript_AlreadyGotExpShare
 	msgbox Route15_WestEntrance_2F_Text_GiveItemIfCaughtEnough, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Aide_EventScript_DeclineCheckMons
@@ -33,66 +34,31 @@ Route15_WestEntrance_2F_EventScript_Aide::
 	call Route15_WestEntrance_2F_EventScript_GetAideRequestInfo
 	goto_if_lt VAR_0x8006, REQUIRED_CAUGHT_MONS, Aide_EventScript_HaventCaughtEnough
 	msgbox Route15_WestEntrance_2F_Text_GreatHereYouGo
-	setvar VAR_TEMP_1, SPECIES_SKARMORY
-	givemon SPECIES_SKARMORY, 35
-	goto_if_eq VAR_RESULT, 0, Route15_WestEntrance_2F_ReceiveAideSkarmory
-	goto_if_eq VAR_RESULT, 1, Route15_WestEntrance_2F_ReceiveAideSkarmoryPC
-	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	checkitemspace ITEM_HM08
+	goto_if_eq VAR_RESULT, FALSE, Aide_EventScript_NoRoomForItem
+	giveitem_msg Route15_WestEntrance_2F_Text_ReceivedItemFromAide, ITEM_HM08
+	setflag FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE
+	msgbox Route15_WestEntrance_2F_Text_ExplainExpShare
 	release
-	end
-	
-Route15_WestEntrance_2F_ReceiveAideSkarmory::
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
-	message Route15_WestEntrance_2F_Text_ReceivedItemFromAide
-	waitmessage
-	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_SKARMORY
-	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route15_WestEntrance_2F_EndReceiveFossil
-	call EventScript_GetGiftMonPartySlot
-	call EventScript_ChangePokemonNickname
-	goto Route15_WestEntrance_2F_EndReceiveFossil
-	end
-
-Route15_WestEntrance_2F_ReceiveAideSkarmoryPC::
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_LEVEL_UP
-	message Route15_WestEntrance_2F_Text_ReceivedItemFromAide
-	waitmessage
-	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_SKARMORY
-	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route15_WestEntrance_2F_FossilTransferredToPC
-	call EventScript_NameReceivedBoxMon
-	goto Route15_WestEntrance_2F_FossilTransferredToPC
 	end
 
 Route15_WestEntrance_2F_EventScript_AlreadyGotExpShare::
+	goto_if_unset FLAG_GOT_HM08, Route15_WestEntrance_2F_EventScript_HM08Get
 	msgbox Route15_WestEntrance_2F_Text_ExplainExpShare
 	release
 	end
+
+Route15_WestEntrance_2F_EventScript_HM08Get::
+	msgbox Route15_WestEntrance_2F_Text_GreatHereYouGo
+	checkitemspace ITEM_HM08
+	goto_if_eq VAR_RESULT, FALSE, Aide_EventScript_NoRoomForItem
+	giveitem_msg Route15_WestEntrance_2F_Text_ReceivedItemFromAide, ITEM_HM08
+	setflag FLAG_GOT_HM08
+	return
 
 Route15_WestEntrance_2F_EventScript_GetAideRequestInfo::
 	buffernumberstring STR_VAR_1, REQUIRED_CAUGHT_MONS
-	bufferspeciesname STR_VAR_2, SPECIES_SKARMORY
+	bufferitemname STR_VAR_2, ITEM_HM08
 	return
-
-Route15_WestEntrance_2F_FossilTransferredToPC::
-	call EventScript_TransferredToPC
-	goto Route15_WestEntrance_2F_EndReceiveFossil
-	end
-
-Route15_WestEntrance_2F_EndReceiveFossil::
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox Route15_WestEntrance_2F_Text_ExplainExpShare
-	setflag FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE
-	release
-	end
-
-Route15_WestEntrance_2F_AlreadyGotFossil::
-	msgbox Route15_WestEntrance_2F_Text_ExplainExpShare
-	release
-	end
 
 `

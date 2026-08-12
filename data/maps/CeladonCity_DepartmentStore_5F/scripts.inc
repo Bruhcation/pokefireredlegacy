@@ -122,3 +122,29 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	release
 # 62 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
 	end
+# 63 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+
+# 64 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+CeladonCity_EventScript_MatchingOutfits::
+# 65 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	msgbox CeladonCity_Text_MatchingOutfits, MSGBOX_NPC
+# 66 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	end
+# 67 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+
+# 68 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+CeladonCity_EventScript_MatchingOutfitsGloom::
+# 69 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	lock
+# 70 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	faceplayer
+# 71 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	playmoncry SPECIES_GLOOM, 0
+# 72 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	msgbox CeladonCity_Text_MatchingOutfitsGloom
+# 73 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	waitmoncry
+# 74 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	release
+# 75 "data/maps/CeladonCity_DepartmentStore_5F/scripts.pory"
+	end

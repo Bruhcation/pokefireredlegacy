@@ -166,3 +166,29 @@ LavenderTown_EventScript_PostRematchKaren::
 	release
 # 84 "data/maps/LavenderTown/scripts.pory"
 	end
+# 85 "data/maps/LavenderTown/scripts.pory"
+
+# 86 "data/maps/LavenderTown/scripts.pory"
+LavenderTown_EventScript_IncenseWoman::
+# 87 "data/maps/LavenderTown/scripts.pory"
+	msgbox LavenderTown_Text_IncenseWoman, MSGBOX_NPC
+# 88 "data/maps/LavenderTown/scripts.pory"
+	end
+# 89 "data/maps/LavenderTown/scripts.pory"
+
+# 90 "data/maps/LavenderTown/scripts.pory"
+LavenderTown_EventScript_IncenseWomanNidoranF::
+# 91 "data/maps/LavenderTown/scripts.pory"
+	lock
+# 92 "data/maps/LavenderTown/scripts.pory"
+	faceplayer
+# 93 "data/maps/LavenderTown/scripts.pory"
+	playmoncry SPECIES_NIDORAN_F, 0
+# 94 "data/maps/LavenderTown/scripts.pory"
+	msgbox LavenderTown_Text_IncenseWomanNidoranF
+# 95 "data/maps/LavenderTown/scripts.pory"
+	waitmoncry
+# 96 "data/maps/LavenderTown/scripts.pory"
+	release
+# 97 "data/maps/LavenderTown/scripts.pory"
+	end

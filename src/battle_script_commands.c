@@ -301,6 +301,7 @@ static void Cmd_settypetoterrain(void);
 static void Cmd_pursuitdoubles(void);
 static void Cmd_snatchsetbattlers(void);
 static void Cmd_removelightscreenreflect(void);
+static bool8 CheckCaughtAllUnown(void);
 static void Cmd_handleballthrow(void);
 static void Cmd_givecaughtmon(void);
 static void Cmd_trysetcaughtmondexflags(void);
@@ -1282,6 +1283,62 @@ static void ModulateDmgByType(u8 multiplier)
         }
         break;
     }
+}
+
+s32 GetTypeEffectiveness(struct Pokemon *mon, u8 moveType) {
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u8 type1 = gSpeciesInfo[species].types[0];
+    u8 type2 = gSpeciesInfo[species].types[1];
+    s32 i = 0;
+    u8 multiplier;
+    s32 flags = 0;
+    if (GetMonAbility(mon) == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+        return MOVE_RESULT_NOT_VERY_EFFECTIVE;
+    while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE) {
+        if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT) {
+            i += 3;
+            continue;
+        }
+        else if (TYPE_EFFECT_ATK_TYPE(i) == moveType) {
+            // check type1
+            if (TYPE_EFFECT_DEF_TYPE(i) == type1)
+                multiplier = TYPE_EFFECT_MULTIPLIER(i);
+            else if (TYPE_EFFECT_DEF_TYPE(i) == type2 && type1 != type2)
+                multiplier = TYPE_EFFECT_MULTIPLIER(i);
+            else {
+                i += 3;
+                continue;
+            }
+            switch (multiplier)
+            {
+            case TYPE_MUL_NO_EFFECT:
+                flags |= MOVE_RESULT_DOESNT_AFFECT_FOE;
+                flags &= ~MOVE_RESULT_NOT_VERY_EFFECTIVE;
+                flags &= ~MOVE_RESULT_SUPER_EFFECTIVE;
+                break;
+            case TYPE_MUL_NOT_EFFECTIVE:
+                if (!(flags & MOVE_RESULT_NO_EFFECT))
+                {
+                    if (flags & MOVE_RESULT_SUPER_EFFECTIVE)
+                        flags &= ~MOVE_RESULT_SUPER_EFFECTIVE;
+                    else
+                        flags |= MOVE_RESULT_NOT_VERY_EFFECTIVE;
+                }
+                break;
+            case TYPE_MUL_SUPER_EFFECTIVE:
+                if (!(flags & MOVE_RESULT_NO_EFFECT))
+                {
+                    if (flags & MOVE_RESULT_NOT_VERY_EFFECTIVE)
+                        flags &= ~MOVE_RESULT_NOT_VERY_EFFECTIVE;
+                    else
+                        flags |= MOVE_RESULT_SUPER_EFFECTIVE;
+                }
+                break;
+            }
+        }
+        i += 3;
+    }
+    return flags;
 }
 
 static void Cmd_typecalc(void)
@@ -9718,6 +9775,48 @@ static void Cmd_trysetcaughtmondexflags(void)
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr += 5;
     }
+
+    if (species == SPECIES_UNOWN) // Check unown forms
+    {
+        u16 letter = GetUnownLetterByPersonality(personality);
+        if (letter == 0)
+        {
+            letter = SPECIES_UNOWN;
+            FlagSet(FLAG_CAUGHT_UNOWN_A); // Check unown A separately since there's no dex flag for it
+        }
+        else
+        {
+            letter += (SPECIES_UNOWN_B - 1);
+            species = letter;
+            if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+            {
+                HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
+            }
+        }
+        if (CheckCaughtAllUnown())
+        {
+            FlagSet(FLAG_SHOW_HIDDEN_POWER); // Unlock hidden power type in the party menu
+        }
+    }
+}
+
+static bool8 CheckCaughtAllUnown(void)
+{
+    u32 startUnown = SPECIES_UNOWN_B;
+    u32 endUnown = SPECIES_UNOWN_QMARK;
+    u16 species;
+    if (!FlagGet(FLAG_CAUGHT_UNOWN_A)) // Check unown A separately since there's no dex flag for it
+    {
+        return FALSE;
+    }
+    for (species = startUnown; species <= endUnown; species++)
+    {
+        if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT)) // Loop through all unown forms
+        {
+            return FALSE;
+        }
+    }
+    return TRUE; // All Unown are caught
 }
 
 static void Cmd_displaydexinfo(void)

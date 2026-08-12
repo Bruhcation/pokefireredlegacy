@@ -132,3 +132,10 @@ VermilionCity_Text_Route2AideHasPackageForYou::
 VermilionCity_Text_Challenger::
     .string "Why is this tree here?\p"
     .string "I'm trying to challenge the GYM!$"
+
+VermilionCity_Text_DreamingKid::
+	.string "One day I will swimp across the\n"
+	.string "ocean with my GYARADOS!$"
+
+VermilionCity_Text_DreamingKidMagikarp::
+	.string "MAGIKARP: Karp karp karp!$"

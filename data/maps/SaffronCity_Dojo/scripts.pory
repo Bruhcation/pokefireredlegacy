@@ -60,7 +60,7 @@ SaffronCity_Dojo_EventScript_HitmonchanBall::
 SaffronCity_Dojo_EventScript_GiveHitmon::
 	hidemonpic
 	call_if_set FLAG_KOICHI_REMATCH, SaffronCity_Dojo_EventScript_Shiny
-	givemon VAR_TEMP_1, 25
+	givemon VAR_TEMP_1, 30
 	goto_if_eq VAR_RESULT, 0, SaffronCity_Dojo_EventScript_ReceivedHitmonParty
 	goto_if_eq VAR_RESULT, 1, SaffronCity_Dojo_EventScript_ReceivedHitmonPC
 	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
@@ -178,7 +178,6 @@ SaffronCity_Dojo_EventScript_PostRematchKarate::
 	end
 	
 SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
-	goto_if_set FLAG_IS_CHAMPION, SaffronCity_Dojo_EventScript_MasterKoichiRematch
 	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
 	release
 	end

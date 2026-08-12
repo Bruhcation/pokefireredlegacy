@@ -31,6 +31,8 @@
 #include "constants/maps.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/region_map_sections.h"
+//New Registered Items Menu
+#include "tx_registered_items_menu.h"
 
 #define SIGNPOST_POKECENTER 0
 #define SIGNPOST_POKEMART 1
@@ -291,9 +293,23 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+    //if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+	if (input->pressedSelectButton)//New Registered Item Menu
     {
         gFieldInputRecord.pressedSelectButton = TRUE;
+        //New Registered Items Menu
+        if (gSaveBlock1Ptr->registeredItemListCount == 1)
+        {
+            UseRegisteredKeyItemOnField(1);
+        }
+        else if (gSaveBlock1Ptr->registeredItemListCount > 1)
+        {
+            TxRegItemsMenu_OpenMenu();
+        }
+        else
+        {
+            ScriptContext_SetupScript(EventScript_BagItemCanBeRegistered);
+        }
         return TRUE;
     }
 
@@ -728,7 +744,7 @@ static bool8 UpdatePoisonStepCounter(void)
             case FLDPSN_NONE:
                 return FALSE;
             case FLDPSN_PSN:
-                return FALSE;
+                return AnyMonSurvivedFieldPoison();
             case FLDPSN_FNT:
                 return TRUE;
             }

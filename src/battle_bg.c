@@ -228,7 +228,10 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] = {
         .width = 5,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x2a6
+        .baseBlock = 0x2b0,   // was 0x290 — that collided with B_WIN_MOVE_TYPE (0x296-0x2a6).
+                            // 0x2b0 is safe: it's the same block DUMMY/SWITCH_PROMPT already
+                            // share, and switch-prompt (32 tiles) is never shown at the
+                            // same time as the move-select PP/type box, so no real conflict.
     },
     [B_WIN_DUMMY] = {
         .bg = 0,
@@ -707,6 +710,13 @@ void LoadBattleMenuWindowGfx(void)
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 14] = RGB(31, 31, 31);
     gPlttBufferUnfaded[BG_PLTT_ID(5) + 15] = RGB( 26,  26,  25);
     CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 12], &gPlttBufferFaded[BG_PLTT_ID(5) + 12], PLTT_SIZEOF(4));
+	
+	// Add colors for type effectiveness indicators using positions 1-3
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 1] = RGB(24,  8,  8); // Red for not very effective
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 2] = RGB(31, 16, 16); // Light red
+    gPlttBufferUnfaded[BG_PLTT_ID(5) + 3] = RGB( 8, 24,  8); // Green for super effective
+
+    CpuCopy16(&gPlttBufferUnfaded[BG_PLTT_ID(5) + 1], &gPlttBufferFaded[BG_PLTT_ID(5) + 1], PLTT_SIZEOF(3));
 
     if (gBattleTypeFlags & (BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_POKEDUDE))
     {
