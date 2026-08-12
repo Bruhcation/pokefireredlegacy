@@ -115,21 +115,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "x": 11,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SevenIsland_House_Room2_EventScript_EVCheck",
-      "flag": "0"
-    },
-    {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_FLAREON",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLAREON)",
       "x": 7,
       "y": 3,
       "elevation": 0,
@@ -143,7 +129,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_EEVEE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(EEVEE)",
       "x": 10,
       "y": 3,
       "elevation": 0,
@@ -157,7 +143,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VAPOREON",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VAPOREON)",
       "x": 4,
       "y": 3,
       "elevation": 0,
@@ -171,7 +157,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_JOLTEON",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(JOLTEON)",
       "x": 4,
       "y": 7,
       "elevation": 0,
@@ -185,7 +171,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ESPEON",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ESPEON)",
       "x": 7,
       "y": 7,
       "elevation": 0,
@@ -199,7 +185,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_UMBREON",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(UMBREON)",
       "x": 10,
       "y": 7,
       "elevation": 0,

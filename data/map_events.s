@@ -9,6 +9,7 @@
 #include "constants/trainer_types.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/species.h"
     .include "asm/macros.inc"
     .include "constants/constants.inc"
 

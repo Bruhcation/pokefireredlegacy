@@ -1,5 +1,6 @@
 raw `
 .set LOCALID_MIRAGE, 27
+.set LOCALID_REGIROCK, 28
 RockTunnel_B1F_MapScripts::
 	.byte 0
 
@@ -71,17 +72,17 @@ RockTunnel_B1F_EventScript_Flag::
 	end
 
 RockTunnel_B1F_EventScript_Orbing::
-	msgbox RockTunnel_B1F_Text_Whitney, MSGBOX_YESNO
+	msgbox RockTunnel_B1F_Text_Rock, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, RockTunnel_B1F_EventScript_NoWhitney
-	trainerbattle_single TRAINER_RS_TUBER_M, RockTunnel_B1F_Text_YesWhitney, RockTunnel_B1F_Text_PostWhitney, RockTunnel_B1F_EventScript_PostWhitney, NO_MUSIC
+	goto_if_eq VAR_RESULT, NO, RockTunnel_B1F_EventScript_NoRock
+	trainerbattle_single TRAINER_RS_TUBER_M, RockTunnel_B1F_Text_YesRock, RockTunnel_B1F_Text_PostRock, RockTunnel_B1F_EventScript_PostRock, NO_MUSIC
 	release
 	end
 
-RockTunnel_B1F_EventScript_PostWhitney::
+RockTunnel_B1F_EventScript_PostRock::
 	special HealPlayerParty
-	msgbox RockTunnel_B1F_Text_WhitneyPostBattle
+	msgbox RockTunnel_B1F_Text_RockPostBattle
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -98,13 +99,14 @@ RockTunnel_B1F_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_REGIROCK
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, RockTunnel_B1F_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, RockTunnel_B1F_EventScript_RanFromCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, RockTunnel_B1F_EventScript_RanFromCelebi
 	setflag FLAG_CAUGHT_REGIROCK
 	clearflag FLAG_ROCK_TRAINER
-	msgbox RockTunnel_B1F_Text_EndWhitney
+	msgbox RockTunnel_B1F_Text_EndRock
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -115,7 +117,7 @@ RockTunnel_B1F_EventScript_PostWhitney::
 RockTunnel_B1F_EventScript_DefeatedCelebi::
 	setflag FLAG_CAUGHT_REGIROCK
 	clearflag FLAG_ROCK_TRAINER
-	msgbox RockTunnel_B1F_Text_EndWhitney
+	msgbox RockTunnel_B1F_Text_EndRock
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -126,7 +128,7 @@ RockTunnel_B1F_EventScript_DefeatedCelebi::
 RockTunnel_B1F_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_REGIROCK
 	clearflag FLAG_ROCK_TRAINER
-	msgbox RockTunnel_B1F_Text_EndWhitney
+	msgbox RockTunnel_B1F_Text_EndRock
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -134,20 +136,30 @@ RockTunnel_B1F_EventScript_RanFromCelebi::
 	goto EventScript_MonFlewAway
 	end
 
-RockTunnel_B1F_EventScript_NoWhitney::
-	msgbox RockTunnel_B1F_Text_NoWhitney
+RockTunnel_B1F_EventScript_NoRock::
+	msgbox RockTunnel_B1F_Text_NoRock
 	release
 	end
 
 RockTunnel_B1F_EventScript_End::
 	clearflag FLAG_ROCK_TRAINER
-	msgbox RockTunnel_B1F_Text_EndWhitney
+	msgbox RockTunnel_B1F_Text_EndRock
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
 	fadescreen FADE_FROM_BLACK	
 	release
 	end
+
+RockTunnel_B1F_EventScript_Regirock::
+	lock
+	faceplayer
+	msgbox RockTunnel_B1F_Text_Regirock, MSGBOX_NPC
+	release
+	end
+
+RockTunnel_B1F_Text_Regirock::
+	.string "REGIROCK!$"
 
 RockTunnel_B1F_Text_NoEligiblePkmn::
 	.string "You have not meet the requirements.\p"
@@ -162,23 +174,23 @@ RockTunnel_B1F_Text_RegiceCheck::
 	.string "ANCIENT FISH,\l"
 	.string "and knowledge on a STRONG MAN.$"
 
-RockTunnel_B1F_Text_Whitney::
+RockTunnel_B1F_Text_Rock::
 	.string "So, you wish to face me?$"
 
-RockTunnel_B1F_Text_YesWhitney::
+RockTunnel_B1F_Text_YesRock::
 	.string "Very well! Prepare yourself!$"
 
-RockTunnel_B1F_Text_PostWhitney::
+RockTunnel_B1F_Text_PostRock::
 	.string "So you are worthy...$"
 
-RockTunnel_B1F_Text_WhitneyPostBattle::
+RockTunnel_B1F_Text_RockPostBattle::
 	.string "Alright, you have bested me.\p"
 	.string "Be prepared to face REGIROCK!$"
 
-RockTunnel_B1F_Text_EndWhitney::
+RockTunnel_B1F_Text_EndRock::
 	.string "Goodbye.$"
 
-RockTunnel_B1F_Text_NoWhitney::
+RockTunnel_B1F_Text_NoRock::
 	.string "Alright, take your time.$"
 
 `

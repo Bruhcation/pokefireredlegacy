@@ -210,4 +210,42 @@ PalletTown_RivalsHouse_EventScript_Bookshelf::
 PalletTown_RivalsHouse_EventScript_Picture::
 	msgbox PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy, MSGBOX_SIGN
 	end
+
+PalletTown_RivalsHouse_EventScript_Charizard::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CHARIZARD, CRY_MODE_NORMAL
+	msgbox PalletTown_RivalsHouse_Text_Charizard, MSGBOX_NPC
+	waitmoncry
+	release
+	end
+
+PalletTown_RivalsHouse_EventScript_Blastoise::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_BLASTOISE, CRY_MODE_NORMAL
+	msgbox PalletTown_RivalsHouse_Text_Blastoise, MSGBOX_NPC
+	waitmoncry
+	release
+	end
+
+PalletTown_RivalsHouse_EventScript_Venusaur::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_VENUSAUR, CRY_MODE_NORMAL
+	msgbox PalletTown_RivalsHouse_Text_Venusaur, MSGBOX_NPC
+	waitmoncry
+	release
+	end
+
+PalletTown_RivalsHouse_Text_Charizard::
+	.string "Zard!$"
+PalletTown_RivalsHouse_Text_Blastoise::
+	.string "Blastoise!$"
+PalletTown_RivalsHouse_Text_Venusaur::
+	.string "Saur!$"
+
 `

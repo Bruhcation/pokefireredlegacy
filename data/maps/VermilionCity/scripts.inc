@@ -590,3 +590,29 @@ VermilionCity_EventScript_Psyduck::
 	release
 # 296 "data/maps/VermilionCity/scripts.pory"
 	end
+# 297 "data/maps/VermilionCity/scripts.pory"
+
+# 298 "data/maps/VermilionCity/scripts.pory"
+VermilionCity_EventScript_DreamingKid::
+# 299 "data/maps/VermilionCity/scripts.pory"
+	msgbox VermilionCity_Text_DreamingKid, MSGBOX_NPC
+# 300 "data/maps/VermilionCity/scripts.pory"
+	end
+# 301 "data/maps/VermilionCity/scripts.pory"
+
+# 302 "data/maps/VermilionCity/scripts.pory"
+VermilionCity_EventScript_DreamingKidMagikarp::
+# 303 "data/maps/VermilionCity/scripts.pory"
+	lock
+# 304 "data/maps/VermilionCity/scripts.pory"
+	faceplayer
+# 305 "data/maps/VermilionCity/scripts.pory"
+	playmoncry SPECIES_MAGIKARP, 0
+# 306 "data/maps/VermilionCity/scripts.pory"
+	msgbox VermilionCity_Text_DreamingKidMagikarp
+# 307 "data/maps/VermilionCity/scripts.pory"
+	waitmoncry
+# 308 "data/maps/VermilionCity/scripts.pory"
+	release
+# 309 "data/maps/VermilionCity/scripts.pory"
+	end

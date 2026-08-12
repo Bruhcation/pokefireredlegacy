@@ -32,10 +32,8 @@ SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle::
 	.string "trainers I've ever seen.\p"
 	.string "But you still have more to\n"
 	.string "face, such as the KANTO\l"
-	.string "ELITE FOUR at their\l"
-	.string "strongest…\p"
-	.string "And a certain retired\n"
-	.string "TRAINER.\p"
+	.string "ELITE FOUR at their strongest…\p"
+	.string "And a certain retired TRAINER\p"
 	.string "Good luck, {PLAYER}\n"
 	.string "And take this, as well.$"
 

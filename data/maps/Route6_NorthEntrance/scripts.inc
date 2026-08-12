@@ -25,11 +25,11 @@ Route6_NorthEntrance_EventScript_Rematch::
 # 13 "data/maps/Route6_NorthEntrance/scripts.pory"
 	faceplayer
 # 14 "data/maps/Route6_NorthEntrance/scripts.pory"
-	msgbox Route6_NorthEntrance_Text_Whitney, MSGBOX_YESNO
+	msgbox Route6_NorthEntrance_Text_Guard, MSGBOX_YESNO
 # 15 "data/maps/Route6_NorthEntrance/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoNoGuard
 # 16 "data/maps/Route6_NorthEntrance/scripts.pory"
-	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesWhitney, Route6_NorthEntrance_Text_WhitneyDefeat, Route6_NorthEntrance_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
 # 17 "data/maps/Route6_NorthEntrance/scripts.pory"
 	release
 # 18 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -37,9 +37,9 @@ Route6_NorthEntrance_EventScript_Rematch::
 # 19 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 20 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_EventScript_PostWhitney::
+Route6_NorthEntrance_EventScript_PostPostGuard::
 # 21 "data/maps/Route6_NorthEntrance/scripts.pory"
-	msgbox Route6_NorthEntrance_Text_WhitneyPostBattle
+	msgbox Route6_NorthEntrance_Text_GuardPostBattle
 # 22 "data/maps/Route6_NorthEntrance/scripts.pory"
 	cleartrainerflag TRAINER_KINDLER
 # 23 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -49,9 +49,9 @@ Route6_NorthEntrance_EventScript_PostWhitney::
 # 25 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 26 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_EventScript_NoWhitney::
+Route6_NorthEntrance_EventScript_NoNoGuard::
 # 27 "data/maps/Route6_NorthEntrance/scripts.pory"
-	msgbox Route6_NorthEntrance_Text_NoWhitney
+	msgbox Route6_NorthEntrance_Text_NoGuard
 # 28 "data/maps/Route6_NorthEntrance/scripts.pory"
 	release
 # 29 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -59,7 +59,7 @@ Route6_NorthEntrance_EventScript_NoWhitney::
 # 30 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 31 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_Text_Whitney::
+Route6_NorthEntrance_Text_Guard::
 # 32 "data/maps/Route6_NorthEntrance/scripts.pory"
     .string "Bwahaha! Hey, kid!\n"
 # 33 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -75,25 +75,25 @@ Route6_NorthEntrance_Text_Whitney::
 # 38 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 39 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_Text_WhitneyDefeat::
+Route6_NorthEntrance_Text_GuardDefeat::
 # 40 "data/maps/Route6_NorthEntrance/scripts.pory"
     .string "Ah, that was refreshing.$"
 # 41 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 42 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_Text_WhitneyPostBattle::
+Route6_NorthEntrance_Text_GuardPostBattle::
 # 43 "data/maps/Route6_NorthEntrance/scripts.pory"
     .string "Thanks!$"
 # 44 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 45 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_Text_NoWhitney::
+Route6_NorthEntrance_Text_NoGuard::
 # 46 "data/maps/Route6_NorthEntrance/scripts.pory"
     .string "Alright then…$"
 # 47 "data/maps/Route6_NorthEntrance/scripts.pory"
 
 # 48 "data/maps/Route6_NorthEntrance/scripts.pory"
-Route6_NorthEntrance_Text_YesWhitney::
+Route6_NorthEntrance_Text_YesGuard::
 # 49 "data/maps/Route6_NorthEntrance/scripts.pory"
     .string "Thanks, CHAMPION!\n"
 # 50 "data/maps/Route6_NorthEntrance/scripts.pory"

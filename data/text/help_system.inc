@@ -1874,3 +1874,92 @@ Help_Text_TypeMatchupOwnPokemonBug::
 	.string "   {CIRCLE_DOT}: FIRE, FLYING, ROCK\p"
 	.string "   {TRIANGLE}: GRASS, FIGHTING, GROUND$"
 
+Help_Text_UsingEnemySummary::
+	.string " Using “ENEMY SUMMARY”$"
+
+Help_Text_UsingMoveEffectiveness::
+	.string " Using “MOVE EFFECTIVENESS”$"
+
+Help_Text_UsingMoveDescription::
+	.string " Using “MOVE DESCRIPTION”$"
+
+Help_Text_HowToUseEnemySummary::
+	.string "{CIRCLE_1} On the first battle screen,\n"
+	.string "   press SELECT.\l"
+	.string "{CIRCLE_2} The foe's summary appears,\n"
+	.string "   showing its stats, moves, and\l"
+	.string "   OT if it has one.\l"
+	.string "Can be toggled ON or OFF from OPTIONS.$"
+
+Help_Text_HowToUseMoveEffectiveness::
+	.string "{CIRCLE_1} Select “FIGHT,” then hover\n"
+	.string "   over a move.\l"
+	.string "{CIRCLE_2} The move's color and/or an\n"
+	.string "   arrow show its effectiveness\l"
+	.string "   against the foe. A “+” means\l"
+	.string "   the move gets STAB.\l"
+	.string "Set from OPTIONS: ARROWS, COLOR,\l"
+	.string "BOTH, or OFF.$"
+
+Help_Text_HowToUseMoveDescription::
+	.string "{CIRCLE_1} Select “FIGHT,” then hover\n"
+	.string "   over a move.\l"
+	.string "{CIRCLE_2} Press START to see its\n"
+	.string "   description, Power, Accuracy,\l"
+	.string "   and Priority.\l"
+	.string "Can be toggled ON or OFF from OPTIONS.$"
+
+Help_Text_EnemySummaryTerm::
+	.string "ENEMY SUMMARY$"
+
+Help_Text_DefineEnemySummary::
+	.string "Lets you press SELECT in battle to\n"
+	.string "view the foe's stats, moves, and\l"
+	.string "OT. Choose ON or OFF.$"
+
+Help_Text_MoveEffectivenessTerm::
+	.string "EFFECTIVENESS$"
+
+Help_Text_DefineMoveEffectiveness::
+	.string "Shows type effectiveness while\n"
+	.string "choosing a move. Choose ARROWS,\l"
+	.string "COLOR, BOTH, or OFF.$"
+
+Help_Text_SurvivePoisonTerm::
+	.string "SURVIVE PSN$"
+
+Help_Text_DefineSurvivePoison::
+	.string "When ON, POKéMON can't faint from\n"
+	.string "poison damage outside of battle.\l"
+	.string "They're left with at least 1 HP.$"
+
+Help_Text_FollowingPokemonTerm::
+	.string "FOLLOW MON$"
+
+Help_Text_DefineFollowingPokemon::
+	.string "When ON, your lead POKéMON will\n"
+	.string "follow you around as you explore.$"
+
+Help_Text_SurfingPokemonTerm::
+	.string "SURF MON$"
+
+Help_Text_DefineSurfingPokemon::
+	.string "When ON, the SURF blob is replaced\n"
+	.string "with the sprite of the POKéMON\l"
+	.string "that's surfing.$"
+
+Help_Text_StabTerm::
+	.string "STAB$"
+
+Help_Text_DefineStab::
+	.string "Same-Type Attack Bonus. Increases\n"
+	.string "the power of moves that match the\l"
+	.string "POKéMON's own type by x1.5.$"
+
+Help_Text_FieldMoveLearnsetTerm::
+	.string "FIELD MOVES$"
+
+Help_Text_DefineFieldMoveLearnset::
+	.string "Lets a POKéMON that can LEARN an\n"
+	.string "HM move use it without knowing it.\l"
+	.string "Still requires the right badge.$"

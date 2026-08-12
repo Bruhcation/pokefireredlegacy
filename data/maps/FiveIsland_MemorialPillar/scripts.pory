@@ -31,7 +31,6 @@ FiveIsland_MemorialPillar_EventScript_ShowSudowoodo::
 
 FiveIsland_MemorialPillar_EventScript_Sudowoodo::
 	lock
-	faceplayer
 	waitse
 	playse SE_UNLOCK
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShake

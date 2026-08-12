@@ -11,24 +11,24 @@ Route6_NorthEntrance_EventScript_Guard::
 Route6_NorthEntrance_EventScript_Rematch::
 	lock
 	faceplayer
-	msgbox Route6_NorthEntrance_Text_Whitney, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoWhitney
-	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesWhitney, Route6_NorthEntrance_Text_WhitneyDefeat, Route6_NorthEntrance_EventScript_PostWhitney, NO_MUSIC
+	msgbox Route6_NorthEntrance_Text_Guard, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoNoGuard
+	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
 	release
 	end
 
-Route6_NorthEntrance_EventScript_PostWhitney::
-	msgbox Route6_NorthEntrance_Text_WhitneyPostBattle
+Route6_NorthEntrance_EventScript_PostPostGuard::
+	msgbox Route6_NorthEntrance_Text_GuardPostBattle
 	cleartrainerflag TRAINER_KINDLER
 	release
 	end
 
-Route6_NorthEntrance_EventScript_NoWhitney::
-	msgbox Route6_NorthEntrance_Text_NoWhitney
+Route6_NorthEntrance_EventScript_NoNoGuard::
+	msgbox Route6_NorthEntrance_Text_NoGuard
 	release
 	end
 
-Route6_NorthEntrance_Text_Whitney::
+Route6_NorthEntrance_Text_Guard::
     .string "Bwahaha! Hey, kid!\n"
     .string "I hear you're the new CHAMP!\p"
     .string "Listen… Sorry if us thirsty guards\n"
@@ -36,16 +36,16 @@ Route6_NorthEntrance_Text_Whitney::
     .string "How about a quick battle?\n"
     .string "It's boring standing here.$"
 
-Route6_NorthEntrance_Text_WhitneyDefeat::
+Route6_NorthEntrance_Text_GuardDefeat::
     .string "Ah, that was refreshing.$"
 
-Route6_NorthEntrance_Text_WhitneyPostBattle::
+Route6_NorthEntrance_Text_GuardPostBattle::
     .string "Thanks!$"
 
-Route6_NorthEntrance_Text_NoWhitney::
+Route6_NorthEntrance_Text_NoGuard::
     .string "Alright then…$"
 
-Route6_NorthEntrance_Text_YesWhitney::
+Route6_NorthEntrance_Text_YesGuard::
     .string "Thanks, CHAMPION!\n"
     .string "I won't hold back!$"
 

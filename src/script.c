@@ -4,7 +4,9 @@
 #include "quest_log.h"
 #include "mystery_gift.h"
 #include "constants/maps.h"
+#include "constants/flags.h"
 #include "constants/map_scripts.h"
+#include "constants/event_objects.h"
 
 extern void ResetContextNpcTextColor(void); // field_specials
 extern u16 CalcCRC16WithTable(u8 *data, int length); // util
@@ -353,6 +355,8 @@ void ScriptContext_SetupScript(const u8 *ptr)
     InitScriptContext(&sGlobalScriptContext, gScriptCmdTable, gScriptCmdTableEnd);
     SetupBytecodeScript(&sGlobalScriptContext, ptr);
     LockPlayerFieldControls();
+    if (OW_MON_SCRIPT_MOVEMENT)
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
 }
 

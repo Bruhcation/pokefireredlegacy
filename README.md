@@ -1,3 +1,4 @@
+
 # Pokémon FireRed Reignited Legacy and LeafGreen Regrown Legacy
 
 <img width="1471" height="1472" alt="regrown" src="https://github.com/user-attachments/assets/60b338ca-77f4-4316-9120-d3f6eb4f235a" /> <img width="1000" height="1000" alt="reignited" src="https://github.com/user-attachments/assets/87bab07f-7d39-4edb-a7d3-a92381935c6d" />
@@ -148,6 +149,8 @@ Credits:
 - Invis (HMA Discord) - Nurse Joy Sprite
 
 - Numerous Pret Tutorials
+
+- Human Gamer: Colored Natures: https://github.com/HumanGamer/pokefirered_edit
 
 Item Locations:
 

@@ -36,3 +36,21 @@ CeladonCity_Hotel_EventScript_BeautyBrother::
 	msgbox CeladonCity_Hotel_Text_SisBroughtMeOnVacation, MSGBOX_NPC
 # 19 "data/maps/CeladonCity_Hotel/scripts.pory"
 	end
+# 20 "data/maps/CeladonCity_Hotel/scripts.pory"
+
+# 21 "data/maps/CeladonCity_Hotel/scripts.pory"
+CeladonCity_Hotel_EventScript_ChillingMeowth::
+# 22 "data/maps/CeladonCity_Hotel/scripts.pory"
+	lock
+# 23 "data/maps/CeladonCity_Hotel/scripts.pory"
+	faceplayer
+# 24 "data/maps/CeladonCity_Hotel/scripts.pory"
+	playmoncry SPECIES_MEOWTH, 0
+# 25 "data/maps/CeladonCity_Hotel/scripts.pory"
+	msgbox CeladonCity_Hotel_Text_ChillingMeowth
+# 26 "data/maps/CeladonCity_Hotel/scripts.pory"
+	waitmoncry
+# 27 "data/maps/CeladonCity_Hotel/scripts.pory"
+	release
+# 28 "data/maps/CeladonCity_Hotel/scripts.pory"
+	end

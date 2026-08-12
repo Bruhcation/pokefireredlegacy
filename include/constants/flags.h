@@ -21,7 +21,8 @@
 #define FLAG_TEMP_B      (TEMP_FLAGS_START + 0x0B)
 #define FLAG_TEMP_C      (TEMP_FLAGS_START + 0x0C)
 #define FLAG_TEMP_D      (TEMP_FLAGS_START + 0x0D)
-#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0x0E)
+//#define FLAG_TEMP_E      (TEMP_FLAGS_START + 0x0E)
+#define FLAG_TEMP_HIDE_FOLLOWER (TEMP_FLAGS_START + 0xE)  // When set, follower pokemon won't be spawned
 #define FLAG_TEMP_F      (TEMP_FLAGS_START + 0x0F)
 #define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10)
 
@@ -295,11 +296,11 @@
 #define FLAG_BERRY_FOREST_TREE_5             0x114
 #define FLAG_BERRY_FOREST_TREE_6             0x115
 #define FLAG_MIRAGE_FLAG               0x116
-#define FLAG_0x117               0x117
-#define FLAG_0x118               0x118
-#define FLAG_0x119               0x119
-#define FLAG_0x11A               0x11A
-#define FLAG_0x11B               0x11B
+#define FLAG_HACK_OPTION_MENU               0x117
+#define FLAG_NO_MONEY_SAFARI_ZONE               0x118
+#define FLAG_NO_MONEY_SAFARI_ZONE2               0x119
+#define FLAG_FIVE_ISLAND_TREE             0x11A
+#define FLAG_MOVE_TUTOR_TAUGHT_SHARPEN    0x11B
 #define FLAG_0x11C               0x11C
 #define FLAG_0x11D               0x11D
 #define FLAG_0x11E               0x11E
@@ -1253,7 +1254,7 @@
 #define FLAG_SEVIIJOHTO          0x4BF
 #define FLAG_ARMSTRONG_DEFEATED  0x4C0
 #define FLAG_SEVIIMATCH          0x4C1
-#define FLAG_UNUSED1             0x4C2
+#define FLAG_ENABLE_SURFOVERWORLD 0x4C2 // Was FLAG_UNUSED1
 #define FLAG_UNUSED2             0x4C3
 #define FLAG_UNUSED3             0x4C4
 #define FLAG_UNUSED4             0x4C5
@@ -1529,6 +1530,9 @@
 #define SPECIAL_FLAGS_START           0x4000
 #define FLAG_DONT_SHOW_MAP_NAME_POPUP (SPECIAL_FLAGS_START + 0x0)
 #define FLAG_DONT_TRANSITION_MUSIC    (SPECIAL_FLAGS_START + 0x1)
+// When set, `applymovement` does not hide follower pokemon;
+// Also, scripted movements on the player will move follower(s), too
+#define FLAG_SAFE_FOLLOWER_MOVEMENT   (SPECIAL_FLAGS_START + 0x5)
 // FLAG_SPECIAL_FLAG_0x4002 - 0x407F also exist and are unused
 #define SPECIAL_FLAGS_END             (SPECIAL_FLAGS_START + 0x7F)
 

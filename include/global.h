@@ -12,6 +12,10 @@
 #include "constants/easy_chat.h"
 #include "constants/rgb.h"
 
+//New Registered Items Menu
+#include "constants/items.h"
+#define REGISTERED_ITEMS_MAX 16
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
@@ -31,6 +35,7 @@
 #define INCBIN_S8   INCBIN
 #define INCBIN_S16  INCBIN
 #define INCBIN_S32  INCBIN
+#define INCBIN_COMP INCBIN
 #endif // IDE support
 
 #define ARRAY_COUNT(array) (sizeof(array) / sizeof((array)[0]))
@@ -86,7 +91,7 @@
 #define SAFE_DIV(a, b) ((a) / (b))
 #endif
 
-
+#define IS_POW_OF_TWO(n) (((n) & ((n)-1)) == 0)
 
 // Extracts the upper 16 bits of a 32-bit number
 #define HIHALF(n) (((n) & 0xFFFF0000) >> 16)
@@ -335,6 +340,12 @@ struct SaveBlock2
               u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
               u16 optionsBattleSceneOff:1; // whether battle animations are disabled
               u16 regionMapZoom:1; // whether the map is zoomed in
+              u16 optionsEnemySummary:1; // whether the enemy's summary can be viewed with SELECT in battle
+              u16 optionsMoveEffectiveness:2; // OPTIONS_MOVE_EFFECTIVENESS_[ARROWS/COLOR/BOTH/OFF]
+              u16 optionsSurvivePoison:1; // whether POKéMON can survive poison damage outside of battle at 1 HP
+              u16 optionsFollowPokemon:1; // whether the lead POKéMON follows the player on the field
+              u16 optionsSurfPokemon:1; // whether the SURF blob sprite is replaced with the surfing POKéMON's sprite
+              u16 optionsFieldMoveLearnset:1; // whether party POKéMON that can LEARN an HM move may use it without knowing it
     /*0x018*/ struct Pokedex pokedex;
     /*0x090*/ u8 filler_90[0x8];
     /*0x098*/ struct Time localTimeOffset;
@@ -353,6 +364,8 @@ struct SaveBlock2
 }; // size: 0xF24
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
+
+extern u8 UpdateSpritePaletteWithTime(u8);
 
 struct SecretBaseParty
 {
@@ -395,6 +408,12 @@ struct ItemSlot
 {
     u16 itemId;
     u16 quantity;
+};
+
+//New Registered Items Menu
+struct RegisteredItemSlot
+{
+    u16 itemId;
 };
 
 struct Pokeblock
@@ -588,7 +607,7 @@ struct QuestLogObjectEvent
     /*0x02*/ u8 unused:3;
     /*0x03*/ u8 currentElevation:4;
     /*0x03*/ u8 previousElevation:4;
-    /*0x04*/ u8 graphicsId;
+    /*0x04*/ u16 graphicsId;
     /*0x05*/ u8 movementType;
     /*0x06*/ u8 trainerType;
     /*0x07*/ u8 localId;
@@ -767,7 +786,7 @@ struct SaveBlock1
     /*0x0038*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x0290*/ u32 money;
     /*0x0294*/ u16 coins;
-    /*0x0296*/ u16 registeredItem; // registered for use with SELECT button
+    ///*0x0296*/ u16 registeredItem; // registered for use with SELECT button
     /*0x0298*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x0310*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x03b8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
@@ -813,6 +832,9 @@ struct SaveBlock1
     /*0x3D24*/ u8 unused_3D24[16];
     /*0x3D34*/ u32 towerChallengeId;
     /*0x3D38*/ struct TrainerTower trainerTower[NUM_TOWER_CHALLENGE_TYPES];
+               u8 registeredItemLastSelected:4; //max 16 items
+               u8 registeredItemListCount:4;
+               struct RegisteredItemSlot registeredItems[REGISTERED_ITEMS_MAX];//New Registered Items Menu
 }; // size: 0x3D68
 
 struct MapPosition
@@ -824,5 +846,9 @@ struct MapPosition
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
 extern u8 gReservedSpritePaletteCount;
+
+// Adds support for compressed OW graphics,
+// (Also compresses pokemon follower graphics)
+#define OW_GFX_COMPRESS TRUE
 
 #endif // GUARD_GLOBAL_H

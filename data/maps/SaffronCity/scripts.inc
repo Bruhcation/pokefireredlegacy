@@ -252,3 +252,29 @@ SaffronCity_EventScript_TrainerFanClubSign::
 	msgbox SaffronCity_Text_TrainerFanClubSign, MSGBOX_SIGN
 # 127 "data/maps/SaffronCity/scripts.pory"
 	end
+# 128 "data/maps/SaffronCity/scripts.pory"
+
+# 129 "data/maps/SaffronCity/scripts.pory"
+SaffronCity_EventScript_LoveSteelTypes::
+# 130 "data/maps/SaffronCity/scripts.pory"
+	msgbox SaffronCity_Text_LoveSteelTypes, MSGBOX_NPC
+# 131 "data/maps/SaffronCity/scripts.pory"
+	end
+# 132 "data/maps/SaffronCity/scripts.pory"
+
+# 133 "data/maps/SaffronCity/scripts.pory"
+SaffronCity_EventScript_LoveSteelTypesMagnemite::
+# 134 "data/maps/SaffronCity/scripts.pory"
+	lock
+# 135 "data/maps/SaffronCity/scripts.pory"
+	faceplayer
+# 136 "data/maps/SaffronCity/scripts.pory"
+	playmoncry SPECIES_MAGNEMITE, 0
+# 137 "data/maps/SaffronCity/scripts.pory"
+	msgbox SaffronCity_Text_LoveSteelTypesMagnemite
+# 138 "data/maps/SaffronCity/scripts.pory"
+	waitmoncry
+# 139 "data/maps/SaffronCity/scripts.pory"
+	release
+# 140 "data/maps/SaffronCity/scripts.pory"
+	end

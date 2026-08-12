@@ -302,8 +302,8 @@
 #define VAR_0x40FA                 0x40FA
 #define VAR_0x40FB                 0x40FB
 #define VAR_DIFFICULTY             0x40FC
-#define VAR_0x40FD                 0x40FD
-#define VAR_0x40FE                 0x40FE
+#define VAR_SURF_MON_SLOT          0x40FD // Custom: party slot of the mon currently surfing (was VAR_0x40FD, unused)
+#define VAR_FREEZE_SURF_BLOB       0x40FE // Custom: pauses surf bob sync during fishing-while-surfing (was VAR_0x40FE, unused)
 #define VAR_REPEL_LAST_USED        0x40FF
 
 #define VARS_END                   0x40FF

@@ -1,6 +1,7 @@
 raw `
 
 .set LOCALID_GIRL, 11
+.set LOCALID_JIRACHI, 12
 Route10_MapScripts::
 	.byte 0
 
@@ -70,6 +71,10 @@ Route10_EventScript_Jirachi::
 	applymovement LOCALID_GIRL, Common_Movement_FaceRight
 	playse SE_PIN
 	waitse
+	fadescreen FADE_TO_BLACK
+	addobject LOCALID_JIRACHI
+	applymovement LOCALID_JIRACHI, Common_Movement_FacePlayer
+	fadescreen FADE_FROM_BLACK
 	setwildbattle SPECIES_JIRACHI, 50
 	waitse
 	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
@@ -88,6 +93,9 @@ Route10_EventScript_Jirachi::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route10_EventScript_RanFromJirachi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route10_EventScript_RanFromJirachi
 	setflag FLAG_JIRACHI
+    fadescreen FADE_TO_BLACK
+	removeobject LOCALID_JIRACHI
+    fadescreen FADE_FROM_BLACK
 	msgbox Route10_Text_Wish
 	goto Route10_EventScript_HoennWish
 	release
@@ -96,6 +104,7 @@ Route10_EventScript_Jirachi::
 Route10_EventScript_DefeatedJirachi::
 	setvar VAR_0x8004, SPECIES_JIRACHI
     fadescreen FADE_TO_BLACK
+	removeobject LOCALID_JIRACHI
     fadescreen FADE_FROM_BLACK
     bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox Route10_Text_WentBack
@@ -105,6 +114,7 @@ Route10_EventScript_DefeatedJirachi::
 Route10_EventScript_RanFromJirachi::
 	setvar VAR_0x8004, SPECIES_JIRACHI
     fadescreen FADE_TO_BLACK
+	removeobject LOCALID_JIRACHI
     fadescreen FADE_FROM_BLACK
     bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox Route10_Text_WentBack

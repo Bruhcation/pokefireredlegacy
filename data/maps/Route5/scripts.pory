@@ -1,6 +1,8 @@
 raw `
 .set LOCALID_BRO, 2
 .set LOCALID_SIS, 3
+.set LOCALID_LATIAS, 4
+.set LOCALID_LATIOS, 5
 Route5_MapScripts::
 	.byte 0
 
@@ -12,7 +14,7 @@ Route5_EventScript_Bro::
 	lock 
 	faceplayer
 	goto_if_set FLAG_CAUGHT_LATIOS, Route5_EventScript_End
-	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostWhitney
+	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostSilbings
 	goto_if_set FLAG_LATIOS_CHECKED, Route5_EventScript_Orbing
 	goto Route5_EventScript_OrbingCheck
 
@@ -20,7 +22,7 @@ Route5_EventScript_Sis::
 	lock 
 	faceplayer
 	goto_if_set FLAG_CAUGHT_LATIAS, Route5_EventScript_End
-	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostWhitneyLatias
+	goto_if_set FLAG_BEAT_TWINS, Route5_EventScript_PostSilbingsLatias
 	goto_if_set FLAG_LATIOS_CHECKED, Route5_EventScript_Orbing
 	goto Route5_EventScript_OrbingCheck
 
@@ -52,11 +54,11 @@ Route5_EventScript_Flag::
 	end
 
 Route5_EventScript_Orbing::
-	msgbox Route5_Text_Whitney, MSGBOX_YESNO
+	msgbox Route5_Text_Silbings, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoWhitney
-	trainerbattle_single TRAINER_RS_RUIN_MANIAC, Route5_Text_YesWhitney, Route5_Text_PostWhitney, Route5_EventScript_PostFlags, NO_MUSIC
+	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoSilbings
+	trainerbattle_single TRAINER_RS_RUIN_MANIAC, Route5_Text_YesSilbings, Route5_Text_PostSilbings, Route5_EventScript_PostFlags, NO_MUSIC
 	release
 	end
 
@@ -66,11 +68,11 @@ Route5_EventScript_PostFlags::
 	release
 	end
 
-Route5_EventScript_PostWhitney::
+Route5_EventScript_PostSilbings::
 	special HealPlayerParty
-	msgbox Route5_Text_WhitneyPostBattle, MSGBOX_YESNO
+	msgbox Route5_Text_SilbingsPostBattle, MSGBOX_YESNO
 	closemessage
-	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoSilbings
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -87,20 +89,21 @@ Route5_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_LATIOS
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route5_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route5_EventScript_RanFromCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route5_EventScript_RanFromCelebi
 	setflag FLAG_CAUGHT_LATIOS
 	setflag FLAG_BRO_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	release
 	end
 
-Route5_EventScript_PostWhitneyLatias::
+Route5_EventScript_PostSilbingsLatias::
 	special HealPlayerParty
-	msgbox Route5_Text_WhitneyPostBattle
+	msgbox Route5_Text_SilbingsPostBattle
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -117,13 +120,14 @@ Route5_EventScript_PostWhitneyLatias::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_LATIAS
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route5_EventScript_DefeatedLatias
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route5_EventScript_RanFromLatias
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route5_EventScript_RanFromLatias
 	setflag FLAG_CAUGHT_LATIAS
 	setflag FLAG_SIS_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	release
 	end
@@ -131,7 +135,7 @@ Route5_EventScript_PostWhitneyLatias::
 Route5_EventScript_DefeatedCelebi::
 	setflag FLAG_CAUGHT_LATIOS
 	setflag FLAG_BRO_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	goto EventScript_RemoveStaticMon
 	end
@@ -139,7 +143,7 @@ Route5_EventScript_DefeatedCelebi::
 Route5_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_LATIOS
 	setflag FLAG_BRO_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	goto EventScript_MonFlewAway
 	end
@@ -147,7 +151,7 @@ Route5_EventScript_RanFromCelebi::
 Route5_EventScript_DefeatedLatias::
 	setflag FLAG_CAUGHT_LATIAS
 	setflag FLAG_SIS_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	goto EventScript_RemoveStaticMon
 	end
@@ -155,18 +159,38 @@ Route5_EventScript_DefeatedLatias::
 Route5_EventScript_RanFromLatias::
 	setvar VAR_0x8004, SPECIES_LATIAS
 	setflag FLAG_SIS_TRAINER
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	waitmessage
 	goto EventScript_MonFlewAway
 	end
 
-Route5_EventScript_NoWhitney::
-	msgbox Route5_Text_NoWhitney
+Route5_EventScript_Latias::
+	lock
+	faceplayer
+	msgbox Route5_Text_Latias, MSGBOX_NPC
+	release
+	end
+
+Route5_EventScript_Latios::
+	lock
+	faceplayer
+	msgbox Route5_Text_Latios, MSGBOX_NPC
+	release
+	end
+
+Route5_Text_Latios::
+	.string "LATIOS!$"
+
+Route5_Text_Latias::
+	.string "LATIAS!$"
+
+Route5_EventScript_NoSilbings::
+	msgbox Route5_Text_NoSilbings
 	release
 	end
 
 Route5_EventScript_End::
-	msgbox Route5_Text_EndWhitney
+	msgbox Route5_Text_EndSilbings
 	release
 	end
 
@@ -185,27 +209,27 @@ Route5_Text_RegiceCheck::
 	.string "As well as the REGIS\n"
 	.string "and the ALIEN.$"
 
-Route5_Text_Whitney::
+Route5_Text_Silbings::
 	.string "So, you wish to face us?$"
 
-Route5_Text_YesWhitney::
+Route5_Text_YesSilbings::
 	.string "Very well! Prepare yourself!$"
 
-Route5_Text_PostWhitney::
+Route5_Text_PostSilbings::
 	.string "So you are worthy...$"
 
 Route5_Text_YouWon::
 	.string "Talk to us again to\n"
 	.string "face LATIOS and LATIAS.$"
 
-Route5_Text_WhitneyPostBattle::
+Route5_Text_SilbingsPostBattle::
 	.string "Alright, you have bested me.\p"
 	.string "Be prepared to face IT!$"
 
-Route5_Text_EndWhitney::
+Route5_Text_EndSilbings::
 	.string "You had one chance,\n"
 	.string "Goodbye.$"
 
-Route5_Text_NoWhitney::
+Route5_Text_NoSilbings::
 	.string "Alright, take your time.$"
 `

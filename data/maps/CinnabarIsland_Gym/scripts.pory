@@ -107,8 +107,8 @@ CinnabarIsland_Gym_Text_BlaineNoNoRematchBattle::
 	.string "than ever before!\p"
 	.string "However my Inferno hasn't\n"
 	.string "been set let, so give me some time.\p"
-	.string "In the mean time fill in my entry\p"
-	.string "in the FAMECHECKER to know\p"
+	.string "In the mean time fill in my entry\n"
+	.string "in the FAMECHECKER to know\l"
 	.string "more trivia about my Inferno!$"
 
 CinnabarIsland_Gym_EventScript_RematchBlaine2::

@@ -123,11 +123,13 @@ EventScript_AccessPokemonStorage_PlayerRoom::
 	end
 
 EventScript_TurnOffPC_PlayerRoom::
-	setvar VAR_0x8004, 0
+	setvar VAR_0x8004, 1
 	playse SE_PC_OFF
 	call_if_unset FLAG_SELPHY_PC, EventScript_TurnOffPC2
+	special AnimatePcTurnOff
 	special SetHelpContextForMap
 	clearflag FLAG_SELPHY_PC
+	releaseall
 	end
 
 EventScript_AccessHallOfFame_PlayerRoom::

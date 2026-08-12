@@ -39,6 +39,9 @@ void InitOldManBag(void);
 void Pocket_CalculateNItemsAndMaxShowed(u8 pocketId);
 void PocketCalculateInitialCursorPosAndItemsAbove(u8 pocketId);
 void GoToBagMenu(u8 menuType, u8 pocket, MainCallback callback);
-bool8 UseRegisteredKeyItemOnField(void);
+//bool8 UseRegisteredKeyItemOnField(void);
+
+//New Registered Items Menu
+bool8 UseRegisteredKeyItemOnField(u8 button);
 
 #endif //GUARD_ITEM_MENU_H

@@ -179,7 +179,7 @@ u16 CreatePicSprite_HandleDeoxys(u16 species, u32 otId, u32 personality, bool8 i
     return CreatePicSprite(species, otId, personality, isFrontPic, x, y, paletteSlot, paletteTag, isTrainer, FALSE);
 }
 
-u16 FreeAndDestroyPicSpriteInternal(u16 spriteId)
+u16 FreeAndDestroyPicSpriteInternal(u16 spriteId, bool8 freePalette)
 {
     u8 i;
     u8 *framePics;
@@ -195,7 +195,7 @@ u16 FreeAndDestroyPicSpriteInternal(u16 spriteId)
 
     framePics = sSpritePics[i].frames;
     images = sSpritePics[i].images;
-    if (sSpritePics[i].paletteTag != TAG_NONE)
+    if (freePalette && sSpritePics[i].paletteTag != TAG_NONE)
         FreeSpritePaletteByTag(GetSpritePaletteTagByPaletteNum(gSprites[spriteId].oam.paletteNum));
     DestroySprite(&gSprites[spriteId]);
     Free(framePics);
@@ -240,7 +240,12 @@ u16 CreateMonPicSprite_HandleDeoxys(u16 species, u32 otId, u32 personality, bool
 
 u16 FreeAndDestroyMonPicSprite(u16 spriteId)
 {
-    return FreeAndDestroyPicSpriteInternal(spriteId);
+    return FreeAndDestroyPicSpriteInternal(spriteId, TRUE);
+}
+
+u16 FreeAndDestroyMonPicSpriteNoPalette(u16 spriteId)
+{
+    return FreeAndDestroyPicSpriteInternal(spriteId, FALSE);
 }
 
 u16 LoadMonPicInWindow(u16 species, u32 otId, u32 personality, bool8 isFrontPic, u8 paletteSlot, u8 windowId)
@@ -260,7 +265,7 @@ u16 CreateTrainerPicSprite(u16 species, bool8 isFrontPic, s16 x, s16 y, u8 palet
 
 u16 FreeAndDestroyTrainerPicSprite(u16 spriteId)
 {
-    return FreeAndDestroyPicSpriteInternal(spriteId);
+    return FreeAndDestroyPicSpriteInternal(spriteId, TRUE);
 }
 
 u16 LoadTrainerPicInWindow(u16 species, bool8 isFrontPic, u8 paletteSlot, u8 windowId)

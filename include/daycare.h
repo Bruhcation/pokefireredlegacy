@@ -24,6 +24,7 @@ bool8 NameHasGenderSymbol(const u8 *name, u8 genderRatio);
 void ShowDaycareLevelMenu(void);
 void ChooseSendDaycareMon(void);
 u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves);
+u8 GetEggMovesForSpecies(u16 species, u16 *eggMoves);
 
 
 void ScriptHatchMon(void);

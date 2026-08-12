@@ -181,3 +181,20 @@ PewterCity_Text_AbilityGirl::
  	.string "opponent might miss you, while\l"
  	.string "ILLUMINATE makes it easier to see\l"
  	.string "and ignores accuracy loss!$"
+
+PewterCity_Text_HappyGirl::
+    .string "This is my sweet little FRE!\p"
+	.string "When she walks with me, I feel like\n"
+	.string "we find more friends!$"
+
+PewterCity_Text_HappyGirlButterfree::
+    .string "FRE: Freee!$"
+
+PewterCity_Text_RelaxingHiker::
+	.string "Ahhh, it's so refreshing...\n"
+	.string "Pewter City stays lovely and cool\p"
+	.string "since it lies at the base of the\n"
+	.string "mountain.$"
+
+PewterCity_Text_RelaxingHikerGeodude::
+    .string "GEODUDE: Duuude...$"

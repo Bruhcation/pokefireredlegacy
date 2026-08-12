@@ -258,18 +258,18 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_Ren
 	closemessage
 	delay 40
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_Whitney, MSGBOX_YESNO
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Mirage, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage
 	setvar VAR_FORCEANIM, 1
-	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesWhitney, SixIsland_DottedHole_SapphireRoom_Text_PostWhitney, SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
 	release
 	end
 
-SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
+SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage::
 	setvar VAR_FORCEANIM, 0
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_MiragePostBattle
 	setflag FLAG_RE_DEFEATED
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	playfanfare MUS_OBTAIN_KEY_ITEM
@@ -283,8 +283,8 @@ SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
 	releaseall
 	end
 
-SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney::
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_NoWhitney
+SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage::
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_NoMirage
 	release
 	end
 
@@ -303,17 +303,17 @@ SixIsland_DottedHole_SapphireRoom_Text_Ren::
 SixIsland_DottedHole_SapphireRoom_Text_Notice::
 	.string "(You noticed a voice in the air.)$"
 
-SixIsland_DottedHole_SapphireRoom_Text_Whitney::
+SixIsland_DottedHole_SapphireRoom_Text_Mirage::
 	.string "Do you wish to battle.\n"
 	.string "My team will the must\l"
 	.string "stronger than the rest.$"
 
-SixIsland_DottedHole_SapphireRoom_Text_NoWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_NoMirage::
 	.string "Guess you need more\n"
 	.string "time to train than,\l"
 	.string "take your time!$"	
 
-SixIsland_DottedHole_SapphireRoom_Text_PostWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_PostMirage::
 	.string "Wow! What a amazing battle!\n"
 	.string "From Red to Blue,\l"
 	.string "this battle is Green all around!$"
@@ -327,13 +327,13 @@ SixIsland_DottedHole_SapphireRoom_Text_Orbing::
 	.string "something shiny!\p"
 	.string "Better not let it waste.$"
 
-SixIsland_DottedHole_SapphireRoom_Text_YesWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_YesMirage::
 	.string "Alright.\n"
 	.string "May this battle not be blue,\l"
 	.string "May this battle be red in hype,\l"
 	.string "and may be green in success!$"
 
-SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle::
+SixIsland_DottedHole_SapphireRoom_Text_MiragePostBattle::
 	.string "Ok, guess I gotta give\n"
 	.string "you this reward.$"
 

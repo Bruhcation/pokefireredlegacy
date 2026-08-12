@@ -55,3 +55,20 @@ IndigoPlateau_PokemonCenter_1F_Text_Fishing::
     .string "would help to have good moves!\p"
     .string "Good thing I've got them!\p"
     .string "What do you need?$"
+
+IndigoPlateau_PokemonCenter_1F_Text_TrainMore::
+	.string "It seems we still need to train\n"
+	.string "more before we can attempt the\l"
+	.string "ELITE 4 challenge again...$"
+
+IndigoPlateau_PokemonCenter_1F_Text_TrainMoreGengar::
+	.string "GENGAR: Mwah...$"
+
+IndigoPlateau_PokemonCenter_1F_Text_AlmostReady::
+	.string "ALAKAZAM with TWISTED SPOON...\n"
+	.string "TAURUS with SILK SCARF...\p"
+	.string "DEWGONG with MYSTIC WATER...\n"
+	.string "We should be almost ready!$"
+
+IndigoPlateau_PokemonCenter_1F_Text_AlmostReadyAlakazam::
+	.string "ALAKAZAM: Zamm!$"

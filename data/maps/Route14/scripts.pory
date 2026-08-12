@@ -23,3 +23,14 @@ Route14_Text_HealWoman1::
 
 Route14_Text_HealWoman2::
 	.string "Stay strong, TRAINER!$"
+
+
+Route14_EventScript_HealWomanChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox Route14_Text_HealWomanChansey
+	waitmoncry
+	release
+	end
+`

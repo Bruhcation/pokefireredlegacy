@@ -282,4 +282,18 @@ CeladonCity_DepartmentStore_Roof_EventScript_ExitVendingMachine::
 	hidemoneybox
 	releaseall
 	end
+
+
+CeladonCity_DepartmentStore_Roof_EventScript_Feeding::
+	msgbox CeladonCity_DepartmentStore_Roof_Text_Feeding, MSGBOX_NPC
+	end
+
+CeladonCity_DepartmentStore_Roof_EventScript_FeedingPidgey::
+	lock
+	faceplayer
+	playmoncry SPECIES_PIDGEY, 0
+	msgbox CeladonCity_DepartmentStore_Roof_Text_FeedingPidgey
+	waitmoncry
+	release
+	end
 `

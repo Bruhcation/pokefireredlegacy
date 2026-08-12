@@ -191,3 +191,8 @@ CeruleanCity_Text_NoPokeballs::
 	.string "You'll want some before you head any\n"
 	.string "further. Take a few of mine.$"
 
+CeruleanCity_Text_CuteOddishGirl::
+    .string "Isn't my ODDISH just the cutest!$"
+
+CeruleanCity_Text_Oddish::
+    .string "ODDISH: Odeee.$"

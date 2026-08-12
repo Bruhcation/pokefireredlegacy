@@ -785,14 +785,42 @@ CeruleanCity_EventScript_BikeShopSign::
 # 393 "data/maps/CeruleanCity/scripts.pory"
 
 # 394 "data/maps/CeruleanCity/scripts.pory"
-CeruleanCity_EventScript_GymSign::
+
 # 395 "data/maps/CeruleanCity/scripts.pory"
-	lockall
+CeruleanCity_EventScript_CuteOddishGirl::
 # 396 "data/maps/CeruleanCity/scripts.pory"
-	famechecker FAMECHECKER_MISTY, 0
+	msgbox CeruleanCity_Text_CuteOddishGirl, MSGBOX_NPC
 # 397 "data/maps/CeruleanCity/scripts.pory"
-	msgbox CeruleanCity_Text_GymSign
+	end
 # 398 "data/maps/CeruleanCity/scripts.pory"
-	releaseall
+
 # 399 "data/maps/CeruleanCity/scripts.pory"
+CeruleanCity_EventScript_Oddish::
+# 400 "data/maps/CeruleanCity/scripts.pory"
+	lock
+# 401 "data/maps/CeruleanCity/scripts.pory"
+	faceplayer
+# 402 "data/maps/CeruleanCity/scripts.pory"
+	playmoncry SPECIES_ODDISH, 0
+# 403 "data/maps/CeruleanCity/scripts.pory"
+	msgbox CeruleanCity_Text_Oddish
+# 404 "data/maps/CeruleanCity/scripts.pory"
+	waitmoncry
+# 405 "data/maps/CeruleanCity/scripts.pory"
+	release
+# 406 "data/maps/CeruleanCity/scripts.pory"
+	end
+# 407 "data/maps/CeruleanCity/scripts.pory"
+
+# 408 "data/maps/CeruleanCity/scripts.pory"
+CeruleanCity_EventScript_GymSign::
+# 409 "data/maps/CeruleanCity/scripts.pory"
+	lockall
+# 410 "data/maps/CeruleanCity/scripts.pory"
+	famechecker FAMECHECKER_MISTY, 0
+# 411 "data/maps/CeruleanCity/scripts.pory"
+	msgbox CeruleanCity_Text_GymSign
+# 412 "data/maps/CeruleanCity/scripts.pory"
+	releaseall
+# 413 "data/maps/CeruleanCity/scripts.pory"
 	end

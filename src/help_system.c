@@ -280,6 +280,7 @@ enum
     HELP_USING_BAIT,
     HELP_USING_ROCK,
     HELP_USING_HALL_OF_FAME,
+    HELP_USING_MOVE_DESCRIPTION,
 };
 
 static const u8 *const sHelpSystemMenuTopicTextPtrs[] = {
@@ -331,7 +332,8 @@ static const u8 *const sHelpSystemMenuTopicTextPtrs[] = {
     [HELP_USING_BALL]                   = Help_Text_UsingBall,
     [HELP_USING_BAIT]                   = Help_Text_UsingBait,
     [HELP_USING_ROCK]                   = Help_Text_UsingRock,
-    [HELP_USING_HALL_OF_FAME]           = Help_Text_UsingHallOfFame
+    [HELP_USING_HALL_OF_FAME]           = Help_Text_UsingHallOfFame,
+    [HELP_USING_MOVE_DESCRIPTION]       = Help_Text_UsingMoveDescription
 };
 
 static const u8 *const sHelpSystemHowToUseMenuTextPtrs[] = {
@@ -383,7 +385,8 @@ static const u8 *const sHelpSystemHowToUseMenuTextPtrs[] = {
     [HELP_USING_BALL]                   = Help_Text_HowToUseBall,
     [HELP_USING_BAIT]                   = Help_Text_HowToUseBait,
     [HELP_USING_ROCK]                   = Help_Text_HowToUseRock,
-    [HELP_USING_HALL_OF_FAME]           = Help_Text_HowToUseHallOfFame
+    [HELP_USING_HALL_OF_FAME]           = Help_Text_HowToUseHallOfFame,
+    [HELP_USING_MOVE_DESCRIPTION]       = Help_Text_HowToUseMoveDescription
 };
 
 // Submenu IDs for TOPIC_TERMS
@@ -432,6 +435,7 @@ enum
     HELP_TERM_ID_NO2,
     HELP_TERM_MONEY2,
     HELP_TERM_BADGES2,
+    HELP_TERM_STAB,
 };
 
 static const u8 *const sHelpSystemTermTextPtrs[] = {
@@ -478,7 +482,8 @@ static const u8 *const sHelpSystemTermTextPtrs[] = {
     [HELP_TERM_POKEMON]        = Help_Text_Pokemon,
     [HELP_TERM_ID_NO2]         = Help_Text_IDNo2,
     [HELP_TERM_MONEY2]         = Help_Text_Money2,
-    [HELP_TERM_BADGES2]        = Help_Text_Badges2
+    [HELP_TERM_BADGES2]        = Help_Text_Badges2,
+    [HELP_TERM_STAB]           = Help_Text_StabTerm
 };
 
 static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
@@ -525,7 +530,8 @@ static const u8 *const sHelpSystemTermDefinitionsTextPtrs[] = {
     [HELP_TERM_POKEMON]        = Help_Text_DefinePokemon,
     [HELP_TERM_ID_NO2]         = Help_Text_DefineIDNo2,
     [HELP_TERM_MONEY2]         = Help_Text_DefineMoney2,
-    [HELP_TERM_BADGES2]        = Help_Text_DefineBadges2
+    [HELP_TERM_BADGES2]        = Help_Text_DefineBadges2,
+    [HELP_TERM_STAB]               = Help_Text_DefineStab
 };
 
 // Submenu IDs for TOPIC_ABOUT_GAME
@@ -808,12 +814,22 @@ static const u8 sHowTo_Options[] = {
 
 static const u8 sTerms_Options[] = {
     HELP_TERM_TEXT_SPEED, 
-    HELP_TERM_BATTLE_SCENE, 
-    HELP_TERM_BATTLE_STYLE, 
     HELP_TERM_SOUND, 
     HELP_TERM_BUTTON_MODE, 
     HELP_TERM_FRAME, 
     HELP_TERM_CANCEL, 
+    HELP_END
+};
+
+// Terms shown while browsing the BATTLE submenu (Battle Scene / Battle Style)
+static const u8 sTerms_BattleOptions[] = {
+    HELP_TERM_BATTLE_SCENE,
+    HELP_TERM_BATTLE_STYLE,
+    HELP_END
+};
+
+// Terms shown while browsing the HACK OPTIONS submenu
+static const u8 sTerms_HackOptions[] = {
     HELP_END
 };
 
@@ -1293,6 +1309,7 @@ static const u8 sHowTo_WildBattle[] = {
     HELP_USING_AN_ITEM, 
     HELP_USING_POKEBALL, 
     HELP_USING_RUN, 
+    HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
 
@@ -1344,6 +1361,7 @@ static const u8 sHowTo_TrainerBattleSingle[] = {
     HELP_USING_BAG2, 
     HELP_USING_AN_ITEM, 
     HELP_USING_RUN, 
+    HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
 
@@ -1395,6 +1413,7 @@ static const u8 sHowTo_TrainerBattleDouble[] = {
     HELP_USING_BAG2, 
     HELP_USING_AN_ITEM, 
     HELP_USING_RUN, 
+    HELP_USING_MOVE_DESCRIPTION,
     HELP_END
 };
 
@@ -1602,6 +1621,7 @@ static const u8 sTerms_Basic[] = {
     HELP_TERM_PLAY_TIME, 
     HELP_TERM_MONEY, 
     HELP_TERM_BADGES, 
+    HELP_TERM_STAB,
     HELP_END
 };
 
@@ -1643,7 +1663,9 @@ static const u8 *const sHelpSystemSubmenuItemLists[HELPCONTEXT_COUNT * (TOPIC_CO
     NULL,                          sHowTo_BedroomPC,           NULL,                       NULL,                    NULL, // HELPCONTEXT_BEDROOM_PC
     NULL,                          sHowTo_BedroomPCItems,      NULL,                       NULL,                    NULL, // HELPCONTEXT_BEDROOM_PC_ITEMS
     NULL,                          sHowTo_BedroomPCMailbox,    NULL,                       NULL,                    NULL, // HELPCONTEXT_BEDROOM_PC_MAILBOX
-    NULL,                          NULL,                       NULL,                       NULL,                    NULL  // HELPCONTEXT_UNUSED
+    NULL,                          NULL,                       NULL,                       NULL,                    NULL, // HELPCONTEXT_UNUSED
+    NULL,                          NULL,                       NULL,                       NULL,                    NULL,  // HELPCONTEXT_UNUSED
+    [HELPCONTEXT_BATTLE_OPTIONS * 5 + TOPIC_TERMS] = sTerms_BattleOptions,
 };
 
 static const u16 sUnused[] = INCBIN_U16("graphics/help_system/unused.bin");
@@ -1704,6 +1726,7 @@ static const bool8 sHelpSystemContextTopicFlags[HELPCONTEXT_COUNT + 1][TOPIC_COU
     [HELPCONTEXT_BEDROOM_PC_ITEMS]      = CONTEXT_TOPIC_FLAGS(FALSE,  TRUE, FALSE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_BEDROOM_PC_MAILBOX]    = CONTEXT_TOPIC_FLAGS(FALSE,  TRUE, FALSE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_UNUSED]                = {},
+    [HELPCONTEXT_BATTLE_OPTIONS]        = CONTEXT_TOPIC_FLAGS(FALSE, FALSE,  TRUE, FALSE, FALSE,  TRUE),
     [HELPCONTEXT_COUNT]                 = {}
 };
 
@@ -1933,6 +1956,8 @@ static void ResetHelpSystemListMenu(struct HelpSystemListMenu * helpListMenu, st
     helpListMenu->sub.maxShowed = 1;
     helpListMenu->sub.left = 1;
     helpListMenu->sub.top = 4;
+    helpListMenu->itemsAbove = 0;
+    helpListMenu->cursorPos = 0;
 }
 
 static void BuildAndPrintMainTopicsListMenu(struct HelpSystemListMenu * helpListMenu, struct ListMenuItem * listMenuItemsBuffer)
@@ -2157,6 +2182,8 @@ static bool8 IsHelpSystemSubmenuEnabled(u8 id)
             return FlagGet(FLAG_GOT_BICYCLE);
         case HELP_USING_HALL_OF_FAME:
             return FlagGet(FLAG_SYS_GAME_CLEAR);
+        case HELP_USING_MOVE_DESCRIPTION:
+            return TRUE;
         }
         return FALSE;
     }

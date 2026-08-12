@@ -1,6 +1,7 @@
 raw `
 .equ NUM_BOULDERS_PRESENT, VAR_TEMP_2
 .set LOCALID_MIRAGE, 8
+.set LOCALID_REGICE, 9
 
 SeafoamIslands_B3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SeafoamIslands_B3F_OnTransition
@@ -136,9 +137,9 @@ SeafoamIslands_B3F_EventScript_PostWhitney::
 	special HealPlayerParty
 	msgbox SeafoamIslands_B3F_Text_WhitneyPostBattle
 	waitmessage
-	goto SeafoamIslands_B3F_EventScript_Regice
+	goto SeafoamIslands_B3F_EventScript_BattleRegice
 
-SeafoamIslands_B3F_EventScript_Regice::
+SeafoamIslands_B3F_EventScript_BattleRegice::
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -155,6 +156,7 @@ SeafoamIslands_B3F_EventScript_Regice::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_REGICE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SeafoamIslands_B3F_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SeafoamIslands_B3F_EventScript_RanFromCelebi
@@ -198,6 +200,16 @@ SeafoamIslands_B3F_EventScript_End::
 	fadescreen FADE_FROM_BLACK	
 	release
 	end
+
+SeafoamIslands_B3F_EventScript_Regice::
+	lock
+	faceplayer
+	msgbox SeafoamIslands_B3F_Text_Regice, MSGBOX_NPC
+	release
+	end
+
+SeafoamIslands_B3F_Text_Regice::
+	.string "REGICE!$"
 
 SeafoamIslands_B3F_Text_NoEligiblePkmn::
 	.string "You have not meet the requirements.\p"

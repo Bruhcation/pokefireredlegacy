@@ -65,635 +65,635 @@ FiveIsland_MemorialPillar_EventScript_Sudowoodo::
 # 33 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	lock
 # 34 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	faceplayer
+	waitse
 # 35 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitse
+	playse SE_UNLOCK
 # 36 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	playse SE_UNLOCK
-# 37 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShake
+# 37 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 38 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 39 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	checkitem ITEM_FRESH_WATER, 1
-# 40 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 39 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	compare VAR_RESULT, TRUE
-# 41 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 40 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq FiveIsland_MemorialPillar_EventScript_AskWaterSudowoodo
+# 41 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 42 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 43 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 44 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 45 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_AskWaterSudowoodo::
-# 46 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 45 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_UseFreshWater MSGBOX_YESNO
-# 47 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 46 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	compare VAR_RESULT, YES
-# 48 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 47 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq FiveIsland_MemorialPillar_EventScript_WaterSudowoodo
+# 48 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 49 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 50 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 51 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 52 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Text_UseFreshWater::
-# 53 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 52 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "It's a weird tree.\n"
-# 54 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 53 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "Water it with a FRESH WATER?$"
+# 54 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 55 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 56 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_WaterSudowoodo:: @ 8242CFC
+# 56 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	lock
 # 57 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	lock
+	faceplayer
 # 58 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	faceplayer
-# 59 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	removeitem ITEM_FRESH_WATER, 1
-# 60 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 59 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	playse SE_UNLOCK
+# 60 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
 # 61 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
+	waitmovement 0
 # 62 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
 # 63 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
+	waitmovement 0
 # 64 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 65 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
+# 65 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 66 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 67 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
+# 67 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	closemessage
 # 68 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	closemessage
+	waitse
 # 69 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitse
-# 70 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	playmoncry SPECIES_SUDOWOODO, 2
-# 71 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 70 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	delay 40
-# 72 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 71 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	waitmoncry
-# 73 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 72 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
-# 74 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 73 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setwildbattle SPECIES_SUDOWOODO, 50, ITEM_NONE
-# 75 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 74 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 76 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 75 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	dowildbattle
-# 77 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 76 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-# 78 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 77 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 79 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 78 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
-# 80 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 79 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq FiveIsland_MemorialPillar_EventScript_DefeatedSudowoodo
-# 81 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 80 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_RAN
+# 81 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	goto_if_eq FiveIsland_MemorialPillar_EventScript_RanFromSudowoodo
 # 82 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	goto_if_eq FiveIsland_MemorialPillar_EventScript_RanFromSudowoodo
-# 83 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-# 84 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 83 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq FiveIsland_MemorialPillar_EventScript_RanFromSudowoodo
-# 85 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 84 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_CAUGHT_SUDOWOODO
+# 85 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 86 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 87 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 88 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 89 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 gText_Sudowoodo_Attacked:: @ 82731BD
-# 90 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 89 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "The weird tree doesn't like the\n"
-# 91 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 90 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "FRESH WATER!\p"
-# 92 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 91 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "The weird tree attacked!$"
+# 92 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 93 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 94 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_DefeatedSudowoodo:: @ 8242D60
-# 95 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 94 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_DEFEATED_SUDOWOODO
-# 96 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 95 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto FiveIsland_MemorialPillar_EventScript_RanFromSudowoodo
+# 96 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	end
 # 97 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 98 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 99 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_RanFromSudowoodo::
+# 99 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	fadescreen FADE_TO_BLACK
 # 100 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 101 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     removeobject VAR_LAST_TALKED
-# 102 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 101 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     fadescreen FADE_FROM_BLACK
-# 103 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 102 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     msgbox Text_WeirdTreeFledSomewhere
-# 104 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 103 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     release
-# 105 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 104 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     end
+# 105 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 106 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 107 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 Text_WeirdTreeFledSomewhere::
-# 108 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 107 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "The weird tree fled elsewhere…$"
+# 108 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 109 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 110 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Movement_SudowoodoShake: @ 8242D69
+# 110 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	face_right
 # 111 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_right
+	delay_8
 # 112 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_down
 # 113 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_8
 # 114 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_left
 # 115 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_left
+	delay_8
 # 116 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_down
 # 117 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_8
 # 118 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_right
 # 119 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_right
+	delay_8
 # 120 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_down
 # 121 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_8
 # 122 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_8
+	face_left
 # 123 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_left
-# 124 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	delay_8
+# 124 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	face_down
 # 125 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	step_end
 # 126 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	step_end
+
 # 127 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 128 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry: @ 8242D69
+# 128 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	face_right
 # 129 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_right
+	delay_2
 # 130 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
+	face_down
 # 131 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_2
 # 132 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
+	face_left
 # 133 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_left
+	delay_2
 # 134 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
+	face_down
 # 135 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_2
 # 136 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
-# 137 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	face_right
+# 137 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	delay_2
 # 138 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
+	face_down
 # 139 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	face_down
+	delay_2
 # 140 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay_2
-# 141 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	face_left
-# 142 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 141 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	delay_2
-# 143 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 142 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	face_down
-# 144 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 143 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	step_end
+# 144 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 145 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 146 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_MemorialMan::
+# 146 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	lock
 # 147 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	lock
-# 148 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_GOT_TM42_AT_MEMORIAL_PILLAR, FiveIsland_MemorialPillar_EventScript_AlreadyGotTM42
-# 149 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 148 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_NO_ROOM_FOR_TM42_AT_MEMORIAL_PILLAR, FiveIsland_MemorialPillar_EventScript_ReturnedForTM42
-# 150 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 149 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_ScrubScrub
+# 150 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	closemessage
 # 151 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	closemessage
-# 152 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_MEMORIAL_MAN, Common_Movement_FacePlayer
+# 152 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 153 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
+	delay 45
 # 154 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	delay 45
-# 155 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_YourMonsLookHealthy
+# 155 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	applymovement LOCALID_MEMORIAL_MAN, Common_Movement_WalkInPlaceFasterUp
 # 156 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	applymovement LOCALID_MEMORIAL_MAN, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
 # 157 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 158 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_ThisIsWhereIBuriedMyOnix
+# 158 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 159 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 160 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 161 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 162 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_AlreadyGotTM42::
-# 163 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 162 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_ScrubScrubTectonix
+# 163 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 164 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 165 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 166 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 167 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_ReturnedForTM42::
-# 168 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 167 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_StillHaveThingAsMyThanks
+# 168 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	giveitem ITEM_LUCKY_EGG
 # 169 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	giveitem ITEM_LUCKY_EGG
+	goto_if_eq VAR_RESULT, FALSE, FiveIsland_MemorialPillar_EventScript_NoRoomForTM42
 # 170 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, FiveIsland_MemorialPillar_EventScript_NoRoomForTM42
+	call FiveIsland_MemorialPillar_EventScript_ReceivedTM42
 # 171 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	call FiveIsland_MemorialPillar_EventScript_ReceivedTM42
+	release
 # 172 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 173 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 174 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 175 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_Memorial::
-# 176 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 175 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_questlog EventScript_ReleaseEnd
-# 177 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 176 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	special QuestLog_CutRecording
-# 178 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 177 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	lockall
-# 179 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 178 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_GOT_TM42_AT_MEMORIAL_PILLAR, FiveIsland_MemorialPillar_EventScript_MemorialLemonadeAlreadyPlaced
-# 180 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 179 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_NO_ROOM_FOR_TM42_AT_MEMORIAL_PILLAR, FiveIsland_MemorialPillar_EventScript_MemorialLemonadeAlreadyPlaced
-# 181 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 180 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_HereLiesTectonixLemonadeOffering
-# 182 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 181 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	checkitem ITEM_LEMONADE
-# 183 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 182 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, FiveIsland_MemorialPillar_EventScript_AskPlaceLemonade
+# 183 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	releaseall
 # 184 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	releaseall
+	end
 # 185 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 186 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 187 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_AskPlaceLemonade::
-# 188 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 187 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_LeaveAnotherLemonadeOffering, MSGBOX_YESNO
-# 189 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 188 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq VAR_RESULT, YES, FiveIsland_MemorialPillar_EventScript_PlaceLemonade
+# 189 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	releaseall
 # 190 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	releaseall
+	end
 # 191 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 192 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 193 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_PlaceLemonade::
-# 194 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 193 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	removeitem ITEM_LEMONADE
-# 195 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 194 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_PlacedCanOfLemonade
-# 196 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 195 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	closemessage
-# 197 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 196 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_MEMORIAL_MAN, Common_Movement_WalkInPlaceFasterRight
+# 197 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 198 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 199 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	delay 45
-# 200 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 199 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+# 200 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 201 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 202 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	textcolor NPC_TEXT_COLOR_MALE
-# 203 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 202 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_ThankYouPleaseTakeThis
-# 204 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 203 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	giveitem ITEM_LUCKY_EGG
-# 205 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 204 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, FiveIsland_MemorialPillar_EventScript_NoRoomForTM42
-# 206 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 205 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	call FiveIsland_MemorialPillar_EventScript_ReceivedTM42
+# 206 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	releaseall
 # 207 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	releaseall
+	end
 # 208 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 209 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 210 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_ReceivedTM42::
-# 211 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 210 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_BeGoodToYourMonsToo
-# 212 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 211 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_MEMORIAL_MAN, Common_Movement_WalkInPlaceFasterUp
+# 212 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 213 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 214 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_GOT_TM42_AT_MEMORIAL_PILLAR
-# 215 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 214 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	return
+# 215 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 216 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 217 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_NoRoomForTM42::
-# 218 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 217 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_NO_ROOM_FOR_TM42_AT_MEMORIAL_PILLAR
-# 219 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 218 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_DontHaveRoomForIt
+# 219 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	releaseall
 # 220 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	releaseall
+	end
 # 221 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 222 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 223 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_MemorialLemonadeAlreadyPlaced::
-# 224 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 223 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_HereLiesTectonix
-# 225 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 224 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	releaseall
+# 225 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	end
 # 226 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 227 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 228 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_Oman::
-# 229 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 228 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	lock
-# 230 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 229 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	faceplayer
-# 231 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 230 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_OMAN_DEFEATED, FiveIsland_MemorialPillar_EventScript_RematchOman
-# 232 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 231 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_Oman, MSGBOX_YESNO
+# 232 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, FiveIsland_MemorialPillar_EventScript_NoOman
 # 233 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, FiveIsland_MemorialPillar_EventScript_NoOman
-# 234 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	trainerbattle_single TRAINER_OMAN, FiveIsland_MemorialPillar_Text_YesOman, FiveIsland_MemorialPillar_Text_OmanDefeat, FiveIsland_MemorialPillar_EventScript_PostOman, NO_MUSIC
+# 234 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 235 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 236 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 237 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 238 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_PostOman::
+# 238 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	msgbox FiveIsland_MemorialPillar_Text_OmanPostBattle
 # 239 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	msgbox FiveIsland_MemorialPillar_Text_OmanPostBattle
-# 240 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_OMAN_DEFEATED
+# 240 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	cleartrainerflag TRAINER_OMAN
 # 241 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	cleartrainerflag TRAINER_OMAN
+	release
 # 242 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 243 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 244 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 245 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_CantRematchOman::
-# 246 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 245 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_OmanPostBattle
+# 246 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 247 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 248 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 249 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 250 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_NoOman::
-# 251 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 250 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_NoOman
+# 251 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 252 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 253 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 254 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 255 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_RematchOman::
-# 256 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 255 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_RematchOman, MSGBOX_YESNO
-# 257 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 256 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FiveIsland_MemorialPillar_EventScript_NoOman
-# 258 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 257 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	trainerbattle_single TRAINER_OMAN, FiveIsland_MemorialPillar_Text_YesRematchOman, FiveIsland_MemorialPillar_Text_RematchOmanDefeat, FiveIsland_MemorialPillar_EventScript_PostRematchOman, NO_MUSIC
+# 258 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 259 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 260 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 261 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 262 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_PostRematchOman::
-# 263 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 262 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_RematchOmanDefeat
-# 264 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 263 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	cleartrainerflag TRAINER_OMAN
-# 265 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 264 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	message Text_6Leaders
+# 265 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 266 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 267 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 268 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 269 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_CelebiQuest::
-# 270 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 269 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	goto_if_set FLAG_OLD_LEAD, FiveIsland_MemorialPillar_EventScript_CelebiQuest3
-# 271 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 270 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	special CheckGotAllItems
-# 272 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 271 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	call_if_eq VAR_RESULT, TRUE, FiveIsland_MemorialPillar_EventScript_CelebiQuest2	
-# 273 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 272 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_CelebiQuest, MSGBOX_NPC
+# 273 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 274 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 275 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 276 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 277 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_CelebiQuest2::
-# 278 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 277 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_SPAWN_CELEBI
-# 279 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 278 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	clearflag FLAG_CELEBI_EVENT
-# 280 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 279 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_CELEBI, FiveIsland_MemorialPillar_Movement_Celebi
+# 280 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 281 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
+	waitse
 # 282 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitse
-# 283 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	playse SE_PIN
-# 284 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 283 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_OLD_LADY, Common_Movement_FaceUp
-# 285 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 284 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 285 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	waitmovement 0
 # 286 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	waitmovement 0
-# 287 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	waitse
-# 288 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 287 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
-# 289 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 288 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_CelebiQuest2
-# 290 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 289 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	waitmovement 0
-# 291 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 290 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_CELEBI_EVENT
-# 292 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 291 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 293 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 292 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	removeobject 8
-# 294 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 293 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 295 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 294 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	setflag FLAG_OLD_LEAD
+# 295 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 296 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 297 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 298 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 299 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_CelebiQuest3::
-# 300 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 299 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_CelebiQuest3, MSGBOX_NPC
+# 300 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	release
 # 301 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	release
+	end
 # 302 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	end
+
 # 303 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 304 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_EventScript_Frog::
-# 305 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 304 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	msgbox FiveIsland_MemorialPillar_Text_Frog, MSGBOX_NPC
-# 306 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 305 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	release
-# 307 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 306 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	end
+# 307 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 308 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 309 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Text_CelebiQuest::
-# 310 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 309 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "Once a lonely ONIX pined\n"
-# 311 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 310 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "for a friend to join him\l"
-# 312 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 311 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "by his side.\p"
-# 313 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 312 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "Then SQUIRTLE swam unto his shore\n"
-# 314 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 313 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "and forged a bond forevermore.\p"
-# 315 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 314 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "To the FOREST of BERRIES\n"
-# 316 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 315 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "they made their way\l"
-# 317 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 316 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "and found more friends\l"
-# 318 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 317 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "with whom to play…\p"
-# 319 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 318 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "MEOWTH, NATU, LARVITAR,\n"
-# 320 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 319 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "DELIBIRD and CHARMANDER.\p"
-# 321 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 320 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "But then time fell upon the eve…\n"
-# 322 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 321 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "With regret, they all did leave.\p"
-# 323 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 322 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "LARVITAR left for the\n"
-# 324 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 323 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "canyon's peak…\p"
-# 325 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 324 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "MEOWTH headed to the\n"
-# 326 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 325 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "golden beach…\p"
-# 327 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 326 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "CHARMANDER to the mountain\n"
-# 328 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 327 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "of embers…\p"
-# 329 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 328 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "DELIBIRD down the ice cellar…\p"
-# 330 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 329 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "NATU to its puzzled hole…\p"
-# 331 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 330 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "SQUIRTLE beneath the fallen waves…\p"
-# 332 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 331 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "And ONIX to its island home,\n"
-# 333 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 332 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "once again left all alone.\p"
-# 334 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 333 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "Flowers, rocks, and One toe marks,\n"
-# 335 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 334 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "all decorate their homes.$"
-# 336 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 335 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "Should these friends again convene,\n"
-# 337 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 336 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "they'll be welcomed by\l"
-# 338 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 337 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	.string "the fey of green.$"
+# 338 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 339 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 340 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Text_CelebiQuest2::
-# 341 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 340 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "Lululalala!$"
+# 341 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+
 # 342 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-
-# 343 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Text_CelebiQuest3::
-# 344 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 343 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "What was that green thing?\p"
-# 345 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 344 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "It seemed like something?\n"
-# 346 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 345 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
     .string "Out of Berry Forest1$"
-# 347 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 346 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 
-# 348 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+# 347 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 FiveIsland_MemorialPillar_Movement_Celebi::
+# 348 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
+	walk_down
 # 349 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	walk_down
 # 350 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
@@ -703,6 +703,4 @@ FiveIsland_MemorialPillar_Movement_Celebi::
 # 352 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	walk_down
 # 353 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	walk_down
-# 354 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	step_end

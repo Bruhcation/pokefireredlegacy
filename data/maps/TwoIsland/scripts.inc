@@ -564,3 +564,39 @@ TwoIsland_Text_CaveSign::
 	.string "Beware of Dark Caves, Holes, and\n"
 # 283 "data/maps/TwoIsland/scripts.pory"
 	.string "High Currents!$"
+# 284 "data/maps/TwoIsland/scripts.pory"
+
+# 285 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_EventScript_ClerkMeowth::
+# 286 "data/maps/TwoIsland/scripts.pory"
+	lock
+# 287 "data/maps/TwoIsland/scripts.pory"
+	faceplayer
+# 288 "data/maps/TwoIsland/scripts.pory"
+	playmoncry SPECIES_MEOWTH, 0
+# 289 "data/maps/TwoIsland/scripts.pory"
+	msgbox TwoIsland_Text_ClerkMeowth
+# 290 "data/maps/TwoIsland/scripts.pory"
+	waitmoncry
+# 291 "data/maps/TwoIsland/scripts.pory"
+	release
+# 292 "data/maps/TwoIsland/scripts.pory"
+	end
+# 293 "data/maps/TwoIsland/scripts.pory"
+
+# 294 "data/maps/TwoIsland/scripts.pory"
+TwoIsland_EventScript_HaveYouTriedJumpingGameEevee::
+# 295 "data/maps/TwoIsland/scripts.pory"
+	lock
+# 296 "data/maps/TwoIsland/scripts.pory"
+	faceplayer
+# 297 "data/maps/TwoIsland/scripts.pory"
+	playmoncry SPECIES_EEVEE, 0
+# 298 "data/maps/TwoIsland/scripts.pory"
+	msgbox TwoIsland_Text_HaveYouTriedJumpingGameEevee
+# 299 "data/maps/TwoIsland/scripts.pory"
+	waitmoncry
+# 300 "data/maps/TwoIsland/scripts.pory"
+	release
+# 301 "data/maps/TwoIsland/scripts.pory"
+	end

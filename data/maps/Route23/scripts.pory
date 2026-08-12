@@ -7,6 +7,7 @@ raw `
 .set LOCALID_VOLCANO_BADGE_GUARD, 6
 .set LOCALID_EARTH_BADGE_GUARD,   7
 .set LOCALID_MIRAGE, 10
+.set LOCALID_RAYQUAZA, 11
 
 Route23_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route23_OnTransition
@@ -203,17 +204,17 @@ Route23_EventScript_Flag::
 	end
 
 Route23_EventScript_Orbing::
-	msgbox Route23_Text_Whitney, MSGBOX_YESNO
+	msgbox Route23_Text_Dragon, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, Route23_EventScript_NoWhitney
-	trainerbattle_single TRAINER_AQUA_LEADER, Route23_Text_YesWhitney, Route23_Text_PostWhitney, Route23_EventScript_PostWhitney, NO_MUSIC
+	goto_if_eq VAR_RESULT, NO, Route23_EventScript_NoDragon
+	trainerbattle_single TRAINER_AQUA_LEADER, Route23_Text_YesDragon, Route23_Text_PostDragon, Route23_EventScript_PostDragon, NO_MUSIC
 	release
 	end
 
-Route23_EventScript_PostWhitney::
+Route23_EventScript_PostDragon::
 	special HealPlayerParty
-	msgbox Route23_Text_WhitneyPostBattle
+	msgbox Route23_Text_DragonPostBattle
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording
 	lock
@@ -230,13 +231,14 @@ Route23_EventScript_PostWhitney::
 	special StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	removeobject LOCALID_RAYQUAZA
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_DefeatedCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route23_EventScript_RanFromCelebi
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route23_EventScript_RanFromCelebi
 	setflag FLAG_CAUGHT_RAYQUAZA
 	clearflag FLAG_DRAGON_TRAINER
-	msgbox Route23_Text_EndWhitney
+	msgbox Route23_Text_EndDragon
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -247,7 +249,7 @@ Route23_EventScript_PostWhitney::
 Route23_EventScript_DefeatedCelebi::
 	setflag FLAG_CAUGHT_RAYQUAZA
 	clearflag FLAG_DRAGON_TRAINER
-	msgbox Route23_Text_EndWhitney
+	msgbox Route23_Text_EndDragon
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -258,7 +260,7 @@ Route23_EventScript_DefeatedCelebi::
 Route23_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_RAYQUAZA
 	clearflag FLAG_DRAGON_TRAINER
-	msgbox Route23_Text_EndWhitney
+	msgbox Route23_Text_EndDragon
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
@@ -266,20 +268,30 @@ Route23_EventScript_RanFromCelebi::
 	goto EventScript_MonFlewAway
 	end
 
-Route23_EventScript_NoWhitney::
-	msgbox Route23_Text_NoWhitney
+Route23_EventScript_NoDragon::
+	msgbox Route23_Text_NoDragon
 	release
 	end
 
 Route23_EventScript_End::
 	clearflag FLAG_DRAGON_TRAINER
-	msgbox Route23_Text_EndWhitney
+	msgbox Route23_Text_EndDragon
 	waitmessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MIRAGE
 	fadescreen FADE_FROM_BLACK	
 	release
 	end
+
+Route23_EventScript_Rayquaza::
+	lock
+	faceplayer
+	msgbox Route23_Text_Rayquaza, MSGBOX_NPC
+	release
+	end
+
+Route23_Text_Rayquaza::
+	.string "RAY!!!$"
 
 Route23_Text_NoEligiblePkmn::
 	.string "You have not meet the requirements.\p"
@@ -294,23 +306,23 @@ Route23_Text_RegiceCheck::
 	.string "BLUE ORB and RED ORB,\l"
 	.string "and knowledge on the Master of Dragons.$"
 
-Route23_Text_Whitney::
+Route23_Text_Dragon::
 	.string "So, you wish to face me?$"
 
-Route23_Text_YesWhitney::
+Route23_Text_YesDragon::
 	.string "Very well! Prepare yourself!$"
 
-Route23_Text_PostWhitney::
+Route23_Text_PostDragon::
 	.string "So you are worthy...$"
 
-Route23_Text_WhitneyPostBattle::
+Route23_Text_DragonPostBattle::
 	.string "Alright, you have bested me.\p"
 	.string "Be prepared to face RAYQUAZA!$"
 
-Route23_Text_EndWhitney::
+Route23_Text_EndDragon::
 	.string "Goodbye.$"
 
-Route23_Text_NoWhitney::
+Route23_Text_NoDragon::
 	.string "Alright, take your time.$"
 
 `

@@ -519,17 +519,17 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
 # 260 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	delay 40
 # 261 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_Whitney, MSGBOX_YESNO
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_Mirage, MSGBOX_YESNO
 # 262 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	closemessage
 # 263 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	delay 40
 # 264 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage
 # 265 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	setvar VAR_FORCEANIM, 1
 # 266 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesWhitney, SixIsland_DottedHole_SapphireRoom_Text_PostWhitney, SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
 # 267 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	release
 # 268 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -537,11 +537,11 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
 # 269 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 270 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
+SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage::
 # 271 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	setvar VAR_FORCEANIM, 0
 # 272 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_MiragePostBattle
 # 273 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	setflag FLAG_RE_DEFEATED
 # 274 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -569,9 +569,9 @@ SixIsland_DottedHole_SapphireRoom_EventScript_PostWhitney::
 # 285 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 286 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_EventScript_NoWhitney::
+SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage::
 # 287 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	msgbox SixIsland_DottedHole_SapphireRoom_Text_NoWhitney
+	msgbox SixIsland_DottedHole_SapphireRoom_Text_NoMirage
 # 288 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	release
 # 289 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -609,7 +609,7 @@ SixIsland_DottedHole_SapphireRoom_Text_Notice::
 # 305 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 306 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_Text_Whitney::
+SixIsland_DottedHole_SapphireRoom_Text_Mirage::
 # 307 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	.string "Do you wish to battle.\n"
 # 308 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -619,7 +619,7 @@ SixIsland_DottedHole_SapphireRoom_Text_Whitney::
 # 310 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 311 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_Text_NoWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_NoMirage::
 # 312 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	.string "Guess you need more\n"
 # 313 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -629,7 +629,7 @@ SixIsland_DottedHole_SapphireRoom_Text_NoWhitney::
 # 315 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 316 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_Text_PostWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_PostMirage::
 # 317 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	.string "Wow! What a amazing battle!\n"
 # 318 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -657,7 +657,7 @@ SixIsland_DottedHole_SapphireRoom_Text_Orbing::
 # 329 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 330 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_Text_YesWhitney::
+SixIsland_DottedHole_SapphireRoom_Text_YesMirage::
 # 331 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	.string "Alright.\n"
 # 332 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
@@ -669,7 +669,7 @@ SixIsland_DottedHole_SapphireRoom_Text_YesWhitney::
 # 335 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 
 # 336 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-SixIsland_DottedHole_SapphireRoom_Text_WhitneyPostBattle::
+SixIsland_DottedHole_SapphireRoom_Text_MiragePostBattle::
 # 337 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	.string "Ok, guess I gotta give\n"
 # 338 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"

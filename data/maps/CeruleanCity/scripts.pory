@@ -391,6 +391,20 @@ CeruleanCity_EventScript_BikeShopSign::
 	msgbox CeruleanCity_Text_BikeShopSign, MSGBOX_SIGN
 	end
 
+
+CeruleanCity_EventScript_CuteOddishGirl::
+	msgbox CeruleanCity_Text_CuteOddishGirl, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_Oddish::
+	lock
+	faceplayer
+	playmoncry SPECIES_ODDISH, 0
+	msgbox CeruleanCity_Text_Oddish
+	waitmoncry
+	release
+	end
+
 CeruleanCity_EventScript_GymSign::
 	lockall
 	famechecker FAMECHECKER_MISTY, 0

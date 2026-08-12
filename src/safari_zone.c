@@ -32,6 +32,14 @@ void EnterSafariMode(void)
     gSafariZoneStepCounter = 600;
 }
 
+void EnterSafariModePoor(void)
+{
+    IncrementGameStat(GAME_STAT_ENTERED_SAFARI_ZONE);
+    SetSafariZoneFlag();
+    gNumSafariBalls = 1;
+    gSafariZoneStepCounter = 600;
+}
+
 void ExitSafariMode(void)
 {
     ResetSafariZoneFlag();

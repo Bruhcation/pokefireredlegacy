@@ -80,3 +80,9 @@ CeladonCity_DepartmentStore_Roof_Text_NoMoreRoomForStuff::
 CeladonCity_DepartmentStore_Roof_Text_NotThirsty::
     .string "Not thirsty!$"
 
+CeladonCity_DepartmentStore_Roof_Text_Feeding::
+	.string "I enjoy feeding the birds!$"
+
+CeladonCity_DepartmentStore_Roof_Text_FeedingPidgey::
+	.string "PIDGEY: Pohpohpoh!$"
+
