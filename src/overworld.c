@@ -1948,7 +1948,7 @@ static bool32 ReturnToFieldLocal(u8 *state)
         if (gFieldCallback == FieldCallback_Fly)
             RemoveFollowingPokemon();
         else
-            UpdateFollowingPokemon();
+            RemoveFollowingPokemon();
         SetCameraToTrackPlayer();
         (*state)++;
         break;
@@ -2149,7 +2149,7 @@ static void InitObjectEventsLocal(void)
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
-    UpdateFollowingPokemon();
+    RemoveFollowingPokemon();
     TryRunOnWarpIntoMapScript();
 }
 
