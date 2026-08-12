@@ -193,13 +193,25 @@
 #define OBJ_EVENT_GFX_VENUSAUR 188
 #define OBJ_EVENT_GFX_SUDOWOODO 189
 #define OBJ_EVENT_GFX_HEX_MANIAC 190
-#define NUM_OBJ_EVENT_GFX 191
+#define OBJ_EVENT_GFX_POKE_BALL OBJ_EVENT_GFX_ITEM_BALL // replaces ITEM_BALL
+#define OBJ_EVENT_GFX_OW_MON 191
+
+// NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 191.
+//
+// Object event graphics ids are 1 byte in size (max value of 255), and the dynamic
+// graphics ids that start after NUM_OBJ_EVENT_GFX reach this limit. No graphics id
+// uses the value 239 itself, so removing the "+ 1" in OBJ_EVENT_GFX_VARS would
+// allow increasing NUM_OBJ_EVENT_GFX to 240. There are also a handful of unused
+// object graphics that can be removed. If more graphics are needed, anything that
+// stores graphics ids will need to be increased in size. See wiki entry below:
+// https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
+#define NUM_OBJ_EVENT_GFX                        239
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
 // More info about them in include/constants/vars.h
-#define OBJ_EVENT_GFX_VARS   240
-#define OBJ_EVENT_GFX_VAR_0  (OBJ_EVENT_GFX_VARS + 0x0) // 240
+#define OBJ_EVENT_GFX_VARS   NUM_OBJ_EVENT_GFX
+#define OBJ_EVENT_GFX_VAR_0  (OBJ_EVENT_GFX_VARS + 0x0)
 #define OBJ_EVENT_GFX_VAR_1  (OBJ_EVENT_GFX_VARS + 0x1)
 #define OBJ_EVENT_GFX_VAR_2  (OBJ_EVENT_GFX_VARS + 0x2)
 #define OBJ_EVENT_GFX_VAR_3  (OBJ_EVENT_GFX_VARS + 0x3)
@@ -214,12 +226,77 @@
 #define OBJ_EVENT_GFX_VAR_C  (OBJ_EVENT_GFX_VARS + 0xC)
 #define OBJ_EVENT_GFX_VAR_D  (OBJ_EVENT_GFX_VARS + 0xD)
 #define OBJ_EVENT_GFX_VAR_E  (OBJ_EVENT_GFX_VARS + 0xE)
-#define OBJ_EVENT_GFX_VAR_F  (OBJ_EVENT_GFX_VARS + 0xF) // 255
+#define OBJ_EVENT_GFX_VAR_F  (OBJ_EVENT_GFX_VARS + 0xF)
+
+#define OBJ_EVENT_GFX_MON_BASE  0x200 // 512
+#define OBJ_EVENT_GFX_SPECIES_BITS 11
+#define OBJ_EVENT_GFX_SPECIES_MASK ((1 << OBJ_EVENT_GFX_SPECIES_BITS) - 1)
+// Compatibility macro used by older save/load code for mon-backed object events.
+#define OBJ_EVENT_MON OBJ_EVENT_GFX_MON_BASE
+
+// Used to call a specific species' follower graphics. Useful for static encounters.
+#define OBJ_EVENT_GFX_SPECIES(name)       (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE)
+#define OBJ_EVENT_GFX_SPECIES_SHINY(name) (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+
+#define OW_SPECIES(x) (((x)->graphicsId & OBJ_EVENT_GFX_SPECIES_MASK) - OBJ_EVENT_GFX_MON_BASE)
+#define OW_FORM(x) ((x)->graphicsId >> OBJ_EVENT_GFX_SPECIES_BITS)
+
+// Whether Object Event is an OW pokemon
+#define IS_OW_MON_OBJ(obj) ((obj)->graphicsId >= OBJ_EVENT_GFX_MON_BASE)
+
+// If true, follower pokemon will bob up and down
+// during their idle & walking animations
+#define OW_MON_BOBBING  TRUE
+// If true, OW pokemon with `MOVEMENT_TYPE_WANDER*`
+// will walk-in-place in between steps
+#define OW_MON_WANDER_WALK TRUE
+
+// If true, adds a small amount of overhead
+// to OW code so that large (48x48, 64x64) OWs
+// will display correctly under bridges, etc.
+#define LARGE_OW_SUPPORT TRUE
+
+// See global.h for the toggle of OW_GFX_COMPRESS
+// Compressed gfx are incompatible with non-power-of-two sprite sizes:
+// (You should not use 48x48 sprites/tables for compressed gfx)
+// 16x32, 32x32, 64x64 etc are fine
+
+// Followers will emerge from the pokeball they are stored in,
+// instead of a normal pokeball
+#define OW_MON_POKEBALLS TRUE
+
+// New/old handling for followers during scripts;
+// TRUE: Script collisions hide follower, FLAG_SAFE_FOLLOWER_MOVEMENT on by default
+// (scripted player movement moves follower too!)
+// FALSE: Script collisions unhandled, FLAG_SAFE_FOLLOWER_MOVEMENT off by default
+#define OW_MON_SCRIPT_MOVEMENT TRUE
+
+// If set, the only pokemon allowed to follow you
+// will be those matching species, met location,
+// and/or met level;
+// These accept vars, too: VAR_TEMP_1, etc
+#define OW_MON_ALLOWED_SPECIES (0)
+#define OW_MON_ALLOWED_MET_LVL (0)
+#define OW_MON_ALLOWED_MET_LOC (0)
+// Examples:
+// Yellow Pikachu:
+// #define OW_MON_ALLOWED_SPECIES (SPECIES_PIKACHU)
+// #define OW_MON_ALLOWED_MET_LVL (0)
+// #define OW_MON_ALLOWED_MET_LOC (MAPSEC_PALLET_TOWN)
+// Hoenn Starter:
+// #define OW_MON_ALLOWED_SPECIES (0)
+// #define OW_MON_ALLOWED_MET_LVL (5)
+// #define OW_MON_ALLOWED_MET_LOC (MAPSEC_ROUTE_101)
+// Species set in VAR_XXXX:
+// #define OW_MON_ALLOWED_SPECIES (VAR_XXXX)
+// #define OW_MON_ALLOWED_MET_LVL (0)
+// #define OW_MON_ALLOWED_MET_LOC (0)
 
 #define SHADOW_SIZE_S   0
 #define SHADOW_SIZE_M   1
 #define SHADOW_SIZE_L   2
-#define SHADOW_SIZE_XL  3
+#define SHADOW_SIZE_XL  3 // unused; repurposed to mean no shadow
+#define SHADOW_SIZE_NONE 3
 
 #define F_INANIMATE                        (1 << 6)
 #define F_DISABLE_REFLECTION_PALETTE_LOAD  (1 << 7)
@@ -227,13 +304,17 @@
 #define TRACKS_NONE       0
 #define TRACKS_FOOT       1
 #define TRACKS_BIKE_TIRE  2
+#define TRACKS_SLITHER    3
+#define TRACKS_SPOT       4
+#define TRACKS_BUG        5
 
 #define OBJ_KIND_NORMAL 0
 #define OBJ_KIND_CLONE  255
 
 // Special object event local ids
-#define OBJ_EVENT_ID_PLAYER  0xFF
-#define OBJ_EVENT_ID_CAMERA  0x7F
+#define OBJ_EVENT_ID_PLAYER   0xFF
+#define OBJ_EVENT_ID_CAMERA   0x7F
+#define OBJ_EVENT_ID_FOLLOWER 0xFE
 
 // Object event local ids referenced in C files
 #define LOCALID_UNION_ROOM_PLAYER_4 2
@@ -244,5 +325,51 @@
 #define LOCALID_UNION_ROOM_PLAYER_3 7
 #define LOCALID_UNION_ROOM_PLAYER_2 8
 #define LOCALID_UNION_ROOM_PLAYER_1 9
+
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 	  0x1132
+#define OBJ_EVENT_PAL_TAG_CASTFORM_SUNNY          	  0x1133
+#define OBJ_EVENT_PAL_TAG_CASTFORM_RAINY          	  0x1134
+#define OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY          	  0x1135
+#if OW_MON_POKEBALLS
+// Vanilla
+#define OBJ_EVENT_PAL_TAG_BALL_MASTER             	  0x1150
+#define OBJ_EVENT_PAL_TAG_BALL_ULTRA              	  0x1151
+#define OBJ_EVENT_PAL_TAG_BALL_GREAT              	  0x1152
+#define OBJ_EVENT_PAL_TAG_BALL_SAFARI             	  0x1153
+#define OBJ_EVENT_PAL_TAG_BALL_NET                	  0x1154
+#define OBJ_EVENT_PAL_TAG_BALL_DIVE               	  0x1155
+#define OBJ_EVENT_PAL_TAG_BALL_NEST               	  0x1156
+#define OBJ_EVENT_PAL_TAG_BALL_REPEAT             	  0x1157
+#define OBJ_EVENT_PAL_TAG_BALL_TIMER              	  0x1158
+#define OBJ_EVENT_PAL_TAG_BALL_LUXURY             	  0x1159
+#define OBJ_EVENT_PAL_TAG_BALL_PREMIER            	  0x115A
+// Gen IV/Sinnoh
+#define OBJ_EVENT_PAL_TAG_BALL_DUSK               	  0x115B
+#define OBJ_EVENT_PAL_TAG_BALL_HEAL               	  0x115C
+#define OBJ_EVENT_PAL_TAG_BALL_QUICK              	  0x115D
+#define OBJ_EVENT_PAL_TAG_BALL_CHERISH            	  0x115E
+#define OBJ_EVENT_PAL_TAG_BALL_PARK               	  0x115F
+// Gen II/Johto Apricorns
+#define OBJ_EVENT_PAL_TAG_BALL_FAST               	  0x1160
+#define OBJ_EVENT_PAL_TAG_BALL_LEVEL              	  0x1161
+#define OBJ_EVENT_PAL_TAG_BALL_LURE               	  0x1162
+#define OBJ_EVENT_PAL_TAG_BALL_HEAVY              	  0x1163
+#define OBJ_EVENT_PAL_TAG_BALL_LOVE               	  0x1164
+#define OBJ_EVENT_PAL_TAG_BALL_FRIEND             	  0x1165
+#define OBJ_EVENT_PAL_TAG_BALL_MOON               	  0x1166
+#define OBJ_EVENT_PAL_TAG_BALL_SPORT              	  0x1167
+// Gen V
+#define OBJ_EVENT_PAL_TAG_BALL_DREAM              	  0x1168
+// Gen VII
+#define OBJ_EVENT_PAL_TAG_BALL_BEAST              	  0x1169
+// Gen VIII
+#define OBJ_EVENT_PAL_TAG_BALL_STRANGE            	  0x116A
+#endif
+// Used as a placeholder follower graphic
+#define OBJ_EVENT_PAL_TAG_SUBSTITUTE              	  0x7611
+#define OBJ_EVENT_PAL_TAG_EMOTES                  	  0x8002
+// Not a real OW palette tag; used for the white flash applied to followers
+#define OBJ_EVENT_PAL_TAG_WHITE                   	  (OBJ_EVENT_PAL_TAG_NONE - 1)
+#define OBJ_EVENT_PAL_TAG_NONE 						  0x11FF
 
 #endif // GUARD_CONSTANTS_EVENT_OBJECTS_H

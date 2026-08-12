@@ -60,4 +60,17 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_NONE
 	release
 	end
+
+CeladonCity_EventScript_MatchingOutfits::
+	msgbox CeladonCity_Text_MatchingOutfits, MSGBOX_NPC
+	end
+
+CeladonCity_EventScript_MatchingOutfitsGloom::
+	lock
+	faceplayer
+	playmoncry SPECIES_GLOOM, 0
+	msgbox CeladonCity_Text_MatchingOutfitsGloom
+	waitmoncry
+	release
+	end
 `

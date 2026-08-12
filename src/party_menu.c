@@ -11,6 +11,7 @@
 #include "decompress.h"
 #include "easy_chat.h"
 #include "event_data.h"
+#include "event_object_movement.h"
 #include "evolution_scene.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
@@ -263,8 +264,8 @@ static bool16 IsMonAllowedInDodrioBerryPicking(struct Pokemon *mon);
 static void Task_CancelParticipationYesNo(u8 taskId);
 static void Task_HandleCancelParticipationYesNoInput(u8 taskId);
 static void Task_TryCreateSelectionWindow(u8 taskId);
-static u16 GetTutorMove(u8 tutor);
-static bool8 CanLearnTutorMove(u16 species, u8 tutor);
+u16 GetTutorMove(u8 tutor);
+bool8 CanLearnTutorMove(u16 species, u8 tutor);
 static void CreateSelectionWindow(void);
 static bool8 ShouldUseChooseMonText(void);
 static void UpdatePartyMonHPBar(u8 spriteId, struct Pokemon *mon);
@@ -404,6 +405,8 @@ static bool8 MonCanEvolve(void);
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType);
 static void ItemEffectToStatString(u8 effectType, u8 *dest);
 static void Task_WaitRareCandyMessage(u8 taskId);
+static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move);
+static bool8 IsFieldMoveTriggeredFromOverworld(u16 move);
 
 
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
@@ -1144,6 +1147,9 @@ void Task_HandleChooseMonInput(u8 taskId)
                 MoveCursorToConfirm();
             }
             break;
+		case 9:
+            DestroyTask(taskId);
+            break;
         }
     }
 }
@@ -1304,6 +1310,7 @@ static void Task_HandleCancelChooseMonYesNoInput(u8 taskId)
 static u16 PartyMenuButtonHandler(s8 *slotPtr)
 {
     s8 movementDir;
+	u8 taskId;
 
     switch (gMain.newAndRepeatedKeys)
     {
@@ -1336,6 +1343,19 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
     }
     if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
+	if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() > 1)
+    {
+        if(gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
+            return START_BUTTON;
+        if(*slotPtr == PARTY_SIZE + 1)
+            return START_BUTTON; // do nothing if select is pressed on Cancel
+        if(gPartyMenu.action != PARTY_ACTION_SWITCH)
+        {
+            taskId = CreateTask(CursorCB_Switch, 1);
+            return 9;
+        }
+        return 1; //select acts as A button when in switch mode
+    }
     if (movementDir)
     {
         UpdateCurrentPartySelection(slotPtr, movementDir);
@@ -1896,7 +1916,7 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
         return CAN_LEARN_MOVE;
 }
 
-static u16 GetTutorMove(u8 tutor)
+u16 GetTutorMove(u8 tutor)
 {
     switch (tutor)
     {
@@ -1911,7 +1931,7 @@ static u16 GetTutorMove(u8 tutor)
     }
 }
 
-static bool8 CanLearnTutorMove(u16 species, u8 tutor)
+bool8 CanLearnTutorMove(u16 species, u8 tutor)
 {
     switch (tutor)
     {
@@ -1931,7 +1951,7 @@ static bool8 CanLearnTutorMove(u16 species, u8 tutor)
         else
             return FALSE;
     default:
-        if (sTutorLearnsets[species] & (1 << tutor))
+        if (sTutorLearnsets[species] & ((u64) 1 << tutor))
             return TRUE;
         else
             return FALSE;
@@ -2976,21 +2996,118 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
+// Returns the CanMonLearnTMHM() "tm" index for the given HM move, or 0xFF if it's not
+// one of the 7 badge-gated HMs (i.e. it's Teleport/Dig/Milk Drink/Soft-Boiled/Sweet Scent,
+// which the FIELD MOVES hack option intentionally does not apply to).
+u8 GetFieldMoveHmIndex(u16 move)
+{
+    switch (move)
+    {
+    case MOVE_CUT:        return ITEM_HM01_CUT - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_FLY:         return ITEM_HM02_FLY - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_SURF:        return ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_STRENGTH:    return ITEM_HM04_STRENGTH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_FLASH:       return ITEM_HM05_FLASH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_ROCK_SMASH:  return ITEM_HM06_ROCK_SMASH - ITEM_TM01_FOCUS_PUNCH;
+    case MOVE_WATERFALL:   return ITEM_HM07_WATERFALL - ITEM_TM01_FOCUS_PUNCH;
+    default:               return 0xFF;
+    }
+}
+
+// Cut/Strength/Surf/Rock Smash/Waterfall can be triggered directly from the overworld
+// (checkpartymove / PartyHasMonWithSurf), so the FIELD MOVES option intentionally does NOT
+// list them here via the can-learn bypass - only via genuinely knowing them.
+static bool8 IsFieldMoveTriggeredFromOverworld(u16 move)
+{
+    switch (move)
+    {
+    case MOVE_CUT:
+    case MOVE_STRENGTH:
+    case MOVE_SURF:
+    case MOVE_ROCK_SMASH:
+    case MOVE_WATERFALL:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+// Checks whether a species could ever learn this field move, regardless of how it's taught:
+// HM (Flash/Fly), TM (Dig), or level-up only (Teleport/Sweet Scent/Milk Drink/Soft-Boiled).
+static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move)
+{
+    u8 hmIndex = GetFieldMoveHmIndex(move);
+    int i;
+
+    if (hmIndex != 0xFF)
+        return CanMonLearnTMHM(mon, hmIndex) != 0;
+
+    if (move == MOVE_DIG)
+        return CanMonLearnTMHM(mon, ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH) != 0;
+
+    for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
+    {
+        if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == move)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    u16 knownMovesMask = 0;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SUMMARY);
 
-    for (i = 0; i < MAX_MON_MOVES; ++i)
+    // Pass 1: moves the mon actually knows always get shown (can never exceed MAX_MON_MOVES).
+    // Remembers which sFieldMoves indices matched so Pass 2 never has to re-scan the moveset.
+    for (j = 0; sFieldMoves[j] != FIELD_MOVE_END; ++j)
     {
-        for (j = 0; sFieldMoves[j] != FIELD_MOVE_END; ++j)
+        for (i = 0; i < MAX_MON_MOVES; ++i)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
+                knownMovesMask |= 1 << j;
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
                 break;
+            }
+        }
+    }
+
+    // Pass 2: fill any remaining slots with can-learn (but not known, and not overworld-triggered) moves
+    if (!gSaveBlock2Ptr->optionsFieldMoveLearnset)
+    {
+        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, NULL);
+        if (species != SPECIES_EGG)
+        {
+            for (j = 0; sFieldMoves[j] != FIELD_MOVE_END && sPartyMenuInternal->numActions < 1 + MAX_MON_MOVES; ++j)
+            {
+                if (!(knownMovesMask & (1 << j)) && !IsFieldMoveTriggeredFromOverworld(sFieldMoves[j]))
+                {
+                    u8 hmIndex = GetFieldMoveHmIndex(sFieldMoves[j]);
+
+                    // All field moves before WATERFALL are HMs and require their badge (matches
+                    // the same check used when the move is actually selected/used).
+                    if (j <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + j) != TRUE)
+                        continue;
+
+                    // Must actually own the TM/HM that teaches this move
+                    if (hmIndex != 0xFF)
+                    {
+                        if (!CheckBagHasItem(hmIndex + ITEM_TM01_FOCUS_PUNCH, 1))
+                            continue;
+                    }
+                    else if (sFieldMoves[j] == MOVE_DIG)
+                    {
+                        if (!CheckBagHasItem(ITEM_TM28_DIG, 1))
+                            continue;
+                    }
+
+                    if (CanMonLearnFieldMove(&mons[slotId], species, sFieldMoves[j]))
+                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+                }
             }
         }
     }
@@ -3353,6 +3470,12 @@ static void SwitchPartyMon(void)
     struct PartyMenuBox *menuBoxes[2];
     struct Pokemon *mon1, *mon2;
     struct Pokemon *monBuffer;
+
+    if (gPartyMenu.slotId == VarGet(VAR_SURF_MON_SLOT))
+        VarSet(VAR_SURF_MON_SLOT, gPartyMenu.slotId2);
+    else if (gPartyMenu.slotId2 == VarGet(VAR_SURF_MON_SLOT))
+        VarSet(VAR_SURF_MON_SLOT, gPartyMenu.slotId);
+
 
     menuBoxes[0] = &sPartyMenuBoxes[gPartyMenu.slotId];
     menuBoxes[1] = &sPartyMenuBoxes[gPartyMenu.slotId2];
@@ -4037,6 +4160,11 @@ bool8 FieldCallback_PrepareFadeInFromMenu(void)
     FadeInFromBlack();
     CreateTask(Task_FieldMoveWaitForFade, 8);
     return TRUE;
+}
+
+bool8 FieldCallback_PrepareFadeInForTeleport(void) { // same as above, but removes follower pokemon
+    RemoveFollowingPokemon();
+    return FieldCallback_PrepareFadeInFromMenu();
 }
 
 static void Task_FieldMoveWaitForFade(u8 taskId)
@@ -6407,6 +6535,34 @@ static void Task_PartyMenuWaitForFade(u8 taskId)
     }
 }
 
+void ItemUseCB_PokeBall(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 currBall = GetMonData(mon, MON_DATA_POKEBALL);
+    u16 newBall = gSpecialVar_ItemId;
+
+    if (currBall == newBall)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+    else
+    {
+        GetMonNickname(mon, gStringVar1);
+        CopyItemName(newBall, gStringVar2);
+        PlaySE(SE_SELECT);
+        gPartyMenuUseExitCallback = TRUE;
+        SetMonData(mon, MON_DATA_POKEBALL, &newBall);
+        StringExpandPlaceholders(gStringVar4, gText_MonBallWasChanged);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+        RemoveBagItem(newBall, 1);
+    }
+}
+
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -6667,4 +6823,25 @@ void CursorCb_MoveItem(u8 taskId)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
+}
+
+void ShowOpponentPartyMenuInBattle(void)
+{
+    u8 battler1 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    u8 idx1 = gBattlerPartyIndexes[battler1];
+    u8 idx2 = idx1;
+    u8 cursorPos, lastIdx;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+    {
+        u8 battler2 = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+        idx2 = gBattlerPartyIndexes[battler2];
+    }
+
+    cursorPos = (idx1 < idx2) ? idx1 : idx2;
+    lastIdx = (idx1 > idx2) ? idx1 : idx2;
+
+    ShowPokemonSummaryScreen(gEnemyParty, cursorPos, lastIdx, SetCB2ToReshowScreenAfterMenu, PSS_MODE_NORMAL);
+    SetAllowedSummaryMonIndices(idx1, idx2);
+    ReshowBattleScreenDummy();
 }

@@ -200,3 +200,21 @@ Route10_PokemonCenter_1F_EventScript_GetAideRequestInfo::
 	bufferitemname STR_VAR_2, ITEM_HM05
 # 101 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
 	return
+# 102 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+
+# 103 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+Route10_PokemonCenter_1F_EventScript_PokecenterChansey::
+# 104 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	lock
+# 105 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	faceplayer
+# 106 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	playmoncry SPECIES_CHANSEY, 0
+# 107 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	msgbox Route10_PokemonCenter_1F_Text_PokecenterChansey
+# 108 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	waitmoncry
+# 109 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	release
+# 110 "data/maps/Route10_PokemonCenter_1F/scripts.pory"
+	end

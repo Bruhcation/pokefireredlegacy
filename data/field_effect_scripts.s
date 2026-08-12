@@ -72,6 +72,9 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_MoveDeoxysRock          @ FLDEFF_MOVE_DEOXYS_ROCK
 	.4byte gFldEffScript_DestroyDeoxysRock       @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFldEffScript_PhotoFlash              @ FLDEFF_PHOTO_FLASH
+	.4byte gFldEffScript_TracksSlither           @ FLDEFF_TRACKS_SLITHER
+	.4byte gFldEffScript_TracksBug               @ FLDEFF_TRACKS_BUG
+	.4byte gFldEffScript_TracksSpot              @ FLDEFF_TRACKS_SPOT
 
 gFldEffScript_ExclamationMarkIcon::
 	callnative FldEff_ExclamationMarkIcon1
@@ -106,7 +109,7 @@ gFldEffScript_Ash::
 	end 
 
 gFldEffScript_SurfBlob::
-	callnative FldEff_SurfBlob
+	callnative CreateSurfablePokemonSprite
 	end 
 
 gFldEffScript_UseSurf::
@@ -127,6 +130,14 @@ gFldEffScript_JumpTallGrass::
 gFldEffScript_SandFootprints::
 	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandFootprints
 	end 
+
+gFldEffScript_TracksBug::
+	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug
+	end
+
+gFldEffScript_TracksSpot::
+	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSpot
+	end
 
 gFldEffScript_JumpBigSplash::
 	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpBigSplash
@@ -214,6 +225,10 @@ gFldEffScript_FeetInFlowingWater::
 gFldEffScript_BikeTireTracks::
 	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_BikeTireTracks
 	end 
+	
+gFldEffScript_TracksSlither::
+	loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSlither
+	end
 
 gFldEffScript_SandDisguise::
 	callnative ShowSandDisguiseFieldEffect

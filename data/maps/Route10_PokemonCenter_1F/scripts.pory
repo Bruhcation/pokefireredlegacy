@@ -99,4 +99,13 @@ Route10_PokemonCenter_1F_EventScript_GetAideRequestInfo::
 	buffernumberstring STR_VAR_1, REQUIRED_SEEN_MONS
 	bufferitemname STR_VAR_2, ITEM_HM05
 	return
+
+Route10_PokemonCenter_1F_EventScript_PokecenterChansey::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, 0
+	msgbox Route10_PokemonCenter_1F_Text_PokecenterChansey
+	waitmoncry
+	release
+	end
 `

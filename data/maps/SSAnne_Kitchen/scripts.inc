@@ -100,3 +100,29 @@ SSAnne_Kitchen_EventScript_Chef7::
 	msgbox SSAnne_Kitchen_Text_OnlyGetToPeelOnions, MSGBOX_NPC
 # 51 "data/maps/SSAnne_Kitchen/scripts.pory"
 	end
+# 52 "data/maps/SSAnne_Kitchen/scripts.pory"
+
+# 53 "data/maps/SSAnne_Kitchen/scripts.pory"
+SSAnne_Kitchen_EventScript_CookingChef::
+# 54 "data/maps/SSAnne_Kitchen/scripts.pory"
+	msgbox SSAnne_Kitchen_Text_CookingChef, MSGBOX_NPC
+# 55 "data/maps/SSAnne_Kitchen/scripts.pory"
+	end
+# 56 "data/maps/SSAnne_Kitchen/scripts.pory"
+
+# 57 "data/maps/SSAnne_Kitchen/scripts.pory"
+SSAnne_Kitchen_EventScript_CookingChefCharmeleon::
+# 58 "data/maps/SSAnne_Kitchen/scripts.pory"
+	lock
+# 59 "data/maps/SSAnne_Kitchen/scripts.pory"
+	faceplayer
+# 60 "data/maps/SSAnne_Kitchen/scripts.pory"
+	playmoncry SPECIES_CHARMELEON, 0
+# 61 "data/maps/SSAnne_Kitchen/scripts.pory"
+	msgbox SSAnne_Kitchen_Text_CookingChefCharmeleon
+# 62 "data/maps/SSAnne_Kitchen/scripts.pory"
+	waitmoncry
+# 63 "data/maps/SSAnne_Kitchen/scripts.pory"
+	release
+# 64 "data/maps/SSAnne_Kitchen/scripts.pory"
+	end

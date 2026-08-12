@@ -431,6 +431,13 @@ void FieldUseFunc_RareCandy(u8 taskId)
     DoSetUpItemUseCallback(taskId);
 }
 
+void FieldUseFunc_PokeBall(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_PokeBall;
+    ItemMenu_SetExitCallback(CB2_ShowPartyMenuForItemUse);
+    ItemMenu_StartFadeToExitCallback(taskId);
+}
+
 void FieldUseFunc_EvoItem(u8 taskId)
 {
     gItemUseCB = ItemUseCB_EvolutionStone;

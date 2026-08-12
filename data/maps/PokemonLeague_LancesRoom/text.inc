@@ -24,7 +24,7 @@ PokemonLeague_LancesRoom_Text_RematchIntro::
     .string "Their might is unyielding,\n"  
     .string "a true force of nature!\p"  
     .string "Ready for round two?\p"  
-    .string "We won't go easy!{PLAYER}!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"  
+    .string "We won't go easy! {PLAYER}!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"  
 
 PokemonLeague_LancesRoom_Text_Defeat::
     .string "That's it!\p"

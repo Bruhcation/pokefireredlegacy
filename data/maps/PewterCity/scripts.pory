@@ -851,4 +851,30 @@ PewterCity_Movement_AideExit3::
 PewterCity_Movement_WalkInPlaceLeft::
 	walk_in_place_left
 	step_end
+
+PewterCity_EventScript_HappyGirl::
+	msgbox PewterCity_Text_HappyGirl, MSGBOX_NPC
+	end
+
+PewterCity_EventScript_HappyGirlButterfree::
+	lock
+	faceplayer
+	playmoncry SPECIES_BUTTERFREE, 0
+	msgbox PewterCity_Text_HappyGirlButterfree
+	waitmoncry
+	release
+	end
+
+PewterCity_EventScript_RelaxingHiker::
+	msgbox PewterCity_Text_RelaxingHiker, MSGBOX_NPC
+	end
+
+PewterCity_EventScript_RelaxingHikerGeodude::
+	lock
+	faceplayer
+	playmoncry SPECIES_GEODUDE, 0
+	msgbox PewterCity_Text_RelaxingHikerGeodude
+	waitmoncry
+	release
+	end
 `

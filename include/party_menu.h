@@ -47,6 +47,7 @@ void SpriteCB_BounceConfirmCancelButton(u8 spriteId, u8 spriteId2, u8 animNum);
 void CB2_SelectBagItemToGive(void);
 void CB2_GiveHoldItem(void);
 bool8 FieldCallback_PrepareFadeInFromMenu(void);
+bool8 FieldCallback_PrepareFadeInForTeleport(void);
 void CB2_ReturnToPartyMenuFromFlyMap(void);
 void SetUsedFlyQuestLogEvent(const u8 *healLocCtrlData);
 void CB2_ShowPartyMenuForItemUse(void);
@@ -55,6 +56,8 @@ void ItemUseCB_MedicineStep(u8 taskId, TaskFunc func);
 void ItemUseCB_TryRestorePP(u8 taskId, TaskFunc func);
 void ItemUseCB_PPUp(u8 taskId, TaskFunc func);
 u16 ItemIdToBattleMoveId(u16 item);
+u16 GetTutorMove(u8 tutor);
+bool8 CanLearnTutorMove(u16 species, u8 tutor);
 bool8 IsMoveHm(u16 move);
 bool8 MonKnowsMove(struct Pokemon *mon, u16 move);
 void ItemUseCB_TMHM(u8 taskId, TaskFunc func);
@@ -84,5 +87,8 @@ void ChooseMonForDaycare(void);
 void ChoosePartyMonByMenuType(u8 menuType);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV2(u8 taskId, TaskFunc task);
+void ShowOpponentPartyMenuInBattle(void);
+u8 GetFieldMoveHmIndex(u16 move);
+void ItemUseCB_PokeBall(u8 taskId, TaskFunc task);
 
 #endif // GUARD_PARTY_MENU_H

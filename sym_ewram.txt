@@ -136,3 +136,4 @@
 	.include "src/trainer_tower.o"
 	.include "src/berry_powder.o"
 	.include "src/battle_controller_player.o"
+	.include "src/tx_registered_items_menu.o"

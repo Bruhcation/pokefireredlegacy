@@ -75,6 +75,14 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FiveIsland_EventScript_Omar",
       "flag": "FLAG_HIDE_SEVIIGUYS"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_CUT_TREE",
+      "x": 32,
+      "y": 9,
+      "target_local_id": 12,
+      "target_map": "MAP_FIVE_ISLAND_MEADOW"
     }
   ],
   "warp_events": [

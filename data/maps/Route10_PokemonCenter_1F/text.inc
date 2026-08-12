@@ -121,3 +121,7 @@ Route10_PokemonCenter_1F_Text_ExplainHM05::
 Route10_PokemonCenter_1F_Text_CanGetThroughRockTunnel::
     .string "Once a POKéMON learns FLASH, you\n"
     .string "can get through ROCK TUNNEL.$"
+
+Route10_PokemonCenter_1F_Text_PokecenterChansey::
+	.string "BLISSEY: Bliss... bliss!$"
+

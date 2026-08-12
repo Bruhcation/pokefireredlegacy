@@ -76,3 +76,9 @@ LavenderTown_Text_PostRematchKaren::
     .string "What a great battle!\p"
     .string "Truly, you feel for POKéMON!$"
 
+LavenderTown_Text_IncenseWoman::
+	.string "Ahhh... The smell of incense is so\n"
+	.string "refreshing$"
+
+LavenderTown_Text_IncenseWomanNidoranF::
+	.string "NIDORAN♀: Dorann.$"

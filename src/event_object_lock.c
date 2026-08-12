@@ -74,6 +74,7 @@ bool8 IsFreezeSelectedObjectAndPlayerFinished(void)
 void FreezeObjects_WaitForPlayerAndSelected(void)
 {
     u8 taskId;
+    struct ObjectEvent *followerObj = GetFollowerObject();
 
     FreezeObjectEventsExceptOne(gSelectedObjectEvent);
     taskId = CreateTask(Task_WaitPlayerAndTargetNPCStopMoving, 80);
@@ -82,6 +83,8 @@ void FreezeObjects_WaitForPlayerAndSelected(void)
         FreezeObjectEvent(&gObjectEvents[gSelectedObjectEvent]);
         gTasks[taskId].data[1] = 1;
     }
+	if (followerObj) // Unfreeze follower so it can move behind player
+        UnfreezeObjectEvent(followerObj);
 }
 
 void ClearPlayerHeldMovementAndUnfreezeObjectEvents(void)

@@ -281,6 +281,7 @@
 #define MUS_GAME_CORNER           273 // MUS_SLOT
 #define MUS_ROCKET_HIDEOUT        274 // MUS_AJITO
 #define MUS_GYM                   275 // MUS_GYM
+#define MUS_RG_GYM                MUS_GYM
 #define MUS_JIGGLYPUFF            276 // MUS_PURIN
 #define MUS_INTRO_FIGHT           277 // MUS_DEMO
 #define MUS_TITLE                 278 // MUS_TITLE

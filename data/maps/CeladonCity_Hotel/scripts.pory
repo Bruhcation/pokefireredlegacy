@@ -17,4 +17,13 @@ CeladonCity_Hotel_EventScript_BeautyBoyfriend::
 CeladonCity_Hotel_EventScript_BeautyBrother::
 	msgbox CeladonCity_Hotel_Text_SisBroughtMeOnVacation, MSGBOX_NPC
 	end
+
+CeladonCity_Hotel_EventScript_ChillingMeowth::
+	lock
+	faceplayer
+	playmoncry SPECIES_MEOWTH, 0
+	msgbox CeladonCity_Hotel_Text_ChillingMeowth
+	waitmoncry
+	release
+	end
 `

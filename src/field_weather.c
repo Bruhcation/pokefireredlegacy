@@ -109,17 +109,17 @@ static const u8 sBasePaletteGammaTypes[32] = {
     GAMMA_NONE,
     GAMMA_NONE,
     // sprite palettes
-    GAMMA_ALT,
-    GAMMA_NORMAL,
-    GAMMA_ALT,
-    GAMMA_ALT,
-    GAMMA_ALT,
-    GAMMA_ALT,
     GAMMA_NORMAL,
     GAMMA_NORMAL,
     GAMMA_NORMAL,
     GAMMA_NORMAL,
-    GAMMA_ALT,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
+    GAMMA_NORMAL,
     GAMMA_NORMAL,
     GAMMA_NORMAL,
     GAMMA_NORMAL,
@@ -466,7 +466,7 @@ static void ApplyGammaShift(u8 startPalIndex, u8 numPalettes, s8 gammaIndex)
             {
                 u8 r, g, b;
 
-                if (sPaletteGammaTypes[curPalIndex] == GAMMA_ALT || curPalIndex - 16 == gWeatherPtr->altGammaSpritePalIndex)
+                if (sPaletteGammaTypes[curPalIndex] == GAMMA_ALT || (curPalIndex - 16 == gWeatherPtr->altGammaSpritePalIndex && GetSpritePaletteTagByPaletteNum(curPalIndex - 16) == TAG_WEATHER_START))                    
                     gammaTable = gWeatherPtr->altGammaShifts[gammaIndex];
                 else
                     gammaTable = gWeatherPtr->gammaShifts[gammaIndex];

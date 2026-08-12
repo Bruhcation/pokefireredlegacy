@@ -1,3 +1,6 @@
+@ Starting from here, these movements are considered
+@ 'safe' (won't put follower into a Pokeball)
+Common_Movement_FollowerSafeStart::
 Common_Movement_QuestionMark::
 	emote_question_mark
 	step_end
@@ -65,6 +68,10 @@ Common_Movement_FaceUp::
 
 Common_Movement_FaceUp2::
 	face_up
+	step_end
+	
+@ End of follower-safe movements
+Common_Movement_FollowerSafeEnd::
 	step_end
 
 Common_Movement_WalkUp5::

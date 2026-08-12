@@ -126,4 +126,16 @@ SaffronCity_EventScript_TrainerFanClubSign::
 	msgbox SaffronCity_Text_TrainerFanClubSign, MSGBOX_SIGN
 	end
 
+SaffronCity_EventScript_LoveSteelTypes::
+	msgbox SaffronCity_Text_LoveSteelTypes, MSGBOX_NPC
+	end
+
+SaffronCity_EventScript_LoveSteelTypesMagnemite::
+	lock
+	faceplayer
+	playmoncry SPECIES_MAGNEMITE, 0
+	msgbox SaffronCity_Text_LoveSteelTypesMagnemite
+	waitmoncry
+	release
+	end
 `

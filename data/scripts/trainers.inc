@@ -1886,6 +1886,7 @@ Route21_South_EventScript_Claude::
 	trainerbattle_single TRAINER_FISHERMAN_CLAUDE, Route21_South_Text_ClaudeIntro, Route21_South_Text_ClaudeDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_ClaudeRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_IsThatKyogre
 	msgbox Route21_South_Text_ClaudePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -1893,6 +1894,26 @@ Route21_South_EventScript_ClaudeRematch::
 	trainerbattle_rematch TRAINER_FISHERMAN_CLAUDE, Route21_South_Text_ClaudeRematchIntro, Route21_South_Text_ClaudeDefeat
 	msgbox Route21_South_Text_ClaudePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route21_South_EventScript_IsThatKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_IsThatKyogre2
+	msgbox Route21_South_Text_IsThatKyogre, MSGBOX_NPC
+	release
+	end 
+
+Route21_South_Text_IsThatKyogre::
+	.string "Oh, I think I finally see\n"
+	.string "a Big Fish...$"
+
+Route21_South_EventScript_IsThatKyogre2::
+	msgbox Route21_South_Text_ItGone, MSGBOX_NPC
+	release
+	end
+
+
+Route21_South_Text_ItGone::
+	.string "Now It's Gone!$"
+
 
 Route21_North_EventScript_Wade::
 	trainerbattle_single TRAINER_FISHERMAN_WADE, Route21_North_Text_WadeIntro, Route21_North_Text_WadeDefeat
@@ -1910,8 +1931,28 @@ Route21_South_EventScript_Nolan::
 	trainerbattle_single TRAINER_FISHERMAN_NOLAN, Route21_South_Text_NolanIntro, Route21_South_Text_NolanDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_NolanRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_ItsKyogre
 	msgbox Route21_South_Text_NolanPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route21_South_EventScript_ItsKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_ItsKyogre2
+	msgbox Route21_South_Text_ItsKyogre, MSGBOX_NPC
+	release
+	end
+
+Route21_South_EventScript_ItsKyogre2::
+	msgbox Route21_South_Text_ItsKyogre2, MSGBOX_NPC
+	release
+	end
+	
+
+Route21_South_Text_ItsKyogre::
+	.string "Is that... KYOGRE?$"
+
+Route21_South_Text_ItsKyogre2::
+	.string "You... Beat It?$"
+
 
 Route21_South_EventScript_NolanRematch::
 	trainerbattle_rematch TRAINER_FISHERMAN_NOLAN, Route21_South_Text_NolanRematchIntro, Route21_South_Text_NolanDefeat
@@ -1922,6 +1963,7 @@ Route21_North_EventScript_Spencer::
 	trainerbattle_single TRAINER_SWIMMER_MALE_SPENCER, Route21_North_Text_SpencerIntro, Route21_North_Text_SpencerDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_North_EventScript_SpencerRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_SpenserKyogre
 	msgbox Route21_North_Text_SpencerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -1930,10 +1972,28 @@ Route21_North_EventScript_SpencerRematch::
 	msgbox Route21_North_Text_SpencerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route21_South_EventScript_SpenserKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_SpenserKyogre2
+	msgbox Route21_North_Text_SpencerPostBattle, MSGBOX_NPC
+	release
+	end
+
+Route21_South_EventScript_SpenserKyogre2::
+	msgbox Route21_South_Text_SpenserKyogre2, MSGBOX_NPC
+	release
+	end
+
+Route21_North_Text_SpencerKyogre::
+	.string "KYOGRE... The King of the Sea.$"
+
+Route21_South_Text_SpenserKyogre2::
+	.string "You won?$"
+
 Route21_South_EventScript_Jack::
 	trainerbattle_single TRAINER_SWIMMER_MALE_JACK, Route21_South_Text_JackIntro, Route21_South_Text_JackDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_JackRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_JackKyogre
 	msgbox Route21_South_Text_JackPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -1942,12 +2002,51 @@ Route21_South_EventScript_JackRematch::
 	msgbox Route21_South_Text_JackPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route21_South_EventScript_JackKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_JackKyogre2
+	msgbox Route21_South_Text_JackKyogre, MSGBOX_NPC
+	release
+	end
+
+Route21_South_EventScript_JackKyogre2::
+	msgbox Route21_South_Text_JackKyogre2, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_JackKyogre::
+	.string "Hey CHAMPION {PLAYER}!\n"
+	.string "Why is this KYOGRE HERE!$"
+
+Route21_South_Text_JackKyogre2::
+	.string "Thanks for Dealing with KYOGRE!\n"
+	.string "I was very scared of a Tsunami...$"
+
 Route21_South_EventScript_Jerome::
 	trainerbattle_single TRAINER_SWIMMER_MALE_JEROME, Route21_South_Text_JeromeIntro, Route21_South_Text_JeromeDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_JeromeRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_JeromeKyogre
 	msgbox Route21_South_Text_JeromePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route21_South_EventScript_JeromeKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_JeromeKyogre2
+	msgbox Route21_South_Text_JeromeKyogre, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_JeromeKyogre::
+	.string "Oh and now KYOGRE has to appear.\n"
+	.string "Great...$"
+
+Route21_South_EventScript_JeromeKyogre2::
+	msgbox Route21_South_Text_JeromeKyogre2, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_JeromeKyogre2::
+	.string "I forgot I still have that\n"
+	.string "Bike and marthon left...$"
 
 Route21_South_EventScript_JeromeRematch::
 	trainerbattle_rematch TRAINER_SWIMMER_MALE_JEROME, Route21_South_Text_JeromeRematchIntro, Route21_South_Text_JeromeDefeat
@@ -1958,6 +2057,7 @@ Route21_South_EventScript_Roland::
 	trainerbattle_single TRAINER_SWIMMER_MALE_ROLAND, Route21_South_Text_RolandIntro, Route21_South_Text_RolandDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_RolandRematch
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_RolandKyogre
 	msgbox Route21_South_Text_RolandPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -1965,6 +2065,23 @@ Route21_South_EventScript_RolandRematch::
 	trainerbattle_rematch TRAINER_SWIMMER_MALE_ROLAND, Route21_South_Text_RolandRematchIntro, Route21_South_Text_RolandDefeat
 	msgbox Route21_South_Text_RolandPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route21_South_EventScript_RolandKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_RolandKyogre2
+	msgbox Route21_South_Text_JackKyogre, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_RolandKyogre::
+	.string "I FEEL THE RAIN COMING ON!$"
+
+Route21_South_EventScript_RolandKyogre2::
+	msgbox Route21_South_Text_RolandKyogre2, MSGBOX_NPC
+	release
+	end
+
+Route21_South_Text_RolandKyogre2::
+	.string "Back to Sunshine it is!$"
 
 Route21_North_EventScript_Lil::
 	trainerbattle_double TRAINER_SIS_AND_BRO_LIL_IAN, Route21_North_Text_LilIntro, Route21_North_Text_LilDefeat, Route21_North_Text_LilNotEnoughMons
@@ -2891,25 +3008,31 @@ Route21_South_EventScript_Chase::
 	trainerbattle_single TRAINER_CUE_BALL_CHASE, Route21_South_Text_ChaseIntro, Route21_South_Text_ChaseDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route21_South_EventScript_RematchChase
+	goto_if_set FLAG_JIRACHI_WISH_GOT, Route21_South_EventScript_ChaseKyogre
 	msgbox Route21_South_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route21_South_EventScript_ChaseKyogre::
+	goto_if_set FLAG_WATER_TRAINER, Route21_South_EventScript_ChaseKyogre2
+	msgbox Route21_South_Text_ChaseKyogre, MSGBOX_NPC
+	release
+	end
+
+
+Route21_South_EventScript_ChaseKyogre2::
+	msgbox Route21_South_Text_ChaseKyogre2, MSGBOX_NPC
+	release
 	end
 
 Route21_South_EventScript_RematchChase::
 	trainerbattle_rematch TRAINER_CUE_BALL_CHASE, Route21_South_Text_RematchChaseIntro, Route21_South_Text_ChaseDefeat
-	msgbox Route21_South_EventScript_RematchChase, MSGBOX_AUTOCLOSE
+	msgbox Route21_South_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route21_South_Text_ChaseIntro::
-	.string "I'm actually a CUE BALL you know!$"
 
-Route21_South_Text_ChaseDefeat::
-	.string "Cheap Shot!$"
 
-Route21_South_Text_ChasePostBattle::
-	.string "I can swim good for a CUE BALL!$"
 
-Route21_South_Text_RematchChaseIntro::
-	.string "You better stay upfloat or else!$"
+
 
 
 

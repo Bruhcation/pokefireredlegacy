@@ -172,4 +172,17 @@ SSAnne_2F_Corridor_Movement_RivalExitRight::
 SSAnne_2F_Corridor_EventScript_Sailor::
 	msgbox SSAnne_2F_Corridor_Text_ThisShipIsLuxuryLiner, MSGBOX_NPC
 	end
+
+SSAnne_2F_Corridor_EventScript_AfraidOfBoats::
+	msgbox SSAnne_2F_Corridor_Text_AfraidOfBoats, MSGBOX_NPC
+	end
+
+SSAnne_2F_Corridor_EventScript_Ekans::
+	lock
+	faceplayer
+	playmoncry SPECIES_EKANS, 0
+	msgbox SSAnne_2F_Corridor_Text_Ekans
+	waitmoncry
+	release
+	end
 `

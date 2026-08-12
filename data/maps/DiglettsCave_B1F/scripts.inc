@@ -3,290 +3,314 @@
 # 2 "data/maps/DiglettsCave_B1F/scripts.pory"
 .set LOCALID_MIRAGE, 1
 # 3 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_MapScripts::
+.set LOCALID_GROUDON, 2
 # 4 "data/maps/DiglettsCave_B1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_B1F_OnTransition
+DiglettsCave_B1F_MapScripts::
 # 5 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.byte 0
+	map_script MAP_SCRIPT_ON_TRANSITION, DiglettsCave_B1F_OnTransition
 # 6 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	.byte 0
 # 7 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_OnTransition::
+
 # 8 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setworldmapflag FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F
+DiglettsCave_B1F_OnTransition::
 # 9 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
+	setworldmapflag FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F
 # 10 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	end
 # 11 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_OrbingCheck::
+
 # 12 "data/maps/DiglettsCave_B1F/scripts.pory"
-	lock
+DiglettsCave_B1F_EventScript_OrbingCheck::
 # 13 "data/maps/DiglettsCave_B1F/scripts.pory"
-	faceplayer
-# 14 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_unset FLAG_ORBING, DiglettsCave_B1F_EventScript_NeedOrb
-# 15 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_set FLAG_CAUGHT_GROUDON, DiglettsCave_B1F_EventScript_End
-# 16 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_set FLAG_GROUNDON_CHECKED, DiglettsCave_B1F_EventScript_Orbing
-# 17 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_RegiceCheck
-# 18 "data/maps/DiglettsCave_B1F/scripts.pory"
-	closemessage
-# 19 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_unset FLAG_ORBING, DiglettsCave_B1F_EventScript_NoEligiblePkmn
-# 20 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_eq DiglettsCave_B1F_EventScript_Flag
-# 21 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 22 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 23 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 24 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_NeedOrb::
-# 25 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_NeedOrb
-# 26 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 27 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 28 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 29 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_NeedOrb::
-# 30 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "You need the ORBING to face me.$"
-# 31 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 32 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_NoEligiblePkmn::
-# 33 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_NoEligiblePkmn
-# 34 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 35 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 36 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 37 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_Flag::
-# 38 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setflag FLAG_GROUNDON_CHECKED
-# 39 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto DiglettsCave_B1F_EventScript_Orbing
-# 40 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 41 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 42 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_Orbing::
-# 43 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_Whitney, MSGBOX_YESNO
-# 44 "data/maps/DiglettsCave_B1F/scripts.pory"
-	closemessage
-# 45 "data/maps/DiglettsCave_B1F/scripts.pory"
-	delay 40
-# 46 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoWhitney
-# 47 "data/maps/DiglettsCave_B1F/scripts.pory"
-	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesWhitney, DiglettsCave_B1F_Text_PostWhitney, DiglettsCave_B1F_EventScript_PostWhitney, NO_MUSIC
-# 48 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 49 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 50 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 51 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_PostWhitney::
-# 52 "data/maps/DiglettsCave_B1F/scripts.pory"
-	special HealPlayerParty
-# 53 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_WhitneyPostBattle
-# 54 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_questlog EventScript_ReleaseEnd
-# 55 "data/maps/DiglettsCave_B1F/scripts.pory"
-	special QuestLog_CutRecording
-# 56 "data/maps/DiglettsCave_B1F/scripts.pory"
 	lock
-# 57 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 14 "data/maps/DiglettsCave_B1F/scripts.pory"
 	faceplayer
+# 15 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_unset FLAG_ORBING, DiglettsCave_B1F_EventScript_NeedOrb
+# 16 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_set FLAG_CAUGHT_GROUDON, DiglettsCave_B1F_EventScript_End
+# 17 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_set FLAG_GROUNDON_CHECKED, DiglettsCave_B1F_EventScript_Orbing
+# 18 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_RegiceCheck
+# 19 "data/maps/DiglettsCave_B1F/scripts.pory"
+	closemessage
+# 20 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_unset FLAG_ORBING, DiglettsCave_B1F_EventScript_NoEligiblePkmn
+# 21 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_eq DiglettsCave_B1F_EventScript_Flag
+# 22 "data/maps/DiglettsCave_B1F/scripts.pory"
+	release
+# 23 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 24 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 25 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_NeedOrb::
+# 26 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_NeedOrb
+# 27 "data/maps/DiglettsCave_B1F/scripts.pory"
+	release
+# 28 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 29 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 30 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_NeedOrb::
+# 31 "data/maps/DiglettsCave_B1F/scripts.pory"
+	.string "You need the RED ORB to face me.$"
+# 32 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 33 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_NoEligiblePkmn::
+# 34 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_NoEligiblePkmn
+# 35 "data/maps/DiglettsCave_B1F/scripts.pory"
+	release
+# 36 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 37 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 38 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_Flag::
+# 39 "data/maps/DiglettsCave_B1F/scripts.pory"
+	setflag FLAG_GROUNDON_CHECKED
+# 40 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto DiglettsCave_B1F_EventScript_Orbing
+# 41 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 42 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 43 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_Orbing::
+# 44 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_Ground, MSGBOX_YESNO
+# 45 "data/maps/DiglettsCave_B1F/scripts.pory"
+	closemessage
+# 46 "data/maps/DiglettsCave_B1F/scripts.pory"
+	delay 40
+# 47 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoGround
+# 48 "data/maps/DiglettsCave_B1F/scripts.pory"
+	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
+# 49 "data/maps/DiglettsCave_B1F/scripts.pory"
+	release
+# 50 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 51 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 52 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_PostGround::
+# 53 "data/maps/DiglettsCave_B1F/scripts.pory"
+	special HealPlayerParty
+# 54 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_GroundPostBattle
+# 55 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto_if_questlog EventScript_ReleaseEnd
+# 56 "data/maps/DiglettsCave_B1F/scripts.pory"
+	special QuestLog_CutRecording
+# 57 "data/maps/DiglettsCave_B1F/scripts.pory"
+	lock
 # 58 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setwildbattle SPECIES_GROUDON, 70
+	faceplayer
 # 59 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitse
+	setwildbattle SPECIES_GROUDON, 70
 # 60 "data/maps/DiglettsCave_B1F/scripts.pory"
-	playmoncry SPECIES_GROUDON, CRY_MODE_ENCOUNTER
+	waitse
 # 61 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitmessage
+	playmoncry SPECIES_GROUDON, CRY_MODE_ENCOUNTER
 # 62 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitmoncry
+	waitmessage
 # 63 "data/maps/DiglettsCave_B1F/scripts.pory"
-	delay 10
+	waitmoncry
 # 64 "data/maps/DiglettsCave_B1F/scripts.pory"
-	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	delay 10
 # 65 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitbuttonpress
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
 # 66 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	waitbuttonpress
 # 67 "data/maps/DiglettsCave_B1F/scripts.pory"
-	special StartLegendaryBattle
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 68 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitstate
+	special StartLegendaryBattle
 # 69 "data/maps/DiglettsCave_B1F/scripts.pory"
-	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	waitstate
 # 70 "data/maps/DiglettsCave_B1F/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 71 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DiglettsCave_B1F_EventScript_DefeatedCelebi
+	removeobject LOCALID_GROUDON
 # 72 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DiglettsCave_B1F_EventScript_RanFromCelebi
+	specialvar VAR_RESULT, GetBattleOutcome
 # 73 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DiglettsCave_B1F_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DiglettsCave_B1F_EventScript_DefeatedCelebi
 # 74 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setflag FLAG_CAUGHT_GROUDON
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DiglettsCave_B1F_EventScript_RanFromCelebi
 # 75 "data/maps/DiglettsCave_B1F/scripts.pory"
-	clearflag FLAG_GROUND_TRAINER
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, DiglettsCave_B1F_EventScript_RanFromCelebi
 # 76 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_EndWhitney
-# 77 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitmessage
-# 78 "data/maps/DiglettsCave_B1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 79 "data/maps/DiglettsCave_B1F/scripts.pory"
-	removeobject LOCALID_MIRAGE
-# 80 "data/maps/DiglettsCave_B1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK	
-# 81 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 82 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 83 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 84 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_DefeatedCelebi::
-# 85 "data/maps/DiglettsCave_B1F/scripts.pory"
-	clearflag FLAG_GROUND_TRAINER
-# 86 "data/maps/DiglettsCave_B1F/scripts.pory"
 	setflag FLAG_CAUGHT_GROUDON
-# 87 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_EndWhitney
-# 88 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitmessage
-# 89 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto EventScript_RemoveStaticMon
-# 90 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 91 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 92 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_RanFromCelebi::
-# 93 "data/maps/DiglettsCave_B1F/scripts.pory"
-	setvar VAR_0x8004, SPECIES_GROUDON
-# 94 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 77 "data/maps/DiglettsCave_B1F/scripts.pory"
 	clearflag FLAG_GROUND_TRAINER
-# 95 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_EndWhitney
-# 96 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 78 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_EndGround
+# 79 "data/maps/DiglettsCave_B1F/scripts.pory"
 	waitmessage
-# 97 "data/maps/DiglettsCave_B1F/scripts.pory"
-	goto EventScript_MonFlewAway
-# 98 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 99 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 100 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_NoWhitney::
-# 101 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_NoWhitney
-# 102 "data/maps/DiglettsCave_B1F/scripts.pory"
-	release
-# 103 "data/maps/DiglettsCave_B1F/scripts.pory"
-	end
-# 104 "data/maps/DiglettsCave_B1F/scripts.pory"
-
-# 105 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_EventScript_End::
-# 106 "data/maps/DiglettsCave_B1F/scripts.pory"
-	clearflag FLAG_GROUND_TRAINER
-# 107 "data/maps/DiglettsCave_B1F/scripts.pory"
-	msgbox DiglettsCave_B1F_Text_EndWhitney
-# 108 "data/maps/DiglettsCave_B1F/scripts.pory"
-	waitmessage
-# 109 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 80 "data/maps/DiglettsCave_B1F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 110 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 81 "data/maps/DiglettsCave_B1F/scripts.pory"
 	removeobject LOCALID_MIRAGE
-# 111 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 82 "data/maps/DiglettsCave_B1F/scripts.pory"
 	fadescreen FADE_FROM_BLACK	
-# 112 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 83 "data/maps/DiglettsCave_B1F/scripts.pory"
 	release
-# 113 "data/maps/DiglettsCave_B1F/scripts.pory"
+# 84 "data/maps/DiglettsCave_B1F/scripts.pory"
 	end
+# 85 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 86 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_DefeatedCelebi::
+# 87 "data/maps/DiglettsCave_B1F/scripts.pory"
+	clearflag FLAG_GROUND_TRAINER
+# 88 "data/maps/DiglettsCave_B1F/scripts.pory"
+	setflag FLAG_CAUGHT_GROUDON
+# 89 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_EndGround
+# 90 "data/maps/DiglettsCave_B1F/scripts.pory"
+	waitmessage
+# 91 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto EventScript_RemoveStaticMon
+# 92 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 93 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 94 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_RanFromCelebi::
+# 95 "data/maps/DiglettsCave_B1F/scripts.pory"
+	setvar VAR_0x8004, SPECIES_GROUDON
+# 96 "data/maps/DiglettsCave_B1F/scripts.pory"
+	clearflag FLAG_GROUND_TRAINER
+# 97 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_EndGround
+# 98 "data/maps/DiglettsCave_B1F/scripts.pory"
+	waitmessage
+# 99 "data/maps/DiglettsCave_B1F/scripts.pory"
+	goto EventScript_MonFlewAway
+# 100 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 101 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 102 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_NoGround::
+# 103 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_NoGround
+# 104 "data/maps/DiglettsCave_B1F/scripts.pory"
+	release
+# 105 "data/maps/DiglettsCave_B1F/scripts.pory"
+	end
+# 106 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 107 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_EventScript_End::
+# 108 "data/maps/DiglettsCave_B1F/scripts.pory"
+	clearflag FLAG_GROUND_TRAINER
+# 109 "data/maps/DiglettsCave_B1F/scripts.pory"
+	msgbox DiglettsCave_B1F_Text_EndGround
+# 110 "data/maps/DiglettsCave_B1F/scripts.pory"
+	waitmessage
+# 111 "data/maps/DiglettsCave_B1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 112 "data/maps/DiglettsCave_B1F/scripts.pory"
+	removeobject LOCALID_MIRAGE
+# 113 "data/maps/DiglettsCave_B1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK	
 # 114 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	release
 # 115 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_NoEligiblePkmn::
+	end
 # 116 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "You have not meet the requirements.\p"
+
 # 117 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Come back when you do.$"
+DiglettsCave_B1F_EventScript_Groudon::
 # 118 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	lock
 # 119 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_RegiceCheck::
+	faceplayer
 # 120 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Hello there {PLAYER}.\p"
+	msgbox DiglettsCave_B1F_Text_Groudon, MSGBOX_NPC
 # 121 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "I am the Land Mirage Trainer.\p"
+	release
 # 122 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Beat me and you shall face a\n"
+	end
 # 123 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "special POKEMON.\p"
+
 # 124 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "But first, I want to see a\n"
+DiglettsCave_B1F_Text_Groudon::
 # 125 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "RED ORB, which I think is related\l"
+	.string "GROUR!!!$"
 # 126 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "to the BLUE ORB.\p"
+
 # 127 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Ask the Sea Mirage Trainer.$"
+DiglettsCave_B1F_Text_NoEligiblePkmn::
 # 128 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	.string "You have not meet the requirements.\p"
 # 129 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_Whitney::
+	.string "Come back when you do.$"
 # 130 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "So, you wish to face me?$"
+
 # 131 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+DiglettsCave_B1F_Text_RegiceCheck::
 # 132 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_YesWhitney::
+	.string "Hello there {PLAYER}.\p"
 # 133 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Very well! Prepare yourself!$"
+	.string "I am the Land Mirage Trainer.\p"
 # 134 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	.string "Beat me and you shall face a\n"
 # 135 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_PostWhitney::
+	.string "special POKEMON.\p"
 # 136 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "So you are worthy...$"
+	.string "But first, I want to see a\n"
 # 137 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+	.string "RED ORB, which I think is related\l"
 # 138 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_WhitneyPostBattle::
+	.string "to the BLUE ORB.\p"
 # 139 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Alright, you have bested me.\p"
+	.string "Ask the Sea Mirage Trainer.$"
 # 140 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Be prepared to face GROUDON!$"
+
 # 141 "data/maps/DiglettsCave_B1F/scripts.pory"
-
+DiglettsCave_B1F_Text_Ground::
 # 142 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_EndWhitney::
+	.string "So, you wish to face me?$"
 # 143 "data/maps/DiglettsCave_B1F/scripts.pory"
-	.string "Goodbye.$"
-# 144 "data/maps/DiglettsCave_B1F/scripts.pory"
 
+# 144 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_YesGround::
 # 145 "data/maps/DiglettsCave_B1F/scripts.pory"
-DiglettsCave_B1F_Text_NoWhitney::
+	.string "Very well! Prepare yourself!$"
 # 146 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 147 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_PostGround::
+# 148 "data/maps/DiglettsCave_B1F/scripts.pory"
+	.string "So you are worthy...$"
+# 149 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 150 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_GroundPostBattle::
+# 151 "data/maps/DiglettsCave_B1F/scripts.pory"
+	.string "Alright, you have bested me.\p"
+# 152 "data/maps/DiglettsCave_B1F/scripts.pory"
+	.string "Be prepared to face GROUDON!$"
+# 153 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 154 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_EndGround::
+# 155 "data/maps/DiglettsCave_B1F/scripts.pory"
+	.string "Goodbye.$"
+# 156 "data/maps/DiglettsCave_B1F/scripts.pory"
+
+# 157 "data/maps/DiglettsCave_B1F/scripts.pory"
+DiglettsCave_B1F_Text_NoGround::
+# 158 "data/maps/DiglettsCave_B1F/scripts.pory"
 	.string "Alright, take your time.$"

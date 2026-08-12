@@ -1052,4 +1052,99 @@ Movement_JumpInPlaceRight:
 	step_end
 
 
+LavanderTown_EventScript_SharpenTutor:: @ 82C7FE6
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SHARPEN, EventScript_SharpenReteach
+	msgbox MoveTutor_Text_SharpenTeach, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MoveTutor_EventScript_SharpenDeclined
+	call EventScript_CanOnlyBeLearnedOnce
+	compare VAR_RESULT, NO
+	goto_if_eq MoveTutor_EventScript_SharpenDeclined
+	msgbox MoveTutor_Text_SharpenWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVETUTOR_SHARPEN
+	call EventScript_ChooseMoveTutorMon
+	compare VAR_RESULT, FALSE
+	goto_if_eq MoveTutor_EventScript_SharpenDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_SHARPEN
+	goto MoveTutor_EventScript_SharpenTaught
+	end
+
+MoveTutor_EventScript_SharpenDeclined:: @ 82C803A
+	msgbox MoveTutor_Text_SharpenDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SharpenTaught:: @ 82C8044
+	msgbox MoveTutor_Text_SharpenTaught, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_SharpenReteach::
+	lock
+	faceplayer
+	msgbox Text_SharpenReteach
+	showmoneybox 0, 0, 0
+	msgbox Text_SharpenReteach2, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_SharpenDeclined2
+	checkmoney 5000, 0
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_SharpenNotEnoughMoney
+	msgbox MoveTutor_Text_SharpenWhichMon
+	setvar VAR_0x8005, MOVETUTOR_SHARPEN
+	call EventScript_ChooseMoveTutorMon
+	compare VAR_RESULT, FALSE
+	goto_if_eq MoveTutor_EventScript_SharpenDeclined
+	showmoneybox 0, 0
+	removemoney 5000, 0
+	updatemoneybox
+	msgbox MoveTutor_Text_SharpenTaught
+	hidemoneybox
+	release
+	end
+
+EventScript_SharpenNotEnoughMoney::
+	msgbox Text_SharpenNotEnoughMoney
+	hidemoneybox
+	release
+	end
+
+EventScript_SharpenDeclined2:: @ 81C48D2
+	msgbox MoveTutor_Text_SharpenDeclined
+	hidemoneybox
+	release
+	end
+
+MoveTutor_Text_SharpenTeach: @ 82C7174
+	.string "Ever wanted to SHARPEN your\n"
+	.string "claws or what not?\p"
+	.string "SHARPEN is the move for you!\n"
+	.string "Want me to teach it to a POKéMON?$"
+
+MoveTutor_Text_SharpenDeclined: @ 82C7221
+	.string "Guess you don't like Sharp Things.$"
+
+MoveTutor_Text_SharpenWhichMon: @ 82C7243
+	.string "Yay!\n"
+	.string "Show me the POKéMON I should teach.$"
+
+MoveTutor_Text_SharpenTaught: @ 82C726E
+	.string "It's nice to SHARPEN things up\n"
+	.string "once in a while!$"
+
+Text_SharpenReteach::
+	.string "Ever wanted to SHARPEN your\n"
+	.string "claws or what not again?\p"
+	.string "I can teach you SHARPEN\n"
+	.string "again if you give me ¥5000.$"
+
+Text_SharpenReteach2::
+    .string "Want me to teach SHARPEN\n"
+    .string "to a POKéMON?$"
+
+Text_SharpenNotEnoughMoney::
+	.string "I need ¥5000 to SHARPEN\n"
+	.string "your POKéMON again!$"
 

@@ -185,7 +185,7 @@ static const union AnimCmd *const sAnims_ItemIcon[] = {
     sAnim_ItemIcon
 };
 
-static const struct SpriteTemplate sSpriteTemplate_ItemIcon = {
+const struct SpriteTemplate sSpriteTemplate_ItemIcon = {
     .tileTag = TAG_ITEM_ICON,
     .paletteTag = TAG_ITEM_ICON,
     .oam = &sOamData_ItemIcon,
@@ -435,5 +435,93 @@ void CreateBerryPouchItemIcon(u16 itemId, u8 idx)
             gSprites[spriteId].x2 = 24;
             gSprites[spriteId].y2 = 147; // This value is the only difference from CreateItemMenuIcon
         }
+    }
+}
+
+//New Registered Items Menu
+/*#define TAG_SWAP_LINE_TX    5110
+#define SWAP_LINE_HAS_MARGIN (1 << 7)
+static const struct CompressedSpriteSheet sSpriteSheet_SwapLine_RegisteredItemsMenu =
+{
+    .data = gSwapLine_Gfx, 0x100, TAG_SWAP_LINE_TX,
+};
+const struct CompressedSpritePalette sSpritePalette_SwapLine_RegisteredItemsMenu = {
+    .data = gSwapLine_Pal,
+    .tag = TAG_SWAP_LINE_TX,
+};
+static const struct SpriteTemplate sSpriteTemplate_SwapLine_RegisteredItemsMenu =
+{
+    .tileTag = TAG_SWAP_LINE_TX,
+    .paletteTag = TAG_SWAP_LINE_TX,
+    .oam = &sOamData_SwapLine,
+    .anims = sAnims_SwapLine,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+void LoadListMenuSwapLineGfx_RegisteredItemsMenu(void)
+{
+    LoadCompressedSpriteSheet(&sSpriteSheet_SwapLine_RegisteredItemsMenu);
+    LoadCompressedSpritePalette(&sSpritePalette_SwapLine_RegisteredItemsMenu);
+}
+void CreateSwapLineSprites_RegisteredItemsMenu(u8 *spriteIds, u8 count)
+{
+    u8 i;
+    for (i = 0; i < count; i++)
+    {
+        spriteIds[i] = CreateSprite(&sSpriteTemplate_SwapLine, i * 16, 0, 0);
+        if (i != 0)
+            StartSpriteAnim(&gSprites[spriteIds[i]], 1);
+        gSprites[spriteIds[i]].invisible = TRUE;
+    }
+}
+void DestroySwapLineSprites(u8 *spriteIds, u8 count)
+{
+    u8 i;
+    for (i = 0; i < count; i++)
+    {
+        if (i == count - 1)
+            DestroySpriteAndFreeResources(&gSprites[spriteIds[i]]);
+        else
+            DestroySprite(&gSprites[spriteIds[i]]);
+    }
+}
+void SetSwapLineSpritesInvisibility(u8 *spriteIds, u8 count, bool8 invisible)
+{
+    u8 i;
+    for (i = 0; i < count; i++)
+        gSprites[spriteIds[i]].invisible = invisible;
+}
+void UpdateSwapLineSpritesPos(u8 *spriteIds, u8 count, s16 x, u16 y)
+{
+    u8 i;
+    bool8 hasMargin = count & SWAP_LINE_HAS_MARGIN;
+    count &= ~SWAP_LINE_HAS_MARGIN;
+    for (i = 0; i < count; i++)
+    {
+        // If the list menu has a right margin, the swap line
+        // shouldn't extend all the way to the edge of the screen.
+        // If this is the last sprite in the line, move it a bit
+        // to the left to keep it out of the margin.
+        if (i == count - 1 && hasMargin)
+            gSprites[spriteIds[i]].x2 = x - 8;
+        else
+            gSprites[spriteIds[i]].x2 = x;
+        gSprites[spriteIds[i]].y = 1 + y;
+    }
+}*/
+//New Registered Items Menu
+//This Function does not exist in FR
+void SetCursorWithinListBounds(u16 *scrollOffset, u16 *cursorPos, u8 maxShownItems, u8 totalItems)
+{
+    if (*scrollOffset != 0 && *scrollOffset + maxShownItems > totalItems)
+        *scrollOffset = totalItems - maxShownItems;
+
+    if (*scrollOffset + *cursorPos >= totalItems)
+    {
+        if (totalItems == 0)
+            *cursorPos = 0;
+        else
+            *cursorPos = totalItems - 1;
     }
 }

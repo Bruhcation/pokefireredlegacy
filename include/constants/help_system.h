@@ -37,6 +37,8 @@
 #define HELPCONTEXT_BEDROOM_PC_ITEMS       33
 #define HELPCONTEXT_BEDROOM_PC_MAILBOX     34
 #define HELPCONTEXT_UNUSED                 35
-#define HELPCONTEXT_COUNT                  36
+#define HELPCONTEXT_HACK_OPTIONS           36
+#define HELPCONTEXT_BATTLE_OPTIONS         37
+#define HELPCONTEXT_COUNT                  38
 
 #endif //GUARD_CONSTANTS_HELP_SYSTEM_H

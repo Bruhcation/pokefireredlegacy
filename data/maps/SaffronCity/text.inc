@@ -113,3 +113,10 @@ SaffronCity_Text_HowCanClubNotRecognizeLance::
     .string "He's cool, and yet passionate!\l"
     .string "He's the greatest, LANCE!$"
 
+SaffronCity_Text_LoveSteelTypes::
+	.string "There maybe not be a STEEL type\n"
+	.string "GYM but I still love STEEL types a\l"
+	.string "lot!$"
+
+SaffronCity_Text_LoveSteelTypesMagnemite::
+	.string "MAGNEMITE: Teeel!$"

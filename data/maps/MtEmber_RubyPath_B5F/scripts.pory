@@ -28,11 +28,11 @@ MtEmber_RubyPath_B5F_EventScript_Pokemon::
 	msgbox MtEmber_RubyPath_B5F_Text_Mon, MSGBOX_YESNO
 	closemessage
 	delay 40
-	goto_if_eq VAR_RESULT, NO, MtEmber_RubyPath_B5F_EventScript_NoWhitney
+	goto_if_eq VAR_RESULT, NO, MtEmber_RubyPath_B5F_EventScript_NoMirage
 	goto MtEmber_RubyPath_B5F_EventScript_Pokemon2
 	end
 
-MtEmber_RubyPath_B5F_EventScript_NoWhitney::
+MtEmber_RubyPath_B5F_EventScript_NoMirage::
 	lock
 	faceplayer
 	playse SE_PIN
