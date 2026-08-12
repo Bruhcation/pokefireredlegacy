@@ -1107,6 +1107,7 @@ static const u16 sTutorLearnsets[] =
                   | TUTOR(MOVE_THUNDER_WAVE)
                   | TUTOR(MOVE_EXPLOSION)
                   | TUTOR(MOVE_ROCK_SLIDE)
+                  | TUTOR(MOVE_SHARPEN)
                   | TUTOR(MOVE_SUBSTITUTE),
 
     [SPECIES_CHIKORITA] = TUTOR(MOVE_SWORDS_DANCE)

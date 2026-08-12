@@ -15222,8 +15222,8 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .species = SPECIES_ALAKAZAM,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .heldItem = ITEM_LUM_BERRY,
-        .moves = {MOVE_PSYCHIC, MOVE_ICE_PUNCH, MOVE_SHADOW_BALL, MOVE_REFLECT},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .moves = {MOVE_PSYCHIC, MOVE_FIRE_PUNCH, MOVE_SHADOW_BALL, MOVE_REFLECT},
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15232,7 +15232,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .heldItem = ITEM_SALAC_BERRY,
         .moves = {MOVE_MEGAHORN, MOVE_EARTHQUAKE, MOVE_CROSS_CHOP, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15241,7 +15241,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .heldItem = ITEM_LUM_BERRY,
         .moves = {MOVE_ROCK_SLIDE, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_CRUNCH},
-        .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
+        .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15249,7 +15249,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15258,7 +15258,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .heldItem = ITEM_QUICK_CLAW,
         .nature = TRAINER_PARTY_NATURE(NATURE_CALM),
         .moves = {MOVE_GIGA_DRAIN, MOVE_PSYCHIC, MOVE_SLEEP_POWDER, MOVE_LIGHT_SCREEN},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15266,7 +15266,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .species = SPECIES_GYARADOS,
         .heldItem = ITEM_FOCUS_BAND,
         .moves = {MOVE_HYDRO_PUMP, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_BOUNCE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
     },
 };
 
@@ -15277,8 +15277,8 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .species = SPECIES_ALAKAZAM,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .heldItem = ITEM_LUM_BERRY,
-        .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_THUNDER_PUNCH, MOVE_REFLECT},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_FIRE_PUNCH, MOVE_REFLECT},
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15287,7 +15287,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .heldItem = ITEM_SALAC_BERRY,
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_MEGAHORN, MOVE_EARTHQUAKE, MOVE_CROSS_CHOP, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15296,7 +15296,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .heldItem = ITEM_LUM_BERRY,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .moves = {MOVE_ROCK_SLIDE, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_CRUNCH},
-        .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
+        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15304,7 +15304,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15313,7 +15313,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .heldItem = ITEM_QUICK_CLAW,
         .nature = TRAINER_PARTY_NATURE(NATURE_CALM),
         .moves = {MOVE_GIGA_DRAIN, MOVE_PSYCHIC, MOVE_SLEEP_POWDER, MOVE_LIGHT_SCREEN},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15321,7 +15321,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .species = SPECIES_GYARADOS,
         .heldItem = ITEM_FOCUS_BAND,
         .moves = {MOVE_HYDRO_PUMP, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_BOUNCE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
     },
 };
 
@@ -15333,7 +15333,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .heldItem = ITEM_LUM_BERRY,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_FIRE_PUNCH, MOVE_REFLECT},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15342,7 +15342,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .heldItem = ITEM_SALAC_BERRY,
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_MEGAHORN, MOVE_EARTHQUAKE, MOVE_CROSS_CHOP, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 252, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15351,7 +15351,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .heldItem = ITEM_LUM_BERRY,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .moves = {MOVE_ROCK_SLIDE, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_CRUNCH},
-        .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
+        .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15359,7 +15359,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15368,7 +15368,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .heldItem = ITEM_QUICK_CLAW,
         .nature = TRAINER_PARTY_NATURE(NATURE_CALM),
         .moves = {MOVE_GIGA_DRAIN, MOVE_PSYCHIC, MOVE_SLEEP_POWDER, MOVE_LIGHT_SCREEN},
-        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
+        .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 4),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -15376,7 +15376,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .species = SPECIES_GYARADOS,
         .heldItem = ITEM_FOCUS_BAND,
         .moves = {MOVE_HYDRO_PUMP, MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_BOUNCE},
-        .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
+        .ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
     },
 };
 
