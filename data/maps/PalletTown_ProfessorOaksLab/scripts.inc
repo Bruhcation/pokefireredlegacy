@@ -2516,9 +2516,9 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 	faceplayer
 # 1259 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 1
-# 1261 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+# 1260 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_SPECIES, SPECIES_TOTODILE
-# 1262 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+# 1261 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_BULBASAUR
 # 1262 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_ID, LOCALID_BULBASAUR_BALL
@@ -2542,9 +2542,9 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 	faceplayer
 # 1272 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_NUM, 2
-# 1274 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+# 1273 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar PLAYER_STARTER_SPECIES, SPECIES_CYNDAQUIL
-# 1275 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+# 1274 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
 # 1275 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	setvar RIVAL_STARTER_ID, LOCALID_SQUIRTLE_BALL
@@ -2741,4 +2741,16 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 # 1371 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	releaseall
 # 1372 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+	end
+# 1373 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+
+# 1374 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+
+# 1375 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+PalletTown_ProfessorOaksLab_EventScript_BuildBait::
+# 1376 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+	msgbox PalletTown_ProfessorOaksLab_Text_AllMonTypesHaveStrongAndWeakPoints
+# 1377 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
+	releaseall
+# 1378 "data/maps/PalletTown_ProfessorOaksLab/scripts.pory"
 	end
