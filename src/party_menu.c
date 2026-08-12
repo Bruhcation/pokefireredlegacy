@@ -3077,40 +3077,40 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
 
     // Pass 2: fill any remaining slots with can-learn (but not known, and not overworld-triggered) moves
-    if (!gSaveBlock2Ptr->optionsFieldMoveLearnset)
-    {
-        u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, NULL);
-        if (species != SPECIES_EGG)
-        {
-            for (j = 0; sFieldMoves[j] != FIELD_MOVE_END && sPartyMenuInternal->numActions < 1 + MAX_MON_MOVES; ++j)
-            {
-                if (!(knownMovesMask & (1 << j)) && !IsFieldMoveTriggeredFromOverworld(sFieldMoves[j]))
-                {
-                    u8 hmIndex = GetFieldMoveHmIndex(sFieldMoves[j]);
-
-                    // All field moves before WATERFALL are HMs and require their badge (matches
-                    // the same check used when the move is actually selected/used).
-                    if (j <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + j) != TRUE)
-                        continue;
-
-                    // Must actually own the TM/HM that teaches this move
-                    if (hmIndex != 0xFF)
-                    {
-                        if (!CheckBagHasItem(hmIndex + ITEM_TM01_FOCUS_PUNCH, 1))
-                            continue;
-                    }
-                    else if (sFieldMoves[j] == MOVE_DIG)
-                    {
-                        if (!CheckBagHasItem(ITEM_TM28_DIG, 1))
-                            continue;
-                    }
-
-                    if (CanMonLearnFieldMove(&mons[slotId], species, sFieldMoves[j]))
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
-                }
-            }
-        }
-    }
+    //if (!gSaveBlock2Ptr->optionsFieldMoveLearnset)
+    //{
+    //    u16 species = GetMonData(&mons[slotId], MON_DATA_SPECIES_OR_EGG, NULL);
+    //    if (species != SPECIES_EGG)
+    //    {
+    //        for (j = 0; sFieldMoves[j] != FIELD_MOVE_END && sPartyMenuInternal->numActions < 1 + MAX_MON_MOVES; ++j)
+    //        {
+    //            if (!(knownMovesMask & (1 << j)) && !IsFieldMoveTriggeredFromOverworld(sFieldMoves[j]))
+    //            {
+    //                u8 hmIndex = GetFieldMoveHmIndex(sFieldMoves[j]);
+    //
+    //                // All field moves before WATERFALL are HMs and require their badge (matches
+    //                // the same check used when the move is actually selected/used).
+    //                if (j <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + j) != TRUE)
+    //                    continue;
+    //
+    //                // Must actually own the TM/HM that teaches this move
+    //                if (hmIndex != 0xFF)
+    //                {
+    //                    if (!CheckBagHasItem(hmIndex + ITEM_TM01_FOCUS_PUNCH, 1))
+    //                        continue;
+    //                }
+    //                else if (sFieldMoves[j] == MOVE_DIG)
+    //                {
+    //                    if (!CheckBagHasItem(ITEM_TM28_DIG, 1))
+    //                        continue;
+    //                }
+    //
+    //                if (CanMonLearnFieldMove(&mons[slotId], species, sFieldMoves[j]))
+    //                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + CURSOR_OPTION_FIELD_MOVES);
+    //            }
+    //        }
+    //    }
+    //}
     if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, CURSOR_OPTION_SWITCH);
     if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))

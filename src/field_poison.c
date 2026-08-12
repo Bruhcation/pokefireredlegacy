@@ -94,13 +94,13 @@ static void Task_TryFieldPoisonWhiteOut(u8 taskId)
                 tState++;
                 return;
             }
-            else if (MonSurvivedFromPoison(tPartyId))
-            {
-                ShowMonSurvivedPoisonMessage(tPartyId);
-                ShowFieldMessage(gText_PkmnSurvivedPoison);
-                tState++;
-                return;
-            }
+            //else if (MonSurvivedFromPoison(tPartyId))
+            //{
+            //    ShowMonSurvivedPoisonMessage(tPartyId);
+            //    ShowFieldMessage(gText_PkmnSurvivedPoison);
+            //    tState++;
+            //    return;
+            //}
         }
         tState = 2;
         break;
@@ -114,7 +114,7 @@ static void Task_TryFieldPoisonWhiteOut(u8 taskId)
         else
         {
             gSpecialVar_Result = FALSE;
-            UpdateFollowingPokemon();
+            RemoveFollowingPokemon();
         }
         ScriptContext_Enable();
         DestroyTask(taskId);
@@ -142,28 +142,28 @@ s32 DoPoisonFieldEffect(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
         {
             hp = GetMonData(pokemon, MON_DATA_HP);
-            if (hp == 0)
-            {
+            if (hp == 0 || --hp == 0)
+            //{
                 numFainted++;
-            }
-            else
-            {
-                --hp;
-                if (hp == 0)
-                {
-                    if (!gSaveBlock2Ptr->optionsSurvivePoison)
-                    {
-                        u32 status = STATUS1_NONE;
-                        hp = 1;
-                        sPoisonSurvivedPartyFlags |= 1 << i;
-                        SetMonData(pokemon, MON_DATA_STATUS, &status);
-                    }
-                    else
-                    {
-                        numFainted++;
-                    }
-                }
-            }
+            //}
+            //else
+            //{
+            //    --hp;
+            //    if (hp == 0)
+            //    {
+            //        if (!gSaveBlock2Ptr->optionsSurvivePoison)
+            //        {
+            //            u32 status = STATUS1_NONE;
+            //            hp = 1;
+            //            sPoisonSurvivedPartyFlags |= 1 << i;
+            //            SetMonData(pokemon, MON_DATA_STATUS, &status);
+            //        }
+            //        else
+            //        {
+            //            numFainted++;
+            //        }
+            //    }
+            //}
             SetMonData(pokemon, MON_DATA_HP, &hp);
             numPoisoned++;
         }
