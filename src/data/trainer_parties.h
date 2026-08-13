@@ -678,7 +678,7 @@ static const struct TrainerMon sParty_Kindler[] = {
         .lvl = 65,
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_CHARCOAL,
-        .moves = {MOVE_PROTECT, MOVE_FIRE_BLAST, MOVE_EXTREME_SPEED, MOVE_IRON_TAIL},
+        .moves = {MOVE_PROTECT, MOVE_FIRE_BLAST, MOVE_EXTREME_SPEED, MOVE_MORNING_SUN},
         .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },  
     {
@@ -1311,7 +1311,7 @@ static const struct TrainerMon sParty_FatGuy[] = {
         .lvl = 68,
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_FIRE_BLAST, MOVE_EXTREME_SPEED, MOVE_CRUNCH, MOVE_PROTECT},
+        .moves = {MOVE_FIRE_BLAST, MOVE_EXTREME_SPEED, MOVE_MORNING_SUN, MOVE_PROTECT},
         .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
     {
@@ -15248,7 +15248,7 @@ static const struct TrainerMon sParty_ChampionRematchSquirtle[] = {
         .lvl = 77,
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
+        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_MORNING_SUN, MOVE_TOXIC},
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
@@ -15303,7 +15303,7 @@ static const struct TrainerMon sParty_ChampionRematchBulbasaur[] = {
         .lvl = 77,
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
+        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_MORNING_SUN, MOVE_TOXIC},
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
@@ -15358,7 +15358,7 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
         .lvl = 77,
         .species = SPECIES_ARCANINE,
         .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_CRUNCH, MOVE_TOXIC},
+        .moves = {MOVE_EXTREME_SPEED, MOVE_FIRE_BLAST, MOVE_MORNING_SUN, MOVE_TOXIC},
         .ev = TRAINER_PARTY_EVS(252, 4, 0, 0, 252, 0),
     },
     {
