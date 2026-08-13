@@ -48,6 +48,22 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_CREDITS_OAK"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAYQUAZA)",
+      "x": 8,
+      "y": 23,
+      "target_local_id": 11,
+      "target_map": "MAP_ROUTE23"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
+      "x": 8,
+      "y": 24,
+      "target_local_id": 10,
+      "target_map": "MAP_ROUTE23"
     }
   ],
   "warp_events": [
