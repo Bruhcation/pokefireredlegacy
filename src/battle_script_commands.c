@@ -780,7 +780,7 @@ static const struct PickupItem sPickupItems[] =
 {
     { ITEM_POTION, 15 },
     { ITEM_SUPER_POTION, 25 },
-    { ITEM_SUPER_POTION, 35 },
+    { ITEM_ESCAPE_ROPE, 35 },
     { ITEM_GREAT_BALL, 45 },
     { ITEM_SUPER_REPEL, 55 },
     { ITEM_ETHER, 65 },
