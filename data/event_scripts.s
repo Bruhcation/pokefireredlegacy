@@ -1111,6 +1111,9 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_ROCK_TRAINER              
 	setflag FLAG_DRAGON_TRAINER  
 	setflag FLAG_SECOND_SOUL_DEW
+	setflag FLAG_BLASTOISE
+	setflag FLAG_CHARIZARD
+	setflag FLAG_VENUSAUR
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 250
 	end
 
