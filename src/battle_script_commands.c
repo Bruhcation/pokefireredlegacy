@@ -1110,7 +1110,7 @@ static void Cmd_accuracycheck(void)
              && (gBattleMoves[move].target == MOVE_TARGET_BOTH || gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY))
                 gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_ATK;
             else
-                gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
+                gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_ATK;
 
             CheckWonderGuardAndLevitate();
         }
@@ -1294,6 +1294,8 @@ s32 GetTypeEffectiveness(struct Pokemon *mon, u8 moveType) {
     s32 flags = 0;
     if (GetMonAbility(mon) == ABILITY_LEVITATE && moveType == TYPE_GROUND)
         return MOVE_RESULT_NOT_VERY_EFFECTIVE;
+    if (GetMonAbility(mon) == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+        return MOVE_RESULT_NOT_VERY_EFFECTIVE;
     while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE) {
         if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT) {
             i += 3;
@@ -1370,6 +1372,15 @@ static void Cmd_typecalc(void)
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
+    if (gBattleMons[gBattlerTarget].ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+    {
+        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[gBattlerTarget] = 0;
+        gLastHitByType[gBattlerTarget] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_ELECTRIC_MISS;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
     else
     {
         while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE)
@@ -1428,6 +1439,13 @@ static void CheckWonderGuardAndLevitate(void)
         gLastUsedAbility = ABILITY_LEVITATE;
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_LEVITATE);
+        return;
+    }
+    if (gBattleMons[gBattlerTarget].ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+    {
+        gLastUsedAbility = TYPE_ELECTRIC;
+        gBattleCommunication[MISS_TYPE] = B_MSG_ELECTRIC_MISS;
+        RecordAbilityBattle(gBattlerTarget, ABILITY_LIGHTNING_ROD);
         return;
     }
 
@@ -1544,6 +1562,10 @@ u8 TypeCalc(u16 move, u8 attacker, u8 defender)
     {
         flags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
     }
+    if (gBattleMons[defender].ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+    {
+        flags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+    }
     else
     {
         while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE)
@@ -1593,6 +1615,10 @@ u8 AI_TypeCalc(u16 move, u16 targetSpecies, u8 targetAbility)
     moveType = gBattleMoves[move].type;
 
     if (targetAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    {
+        flags = MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE;
+    }
+    if (targetAbility == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
     {
         flags = MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE;
     }
@@ -4497,6 +4523,14 @@ static void Cmd_typecalc2(void)
         gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
         gLastLandedMoves[gBattlerTarget] = 0;
         gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+    if (gBattleMons[gBattlerTarget].ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+    {
+        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[gBattlerTarget] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_ELECTRIC_MISS;
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else

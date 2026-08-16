@@ -386,8 +386,8 @@
 #define STRINGID_TRAINER1MON1AND2COMEBACK 385
 #define STRINGID_ATTACKBOOSTEDBYABILITY     386 // Added new Ability Effect to provide text for Overgrow, Blaze, Torrent and Swarm
 #define STRINGID_MAGMAARMORACTIVATED        387  // Added new Battle result message to provide text for Magma Armor activation
-
-#define BATTLESTRINGS_COUNT     388
+#define STRINGID_PKMNMAKESELECTRICMISS      388
+#define BATTLESTRINGS_COUNT     389
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -419,6 +419,7 @@
 #define B_MSG_AVOIDED_ATK  2
 #define B_MSG_AVOIDED_DMG  3
 #define B_MSG_GROUND_MISS  4
+#define B_MSG_ELECTRIC_MISS 5
 
 // gAbsorbDrainStringIds
 #define B_MSG_ABSORB      0
