@@ -14024,7 +14024,6 @@ static const struct TrainerMon sParty_SwimmerMaleDarrin2[] = {
     {
         .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
         .lvl = 62,
-        .heldItem = ITEM_DRAGON_FANG
         .species = SPECIES_DRAGONAIR,
     },
 };
