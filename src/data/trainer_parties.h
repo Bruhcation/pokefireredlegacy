@@ -1643,7 +1643,7 @@ static const struct TrainerMon sParty_Proton[] = {
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_HYPNOSIS, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL},
     },
-}; //RocketAdminProton
+}; //RocketAdminProtonMovedtoFourIslandGrunt
 static const struct TrainerMon sParty_Petrol[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -1681,7 +1681,7 @@ static const struct TrainerMon sParty_Petrol[] = {
         .heldItem = ITEM_CHOICE_BAND,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
     },    
-}; //RocketAdminPetrol
+}; //UnusedRocketAdminPetrol
 static const struct TrainerMon sParty_Falkner[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -11353,24 +11353,24 @@ static const struct TrainerMon sParty_TeamRocketGrunt45[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 63,
-        .species = SPECIES_GOLBAT,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_CRUNCH, MOVE_AIR_CUTTER, MOVE_NONE},
+        .species = SPECIES_FORRETRESS,
+        .moves = {MOVE_TWINEEDLE, MOVE_SPIKE_CANNON, MOVE_THUNDER_WAVE, MOVE_EXPLOSION},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_RHYDON,
-        .heldItem = ITEM_QUICK_CLAW,
-        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 64,
         .species = SPECIES_MACHAMP,
         .heldItem = ITEM_QUICK_CLAW,
         .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_CROSS_CHOP, MOVE_FIRE_BLAST},
     },
-}; //NEW Admin 4
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 65,
+        .species = SPECIES_GOLBAT,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_DOUBLE_TEAM, MOVE_AIR_CUTTER, MOVE_TOXIC},
+    },
+}; //Proton
 
 static const struct TrainerMon sParty_TeamRocketGrunt46[] = {
     {
@@ -11392,21 +11392,41 @@ static const struct TrainerMon sParty_TeamRocketGrunt46[] = {
 
 static const struct TrainerMon sParty_TeamRocketGrunt47[] = {
     {
-        .iv = 0,
-        .lvl = 60,
-        .species = SPECIES_GLIGAR,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 62,
+        .species = SPECIES_SNEASEL,
+        .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
     },
     {
-        .iv = 0,
-        .lvl = 60,
-        .species = SPECIES_FORRETRESS,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_GRANBULL,
+        .heldItem = ITEM_CHOICE_BAND,
+        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
+    },  
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_RHYDON,
+        .heldItem = ITEM_QUICK_CLAW,
+        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
     },
     {
-        .iv = 0,
-        .lvl = 60,
-        .species = SPECIES_MACHAMP,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 64,
+        .species = SPECIES_MUK,
+        .heldItem = ITEM_BRIGHT_POWDER,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR, MOVE_MINIMIZE, MOVE_TOXIC},
+
     },
-};
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 65,
+        .species = SPECIES_WEEZING,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
+    },
+};//Petrol
 
 static const struct TrainerMon sParty_TeamRocketGrunt48[] = {
     {
