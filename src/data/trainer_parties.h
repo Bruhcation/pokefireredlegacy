@@ -9185,7 +9185,7 @@ static const struct TrainerMon sParty_EliteFourLance[] = {
         .lvl = 61,
         .species = SPECIES_KINGDRA,
         .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_HYPER_BEAM, MOVE_DRAGON_BREATH, MOVE_SURF, MOVE_ICE_BEAM},
+        .moves = {MOVE_HYDRO_PUMP, MOVE_DRAGON_BREATH, MOVE_SURF, MOVE_ICE_BEAM},
     },
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -9199,7 +9199,7 @@ static const struct TrainerMon sParty_EliteFourLance[] = {
         .lvl = 60,
         .species = SPECIES_CHARIZARD,
         .heldItem = ITEM_FOCUS_BAND,
-        .moves = {MOVE_HYPER_BEAM, MOVE_FIRE_BLAST, MOVE_ROCK_SLIDE, MOVE_OUTRAGE},
+        .moves = {MOVE_EARTHQUAKE, MOVE_FIRE_BLAST, MOVE_ROCK_SLIDE, MOVE_OUTRAGE},
     },
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -9222,7 +9222,7 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .lvl = 12,
         .species = SPECIES_GEODUDE,
         .heldItem = ITEM_NONE,
-        .moves = {MOVE_ROCK_THROW, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
+        .moves = {MOVE_NONE, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
     },
     {
         .iv = TRAINER_PARTY_IVS(20, 30, 20, 31, 31, 20),

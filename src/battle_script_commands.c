@@ -1110,7 +1110,7 @@ static void Cmd_accuracycheck(void)
              && (gBattleMoves[move].target == MOVE_TARGET_BOTH || gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY))
                 gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_ATK;
             else
-                gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_ATK;
+                gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
 
             CheckWonderGuardAndLevitate();
         }
@@ -1202,7 +1202,7 @@ static void Cmd_critcalc(void)
                 + (gBattleMoves[gCurrentMove].effect == EFFECT_POISON_TAIL)
                 + (holdEffect == HOLD_EFFECT_SCOPE_LENS)
                 + 4 * (holdEffect == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[gBattlerAttacker].species == SPECIES_CHANSEY)
-                + 3 * (holdEffect == HOLD_EFFECT_STICK && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD);
+                + 2 * (holdEffect == HOLD_EFFECT_STICK && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD);
 
     if (critChance >= ARRAY_COUNT(sCriticalHitChance))
         critChance = ARRAY_COUNT(sCriticalHitChance) - 1;
@@ -1293,9 +1293,13 @@ s32 GetTypeEffectiveness(struct Pokemon *mon, u8 moveType) {
     u8 multiplier;
     s32 flags = 0;
     if (GetMonAbility(mon) == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    {
         return MOVE_RESULT_NOT_VERY_EFFECTIVE;
+    }
     if (GetMonAbility(mon) == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+    {
         return MOVE_RESULT_NOT_VERY_EFFECTIVE;
+    }
     while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE) {
         if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT) {
             i += 3;

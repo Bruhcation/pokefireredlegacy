@@ -2803,7 +2803,7 @@
     {
       "english": "ENIGMA BERRY",
       "itemId": "ITEM_ENIGMA_BERRY",
-      "price": 10000,
+      "price": 9800,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
       "description_english": "Can be ground up into a powder as\\nan ingredient for medicine.",
