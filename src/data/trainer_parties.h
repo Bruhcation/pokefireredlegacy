@@ -11392,41 +11392,21 @@ static const struct TrainerMon sParty_TeamRocketGrunt46[] = {
 
 static const struct TrainerMon sParty_TeamRocketGrunt47[] = {
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 62,
-        .species = SPECIES_SNEASEL,
-        .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
+        .iv = 0,
+        .lvl = 61,
+        .species = SPECIES_MAGCARGO,
     },
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_GRANBULL,
-        .heldItem = ITEM_CHOICE_BAND,
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
-    },  
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_RHYDON,
-        .heldItem = ITEM_QUICK_CLAW,
-        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 64,
-        .species = SPECIES_MUK,
-        .heldItem = ITEM_BRIGHT_POWDER,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR, MOVE_MINIMIZE, MOVE_TOXIC},
-
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .iv = 0,
+        .lvl = 61,
         .species = SPECIES_WEEZING,
-        .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
     },
-};//Petrol
+    {
+        .iv = 0,
+        .lvl = 61,
+        .species = SPECIES_MUK,
+    },
+};
 
 static const struct TrainerMon sParty_TeamRocketGrunt48[] = {
     {
@@ -11943,21 +11923,41 @@ static const struct TrainerMon sParty_TeamRocketGrunt49[] = {
 
 static const struct TrainerMon sParty_TeamRocketGrunt50[] = {
     {
-        .iv = 0,
-        .lvl = 61,
-        .species = SPECIES_MAGCARGO,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 62,
+        .species = SPECIES_SNEASEL,
+        .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
     },
     {
-        .iv = 0,
-        .lvl = 61,
-        .species = SPECIES_WEEZING,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_GRANBULL,
+        .heldItem = ITEM_CHOICE_BAND,
+        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
+    },  
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_RHYDON,
+        .heldItem = ITEM_QUICK_CLAW,
+        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
     },
     {
-        .iv = 0,
-        .lvl = 61,
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 64,
         .species = SPECIES_MUK,
+        .heldItem = ITEM_BRIGHT_POWDER,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR, MOVE_MINIMIZE, MOVE_TOXIC},
+
     },
-};
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 65,
+        .species = SPECIES_WEEZING,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
+    },
+};//Petrol
 
 static const struct TrainerMon sParty_TeamRocketGrunt51[] = {
     {

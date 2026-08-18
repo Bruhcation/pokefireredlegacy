@@ -15,9 +15,7 @@ FiveIsland_RocketWarehouse_Text_Grunt2Defeat::
 
 FiveIsland_RocketWarehouse_Text_Grunt2PostBattle::
     .string "TEAM ROCKET broke up?\n"
-    .string "What planet are you from?\p"
-    .string "I was about to become\n"
-    .string "the world's best impersonator?$"
+    .string "What planet are you from?$"
 
 FiveIsland_RocketWarehouse_Text_Grunt1Intro::
     .string "Oh, now your POKéMON look strong.\n"

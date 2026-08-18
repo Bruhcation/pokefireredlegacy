@@ -56,7 +56,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 11,
       "y": 27,
       "elevation": 3,
