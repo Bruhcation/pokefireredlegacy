@@ -29,12 +29,12 @@ SixIsland_EventScript_Boy3::
 	end
 
 SixIsland_Text_Blue::
-    .string "Hey! Isn't that {RIVAL}\n"
-    .string "in that POKECENTER!$"
+    .string "Hey! Isn't that {RIVAL} in that\n"
+    .string "POKECENTER!$"
 
 SixIsland_Text_Blue2::
-    .string "I heard {RIVAL} used\n"
-    .string "to be the CHAMPION.$"
+    .string "I heard {RIVAL} used to be \n"
+    .string "the CHAMPION.$"
 
 SixIsland_EventScript_Speedy::
 	msgbox SixIsland_Text_Speedy, MSGBOX_NPC

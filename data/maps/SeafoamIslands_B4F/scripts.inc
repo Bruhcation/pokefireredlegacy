@@ -413,9 +413,9 @@ SeafoamIslands_B4F_EventScript_FastCurrentSign::
 # 207 "data/maps/SeafoamIslands_B4F/scripts.pory"
 
 # 208 "data/maps/SeafoamIslands_B4F/scripts.pory"
-SeafoamIslands_B4F_Weebra::
+SeafoamIslands_B4F_EventScript_Weebra::
 # 209 "data/maps/SeafoamIslands_B4F/scripts.pory"
-	trainerbattle_single TRAINER_WEEBRA, SeafoamIslands_B4F_Text_WeebraIntro, SeafoamIslands_B4F_Text_WeebraDefeat
+	trainerbattle_single TRAINER_WEEBRA, SeafoamIslands_B4F_Text_WeebraIntro, SeafoamIslands_B4F_Text_WeebraDefeat, SeafoamIslands_B4F_EventScript_WeebraWoman
 # 210 "data/maps/SeafoamIslands_B4F/scripts.pory"
 	msgbox SeafoamIslands_B4F_Text_WeebraPostBattle, MSGBOX_AUTOCLOSE
 # 211 "data/maps/SeafoamIslands_B4F/scripts.pory"
@@ -427,4 +427,20 @@ SeafoamIslands_B4F_Weebra::
 # 214 "data/maps/SeafoamIslands_B4F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 215 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	end
+# 216 "data/maps/SeafoamIslands_B4F/scripts.pory"
+
+# 217 "data/maps/SeafoamIslands_B4F/scripts.pory"
+SeafoamIslands_B4F_EventScript_WeebraWoman::
+# 218 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	msgbox SeafoamIslands_B4F_Text_WeebraPostBattle, MSGBOX_AUTOCLOSE
+# 219 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	setflag FLAG_WEEBRA
+# 220 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 221 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	removeobject 5
+# 222 "data/maps/SeafoamIslands_B4F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 223 "data/maps/SeafoamIslands_B4F/scripts.pory"
 	end

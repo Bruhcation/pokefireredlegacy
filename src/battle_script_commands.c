@@ -7353,7 +7353,7 @@ static void Cmd_setsandstorm(void)
     {
         gBattleWeather = B_WEATHER_SANDSTORM_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SANDSTORM;
-        gWishFutureKnock.weatherDuration = 10;
+        gWishFutureKnock.weatherDuration = 8;
     }
     gBattlescriptCurrInstr++;
 }
@@ -8828,7 +8828,7 @@ static void Cmd_sethail(void)
     {
         gBattleWeather = B_WEATHER_HAIL_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_HAIL;
-        gWishFutureKnock.weatherDuration = 10;
+        gWishFutureKnock.weatherDuration = 8;
     }
 
     gBattlescriptCurrInstr++;

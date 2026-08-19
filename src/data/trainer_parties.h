@@ -10364,7 +10364,7 @@ static const struct TrainerMon sParty_PicnickerGwen[] = {
     {
         .iv = 0,
         .lvl = 28,
-        .species = SPECIES_PERSIAN,
+        .species = SPECIES_CHANSEY,
     },
 };
 
