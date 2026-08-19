@@ -2409,8 +2409,8 @@ static const struct PokedudeBattlePartyInfo sParties_Catching[] =
     {
         .side = B_SIDE_OPPONENT,
         .level = 11,
-        .species = SPECIES_JIGGLYPUFF,
-        .moves = { MOVE_SING, MOVE_DEFENSE_CURL, MOVE_POUND },
+        .species = SPECIES_VULPIX,
+        .moves = { MOVE_SING, MOVE_DEFENSE_CURL, MOVE_QUICK_ATTACK },
         .nature = NATURE_CAREFUL,
         .gender = MALE,
     },

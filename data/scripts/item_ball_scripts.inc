@@ -199,7 +199,7 @@ SafariZone_Center_EventScript_ItemNugget::
 	end
 
 SafariZone_East_EventScript_ItemMaxPotion::
-	finditem ITEM_MAX_POTION
+	finditem ITEM_SUN_STONE
 	end
 
 SafariZone_East_EventScript_ItemFullRestore::
