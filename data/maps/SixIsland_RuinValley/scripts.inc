@@ -295,29 +295,29 @@ SixIsland_RuinValley_EventScript_PetrolOkGo::
 # 148 "data/maps/SixIsland_RuinValley/scripts.pory"
 	msgbox SixIsland_RuinValley_Text_PetrolOkGo, MSGBOX_AUTOCLOSE
 # 149 "data/maps/SixIsland_RuinValley/scripts.pory"
-	release
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 150 "data/maps/SixIsland_RuinValley/scripts.pory"
-	end
+	release
 # 151 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+	end
 # 152 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_PetrolOkGo::
-# 153 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Ok than, SCRAM!$"
-# 154 "data/maps/SixIsland_RuinValley/scripts.pory"
 
+# 153 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_PetrolOkGo::
+# 154 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Ok than, SCRAM!$"
 # 155 "data/maps/SixIsland_RuinValley/scripts.pory"
-SixIsland_RuinValley_Text_Petrol::
+
 # 156 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Hey, this place is under\n"
+SixIsland_RuinValley_Text_Petrol::
 # 157 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Investigation!\l"
+	.string "Hey, this place is under\n"
 # 158 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Do not come any futher,\l"
+	.string "Investigation!\p"
 # 159 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "or else i'll have to use\l"
+	.string "Do not come any futher,\n"
 # 160 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "force!\l"
+	.string "or else i'll have to use force!\p"
 # 161 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "Got that?$"
 # 162 "data/maps/SixIsland_RuinValley/scripts.pory"
@@ -331,7 +331,7 @@ SixIsland_RuinValley_Text_PetrolIntro::
 # 166 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "So I have to ask,\l"
 # 167 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "how was my policeman disguise?{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+	.string "how was my policeman disguise?$"
 # 168 "data/maps/SixIsland_RuinValley/scripts.pory"
 
 # 169 "data/maps/SixIsland_RuinValley/scripts.pory"

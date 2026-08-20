@@ -146,6 +146,7 @@ SixIsland_RuinValley_EventScript_PetrolRun::
 
 SixIsland_RuinValley_EventScript_PetrolOkGo::
 	msgbox SixIsland_RuinValley_Text_PetrolOkGo, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	release
 	end
 
@@ -154,17 +155,16 @@ SixIsland_RuinValley_Text_PetrolOkGo::
 
 SixIsland_RuinValley_Text_Petrol::
 	.string "Hey, this place is under\n"
-	.string "Investigation!\l"
-	.string "Do not come any futher,\l"
-	.string "or else i'll have to use\l"
-	.string "force!\l"
+	.string "Investigation!\p"
+	.string "Do not come any futher,\n"
+	.string "or else i'll have to use force!\p"
 	.string "Got that?$"
 
 SixIsland_RuinValley_Text_PetrolIntro::
 	.string "Alright, guess you want to fight\n"
 	.string "for your entry!\l"
 	.string "So I have to ask,\l"
-	.string "how was my policeman disguise?{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+	.string "how was my policeman disguise?$"
 
 SixIsland_RuinValley_Text_PetrolDefeat::
 	.string "I've been foiled!$"

@@ -5231,7 +5231,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
-        .trainerName = sTrainerNameString_Admin,
+        .trainerName = COMPOUND_STRING("PROTON"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
         .party = TRAINER_PARTY(sParty_TeamRocketGrunt45),
