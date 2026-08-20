@@ -76,7 +76,7 @@ RockTunnel_B1F_EventScript_Orbing::
 	closemessage
 	delay 40
 	goto_if_eq VAR_RESULT, NO, RockTunnel_B1F_EventScript_NoRock
-	trainerbattle_single TRAINER_RS_TUBER_M, RockTunnel_B1F_Text_YesRock, RockTunnel_B1F_Text_PostRock, RockTunnel_B1F_EventScript_PostRock, NO_MUSIC
+	trainerbattle_single TRAINER_ROCKY, RockTunnel_B1F_Text_YesRock, RockTunnel_B1F_Text_PostRock, RockTunnel_B1F_EventScript_PostRock, NO_MUSIC
 	release
 	end
 

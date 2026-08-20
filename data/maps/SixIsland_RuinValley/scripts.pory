@@ -77,7 +77,7 @@ SixIsland_RuinValley_EventScript_Giovanni::
 	msgbox SixIsland_PatternBush_Text_Giovanni4, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_GiovanniNo
 	setvar VAR_FORCEANIM, 1
-	trainerbattle_single TRAINER_JACKO, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
+	trainerbattle_single TRAINER_GIOVANNI4, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
 	release
 	end
 
@@ -97,7 +97,7 @@ SixIsland_RuinValley_EventScript_GiovanniNo::
 	end
 
 SixIsland_RuinValley_EventScript_Gym1::
-	trainerbattle_single TRAINER_EXPERT_M, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_CENAT, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
 	msgbox SixIsland_RuinValley_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 SixIsland_RuinValley_Text_Rocket1Intro::
@@ -111,7 +111,7 @@ SixIsland_RuinValley_Text_Rocket1PostBattle::
 	.string "It's been two hours!$"
 
 SixIsland_RuinValley_EventScript_Gym2::
-	trainerbattle_single TRAINER_EXPERT_F, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_KATIE, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
 	msgbox SixIsland_RuinValley_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 	end
 

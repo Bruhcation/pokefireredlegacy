@@ -263,7 +263,7 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
 	delay 40
 	goto_if_eq VAR_RESULT, NO, SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage
 	setvar VAR_FORCEANIM, 1
-	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
+	trainerbattle_single TRAINER_REN, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
 	release
 	end
 

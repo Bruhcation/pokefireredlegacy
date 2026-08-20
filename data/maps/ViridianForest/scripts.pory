@@ -66,7 +66,7 @@ ViridianForest_EventScript_Charlie::
 	end
 
 ViridianForest_EventScript_Lass::
-	trainerbattle_single TRAINER_RS_FISHERMAN, ViridianForest_Text_LassIntro, ViridianForest_Text_LassDefeat
+	trainerbattle_single TRAINER_SAM, ViridianForest_Text_LassIntro, ViridianForest_Text_LassDefeat
 	msgbox ViridianForest_Text_LassPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -81,7 +81,7 @@ ViridianForest_EventScript_Hex_Maniac::
 	applymovement LOCALID_HEX, Common_Movement_ExclamationMarkDelay
 	waitmovement 0
 	waitbuttonpress
-	trainerbattle_single TRAINER_HEX_MANIAC, ViridianForest_Text_Hex_Maniac2, ViridianForest_Text_Hex_Maniac3, ViridianForest_EventScript_Hex_Maniac5
+	trainerbattle_single TRAINER_BINARO_UNUSED, ViridianForest_Text_Hex_Maniac2, ViridianForest_Text_Hex_Maniac3, ViridianForest_EventScript_Hex_Maniac5
 	end
 
 ViridianForest_EventScript_Hex_Maniac5::

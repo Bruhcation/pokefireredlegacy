@@ -51,7 +51,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FourIsland_IcefallCave_Back_Text_GruntIntro
 	setvar VAR_LAST_TALKED, LOCALID_ROCKET3
-	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_45, FourIsland_IcefallCave_Back_Text_GruntDefeat
+	trainerbattle_no_intro TRAINER_TEAM_ROCKET_PROTON, FourIsland_IcefallCave_Back_Text_GruntDefeat
 	applymovement LOCALID_LORELEI, FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE

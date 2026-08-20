@@ -111,7 +111,7 @@ FiveIsland_Meadow_EventScript_Rocket3::
 # 56 "data/maps/FiveIsland_Meadow/scripts.pory"
 FiveIsland_Meadow_EventScript_Gym1::
 # 57 "data/maps/FiveIsland_Meadow/scripts.pory"
-	trainerbattle_single TRAINER_RUNNING_TRIATHLETE_F, FiveIsland_Meadow_Text_Gym1, FiveIsland_Meadow_Text_GymDefeat
+	trainerbattle_single TRAINER_LEDO, FiveIsland_Meadow_Text_Gym1, FiveIsland_Meadow_Text_GymDefeat
 # 58 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Gym1Post, MSGBOX_AUTOCLOSE
 # 59 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -147,7 +147,7 @@ FiveIsland_Meadow_Text_Gym1Post::
 # 74 "data/maps/FiveIsland_Meadow/scripts.pory"
 FiveIsland_Meadow_EventScript_Gym2::
 # 75 "data/maps/FiveIsland_Meadow/scripts.pory"
-	trainerbattle_single TRAINER_RUNNING_TRIATHLETE_M, FiveIsland_Meadow_Text_Gym2, FiveIsland_Meadow_Text_Gym2Defeat
+	trainerbattle_single TRAINER_DUNE, FiveIsland_Meadow_Text_Gym2, FiveIsland_Meadow_Text_Gym2Defeat
 # 76 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Gym2Post, MSGBOX_AUTOCLOSE
 # 77 "data/maps/FiveIsland_Meadow/scripts.pory"
@@ -187,7 +187,7 @@ FiveIsland_Meadow_Text_Gym2Post::
 # 94 "data/maps/FiveIsland_Meadow/scripts.pory"
 FiveIsland_Meadow_EventScript_Gym3::
 # 95 "data/maps/FiveIsland_Meadow/scripts.pory"
-	trainerbattle_single TRAINER_POKEFAN_M, FiveIsland_Meadow_Text_Gym3, FiveIsland_Meadow_Text_Gym3Defeat
+	trainerbattle_single TRAINER_CAMMY, FiveIsland_Meadow_Text_Gym3, FiveIsland_Meadow_Text_Gym3Defeat
 # 96 "data/maps/FiveIsland_Meadow/scripts.pory"
 	msgbox FiveIsland_Meadow_Text_Gym3Post, MSGBOX_AUTOCLOSE
 # 97 "data/maps/FiveIsland_Meadow/scripts.pory"

@@ -22,7 +22,7 @@ CeladonCity_Gym_EventScript_BeatKogaSabrina::
 	trainerbattle_single TRAINER_ERIKA3, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
 	goto CeladonCity_Gym_EventScript_ContinueErika
 CeladonCity_Gym_EventScript_BeatBlaine::
-	trainerbattle_single TRAINER_BUG_MANIAC, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
+	trainerbattle_single TRAINER_UNUSED_ERIKA2, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
 	goto CeladonCity_Gym_EventScript_ContinueErika
 CeladonCity_Gym_EventScript_ContinueErika::
 	goto_if_unset FLAG_GOT_TM19_FROM_ERIKA, CeladonCity_Gym_EventScript_GiveTM19
@@ -82,13 +82,13 @@ CeladonCity_Gym_Text_ErikaNoNoRematchBattle::
 CeladonCity_Gym_EventScript_RematchErika2::
 	msgbox CeladonCity_Gym_Text_RematchErika, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeladonCity_Gym_EventScript_NoRematchErika
-	trainerbattle_single TRAINER_LEADER_ERIKA2, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_ERIKA_REMATCH, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
 	release
 	end
 
 CeladonCity_Gym_EventScript_PostRematchErika::
 	msgbox CeladonCity_Gym_Text_ErikaPostRematchBattle
-	cleartrainerflag TRAINER_LEADER_ERIKA2   
+	cleartrainerflag TRAINER_LEADER_ERIKA_REMATCH   
 	release
 	end
 

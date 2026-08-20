@@ -39,7 +39,7 @@ FourIsland_IcefallCave_1F_OnFrame::
 # 20 "data/maps/FourIsland_IcefallCave_1F/scripts.pory"
 FourIsland_IcefallCave_1F_EventScript_Gym3::
 # 21 "data/maps/FourIsland_IcefallCave_1F/scripts.pory"
-	trainerbattle_single TRAINER_RS_YOUNGSTER, FourIsland_IcefallCave_1F_Text_Rocket1Intro, FourIsland_IcefallCave_1F_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_JACKIE, FourIsland_IcefallCave_1F_Text_Rocket1Intro, FourIsland_IcefallCave_1F_Text_Rocket1Defeat
 # 22 "data/maps/FourIsland_IcefallCave_1F/scripts.pory"
 	msgbox FourIsland_IcefallCave_1F_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 23 "data/maps/FourIsland_IcefallCave_1F/scripts.pory"

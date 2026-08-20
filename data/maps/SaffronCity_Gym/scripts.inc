@@ -21,7 +21,7 @@ SaffronCity_Gym_EventScript_Sabrina::
 # 11 "data/maps/SaffronCity_Gym/scripts.pory"
 SaffronCity_Gym_EventScript_Blaine::
 # 12 "data/maps/SaffronCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_PRESABRINA, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
+	trainerbattle_single TRAINER_SABRINA_UNUSED, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 # 13 "data/maps/SaffronCity_Gym/scripts.pory"
 	goto SaffronCity_Gym_EventScript_SabrinaContinue
 # 14 "data/maps/SaffronCity_Gym/scripts.pory"
@@ -139,7 +139,7 @@ SaffronCity_Gym_EventScript_RematchSabrina2::
 # 70 "data/maps/SaffronCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SaffronCity_Gym_EventScript_NoRematchSabrina
 # 71 "data/maps/SaffronCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LEADER_SABRINA2, SaffronCity_Gym_Text_RematchYesSabrina, SaffronCity_Gym_Text_RematchSabrinaDefeat, SaffronCity_Gym_EventScript_PostRematchSabrina, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_SABRINA_REMATCH, SaffronCity_Gym_Text_RematchYesSabrina, SaffronCity_Gym_Text_RematchSabrinaDefeat, SaffronCity_Gym_EventScript_PostRematchSabrina, NO_MUSIC
 # 72 "data/maps/SaffronCity_Gym/scripts.pory"
 	release
 # 73 "data/maps/SaffronCity_Gym/scripts.pory"
@@ -151,7 +151,7 @@ SaffronCity_Gym_EventScript_PostRematchSabrina::
 # 76 "data/maps/SaffronCity_Gym/scripts.pory"
 	msgbox SaffronCity_Gym_Text_SabrinaPostRematchBattle
 # 77 "data/maps/SaffronCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_LEADER_SABRINA2
+	cleartrainerflag TRAINER_LEADER_SABRINA_REMATCH
 # 78 "data/maps/SaffronCity_Gym/scripts.pory"
 	release
 # 79 "data/maps/SaffronCity_Gym/scripts.pory"

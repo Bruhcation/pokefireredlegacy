@@ -2800,20 +2800,20 @@ void BattleTrophy(void)
         FlagGet(TRAINER_OMAN) &&
         FlagGet(TRAINER_SPIKE) &&
         FlagGet(TRAINER_NURSE_JOY) &&
-        FlagGet(TRAINER_BROCK2) &&
-        FlagGet(TRAINER_LEADER_SABRINA2) &&
-        FlagGet(TRAINER_LEADER_KOGA2) &&
-        FlagGet(TRAINER_LEADER_ERIKA2) &&
-        FlagGet(TRAINER_MISTY2) &&
-        FlagGet(TRAINER_SURGE2) &&
-        FlagGet(TRAINER_LEADER_BLAINE2) &&
+        FlagGet(TRAINER_BROCK_REMATCH) &&
+        FlagGet(TRAINER_LEADER_SABRINA_REMATCH) &&
+        FlagGet(TRAINER_LEADER_KOGA_REMATCH) &&
+        FlagGet(TRAINER_LEADER_ERIKA_REMATCH) &&
+        FlagGet(TRAINER_MISTY_REMATCH) &&
+        FlagGet(TRAINER_SURGE_REMATCH) &&
+        FlagGet(TRAINER_LEADER_BLAINE_REMATCH) &&
         FlagGet(TRAINER_KAREN) &&
         FlagGet(TRAINER_WILL) &&
-        FlagGet(TRAINER_JACKO) &&
-        FlagGet(TRAINER_KINDLER) &&
-        FlagGet(TRAINER_GUITARIST) &&
+        FlagGet(TRAINER_GIOVANNI4) &&
+        FlagGet(TRAINER_GUARD_COLIN_2) &&
+        FlagGet(TRAINER_PAXTON_UNUSED) &&
         FlagGet(FLAG_BLUE_REMATCH_DEFEAT) &&
-        FlagGet(TRAINER_CASENO))
+        FlagGet(TRAINER_CASEY))
     {
         gSpecialVar_Result = TRUE;
         return;

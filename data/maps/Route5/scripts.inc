@@ -119,7 +119,7 @@ Route5_EventScript_Orbing::
 # 60 "data/maps/Route5/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoSilbings
 # 61 "data/maps/Route5/scripts.pory"
-	trainerbattle_single TRAINER_RS_RUIN_MANIAC, Route5_Text_YesSilbings, Route5_Text_PostSilbings, Route5_EventScript_PostFlags, NO_MUSIC
+	trainerbattle_single TRAINER_BRO_SIS, Route5_Text_YesSilbings, Route5_Text_PostSilbings, Route5_EventScript_PostFlags, NO_MUSIC
 # 62 "data/maps/Route5/scripts.pory"
 	release
 # 63 "data/maps/Route5/scripts.pory"

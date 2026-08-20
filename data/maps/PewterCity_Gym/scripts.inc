@@ -125,7 +125,7 @@ PewterCity_Gym_EventScript_RematchBrock2::
 # 63 "data/maps/PewterCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, PewterCity_Gym_EventScript_NoRematchBrock
 # 64 "data/maps/PewterCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BROCK2, PewterCity_Gym_Text_RematchYesBrock, PewterCity_Gym_Text_RematchBrockDefeat, PewterCity_Gym_EventScript_PostRematchBrock, NO_MUSIC
+	trainerbattle_single TRAINER_BROCK_REMATCH, PewterCity_Gym_Text_RematchYesBrock, PewterCity_Gym_Text_RematchBrockDefeat, PewterCity_Gym_EventScript_PostRematchBrock, NO_MUSIC
 # 65 "data/maps/PewterCity_Gym/scripts.pory"
 	release
 # 66 "data/maps/PewterCity_Gym/scripts.pory"
@@ -137,7 +137,7 @@ PewterCity_Gym_EventScript_PostRematchBrock::
 # 69 "data/maps/PewterCity_Gym/scripts.pory"
 	msgbox PewterCity_Gym_Text_BrockPostRematchBattle
 # 70 "data/maps/PewterCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_BROCK2
+	cleartrainerflag TRAINER_BROCK_REMATCH
 # 71 "data/maps/PewterCity_Gym/scripts.pory"
 	release
 # 72 "data/maps/PewterCity_Gym/scripts.pory"

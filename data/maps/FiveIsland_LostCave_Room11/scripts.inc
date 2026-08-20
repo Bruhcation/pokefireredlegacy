@@ -15,7 +15,7 @@ FiveIsland_LostCave_Room11_EventScript_Armstrong::
 # 8 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room11_EventScript_NoArmstrong
 # 9 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
-	trainerbattle_single TRAINER_DRAGON_TAMER, FiveIsland_LostCave_Room11_Text_YesArmstrong, FiveIsland_LostCave_Room11_Text_ArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostArmstrong, NO_MUSIC
+	trainerbattle_single TRAINER_MIRAGESTRONG, FiveIsland_LostCave_Room11_Text_YesArmstrong, FiveIsland_LostCave_Room11_Text_ArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostArmstrong, NO_MUSIC
 # 10 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	release
 # 11 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
@@ -29,7 +29,7 @@ FiveIsland_LostCave_Room11_EventScript_PostArmstrong::
 # 15 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	setflag FLAG_ARMSTRONG_CLONE
 # 16 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
-	cleartrainerflag TRAINER_DRAGON_TAMER
+	cleartrainerflag TRAINER_MIRAGESTRONG
 # 17 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	release
 # 18 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
@@ -53,7 +53,7 @@ FiveIsland_LostCave_Room11_EventScript_RematchArmstrong::
 # 27 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room11_EventScript_NoArmstrong
 # 28 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
-	trainerbattle_single TRAINER_DRAGON_TAMER, FiveIsland_LostCave_Room11_Text_YesRematchArmstrong, FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostRematchArmstrong, NO_MUSIC
+	trainerbattle_single TRAINER_MIRAGESTRONG, FiveIsland_LostCave_Room11_Text_YesRematchArmstrong, FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat, FiveIsland_LostCave_Room11_EventScript_PostRematchArmstrong, NO_MUSIC
 # 29 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	release
 # 30 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
@@ -65,7 +65,7 @@ FiveIsland_LostCave_Room11_EventScript_PostRematchArmstrong::
 # 33 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	msgbox FiveIsland_LostCave_Room11_Text_RematchArmstrongDefeat
 # 34 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
-	cleartrainerflag TRAINER_DRAGON_TAMER
+	cleartrainerflag TRAINER_MIRAGESTRONG
 # 35 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"
 	release
 # 36 "data/maps/FiveIsland_LostCave_Room11/scripts.pory"

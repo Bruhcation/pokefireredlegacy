@@ -57,7 +57,7 @@ ViridianCity_PokemonCenter_2F_EventScript_Pichu::
 # 29 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, ViridianCity_PokemonCenter_2F_EventScript_NoPichu
 # 30 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
-	trainerbattle_single TRAINER_RS_TUBER_F, ViridianCity_PokemonCenter_2F_Text_YesPichu, ViridianCity_PokemonCenter_2F_Text_PichuDefeat, ViridianCity_PokemonCenter_2F_EventScript_Won, NO_MUSIC
+	trainerbattle_single TRAINER_POKY, ViridianCity_PokemonCenter_2F_Text_YesPichu, ViridianCity_PokemonCenter_2F_Text_PichuDefeat, ViridianCity_PokemonCenter_2F_EventScript_Won, NO_MUSIC
 # 31 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	release
 # 32 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"

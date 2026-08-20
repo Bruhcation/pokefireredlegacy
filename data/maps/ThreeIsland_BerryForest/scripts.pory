@@ -168,7 +168,7 @@ ThreeIsland_BerryForest_EventScript_PostRematchCruelKing::
 	end
 
 ThreeIsland_BerryForest_EventScript_Gym1::
-	trainerbattle_single TRAINER_SR_AND_JR, ThreeIsland_BerryForest_Text_Rocket1Intro, ThreeIsland_BerryForest_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_BOCK, ThreeIsland_BerryForest_Text_Rocket1Intro, ThreeIsland_BerryForest_Text_Rocket1Defeat
 	msgbox ThreeIsland_BerryForest_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -184,7 +184,7 @@ ThreeIsland_BerryForest_Text_Rocket1PostBattle::
 	.string "messed with!$"
 
 ThreeIsland_BerryForest_EventScript_Gym2::
-	trainerbattle_single TRAINER_SWIMMING_TRIATHLETE_F, ThreeIsland_BerryForest_Text_Rocket2Intro, ThreeIsland_BerryForest_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_SAKI, ThreeIsland_BerryForest_Text_Rocket2Intro, ThreeIsland_BerryForest_Text_Rocket2Defeat
 	msgbox ThreeIsland_BerryForest_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -200,7 +200,7 @@ ThreeIsland_BerryForest_Text_Rocket2PostBattle::
 	.string "He's just into his theatrics.$"
 
 ThreeIsland_BerryForest_EventScript_Gym3::
-	trainerbattle_single TRAINER_POKEFAN_F, ThreeIsland_BerryForest_Text_Rocket3Intro, ThreeIsland_BerryForest_Text_Rocket3Defeat
+	trainerbattle_single TRAINER_KRAUSER, ThreeIsland_BerryForest_Text_Rocket3Intro, ThreeIsland_BerryForest_Text_Rocket3Defeat
 	msgbox ThreeIsland_BerryForest_Text_Rocket3PostBattle, MSGBOX_AUTOCLOSE
 	end
 

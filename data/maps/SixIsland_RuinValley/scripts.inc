@@ -157,7 +157,7 @@ SixIsland_RuinValley_EventScript_Giovanni::
 # 79 "data/maps/SixIsland_RuinValley/scripts.pory"
 	setvar VAR_FORCEANIM, 1
 # 80 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_JACKO, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
+	trainerbattle_single TRAINER_GIOVANNI4, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
 # 81 "data/maps/SixIsland_RuinValley/scripts.pory"
 	release
 # 82 "data/maps/SixIsland_RuinValley/scripts.pory"
@@ -197,7 +197,7 @@ SixIsland_RuinValley_EventScript_GiovanniNo::
 # 99 "data/maps/SixIsland_RuinValley/scripts.pory"
 SixIsland_RuinValley_EventScript_Gym1::
 # 100 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_EXPERT_M, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_CENAT, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
 # 101 "data/maps/SixIsland_RuinValley/scripts.pory"
 	msgbox SixIsland_RuinValley_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 102 "data/maps/SixIsland_RuinValley/scripts.pory"
@@ -225,7 +225,7 @@ SixIsland_RuinValley_Text_Rocket1PostBattle::
 # 113 "data/maps/SixIsland_RuinValley/scripts.pory"
 SixIsland_RuinValley_EventScript_Gym2::
 # 114 "data/maps/SixIsland_RuinValley/scripts.pory"
-	trainerbattle_single TRAINER_EXPERT_F, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_KATIE, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
 # 115 "data/maps/SixIsland_RuinValley/scripts.pory"
 	msgbox SixIsland_RuinValley_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 # 116 "data/maps/SixIsland_RuinValley/scripts.pory"

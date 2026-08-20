@@ -37,7 +37,7 @@ Route21_South_EventScript_Orbing::
 	closemessage
 	delay 40
 	goto_if_eq VAR_RESULT, NO, Route21_South_EventScript_NoWater
-	trainerbattle_single TRAINER_AQUA_GRUNT_M, Route21_South_Text_YesWater, Route21_South_Text_PostWater, Route21_South_EventScript_PostWater, NO_MUSIC
+	trainerbattle_single TRAINER_KYO, Route21_South_Text_YesWater, Route21_South_Text_PostWater, Route21_South_EventScript_PostWater, NO_MUSIC
 	release
 	end
 

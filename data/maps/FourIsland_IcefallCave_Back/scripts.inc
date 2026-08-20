@@ -105,7 +105,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 # 53 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_ROCKET3
 # 54 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_45, FourIsland_IcefallCave_Back_Text_GruntDefeat
+	trainerbattle_no_intro TRAINER_TEAM_ROCKET_PROTON, FourIsland_IcefallCave_Back_Text_GruntDefeat
 # 55 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	applymovement LOCALID_LORELEI, FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp
 # 56 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
