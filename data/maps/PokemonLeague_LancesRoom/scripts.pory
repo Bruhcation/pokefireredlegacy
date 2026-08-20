@@ -171,14 +171,17 @@ PokemonLeague_LancesRoom_EventScript_Starter::
 
 PokemonLeague_LancesRoom_EventScript_BattleSquirtle::
 	clearflag FLAG_BLASTOISE
+	setflag FLAG_SHOW_RIVAL_STARTER
 	return
 
 PokemonLeague_LancesRoom_EventScript_BattleBulbasaur::
 	clearflag FLAG_VENUSAUR
+	setflag FLAG_SHOW_RIVAL_STARTER
 	return
 
 PokemonLeague_LancesRoom_EventScript_BattleCharmander::
 	clearflag FLAG_CHARIZARD
+	setflag FLAG_SHOW_RIVAL_STARTER
 	return
 
 PokemonLeague_LancesRoom_EventScript_LanceMoveOutOfWayLeft::

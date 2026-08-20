@@ -154,7 +154,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Pois),
     },
     [TRAINER_REN] = {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
+        .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .trainerName = COMPOUND_STRING("REN"),
@@ -608,7 +608,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_HP),
     },
     [TRAINER_WHITNEY] = {
-        .trainerClass = TRAINER_CLASS_JOHTO_LEADER,
+        .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_WHITNEY,
         .trainerName = COMPOUND_STRING("WHITNEY"),
@@ -683,7 +683,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_SEVII_CHAMPION,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
-        .trainerName = COMPOUND_STRING("OMAN"),
+        .trainerName = COMPOUND_STRING("OMAR"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
         .party = TRAINER_PARTY(sParty_Oman),
