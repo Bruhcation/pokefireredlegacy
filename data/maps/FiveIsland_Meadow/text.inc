@@ -33,12 +33,12 @@ FiveIsland_Meadow_Text_Rocket1PostBattle::
     .string "Go home!$"
 
 FiveIsland_Meadow_Text_Rocket2Intro::
-	.string "Stay away from here!\n"
-	.string "I'm investigating this place!\l"
-	.string "No need to go any further!$"
+    .string "There's nothing past here except\n"
+    .string "our WAREHOUSE.\p"
+    .string "So what brings you here?$"
 
 FiveIsland_Meadow_Text_Rocket2Defeat::
-	.string "My cover is blown!$"
+    .string "That wasn't supposed to happen…$"
 
 FiveIsland_Meadow_Text_Rocket2PostBattle::
     .string "You're wanting to know what's inside\n"

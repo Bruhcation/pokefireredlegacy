@@ -1647,41 +1647,39 @@ static const struct TrainerMon sParty_Proton[] = {
 static const struct TrainerMon sParty_Petrol[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_WEEZING,
-        .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 64,
+        .lvl = 62,
         .species = SPECIES_SNEASEL,
         .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 63,
+        .species = SPECIES_GRANBULL,
+        .heldItem = ITEM_CHOICE_BAND,
+        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
+    },  
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
         .species = SPECIES_RHYDON,
         .heldItem = ITEM_QUICK_CLAW,
-        .moves = {MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_MEGAHORN, MOVE_DOUBLE_EDGE},
-
-    },  
+        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
+    },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 64,
         .species = SPECIES_MUK,
         .heldItem = ITEM_BRIGHT_POWDER,
         .moves = {MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR, MOVE_MINIMIZE, MOVE_TOXIC},
-
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 65,
-        .species = SPECIES_GRANBULL,
-        .heldItem = ITEM_CHOICE_BAND,
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
-    },    
-}; //UnusedRocketAdminPetrol
+        .species = SPECIES_WEEZING,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
+    },   
+}; //RocketAdminPetrol
 static const struct TrainerMon sParty_Falkner[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -2320,42 +2318,42 @@ static const struct TrainerMon sParty_Karen[] = {
 static const struct TrainerMon sParty_Ditto[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     }, 
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     },   
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     },   
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_WHITE_HERB,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     },   
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
     },   
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 70,
+        .lvl = 65,
         .species = SPECIES_DITTO,
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
@@ -11923,41 +11921,21 @@ static const struct TrainerMon sParty_TeamRocketGrunt49[] = {
 
 static const struct TrainerMon sParty_TeamRocketGrunt50[] = {
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 62,
-        .species = SPECIES_SNEASEL,
-        .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE},
+        .iv = 0,
+        .lvl = 60,
+        .species = SPECIES_PUPITAR,
     },
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_GRANBULL,
-        .heldItem = ITEM_CHOICE_BAND,
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ROCK_SLIDE},
-    },  
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 63,
-        .species = SPECIES_RHYDON,
-        .heldItem = ITEM_QUICK_CLAW,
-        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE, MOVE_MEGAHORN},
+        .iv = 0,
+        .lvl = 60,
+        .species = SPECIES_GLIGAR
     },
     {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 64,
-        .species = SPECIES_MUK,
-        .heldItem = ITEM_BRIGHT_POWDER,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_ACID_ARMOR, MOVE_MINIMIZE, MOVE_TOXIC},
-
+        .iv = 0,
+        .lvl = 60,
+        .species = SPECIES_MURKROW,
     },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
-        .species = SPECIES_WEEZING,
-        .heldItem = ITEM_LEFTOVERS,
-        .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_PAIN_SPLIT},
-    },
-};//Petrol
+};
 
 static const struct TrainerMon sParty_TeamRocketGrunt51[] = {
     {

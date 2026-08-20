@@ -5,7 +5,7 @@
 # 3 "data/maps/SixIsland_RuinValley/scripts.pory"
 .set LOCALID_GIOVANNI, 18
 # 4 "data/maps/SixIsland_RuinValley/scripts.pory"
-
+.set LOCALID_ADMIN, 21
 # 5 "data/maps/SixIsland_RuinValley/scripts.pory"
 
 # 6 "data/maps/SixIsland_RuinValley/scripts.pory"
@@ -248,3 +248,101 @@ SixIsland_RuinValley_Text_Rocket2Defeat::
 SixIsland_RuinValley_Text_Rocket2PostBattle::
 # 125 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "I can't take this anymore…$"
+# 126 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 127 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_Petrol::
+# 128 "data/maps/SixIsland_RuinValley/scripts.pory"
+	lock
+# 129 "data/maps/SixIsland_RuinValley/scripts.pory"
+	faceplayer
+# 130 "data/maps/SixIsland_RuinValley/scripts.pory"
+	goto_if_set FLAG_HIDE_ADMIN, SixIsland_RuinValley_EventScript_PetrolRun
+# 131 "data/maps/SixIsland_RuinValley/scripts.pory"
+	goto_if_set FLAG_HIDE_FIVE_ISLAND_ROCKETS, SixIsland_RuinValley_EventScript_PetrolRun
+# 132 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_Petrol, MSGBOX_YESNO
+# 133 "data/maps/SixIsland_RuinValley/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, SixIsland_RuinValley_EventScript_PetrolOkGo
+# 134 "data/maps/SixIsland_RuinValley/scripts.pory"
+	trainerbattle_single TRAINER_PETROL, SixIsland_RuinValley_Text_PetrolIntro, SixIsland_RuinValley_Text_PetrolDefeat, SixIsland_RuinValley_EventScript_PetrolRun
+# 135 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+# 136 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 137 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 138 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_PetrolRun::
+# 139 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+# 140 "data/maps/SixIsland_RuinValley/scripts.pory"
+	setflag FLAG_ADMIN_PETROL
+# 141 "data/maps/SixIsland_RuinValley/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 142 "data/maps/SixIsland_RuinValley/scripts.pory"
+	removeobject LOCALID_ADMIN
+# 143 "data/maps/SixIsland_RuinValley/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 144 "data/maps/SixIsland_RuinValley/scripts.pory"
+	release
+# 145 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 146 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 147 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_EventScript_PetrolOkGo::
+# 148 "data/maps/SixIsland_RuinValley/scripts.pory"
+	msgbox SixIsland_RuinValley_Text_PetrolOkGo, MSGBOX_AUTOCLOSE
+# 149 "data/maps/SixIsland_RuinValley/scripts.pory"
+	release
+# 150 "data/maps/SixIsland_RuinValley/scripts.pory"
+	end
+# 151 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 152 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_PetrolOkGo::
+# 153 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Ok than, SCRAM!$"
+# 154 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 155 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_Petrol::
+# 156 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Hey, this place is under\n"
+# 157 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Investigation!\l"
+# 158 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Do not come any futher,\l"
+# 159 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "or else i'll have to use\l"
+# 160 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "force!\l"
+# 161 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Got that?$"
+# 162 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 163 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_PetrolIntro::
+# 164 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Alright, guess you want to fight\n"
+# 165 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "for your entry!\l"
+# 166 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "So I have to ask,\l"
+# 167 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "how was my policeman disguise?{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+# 168 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 169 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_PetrolDefeat::
+# 170 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "I've been foiled!$"
+# 171 "data/maps/SixIsland_RuinValley/scripts.pory"
+
+# 172 "data/maps/SixIsland_RuinValley/scripts.pory"
+SixIsland_RuinValley_Text_PetrolPostBattle::
+# 173 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "Welp guess my cover is blown.\l"
+# 174 "data/maps/SixIsland_RuinValley/scripts.pory"
+	.string "So it's time for me to flee!$"

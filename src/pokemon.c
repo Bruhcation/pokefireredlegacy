@@ -6228,9 +6228,10 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_JOHTO_LEADER:
         case TRAINER_CLASS_SEVII_CHAMPION:
+        case TRAINER_CLASS_POKEDUDE:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_MIRAGE_TRAINER:
-            return MUS_RS_VS_GYM_LEADER;
+            return MUS_VS_DEOXYS;
         case TRAINER_CLASS_BOSS:
         case TRAINER_CLASS_TEAM_ROCKET:
             return MUS_VS_TEAM_ROCKET;

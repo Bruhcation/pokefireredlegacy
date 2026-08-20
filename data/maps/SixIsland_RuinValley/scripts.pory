@@ -1,7 +1,7 @@
 raw `
 .set LOCALID_SCIENTIST, 1
 .set LOCALID_GIOVANNI, 18
-
+.set LOCALID_ADMIN, 21
 
 SixIsland_RuinValley_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SixIsland_RuinValley_OnLoad
@@ -123,5 +123,54 @@ SixIsland_RuinValley_Text_Rocket2Defeat::
 	.string "WAHHH!$"
 SixIsland_RuinValley_Text_Rocket2PostBattle::
 	.string "I can't take this anymore…$"
+
+SixIsland_RuinValley_EventScript_Petrol::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_ADMIN, SixIsland_RuinValley_EventScript_PetrolRun
+	goto_if_set FLAG_HIDE_FIVE_ISLAND_ROCKETS, SixIsland_RuinValley_EventScript_PetrolRun
+	msgbox SixIsland_RuinValley_Text_Petrol, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SixIsland_RuinValley_EventScript_PetrolOkGo
+	trainerbattle_single TRAINER_PETROL, SixIsland_RuinValley_Text_PetrolIntro, SixIsland_RuinValley_Text_PetrolDefeat, SixIsland_RuinValley_EventScript_PetrolRun
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_RuinValley_EventScript_PetrolRun::
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+	setflag FLAG_ADMIN_PETROL
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ADMIN
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SixIsland_RuinValley_EventScript_PetrolOkGo::
+	msgbox SixIsland_RuinValley_Text_PetrolOkGo, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SixIsland_RuinValley_Text_PetrolOkGo::
+	.string "Ok than, SCRAM!$"
+
+SixIsland_RuinValley_Text_Petrol::
+	.string "Hey, this place is under\n"
+	.string "Investigation!\l"
+	.string "Do not come any futher,\l"
+	.string "or else i'll have to use\l"
+	.string "force!\l"
+	.string "Got that?$"
+
+SixIsland_RuinValley_Text_PetrolIntro::
+	.string "Alright, guess you want to fight\n"
+	.string "for your entry!\l"
+	.string "So I have to ask,\l"
+	.string "how was my policeman disguise?{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+
+SixIsland_RuinValley_Text_PetrolDefeat::
+	.string "I've been foiled!$"
+
+SixIsland_RuinValley_Text_PetrolPostBattle::
+	.string "Welp guess my cover is blown.\l"
+	.string "So it's time for me to flee!$"
 
 `
