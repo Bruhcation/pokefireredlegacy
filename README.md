@@ -144,7 +144,7 @@ Credits:
 
 - Team Aqua Hideout - Like Above for help
 
-- Project Palladium Team - Male Guard Sprite
+- Rubire4 - Rescaled HGSS Officer sprite (edited by therealteamplayer)
 
 - Invis (HMA Discord) - Nurse Joy Sprite
 
