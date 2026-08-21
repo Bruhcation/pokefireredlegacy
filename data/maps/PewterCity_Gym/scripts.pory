@@ -61,13 +61,13 @@ PewterCity_Gym_Text_BrockNoNoRematchBattle::
 PewterCity_Gym_EventScript_RematchBrock2::
 	msgbox PewterCity_Gym_Text_RematchBrock, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, PewterCity_Gym_EventScript_NoRematchBrock
-	trainerbattle_single TRAINER_BROCK2, PewterCity_Gym_Text_RematchYesBrock, PewterCity_Gym_Text_RematchBrockDefeat, PewterCity_Gym_EventScript_PostRematchBrock, NO_MUSIC
+	trainerbattle_single TRAINER_BROCK_REMATCH, PewterCity_Gym_Text_RematchYesBrock, PewterCity_Gym_Text_RematchBrockDefeat, PewterCity_Gym_EventScript_PostRematchBrock, NO_MUSIC
 	release
 	end
 
 PewterCity_Gym_EventScript_PostRematchBrock::
 	msgbox PewterCity_Gym_Text_BrockPostRematchBattle
-	cleartrainerflag TRAINER_BROCK2
+	cleartrainerflag TRAINER_BROCK_REMATCH
 	release
 	end
 

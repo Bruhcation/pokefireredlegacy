@@ -117,9 +117,9 @@ FuchsiaCity_House3_Poison::
 # 59 "data/maps/FuchsiaCity_House3/scripts.pory"
 	msgbox FuchsiaCity_House3_Text_Eva, MSGBOX_DEFAULT
 # 60 "data/maps/FuchsiaCity_House3/scripts.pory"
-	trainerbattle_no_intro TRAINER_RS_SWIMMER_M, FuchsiaCity_House3_Text_EvaPostBattle
+	trainerbattle_no_intro TRAINER_POIS, FuchsiaCity_House3_Text_EvaPostBattle
 # 61 "data/maps/FuchsiaCity_House3/scripts.pory"
-	cleartrainerflag TRAINER_RS_SWIMMER_M
+	cleartrainerflag TRAINER_POIS
 # 62 "data/maps/FuchsiaCity_House3/scripts.pory"
 	end
 # 63 "data/maps/FuchsiaCity_House3/scripts.pory"

@@ -133,7 +133,7 @@ CeruleanCity_House5_EventScript_EnergyRoot::
 # 67 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_ENERGY_ROOT
 # 68 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 80
+	setvar VAR_0x8009, 50
 # 69 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 70 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -161,7 +161,7 @@ CeruleanCity_House5_EventScript_RevivalHerb::
 # 81 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_REVIVAL_HERB
 # 82 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 300
+	setvar VAR_0x8009, 50
 # 83 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 84 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -175,7 +175,7 @@ CeruleanCity_House5_EventScript_Protein::
 # 88 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_PROTEIN
 # 89 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 90 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 91 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -189,7 +189,7 @@ CeruleanCity_House5_EventScript_Iron::
 # 95 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_IRON
 # 96 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 97 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 98 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -203,7 +203,7 @@ CeruleanCity_House5_EventScript_Carbos::
 # 102 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_CARBOS
 # 103 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 104 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 105 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -217,7 +217,7 @@ CeruleanCity_House5_EventScript_Calcium::
 # 109 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_CALCIUM
 # 110 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 111 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 112 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -231,7 +231,7 @@ CeruleanCity_House5_EventScript_Zinc::
 # 116 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_ZINC
 # 117 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 118 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 119 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -245,7 +245,7 @@ CeruleanCity_House5_EventScript_HPUp::
 # 123 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_HP_UP
 # 124 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 500
 # 125 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 126 "data/maps/CeruleanCity_House5/scripts.pory"
@@ -259,7 +259,7 @@ CeruleanCity_House5_EventScript_PPUp::
 # 130 "data/maps/CeruleanCity_House5/scripts.pory"
 	setvar VAR_0x8008, ITEM_PP_UP
 # 131 "data/maps/CeruleanCity_House5/scripts.pory"
-	setvar VAR_0x8009, 3000
+	setvar VAR_0x8009, 500
 # 132 "data/maps/CeruleanCity_House5/scripts.pory"
 	goto CeruleanCity_House5_EventScript_ExchangePowderForItem
 # 133 "data/maps/CeruleanCity_House5/scripts.pory"

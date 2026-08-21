@@ -155,7 +155,7 @@ RockTunnel_B1F_EventScript_Orbing::
 # 78 "data/maps/RockTunnel_B1F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, RockTunnel_B1F_EventScript_NoRock
 # 79 "data/maps/RockTunnel_B1F/scripts.pory"
-	trainerbattle_single TRAINER_RS_TUBER_M, RockTunnel_B1F_Text_YesRock, RockTunnel_B1F_Text_PostRock, RockTunnel_B1F_EventScript_PostRock, NO_MUSIC
+	trainerbattle_single TRAINER_ROCKY, RockTunnel_B1F_Text_YesRock, RockTunnel_B1F_Text_PostRock, RockTunnel_B1F_EventScript_PostRock, NO_MUSIC
 # 80 "data/maps/RockTunnel_B1F/scripts.pory"
 	release
 # 81 "data/maps/RockTunnel_B1F/scripts.pory"

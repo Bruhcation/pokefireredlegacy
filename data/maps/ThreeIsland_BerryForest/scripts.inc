@@ -339,7 +339,7 @@ ThreeIsland_BerryForest_EventScript_PostRematchCruelKing::
 # 170 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 ThreeIsland_BerryForest_EventScript_Gym1::
 # 171 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	trainerbattle_single TRAINER_SR_AND_JR, ThreeIsland_BerryForest_Text_Rocket1Intro, ThreeIsland_BerryForest_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_BOCK, ThreeIsland_BerryForest_Text_Rocket1Intro, ThreeIsland_BerryForest_Text_Rocket1Defeat
 # 172 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	msgbox ThreeIsland_BerryForest_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 173 "data/maps/ThreeIsland_BerryForest/scripts.pory"
@@ -371,7 +371,7 @@ ThreeIsland_BerryForest_Text_Rocket1PostBattle::
 # 186 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 ThreeIsland_BerryForest_EventScript_Gym2::
 # 187 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	trainerbattle_single TRAINER_SWIMMING_TRIATHLETE_F, ThreeIsland_BerryForest_Text_Rocket2Intro, ThreeIsland_BerryForest_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_SAKI, ThreeIsland_BerryForest_Text_Rocket2Intro, ThreeIsland_BerryForest_Text_Rocket2Defeat
 # 188 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	msgbox ThreeIsland_BerryForest_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 # 189 "data/maps/ThreeIsland_BerryForest/scripts.pory"
@@ -403,7 +403,7 @@ ThreeIsland_BerryForest_Text_Rocket2PostBattle::
 # 202 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 ThreeIsland_BerryForest_EventScript_Gym3::
 # 203 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	trainerbattle_single TRAINER_POKEFAN_F, ThreeIsland_BerryForest_Text_Rocket3Intro, ThreeIsland_BerryForest_Text_Rocket3Defeat
+	trainerbattle_single TRAINER_KRAUSER, ThreeIsland_BerryForest_Text_Rocket3Intro, ThreeIsland_BerryForest_Text_Rocket3Defeat
 # 204 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	msgbox ThreeIsland_BerryForest_Text_Rocket3PostBattle, MSGBOX_AUTOCLOSE
 # 205 "data/maps/ThreeIsland_BerryForest/scripts.pory"

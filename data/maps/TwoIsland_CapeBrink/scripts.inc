@@ -101,7 +101,7 @@ TwoIsland_CapeBrink_EventScript_Caseno::
 # 51 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, TwoIsland_CapeBrink_EventScript_NoCaseno
 # 52 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	trainerbattle_single TRAINER_CASENO, TwoIsland_CapeBrink_Text_YesCaseno, TwoIsland_CapeBrink_Text_CasenoDefeat, TwoIsland_CapeBrink_EventScript_PostCaseno, NO_MUSIC
+	trainerbattle_single TRAINER_CASEY, TwoIsland_CapeBrink_Text_YesCaseno, TwoIsland_CapeBrink_Text_CasenoDefeat, TwoIsland_CapeBrink_EventScript_PostCaseno, NO_MUSIC
 # 53 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	release
 # 54 "data/maps/TwoIsland_CapeBrink/scripts.pory"
@@ -115,7 +115,7 @@ TwoIsland_CapeBrink_EventScript_PostCaseno::
 # 58 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	setflag FLAG_CASENO_DEFEATED
 # 59 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	cleartrainerflag TRAINER_CASENO
+	cleartrainerflag TRAINER_CASEY
 # 60 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	release
 # 61 "data/maps/TwoIsland_CapeBrink/scripts.pory"
@@ -149,7 +149,7 @@ TwoIsland_CapeBrink_EventScript_RematchCaseno::
 # 75 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, TwoIsland_CapeBrink_EventScript_NoCaseno
 # 76 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	trainerbattle_single TRAINER_CASENO, TwoIsland_CapeBrink_Text_YesRematchCaseno, TwoIsland_CapeBrink_Text_RematchCasenoDefeat, TwoIsland_CapeBrink_EventScript_PostRematchCaseno, NO_MUSIC
+	trainerbattle_single TRAINER_CASEY, TwoIsland_CapeBrink_Text_YesRematchCaseno, TwoIsland_CapeBrink_Text_RematchCasenoDefeat, TwoIsland_CapeBrink_EventScript_PostRematchCaseno, NO_MUSIC
 # 77 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	release
 # 78 "data/maps/TwoIsland_CapeBrink/scripts.pory"
@@ -161,7 +161,7 @@ TwoIsland_CapeBrink_EventScript_PostRematchCaseno::
 # 81 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	msgbox TwoIsland_CapeBrink_Text_RematchCasenoDefeat
 # 82 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	cleartrainerflag TRAINER_CASENO
+	cleartrainerflag TRAINER_CASEY
 # 83 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	release
 # 84 "data/maps/TwoIsland_CapeBrink/scripts.pory"
@@ -171,7 +171,7 @@ TwoIsland_CapeBrink_EventScript_PostRematchCaseno::
 # 86 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 TwoIsland_CapeBrink_EventScript_Gym1::
 # 87 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	trainerbattle_single TRAINER_RS_YOUNG_COUPLE, TwoIsland_CapeBrink_Text_Rocket1Intro, TwoIsland_CapeBrink_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_MAI, TwoIsland_CapeBrink_Text_Rocket1Intro, TwoIsland_CapeBrink_Text_Rocket1Defeat
 # 88 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	msgbox TwoIsland_CapeBrink_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 89 "data/maps/TwoIsland_CapeBrink/scripts.pory"
@@ -207,7 +207,7 @@ TwoIsland_CapeBrink_Text_Rocket1PostBattle::
 # 104 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 TwoIsland_CapeBrink_EventScript_Gym2::
 # 105 "data/maps/TwoIsland_CapeBrink/scripts.pory"
-	trainerbattle_single TRAINER_SWIMMING_TRIATHLETE_M, TwoIsland_CapeBrink_Text_Rocket2Intro, TwoIsland_CapeBrink_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_SAMA, TwoIsland_CapeBrink_Text_Rocket2Intro, TwoIsland_CapeBrink_Text_Rocket2Defeat
 # 106 "data/maps/TwoIsland_CapeBrink/scripts.pory"
 	msgbox TwoIsland_CapeBrink_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 # 107 "data/maps/TwoIsland_CapeBrink/scripts.pory"

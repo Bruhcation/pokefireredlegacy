@@ -259,7 +259,7 @@ RocketHideout_B4F_EventScript_Proton::
 # 130 "data/maps/RocketHideout_B4F/scripts.pory"
 	faceplayer
 # 131 "data/maps/RocketHideout_B4F/scripts.pory"
-	trainerbattle_single TRAINER_PROTON, RocketHideout_B4F_Text_ProtonIntro, RocketHideout_B4F_Text_ProtonDefeat
+	trainerbattle_single TRAINER_PROTON_UNUSED, RocketHideout_B4F_Text_ProtonIntro, RocketHideout_B4F_Text_ProtonDefeat
 # 132 "data/maps/RocketHideout_B4F/scripts.pory"
 	msgbox RocketHideout_B4F_Text_ProtonPostBattle, MSGBOX_AUTOCLOSE
 # 133 "data/maps/RocketHideout_B4F/scripts.pory"

@@ -57,8 +57,8 @@ FuchsiaCity_House3_EventScript_CancelForgetMove::
 FuchsiaCity_House3_Poison::
 	faceplayer
 	msgbox FuchsiaCity_House3_Text_Eva, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RS_SWIMMER_M, FuchsiaCity_House3_Text_EvaPostBattle
-	cleartrainerflag TRAINER_RS_SWIMMER_M
+	trainerbattle_no_intro TRAINER_POIS, FuchsiaCity_House3_Text_EvaPostBattle
+	cleartrainerflag TRAINER_POIS
 	end
 
 FuchsiaCity_House3_Text_Eva::

@@ -45,7 +45,7 @@ DiglettsCave_B1F_EventScript_Orbing::
 	closemessage
 	delay 40
 	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoGround
-	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
+	trainerbattle_single TRAINER_GRU, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
 	release
 	end
 

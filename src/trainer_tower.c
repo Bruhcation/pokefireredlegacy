@@ -384,7 +384,7 @@ static const u16 sPrizeList[] = {
     ITEM_CHOICE_BAND,
     ITEM_SCOPE_LENS,
     ITEM_PP_MAX,
-    ITEM_SCOPE_LENS,
+    ITEM_ENIGMA_BERRY,
     ITEM_LEFTOVERS
 };
 

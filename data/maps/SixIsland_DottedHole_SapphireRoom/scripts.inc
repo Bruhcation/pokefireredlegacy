@@ -529,7 +529,7 @@ SixIsland_DottedHole_SapphireRoom_EventScript_Orbing::
 # 265 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	setvar VAR_FORCEANIM, 1
 # 266 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
-	trainerbattle_single TRAINER_RS_BLACK_BELT, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
+	trainerbattle_single TRAINER_REN, SixIsland_DottedHole_SapphireRoom_Text_YesMirage, SixIsland_DottedHole_SapphireRoom_Text_PostMirage, SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage, NO_MUSIC
 # 267 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"
 	release
 # 268 "data/maps/SixIsland_DottedHole_SapphireRoom/scripts.pory"

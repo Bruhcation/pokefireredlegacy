@@ -114,13 +114,13 @@ CinnabarIsland_Gym_Text_BlaineNoNoRematchBattle::
 CinnabarIsland_Gym_EventScript_RematchBlaine2::
 	msgbox CinnabarIsland_Gym_Text_RematchBlaine, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CinnabarIsland_Gym_EventScript_NoRematchBlaine
-	trainerbattle_single TRAINER_LEADER_BLAINE2, CinnabarIsland_Gym_Text_RematchYesBlaine, CinnabarIsland_Gym_Text_RematchBlaineDefeat, CinnabarIsland_Gym_EventScript_PostRematchBlaine, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_BLAINE_REMATCH, CinnabarIsland_Gym_Text_RematchYesBlaine, CinnabarIsland_Gym_Text_RematchBlaineDefeat, CinnabarIsland_Gym_EventScript_PostRematchBlaine, NO_MUSIC
 	release
 	end
 
 CinnabarIsland_Gym_EventScript_PostRematchBlaine::
 	msgbox CinnabarIsland_Gym_Text_BlainePostRematchBattle
-	cleartrainerflag TRAINER_LEADER_BLAINE2
+	cleartrainerflag TRAINER_LEADER_BLAINE_REMATCH
 	release
 	end
 

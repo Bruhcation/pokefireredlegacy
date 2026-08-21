@@ -33,7 +33,7 @@ Route17_EventScript_Paxton::
 
 Route17_EventScript_PostPaxton::
 	msgbox Route17_Text_PaxtonPostBattle
-	cleartrainerflag TRAINER_GUITARIST
+	cleartrainerflag TRAINER_PAXTON_UNUSED
 	release
 	end
 

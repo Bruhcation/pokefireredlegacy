@@ -1,7 +1,7 @@
 raw `
 .set LOCALID_SCIENTIST, 1
 .set LOCALID_GIOVANNI, 18
-
+.set LOCALID_ADMIN, 21
 
 SixIsland_RuinValley_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SixIsland_RuinValley_OnLoad
@@ -21,8 +21,6 @@ SixIsland_RuinValley_EventScript_OpenDottedHoleDoor::
 
 SixIsland_RuinValley_EventScript_ShowGiovanni::
 	goto_if_unset FLAG_SYS_CAN_LINK_WITH_RS, SixIsland_RuinValley_EventScript_HideGiovanniEnd
-	goto_if_unset FLAG_HIDE_ADMIN, SixIsland_RuinValley_EventScript_HideGiovanniEnd
-	goto_if_unset FLAG_HIDE_ADMIN2, SixIsland_RuinValley_EventScript_HideGiovanniEnd
 	clearflag FLAG_GIOVANNI4
 	end
 
@@ -79,7 +77,7 @@ SixIsland_RuinValley_EventScript_Giovanni::
 	msgbox SixIsland_PatternBush_Text_Giovanni4, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SixIsland_RuinValley_EventScript_GiovanniNo
 	setvar VAR_FORCEANIM, 1
-	trainerbattle_single TRAINER_JACKO, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
+	trainerbattle_single TRAINER_GIOVANNI4, SixIsland_PatternBush_Text_GiovanniYes, SixIsland_PatternBush_Text_GiovanniDefeat, SixIsland_RuinValley_EventScript_PostGiovanni, NO_MUSIC
 	release
 	end
 
@@ -99,7 +97,7 @@ SixIsland_RuinValley_EventScript_GiovanniNo::
 	end
 
 SixIsland_RuinValley_EventScript_Gym1::
-	trainerbattle_single TRAINER_EXPERT_M, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_CENAT, SixIsland_RuinValley_Text_Rocket1Intro, SixIsland_RuinValley_Text_Rocket1Defeat
 	msgbox SixIsland_RuinValley_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 SixIsland_RuinValley_Text_Rocket1Intro::
@@ -113,7 +111,7 @@ SixIsland_RuinValley_Text_Rocket1PostBattle::
 	.string "It's been two hours!$"
 
 SixIsland_RuinValley_EventScript_Gym2::
-	trainerbattle_single TRAINER_EXPERT_F, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_KATIE, SixIsland_RuinValley_Text_Rocket2Intro, SixIsland_RuinValley_Text_Rocket2Defeat
 	msgbox SixIsland_RuinValley_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,5 +123,54 @@ SixIsland_RuinValley_Text_Rocket2Defeat::
 	.string "WAHHH!$"
 SixIsland_RuinValley_Text_Rocket2PostBattle::
 	.string "I can't take this anymore…$"
+
+SixIsland_RuinValley_EventScript_Petrol::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_ADMIN, SixIsland_RuinValley_EventScript_PetrolRun
+	goto_if_set FLAG_HIDE_FIVE_ISLAND_ROCKETS, SixIsland_RuinValley_EventScript_PetrolRun
+	msgbox SixIsland_RuinValley_Text_Petrol, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SixIsland_RuinValley_EventScript_PetrolOkGo
+	trainerbattle_single TRAINER_PETROL, SixIsland_RuinValley_Text_PetrolIntro, SixIsland_RuinValley_Text_PetrolDefeat, SixIsland_RuinValley_EventScript_PetrolRun
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SixIsland_RuinValley_EventScript_PetrolRun::
+	msgbox SixIsland_RuinValley_Text_PetrolPostBattle, MSGBOX_AUTOCLOSE
+	setflag FLAG_ADMIN_PETROL
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ADMIN
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SixIsland_RuinValley_EventScript_PetrolOkGo::
+	msgbox SixIsland_RuinValley_Text_PetrolOkGo, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	release
+	end
+
+SixIsland_RuinValley_Text_PetrolOkGo::
+	.string "Ok than, SCRAM!$"
+
+SixIsland_RuinValley_Text_Petrol::
+	.string "Hey, this place is under\n"
+	.string "Investigation!\p"
+	.string "Do not come any futher,\n"
+	.string "or else i'll have to use force!\p"
+	.string "Got that?$"
+
+SixIsland_RuinValley_Text_PetrolIntro::
+	.string "Alright, guess you want to fight\n"
+	.string "for your entry!\l"
+	.string "So I have to ask,\l"
+	.string "how was my policeman disguise?$"
+
+SixIsland_RuinValley_Text_PetrolDefeat::
+	.string "I've been foiled!$"
+
+SixIsland_RuinValley_Text_PetrolPostBattle::
+	.string "Welp guess my cover is blown.\l"
+	.string "So it's time for me to flee!$"
 
 `

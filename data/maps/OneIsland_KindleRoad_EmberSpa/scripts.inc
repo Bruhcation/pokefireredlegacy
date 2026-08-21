@@ -201,7 +201,7 @@ OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal::
 # 101 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 OneIsland_KindleRoad_EmberSpa_EventScript_Gym1::
 # 102 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_M, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_KURTAN, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
 # 103 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 # 104 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
@@ -237,7 +237,7 @@ OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle::
 # 119 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 OneIsland_KindleRoad_EmberSpa_EventScript_Gym2::
 # 120 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_F, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_BALENA, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
 # 121 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"
 	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 # 122 "data/maps/OneIsland_KindleRoad_EmberSpa/scripts.pory"

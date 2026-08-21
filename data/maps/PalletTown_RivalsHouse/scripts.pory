@@ -9,9 +9,16 @@ PalletTown_RivalsHouse_MapScripts::
 	.byte 0
 
 PalletTown_RivalsHouse_OnTransition::
+	goto_if_unset FLAG_SHOW_RIVAL_STARTER, PalletTown_RivalsHouse_HideMon
 	call_if_lt VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_MoveDaisyToTable
 	call_if_ge VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_AlreadyReceivedTownMap
 	end
+
+PalletTown_RivalsHouse_HideMon::
+	setflag FLAG_CHARIZARD
+	setflag FLAG_BLASTOISE
+	setflag FLAG_VENUSAUR
+	return
 
 PalletTown_RivalsHouse_EventScript_MoveDaisyToTable::
 	setobjectmovementtype LOCALID_DAISY, MOVEMENT_TYPE_FACE_RIGHT

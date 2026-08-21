@@ -245,9 +245,9 @@ PowerPlant_EventScript_FoughtElectrode2::
 # 123 "data/maps/PowerPlant/scripts.pory"
 
 # 124 "data/maps/PowerPlant/scripts.pory"
-PowerPlant_Craig::
+PowerPlant_EventScript_Craig::
 # 125 "data/maps/PowerPlant/scripts.pory"
-	trainerbattle_single TRAINER_CRAIG, PowerPlant_Text_CraigIntro, PowerPlant_Text_CraigDefeat
+	trainerbattle_single TRAINER_CRAIG, PowerPlant_Text_CraigIntro, PowerPlant_Text_CraigDefeat, PowerPlant_EventScript_CraigMan
 # 126 "data/maps/PowerPlant/scripts.pory"
 	msgbox PowerPlant_Text_CraigPostBattle, MSGBOX_AUTOCLOSE
 # 127 "data/maps/PowerPlant/scripts.pory"
@@ -259,4 +259,20 @@ PowerPlant_Craig::
 # 130 "data/maps/PowerPlant/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 131 "data/maps/PowerPlant/scripts.pory"
+	end
+# 132 "data/maps/PowerPlant/scripts.pory"
+
+# 133 "data/maps/PowerPlant/scripts.pory"
+PowerPlant_EventScript_CraigMan::
+# 134 "data/maps/PowerPlant/scripts.pory"
+	msgbox PowerPlant_Text_CraigPostBattle, MSGBOX_AUTOCLOSE
+# 135 "data/maps/PowerPlant/scripts.pory"
+ 	setflag FLAG_CRAIG
+# 136 "data/maps/PowerPlant/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 137 "data/maps/PowerPlant/scripts.pory"
+	removeobject 9
+# 138 "data/maps/PowerPlant/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 139 "data/maps/PowerPlant/scripts.pory"
 	end
