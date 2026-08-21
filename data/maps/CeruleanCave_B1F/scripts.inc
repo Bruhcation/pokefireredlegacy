@@ -119,9 +119,9 @@ CeruleanCave_B1F_EventScript_RanFromMewtwo::
 # 60 "data/maps/CeruleanCave_B1F/scripts.pory"
 
 # 61 "data/maps/CeruleanCave_B1F/scripts.pory"
-CeruleanCave_B1F_Smith::
+CeruleanCave_B1F_EventScript_Smith::
 # 62 "data/maps/CeruleanCave_B1F/scripts.pory"
-	trainerbattle_single TRAINER_SMITH, CeruleanCave_B1F_Text_SmithIntro, CeruleanCave_B1F_Text_SmithDefeat
+	trainerbattle_single TRAINER_SMITH, CeruleanCave_B1F_Text_SmithIntro, CeruleanCave_B1F_Text_SmithDefeat, CeruleanCave_B1F_EventScript_SmithMan
 # 63 "data/maps/CeruleanCave_B1F/scripts.pory"
 	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
 # 64 "data/maps/CeruleanCave_B1F/scripts.pory"
@@ -133,4 +133,20 @@ CeruleanCave_B1F_Smith::
 # 67 "data/maps/CeruleanCave_B1F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 68 "data/maps/CeruleanCave_B1F/scripts.pory"
+	end
+# 69 "data/maps/CeruleanCave_B1F/scripts.pory"
+
+# 70 "data/maps/CeruleanCave_B1F/scripts.pory"
+CeruleanCave_B1F_EventScript_SmithMan::
+# 71 "data/maps/CeruleanCave_B1F/scripts.pory"
+	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
+# 72 "data/maps/CeruleanCave_B1F/scripts.pory"
+	setflag FLAG_SMITH
+# 73 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 74 "data/maps/CeruleanCave_B1F/scripts.pory"
+	removeobject 13
+# 75 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 76 "data/maps/CeruleanCave_B1F/scripts.pory"
 	end

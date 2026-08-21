@@ -121,8 +121,16 @@ PowerPlant_EventScript_FoughtElectrode2::
 	goto EventScript_RemoveStaticMon
 	end
 
-PowerPlant_Craig::
-	trainerbattle_single TRAINER_CRAIG, PowerPlant_Text_CraigIntro, PowerPlant_Text_CraigDefeat
+PowerPlant_EventScript_Craig::
+	trainerbattle_single TRAINER_CRAIG, PowerPlant_Text_CraigIntro, PowerPlant_Text_CraigDefeat, PowerPlant_EventScript_CraigMan
+	msgbox PowerPlant_Text_CraigPostBattle, MSGBOX_AUTOCLOSE
+ 	setflag FLAG_CRAIG
+	fadescreen FADE_TO_BLACK
+	removeobject 9
+	fadescreen FADE_FROM_BLACK
+	end
+
+PowerPlant_EventScript_CraigMan::
 	msgbox PowerPlant_Text_CraigPostBattle, MSGBOX_AUTOCLOSE
  	setflag FLAG_CRAIG
 	fadescreen FADE_TO_BLACK

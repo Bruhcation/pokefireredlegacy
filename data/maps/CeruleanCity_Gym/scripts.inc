@@ -117,7 +117,7 @@ CeruleanCity_Gym_EventScript_RematchMisty2::
 # 59 "data/maps/CeruleanCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, CeruleanCity_Gym_EventScript_NoRematchMisty
 # 60 "data/maps/CeruleanCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_MISTY2, CeruleanCity_Gym_Text_RematchYesMisty, CeruleanCity_Gym_Text_RematchMistyDefeat, CeruleanCity_Gym_EventScript_PostRematchMisty, NO_MUSIC
+	trainerbattle_single TRAINER_MISTY_REMATCH, CeruleanCity_Gym_Text_RematchYesMisty, CeruleanCity_Gym_Text_RematchMistyDefeat, CeruleanCity_Gym_EventScript_PostRematchMisty, NO_MUSIC
 # 61 "data/maps/CeruleanCity_Gym/scripts.pory"
 	release
 # 62 "data/maps/CeruleanCity_Gym/scripts.pory"
@@ -129,7 +129,7 @@ CeruleanCity_Gym_EventScript_PostRematchMisty::
 # 65 "data/maps/CeruleanCity_Gym/scripts.pory"
 	msgbox CeruleanCity_Gym_Text_MistyPostRematchBattle
 # 66 "data/maps/CeruleanCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_MISTY2
+	cleartrainerflag TRAINER_MISTY_REMATCH
 # 67 "data/maps/CeruleanCity_Gym/scripts.pory"
 	release
 # 68 "data/maps/CeruleanCity_Gym/scripts.pory"

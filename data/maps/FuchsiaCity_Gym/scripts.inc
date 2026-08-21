@@ -29,7 +29,7 @@ FuchsiaCity_Gym_EventScript_BeatSabrina::
 # 15 "data/maps/FuchsiaCity_Gym/scripts.pory"
 FuchsiaCity_Gym_EventScript_BeatBlaine::
 # 16 "data/maps/FuchsiaCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_RS_GENTLEMAN, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
+	trainerbattle_single TRAINER_UNUSED_KOGA, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 # 17 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	goto FuchsiaCity_Gym_EventScript_ContinueKoga
 # 18 "data/maps/FuchsiaCity_Gym/scripts.pory"
@@ -147,7 +147,7 @@ FuchsiaCity_Gym_EventScript_RematchKoga2::
 # 74 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FuchsiaCity_Gym_EventScript_NoRematchKoga
 # 75 "data/maps/FuchsiaCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LEADER_KOGA2, FuchsiaCity_Gym_Text_RematchYesKoga, FuchsiaCity_Gym_Text_RematchKogaDefeat, FuchsiaCity_Gym_EventScript_PostRematchKoga, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_KOGA_REMATCH, FuchsiaCity_Gym_Text_RematchYesKoga, FuchsiaCity_Gym_Text_RematchKogaDefeat, FuchsiaCity_Gym_EventScript_PostRematchKoga, NO_MUSIC
 # 76 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	release
 # 77 "data/maps/FuchsiaCity_Gym/scripts.pory"
@@ -159,7 +159,7 @@ FuchsiaCity_Gym_EventScript_PostRematchKoga::
 # 80 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	msgbox FuchsiaCity_Gym_Text_KogaPostRematchBattle
 # 81 "data/maps/FuchsiaCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_LEADER_KOGA2   
+	cleartrainerflag TRAINER_LEADER_KOGA_REMATCH   
 # 82 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	release
 # 83 "data/maps/FuchsiaCity_Gym/scripts.pory"

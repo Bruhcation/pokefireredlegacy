@@ -29,7 +29,7 @@ Route6_NorthEntrance_EventScript_Rematch::
 # 15 "data/maps/Route6_NorthEntrance/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoNoGuard
 # 16 "data/maps/Route6_NorthEntrance/scripts.pory"
-	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
+	trainerbattle_single TRAINER_GUARD_COLIN_2, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
 # 17 "data/maps/Route6_NorthEntrance/scripts.pory"
 	release
 # 18 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -41,7 +41,7 @@ Route6_NorthEntrance_EventScript_PostPostGuard::
 # 21 "data/maps/Route6_NorthEntrance/scripts.pory"
 	msgbox Route6_NorthEntrance_Text_GuardPostBattle
 # 22 "data/maps/Route6_NorthEntrance/scripts.pory"
-	cleartrainerflag TRAINER_KINDLER
+	cleartrainerflag TRAINER_GUARD_COLIN_2
 # 23 "data/maps/Route6_NorthEntrance/scripts.pory"
 	release
 # 24 "data/maps/Route6_NorthEntrance/scripts.pory"
@@ -205,7 +205,7 @@ Route6_NorthEntrance_EventScript_BattleGuard::
 # 103 "data/maps/Route6_NorthEntrance/scripts.pory"
 	goto_if_eq VAR_RESULT, YES, Route6_NorthEntrance_EventScript_NoGuard
 # 104 "data/maps/Route6_NorthEntrance/scripts.pory"
-	trainerbattle_single TRAINER_RANDOM_GRUNT, Route6_NorthEntrance_Text_RematchYesSurge, Route6_NorthEntrance_Text_RematchSurgeDefeat, Route6_NorthEntrance_EventScript_PostGuard, NO_MUSIC
+	trainerbattle_single TRAINER_GUARD_COLIN, Route6_NorthEntrance_Text_RematchYesSurge, Route6_NorthEntrance_Text_RematchSurgeDefeat, Route6_NorthEntrance_EventScript_PostGuard, NO_MUSIC
 # 105 "data/maps/Route6_NorthEntrance/scripts.pory"
 	release
 # 106 "data/maps/Route6_NorthEntrance/scripts.pory"

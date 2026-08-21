@@ -18,7 +18,7 @@ FourIsland_IcefallCave_1F_OnFrame::
 	.2byte 0
 
 FourIsland_IcefallCave_1F_EventScript_Gym3::
-	trainerbattle_single TRAINER_RS_YOUNGSTER, FourIsland_IcefallCave_1F_Text_Rocket1Intro, FourIsland_IcefallCave_1F_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_JACKIE, FourIsland_IcefallCave_1F_Text_Rocket1Intro, FourIsland_IcefallCave_1F_Text_Rocket1Defeat
 	msgbox FourIsland_IcefallCave_1F_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 

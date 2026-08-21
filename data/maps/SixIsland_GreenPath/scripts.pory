@@ -163,4 +163,57 @@ SixIsland_GreenPath_Text_Painter::
 	.string "this island for my art project.\p"
 	.string "It's not like people go through\n"
 	.string "this path anyways!$"
+
+SixIsland_GreenPath_EventScript_Clerk::
+	goto_if_questlog EventScript_ReleaseEnd
+	lock
+	faceplayer
+	message SixIsland_GreenPath_Text_Clerk
+	waitmessage
+	pokemart SixIsland_GreenPath_Items
+	lock
+	faceplayer
+	msgbox SixIsland_GreenPath_Text_Clerk2
+	release
+	end
+
+SixIsland_GreenPath_Text_Clerk::
+	.string "Make this quick, got that?$"
+
+
+SixIsland_GreenPath_Text_Clerk2::
+	.string "Please be quiet about these\n"
+	.string "transactions.$"
+
+	.align 2
+SixIsland_GreenPath_Items::
+	.2byte ITEM_RAZZ_BERRY
+	.2byte ITEM_BLUK_BERRY
+	.2byte ITEM_NANAB_BERRY
+	.2byte ITEM_WEPEAR_BERRY
+	.2byte ITEM_PINAP_BERRY
+	.2byte ITEM_CORNN_BERRY
+	.2byte ITEM_MAGOST_BERRY
+	.2byte ITEM_RABUTA_BERRY
+	.2byte ITEM_NOMEL_BERRY
+	.2byte ITEM_SPELON_BERRY
+	.2byte ITEM_PAMTRE_BERRY
+	.2byte ITEM_WATMEL_BERRY
+	.2byte ITEM_DURIN_BERRY
+	.2byte ITEM_DURIN_BERRY
+	.2byte ITEM_BELUE_BERRY
+	.2byte ITEM_SHADOW_MAIL
+	.2byte ITEM_HARBOR_MAIL
+	.2byte ITEM_WAVE_MAIL
+	.2byte ITEM_MECH_MAIL
+	.2byte ITEM_ORANGE_MAIL
+	.2byte ITEM_WOOD_MAIL
+	.2byte ITEM_FAB_MAIL
+	.2byte ITEM_GLITTER_MAIL
+	.2byte ITEM_TROPIC_MAIL
+	.2byte ITEM_BEAD_MAIL
+	.2byte ITEM_NONE
+	release
+	end
+
 `

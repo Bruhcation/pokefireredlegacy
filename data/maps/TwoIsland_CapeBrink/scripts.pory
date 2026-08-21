@@ -49,14 +49,14 @@ TwoIsland_CapeBrink_EventScript_Caseno::
 	goto_if_set FLAG_CASENO_DEFEATED, TwoIsland_CapeBrink_EventScript_RematchCaseno
 	msgbox TwoIsland_CapeBrink_Text_Caseno, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, TwoIsland_CapeBrink_EventScript_NoCaseno
-	trainerbattle_single TRAINER_CASENO, TwoIsland_CapeBrink_Text_YesCaseno, TwoIsland_CapeBrink_Text_CasenoDefeat, TwoIsland_CapeBrink_EventScript_PostCaseno, NO_MUSIC
+	trainerbattle_single TRAINER_CASEY, TwoIsland_CapeBrink_Text_YesCaseno, TwoIsland_CapeBrink_Text_CasenoDefeat, TwoIsland_CapeBrink_EventScript_PostCaseno, NO_MUSIC
 	release
 	end
 
 TwoIsland_CapeBrink_EventScript_PostCaseno::
 	msgbox TwoIsland_CapeBrink_Text_CasenoPostBattle
 	setflag FLAG_CASENO_DEFEATED
-	cleartrainerflag TRAINER_CASENO
+	cleartrainerflag TRAINER_CASEY
 	release
 	end
 
@@ -73,18 +73,18 @@ TwoIsland_CapeBrink_EventScript_NoCaseno::
 TwoIsland_CapeBrink_EventScript_RematchCaseno::
 	msgbox TwoIsland_CapeBrink_Text_RematchCaseno, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, TwoIsland_CapeBrink_EventScript_NoCaseno
-	trainerbattle_single TRAINER_CASENO, TwoIsland_CapeBrink_Text_YesRematchCaseno, TwoIsland_CapeBrink_Text_RematchCasenoDefeat, TwoIsland_CapeBrink_EventScript_PostRematchCaseno, NO_MUSIC
+	trainerbattle_single TRAINER_CASEY, TwoIsland_CapeBrink_Text_YesRematchCaseno, TwoIsland_CapeBrink_Text_RematchCasenoDefeat, TwoIsland_CapeBrink_EventScript_PostRematchCaseno, NO_MUSIC
 	release
 	end
 
 TwoIsland_CapeBrink_EventScript_PostRematchCaseno::
 	msgbox TwoIsland_CapeBrink_Text_RematchCasenoDefeat
-	cleartrainerflag TRAINER_CASENO
+	cleartrainerflag TRAINER_CASEY
 	release
 	end
 
 TwoIsland_CapeBrink_EventScript_Gym1::
-	trainerbattle_single TRAINER_RS_YOUNG_COUPLE, TwoIsland_CapeBrink_Text_Rocket1Intro, TwoIsland_CapeBrink_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_MAI, TwoIsland_CapeBrink_Text_Rocket1Intro, TwoIsland_CapeBrink_Text_Rocket1Defeat
 	msgbox TwoIsland_CapeBrink_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -102,7 +102,7 @@ TwoIsland_CapeBrink_Text_Rocket1PostBattle::
     .string "before you do.$"  
 
 TwoIsland_CapeBrink_EventScript_Gym2::
-	trainerbattle_single TRAINER_SWIMMING_TRIATHLETE_M, TwoIsland_CapeBrink_Text_Rocket2Intro, TwoIsland_CapeBrink_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_SAMA, TwoIsland_CapeBrink_Text_Rocket2Intro, TwoIsland_CapeBrink_Text_Rocket2Defeat
 	msgbox TwoIsland_CapeBrink_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 	end
 

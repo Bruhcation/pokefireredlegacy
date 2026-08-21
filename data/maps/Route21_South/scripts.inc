@@ -77,7 +77,7 @@ Route21_South_EventScript_Orbing::
 # 39 "data/maps/Route21_South/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route21_South_EventScript_NoWater
 # 40 "data/maps/Route21_South/scripts.pory"
-	trainerbattle_single TRAINER_AQUA_GRUNT_M, Route21_South_Text_YesWater, Route21_South_Text_PostWater, Route21_South_EventScript_PostWater, NO_MUSIC
+	trainerbattle_single TRAINER_KYO, Route21_South_Text_YesWater, Route21_South_Text_PostWater, Route21_South_EventScript_PostWater, NO_MUSIC
 # 41 "data/maps/Route21_South/scripts.pory"
 	release
 # 42 "data/maps/Route21_South/scripts.pory"

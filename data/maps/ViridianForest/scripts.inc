@@ -135,7 +135,7 @@ ViridianForest_EventScript_Charlie::
 # 68 "data/maps/ViridianForest/scripts.pory"
 ViridianForest_EventScript_Lass::
 # 69 "data/maps/ViridianForest/scripts.pory"
-	trainerbattle_single TRAINER_RS_FISHERMAN, ViridianForest_Text_LassIntro, ViridianForest_Text_LassDefeat
+	trainerbattle_single TRAINER_SAM, ViridianForest_Text_LassIntro, ViridianForest_Text_LassDefeat
 # 70 "data/maps/ViridianForest/scripts.pory"
 	msgbox ViridianForest_Text_LassPostBattle, MSGBOX_AUTOCLOSE
 # 71 "data/maps/ViridianForest/scripts.pory"
@@ -165,7 +165,7 @@ ViridianForest_EventScript_Hex_Maniac::
 # 83 "data/maps/ViridianForest/scripts.pory"
 	waitbuttonpress
 # 84 "data/maps/ViridianForest/scripts.pory"
-	trainerbattle_single TRAINER_HEX_MANIAC, ViridianForest_Text_Hex_Maniac2, ViridianForest_Text_Hex_Maniac3, ViridianForest_EventScript_Hex_Maniac5
+	trainerbattle_single TRAINER_BINARO_UNUSED, ViridianForest_Text_Hex_Maniac2, ViridianForest_Text_Hex_Maniac3, ViridianForest_EventScript_Hex_Maniac5
 # 85 "data/maps/ViridianForest/scripts.pory"
 	end
 # 86 "data/maps/ViridianForest/scripts.pory"

@@ -472,6 +472,9 @@ const u32 gTrainerPalette_Clair[] = INCBIN_U32("graphics/trainers/palettes/clair
 const u32 gTrainerFrontPic_Officer[] = INCBIN_U32("graphics/trainers/front_pics/hgss_officer.4bpp.lz");
 const u32 gTrainerPalette_Officer[] = INCBIN_U32("graphics/trainers/palettes/hgss_officer.gbapal.lz");
 
+const u32 gTrainerFrontPic_Primo[] = INCBIN_U32("graphics/trainers/front_pics/primo_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Primo[] = INCBIN_U32("graphics/trainers/palettes/primo.gbapal.lz");
+
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red_back_pic.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf_back_pic.4bpp");
 const u8 gTrainerBackPic_Pokedude[] = INCBIN_U8("graphics/trainers/back_pics/pokedude_back_pic.4bpp");

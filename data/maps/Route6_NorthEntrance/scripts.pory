@@ -13,13 +13,13 @@ Route6_NorthEntrance_EventScript_Rematch::
 	faceplayer
 	msgbox Route6_NorthEntrance_Text_Guard, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route6_NorthEntrance_EventScript_NoNoGuard
-	trainerbattle_single TRAINER_KINDLER, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
+	trainerbattle_single TRAINER_GUARD_COLIN_2, Route6_NorthEntrance_Text_YesGuard, Route6_NorthEntrance_Text_GuardDefeat, Route6_NorthEntrance_EventScript_PostPostGuard, NO_MUSIC
 	release
 	end
 
 Route6_NorthEntrance_EventScript_PostPostGuard::
 	msgbox Route6_NorthEntrance_Text_GuardPostBattle
-	cleartrainerflag TRAINER_KINDLER
+	cleartrainerflag TRAINER_GUARD_COLIN_2
 	release
 	end
 
@@ -101,7 +101,7 @@ Route6_NorthEntrance_EventScript_GuardTrigger::
 Route6_NorthEntrance_EventScript_BattleGuard::
 	msgbox Route6_NorthEntrance_Text_FightGuard MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route6_NorthEntrance_EventScript_NoGuard
-	trainerbattle_single TRAINER_RANDOM_GRUNT, Route6_NorthEntrance_Text_RematchYesSurge, Route6_NorthEntrance_Text_RematchSurgeDefeat, Route6_NorthEntrance_EventScript_PostGuard, NO_MUSIC
+	trainerbattle_single TRAINER_GUARD_COLIN, Route6_NorthEntrance_Text_RematchYesSurge, Route6_NorthEntrance_Text_RematchSurgeDefeat, Route6_NorthEntrance_EventScript_PostGuard, NO_MUSIC
 	release
 	end
 

@@ -47,7 +47,7 @@ CeladonCity_Gym_EventScript_BeatKogaSabrina::
 # 24 "data/maps/CeladonCity_Gym/scripts.pory"
 CeladonCity_Gym_EventScript_BeatBlaine::
 # 25 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BUG_MANIAC, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
+	trainerbattle_single TRAINER_UNUSED_ERIKA2, CeladonCity_Gym_Text_ErikaIntro, CeladonCity_Gym_Text_ErikaDefeat, CeladonCity_Gym_EventScript_DefeatedErika, NO_MUSIC
 # 26 "data/maps/CeladonCity_Gym/scripts.pory"
 	goto CeladonCity_Gym_EventScript_ContinueErika
 # 27 "data/maps/CeladonCity_Gym/scripts.pory"
@@ -167,7 +167,7 @@ CeladonCity_Gym_EventScript_RematchErika2::
 # 84 "data/maps/CeladonCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, CeladonCity_Gym_EventScript_NoRematchErika
 # 85 "data/maps/CeladonCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_LEADER_ERIKA2, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_ERIKA_REMATCH, CeladonCity_Gym_Text_RematchYesErika, CeladonCity_Gym_Text_RematchErikaDefeat, CeladonCity_Gym_EventScript_PostRematchErika, NO_MUSIC
 # 86 "data/maps/CeladonCity_Gym/scripts.pory"
 	release
 # 87 "data/maps/CeladonCity_Gym/scripts.pory"
@@ -179,7 +179,7 @@ CeladonCity_Gym_EventScript_PostRematchErika::
 # 90 "data/maps/CeladonCity_Gym/scripts.pory"
 	msgbox CeladonCity_Gym_Text_ErikaPostRematchBattle
 # 91 "data/maps/CeladonCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_LEADER_ERIKA2   
+	cleartrainerflag TRAINER_LEADER_ERIKA_REMATCH   
 # 92 "data/maps/CeladonCity_Gym/scripts.pory"
 	release
 # 93 "data/maps/CeladonCity_Gym/scripts.pory"

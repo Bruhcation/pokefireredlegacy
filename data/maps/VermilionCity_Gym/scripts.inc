@@ -429,7 +429,7 @@ VermilionCity_Gym_EventScript_BeatKoga::
 # 215 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto_if_set FLAG_DEFEATED_SABRINA, VermilionCity_Gym_EventScript_BeatKogaSabrina
 # 216 "data/maps/VermilionCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_SCHOOL_KID_M, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
+	trainerbattle_single TRAINER_SURGE_3, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
 # 217 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto VermilionCity_Gym_EventScript_ContinueSurge
 # 218 "data/maps/VermilionCity_Gym/scripts.pory"
@@ -437,19 +437,19 @@ VermilionCity_Gym_EventScript_BeatSabrina::
 # 219 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto_if_set FLAG_DEFEATED_KOGA, VermilionCity_Gym_EventScript_BeatKogaSabrina
 # 220 "data/maps/VermilionCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_ELITE_FOUR_PHOEBE, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
+	trainerbattle_single TRAINER_SURGE_4, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
 # 221 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto VermilionCity_Gym_EventScript_ContinueSurge
 # 222 "data/maps/VermilionCity_Gym/scripts.pory"
 VermilionCity_Gym_EventScript_BeatKogaSabrina::
 # 223 "data/maps/VermilionCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_ELITE_FOUR_PHOEBE, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
+	trainerbattle_single TRAINER_SURGE_4, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
 # 224 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto VermilionCity_Gym_EventScript_ContinueSurge
 # 225 "data/maps/VermilionCity_Gym/scripts.pory"
 VermilionCity_Gym_EventScript_BeatBlaine::
 # 226 "data/maps/VermilionCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_RS_PSYCHIC_M, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
+	trainerbattle_single TRAINER_UNUSED_SURGE, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
 # 227 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto VermilionCity_Gym_EventScript_ContinueSurge
 # 228 "data/maps/VermilionCity_Gym/scripts.pory"
@@ -567,7 +567,7 @@ VermilionCity_Gym_EventScript_RematchSurge2::
 # 284 "data/maps/VermilionCity_Gym/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, VermilionCity_Gym_EventScript_NoRematchSurge
 # 285 "data/maps/VermilionCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_SURGE2, VermilionCity_Gym_Text_RematchYesSurge, VermilionCity_Gym_Text_RematchSurgeDefeat, VermilionCity_Gym_EventScript_PostRematchSurge, NO_MUSIC
+	trainerbattle_single TRAINER_SURGE_REMATCH, VermilionCity_Gym_Text_RematchYesSurge, VermilionCity_Gym_Text_RematchSurgeDefeat, VermilionCity_Gym_EventScript_PostRematchSurge, NO_MUSIC
 # 286 "data/maps/VermilionCity_Gym/scripts.pory"
 	release
 # 287 "data/maps/VermilionCity_Gym/scripts.pory"
@@ -579,7 +579,7 @@ VermilionCity_Gym_EventScript_PostRematchSurge::
 # 290 "data/maps/VermilionCity_Gym/scripts.pory"
 	msgbox VermilionCity_Gym_Text_SurgePostRematchBattle
 # 291 "data/maps/VermilionCity_Gym/scripts.pory"
-	cleartrainerflag TRAINER_SURGE2
+	cleartrainerflag TRAINER_SURGE_REMATCH
 # 292 "data/maps/VermilionCity_Gym/scripts.pory"
 	release
 # 293 "data/maps/VermilionCity_Gym/scripts.pory"

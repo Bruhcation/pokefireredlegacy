@@ -128,7 +128,7 @@ RocketHideout_B4F_EventScript_RemoveBarrier::
 RocketHideout_B4F_EventScript_Proton::
 	lock
 	faceplayer
-	trainerbattle_single TRAINER_PROTON, RocketHideout_B4F_Text_ProtonIntro, RocketHideout_B4F_Text_ProtonDefeat
+	trainerbattle_single TRAINER_PROTON_UNUSED, RocketHideout_B4F_Text_ProtonIntro, RocketHideout_B4F_Text_ProtonDefeat
 	msgbox RocketHideout_B4F_Text_ProtonPostBattle, MSGBOX_AUTOCLOSE
 	removeobject 10
 	setflag FLAG_HIDE_ADMIN2

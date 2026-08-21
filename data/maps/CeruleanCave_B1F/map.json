@@ -194,7 +194,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "CeruleanCave_B1F_Smith",
+      "script": "CeruleanCave_B1F_EventScript_Smith",
       "flag": "FLAG_SMITH"
     }
   ],

@@ -1325,23 +1325,23 @@
             "encounter_rate": 7,
             "mons": [
               {
-                "min_level": 7,
-                "max_level": 7,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
+                "min_level": 11,
+                "max_level": 11,
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 7,
-                "max_level": 7,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 9,
-                "max_level": 9,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_SANDSHREW"
               },
               {
@@ -1350,38 +1350,38 @@
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
+                "min_level": 11,
+                "max_level": 11,
                 "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_GEODUDE"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_PARAS"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 7,
-                "max_level": 7,
+                "min_level": 11,
+                "max_level": 11,
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_CLEFAIRY"
               }
             ]
@@ -10095,8 +10095,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10105,8 +10105,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10194,8 +10194,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10204,8 +10204,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10293,8 +10293,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10303,8 +10303,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10392,8 +10392,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10402,8 +10402,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10486,8 +10486,8 @@
                 "species": "SPECIES_SLUGMA"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10496,8 +10496,8 @@
                 "species": "SPECIES_MAGCARGO"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10585,19 +10585,19 @@
                 "species": "SPECIES_SLUGMA"
               },
               {
-                "min_level": 56,
-                "max_level": 56,
-                "species": "SPECIES_SLUGMA"
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
-                "min_level": 68,
-                "max_level": 68,
+                "min_level": 58,
+                "max_level": 58,
                 "species": "SPECIES_MAGCARGO"
               },
               {
-                "min_level": 56,
-                "max_level": 56,
-                "species": "SPECIES_SLUGMA"
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
                 "min_level": 56,

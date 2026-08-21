@@ -25,7 +25,9 @@ FourIsland_IcefallCave_Back_Text_LoreleiPlayerHelpMeKickPoachersOut::
 FourIsland_IcefallCave_Back_Text_GruntIntro::
     .string "W-what?!\p"
     .string "Who says we can't do what we want\n"
-    .string "with the POKéMON we catch?$"
+    .string "with the POKéMON we catch?\p"
+	.string "I'm a well respected ADMIN\n"
+	.string "around here!$"
 
 FourIsland_IcefallCave_Back_Text_GruntDefeat::
     .string "We didn't plan on this!$"

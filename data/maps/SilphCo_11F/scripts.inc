@@ -333,7 +333,7 @@ SilphCo_11F_EventScript_Orbing::
 # 167 "data/maps/SilphCo_11F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SilphCo_11F_EventScript_NoWhitney
 # 168 "data/maps/SilphCo_11F/scripts.pory"
-	trainerbattle_single TRAINER_RS_COOLTRAINER_M, SilphCo_11F_Text_YesWhitney, SilphCo_11F_Text_PostWhitney, SilphCo_11F_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_HARD, SilphCo_11F_Text_YesWhitney, SilphCo_11F_Text_PostWhitney, SilphCo_11F_EventScript_PostWhitney, NO_MUSIC
 # 169 "data/maps/SilphCo_11F/scripts.pory"
 	release
 # 170 "data/maps/SilphCo_11F/scripts.pory"

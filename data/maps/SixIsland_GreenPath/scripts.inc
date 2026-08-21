@@ -328,3 +328,107 @@ SixIsland_GreenPath_Text_Painter::
 	.string "It's not like people go through\n"
 # 165 "data/maps/SixIsland_GreenPath/scripts.pory"
 	.string "this path anyways!$"
+# 166 "data/maps/SixIsland_GreenPath/scripts.pory"
+
+# 167 "data/maps/SixIsland_GreenPath/scripts.pory"
+SixIsland_GreenPath_EventScript_Clerk::
+# 168 "data/maps/SixIsland_GreenPath/scripts.pory"
+	goto_if_questlog EventScript_ReleaseEnd
+# 169 "data/maps/SixIsland_GreenPath/scripts.pory"
+	lock
+# 170 "data/maps/SixIsland_GreenPath/scripts.pory"
+	faceplayer
+# 171 "data/maps/SixIsland_GreenPath/scripts.pory"
+	message SixIsland_GreenPath_Text_Clerk
+# 172 "data/maps/SixIsland_GreenPath/scripts.pory"
+	waitmessage
+# 173 "data/maps/SixIsland_GreenPath/scripts.pory"
+	pokemart SixIsland_GreenPath_Items
+# 174 "data/maps/SixIsland_GreenPath/scripts.pory"
+	lock
+# 175 "data/maps/SixIsland_GreenPath/scripts.pory"
+	faceplayer
+# 176 "data/maps/SixIsland_GreenPath/scripts.pory"
+	msgbox SixIsland_GreenPath_Text_Clerk2
+# 177 "data/maps/SixIsland_GreenPath/scripts.pory"
+	release
+# 178 "data/maps/SixIsland_GreenPath/scripts.pory"
+	end
+# 179 "data/maps/SixIsland_GreenPath/scripts.pory"
+
+# 180 "data/maps/SixIsland_GreenPath/scripts.pory"
+SixIsland_GreenPath_Text_Clerk::
+# 181 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.string "Make this quick, got that?$"
+# 182 "data/maps/SixIsland_GreenPath/scripts.pory"
+
+# 183 "data/maps/SixIsland_GreenPath/scripts.pory"
+
+# 184 "data/maps/SixIsland_GreenPath/scripts.pory"
+SixIsland_GreenPath_Text_Clerk2::
+# 185 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.string "Please be quiet about these\n"
+# 186 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.string "transactions.$"
+# 187 "data/maps/SixIsland_GreenPath/scripts.pory"
+
+# 188 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.align 2
+# 189 "data/maps/SixIsland_GreenPath/scripts.pory"
+SixIsland_GreenPath_Items::
+# 190 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_RAZZ_BERRY
+# 191 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_BLUK_BERRY
+# 192 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_NANAB_BERRY
+# 193 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_WEPEAR_BERRY
+# 194 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_PINAP_BERRY
+# 195 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_CORNN_BERRY
+# 196 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_MAGOST_BERRY
+# 197 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_RABUTA_BERRY
+# 198 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_NOMEL_BERRY
+# 199 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_SPELON_BERRY
+# 200 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_PAMTRE_BERRY
+# 201 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_WATMEL_BERRY
+# 202 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_DURIN_BERRY
+# 203 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_DURIN_BERRY
+# 204 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_BELUE_BERRY
+# 205 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_SHADOW_MAIL
+# 206 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_HARBOR_MAIL
+# 207 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_WAVE_MAIL
+# 208 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_MECH_MAIL
+# 209 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_ORANGE_MAIL
+# 210 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_WOOD_MAIL
+# 211 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_FAB_MAIL
+# 212 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_GLITTER_MAIL
+# 213 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_TROPIC_MAIL
+# 214 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_BEAD_MAIL
+# 215 "data/maps/SixIsland_GreenPath/scripts.pory"
+	.2byte ITEM_NONE
+# 216 "data/maps/SixIsland_GreenPath/scripts.pory"
+	release
+# 217 "data/maps/SixIsland_GreenPath/scripts.pory"
+	end
