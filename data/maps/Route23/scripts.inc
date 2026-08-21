@@ -419,7 +419,7 @@ Route23_EventScript_Orbing::
 # 210 "data/maps/Route23/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, Route23_EventScript_NoDragon
 # 211 "data/maps/Route23/scripts.pory"
-	trainerbattle_single TRAINER_AQUA_LEADER, Route23_Text_YesDragon, Route23_Text_PostDragon, Route23_EventScript_PostDragon, NO_MUSIC
+	trainerbattle_single TRAINER_RAYDON, Route23_Text_YesDragon, Route23_Text_PostDragon, Route23_EventScript_PostDragon, NO_MUSIC
 # 212 "data/maps/Route23/scripts.pory"
 	release
 # 213 "data/maps/Route23/scripts.pory"

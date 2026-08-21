@@ -54,7 +54,7 @@ FiveIsland_Meadow_EventScript_Rocket3::
 	end
 
 FiveIsland_Meadow_EventScript_Gym1::
-	trainerbattle_single TRAINER_RUNNING_TRIATHLETE_F, FiveIsland_Meadow_Text_Gym1, FiveIsland_Meadow_Text_GymDefeat
+	trainerbattle_single TRAINER_LEDO, FiveIsland_Meadow_Text_Gym1, FiveIsland_Meadow_Text_GymDefeat
 	msgbox FiveIsland_Meadow_Text_Gym1Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -72,7 +72,7 @@ FiveIsland_Meadow_Text_Gym1Post::
 	.string "but I don't see him here.$"
 
 FiveIsland_Meadow_EventScript_Gym2::
-	trainerbattle_single TRAINER_RUNNING_TRIATHLETE_M, FiveIsland_Meadow_Text_Gym2, FiveIsland_Meadow_Text_Gym2Defeat
+	trainerbattle_single TRAINER_DUNE, FiveIsland_Meadow_Text_Gym2, FiveIsland_Meadow_Text_Gym2Defeat
 	msgbox FiveIsland_Meadow_Text_Gym2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -92,7 +92,7 @@ FiveIsland_Meadow_Text_Gym2Post::
 	.string "one of the best!$"
 
 FiveIsland_Meadow_EventScript_Gym3::
-	trainerbattle_single TRAINER_POKEFAN_M, FiveIsland_Meadow_Text_Gym3, FiveIsland_Meadow_Text_Gym3Defeat
+	trainerbattle_single TRAINER_CAMMY, FiveIsland_Meadow_Text_Gym3, FiveIsland_Meadow_Text_Gym3Defeat
 	msgbox FiveIsland_Meadow_Text_Gym3Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -147,6 +147,7 @@ FiveIsland_Meadow_Items::
 	.2byte ITEM_SEA_INCENSE
 	.2byte ITEM_LAX_INCENSE
 	.2byte ITEM_MACHO_BRACE
+	.2byte ITEM_SCOPE_LENS
 	.2byte ITEM_EXP_SHARE
 	.2byte ITEM_FOCUS_BAND
 	.2byte ITEM_EVERSTONE

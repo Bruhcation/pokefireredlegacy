@@ -21,7 +21,7 @@ CeladonCity_Condominiums_Roof_EventScript_Siker::
 # 11 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	faceplayer
 # 12 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	goto_if_set TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_EventScript_PostSiker
+	goto_if_set TRAINER_SIKER_UNUSED, CeladonCity_Condominiums_Roof_EventScript_PostSiker
 # 13 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	goto_if_set FLAG_PIKER_DEFEATED, CeladonCity_Condominiums_Roof_EventScript_EndSiker
 # 14 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
@@ -29,7 +29,7 @@ CeladonCity_Condominiums_Roof_EventScript_Siker::
 # 15 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, CeladonCity_Condominiums_Roof_EventScript_NoSiker
 # 16 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
-	trainerbattle_single TRAINER_RS_POKEMANIAC, CeladonCity_Condominiums_Roof_Text_YesSiker, CeladonCity_Condominiums_Roof_Text_SikerDefeat, CeladonCity_Condominiums_Roof_EventScript_PostSiker, NO_MUSIC
+	trainerbattle_single TRAINER_SIKER_UNUSED, CeladonCity_Condominiums_Roof_Text_YesSiker, CeladonCity_Condominiums_Roof_Text_SikerDefeat, CeladonCity_Condominiums_Roof_EventScript_PostSiker, NO_MUSIC
 # 17 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"
 	release
 # 18 "data/maps/CeladonCity_Condominiums_Roof/scripts.pory"

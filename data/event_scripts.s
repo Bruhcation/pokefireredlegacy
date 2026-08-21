@@ -1114,6 +1114,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_BLASTOISE
 	setflag FLAG_CHARIZARD
 	setflag FLAG_VENUSAUR
+	setflag FLAG_ADMIN_PETROL
 	setvar VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 250
 	end
 

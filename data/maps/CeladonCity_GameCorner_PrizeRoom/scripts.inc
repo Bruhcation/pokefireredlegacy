@@ -703,7 +703,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_SmokeBall::
 # 352 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_SMOKE_BALL
 # 353 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 200
+	setvar VAR_TEMP_2, 500
 # 354 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 # 355 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -715,7 +715,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_MiracleSeed::
 # 358 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_MIRACLE_SEED
 # 359 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 500
+	setvar VAR_TEMP_2, 750
 # 360 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 # 361 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -727,7 +727,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_Charcoal::
 # 364 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_CHARCOAL
 # 365 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 500
+	setvar VAR_TEMP_2, 750
 # 366 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 # 367 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -739,7 +739,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_MysticWater::
 # 370 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_MYSTIC_WATER
 # 371 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 500
+	setvar VAR_TEMP_2, 750
 # 372 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 # 373 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"

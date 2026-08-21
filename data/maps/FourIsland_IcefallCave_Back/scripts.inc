@@ -105,7 +105,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 # 53 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_ROCKET3
 # 54 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_45, FourIsland_IcefallCave_Back_Text_GruntDefeat
+	trainerbattle_no_intro TRAINER_TEAM_ROCKET_PROTON, FourIsland_IcefallCave_Back_Text_GruntDefeat
 # 55 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	applymovement LOCALID_LORELEI, FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp
 # 56 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
@@ -177,81 +177,81 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 # 89 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	setflag FLAG_HIDE_RUIN_VALLEY_SCIENTIST
 # 90 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	clearflag FLAG_HIDE_LORELEI_IN_HER_HOUSE
+	clearflag FLAG_ADMIN_PETROL
 # 91 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	setvar VAR_MAP_SCENE_ICEFALL_CAVE_BACK, 1
+	clearflag FLAG_HIDE_LORELEI_IN_HER_HOUSE
 # 92 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	releaseall
+	setvar VAR_MAP_SCENE_ICEFALL_CAVE_BACK, 1
 # 93 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
+	releaseall
 # 94 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	end
 # 95 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_PlayerToRockets::
+
 # 96 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_up
+FourIsland_IcefallCave_Back_Movement_PlayerToRockets::
 # 97 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_up
 # 98 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_right
-# 99 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_up
+# 99 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_right
 # 100 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_up
 # 101 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	step_end
 # 102 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_PlayerWatchRocketsExit::
+
 # 103 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_16
+FourIsland_IcefallCave_Back_Movement_PlayerWatchRocketsExit::
 # 104 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_faster_left
-# 105 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	delay_16
+# 105 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_in_place_faster_left
 # 106 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	delay_16
 # 107 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_faster_down
+	delay_16
 # 108 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_in_place_faster_down
 # 109 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	step_end
 # 110 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_WalkInPlaceDown::
+
 # 111 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_down
+FourIsland_IcefallCave_Back_Movement_WalkInPlaceDown::
 # 112 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_in_place_down
 # 113 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	step_end
 # 114 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_UnusedPushRight::
+
 # 115 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	lock_facing_direction
+FourIsland_IcefallCave_Back_Movement_UnusedPushRight::
 # 116 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_right
+	lock_facing_direction
 # 117 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	unlock_facing_direction
-# 118 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
-# 119 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 120 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_Rocket1ReactToThreat::
-# 121 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_fast_down
-# 122 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
-# 123 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 124 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_Rocket1Exit::
-# 125 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_right
+# 118 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	unlock_facing_direction
+# 119 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
+# 120 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 121 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_Rocket1ReactToThreat::
+# 122 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_in_place_fast_down
+# 123 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
+# 124 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 125 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_Rocket1Exit::
 # 126 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_down
+	walk_right
 # 127 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_fast_down
+	walk_down
 # 128 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 129 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
@@ -265,19 +265,19 @@ FourIsland_IcefallCave_Back_Movement_Rocket1Exit::
 # 133 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 134 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
-# 135 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 136 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_Rocket2Exit::
-# 137 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_16
-# 138 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_left
-# 139 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_down
-# 140 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
+# 135 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
+# 136 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 137 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_Rocket2Exit::
+# 138 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	delay_16
+# 139 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_left
+# 140 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_down
 # 141 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 142 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
@@ -291,25 +291,25 @@ FourIsland_IcefallCave_Back_Movement_Rocket2Exit::
 # 146 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 147 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_fast_down
 # 148 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	step_end
 # 149 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_Rocket3Exit::
+
 # 150 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_16
+FourIsland_IcefallCave_Back_Movement_Rocket3Exit::
 # 151 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_down
-# 152 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	delay_16
-# 153 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 152 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_down
+# 153 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	delay_16
 # 154 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_fast_right
+	walk_down
 # 155 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_right
 # 156 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_fast_down
+	walk_fast_right
 # 157 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 158 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
@@ -319,156 +319,158 @@ FourIsland_IcefallCave_Back_Movement_Rocket3Exit::
 # 160 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_fast_down
 # 161 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_fast_down
 # 162 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 163 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_Rocket3FaceLorelei::
-# 164 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_16
-# 165 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_8
-# 166 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_faster_right
-# 167 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	step_end
-# 168 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 163 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 
+# 164 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_Rocket3FaceLorelei::
+# 165 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	delay_16
+# 166 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	delay_8
+# 167 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_in_place_faster_right
+# 168 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
 # 169 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_UnusedWalkLeft::
+
 # 170 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_left
+FourIsland_IcefallCave_Back_Movement_UnusedWalkLeft::
 # 171 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_left
 # 172 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
-# 173 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 174 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_LoreleiToRockets::
-# 175 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	walk_left
+# 173 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
+# 174 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 175 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_LoreleiToRockets::
 # 176 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_up
+	walk_left
 # 177 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_up
 # 178 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 179 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp::
-# 180 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_up
-# 181 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	step_end
-# 182 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 179 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 
+# 180 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp::
+# 181 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_in_place_up
+# 182 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	step_end
 # 183 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_LoreleiWatchRocketsExit::
+
 # 184 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_8
+FourIsland_IcefallCave_Back_Movement_LoreleiWatchRocketsExit::
 # 185 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_faster_right
+	delay_8
 # 186 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	delay_16
+	walk_in_place_faster_right
 # 187 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	delay_16
 # 188 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_in_place_faster_down
+	delay_16
 # 189 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	step_end
+	walk_in_place_faster_down
 # 190 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 191 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_Movement_LoreleiWalkToPlayer::
-# 192 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	walk_right
-# 193 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	step_end
+# 191 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 192 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_Movement_LoreleiWalkToPlayer::
+# 193 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	walk_right
 # 194 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	step_end
 # 195 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_Lorelei::
+
 # 196 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_ThankYouThisIsAwful, MSGBOX_NPC
+FourIsland_IcefallCave_Back_EventScript_Lorelei::
 # 197 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
+	msgbox FourIsland_IcefallCave_Back_Text_ThankYouThisIsAwful, MSGBOX_NPC
 # 198 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
+	end
 # 199 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_Pryce::
+
 # 200 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	lock
+FourIsland_IcefallCave_Back_EventScript_Pryce::
 # 201 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	faceplayer
+	lock
 # 202 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	goto_if_set FLAG_PRYCE_DEFEATED, FourIsland_IcefallCave_Back_EventScript_RematchPryce
+	faceplayer
 # 203 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_Pryce, MSGBOX_YESNO
+	goto_if_set FLAG_PRYCE_DEFEATED, FourIsland_IcefallCave_Back_EventScript_RematchPryce
 # 204 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, FourIsland_IcefallCave_Back_EventScript_NoPryce
+	msgbox FourIsland_IcefallCave_Back_Text_Pryce, MSGBOX_YESNO
 # 205 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	trainerbattle_single TRAINER_PRYCE, FourIsland_IcefallCave_Back_Text_YesPryce, FourIsland_IcefallCave_Back_Text_PryceDefeat, FourIsland_IcefallCave_Back_EventScript_PostPryce, NO_MUSIC
-# 206 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	release
-# 207 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
-# 208 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 209 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_PostPryce::
-# 210 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_PrycePostBattle
-# 211 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	setflag FLAG_PRYCE_DEFEATED
-# 212 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	cleartrainerflag TRAINER_PRYCE
-# 213 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	release
-# 214 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
-# 215 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 216 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_CantRematchPryce::
-# 217 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_PrycePostBattle
-# 218 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	release
-# 219 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
-# 220 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 221 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_NoPryce::
-# 222 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_NoPryce
-# 223 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	release
-# 224 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	end
-# 225 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-
-# 226 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_RematchPryce::
-# 227 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_RematchPryce, MSGBOX_YESNO
-# 228 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, FourIsland_IcefallCave_Back_EventScript_NoPryce
-# 229 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	trainerbattle_single TRAINER_PRYCE, FourIsland_IcefallCave_Back_Text_YesRematchPryce, FourIsland_IcefallCave_Back_Text_RematchPryceDefeat, FourIsland_IcefallCave_Back_EventScript_PostRematchPryce, NO_MUSIC
-# 230 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 206 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	trainerbattle_single TRAINER_PRYCE, FourIsland_IcefallCave_Back_Text_YesPryce, FourIsland_IcefallCave_Back_Text_PryceDefeat, FourIsland_IcefallCave_Back_EventScript_PostPryce, NO_MUSIC
+# 207 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	release
-# 231 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 208 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	end
-# 232 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 209 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 
-# 233 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-FourIsland_IcefallCave_Back_EventScript_PostRematchPryce::
-# 234 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
-	msgbox FourIsland_IcefallCave_Back_Text_RematchPryceDefeat
-# 235 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 210 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_EventScript_PostPryce::
+# 211 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	msgbox FourIsland_IcefallCave_Back_Text_PrycePostBattle
+# 212 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	setflag FLAG_PRYCE_DEFEATED
+# 213 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	cleartrainerflag TRAINER_PRYCE
-# 236 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+# 214 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	release
+# 215 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	end
+# 216 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 217 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_EventScript_CantRematchPryce::
+# 218 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	msgbox FourIsland_IcefallCave_Back_Text_PrycePostBattle
+# 219 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	release
+# 220 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	end
+# 221 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 222 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_EventScript_NoPryce::
+# 223 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	msgbox FourIsland_IcefallCave_Back_Text_NoPryce
+# 224 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	release
+# 225 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	end
+# 226 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 227 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_EventScript_RematchPryce::
+# 228 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	msgbox FourIsland_IcefallCave_Back_Text_RematchPryce, MSGBOX_YESNO
+# 229 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, FourIsland_IcefallCave_Back_EventScript_NoPryce
+# 230 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	trainerbattle_single TRAINER_PRYCE, FourIsland_IcefallCave_Back_Text_YesRematchPryce, FourIsland_IcefallCave_Back_Text_RematchPryceDefeat, FourIsland_IcefallCave_Back_EventScript_PostRematchPryce, NO_MUSIC
+# 231 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	release
+# 232 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	end
+# 233 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+
+# 234 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+FourIsland_IcefallCave_Back_EventScript_PostRematchPryce::
+# 235 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	msgbox FourIsland_IcefallCave_Back_Text_RematchPryceDefeat
+# 236 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	cleartrainerflag TRAINER_PRYCE
 # 237 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
+	release
+# 238 "data/maps/FourIsland_IcefallCave_Back/scripts.pory"
 	end

@@ -51,7 +51,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FourIsland_IcefallCave_Back_Text_GruntIntro
 	setvar VAR_LAST_TALKED, LOCALID_ROCKET3
-	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_45, FourIsland_IcefallCave_Back_Text_GruntDefeat
+	trainerbattle_no_intro TRAINER_TEAM_ROCKET_PROTON, FourIsland_IcefallCave_Back_Text_GruntDefeat
 	applymovement LOCALID_LORELEI, FourIsland_IcefallCave_Back_Movement_WalkInPlaceUp
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
@@ -87,6 +87,7 @@ FourIsland_IcefallCave_Back_EventScript_LoreleiRocketsScene::
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox FourIsland_IcefallCave_Back_Text_ThankYouThisIsAwful
 	setflag FLAG_HIDE_RUIN_VALLEY_SCIENTIST
+	clearflag FLAG_ADMIN_PETROL
 	clearflag FLAG_HIDE_LORELEI_IN_HER_HOUSE
 	setvar VAR_MAP_SCENE_ICEFALL_CAVE_BACK, 1
 	releaseall

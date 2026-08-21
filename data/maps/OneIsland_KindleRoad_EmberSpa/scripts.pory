@@ -99,7 +99,7 @@ OneIsland_KindleRoad_EmberSpa_EventScript_PostRematchSamal::
 	end
 
 OneIsland_KindleRoad_EmberSpa_EventScript_Gym1::
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_M, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
+	trainerbattle_single TRAINER_KURTAN, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket1Defeat
 	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -117,7 +117,7 @@ OneIsland_KindleRoad_EmberSpa_Text_Rocket1PostBattle::
 	.string "ONE ISLAND itself!$"
 
 OneIsland_KindleRoad_EmberSpa_EventScript_Gym2::
-	trainerbattle_single TRAINER_CYCLING_TRIATHLETE_F, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
+	trainerbattle_single TRAINER_BALENA, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Intro, OneIsland_KindleRoad_EmberSpa_Text_Rocket2Defeat
 	msgbox OneIsland_KindleRoad_EmberSpa_Text_Rocket2PostBattle, MSGBOX_AUTOCLOSE
 	end
 

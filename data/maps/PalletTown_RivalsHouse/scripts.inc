@@ -21,478 +21,492 @@ PalletTown_RivalsHouse_MapScripts::
 # 11 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 PalletTown_RivalsHouse_OnTransition::
 # 12 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	call_if_lt VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_MoveDaisyToTable
+	goto_if_unset FLAG_SHOW_RIVAL_STARTER, PalletTown_RivalsHouse_HideMon
 # 13 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	call_if_ge VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_AlreadyReceivedTownMap
+	call_if_lt VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_MoveDaisyToTable
 # 14 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+	call_if_ge VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_AlreadyReceivedTownMap
 # 15 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	end
 # 16 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MoveDaisyToTable::
+
 # 17 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	setobjectmovementtype LOCALID_DAISY, MOVEMENT_TYPE_FACE_RIGHT
+PalletTown_RivalsHouse_HideMon::
 # 18 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	setobjectxyperm LOCALID_DAISY, 5, 4
+	setflag FLAG_CHARIZARD
 # 19 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	return
+	setflag FLAG_BLASTOISE
 # 20 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	setflag FLAG_VENUSAUR
 # 21 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_AlreadyReceivedTownMap::
-# 22 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	setvar RECEIVED_TOWN_MAP, TRUE
-# 23 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	return
+# 22 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 23 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MoveDaisyToTable::
 # 24 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	setobjectmovementtype LOCALID_DAISY, MOVEMENT_TYPE_FACE_RIGHT
 # 25 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Daisy::
+	setobjectxyperm LOCALID_DAISY, 5, 4
 # 26 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	lock
+	return
 # 27 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	faceplayer
+
 # 28 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	famechecker FAMECHECKER_DAISY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+PalletTown_RivalsHouse_EventScript_AlreadyReceivedTownMap::
 # 29 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_set FLAG_GOT_HM01, PalletTown_RivalsHouse_EventScript_GroomMon
+	setvar RECEIVED_TOWN_MAP, TRUE
 # 30 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq RECEIVED_TOWN_MAP, TRUE, PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest
+	return
 # 31 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_ExplainTownMap
+
 # 32 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_GiveTownMap
+PalletTown_RivalsHouse_EventScript_Daisy::
 # 33 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1, PalletTown_RivalsHouse_EventScript_HeardBattledRival
+	lock
 # 34 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_HiBrothersAtLab
+	faceplayer
 # 35 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	closemessage
+	famechecker FAMECHECKER_DAISY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 # 36 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	applymovement LOCALID_DAISY, Common_Movement_FaceOriginalDirection
+	goto_if_set FLAG_GOT_HM01, PalletTown_RivalsHouse_EventScript_GroomMon
 # 37 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmovement 0
+	goto_if_eq RECEIVED_TOWN_MAP, TRUE, PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest
 # 38 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 39 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 40 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 41 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_HeardBattledRival::
-# 42 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_HeardYouBattledRival
-# 43 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 44 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 45 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 46 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_GroomMon::
-# 47 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_questlog EventScript_ReleaseEnd
-# 48 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special QuestLog_CutRecording
-# 49 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_lt VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 250, PalletTown_RivalsHouse_EventScript_RateMonFriendship
-# 50 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_LikeMeToGroomMon, MSGBOX_YESNO
-# 51 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, PalletTown_RivalsHouse_EventScript_DeclineGrooming
-# 52 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_GroomWhichOne
-# 53 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special ChoosePartyMon
-# 54 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitstate
-# 55 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	lock
-# 56 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	faceplayer
-# 57 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_ge VAR_0x8004, PARTY_SIZE, PalletTown_RivalsHouse_EventScript_DeclineGrooming
-# 58 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	specialvar VAR_RESULT, GetPartyMonSpecies
-# 59 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, SPECIES_EGG, PalletTown_RivalsHouse_EventScript_CantGroomEgg
-# 60 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_LookingNiceInNoTime
-# 61 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	closemessage
-# 62 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 63 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	playfanfare MUS_HEAL
-# 64 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitfanfare
-# 65 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	setvar VAR_0x8006, FAMECHECKER_DAISY
-# 66 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special CheckFilledFameCheckerFor0x8006
-# 67 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, PalletTown_RivalsHouse_EventScript_GroomMonUltra
-# 68 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special DaisyMassageServices
-# 69 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 70 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special BufferMonNickname
-# 71 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDone
-# 72 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 73 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 74 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 75 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 76 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_GroomMonUltra::
-# 77 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special DaisyMassageServicesMax
-# 78 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 79 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	special BufferMonNickname
-# 80 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDoneUltra
-# 81 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 82 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 83 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 84 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 85 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_CantGroomEgg::
-# 86 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_CantGroomAnEgg
-# 87 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 88 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 89 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 90 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 91 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_DeclineGrooming::
-# 92 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_DontNeedAnyGrooming
-# 93 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 94 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 95 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 96 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 97 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_RateMonFriendship::
-# 98 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_MayISeeFirstMon
-# 99 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	specialvar VAR_RESULT, GetLeadMonFriendship
-# 100 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	switch VAR_RESULT
-# 101 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 0, PalletTown_RivalsHouse_EventScript_MonFriendshipLowest
-# 102 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 1, PalletTown_RivalsHouse_EventScript_MonFriendshipLower
-# 103 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 2, PalletTown_RivalsHouse_EventScript_MonFriendshipLow
-# 104 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 3, PalletTown_RivalsHouse_EventScript_MonFriendshipMid
-# 105 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 4, PalletTown_RivalsHouse_EventScript_MonFriendshipHigh
-# 106 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 5, PalletTown_RivalsHouse_EventScript_MonFriendshipHigher
-# 107 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	case 6, PalletTown_RivalsHouse_EventScript_MonFriendshipHighest
-# 108 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 109 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 110 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipLowest::
-# 111 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_WhyWouldMonHateYouSoMuch
-# 112 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 113 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 114 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 115 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 116 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipLower::
-# 117 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_DontLikeWayItGlaresAtYou
-# 118 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 119 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 120 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 121 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 122 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipLow::
-# 123 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_NotFamiliarWithYouYet
-# 124 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 125 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 126 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 127 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 128 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipMid::
-# 129 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ItsWarmingUpToYou
-# 130 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 131 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 132 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 133 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 134 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipHigh::
-# 135 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ItsQuiteFriendly
-# 136 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 137 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 138 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 139 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 140 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipHigher::
-# 141 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ItLooksVeryHappy
-# 142 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 143 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 144 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 145 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 146 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_MonFriendshipHighest::
-# 147 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_CouldntLoveYouMore
-# 148 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
-# 149 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 150 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 151 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 152 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest::
-# 153 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_PleaseGiveMonsRest
-# 154 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 155 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 156 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 157 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_ForgotTownMap::
-# 158 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ForgotTownMap
-# 159 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	closemessage
-# 160 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	checkitemspace ITEM_TOWN_MAP
-# 161 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
-# 162 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
-# 163 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmovement 0
-# 164 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	removeobject LOCALID_TOWN_MAP
-# 165 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
-# 166 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	delay 15
-# 167 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
-# 168 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmovement 0
-# 169 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	delay 12
-# 170 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
-# 171 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_ExplainTownMap
-# 172 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
-# 173 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 174 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 175 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_GiveTownMap::
-# 176 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp
-# 177 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 39 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_GiveTownMap
+# 40 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1, PalletTown_RivalsHouse_EventScript_HeardBattledRival
+# 41 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_HiBrothersAtLab
+# 42 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	closemessage
-# 178 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 43 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	applymovement LOCALID_DAISY, Common_Movement_FaceOriginalDirection
+# 44 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitmovement 0
+# 45 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 46 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 47 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 48 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_HeardBattledRival::
+# 49 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_HeardYouBattledRival
+# 50 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 51 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 52 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 53 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_GroomMon::
+# 54 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_questlog EventScript_ReleaseEnd
+# 55 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special QuestLog_CutRecording
+# 56 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_lt VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 250, PalletTown_RivalsHouse_EventScript_RateMonFriendship
+# 57 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_LikeMeToGroomMon, MSGBOX_YESNO
+# 58 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, PalletTown_RivalsHouse_EventScript_DeclineGrooming
+# 59 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_GroomWhichOne
+# 60 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special ChoosePartyMon
+# 61 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitstate
+# 62 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	lock
+# 63 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	faceplayer
+# 64 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_ge VAR_0x8004, PARTY_SIZE, PalletTown_RivalsHouse_EventScript_DeclineGrooming
+# 65 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	specialvar VAR_RESULT, GetPartyMonSpecies
+# 66 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, SPECIES_EGG, PalletTown_RivalsHouse_EventScript_CantGroomEgg
+# 67 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_LookingNiceInNoTime
+# 68 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	closemessage
+# 69 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 70 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	playfanfare MUS_HEAL
+# 71 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitfanfare
+# 72 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	setvar VAR_0x8006, FAMECHECKER_DAISY
+# 73 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special CheckFilledFameCheckerFor0x8006
+# 74 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_RivalsHouse_EventScript_GroomMonUltra
+# 75 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special DaisyMassageServices
+# 76 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 77 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special BufferMonNickname
+# 78 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDone
+# 79 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 80 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 81 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 82 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 83 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_GroomMonUltra::
+# 84 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special DaisyMassageServicesMax
+# 85 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 86 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	special BufferMonNickname
+# 87 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDoneUltra
+# 88 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 89 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 90 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 91 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 92 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_CantGroomEgg::
+# 93 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_CantGroomAnEgg
+# 94 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 95 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 96 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 97 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 98 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_DeclineGrooming::
+# 99 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_DontNeedAnyGrooming
+# 100 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 101 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 102 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 103 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 104 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_RateMonFriendship::
+# 105 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_MayISeeFirstMon
+# 106 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	specialvar VAR_RESULT, GetLeadMonFriendship
+# 107 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	switch VAR_RESULT
+# 108 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 0, PalletTown_RivalsHouse_EventScript_MonFriendshipLowest
+# 109 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 1, PalletTown_RivalsHouse_EventScript_MonFriendshipLower
+# 110 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 2, PalletTown_RivalsHouse_EventScript_MonFriendshipLow
+# 111 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 3, PalletTown_RivalsHouse_EventScript_MonFriendshipMid
+# 112 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 4, PalletTown_RivalsHouse_EventScript_MonFriendshipHigh
+# 113 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 5, PalletTown_RivalsHouse_EventScript_MonFriendshipHigher
+# 114 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	case 6, PalletTown_RivalsHouse_EventScript_MonFriendshipHighest
+# 115 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 116 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 117 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipLowest::
+# 118 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_WhyWouldMonHateYouSoMuch
+# 119 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 120 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 121 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 122 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 123 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipLower::
+# 124 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_DontLikeWayItGlaresAtYou
+# 125 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 126 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 127 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 128 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 129 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipLow::
+# 130 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_NotFamiliarWithYouYet
+# 131 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 132 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 133 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 134 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 135 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipMid::
+# 136 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ItsWarmingUpToYou
+# 137 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 138 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 139 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 140 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 141 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipHigh::
+# 142 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ItsQuiteFriendly
+# 143 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 144 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 145 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 146 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 147 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipHigher::
+# 148 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ItLooksVeryHappy
+# 149 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 150 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 151 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 152 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 153 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_MonFriendshipHighest::
+# 154 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_CouldntLoveYouMore
+# 155 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 1, PalletTown_RivalsHouse_EventScript_ForgotTownMap
+# 156 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 157 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 158 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 159 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_PleaseGiveMonsRest::
+# 160 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_PleaseGiveMonsRest
+# 161 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 162 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 163 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 164 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_ForgotTownMap::
+# 165 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ForgotTownMap
+# 166 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	closemessage
+# 167 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	checkitemspace ITEM_TOWN_MAP
-# 179 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 168 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
-# 180 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 169 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
-# 181 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 170 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	waitmovement 0
-# 182 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 171 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	removeobject LOCALID_TOWN_MAP
-# 183 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 172 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
-# 184 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 173 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	delay 15
-# 185 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 174 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
-# 186 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 175 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	waitmovement 0
-# 187 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 176 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	delay 12
-# 188 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 177 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
+# 178 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_ExplainTownMap
+# 179 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	release
+# 180 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 181 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 182 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_GiveTownMap::
+# 183 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp
+# 184 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	closemessage
+# 185 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	checkitemspace ITEM_TOWN_MAP
+# 186 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
+# 187 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
+# 188 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	waitmovement 0
 # 189 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
+	removeobject LOCALID_TOWN_MAP
 # 190 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
 # 191 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	delay 15
 # 192 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_NoRoomForTownMap::
+	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
 # 193 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_DontHaveSpaceForThis
+	waitmovement 0
 # 194 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
+	delay 12
 # 195 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
 # 196 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	release
 # 197 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_ExplainTownMap::
+	end
 # 198 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ExplainTownMap
+
 # 199 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
+PalletTown_RivalsHouse_EventScript_NoRoomForTownMap::
 # 200 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+	msgbox PalletTown_RivalsHouse_Text_DontHaveSpaceForThis
 # 201 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	release
 # 202 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_TownMap::
+	end
 # 203 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ItsBigMapOfKanto, MSGBOX_NPC
+
 # 204 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+PalletTown_RivalsHouse_EventScript_ExplainTownMap::
 # 205 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	msgbox PalletTown_RivalsHouse_Text_ExplainTownMap
 # 206 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Bookshelf::
+	release
 # 207 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_ShelvesCrammedFullOfBooks, MSGBOX_SIGN
+	end
 # 208 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+
 # 209 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+PalletTown_RivalsHouse_EventScript_TownMap::
 # 210 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Picture::
+	msgbox PalletTown_RivalsHouse_Text_ItsBigMapOfKanto, MSGBOX_NPC
 # 211 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy, MSGBOX_SIGN
+	end
 # 212 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+
 # 213 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+PalletTown_RivalsHouse_EventScript_Bookshelf::
 # 214 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Charizard::
+	msgbox PalletTown_RivalsHouse_Text_ShelvesCrammedFullOfBooks, MSGBOX_SIGN
 # 215 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	lock
+	end
 # 216 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	faceplayer
+
 # 217 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitse
+PalletTown_RivalsHouse_EventScript_Picture::
 # 218 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	playmoncry SPECIES_CHARIZARD, CRY_MODE_NORMAL
+	msgbox PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy, MSGBOX_SIGN
 # 219 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_Charizard, MSGBOX_NPC
+	end
 # 220 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmoncry
+
 # 221 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
+PalletTown_RivalsHouse_EventScript_Charizard::
 # 222 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
+	lock
 # 223 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
+	faceplayer
 # 224 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Blastoise::
+	waitse
 # 225 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	lock
+	playmoncry SPECIES_CHARIZARD, CRY_MODE_NORMAL
 # 226 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	faceplayer
+	msgbox PalletTown_RivalsHouse_Text_Charizard, MSGBOX_NPC
 # 227 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitse
+	waitmoncry
 # 228 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	playmoncry SPECIES_BLASTOISE, CRY_MODE_NORMAL
+	release
 # 229 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_Blastoise, MSGBOX_NPC
+	end
 # 230 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmoncry
+
 # 231 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	release
+PalletTown_RivalsHouse_EventScript_Blastoise::
 # 232 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	end
-# 233 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-
-# 234 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_EventScript_Venusaur::
-# 235 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	lock
-# 236 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 233 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	faceplayer
-# 237 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 234 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	waitse
-# 238 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	playmoncry SPECIES_VENUSAUR, CRY_MODE_NORMAL
-# 239 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	msgbox PalletTown_RivalsHouse_Text_Venusaur, MSGBOX_NPC
-# 240 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 235 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	playmoncry SPECIES_BLASTOISE, CRY_MODE_NORMAL
+# 236 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	msgbox PalletTown_RivalsHouse_Text_Blastoise, MSGBOX_NPC
+# 237 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	waitmoncry
-# 241 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 238 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	release
-# 242 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 239 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	end
-# 243 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 240 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 
+# 241 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_EventScript_Venusaur::
+# 242 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	lock
+# 243 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	faceplayer
 # 244 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_Text_Charizard::
+	waitse
 # 245 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	.string "Zard!$"
+	playmoncry SPECIES_VENUSAUR, CRY_MODE_NORMAL
 # 246 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_Text_Blastoise::
+	msgbox PalletTown_RivalsHouse_Text_Venusaur, MSGBOX_NPC
 # 247 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	.string "Blastoise!$"
+	waitmoncry
 # 248 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-PalletTown_RivalsHouse_Text_Venusaur::
+	release
 # 249 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	end
+# 250 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+
+# 251 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Charizard::
+# 252 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	.string "Zard!$"
+# 253 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Blastoise::
+# 254 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	.string "Blastoise!$"
+# 255 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+PalletTown_RivalsHouse_Text_Venusaur::
+# 256 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	.string "Saur!$"

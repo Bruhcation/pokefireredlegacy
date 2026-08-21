@@ -261,7 +261,7 @@ SeafoamIslands_B3F_EventScript_Orbing::
 # 131 "data/maps/SeafoamIslands_B3F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SeafoamIslands_B3F_EventScript_NoWhitney
 # 132 "data/maps/SeafoamIslands_B3F/scripts.pory"
-	trainerbattle_single TRAINER_RS_COOLTRAINER_F, SeafoamIslands_B3F_Text_YesWhitney, SeafoamIslands_B3F_Text_PostWhitney, SeafoamIslands_B3F_EventScript_PostWhitney, NO_MUSIC
+	trainerbattle_single TRAINER_FROZEN, SeafoamIslands_B3F_Text_YesWhitney, SeafoamIslands_B3F_Text_PostWhitney, SeafoamIslands_B3F_EventScript_PostWhitney, NO_MUSIC
 # 133 "data/maps/SeafoamIslands_B3F/scripts.pory"
 	release
 # 134 "data/maps/SeafoamIslands_B3F/scripts.pory"

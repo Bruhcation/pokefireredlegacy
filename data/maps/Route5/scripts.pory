@@ -58,7 +58,7 @@ Route5_EventScript_Orbing::
 	closemessage
 	delay 40
 	goto_if_eq VAR_RESULT, NO, Route5_EventScript_NoSilbings
-	trainerbattle_single TRAINER_RS_RUIN_MANIAC, Route5_Text_YesSilbings, Route5_Text_PostSilbings, Route5_EventScript_PostFlags, NO_MUSIC
+	trainerbattle_single TRAINER_BRO_SIS, Route5_Text_YesSilbings, Route5_Text_PostSilbings, Route5_EventScript_PostFlags, NO_MUSIC
 	release
 	end
 

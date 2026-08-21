@@ -301,8 +301,8 @@
 #define FLAG_NO_MONEY_SAFARI_ZONE2               0x119
 #define FLAG_FIVE_ISLAND_TREE             0x11A
 #define FLAG_MOVE_TUTOR_TAUGHT_SHARPEN    0x11B
-#define FLAG_0x11C               0x11C
-#define FLAG_0x11D               0x11D
+#define FLAG_ADMIN_PETROL              0x11C
+#define FLAG_SHOW_RIVAL_STARTER               0x11D
 #define FLAG_0x11E               0x11E
 #define FLAG_0x11F               0x11F
 #define FLAG_0x120               0x120

@@ -208,7 +208,7 @@ Route23_EventScript_Orbing::
 	closemessage
 	delay 40
 	goto_if_eq VAR_RESULT, NO, Route23_EventScript_NoDragon
-	trainerbattle_single TRAINER_AQUA_LEADER, Route23_Text_YesDragon, Route23_Text_PostDragon, Route23_EventScript_PostDragon, NO_MUSIC
+	trainerbattle_single TRAINER_RAYDON, Route23_Text_YesDragon, Route23_Text_PostDragon, Route23_EventScript_PostDragon, NO_MUSIC
 	release
 	end
 

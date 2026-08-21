@@ -69,7 +69,7 @@ Route17_EventScript_PostPaxton::
 # 35 "data/maps/Route17/scripts.pory"
 	msgbox Route17_Text_PaxtonPostBattle
 # 36 "data/maps/Route17/scripts.pory"
-	cleartrainerflag TRAINER_GUITARIST
+	cleartrainerflag TRAINER_PAXTON_UNUSED
 # 37 "data/maps/Route17/scripts.pory"
 	release
 # 38 "data/maps/Route17/scripts.pory"

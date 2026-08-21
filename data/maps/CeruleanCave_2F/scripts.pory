@@ -2,8 +2,8 @@ raw `
 CeruleanCave_2F_MapScripts::
 	.byte 0
 
-CeruleanCave_2F_Ditto::
-	trainerbattle_single TRAINER_DITTO, CeruleanCave_2F_Text_DittoIntro, CeruleanCave_2F_Text_DittoDefeat
+CeruleanCave_2F_EventScript_Ditto::
+	trainerbattle_single TRAINER_DITTO, CeruleanCave_2F_Text_DittoIntro, CeruleanCave_2F_Text_DittoDefeat, CeruleanCave_2F_EventScript_DittoMan
 	msgbox CeruleanCave_2F_Text_DittoPostBattle, MSGBOX_AUTOCLOSE
  	setflag FLAG_DITTO_MAN
 	fadescreen FADE_TO_BLACK
@@ -11,4 +11,11 @@ CeruleanCave_2F_Ditto::
 	fadescreen FADE_FROM_BLACK
 	end
 
+CeruleanCave_2F_EventScript_DittoMan::
+	msgbox CeruleanCave_2F_Text_DittoPostBattle, MSGBOX_AUTOCLOSE
+ 	setflag FLAG_DITTO_MAN
+	fadescreen FADE_TO_BLACK
+	removeobject 14
+	fadescreen FADE_FROM_BLACK
+	end
 `

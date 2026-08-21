@@ -10095,8 +10095,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10105,8 +10105,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10194,8 +10194,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10204,8 +10204,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10293,8 +10293,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10303,8 +10303,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10392,8 +10392,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10402,8 +10402,8 @@
                 "species": "SPECIES_GOLEM"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               }
             ]
@@ -10486,8 +10486,8 @@
                 "species": "SPECIES_SLUGMA"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10496,8 +10496,8 @@
                 "species": "SPECIES_MAGCARGO"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 50,
+                "max_level": 50,
                 "species": "SPECIES_CYNDAQUIL"
               },
               {
@@ -10585,19 +10585,19 @@
                 "species": "SPECIES_SLUGMA"
               },
               {
-                "min_level": 56,
-                "max_level": 56,
-                "species": "SPECIES_SLUGMA"
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
-                "min_level": 68,
-                "max_level": 68,
+                "min_level": 58,
+                "max_level": 58,
                 "species": "SPECIES_MAGCARGO"
               },
               {
-                "min_level": 56,
-                "max_level": 56,
-                "species": "SPECIES_SLUGMA"
+                "min_level": 50,
+                "max_level": 50,
+                "species": "SPECIES_CYNDAQUIL"
               },
               {
                 "min_level": 56,

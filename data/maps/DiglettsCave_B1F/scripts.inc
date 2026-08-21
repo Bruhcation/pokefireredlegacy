@@ -93,7 +93,7 @@ DiglettsCave_B1F_EventScript_Orbing::
 # 47 "data/maps/DiglettsCave_B1F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, DiglettsCave_B1F_EventScript_NoGround
 # 48 "data/maps/DiglettsCave_B1F/scripts.pory"
-	trainerbattle_single TRAINER_AQUA_GRUNT_F, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
+	trainerbattle_single TRAINER_GRU, DiglettsCave_B1F_Text_YesGround, DiglettsCave_B1F_Text_PostGround, DiglettsCave_B1F_EventScript_PostGround, NO_MUSIC
 # 49 "data/maps/DiglettsCave_B1F/scripts.pory"
 	release
 # 50 "data/maps/DiglettsCave_B1F/scripts.pory"

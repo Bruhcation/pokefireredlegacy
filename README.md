@@ -144,9 +144,12 @@ Credits:
 
 - Team Aqua Hideout - Like Above for help
 
-- Project Palladium Team - Male Guard Sprite
+- Rubire4 - Rescaled HGSS Officer sprite (edited by therealteamplayer)
 
 - Invis (HMA Discord) - Nurse Joy Sprite
+
+- RetroNC - Primo Sprite
+
 
 - Numerous Pret Tutorials
 
@@ -164,13 +167,13 @@ Dragon Scale	Seaform/2 Island/Thief (Horsea)
 Sun Stone	Celadon/Thief (Oddish)		
 Moon Stone	Fuscia Store		
 Flutes	Celadon		
-Ice Beam	Seafoam		
-Hail	Seafoam		
+Ice Beam	Seafoam Islands
+Hail	Seafoam Islands
 Rock Smash 	Route 2 (Aid)		
 Flash	Route 10 (Aid)		
 Sandstorm	Rock Tunnel		
 Everstone	Rock Tunnel		
-Flamethrower	Mt Ember		
+Flamethrower	Mt Ember/Silph Co		
 Shadow Ball	Mt Ember		
 Iron Tail	Rock Tunnel (Rock Smash)		
 Thunderbolt	Power Plant		

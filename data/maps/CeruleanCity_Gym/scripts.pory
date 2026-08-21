@@ -57,13 +57,13 @@ CeruleanCity_Gym_Text_MistyNoNoRematchBattle::
 CeruleanCity_Gym_EventScript_RematchMisty2::
 	msgbox CeruleanCity_Gym_Text_RematchMisty, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeruleanCity_Gym_EventScript_NoRematchMisty
-	trainerbattle_single TRAINER_MISTY2, CeruleanCity_Gym_Text_RematchYesMisty, CeruleanCity_Gym_Text_RematchMistyDefeat, CeruleanCity_Gym_EventScript_PostRematchMisty, NO_MUSIC
+	trainerbattle_single TRAINER_MISTY_REMATCH, CeruleanCity_Gym_Text_RematchYesMisty, CeruleanCity_Gym_Text_RematchMistyDefeat, CeruleanCity_Gym_EventScript_PostRematchMisty, NO_MUSIC
 	release
 	end
 
 CeruleanCity_Gym_EventScript_PostRematchMisty::
 	msgbox CeruleanCity_Gym_Text_MistyPostRematchBattle
-	cleartrainerflag TRAINER_MISTY2
+	cleartrainerflag TRAINER_MISTY_REMATCH
 	release
 	end
 

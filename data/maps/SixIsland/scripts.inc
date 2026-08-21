@@ -61,17 +61,17 @@ SixIsland_EventScript_Boy3::
 # 31 "data/maps/SixIsland/scripts.pory"
 SixIsland_Text_Blue::
 # 32 "data/maps/SixIsland/scripts.pory"
-    .string "Hey! Isn't that {RIVAL}\n"
+    .string "Hey! Isn't that {RIVAL} in that\n"
 # 33 "data/maps/SixIsland/scripts.pory"
-    .string "in that POKECENTER!$"
+    .string "POKECENTER!$"
 # 34 "data/maps/SixIsland/scripts.pory"
 
 # 35 "data/maps/SixIsland/scripts.pory"
 SixIsland_Text_Blue2::
 # 36 "data/maps/SixIsland/scripts.pory"
-    .string "I heard {RIVAL} used\n"
+    .string "I heard {RIVAL} used to be \n"
 # 37 "data/maps/SixIsland/scripts.pory"
-    .string "to be the CHAMPION.$"
+    .string "the CHAMPION.$"
 # 38 "data/maps/SixIsland/scripts.pory"
 
 # 39 "data/maps/SixIsland/scripts.pory"
