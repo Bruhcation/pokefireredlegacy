@@ -161,7 +161,7 @@ VictoryRoad_2F_EventScript_Moltres::
 # 81 "data/maps/VictoryRoad_2F/scripts.pory"
 VictoryRoad_2F_EventScript_MoltresDefeated::
 # 82 "data/maps/VictoryRoad_2F/scripts.pory"
-	trainerbattle_single TRAINER_BUG_CATCHER_3, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
+	trainerbattle_single TRAINER_MOLTON, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
 # 83 "data/maps/VictoryRoad_2F/scripts.pory"
 	msgbox VictoryRoad_2F_Text_MoltresPostBattle, MSGBOX_AUTOCLOSE
 # 84 "data/maps/VictoryRoad_2F/scripts.pory"

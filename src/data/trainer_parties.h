@@ -607,52 +607,46 @@ static const struct TrainerMon sParty_Ren[] =
 static const struct TrainerMon sParty_PaxtonUnused[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 60,
         .species = SPECIES_WEEZING,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_EXPLOSION},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 66,
-        .species = SPECIES_PINSIR,
-        .heldItem = ITEM_SILVER_POWDER,
-        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
-        .moves = {MOVE_MEGAHORN, MOVE_CROSS_CHOP, MOVE_BULK_UP, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 61,
         .species = SPECIES_HOUNDOOM,
         .moves = {MOVE_CRUNCH, MOVE_FIRE_BLAST, MOVE_ROCK_SMASH, MOVE_IRON_TAIL},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 62,
         .species = SPECIES_MACHAMP,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .heldItem = ITEM_QUICK_CLAW,
         .moves = {MOVE_CROSS_CHOP, MOVE_BULK_UP, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 61,
         .species = SPECIES_SNEASEL,
         .heldItem = ITEM_NEVER_MELT_ICE,
         .moves = {MOVE_BLIZZARD, MOVE_FAINT_ATTACK, MOVE_SURF, MOVE_BRICK_BREAK},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 65,
+        .lvl = 62,
         .species = SPECIES_ELECTABUZZ,
         .heldItem = ITEM_MAGNET,
         .moves = {MOVE_THUNDERBOLT, MOVE_ICE_PUNCH, MOVE_FIRE_PUNCH, MOVE_CROSS_CHOP},
-        .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 63,
+        .species = SPECIES_PINSIR,
+        .heldItem = ITEM_SILVER_POWDER,
+        .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
+        .moves = {MOVE_MEGAHORN, MOVE_CROSS_CHOP, MOVE_BULK_UP, MOVE_ROCK_SLIDE},
     },
 };//Paxton 2
 
@@ -10697,7 +10691,7 @@ static const struct TrainerMon sParty_SisAndBroLilIan[] = {
     },
 };
 
-static const struct TrainerMon sParty_BugCatcher3[] = {
+static const struct TrainerMon sParty_Molton[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 55,
@@ -10738,9 +10732,55 @@ static const struct TrainerMon sParty_BugCatcher3[] = {
         .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     },
 };
-static const struct TrainerMon sParty_BugCatcher4[] = {DUMMY_TRAINER_MON};
-static const struct TrainerMon sParty_BugCatcher5[] = {DUMMY_TRAINER_MON};
-static const struct TrainerMon sParty_BugCatcher6[] = {DUMMY_TRAINER_MON};
+static const struct TrainerMon sParty_GoonChampion1[] = {
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_THUNDERBOLT, MOVE_SMOKESCREEN, MOVE_SLUDGE_BOMB, MOVE_AMNESIA},
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_MUK,
+        .moves = {MOVE_ACID_ARMOR, MOVE_TOXIC, MOVE_MINIMIZE, MOVE_SLUDGE_BOMB},
+    },
+};
+static const struct TrainerMon sParty_GoonChampion2[] = {
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_HOUNDOOM,
+        .moves = {MOVE_NONE, MOVE_CRUNCH, MOVE_FLAMETHROWER, MOVE_ROCK_SMASH},
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_ELECTRODE,
+        .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_THUNDERBOLT, MOVE_VOLT_TACKLE},
+    },
+};
+static const struct TrainerMon sParty_GoonChampion3[] = {
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_MURKROW,
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_PRIMEAPE,
+        .moves = {MOVE_CROSS_CHOP, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_NONE},
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 58,
+        .species = SPECIES_SCYTHER,
+        .moves = {MOVE_TWINEEDLE, MOVE_RAZOR_WIND, MOVE_SLASH, MOVE_SWORDS_DANCE},
+    },
+};
+
+
 static const struct TrainerMon sParty_BugCatcher7[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMon sParty_BugCatcher8[] = {DUMMY_TRAINER_MON};
 
@@ -11149,48 +11189,50 @@ static const struct TrainerMon sParty_PainterDaisy[] = {
 static const struct TrainerMon sParty_BikerGoon[] = {
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_WEEZING,
         .moves = {MOVE_THUNDERBOLT, MOVE_SMOKESCREEN, MOVE_SLUDGE_BOMB, MOVE_AMNESIA},
     },
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49 ,
         .species = SPECIES_MUK,
-        .moves = {MOVE_ACID_ARMOR, MOVE_SCREECH, MOVE_MINIMIZE, MOVE_SLUDGE_BOMB},
+        .moves = {MOVE_ACID_ARMOR, MOVE_TOXIC, MOVE_MINIMIZE, MOVE_SLUDGE_BOMB},
     },
 };
 
 static const struct TrainerMon sParty_BikerGoon2[] = {
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_HOUNDOOM,
         .moves = {MOVE_NONE, MOVE_CRUNCH, MOVE_FLAMETHROWER, MOVE_ROCK_SMASH},
     },
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_ELECTRODE,
-        .moves = {MOVE_NONE, MOVE_EXPLOSION, MOVE_THUNDERBOLT, MOVE_VOLT_TACKLE},
+        .moves = {MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_THUNDERBOLT, MOVE_VOLT_TACKLE},
     },
 };
 
 static const struct TrainerMon sParty_BikerGoon3[] = {
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_MURKROW,
     },
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_PRIMEAPE,
+        .moves = {MOVE_CROSS_CHOP, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_NONE},
     },
     {
         .iv = 0,
-        .lvl = 47,
+        .lvl = 49,
         .species = SPECIES_SCYTHER,
+        .moves = {MOVE_TWINEEDLE, MOVE_RAZOR_WIND, MOVE_SLASH, MOVE_SWORDS_DANCE},
     },
 };
 
@@ -15446,41 +15488,41 @@ static const struct TrainerMon sParty_ChampionRematchCharmander[] = {
 static const struct TrainerMon sParty_CueBallPaxton[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 51,
+        .lvl = 53,
         .species = SPECIES_WEEZING,
         .moves = {MOVE_SLUDGE_BOMB, MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_EXPLOSION},
-        .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
+        .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 52,
+        .lvl = 54,
         .species = SPECIES_PINSIR,
         .heldItem = ITEM_LEFTOVERS,
         .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
         .moves = {MOVE_MEGAHORN, MOVE_SUBMISSION, MOVE_BULK_UP, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
+        .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 51,
+        .lvl = 53,
         .species = SPECIES_HOUNDOOM,
         .moves = {MOVE_CRUNCH, MOVE_FIRE_BLAST, MOVE_ROCK_SMASH, MOVE_IRON_TAIL},
-        .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
+        .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 51,
+        .lvl = 53,
         .species = SPECIES_MACHAMP,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .moves = {MOVE_CROSS_CHOP, MOVE_BULK_UP, MOVE_EARTHQUAKE, MOVE_ROCK_TOMB},
-        .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
+        .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 51,
+        .lvl = 53,
         .species = SPECIES_SNEASEL,
         .heldItem = ITEM_NEVER_MELT_ICE,
         .moves = {MOVE_ICE_BEAM, MOVE_FAINT_ATTACK, MOVE_SURF, MOVE_BRICK_BREAK},
-        .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
+        .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     },
 }; //PAXTON BUFFED

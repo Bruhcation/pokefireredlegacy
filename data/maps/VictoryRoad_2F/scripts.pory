@@ -79,7 +79,7 @@ VictoryRoad_2F_EventScript_Moltres::
 	end
 
 VictoryRoad_2F_EventScript_MoltresDefeated::
-	trainerbattle_single TRAINER_BUG_CATCHER_3, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
+	trainerbattle_single TRAINER_MOLTON, VictoryRoad_2F_Text_MoltresIntro, VictoryRoad_2F_Text_MoltresDefeat
 	msgbox VictoryRoad_2F_Text_MoltresPostBattle, MSGBOX_AUTOCLOSE
 	checkitemspace ITEM_TM38
 	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTM38
