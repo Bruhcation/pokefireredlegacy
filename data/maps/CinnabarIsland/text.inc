@@ -49,6 +49,11 @@ CinnabarIsland_Text_AllRightLetsGo::
     .string "All right, then.\n"
     .string "Let's go!$"
 
+CinnabarIsland_Text_YouWillGo::
+	.string "Well it seems like you\n"
+	.string "have some free time already.\l"
+	.string "So let's go!$"
+
 CinnabarIsland_Text_IllBeWaitingInPokeCenter::
     .string "What, are you too busy?\p"
     .string "Well, all right.\n"

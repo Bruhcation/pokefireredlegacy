@@ -437,380 +437,494 @@ ThreeIsland_EventScript_BattleBikersScene::
 # 219 "data/maps/ThreeIsland/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, ThreeIsland_EventScript_LeaveBikersAlone
 # 220 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker1Intro
+	goto_if_set FLAG_IS_CHAMPION, ThreeIsland_EventScript_BattleBikersSceneChampion
 # 221 "data/maps/ThreeIsland/scripts.pory"
-	setvar VAR_LAST_TALKED, LOCALID_BIKER1
+	msgbox ThreeIsland_Text_Biker1Intro
 # 222 "data/maps/ThreeIsland/scripts.pory"
-	trainerbattle_no_intro TRAINER_BIKER_GOON, ThreeIsland_Text_Biker1Defeat
+	setvar VAR_LAST_TALKED, LOCALID_BIKER1
 # 223 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER1, ThreeIsland_Movement_BikerSpeak
+	trainerbattle_no_intro TRAINER_BIKER_GOON, ThreeIsland_Text_Biker1Defeat
 # 224 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_BIKER1, ThreeIsland_Movement_BikerSpeak
 # 225 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker1PostBattle
+	waitmovement 0
 # 226 "data/maps/ThreeIsland/scripts.pory"
-	closemessage
+	msgbox ThreeIsland_Text_Biker1PostBattle
 # 227 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerApproach
+	closemessage
 # 228 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerApproach
 # 229 "data/maps/ThreeIsland/scripts.pory"
-	playbgm MUS_ENCOUNTER_BOY, 0
+	waitmovement 0
 # 230 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker2Intro
+	playbgm MUS_ENCOUNTER_BOY, 0
 # 231 "data/maps/ThreeIsland/scripts.pory"
-	setvar VAR_LAST_TALKED, LOCALID_BIKER2
+	msgbox ThreeIsland_Text_Biker2Intro
 # 232 "data/maps/ThreeIsland/scripts.pory"
-	trainerbattle_no_intro TRAINER_BIKER_GOON_2, ThreeIsland_Text_Biker2Defeat
+	setvar VAR_LAST_TALKED, LOCALID_BIKER2
 # 233 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerSpeak
+	trainerbattle_no_intro TRAINER_BIKER_GOON_2, ThreeIsland_Text_Biker2Defeat
 # 234 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerSpeak
 # 235 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker2PostBattle
+	waitmovement 0
 # 236 "data/maps/ThreeIsland/scripts.pory"
-	closemessage
+	msgbox ThreeIsland_Text_Biker2PostBattle
 # 237 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, ThreeIsland_Movement_BikerApproach
+	closemessage
 # 238 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_BIKER3, ThreeIsland_Movement_BikerApproach
 # 239 "data/maps/ThreeIsland/scripts.pory"
-	playbgm MUS_ENCOUNTER_BOY, 0
+	waitmovement 0
 # 240 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker3Intro
-# 241 "data/maps/ThreeIsland/scripts.pory"
-	setvar VAR_LAST_TALKED, LOCALID_BIKER3
-# 242 "data/maps/ThreeIsland/scripts.pory"
-	trainerbattle_no_intro TRAINER_BIKER_GOON_3, ThreeIsland_Text_Biker3Defeat
-# 243 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterLeft
-# 244 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
-# 245 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER4, Common_Movement_WalkInPlaceFasterDown
-# 246 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER5, Common_Movement_WalkInPlaceFasterDown
-# 247 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
-# 248 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Biker3PostBattle
-# 249 "data/maps/ThreeIsland/scripts.pory"
-	closemessage
-# 250 "data/maps/ThreeIsland/scripts.pory"
-	delay 45
-# 251 "data/maps/ThreeIsland/scripts.pory"
-	call_if_eq VAR_TEMP_1, 0, ThreeIsland_EventScript_PaxtonApproachLeft
-# 252 "data/maps/ThreeIsland/scripts.pory"
-	call_if_eq VAR_TEMP_1, 1, ThreeIsland_EventScript_PaxtonApproachMidLeft
-# 253 "data/maps/ThreeIsland/scripts.pory"
-	call_if_eq VAR_TEMP_1, 2, ThreeIsland_EventScript_PaxtonApproachMid
-# 254 "data/maps/ThreeIsland/scripts.pory"
-	call_if_eq VAR_TEMP_1, 3, ThreeIsland_EventScript_PaxtonApproachMidRight
-# 255 "data/maps/ThreeIsland/scripts.pory"
-	call_if_eq VAR_TEMP_1, 4, ThreeIsland_EventScript_PaxtonApproachRight
-# 256 "data/maps/ThreeIsland/scripts.pory"
 	playbgm MUS_ENCOUNTER_BOY, 0
-# 257 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_PaxtonIntro
-# 258 "data/maps/ThreeIsland/scripts.pory"
-	setvar VAR_LAST_TALKED, LOCALID_PAXTON
-# 259 "data/maps/ThreeIsland/scripts.pory"
-	trainerbattle_no_intro TRAINER_CUE_BALL_PAXTON, ThreeIsland_Text_PaxtonDefeat
-# 260 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_PaxtonPostBattle
-# 261 "data/maps/ThreeIsland/scripts.pory"
+# 241 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Biker3Intro
+# 242 "data/maps/ThreeIsland/scripts.pory"
+	setvar VAR_LAST_TALKED, LOCALID_BIKER3
+# 243 "data/maps/ThreeIsland/scripts.pory"
+	trainerbattle_no_intro TRAINER_BIKER_GOON_3, ThreeIsland_Text_Biker3Defeat
+# 244 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterLeft
+# 245 "data/maps/ThreeIsland/scripts.pory"
+	waitmovement 0
+# 246 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER4, Common_Movement_WalkInPlaceFasterDown
+# 247 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER5, Common_Movement_WalkInPlaceFasterDown
+# 248 "data/maps/ThreeIsland/scripts.pory"
+	waitmovement 0
+# 249 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Biker3PostBattle
+# 250 "data/maps/ThreeIsland/scripts.pory"
 	closemessage
+# 251 "data/maps/ThreeIsland/scripts.pory"
+	delay 45
+# 252 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 0, ThreeIsland_EventScript_PaxtonApproachLeft
+# 253 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 1, ThreeIsland_EventScript_PaxtonApproachMidLeft
+# 254 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 2, ThreeIsland_EventScript_PaxtonApproachMid
+# 255 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 3, ThreeIsland_EventScript_PaxtonApproachMidRight
+# 256 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 4, ThreeIsland_EventScript_PaxtonApproachRight
+# 257 "data/maps/ThreeIsland/scripts.pory"
+	playbgm MUS_ENCOUNTER_BOY, 0
+# 258 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_PaxtonIntro
+# 259 "data/maps/ThreeIsland/scripts.pory"
+	setvar VAR_LAST_TALKED, LOCALID_PAXTON
+# 260 "data/maps/ThreeIsland/scripts.pory"
+	trainerbattle_no_intro TRAINER_CUE_BALL_PAXTON, ThreeIsland_Text_PaxtonDefeat
+# 261 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_PaxtonPostBattle
 # 262 "data/maps/ThreeIsland/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	closemessage
 # 263 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_PAXTON
+	fadescreen FADE_TO_BLACK
 # 264 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER1
+	removeobject LOCALID_PAXTON
 # 265 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER2
+	removeobject LOCALID_BIKER1
 # 266 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER3
+	removeobject LOCALID_BIKER2
 # 267 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER4
+	removeobject LOCALID_BIKER3
 # 268 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER5
+	removeobject LOCALID_BIKER4
 # 269 "data/maps/ThreeIsland/scripts.pory"
-	removeobject LOCALID_BIKER6
+	removeobject LOCALID_BIKER5
 # 270 "data/maps/ThreeIsland/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	removeobject LOCALID_BIKER6
 # 271 "data/maps/ThreeIsland/scripts.pory"
-	setvar VAR_MAP_SCENE_THREE_ISLAND, 4
+	fadescreen FADE_FROM_BLACK
 # 272 "data/maps/ThreeIsland/scripts.pory"
-	releaseall
+	setvar VAR_MAP_SCENE_THREE_ISLAND, 4
 # 273 "data/maps/ThreeIsland/scripts.pory"
-	end
+	releaseall
 # 274 "data/maps/ThreeIsland/scripts.pory"
-
+	end
 # 275 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_PaxtonApproachLeft::
+
 # 276 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
+ThreeIsland_EventScript_BattleBikersSceneChampion::
 # 277 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachLeft
+	msgbox ThreeIsland_Text_Biker1Intro
 # 278 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	setvar VAR_LAST_TALKED, LOCALID_BIKER1
 # 279 "data/maps/ThreeIsland/scripts.pory"
-	return
+	trainerbattle_no_intro TRAINER_GOON_CHAMPION_1, ThreeIsland_Text_Biker1Defeat
 # 280 "data/maps/ThreeIsland/scripts.pory"
-
+	applymovement LOCALID_BIKER1, ThreeIsland_Movement_BikerSpeak
 # 281 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_PaxtonApproachMidLeft::
-# 282 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
-# 283 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMidLeft
-# 284 "data/maps/ThreeIsland/scripts.pory"
 	waitmovement 0
+# 282 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Biker1PostBattle
+# 283 "data/maps/ThreeIsland/scripts.pory"
+	closemessage
+# 284 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerApproach
 # 285 "data/maps/ThreeIsland/scripts.pory"
-	return
+	waitmovement 0
 # 286 "data/maps/ThreeIsland/scripts.pory"
-
+	playbgm MUS_ENCOUNTER_BOY, 0
 # 287 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_PaxtonApproachMid::
+	msgbox ThreeIsland_Text_Biker2Intro
 # 288 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
+	setvar VAR_LAST_TALKED, LOCALID_BIKER2
 # 289 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMid
+	trainerbattle_no_intro TRAINER_GOON_CHAMPION_2, ThreeIsland_Text_Biker2Defeat
 # 290 "data/maps/ThreeIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
+	applymovement LOCALID_BIKER2, ThreeIsland_Movement_BikerSpeak
 # 291 "data/maps/ThreeIsland/scripts.pory"
 	waitmovement 0
 # 292 "data/maps/ThreeIsland/scripts.pory"
-	return
+	msgbox ThreeIsland_Text_Biker2PostBattle
 # 293 "data/maps/ThreeIsland/scripts.pory"
-
-# 294 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_PaxtonApproachMidRight::
-# 295 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
-# 296 "data/maps/ThreeIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
-# 297 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMidRight
-# 298 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
-# 299 "data/maps/ThreeIsland/scripts.pory"
-	return
-# 300 "data/maps/ThreeIsland/scripts.pory"
-
-# 301 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_PaxtonApproachRight::
-# 302 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
-# 303 "data/maps/ThreeIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
-# 304 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachRight
-# 305 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
-# 306 "data/maps/ThreeIsland/scripts.pory"
-	return
-# 307 "data/maps/ThreeIsland/scripts.pory"
-
-# 308 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_LeaveBikersAlone::
-# 309 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_ThatsSmart
-# 310 "data/maps/ThreeIsland/scripts.pory"
 	closemessage
+# 294 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER3, ThreeIsland_Movement_BikerApproach
+# 295 "data/maps/ThreeIsland/scripts.pory"
+	waitmovement 0
+# 296 "data/maps/ThreeIsland/scripts.pory"
+	playbgm MUS_ENCOUNTER_BOY, 0
+# 297 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Biker3Intro
+# 298 "data/maps/ThreeIsland/scripts.pory"
+	setvar VAR_LAST_TALKED, LOCALID_BIKER3
+# 299 "data/maps/ThreeIsland/scripts.pory"
+	trainerbattle_no_intro TRAINER_GOON_CHAMPION_3, ThreeIsland_Text_Biker3Defeat
+# 300 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterLeft
+# 301 "data/maps/ThreeIsland/scripts.pory"
+	waitmovement 0
+# 302 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER4, Common_Movement_WalkInPlaceFasterDown
+# 303 "data/maps/ThreeIsland/scripts.pory"
+	applymovement LOCALID_BIKER5, Common_Movement_WalkInPlaceFasterDown
+# 304 "data/maps/ThreeIsland/scripts.pory"
+	waitmovement 0
+# 305 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Biker3PostBattle
+# 306 "data/maps/ThreeIsland/scripts.pory"
+	closemessage
+# 307 "data/maps/ThreeIsland/scripts.pory"
+	delay 45
+# 308 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 0, ThreeIsland_EventScript_PaxtonApproachLeft
+# 309 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 1, ThreeIsland_EventScript_PaxtonApproachMidLeft
+# 310 "data/maps/ThreeIsland/scripts.pory"
+	call_if_eq VAR_TEMP_1, 2, ThreeIsland_EventScript_PaxtonApproachMid
 # 311 "data/maps/ThreeIsland/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerLeaveBikers
+	call_if_eq VAR_TEMP_1, 3, ThreeIsland_EventScript_PaxtonApproachMidRight
 # 312 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	call_if_eq VAR_TEMP_1, 4, ThreeIsland_EventScript_PaxtonApproachRight
 # 313 "data/maps/ThreeIsland/scripts.pory"
-	applymovement LOCALID_BIKER1, ThreeIsland_Movement_Biker1ReturnToPack
+	playbgm MUS_ENCOUNTER_BOY, 0
 # 314 "data/maps/ThreeIsland/scripts.pory"
-	waitmovement 0
+	msgbox ThreeIsland_Text_PaxtonIntro
 # 315 "data/maps/ThreeIsland/scripts.pory"
-	fadedefaultbgm
+	setvar VAR_LAST_TALKED, LOCALID_PAXTON
 # 316 "data/maps/ThreeIsland/scripts.pory"
-	releaseall
+	trainerbattle_no_intro TRAINER_PAXTON_UNUSED, ThreeIsland_Text_PaxtonDefeat
 # 317 "data/maps/ThreeIsland/scripts.pory"
-	end
+	msgbox ThreeIsland_Text_PaxtonPostBattle
 # 318 "data/maps/ThreeIsland/scripts.pory"
-
+	closemessage
 # 319 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PlayerLeaveBikers::
+	fadescreen FADE_TO_BLACK
 # 320 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	removeobject LOCALID_PAXTON
 # 321 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	removeobject LOCALID_BIKER1
 # 322 "data/maps/ThreeIsland/scripts.pory"
-
+	removeobject LOCALID_BIKER2
 # 323 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_BikerApproach::
+	removeobject LOCALID_BIKER3
 # 324 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	removeobject LOCALID_BIKER4
 # 325 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	removeobject LOCALID_BIKER5
 # 326 "data/maps/ThreeIsland/scripts.pory"
-
+	removeobject LOCALID_BIKER6
 # 327 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_Biker1ReturnToPack::
+	fadescreen FADE_FROM_BLACK
 # 328 "data/maps/ThreeIsland/scripts.pory"
-	walk_up
+	setvar VAR_MAP_SCENE_THREE_ISLAND, 4
 # 329 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_left
+	releaseall
 # 330 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	end
 # 331 "data/maps/ThreeIsland/scripts.pory"
 
 # 332 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_BikerSpeak::
+ThreeIsland_EventScript_PaxtonApproachLeft::
 # 333 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_down
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
 # 334 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachLeft
 # 335 "data/maps/ThreeIsland/scripts.pory"
-
+	waitmovement 0
 # 336 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PaxtonApproachLeft::
+	return
 # 337 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+
 # 338 "data/maps/ThreeIsland/scripts.pory"
-	walk_left
+ThreeIsland_EventScript_PaxtonApproachMidLeft::
 # 339 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_down
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
 # 340 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMidLeft
 # 341 "data/maps/ThreeIsland/scripts.pory"
-
+	waitmovement 0
 # 342 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PaxtonApproachMidLeft::
+	return
 # 343 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+
 # 344 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+ThreeIsland_EventScript_PaxtonApproachMid::
 # 345 "data/maps/ThreeIsland/scripts.pory"
-
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
 # 346 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PaxtonApproachMid::
+	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMid
 # 347 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
 # 348 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	waitmovement 0
 # 349 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_right
+	return
 # 350 "data/maps/ThreeIsland/scripts.pory"
-	step_end
-# 351 "data/maps/ThreeIsland/scripts.pory"
 
+# 351 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_PaxtonApproachMidRight::
 # 352 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PlayerFacePaxton::
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
 # 353 "data/maps/ThreeIsland/scripts.pory"
-	delay_16
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
 # 354 "data/maps/ThreeIsland/scripts.pory"
-	delay_16
+	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachMidRight
 # 355 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_left
+	waitmovement 0
 # 356 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	return
 # 357 "data/maps/ThreeIsland/scripts.pory"
 
 # 358 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PaxtonApproachMidRight::
+ThreeIsland_EventScript_PaxtonApproachRight::
 # 359 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	applymovement LOCALID_BIKER3, Common_Movement_WalkInPlaceFasterDown
 # 360 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerFacePaxton
 # 361 "data/maps/ThreeIsland/scripts.pory"
-	walk_right
+	applymovement LOCALID_PAXTON, ThreeIsland_Movement_PaxtonApproachRight
 # 362 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_right
+	waitmovement 0
 # 363 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	return
 # 364 "data/maps/ThreeIsland/scripts.pory"
 
 # 365 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Movement_PaxtonApproachRight::
+ThreeIsland_EventScript_LeaveBikersAlone::
 # 366 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	msgbox ThreeIsland_Text_ThatsSmart
 # 367 "data/maps/ThreeIsland/scripts.pory"
-	walk_down
+	closemessage
 # 368 "data/maps/ThreeIsland/scripts.pory"
-	walk_right
+	applymovement OBJ_EVENT_ID_PLAYER, ThreeIsland_Movement_PlayerLeaveBikers
 # 369 "data/maps/ThreeIsland/scripts.pory"
-	walk_right
+	waitmovement 0
 # 370 "data/maps/ThreeIsland/scripts.pory"
-	walk_in_place_faster_right
+	applymovement LOCALID_BIKER1, ThreeIsland_Movement_Biker1ReturnToPack
 # 371 "data/maps/ThreeIsland/scripts.pory"
-	step_end
+	waitmovement 0
 # 372 "data/maps/ThreeIsland/scripts.pory"
-
+	fadedefaultbgm
 # 373 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_Woman::
+	releaseall
 # 374 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_WouldntWantToSeeBikersHereAgain, MSGBOX_NPC
+	end
 # 375 "data/maps/ThreeIsland/scripts.pory"
-	end
+
 # 376 "data/maps/ThreeIsland/scripts.pory"
-
+ThreeIsland_Movement_PlayerLeaveBikers::
 # 377 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_LittleBoy::
+	walk_down
 # 378 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_WhenDodouEvolvesGoingToPlayGame, MSGBOX_NPC
+	step_end
 # 379 "data/maps/ThreeIsland/scripts.pory"
-	end
+
 # 380 "data/maps/ThreeIsland/scripts.pory"
-
+ThreeIsland_Movement_BikerApproach::
 # 381 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_Doduo::
+	walk_down
 # 382 "data/maps/ThreeIsland/scripts.pory"
-	lock
+	step_end
 # 383 "data/maps/ThreeIsland/scripts.pory"
-	faceplayer
+
 # 384 "data/maps/ThreeIsland/scripts.pory"
-	waitse
+ThreeIsland_Movement_Biker1ReturnToPack::
 # 385 "data/maps/ThreeIsland/scripts.pory"
-	playmoncry SPECIES_DODUO, CRY_MODE_NORMAL
+	walk_up
 # 386 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Doduo
+	walk_in_place_faster_left
 # 387 "data/maps/ThreeIsland/scripts.pory"
-	waitmoncry
+	step_end
 # 388 "data/maps/ThreeIsland/scripts.pory"
-	release
+
 # 389 "data/maps/ThreeIsland/scripts.pory"
-	end
+ThreeIsland_Movement_BikerSpeak::
 # 390 "data/maps/ThreeIsland/scripts.pory"
-
+	walk_in_place_down
 # 391 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_IslandSign::
+	step_end
 # 392 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_IslandSign, MSGBOX_SIGN
-# 393 "data/maps/ThreeIsland/scripts.pory"
-	end
-# 394 "data/maps/ThreeIsland/scripts.pory"
 
+# 393 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Movement_PaxtonApproachLeft::
+# 394 "data/maps/ThreeIsland/scripts.pory"
+	walk_down
 # 395 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_Biker6::
+	walk_left
 # 396 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_IslandBelongsToUs, MSGBOX_NPC
+	walk_in_place_faster_down
 # 397 "data/maps/ThreeIsland/scripts.pory"
-	end
+	step_end
 # 398 "data/maps/ThreeIsland/scripts.pory"
 
 # 399 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_EventScript_Cruel::
+ThreeIsland_Movement_PaxtonApproachMidLeft::
 # 400 "data/maps/ThreeIsland/scripts.pory"
-	msgbox ThreeIsland_Text_Cruel, MSGBOX_NPC
+	walk_down
 # 401 "data/maps/ThreeIsland/scripts.pory"
-	end
+	step_end
 # 402 "data/maps/ThreeIsland/scripts.pory"
 
 # 403 "data/maps/ThreeIsland/scripts.pory"
-ThreeIsland_Text_Cruel::
+ThreeIsland_Movement_PaxtonApproachMid::
 # 404 "data/maps/ThreeIsland/scripts.pory"
-	.string "The CRUEL KING is really\n"
+	walk_down
 # 405 "data/maps/ThreeIsland/scripts.pory"
-	.string "just an edgy acting child.\p"
+	walk_down
 # 406 "data/maps/ThreeIsland/scripts.pory"
-	.string "Perhaps he is like this\n"
+	walk_in_place_faster_right
 # 407 "data/maps/ThreeIsland/scripts.pory"
-	.string "because of the time he\l"
+	step_end
 # 408 "data/maps/ThreeIsland/scripts.pory"
+
+# 409 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Movement_PlayerFacePaxton::
+# 410 "data/maps/ThreeIsland/scripts.pory"
+	delay_16
+# 411 "data/maps/ThreeIsland/scripts.pory"
+	delay_16
+# 412 "data/maps/ThreeIsland/scripts.pory"
+	walk_in_place_faster_left
+# 413 "data/maps/ThreeIsland/scripts.pory"
+	step_end
+# 414 "data/maps/ThreeIsland/scripts.pory"
+
+# 415 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Movement_PaxtonApproachMidRight::
+# 416 "data/maps/ThreeIsland/scripts.pory"
+	walk_down
+# 417 "data/maps/ThreeIsland/scripts.pory"
+	walk_down
+# 418 "data/maps/ThreeIsland/scripts.pory"
+	walk_right
+# 419 "data/maps/ThreeIsland/scripts.pory"
+	walk_in_place_faster_right
+# 420 "data/maps/ThreeIsland/scripts.pory"
+	step_end
+# 421 "data/maps/ThreeIsland/scripts.pory"
+
+# 422 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Movement_PaxtonApproachRight::
+# 423 "data/maps/ThreeIsland/scripts.pory"
+	walk_down
+# 424 "data/maps/ThreeIsland/scripts.pory"
+	walk_down
+# 425 "data/maps/ThreeIsland/scripts.pory"
+	walk_right
+# 426 "data/maps/ThreeIsland/scripts.pory"
+	walk_right
+# 427 "data/maps/ThreeIsland/scripts.pory"
+	walk_in_place_faster_right
+# 428 "data/maps/ThreeIsland/scripts.pory"
+	step_end
+# 429 "data/maps/ThreeIsland/scripts.pory"
+
+# 430 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_Woman::
+# 431 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_WouldntWantToSeeBikersHereAgain, MSGBOX_NPC
+# 432 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 433 "data/maps/ThreeIsland/scripts.pory"
+
+# 434 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_LittleBoy::
+# 435 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_WhenDodouEvolvesGoingToPlayGame, MSGBOX_NPC
+# 436 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 437 "data/maps/ThreeIsland/scripts.pory"
+
+# 438 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_Doduo::
+# 439 "data/maps/ThreeIsland/scripts.pory"
+	lock
+# 440 "data/maps/ThreeIsland/scripts.pory"
+	faceplayer
+# 441 "data/maps/ThreeIsland/scripts.pory"
+	waitse
+# 442 "data/maps/ThreeIsland/scripts.pory"
+	playmoncry SPECIES_DODUO, CRY_MODE_NORMAL
+# 443 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Doduo
+# 444 "data/maps/ThreeIsland/scripts.pory"
+	waitmoncry
+# 445 "data/maps/ThreeIsland/scripts.pory"
+	release
+# 446 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 447 "data/maps/ThreeIsland/scripts.pory"
+
+# 448 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_IslandSign::
+# 449 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_IslandSign, MSGBOX_SIGN
+# 450 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 451 "data/maps/ThreeIsland/scripts.pory"
+
+# 452 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_Biker6::
+# 453 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_IslandBelongsToUs, MSGBOX_NPC
+# 454 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 455 "data/maps/ThreeIsland/scripts.pory"
+
+# 456 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_EventScript_Cruel::
+# 457 "data/maps/ThreeIsland/scripts.pory"
+	msgbox ThreeIsland_Text_Cruel, MSGBOX_NPC
+# 458 "data/maps/ThreeIsland/scripts.pory"
+	end
+# 459 "data/maps/ThreeIsland/scripts.pory"
+
+# 460 "data/maps/ThreeIsland/scripts.pory"
+ThreeIsland_Text_Cruel::
+# 461 "data/maps/ThreeIsland/scripts.pory"
+	.string "The CRUEL KING is really\n"
+# 462 "data/maps/ThreeIsland/scripts.pory"
+	.string "just an edgy acting child.\p"
+# 463 "data/maps/ThreeIsland/scripts.pory"
+	.string "Perhaps he is like this\n"
+# 464 "data/maps/ThreeIsland/scripts.pory"
+	.string "because of the time he\l"
+# 465 "data/maps/ThreeIsland/scripts.pory"
 	.string "spends in the Berry Forest.$"
