@@ -495,10 +495,10 @@
 #define TRAINER_YOUNG_COUPLE_LEA_JED             489
 #define TRAINER_SIS_AND_BRO_LIA_LUC              490
 #define TRAINER_SIS_AND_BRO_LIL_IAN              491
-#define TRAINER_BUG_CATCHER_3                    492
-#define TRAINER_BUG_CATCHER_4                    493
-#define TRAINER_BUG_CATCHER_5                    494
-#define TRAINER_BUG_CATCHER_6                    495
+#define TRAINER_MOLTON                    492
+#define TRAINER_GOON_CHAMPION_1                    493
+#define TRAINER_GOON_CHAMPION_2                    494
+#define TRAINER_GOON_CHAMPION_3                    495
 #define TRAINER_BUG_CATCHER_7                    496
 #define TRAINER_BUG_CATCHER_8                    497
 #define TRAINER_YOUNGSTER_BEN_3                  498
