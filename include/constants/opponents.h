@@ -296,7 +296,7 @@
 #define TRAINER_JUGGLER_GREGORY                  290
 #define TRAINER_JUGGLER_EDWARD                   291
 #define TRAINER_JUGGLER_KAYDEN                   292
-#define TRAINER_JUGGLER_NATE                     293
+#define TRAINER_LASS_JANINE                     293
 #define TRAINER_TAMER_PHIL                       294
 #define TRAINER_TAMER_EDGAR                      295
 #define TRAINER_TAMER_JASON                      296

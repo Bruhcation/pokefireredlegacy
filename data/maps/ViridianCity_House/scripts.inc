@@ -35,16 +35,32 @@ ViridianCity_House_EventScript_Speary::
 # 18 "data/maps/ViridianCity_House/scripts.pory"
 	msgbox ViridianCity_House_Text_Speary
 # 19 "data/maps/ViridianCity_House/scripts.pory"
-	waitmoncry
+	settrainerflag TRAINER_BUG_CATCHER_RICK
 # 20 "data/maps/ViridianCity_House/scripts.pory"
-	release
+	settrainerflag TRAINER_BUG_CATCHER_SAMMY
 # 21 "data/maps/ViridianCity_House/scripts.pory"
-	end
+	settrainerflag TRAINER_BUG_CATCHER_DOUG
 # 22 "data/maps/ViridianCity_House/scripts.pory"
-
+	settrainerflag TRAINER_SAM
 # 23 "data/maps/ViridianCity_House/scripts.pory"
-ViridianCity_House_EventScript_NicknameSign::
+	settrainerflag TRAINER_BUG_CATCHER_CHARLIE
 # 24 "data/maps/ViridianCity_House/scripts.pory"
-	msgbox ViridianCity_House_Text_SpearowNameSpeary, MSGBOX_SIGN
+	settrainerflag TRAINER_BUG_CATCHER_ANTHONY        
 # 25 "data/maps/ViridianCity_House/scripts.pory"
+    setflag FLAG_BLUE_FOUGHT_ROUTE22
+# 26 "data/maps/ViridianCity_House/scripts.pory"
+    settrainerflag TRAINER_CAMPER_LIAM
+# 27 "data/maps/ViridianCity_House/scripts.pory"
+	waitmoncry
+# 28 "data/maps/ViridianCity_House/scripts.pory"
+	release
+# 29 "data/maps/ViridianCity_House/scripts.pory"
+	end
+# 30 "data/maps/ViridianCity_House/scripts.pory"
+
+# 31 "data/maps/ViridianCity_House/scripts.pory"
+ViridianCity_House_EventScript_NicknameSign::
+# 32 "data/maps/ViridianCity_House/scripts.pory"
+	msgbox ViridianCity_House_Text_SpearowNameSpeary, MSGBOX_SIGN
+# 33 "data/maps/ViridianCity_House/scripts.pory"
 	end

@@ -2833,14 +2833,14 @@ const struct Trainer gTrainers[] = {
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,),
         .party = TRAINER_PARTY(sParty_JugglerKayden),
     },
-    [TRAINER_JUGGLER_NATE] = {
+    [TRAINER_LASS_JANINE] = {
         .trainerClass = TRAINER_CLASS_LASS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
         .trainerName = COMPOUND_STRING("JANINE"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,),
-        .party = TRAINER_PARTY(sParty_JugglerNate),
+        .party = TRAINER_PARTY(sParty_LassJanine),
     },
     [TRAINER_TAMER_PHIL] = {
         .trainerClass = TRAINER_CLASS_TAMER,

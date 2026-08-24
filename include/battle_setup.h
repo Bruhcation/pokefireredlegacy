@@ -35,5 +35,6 @@ const u8 *GetTrainerALoseText(void);
 const u8 *GetTrainerWonSpeech(void);
 bool8 levelCappedNuzlocke(u8 level);
 u8 getLevelCap(void);
+u8 CanUseRareCandyHardcore(void);
 
 #endif // GUARD_BATTLE_SETUP_H

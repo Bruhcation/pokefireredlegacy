@@ -3721,7 +3721,7 @@ static const struct TrainerMon sParty_BugCatcherSammy[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-        .lvl = 9,
+        .lvl = 10,
         .species = SPECIES_BEEDRILL,
         .moves = {MOVE_POISON_STING, MOVE_STRING_SHOT, MOVE_RAGE, MOVE_NONE},
     },
@@ -6676,7 +6676,7 @@ static const struct TrainerMon sParty_JugglerKayden[] = {
     },
 };
 
-static const struct TrainerMon sParty_JugglerNate[] = {
+static const struct TrainerMon sParty_LassJanine[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 39,
