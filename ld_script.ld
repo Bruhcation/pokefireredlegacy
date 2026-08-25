@@ -971,6 +971,8 @@ SECTIONS {
         sound/songs/midi/mus_vs_team_rocket_boss.o(.rodata);
         sound/songs/midi/mus_sevii_champion.o(.rodata);
         sound/songs/midi/mus_vs_regi.o(.rodata);
+        sound/songs/midi/mus_gsc_route38.o(.rodata);
+        sound/songs/midi/mus_gsc_pewter.o(.rodata);
 
     } > ROM =0
 
