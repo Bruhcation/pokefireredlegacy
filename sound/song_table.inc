@@ -352,6 +352,8 @@ gSongTable::
 	song mus_vs_regi, 0, 0
 	song mus_gsc_route38, 0, 0
 	song mus_gsc_pewter, 0, 0
+	song mus_vs_oak, 0, 0
+	song mus_gym_leader_johto, 0, 0
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

@@ -359,6 +359,8 @@
 #define MUS_VS_REGI               350 // MUS_VS_REGI
 #define MUS_GSC_ROUTE38           351 // MUS_VS_REGI
 #define MUS_GSC_PEWTER            352 // MUS_VS_REGI
+#define MUS_VS_OAK                353 // MUS_VS_REGI
+#define MUS_GYM_LEADER_JOHTO      354 // MUS_VS_REGI
 
 #define MUS_NONE                    0xFFFF
 

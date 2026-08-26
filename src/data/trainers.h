@@ -5284,7 +5284,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_TeamRocketAdmin2),
     },
     [TRAINER_SCIENTIST_GIDEON] = {
-        .trainerClass = TRAINER_CLASS_SCIENTIST,
+        .trainerClass = TRAINER_CLASS_SEVII_CHAMPION,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_SCIENTIST,
         .trainerName = COMPOUND_STRING("GIDEON"),
