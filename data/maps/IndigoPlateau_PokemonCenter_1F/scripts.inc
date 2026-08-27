@@ -261,4 +261,70 @@ IndigoPlateau_PokemonCenter_1F_EventScript_AlmostReadyAlakazam::
 # 131 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 	release
 # 132 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	
+# 133 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	
+# 134 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_HardcoreCandyCheck::
+# 135 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	goto_if_unset FLAG_HARD, IndigoPlateau_PokemonCenter_1F_EventScript_NotHard
+# 136 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    lock
+# 137 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    special CheckGotMoreThan10RareCandies
+# 138 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    compare VAR_RESULT, TRUE
+# 139 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    goto_if_eq IndigoPlateau_PokemonCenter_1F_EventScript_HardcoreCandyCheckNo
+# 140 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    release
+# 141 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    end
+# 142 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 143 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_HardcoreCandyCheckNo::
+# 144 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	lock
+# 145 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+# 146 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	applymovement LOCALID_DOOR_GUARD, Common_Movement_FaceLeft
+# 147 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	waitmovement 0
+# 148 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	delay 20
+# 149 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	textcolor NPC_TEXT_COLOR_FEMALE
+# 150 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+    msgbox IndigoPlateau_PokemonCenter_1F_Text_No, MSGBOX_DEFAULT
+# 151 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	closemessage
+# 152 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, CinnabarIsland_Movement_ForcePlayerFromDoor
+# 153 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	waitmovement 0
+# 154 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	release
+# 155 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	end
+# 156 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 157 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_Text_No::
+# 158 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	.string "Hey, I detect that you have more\n"
+# 159 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	.string "than 10 rare candies!\l"
+# 160 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	.string "Please put them away before\l"
+# 161 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	.string "entering the league!$"
+# 162 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+
+# 163 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+IndigoPlateau_PokemonCenter_1F_EventScript_NotHard::
+# 164 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
+	release
+# 165 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 	end

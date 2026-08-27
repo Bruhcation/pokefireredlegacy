@@ -333,7 +333,7 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special SetEReaderTrainerGfxId
 	def_special StartSouthernIslandBattle
-	def_special NullFieldSpecial
+	def_special CheckGotMoreThan10RareCandies
 	def_special IsWailordInParty
 	def_special BattleTrophy
 	def_special GetPartyMonSpecies

@@ -41,6 +41,7 @@
 #include "constants/menu.h"
 #include "constants/event_objects.h"
 #include "constants/metatile_labels.h"
+#include "item.h"
 
 static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
 static EWRAM_DATA u16 sElevatorScroll = 0;
@@ -2822,4 +2823,15 @@ void BattleTrophy(void)
     {
         gSpecialVar_Result = FALSE;
     }
+}
+
+void CheckGotMoreThan10RareCandies(void)
+{
+    if (CheckBagHasItem(ITEM_RARE_CANDY, 11))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
 }

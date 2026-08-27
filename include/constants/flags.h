@@ -840,7 +840,7 @@
 #define FLAG_POSTGAME_TRADES              0x32A
 #define FLAG_FIND_BLUE_LOL             0x32B
 #define FLAG_GROUNDON_CHECKED               0x32C
-#define FLAG_0x32D               0x32D
+#define FLAG_BLUE_FOUGHT_ROUTE22               0x32D
 #define FLAG_0x32E               0x32E
 #define FLAG_0x32F               0x32F
 #define FLAG_0x330               0x330

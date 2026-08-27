@@ -94,7 +94,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_PINSIR
+        .requestedSpecies = SPECIES_ONIX
 #elif defined(LEAFGREEN)
         .nickname = _("TOPPER"),
         .species = SPECIES_HITMONTOP,
@@ -108,7 +108,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SCYTHER
+        .requestedSpecies = SPECIES_ONIX
 #endif
     }, 
     [INGAME_TRADE_LICKITUNG] = 

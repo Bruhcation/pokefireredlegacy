@@ -3721,7 +3721,7 @@ static const struct TrainerMon sParty_BugCatcherSammy[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-        .lvl = 9,
+        .lvl = 10,
         .species = SPECIES_BEEDRILL,
         .moves = {MOVE_POISON_STING, MOVE_STRING_SHOT, MOVE_RAGE, MOVE_NONE},
     },
@@ -4080,6 +4080,11 @@ static const struct TrainerMon sParty_LassPaige[] = {
         .iv = 0,
         .lvl = 26,
         .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 26,
+        .species = SPECIES_SMOOCHUM,
     },
     {
         .iv = 0,
@@ -6676,7 +6681,7 @@ static const struct TrainerMon sParty_JugglerKayden[] = {
     },
 };
 
-static const struct TrainerMon sParty_JugglerNate[] = {
+static const struct TrainerMon sParty_LassJanine[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 39,
@@ -11531,41 +11536,41 @@ static const struct TrainerMon sParty_TeamRocketAdmin2[] = {
 
 static const struct TrainerMon sParty_ScientistGideon[] = {
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 65,
         .species = SPECIES_ELECTRODE,
         .moves = {MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_EXPLOSION, MOVE_LIGHT_SCREEN},
     },
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 66,
         .species = SPECIES_WEEZING,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_SLUDGE_BOMB, MOVE_PAIN_SPLIT, MOVE_FLAMETHROWER, MOVE_TOXIC},
     },
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 65,
         .species = SPECIES_MAGNETON,
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .moves = {MOVE_TRI_ATTACK, MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_REFLECT},
     },
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 65,
         .species = SPECIES_AERODACTYL,
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .moves = {MOVE_EARTHQUAKE, MOVE_SKY_ATTACK, MOVE_ROCK_SLIDE, MOVE_DOUBLE_EDGE},
     },
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 67,
-        .species = SPECIES_SLOWBRO,
+        .species = SPECIES_SLOWKING,
         .heldItem = ITEM_QUICK_CLAW,
-        .moves = {MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_SLACK_OFF, MOVE_PSYCHIC},
+        .moves = {MOVE_SURF, MOVE_CALM_MIND, MOVE_SLACK_OFF, MOVE_PSYCHIC},
     },
     {
-        .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 68,
         .species = SPECIES_PORYGON2,
         .heldItem = ITEM_LEFTOVERS,
