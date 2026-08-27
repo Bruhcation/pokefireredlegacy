@@ -2224,3 +2224,10 @@ DirectSoundWaveData_Phoneme_50::
 DirectSoundWaveData_Phoneme_51::
 	.incbin "sound/direct_sound_samples/phonemes/51.bin"
 
+.align 2
+DirectSoundWaveData_prosamples_15_dance_drums_kick::
+	.incbin "sound/direct_sound_samples/prosamples_15_dance_drums_kick.bin"
+
+.align 2
+DirectSoundWaveData_drum_and_percussion_stick::
+	.incbin "sound/direct_sound_samples/drum_and_percussion_stick.bin"

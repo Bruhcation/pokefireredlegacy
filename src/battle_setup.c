@@ -262,7 +262,7 @@ void StartRoamerBattle(void)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), MUS_VS_LEGEND);
+    CreateBattleStartTask(GetWildBattleTransition(), MUS_C_VS_LEGEND_BEAST);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
@@ -361,11 +361,31 @@ void StartLegendaryBattle(void)
     case SPECIES_DEOXYS:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
         break;
+    case SPECIES_ENTEI:
+    case SPECIES_RAIKOU:
+    case SPECIES_SUICUNE:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+        break;
+    case SPECIES_REGIROCK:
+    case SPECIES_REGICE:
+    case SPECIES_REGISTEEL:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_REGI);
+        break;
+    case SPECIES_GROUDON:
+    case SPECIES_KYOGRE:
+    case SPECIES_RAYQUAZA:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_KYOGRE_GROUDON);
+        break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
     case SPECIES_ZAPDOS:
+    case SPECIES_MEW:
     case SPECIES_HO_OH:
     case SPECIES_LUGIA:
+    case SPECIES_CELEBI:
+    case SPECIES_LATIOS:
+    case SPECIES_LATIAS:
+    case SPECIES_JIRACHI:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_LEGEND);
         break;
     default:

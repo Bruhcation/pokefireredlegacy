@@ -6212,11 +6212,13 @@ void ClearBattleMonForms(void)
 static u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
-        return MUS_VS_WILD;
+        return MUS_VS_KYOGRE_GROUDON;
     if (gBattleTypeFlags & BATTLE_TYPE_REGI)
-        return MUS_RS_VS_TRAINER;
+        return MUS_VS_REGI;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return MUS_RS_VS_TRAINER;
+    if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+        return MUS_C_VS_LEGEND_BEAST;
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
@@ -6229,7 +6231,7 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_POKEDUDE:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_MIRAGE_TRAINER:
-            return MUS_VS_DEOXYS;
+            return MUS_VS_REGI;
         case TRAINER_CLASS_JOHTO_LEADER:
         case TRAINER_CLASS_SEVII_CHAMPION:
             return MUS_GYM_LEADER_JOHTO;
