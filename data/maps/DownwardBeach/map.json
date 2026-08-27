@@ -2,7 +2,7 @@
   "id": "MAP_DOWNWARD_BEACH",
   "name": "DownwardBeach",
   "layout": "LAYOUT_DOWNWARD_BEACH",
-  "music": "MUS_ROUTE11",
+  "music": "MUS_GSC_ROUTE38",
   "region_map_section": "MAPSEC_DOWNSIDE_ROCK",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
