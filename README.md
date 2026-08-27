@@ -62,6 +62,7 @@ QOL:
 - Repels Reuse
 - Price Adjustments
 - Team Rocket has their own Theme now (Theme from Crystal Dust)
+- The Johto leaders also have their own theme (as well as another sevii group, also from crystal dust)
 - You can get to the truck without trading (A Certain Pokemon gets Cut at a decently high level at that point) (There's no Mew, but something convenient is there)
 - Some NPCs block trees until you beat the SS ANNE Rival
 - Beating Misty and Blue also Opens up the dig house (Still Need to get SS Ticket)
@@ -149,7 +150,6 @@ Credits:
 - Invis (HMA Discord) - Nurse Joy Sprite
 
 - RetroNC - Primo Sprite
-
 
 - Numerous Pret Tutorials
 
