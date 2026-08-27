@@ -373,8 +373,15 @@ void StartLegendaryBattle(void)
         break;
     case SPECIES_GROUDON:
     case SPECIES_KYOGRE:
-    case SPECIES_RAYQUAZA:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_KYOGRE_GROUDON);
+        break;
+    case SPECIES_RAYQUAZA:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_RAYQUAZA);
+        break;
+    case SPECIES_LATIOS:
+    case SPECIES_LATIAS:
+    case SPECIES_JIRACHI:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_WILD);
         break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
@@ -383,9 +390,6 @@ void StartLegendaryBattle(void)
     case SPECIES_HO_OH:
     case SPECIES_LUGIA:
     case SPECIES_CELEBI:
-    case SPECIES_LATIOS:
-    case SPECIES_LATIAS:
-    case SPECIES_JIRACHI:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_LEGEND);
         break;
     default:

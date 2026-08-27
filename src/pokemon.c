@@ -1685,9 +1685,9 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
         LEVEL_UP_MOVE(15, MOVE_KNOCK_OFF),
         LEVEL_UP_MOVE(20, MOVE_PURSUIT),
         LEVEL_UP_MOVE(25, MOVE_PSYCHIC),
-        LEVEL_UP_MOVE(30, MOVE_SNATCH),
+        LEVEL_UP_MOVE(30, MOVE_RECOVER),
         LEVEL_UP_MOVE(35, MOVE_COSMIC_POWER),
-        LEVEL_UP_MOVE(40, MOVE_RECOVER),
+        LEVEL_UP_MOVE(40, MOVE_SNATCH),
         LEVEL_UP_MOVE(45, MOVE_PSYCHO_BOOST),
         LEVEL_UP_MOVE(50, MOVE_HYPER_BEAM),
         LEVEL_UP_END
@@ -6229,6 +6229,8 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_LEADER:
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_POKEDUDE:
+        case TRAINER_CLASS_CUE_BALL_LEADER:
+        case TRAINER_CLASS_KARATE_KING:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_MIRAGE_TRAINER:
             return MUS_VS_REGI;

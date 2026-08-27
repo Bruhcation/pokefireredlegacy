@@ -163,7 +163,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Ren),
     },
     [TRAINER_PAXTON_UNUSED] = {
-        .trainerClass = TRAINER_CLASS_CUE_BALL,
+        .trainerClass = TRAINER_CLASS_CUE_BALL_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
         .trainerName = COMPOUND_STRING("PAXTON"),
@@ -181,7 +181,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GuardColin2),
     },
     [TRAINER_KOICHI_2] = {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .trainerClass = TRAINER_CLASS_KARATE_KING,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = COMPOUND_STRING("KOICHI"),
@@ -440,13 +440,13 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MirageStrong),
     },
     [TRAINER_GIOVANNI4] = {
-        .trainerClass = TRAINER_CLASS_BOSS,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_LEADER_GIOVANNI,
         .trainerName = COMPOUND_STRING("GIOVANNI"),
         .doubleBattle = TRUE,
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
-        .party = TRAINER_PARTY(sParty_FatGuy),
+        .party = TRAINER_PARTY(sParty_Giovanni4),
     },
     [TRAINER_FREDDY] = {
         .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
@@ -3073,7 +3073,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BirdKeeperMarlon),
     },
     [TRAINER_BLACK_BELT_KOICHI] = {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .trainerClass = TRAINER_CLASS_KARATE_KING,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = COMPOUND_STRING("KOICHI"),
@@ -3143,7 +3143,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BlackBeltKiyo),
     },
     [TRAINER_BLACK_BELT_TAKASHI] = {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .trainerClass = TRAINER_CLASS_KARATE_KING,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = COMPOUND_STRING("KOICHI"),
@@ -4802,15 +4802,14 @@ const struct Trainer gTrainers[] = {
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
         .party = TRAINER_PARTY(sParty_GoonChampion3),
     },
-    [TRAINER_BUG_CATCHER_7] = {
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = gExpandedPlaceholder_Empty,
+    [TRAINER_GIDEON_REMATCH] = {
+        .trainerClass = TRAINER_CLASS_SEVII_CHAMPION,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST,
+        .trainerName = COMPOUND_STRING("GIDEON"),
         .doubleBattle = FALSE,
-        .trainerType = TRAINER(.items = {},
-                               .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
-        .party = TRAINER_PARTY(sParty_BugCatcher7),
+        .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
+        .party = TRAINER_PARTY(sParty_GideonRematch),
     },
     [TRAINER_BUG_CATCHER_8] = {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
@@ -7231,7 +7230,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ChampionRematchCharmander),
     },
     [TRAINER_CUE_BALL_PAXTON] = {
-        .trainerClass = TRAINER_CLASS_CUE_BALL,
+        .trainerClass = TRAINER_CLASS_CUE_BALL_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_CUE_BALL,
         .trainerName = COMPOUND_STRING("PAXTON"),

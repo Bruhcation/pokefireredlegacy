@@ -499,7 +499,7 @@
 #define TRAINER_GOON_CHAMPION_1                    493
 #define TRAINER_GOON_CHAMPION_2                    494
 #define TRAINER_GOON_CHAMPION_3                    495
-#define TRAINER_BUG_CATCHER_7                    496
+#define TRAINER_GIDEON_REMATCH                    496
 #define TRAINER_BUG_CATCHER_8                    497
 #define TRAINER_YOUNGSTER_BEN_3                  498
 #define TRAINER_YOUNGSTER_BEN_4                  499

@@ -192,7 +192,7 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF            0x0AF
+#define FLAG_BIRTH_ISLAND_GIDEON           0x0AF
 #define FLAG_HIDE_JOHTO_LEADERS  0x0B0
 #define FLAG_CELEBI              0x0B1
 #define FLAG_SHOPCHAMP           0x0B2

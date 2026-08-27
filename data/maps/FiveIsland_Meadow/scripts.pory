@@ -1,9 +1,13 @@
 raw `
+.set LOCALID_ROCKET, 11
+
 FiveIsland_Meadow_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, FiveIsland_Meadow_OnLoad
 	.byte 0
 
 FiveIsland_Meadow_OnLoad::
+	setobjectxyperm LOCALID_ROCKET, 14, 23
+	applymovement LOCALID_ROCKET, Common_Movement_FaceUp
 	call_if_set FLAG_UNLOCKED_ROCKET_WAREHOUSE, FiveIsland_Meadow_EventScript_SetWarehouseDoorUnlocked
 	special CheckBeatSeviiChamps
 	call_if_eq VAR_RESULT, TRUE, FiveIsland_Meadow_EventScript_ShowClerk
@@ -111,7 +115,14 @@ FiveIsland_Meadow_Text_Gym3Post::
 
 FiveIsland_Meadow_EventScript_Rocket::
 	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_46, FiveIsland_Meadow_Text_RocketIntro, FiveIsland_Meadow_Text_RocketDefeat
+	goto_if_set FLAG_ENABLE_SHIP_BIRTH_ISLAND, FiveIsland_Meadow_EventScript_RocketBlocking
 	msgbox FiveIsland_Meadow_Text_RocketPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FiveIsland_Meadow_EventScript_RocketBlocking::
+	goto_if_set FLAG_BIRTH_ISLAND_GIDEON, EventScript_Return
+	setflag FLAG_HIDE_BIRTH_ISLAND_METEORITE
+	msgbox FiveIsland_Meadow_Text_RocketBlock, MSGBOX_NPC
 	end
 
 FiveIsland_Meadow_Text_RocketIntro::
@@ -129,6 +140,18 @@ FiveIsland_Meadow_Text_RocketPostBattle::
 
 FiveIsland_Meadow_EventScript_ShowClerk::
 	clearflag FLAG_SHOPCHAMP
+	call_if_set FLAG_BIRTH_ISLAND_GIDEON, FiveIsland_Meadow_NotBlockingWarehouse
+	call_if_unset FLAG_BIRTH_ISLAND_GIDEON, FiveIsland_Meadow_BlockingWarehouse
+	end
+
+FiveIsland_Meadow_BlockingWarehouse::
+	setobjectxyperm LOCALID_ROCKET, 12, 22
+	applymovement LOCALID_ROCKET, Common_Movement_FaceDown
+	end
+
+FiveIsland_Meadow_NotBlockingWarehouse::
+	setobjectxyperm LOCALID_ROCKET, 14, 23
+	applymovement LOCALID_ROCKET, Common_Movement_FaceUp
 	end
 
 FiveIsland_Meadow_EventScript_Clerk::
@@ -265,4 +288,12 @@ FiveIsland_Meadow_EventScript_Beast3::
 	msgbox FiveIsland_Meadow_Text_Beasts2, MSGBOX_NPC
 	releaseall
 	end
+
+FiveIsland_Meadow_Text_RocketBlock::
+	.string "GIDEON all of a sudden told me to\n"
+	.string "block the door as he rushed out!\p"
+	.string "I don't know what he was doing\n"
+	.string "but he seemed alone, and a bunch\l"
+	.string "of policeman are trying to get\l"
+	.string "get out?$"
 `

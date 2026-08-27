@@ -258,7 +258,7 @@
 #define VAR_VIRFOREST              0x40CE
 #define VAR_FRONTIER_FACILITY      0x40CF
 #define VAR_MTMOON_B1F             0x40D0
-#define VAR_0x40D1                 0x40D1
+#define VAR_BIRTH_ISLAND_GIDEON    0x40D1
 #define VAR_0x40D2                 0x40D2
 #define VAR_0x40D3                 0x40D3
 #define VAR_0x40D4                 0x40D4
