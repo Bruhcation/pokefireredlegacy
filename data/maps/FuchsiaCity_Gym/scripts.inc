@@ -231,7 +231,7 @@ FuchsiaCity_Gym_EventScript_Kayden::
 # 116 "data/maps/FuchsiaCity_Gym/scripts.pory"
 FuchsiaCity_Gym_EventScript_Nate::
 # 117 "data/maps/FuchsiaCity_Gym/scripts.pory"
-	trainerbattle_single TRAINER_JUGGLER_NATE, FuchsiaCity_Gym_Text_NateIntro, FuchsiaCity_Gym_Text_NateDefeat
+	trainerbattle_single TRAINER_LASS_JANINE, FuchsiaCity_Gym_Text_NateIntro, FuchsiaCity_Gym_Text_NateDefeat
 # 118 "data/maps/FuchsiaCity_Gym/scripts.pory"
 	msgbox FuchsiaCity_Gym_Text_NatePostBattle, MSGBOX_AUTOCLOSE
 # 119 "data/maps/FuchsiaCity_Gym/scripts.pory"

@@ -41,7 +41,7 @@ EventScript_SetFuchsiaGymTrainers::
 	settrainerflag TRAINER_JUGGLER_KIRK
 	settrainerflag TRAINER_JUGGLER_SHAWN
 	settrainerflag TRAINER_JUGGLER_KAYDEN
-	settrainerflag TRAINER_JUGGLER_NATE
+	settrainerflag TRAINER_LASS_JANINE
 	return
 
 EventScript_SetSaffronGymTrainers::

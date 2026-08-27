@@ -125,8 +125,8 @@ VermilionCity_Text_Route2AideHasPackageForYou::
     .string "He had a package from PROF. OAK\n"
     .string "for you, {PLAYER}.\p"
     .string "He said he'd look for you around\n"
-    .string "ROUTE 10, {PLAYER}.\p"
-    .string "If you're in the ROUTE 10 area,\n"
+    .string "ROUTE 2, {PLAYER}.\p"
+    .string "If you're in the ROUTE 2 area,\n"
     .string "please look for him.$"
 
 VermilionCity_Text_Challenger::

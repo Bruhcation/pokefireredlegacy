@@ -187,6 +187,7 @@ extern const u8 gText_PlayedPokeFluteCatchy[];
 extern const u8 gText_PlayedPokeFlute[];
 extern const u8 gText_PokeFluteAwakenedMon[];
 extern const u8 gText_WontHaveEffect[];
+extern const u8 gText_WontHaveEffectHardcore[];
 extern const u8 gText_YesNo[];
 extern const u8 gText_Berry[];
 extern const u8 gText_Ghost[];
