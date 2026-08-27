@@ -2231,3 +2231,7 @@ DirectSoundWaveData_prosamples_15_dance_drums_kick::
 .align 2
 DirectSoundWaveData_drum_and_percussion_stick::
 	.incbin "sound/direct_sound_samples/drum_and_percussion_stick.bin"
+
+.align 2
+DirectSoundWaveData_unknown_anvil_low::
+	.incbin "sound/direct_sound_samples/unknown_anvil_low.bin"
