@@ -57,30 +57,38 @@ Route17_EventScript_CyclingRoadSign::
 # 29 "data/maps/Route17/scripts.pory"
 Route17_EventScript_Paxton::
 # 30 "data/maps/Route17/scripts.pory"
-	msgbox Route17_Text_Paxton
+	lock
 # 31 "data/maps/Route17/scripts.pory"
-	release
+	faceplayer
 # 32 "data/maps/Route17/scripts.pory"
-	end
+	msgbox Route17_Text_Paxton, MSGBOX_YESNO
 # 33 "data/maps/Route17/scripts.pory"
-
+	goto_if_eq VAR_RESULT, NO, Route17_EventScript_NoPaxton
 # 34 "data/maps/Route17/scripts.pory"
-Route17_EventScript_PostPaxton::
+	trainerbattle_single TRAINER_PAXTON_UNUSED, Route17_Text_YesPaxton, Route17_Text_PaxtonDefeat, Route17_EventScript_PostPaxton, NO_MUSIC
 # 35 "data/maps/Route17/scripts.pory"
-	msgbox Route17_Text_PaxtonPostBattle
+	release
 # 36 "data/maps/Route17/scripts.pory"
-	cleartrainerflag TRAINER_PAXTON_UNUSED
-# 37 "data/maps/Route17/scripts.pory"
-	release
-# 38 "data/maps/Route17/scripts.pory"
 	end
-# 39 "data/maps/Route17/scripts.pory"
+# 37 "data/maps/Route17/scripts.pory"
 
+# 38 "data/maps/Route17/scripts.pory"
+Route17_EventScript_PostPaxton::
+# 39 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_PaxtonPostBattle
 # 40 "data/maps/Route17/scripts.pory"
-Route17_EventScript_NoPaxton::
+	cleartrainerflag TRAINER_PAXTON_UNUSED
 # 41 "data/maps/Route17/scripts.pory"
-	msgbox Route17_Text_NoPaxton
-# 42 "data/maps/Route17/scripts.pory"
 	release
+# 42 "data/maps/Route17/scripts.pory"
+	end
 # 43 "data/maps/Route17/scripts.pory"
+
+# 44 "data/maps/Route17/scripts.pory"
+Route17_EventScript_NoPaxton::
+# 45 "data/maps/Route17/scripts.pory"
+	msgbox Route17_Text_NoPaxton
+# 46 "data/maps/Route17/scripts.pory"
+	release
+# 47 "data/maps/Route17/scripts.pory"
 	end

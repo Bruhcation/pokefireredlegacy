@@ -2,7 +2,7 @@
   "id": "MAP_TWO_ISLAND_SOUTH_SIDE_CAVE_B1F",
   "name": "TwoIsland_SouthSide_Cave_B1F",
   "layout": "LAYOUT_TWO_ISLAND_SOUTH_SIDE_CAVE_B1F",
-  "music": "MUS_MT_MOON",
+  "music": "MUS_SEVII_CAVE",
   "region_map_section": "MAPSEC_TWO_ISLAND_SOUTHSIDE_CAVE",
   "requires_flash": true,
   "weather": "WEATHER_NONE",

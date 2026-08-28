@@ -521,7 +521,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM13::
 # 261 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_TM13
 # 262 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 2500
+	setvar VAR_TEMP_2, 3000
 # 263 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_ICE_BEAM
 # 264 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -535,7 +535,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM23::
 # 268 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_TM23
 # 269 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 2000
+	setvar VAR_TEMP_2, 2500
 # 270 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_IRON_TAIL
 # 271 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -549,7 +549,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM24::
 # 275 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_TM24
 # 276 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 2500
+	setvar VAR_TEMP_2, 3000
 # 277 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_THUNDERBOLT
 # 278 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -563,7 +563,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM30::
 # 282 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_TM30
 # 283 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 3000
+	setvar VAR_TEMP_2, 3500
 # 284 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_SHADOW_BALL
 # 285 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
@@ -577,7 +577,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM35::
 # 289 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	setvar VAR_TEMP_1, ITEM_TM35
 # 290 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
-	setvar VAR_TEMP_2, 2500
+	setvar VAR_TEMP_2, 3000
 # 291 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_FLAMETHROWER
 # 292 "data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.pory"

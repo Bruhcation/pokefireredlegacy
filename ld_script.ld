@@ -975,6 +975,10 @@ SECTIONS {
         sound/songs/midi/mus_gsc_pewter.o(.rodata);
         sound/songs/midi/mus_vs_oak.o(.rodata);
         sound/songs/midi/mus_gym_leader_johto.o(.rodata);
+        sound/songs/midi/mus_vs_kyogre_groudon.o(.rodata);
+        sound/songs/midi/mus_c_vs_legend_beast.o(.rodata);
+        sound/songs/midi/mus_vs_rayquaza.o(.rodata);
+        sound/songs/midi/mus_rs_vs_wild.o(.rodata);
     } > ROM =0
 
     lib_rodata :

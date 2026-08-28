@@ -112,4 +112,6 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_NURSE]               = _("NURSE"),
     [TRAINER_CLASS_MIRAGE_TRAINER]      = _("MIRAGE"),
     [TRAINER_CLASS_POKEDUDE]            = _("POKé DUDE"),
+    [TRAINER_CLASS_CUE_BALL_LEADER]     = _("BIKER BOSS"),
+    [TRAINER_CLASS_KARATE_KING]         = _("KARATE KING"),
 };

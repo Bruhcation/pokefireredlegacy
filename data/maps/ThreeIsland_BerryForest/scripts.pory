@@ -190,7 +190,7 @@ ThreeIsland_BerryForest_EventScript_Gym2::
 
 ThreeIsland_BerryForest_Text_Rocket2Intro::
 	.string "Honestly, I just like playing\n"
-	.string "in the berry forest.\p"
+	.string "in the berry forest.$"
 ThreeIsland_BerryForest_Text_Rocket2Defeat::
 	.string "Oh, wow!$"
 
