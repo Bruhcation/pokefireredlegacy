@@ -1,6 +1,7 @@
 raw `
 .set LOCALID_DEOXYS_ROCK, 1
 .set LOCALID_DEOXYS,      2
+.set LOCALID_GIDEON,      3
 
 BirthIsland_Exterior_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, BirthIsland_Exterior_OnTransition
@@ -28,8 +29,10 @@ BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle::
 
 BirthIsland_Exterior_EventScript_TryShowDeoxysPuzzle::
 	goto_if_set FLAG_DEOXYS_FLEW_AWAY, EventScript_Return
+	goto_if_unset FLAG_BIRTH_ISLAND_GIDEON, BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle
 	clearflag FLAG_HIDE_BIRTH_ISLAND_METEORITE
 	clearflag FLAG_SYS_DEOXYS_AWAKENED
+	addobject LOCALID_DEOXYS_ROCK
 	return
 
 BirthIsland_Exterior_OnResume::
@@ -84,7 +87,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_DEOXYS
-	seteventmon SPECIES_DEOXYS, 30
+	seteventmon SPECIES_DEOXYS, 70
 	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
 	special StartLegendaryBattle
 	waitstate
@@ -117,4 +120,160 @@ Movement_DeoxysApproach:
 	walk_slower_down
 	walk_slower_down
 	step_end
+
+BirthIsland_Exterior_EventScript_Gideon::
+	lockall
+	textcolor NPC_TEXT_COLOR_MALE
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkUpPlayer
+	waitmovement 0
+	applymovement LOCALID_GIDEON, Movement_FaceDown
+	waitmovement 0
+	msgbox BirthIsland_Exterior_Text_Gideon
+	waitmessage
+	applymovement LOCALID_GIDEON, Movement_FaceUpNormal
+	waitmovement 0
+	msgbox BirthIsland_Exterior_Text_GideonYes
+	applymovement LOCALID_GIDEON, Movement_FaceDown
+	waitmovement 0
+	msgbox BirthIsland_Exterior_Text_GideonLetsFight
+	trainerbattle_single TRAINER_GIDEON_REMATCH, BirthIsland_Exterior_Text_GideonIntro, BirthIsland_Exterior_Text_GideonDefeat, BirthIsland_Exterior_EventScript_GideonEnd, NO_MUSIC
+	releaseall
+	end
+
+BirthIsland_Exterior_EventScript_NoThanks::
+	msgbox BirthIsland_Exterior_Text_GideonNo
+	waitmessage
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WalkDownPlayer
+	waitmovement 0
+	applymovement LOCALID_GIDEON, Movement_FaceUpNormal
+	waitmovement 0
+	releaseall
+	end
+
+BirthIsland_Exterior_EventScript_GideonEnd::
+	textcolor NPC_TEXT_COLOR_MALE
+	special HealPlayerParty
+	msgbox BirthIsland_Exterior_Text_GideonPostBattle
+	waitmessage
+	closemessage
+	setflag FLAG_BIRTH_ISLAND_GIDEON
+	applymovement LOCALID_GIDEON, Movement_FaceUpNormal
+	waitmovement 0
+	call BirthIsland_Exterior_PostGideon
+	playse SE_PIN
+	waitse
+	applymovement LOCALID_GIDEON, Movement_FaceDown
+	waitmovement 0
+	msgbox BirthIsland_Exterior_Text_GideonPostBattle2
+	waitmessage
+	closemessage
+	applymovement LOCALID_GIDEON, Movement_GideonWalkDown
+	waitmovement 0
+	msgbox BirthIsland_Exterior_Text_GideonLastWords
+	closemessage
+	applymovement LOCALID_GIDEON, Movement_WalkDownPlayer
+	waitmovement 0
+	setvar VAR_BIRTH_ISLAND_GIDEON, 1
+	removeobject LOCALID_GIDEON
+	releaseall
+	end
+
+BirthIsland_Exterior_PostGideon::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DEOXYS_N
+	setvar VAR_DEOXYS_INTERACTION_STEP_COUNTER, 0
+	setvar VAR_DEOXYS_INTERACTION_NUM, 0
+	call_if_set FLAG_FOUGHT_DEOXYS, BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle
+	call_if_unset FLAG_FOUGHT_DEOXYS, BirthIsland_Exterior_EventScript_TryShowDeoxysPuzzle
+	return
+
+BirthIsland_Exterior_Text_Gideon::
+	.string "Fufufufu, I guess you got a\n"
+	.string "ticket as well.\p"
+	.string "Well did you guess I would\n"
+	.string "of gotten one too?\p"
+	.string "TEAM ROCKET managed to smuggle\n"
+	.string "a ticket in one of the boxes\p"
+	.string "But I managed to steal it from\n"
+	.string "them also!$"
+
+BirthIsland_Exterior_Text_GideonYes::
+	.string "And now I have caught DEOXYS.\n"
+	.string "However I feel a bit empty,\l"
+	.string "with how I betrayed the\l"
+	.string "SEVII MASTERS and the whole\l"
+	.string "thing with TEAM ROCKET.\p"
+	.string "And seeing now that my dream\n"
+	.string "was holding back the\l"
+	.string "SEVII ISLANDS and it's people,\l"
+	.string "I feel like I could of done better.$"
+
+BirthIsland_Exterior_Text_GideonLetsFight::
+	.string "So I present a option,\n"
+	.string "If you beat me in a battle with\l"
+	.string "DEOXYS, i'll release it and\l"
+	.string "let you catch it.\p"
+	.string "So, let's fight.$"
+
+BirthIsland_Exterior_Text_GideonNo::
+	.string "Well be quick, or i'm taking\n"
+	.string "DEOXYS!$"
+
+BirthIsland_Exterior_Text_GideonIntro::
+	.string "Alright than, I have felt stronger\n"
+	.string "since last time.\p"
+	.string "Let's fight for DEOXYS!$"
+
+BirthIsland_Exterior_Text_GideonDefeat::
+	.string "Well. That settles it.$"
+
+BirthIsland_Exterior_Text_GideonPostBattle::
+	.string "Seems like i'll release DEOXYS\n"
+	.string "right now.$"
+
+BirthIsland_Exterior_Text_GideonPostBattle2::
+	.string "It was a good match {PLAYER}.\n"
+	.string "I'll come back to the warehouse\l"
+	.string "and finish what I started since\l"
+	.string "last time.\p"
+	.string "I'm not gonna come back as a\n"
+	.string "SEVII MASTER, but i'll\l"
+	.string "make sure my life isn't a waste.$"
+
+BirthIsland_Exterior_Text_GideonLastWords::
+	.string "Fufufufu,\n"
+	.string "Good luck as CHAMPION {PLAYER}.$"
+
+Movement_FaceUpNormal::
+	face_up
+	step_end
+
+Movement_WalkUpPlayer::
+	walk_up
+	walk_up
+	step_end
+
+Movement_WalkDownPlayer::
+	face_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Movement_GideonWalkDown::
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	face_down
+	step_end
+
+Movement_FaceDown::
+	face_down
+	step_end
+
 `

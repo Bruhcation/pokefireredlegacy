@@ -134,9 +134,8 @@ Route17_Text_Paxton::
     .string "Well,\n"
     .string "I'm not sorry for what I did\l"
     .string "on those islands,\l"
-    .string "but I'm still weaker!$"
-    .string "So i'll sit back in my Motorcycle...$"
-
+	.string "So let's settle this, and let's\l"
+	.string "have a rematch!$"
 
 Route17_Text_PaxtonDefeat::
     .string "…$"

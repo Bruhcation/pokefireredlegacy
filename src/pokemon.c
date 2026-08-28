@@ -1685,9 +1685,9 @@ static const u16 sDeoxysLevelUpLearnsets[][15] = {
         LEVEL_UP_MOVE(15, MOVE_KNOCK_OFF),
         LEVEL_UP_MOVE(20, MOVE_PURSUIT),
         LEVEL_UP_MOVE(25, MOVE_PSYCHIC),
-        LEVEL_UP_MOVE(30, MOVE_SNATCH),
+        LEVEL_UP_MOVE(30, MOVE_RECOVER),
         LEVEL_UP_MOVE(35, MOVE_COSMIC_POWER),
-        LEVEL_UP_MOVE(40, MOVE_RECOVER),
+        LEVEL_UP_MOVE(40, MOVE_SNATCH),
         LEVEL_UP_MOVE(45, MOVE_PSYCHO_BOOST),
         LEVEL_UP_MOVE(50, MOVE_HYPER_BEAM),
         LEVEL_UP_END
@@ -6212,11 +6212,13 @@ void ClearBattleMonForms(void)
 static u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
-        return MUS_VS_WILD;
+        return MUS_VS_KYOGRE_GROUDON;
     if (gBattleTypeFlags & BATTLE_TYPE_REGI)
-        return MUS_RS_VS_TRAINER;
+        return MUS_VS_REGI;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return MUS_RS_VS_TRAINER;
+    if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+        return MUS_C_VS_LEGEND_BEAST;
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
@@ -6227,9 +6229,11 @@ static u16 GetBattleBGM(void)
         case TRAINER_CLASS_LEADER:
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_POKEDUDE:
+        case TRAINER_CLASS_CUE_BALL_LEADER:
+        case TRAINER_CLASS_KARATE_KING:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_MIRAGE_TRAINER:
-            return MUS_VS_DEOXYS;
+            return MUS_VS_REGI;
         case TRAINER_CLASS_JOHTO_LEADER:
         case TRAINER_CLASS_SEVII_CHAMPION:
             return MUS_GYM_LEADER_JOHTO;

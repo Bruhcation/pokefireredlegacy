@@ -79,7 +79,7 @@ PokemonMansion_B1F_EventScript_Mew::
 # 40 "data/maps/PokemonMansion_B1F/scripts.pory"
 	faceplayer
 # 41 "data/maps/PokemonMansion_B1F/scripts.pory"
-	setwildbattle SPECIES_MEW, 50 
+	seteventmon SPECIES_MEW, 50 
 # 42 "data/maps/PokemonMansion_B1F/scripts.pory"
 	waitse
 # 43 "data/maps/PokemonMansion_B1F/scripts.pory"

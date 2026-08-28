@@ -117,7 +117,10 @@ FiveIsland_RocketWarehouse_Text_GideonIntro::
     .string "from under their noses.\p"
     .string "No more will SEVII linger in the\n"
     .string "shadow of KANTO…\p"
-    .string "Prepare to lose!$"
+	.string "Also, I used to be a SEVII MASTER.\p"
+	.string "So expect a challenge if you want\n"
+	.string "to get this SAPPHIRE!$"
+    .string "So... Prepare to lose!$"
     
 FiveIsland_RocketWarehouse_Text_GideonDefeat::
     .string "Gah! Darn!\n"

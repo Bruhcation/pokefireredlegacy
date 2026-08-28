@@ -1907,3 +1907,331 @@ DirectSoundWaveData_sd90_classical_detuned_ep1_high::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+.align 2
+DirectSoundWaveData_unknown_open_hihat::
+	.incbin "sound/direct_sound_samples/unknown_open_hihat.bin"
+
+.align 2
+DirectSoundWaveData_unknown_bell::
+	.incbin "sound/direct_sound_samples/unknown_bell.bin"
+
+.align 2
+DirectSoundWaveData_unknown_koto_high::
+	.incbin "sound/direct_sound_samples/unknown_koto_high.bin"
+
+.align 2
+DirectSoundWaveData_sd90_classical_shakuhachi::
+	.incbin "sound/direct_sound_samples/sd90_classical_shakuhachi.bin"
+
+.align 2
+DirectSoundWaveData_unknown_koto_low::
+	.incbin "sound/direct_sound_samples/unknown_koto_low.bin"
+
+.align 2
+DirectSoundWaveData_heart_of_asia_gamelan::
+	.incbin "sound/direct_sound_samples/heart_of_asia_gamelan.bin"
+
+.align 2
+DirectSoundWaveData_sc88pro_church_organ3_low::
+	.incbin "sound/direct_sound_samples/sc88pro_church_organ3_low.bin"
+
+.align 2
+DirectSoundWaveData_sc88pro_church_organ3_high::
+	.incbin "sound/direct_sound_samples/sc88pro_church_organ3_high.bin"
+
+.align 2
+DirectSoundWaveData_unknown_female_voice::
+	.incbin "sound/direct_sound_samples/unknown_female_voice.bin"
+
+.align 2
+DirectSoundWaveData_unused_unknown_male_voice::
+	.incbin "sound/direct_sound_samples/unused_unknown_male_voice.bin"
+
+.align 2
+DirectSoundWaveData_unknown_1::
+	.incbin "sound/direct_sound_samples/unknown_01.bin"
+
+.align 2
+DirectSoundWaveData_unknown_2::
+	.incbin "sound/direct_sound_samples/unknown_02.bin"
+
+.align 2
+DirectSoundWaveData_unknown_3::
+	.incbin "sound/direct_sound_samples/unknown_03.bin"
+
+.align 2
+DirectSoundWaveData_unknown_4::
+	.incbin "sound/direct_sound_samples/unknown_04.bin"
+
+.align 2
+DirectSoundWaveData_unknown_5::
+	.incbin "sound/direct_sound_samples/unknown_05.bin"
+
+.align 2
+DirectSoundWaveData_unknown_6::
+	.incbin "sound/direct_sound_samples/unknown_06.bin"
+
+.align 2
+DirectSoundWaveData_unknown_7::
+	.incbin "sound/direct_sound_samples/unknown_07.bin"
+
+.align 2
+DirectSoundWaveData_unknown_8::
+	.incbin "sound/direct_sound_samples/unknown_08.bin"
+
+.align 2
+DirectSoundWaveData_unknown_9::
+	.incbin "sound/direct_sound_samples/unknown_09.bin"
+
+.align 2
+DirectSoundWaveData_unknown_10::
+	.incbin "sound/direct_sound_samples/unknown_10.bin"
+
+.align 2
+DirectSoundWaveData_unknown_11::
+	.incbin "sound/direct_sound_samples/unknown_11.bin"
+
+.align 2
+DirectSoundWaveData_unknown_12::
+	.incbin "sound/direct_sound_samples/unknown_12.bin"
+
+.align 2
+DirectSoundWaveData_unknown_13::
+	.incbin "sound/direct_sound_samples/unknown_13.bin"
+
+.align 2
+DirectSoundWaveData_unknown_14::
+	.incbin "sound/direct_sound_samples/unknown_14.bin"
+
+.align 2
+DirectSoundWaveData_unknown_15::
+	.incbin "sound/direct_sound_samples/unknown_15.bin"
+
+.align 2
+DirectSoundWaveData_unknown_16::
+	.incbin "sound/direct_sound_samples/unknown_16.bin"
+
+.align 2
+DirectSoundWaveData_unknown_17::
+	.incbin "sound/direct_sound_samples/unknown_17.bin"
+
+.align 2
+DirectSoundWaveData_unknown_18::
+	.incbin "sound/direct_sound_samples/unknown_18.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_1::
+	.incbin "sound/direct_sound_samples/phonemes/01.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_2::
+	.incbin "sound/direct_sound_samples/phonemes/02.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_3::
+	.incbin "sound/direct_sound_samples/phonemes/03.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_4::
+	.incbin "sound/direct_sound_samples/phonemes/04.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_5::
+	.incbin "sound/direct_sound_samples/phonemes/05.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_6::
+	.incbin "sound/direct_sound_samples/phonemes/06.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_7::
+	.incbin "sound/direct_sound_samples/phonemes/07.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_8::
+	.incbin "sound/direct_sound_samples/phonemes/08.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_9::
+	.incbin "sound/direct_sound_samples/phonemes/09.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_10::
+	.incbin "sound/direct_sound_samples/phonemes/10.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_11::
+	.incbin "sound/direct_sound_samples/phonemes/11.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_12::
+	.incbin "sound/direct_sound_samples/phonemes/12.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_13::
+	.incbin "sound/direct_sound_samples/phonemes/13.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_14::
+	.incbin "sound/direct_sound_samples/phonemes/14.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_15::
+	.incbin "sound/direct_sound_samples/phonemes/15.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_16::
+	.incbin "sound/direct_sound_samples/phonemes/16.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_17::
+	.incbin "sound/direct_sound_samples/phonemes/17.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_18::
+	.incbin "sound/direct_sound_samples/phonemes/18.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_19::
+	.incbin "sound/direct_sound_samples/phonemes/19.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_20::
+	.incbin "sound/direct_sound_samples/phonemes/20.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_21::
+	.incbin "sound/direct_sound_samples/phonemes/21.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_22::
+	.incbin "sound/direct_sound_samples/phonemes/22.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_23::
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_24::
+	.incbin "sound/direct_sound_samples/phonemes/24.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_25::
+	.incbin "sound/direct_sound_samples/phonemes/25.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_26::
+	.incbin "sound/direct_sound_samples/phonemes/26.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_27::
+	.incbin "sound/direct_sound_samples/phonemes/27.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_28::
+	.incbin "sound/direct_sound_samples/phonemes/28.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_29::
+	.incbin "sound/direct_sound_samples/phonemes/29.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_30::
+	.incbin "sound/direct_sound_samples/phonemes/30.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_31::
+	.incbin "sound/direct_sound_samples/phonemes/31.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_32::
+	.incbin "sound/direct_sound_samples/phonemes/32.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_33::
+	.incbin "sound/direct_sound_samples/phonemes/33.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_34::
+	.incbin "sound/direct_sound_samples/phonemes/34.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_35::
+	.incbin "sound/direct_sound_samples/phonemes/35.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_36::
+	.incbin "sound/direct_sound_samples/phonemes/36.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_37::
+	.incbin "sound/direct_sound_samples/phonemes/37.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_38::
+	.incbin "sound/direct_sound_samples/phonemes/38.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_39::
+	.incbin "sound/direct_sound_samples/phonemes/39.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_40::
+	.incbin "sound/direct_sound_samples/phonemes/40.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_41::
+	.incbin "sound/direct_sound_samples/phonemes/41.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_42::
+	.incbin "sound/direct_sound_samples/phonemes/42.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_43::
+	.incbin "sound/direct_sound_samples/phonemes/43.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_44::
+	.incbin "sound/direct_sound_samples/phonemes/44.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_45::
+	.incbin "sound/direct_sound_samples/phonemes/45.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_46::
+	.incbin "sound/direct_sound_samples/phonemes/46.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_47::
+	.incbin "sound/direct_sound_samples/phonemes/47.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_48::
+	.incbin "sound/direct_sound_samples/phonemes/48.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_49::
+	.incbin "sound/direct_sound_samples/phonemes/49.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_50::
+	.incbin "sound/direct_sound_samples/phonemes/50.bin"
+
+.align 2
+DirectSoundWaveData_Phoneme_51::
+	.incbin "sound/direct_sound_samples/phonemes/51.bin"
+
+.align 2
+DirectSoundWaveData_prosamples_15_dance_drums_kick::
+	.incbin "sound/direct_sound_samples/prosamples_15_dance_drums_kick.bin"
+
+.align 2
+DirectSoundWaveData_drum_and_percussion_stick::
+	.incbin "sound/direct_sound_samples/drum_and_percussion_stick.bin"
+
+.align 2
+DirectSoundWaveData_unknown_anvil_low::
+	.incbin "sound/direct_sound_samples/unknown_anvil_low.bin"
