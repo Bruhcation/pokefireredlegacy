@@ -304,7 +304,7 @@ Route23_Text_RegiceCheck::
 	.string "special POKEMON.\p"
 	.string "But first, I want to see a\n"
 	.string "BLUE ORB and RED ORB,\l"
-	.string "and knowledge on the Master of Dragons.$"
+	.string "and knowledge on the Dragon Master.$"
 
 Route23_Text_Dragon::
 	.string "So, you wish to face me?$"

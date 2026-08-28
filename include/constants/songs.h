@@ -361,6 +361,10 @@
 #define MUS_GSC_PEWTER            352 // MUS_VS_REGI
 #define MUS_VS_OAK                353 // MUS_VS_REGI
 #define MUS_GYM_LEADER_JOHTO      354 // MUS_VS_REGI
+#define MUS_VS_KYOGRE_GROUDON     355 // MUS_VS_REGI
+#define MUS_C_VS_LEGEND_BEAST     356 // MUS_VS_REGI
+#define MUS_VS_RAYQUAZA           357
+#define MUS_RS_VS_WILD            358
 
 #define MUS_NONE                    0xFFFF
 
