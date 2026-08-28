@@ -1267,7 +1267,7 @@ static const struct TrainerMon sParty_Mai[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 60,
+        .lvl = 59,
         .species = SPECIES_AERODACTYL,
     },
 }; //Two Island
@@ -12264,7 +12264,7 @@ static const struct TrainerMon sParty_RuinManiacFoster[] = {
     },
     {
         .iv = 0,
-        .lvl = 61,
+        .lvl = 59,
         .species = SPECIES_AERODACTYL,
     },
     {
