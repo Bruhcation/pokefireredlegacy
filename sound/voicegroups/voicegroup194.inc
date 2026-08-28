@@ -1,5 +1,5 @@
 	.align 2
-voicegroup194::
+.set voicegroup194, . - 0x1B0
 	voice_directsound_no_resample 64, 64, DirectSoundWaveData_prosamples_15_dance_drums_kick, 255, 0, 255, 204
 	voice_directsound_no_resample 65, 64, DirectSoundWaveData_drum_and_percussion_stick, 255, 0, 255, 231
 	voice_directsound 62, 64, DirectSoundWaveData_drum_and_percussion_stick, 255, 0, 255, 0
