@@ -25677,8 +25677,8 @@
                 "species": "SPECIES_WOBBUFFET"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_EEVEE"
               },
               {
@@ -25831,8 +25831,8 @@
                 "species": "SPECIES_WOBBUFFET"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_EEVEE"
               },
               {
