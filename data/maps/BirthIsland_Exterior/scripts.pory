@@ -180,6 +180,7 @@ BirthIsland_Exterior_EventScript_GideonEnd::
 	end
 
 BirthIsland_Exterior_PostGideon::
+	setworldmapflag FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DEOXYS_N
 	setvar VAR_DEOXYS_INTERACTION_STEP_COUNTER, 0
 	setvar VAR_DEOXYS_INTERACTION_NUM, 0
