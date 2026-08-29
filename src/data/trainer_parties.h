@@ -2594,7 +2594,7 @@ static const struct TrainerMon sParty_Oak2[] = {
         .species = SPECIES_MOLTRES,
         .heldItem = ITEM_FOCUS_BAND,
         .moves = {MOVE_SKY_ATTACK, MOVE_FIRE_BLAST, MOVE_AGILITY, MOVE_EXTRASENSORY},
-        .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
+        .ev = TRAINER_PARTY_EVS(0, 128, 0, 128, 252, 0),
 
     }, 
     {
@@ -7257,10 +7257,9 @@ static const struct TrainerMon sParty_BlackBeltTakashi[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 52,
-        .species = SPECIES_MACHOKE,
+        .species = SPECIES_MACHAMP,
         .heldItem = ITEM_BLACK_BELT,
         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_EARTHQUAKE, MOVE_ROCK_TOMB, MOVE_ROCK_SLIDE},
-        .ev = TRAINER_PARTY_EVS(252, 128, 0, 0, 0, 0),
     },
 };
 

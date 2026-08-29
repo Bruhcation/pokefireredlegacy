@@ -627,7 +627,7 @@ ThreeIsland_BerryForest_EventScript_ItemMaxEther::
 	end
 
 ThreeIsland_BerryForest_EventScript_ItemFullHeal::
-	finditem ITEM_TM29
+	finditem ITEM_TM19
 	end
 
 ThreeIsland_BerryForest_EventScript_ItemMaxElixir::
