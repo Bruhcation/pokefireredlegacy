@@ -141,7 +141,8 @@ static const u16 sTutorLearnsets[] =
                       | TUTOR(MOVE_THUNDER_WAVE)
                       | TUTOR(MOVE_SUBSTITUTE),
 
-    [SPECIES_RATICATE] = TUTOR(MOVE_BODY_SLAM)
+    [SPECIES_RATICATE] = TUTOR(MOVE_SWORDS_DANCE)
+                       | TUTOR(MOVE_BODY_SLAM)
                        | TUTOR(MOVE_DOUBLE_EDGE)
                        | TUTOR(MOVE_COUNTER)
                        | TUTOR(MOVE_MIMIC)

@@ -170,7 +170,7 @@ OneIsland_PokemonCenter_1F_Text_CelioCaughtMoreMonMaybeICanBeUseful::
 OneIsland_PokemonCenter_1F_Text_YoullBeTradingFromTrainersFarAway::
     .string "I'm modifying the Network\n"  
     .string "Machine right now.\p"  
-    .string "I've been trying to establish\p"
+    .string "I've been trying to establish\n"
     .string "communication links between the\l"
     .string "SEVII ISLANDS and other regions.$"
     .string "Once I'm finished, these remote\n"  
