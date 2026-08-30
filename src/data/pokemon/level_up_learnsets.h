@@ -319,7 +319,6 @@ static const u16 sRattataLevelUpLearnset[] = {
 
 static const u16 sRaticateLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_MOVE( 1, MOVE_SWORDS_DANCE),
     LEVEL_UP_MOVE( 3, MOVE_TACKLE),
     LEVEL_UP_MOVE( 3, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 7, MOVE_QUICK_ATTACK),
@@ -332,6 +331,7 @@ static const u16 sRaticateLevelUpLearnset[] = {
     LEVEL_UP_MOVE(38, MOVE_FACADE),
     LEVEL_UP_MOVE(41, MOVE_ENDEAVOR),
     LEVEL_UP_MOVE(45, MOVE_CRUNCH),
+    LEVEL_UP_MOVE(54, MOVE_SWORDS_DANCE),
     LEVEL_UP_END
 };
 
@@ -1192,9 +1192,9 @@ static const u16 sBellsproutLevelUpLearnset[] = {
     LEVEL_UP_MOVE(18, MOVE_ACID),
     LEVEL_UP_MOVE(21, MOVE_RAZOR_LEAF),
     LEVEL_UP_MOVE(25, MOVE_SLUDGE),
+    LEVEL_UP_MOVE(28, MOVE_SLAM),
     LEVEL_UP_MOVE(32, MOVE_SLUDGE_BOMB),
     LEVEL_UP_MOVE(40, MOVE_LEAF_BLADE),
-    LEVEL_UP_MOVE(54, MOVE_SLAM),
     LEVEL_UP_END
 };
 
@@ -1211,6 +1211,7 @@ static const u16 sWeepinbellLevelUpLearnset[] = {
     LEVEL_UP_MOVE(18, MOVE_ACID),
     LEVEL_UP_MOVE(21, MOVE_RAZOR_LEAF),
     LEVEL_UP_MOVE(25, MOVE_SLUDGE),
+    LEVEL_UP_MOVE(28, MOVE_SLAM),
     LEVEL_UP_MOVE(32, MOVE_SLUDGE_BOMB),
     LEVEL_UP_MOVE(40, MOVE_LEAF_BLADE),
     LEVEL_UP_MOVE(54, MOVE_SLAM),
@@ -1233,6 +1234,7 @@ static const u16 sVictreebelLevelUpLearnset[] = {
     LEVEL_UP_MOVE(18, MOVE_ACID),
     LEVEL_UP_MOVE(21, MOVE_RAZOR_LEAF),
     LEVEL_UP_MOVE(25, MOVE_SLUDGE),
+    LEVEL_UP_MOVE(28, MOVE_SLAM),
     LEVEL_UP_MOVE(36, MOVE_SLUDGE_BOMB),
     LEVEL_UP_MOVE(40, MOVE_LEAF_BLADE),
     LEVEL_UP_MOVE(54, MOVE_SLAM),
@@ -1729,6 +1731,7 @@ static const u16 sKrabbyLevelUpLearnset[] = {
 
 static const u16 sKinglerLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
+    LEVEL_UP_MOVE( 1, MOVE_SWORDS_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_VICE_GRIP),
     LEVEL_UP_MOVE( 5, MOVE_LEER),
