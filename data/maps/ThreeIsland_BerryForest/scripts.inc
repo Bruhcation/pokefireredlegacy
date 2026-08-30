@@ -383,7 +383,7 @@ ThreeIsland_BerryForest_Text_Rocket2Intro::
 # 192 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 	.string "Honestly, I just like playing\n"
 # 193 "data/maps/ThreeIsland_BerryForest/scripts.pory"
-	.string "in the berry forest.\p"
+	.string "in the berry forest.$"
 # 194 "data/maps/ThreeIsland_BerryForest/scripts.pory"
 ThreeIsland_BerryForest_Text_Rocket2Defeat::
 # 195 "data/maps/ThreeIsland_BerryForest/scripts.pory"

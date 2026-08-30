@@ -611,7 +611,7 @@ Route23_Text_RegiceCheck::
 # 306 "data/maps/Route23/scripts.pory"
 	.string "BLUE ORB and RED ORB,\l"
 # 307 "data/maps/Route23/scripts.pory"
-	.string "and knowledge on the Master of Dragons.$"
+	.string "and knowledge on the Dragon Master.$"
 # 308 "data/maps/Route23/scripts.pory"
 
 # 309 "data/maps/Route23/scripts.pory"

@@ -142,6 +142,9 @@ Route10_Text_No::
 
 Route10_Text_WeirdRock::
 	.string "The weird rock is shaking a lot.\p"
+	.string "Although, you feel like this\n"
+	.string "interaction will alter KANTO\l"
+	.string "more than you may want?\p"
 	.string "Will you Interact with it?$"
 
 Route10_Text_Appeared::

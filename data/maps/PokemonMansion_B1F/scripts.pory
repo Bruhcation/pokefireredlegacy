@@ -38,7 +38,7 @@ PokemonMansion_B1F_EventScript_Mew::
 	special QuestLog_CutRecording
 	lock
 	faceplayer
-	seteventmon SPECIES_MEW, 50 
+	seteventmon SPECIES_MEW, 70 
 	waitse
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	message PokemonMansion_B1F_Text_Gyaoo
