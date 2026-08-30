@@ -365,6 +365,7 @@
 #define MUS_C_VS_LEGEND_BEAST     356 // MUS_VS_REGI
 #define MUS_VS_RAYQUAZA           357
 #define MUS_RS_VS_WILD            358
+#define MUS_VS_MEW                359
 
 #define MUS_NONE                    0xFFFF
 
