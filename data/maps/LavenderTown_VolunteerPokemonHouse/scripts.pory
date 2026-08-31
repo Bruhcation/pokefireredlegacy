@@ -64,8 +64,8 @@ LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2::
 	.string "So I'll let you return it to them!$"
 
 LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute::
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
 	goto_if_unset FLAG_JIRACHI_WISH, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
 	release
 	end
 

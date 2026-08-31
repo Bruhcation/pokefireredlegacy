@@ -88,7 +88,7 @@ gSongTable::
 	song se_roulette_ball2, 2, 2
 	song se_taillow_wing_flap, 1, 1
 	song se_rs_shop, 1, 1
-	song se_contest_heart, 1, 1
+	song se_sudowoodo_shake, 1, 1
 	song se_contest_curtain_rise, 1, 1
 	song se_contest_curtain_fall, 1, 1
 	song se_contest_icon_change, 1, 1

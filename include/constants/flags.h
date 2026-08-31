@@ -303,10 +303,10 @@
 #define FLAG_MOVE_TUTOR_TAUGHT_SHARPEN    0x11B
 #define FLAG_ADMIN_PETROL              0x11C
 #define FLAG_SHOW_RIVAL_STARTER               0x11D
-#define FLAG_0x11E               0x11E
-#define FLAG_0x11F               0x11F
-#define FLAG_0x120               0x120
-#define FLAG_0x121               0x121
+#define FLAG_HIDE_SPIKE              0x11E
+#define FLAG_HIDE_JVTROVAO       0x11F
+#define FLAG_HIDE_TEAMPLAYER               0x120
+#define FLAG_ROCKBYTHEWATER               0x121
 #define FLAG_0x122               0x122
 #define FLAG_0x123               0x123
 #define FLAG_0x124               0x124

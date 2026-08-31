@@ -12,6 +12,9 @@ SixIsland_OutcastIsland_EventScript_Rocket::
 	end
 
 SixIsland_OutcastIsland_UpdateAlteringCaveMewtwo::
+	setflag FLAG_HIDE_TEAMPLAYER
+	setflag FLAG_HIDE_JVTROVAO
+	setflag FLAG_HIDE_SPIKE
 	goto SixIsland_OutcastIsland_UpdateAlteringCave
 	return
 
@@ -30,39 +33,61 @@ SixIsland_OutcastIsland_UpdateAlteringCave::
 	return
 SetAlteringCave0::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
 	return
 SetAlteringCave1::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 1
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_SPIKE
 	return
 SetAlteringCave2::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 2
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_JVTROVAO
 	return
 SetAlteringCave3::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 3
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_JVTROVAO
 	return
 SetAlteringCave4::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 4
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
 	return
 SetAlteringCave5::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 5
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_SPIKE
 	return
 SetAlteringCave6::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 6
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_SPIKE
+	clearflag FLAG_HIDE_JVTROVAO
 	return
 SetAlteringCave7::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 7
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_SPIKE
+	clearflag FLAG_HIDE_JVTROVAO
+	clearflag FLAG_HIDE_TEAMPLAYER
 	return
 
 SetAlteringCave8::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 8
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_TEAMPLAYER
 	return
 
 SetAlteringCave9::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 9
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
+	clearflag FLAG_HIDE_TEAMPLAYER
 	return
 
 SixIsland_OutcastIsland_EventScript_AlteringCaveDefault::
 	setvar VAR_ALTERING_CAVE_WILD_SET, 0
+	goto_if_set FLAG_HIDE_SEVIIGUYS, EventScript_Return
 	return
 
 `
