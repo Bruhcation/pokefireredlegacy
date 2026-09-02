@@ -145,6 +145,7 @@ PokemonLeague_ChampionsRoom_EventScript_PostBattle::
 PokemonLeague_ChampionsRoom_EventScript_PostBattle2::
 	msgbox PokemonLeague_ChampionsRoom_Text_PostBattle2
 	clearflag FLAG_SHOW_ELITE_FOUR
+	setflag FLAG_POST_GAME_CAP
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_Battle::

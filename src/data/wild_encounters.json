@@ -29532,12 +29532,12 @@
                 "species": "SPECIES_NIDORINA"
               },
               {
-                "min_level": 21,
-                "max_level": 21,
+                "min_level": 19,
+                "max_level": 19,
                 "species": "SPECIES_IGGLYBUFF"
               },
               {
-                "min_level": 21,
+                "min_level": 19,
                 "max_level": 21,
                 "species": "SPECIES_CLEFFA"
               },

@@ -97,6 +97,7 @@ PokemonLeague_LoreleisRoom_EventScript_DefeatedLorelei::
 
 PokemonLeague_LoreleisRoom_EventScript_DefeatedLoreleiRematch::
 	setflag FLAG_DEFEATED_LORELEI
+	setflag FLAG_LORCAP_2
 	call PokemonLeague_EventScript_OpenDoor
 	msgbox PokemonLeague_LoreleisRoom_Text_PostBattle2
 	release

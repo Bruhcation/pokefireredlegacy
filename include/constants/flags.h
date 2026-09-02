@@ -307,8 +307,8 @@
 #define FLAG_HIDE_JVTROVAO       0x11F
 #define FLAG_HIDE_TEAMPLAYER               0x120
 #define FLAG_ROCKBYTHEWATER               0x121
-#define FLAG_0x122               0x122
-#define FLAG_0x123               0x123
+#define FLAG_POST_GAME_CAP   0x122
+#define FLAG_LORCAP_2               0x123
 #define FLAG_0x124               0x124
 #define FLAG_0x125               0x125
 #define FLAG_0x126               0x126
