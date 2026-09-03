@@ -69,3 +69,7 @@ PalletTown_Text_OakYouEnjoyingTraveling::
 	.string "He's in the CINNABAR ISLAND\n"
 	.string "POKECENTER waiting for you!$"
 
+PalletTown_Text_Rock::
+	.string "Well, there is a rock by the\n"
+	.string "water.$"
+

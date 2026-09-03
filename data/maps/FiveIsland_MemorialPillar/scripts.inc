@@ -7,7 +7,7 @@
 # 4 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 .set LOCALID_CELEBI, 8
 # 5 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-.set LOCALID_SUDOWOODO, 9
+.set LOCALID_SUDOWOODO, 10
 # 6 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 
 # 7 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
@@ -67,7 +67,7 @@ FiveIsland_MemorialPillar_EventScript_Sudowoodo::
 # 34 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	waitse
 # 35 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	playse SE_UNLOCK
+	playse SE_SUDOWOODO_SHAKE
 # 36 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShake
 # 37 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
@@ -115,7 +115,7 @@ FiveIsland_MemorialPillar_EventScript_WaterSudowoodo:: @ 8242CFC
 # 58 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	removeitem ITEM_FRESH_WATER, 1
 # 59 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
-	playse SE_UNLOCK
+	playse SE_SUDOWOODO_SHAKE
 # 60 "data/maps/FiveIsland_MemorialPillar/scripts.pory"
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
 # 61 "data/maps/FiveIsland_MemorialPillar/scripts.pory"

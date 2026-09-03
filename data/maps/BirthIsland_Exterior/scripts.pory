@@ -136,6 +136,7 @@ BirthIsland_Exterior_EventScript_Gideon::
 	applymovement LOCALID_GIDEON, Movement_FaceDown
 	waitmovement 0
 	msgbox BirthIsland_Exterior_Text_GideonLetsFight
+	setvar VAR_FORCEANIM, 1
 	trainerbattle_single TRAINER_GIDEON_REMATCH, BirthIsland_Exterior_Text_GideonIntro, BirthIsland_Exterior_Text_GideonDefeat, BirthIsland_Exterior_EventScript_GideonEnd, NO_MUSIC
 	releaseall
 	end
@@ -152,6 +153,7 @@ BirthIsland_Exterior_EventScript_NoThanks::
 	end
 
 BirthIsland_Exterior_EventScript_GideonEnd::
+	setvar VAR_FORCEANIM, 0
 	textcolor NPC_TEXT_COLOR_MALE
 	special HealPlayerParty
 	msgbox BirthIsland_Exterior_Text_GideonPostBattle

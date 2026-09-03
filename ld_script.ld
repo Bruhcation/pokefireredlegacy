@@ -709,7 +709,7 @@ SECTIONS {
         sound/songs/midi/se_roulette_ball2.o(.rodata);
         sound/songs/midi/se_taillow_wing_flap.o(.rodata);
         sound/songs/midi/se_rs_shop.o(.rodata);
-        sound/songs/midi/se_contest_heart.o(.rodata);
+        sound/songs/midi/se_sudowoodo_shake.o(.rodata);
         sound/songs/midi/se_contest_curtain_rise.o(.rodata);
         sound/songs/midi/se_contest_curtain_fall.o(.rodata);
         sound/songs/midi/se_contest_icon_change.o(.rodata);
@@ -980,6 +980,7 @@ SECTIONS {
         sound/songs/midi/mus_vs_rayquaza.o(.rodata);
         sound/songs/midi/mus_rs_vs_wild.o(.rodata);
         sound/songs/midi/mus_vs_mew.o(.rodata);
+        sound/songs/midi/mus_vs_oak_fidas.o(.rodata);
     } > ROM =0
 
     lib_rodata :

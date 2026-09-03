@@ -1842,6 +1842,24 @@ void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFix
     CalculateMonStats(mon);
 }
 
+static u32 UpdatePIDForUnownForms(u16 species, u32 pid)
+{
+    if (species == SPECIES_UNOWN)
+    {
+        pid = 0;
+    }
+    else if (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QMARK)
+    {
+        do
+        {
+            pid = Random32();
+        }
+        while (GET_UNOWN_LETTER(pid) != (species - NUM_SPECIES));
+    }
+
+    return pid;
+}
+
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
@@ -1851,11 +1869,19 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
     ZeroBoxMonData(boxMon);
 
-    if (hasFixedPersonality)
+    if ((species == SPECIES_UNOWN) || (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QMARK))
+    {
+        personality = UpdatePIDForUnownForms(species, personality);
+        species = SPECIES_UNOWN;
+    }
+    else if (hasFixedPersonality)
+    {       
         personality = fixedPersonality;
+    }
     else
+    {
         personality = Random32();
-
+    }
     //Determine original trainer ID
     if (otIdType == OT_ID_RANDOM_NO_SHINY) //Pokemon cannot be shiny
     {

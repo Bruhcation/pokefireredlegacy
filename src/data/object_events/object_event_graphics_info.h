@@ -703,12 +703,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerMLand = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFLand = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_1,
+    .paletteSlot = PALSLOT_NPC_3,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
@@ -3691,5 +3691,43 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower = {
     .subspriteTables = gObjectEventSpriteOamTables_32x32,
     .anims = sAnimTable_Following,
     .images = sPicTable_Togetic,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater2 = {
+	.tileTag = TAG_NONE,
+	.paletteTag = OBJ_EVENT_PAL_TAG_NPC_GREEN,
+	.reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+	.size = 256,
+	.width = 16,
+	.height = 32,
+	.paletteSlot = PALSLOT_NPC_3,
+	.shadowSize = SHADOW_SIZE_M,
+	.inanimate = FALSE,
+    .compressed = FALSE,
+	.tracks = TRACKS_FOOT,
+	.oam = &gObjectEventBaseOam_16x32,
+	.subspriteTables = gObjectEventSpriteOamTables_16x32,
+	.anims = sAnimTable_Standard,
+	.images = sPicTable_SwimmerFWater2,
+	.affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo_2 = { 
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_GREEN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_3,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x16,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Sudowoodo_2,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
