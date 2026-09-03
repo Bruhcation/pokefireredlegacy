@@ -9223,7 +9223,7 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .lvl = 14,
         .species = SPECIES_ONIX,
         .heldItem = ITEM_ORAN_BERRY,
-        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BLOCK},
+        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BIND},
     },
     {
         .iv = TRAINER_PARTY_IVS(25, 15, 25, 25, 25, 25),
