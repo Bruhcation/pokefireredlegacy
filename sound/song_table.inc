@@ -359,6 +359,7 @@ gSongTable::
 	song mus_vs_rayquaza, 0, 0
 	song mus_rs_vs_wild, 0, 0
 	song mus_vs_mew, 0, 0
+	song mus_vs_oak_fidas, 0, 0
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

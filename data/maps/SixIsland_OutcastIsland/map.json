@@ -65,7 +65,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER_2",
       "x": 14,
       "y": 61,
       "elevation": 1,
@@ -79,7 +79,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER_2",
       "x": 10,
       "y": 44,
       "elevation": 1,

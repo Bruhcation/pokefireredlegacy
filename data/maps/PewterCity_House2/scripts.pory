@@ -9,4 +9,5 @@ PewterCity_House2_EventScript_OldMan::
 PewterCity_House2_EventScript_LittleBoy::
 	msgbox PewterCity_House2_Text_MonsEasierCatchIfStatused, MSGBOX_NPC
 	end
+
 `

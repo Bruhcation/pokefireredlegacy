@@ -57,96 +57,122 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 # 29 "data/maps/CeruleanCave_B1F/scripts.pory"
 	faceplayer
 # 30 "data/maps/CeruleanCave_B1F/scripts.pory"
-	waitse
+	call_if_set FLAG_NUZLOCKE, CeruleanCave_B1F_EventScript_MewtwoUnimpressed
 # 31 "data/maps/CeruleanCave_B1F/scripts.pory"
-	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
+	waitse
 # 32 "data/maps/CeruleanCave_B1F/scripts.pory"
-	message CeruleanCave_B1F_Text_Mew
+	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 # 33 "data/maps/CeruleanCave_B1F/scripts.pory"
-	waitmessage
+	message CeruleanCave_B1F_Text_Mew
 # 34 "data/maps/CeruleanCave_B1F/scripts.pory"
-	waitmoncry
+	waitmessage
 # 35 "data/maps/CeruleanCave_B1F/scripts.pory"
-	delay 20
+	waitmoncry
 # 36 "data/maps/CeruleanCave_B1F/scripts.pory"
-	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	delay 20
 # 37 "data/maps/CeruleanCave_B1F/scripts.pory"
-	waitbuttonpress
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
 # 38 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setwildbattle SPECIES_MEWTWO, 70
+	waitbuttonpress
 # 39 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	setwildbattle SPECIES_MEWTWO, 70
 # 40 "data/maps/CeruleanCave_B1F/scripts.pory"
-	special StartLegendaryBattle
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 41 "data/maps/CeruleanCave_B1F/scripts.pory"
-	waitstate
+	special StartLegendaryBattle
 # 42 "data/maps/CeruleanCave_B1F/scripts.pory"
-	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	waitstate
 # 43 "data/maps/CeruleanCave_B1F/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
 # 44 "data/maps/CeruleanCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CeruleanCave_B1F_EventScript_DefeatedMewtwo
+	specialvar VAR_RESULT, GetBattleOutcome
 # 45 "data/maps/CeruleanCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CeruleanCave_B1F_EventScript_RanFromMewtwo
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CeruleanCave_B1F_EventScript_DefeatedMewtwo
 # 46 "data/maps/CeruleanCave_B1F/scripts.pory"
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CeruleanCave_B1F_EventScript_RanFromMewtwo
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CeruleanCave_B1F_EventScript_RanFromMewtwo
 # 47 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setflag FLAG_FOUGHT_MEWTWO
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CeruleanCave_B1F_EventScript_RanFromMewtwo
 # 48 "data/maps/CeruleanCave_B1F/scripts.pory"
-	release
-# 49 "data/maps/CeruleanCave_B1F/scripts.pory"
-	end
-# 50 "data/maps/CeruleanCave_B1F/scripts.pory"
-
-# 51 "data/maps/CeruleanCave_B1F/scripts.pory"
-CeruleanCave_B1F_EventScript_DefeatedMewtwo::
-# 52 "data/maps/CeruleanCave_B1F/scripts.pory"
 	setflag FLAG_FOUGHT_MEWTWO
+# 49 "data/maps/CeruleanCave_B1F/scripts.pory"
+	release
+# 50 "data/maps/CeruleanCave_B1F/scripts.pory"
+	end
+# 51 "data/maps/CeruleanCave_B1F/scripts.pory"
+
+# 52 "data/maps/CeruleanCave_B1F/scripts.pory"
+CeruleanCave_B1F_EventScript_MewtwoUnimpressed::
 # 53 "data/maps/CeruleanCave_B1F/scripts.pory"
-	goto EventScript_RemoveStaticMon
+	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, EventScript_Return
 # 54 "data/maps/CeruleanCave_B1F/scripts.pory"
-	end
+	message CeruleanCave_B1F_Text_MewtwoUnimpressed
 # 55 "data/maps/CeruleanCave_B1F/scripts.pory"
-
+	waitmessage
 # 56 "data/maps/CeruleanCave_B1F/scripts.pory"
-CeruleanCave_B1F_EventScript_RanFromMewtwo::
+	release
 # 57 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setvar VAR_0x8004, SPECIES_MEWTWO
+	end
 # 58 "data/maps/CeruleanCave_B1F/scripts.pory"
-	goto EventScript_MonFlewAway
+
 # 59 "data/maps/CeruleanCave_B1F/scripts.pory"
-	end
+CeruleanCave_B1F_Text_MewtwoUnimpressed::
 # 60 "data/maps/CeruleanCave_B1F/scripts.pory"
-
+	.string "MEWTWO seems umimpressed with you.\p"
 # 61 "data/maps/CeruleanCave_B1F/scripts.pory"
-CeruleanCave_B1F_EventScript_Smith::
+	.string "Perhaps you should complete\n"
 # 62 "data/maps/CeruleanCave_B1F/scripts.pory"
-	trainerbattle_single TRAINER_SMITH, CeruleanCave_B1F_Text_SmithIntro, CeruleanCave_B1F_Text_SmithDefeat, CeruleanCave_B1F_EventScript_SmithMan
+	.string "a quest in order to fight it.$"
 # 63 "data/maps/CeruleanCave_B1F/scripts.pory"
-	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
-# 64 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setflag FLAG_SMITH
-# 65 "data/maps/CeruleanCave_B1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 66 "data/maps/CeruleanCave_B1F/scripts.pory"
-	removeobject 13
-# 67 "data/maps/CeruleanCave_B1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 68 "data/maps/CeruleanCave_B1F/scripts.pory"
-	end
-# 69 "data/maps/CeruleanCave_B1F/scripts.pory"
 
+# 64 "data/maps/CeruleanCave_B1F/scripts.pory"
+CeruleanCave_B1F_EventScript_DefeatedMewtwo::
+# 65 "data/maps/CeruleanCave_B1F/scripts.pory"
+	setflag FLAG_FOUGHT_MEWTWO
+# 66 "data/maps/CeruleanCave_B1F/scripts.pory"
+	goto EventScript_RemoveStaticMon
+# 67 "data/maps/CeruleanCave_B1F/scripts.pory"
+	end
+# 68 "data/maps/CeruleanCave_B1F/scripts.pory"
+
+# 69 "data/maps/CeruleanCave_B1F/scripts.pory"
+CeruleanCave_B1F_EventScript_RanFromMewtwo::
 # 70 "data/maps/CeruleanCave_B1F/scripts.pory"
-CeruleanCave_B1F_EventScript_SmithMan::
+	setvar VAR_0x8004, SPECIES_MEWTWO
 # 71 "data/maps/CeruleanCave_B1F/scripts.pory"
-	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
+	goto EventScript_MonFlewAway
 # 72 "data/maps/CeruleanCave_B1F/scripts.pory"
-	setflag FLAG_SMITH
+	end
 # 73 "data/maps/CeruleanCave_B1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
+
 # 74 "data/maps/CeruleanCave_B1F/scripts.pory"
-	removeobject 13
+CeruleanCave_B1F_EventScript_Smith::
 # 75 "data/maps/CeruleanCave_B1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	trainerbattle_single TRAINER_SMITH, CeruleanCave_B1F_Text_SmithIntro, CeruleanCave_B1F_Text_SmithDefeat, CeruleanCave_B1F_EventScript_SmithMan
 # 76 "data/maps/CeruleanCave_B1F/scripts.pory"
+	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
+# 77 "data/maps/CeruleanCave_B1F/scripts.pory"
+	setflag FLAG_SMITH
+# 78 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 79 "data/maps/CeruleanCave_B1F/scripts.pory"
+	removeobject 13
+# 80 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 81 "data/maps/CeruleanCave_B1F/scripts.pory"
+	end
+# 82 "data/maps/CeruleanCave_B1F/scripts.pory"
+
+# 83 "data/maps/CeruleanCave_B1F/scripts.pory"
+CeruleanCave_B1F_EventScript_SmithMan::
+# 84 "data/maps/CeruleanCave_B1F/scripts.pory"
+	msgbox CeruleanCave_B1F_Text_SmithPostBattle, MSGBOX_AUTOCLOSE
+# 85 "data/maps/CeruleanCave_B1F/scripts.pory"
+	setflag FLAG_SMITH
+# 86 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 87 "data/maps/CeruleanCave_B1F/scripts.pory"
+	removeobject 13
+# 88 "data/maps/CeruleanCave_B1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 89 "data/maps/CeruleanCave_B1F/scripts.pory"
 	end

@@ -366,6 +366,7 @@
 #define MUS_VS_RAYQUAZA           357
 #define MUS_RS_VS_WILD            358
 #define MUS_VS_MEW                359
+#define MUS_VS_OAK_FIDAS            360
 
 #define MUS_NONE                    0xFFFF
 

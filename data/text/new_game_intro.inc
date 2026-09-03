@@ -152,7 +152,7 @@ gControlsGuide_Text_SelectButton::
 gControlsGuide_Text_LRButtons::
     .string "If you need help playing the\n"
     .string "game, or on how to do things,\n"
-    .string "press the L or R Button.$"
+    .string "press the L Button.$"
 
 gOakSpeech_Text_AskPlayerGender::
     .string "Now tell me. Are you a boy?\n"

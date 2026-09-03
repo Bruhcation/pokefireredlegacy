@@ -5186,7 +5186,8 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 
     if ((GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL
     && !levelCappedNuzlocke(GetMonData(mon, MON_DATA_LEVEL)))
-    && !(FlagGet(FLAG_NUZLOCKE) && GetMonData(mon, MON_DATA_DEAD)))
+    && !(FlagGet(FLAG_NUZLOCKE) && GetMonData(mon, MON_DATA_DEAD)) 
+    && CanUseRareCandyHardcore() != FALSE)
         noEffect = PokemonItemUseNoEffect(mon, item, gPartyMenu.slotId, 0);
     else
         noEffect = TRUE;
@@ -5194,7 +5195,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
     if (noEffect)
     {
         gPartyMenuUseExitCallback = FALSE;
-        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        if (CanUseRareCandyHardcore() != TRUE)
+            DisplayPartyMenuMessage(gText_WontHaveEffectHardcore, TRUE);
+        else
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = func;
     }

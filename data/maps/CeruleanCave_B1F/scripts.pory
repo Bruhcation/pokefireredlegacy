@@ -27,6 +27,7 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 	special QuestLog_CutRecording
 	lock
 	faceplayer
+	call_if_set FLAG_NUZLOCKE, CeruleanCave_B1F_EventScript_MewtwoUnimpressed
 	waitse
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	message CeruleanCave_B1F_Text_Mew
@@ -47,6 +48,18 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 	setflag FLAG_FOUGHT_MEWTWO
 	release
 	end
+
+CeruleanCave_B1F_EventScript_MewtwoUnimpressed::
+	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, EventScript_Return
+	message CeruleanCave_B1F_Text_MewtwoUnimpressed
+	waitmessage
+	release
+	end
+
+CeruleanCave_B1F_Text_MewtwoUnimpressed::
+	.string "MEWTWO seems umimpressed with you.\p"
+	.string "Perhaps you should complete\n"
+	.string "a quest in order to fight it.$"
 
 CeruleanCave_B1F_EventScript_DefeatedMewtwo::
 	setflag FLAG_FOUGHT_MEWTWO

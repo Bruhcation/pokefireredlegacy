@@ -140,7 +140,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_QMARK"
               }
             ]
           }
@@ -209,7 +209,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_QMARK"
               }
             ]
           }
@@ -223,62 +223,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_U"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_U"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_O"
               }
             ]
           }
@@ -292,62 +292,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_C"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_D"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_H"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_U"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_U"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_O"
               }
             ]
           }
@@ -361,62 +361,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_I"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_I"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_E"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_E"
               }
             ]
           }
@@ -430,62 +430,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_N"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_S"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_I"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_I"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_E"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_E"
               }
             ]
           }
@@ -499,62 +499,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_P"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_P"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_J"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_J"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_L"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_L"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               }
             ]
           }
@@ -568,62 +568,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_P"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_P"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_J"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_J"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_L"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_L"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_R"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Q"
               }
             ]
           }
@@ -637,62 +637,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Y"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Y"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_T"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_T"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_K"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_K"
               }
             ]
           }
@@ -706,62 +706,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Y"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Y"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_T"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_T"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_G"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_F"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_K"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_K"
               }
             ]
           }
@@ -775,62 +775,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_X"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_X"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_M"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_M"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_B"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_B"
               }
             ]
           }
@@ -844,62 +844,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_V"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_W"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_X"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_X"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_M"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_M"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_B"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_B"
               }
             ]
           }
@@ -913,62 +913,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_EMARK"
               }
             ]
           }
@@ -982,62 +982,62 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_Z"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_UNOWN"
+                "species": "SPECIES_UNOWN_EMARK"
               }
             ]
           }
@@ -29532,8 +29532,8 @@
                 "species": "SPECIES_NIDORINA"
               },
               {
-                "min_level": 19,
-                "max_level": 19,
+                "min_level": 21,
+                "max_level": 21,
                 "species": "SPECIES_IGGLYBUFF"
               },
               {

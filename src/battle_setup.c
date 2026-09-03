@@ -318,6 +318,8 @@ void StartScriptedWildBattle(void)
 
 void StartMarowakBattle(void)
 {
+    u16 heldItem = ITEM_THICK_CLUB;
+
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndMarowakBattle;
     if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
@@ -330,6 +332,7 @@ void StartMarowakBattle(void)
         gBattleTypeFlags = BATTLE_TYPE_GHOST;
     }
     CreateBattleStartTask(GetWildBattleTransition(), 0);
+    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &heldItem);
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -1110,7 +1113,7 @@ bool8 levelCappedNuzlocke(u8 level){
 
 bool8 CanUseRareCandyHardcore(void)//Unused
 {
-    if (!FlagGet(FLAG_HARD) || FlagGet(FLAG_IS_CHAMPION))
+    if (!FlagGet(FLAG_NUZLOCKE) || FlagGet(FLAG_POST_GAME_CAP))
         return TRUE;
     // Before Brock
     if (!FlagGet(FLAG_BADGE01_GET))
@@ -1493,6 +1496,66 @@ bool8 CanUseRareCandyHardcore(void)//Unused
                HasTrainerBeenFought(TRAINER_PKMN_RANGER_BETH) &&
                HasTrainerBeenFought(TRAINER_CRUSH_GIRL_JOCELYN) &&
                HasTrainerBeenFought(TRAINER_COOLTRAINER_AUSTINA);
+    }
+    else if (!FlagGet(FLAG_POST_GAME_CAP))
+    {
+        return HasTrainerBeenFought(TRAINER_TEAM_ROCKET_ADMIN) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_ADMIN_2) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_DAISY) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_CELINA) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_RAYNA) &&
+               HasTrainerBeenFought(TRAINER_LADY_JACKI) &&
+               HasTrainerBeenFought(TRAINER_LADY_GILLIAN) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_DESTIN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_TOBY) &&
+               HasTrainerBeenFought(TRAINER_PKMN_BREEDER_ALIZE) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_MILO) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_CHAZ) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_HAROLD) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_TYLOR) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_MYMO) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_NICOLE) &&
+               HasTrainerBeenFought(TRAINER_SIS_AND_BRO_AVA_GEB) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_JACLYN) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_ROSE) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_EDWARD) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_SAMIR) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_DENISE) &&
+               HasTrainerBeenFought(TRAINER_TWINS_MIU_MIA) &&
+               HasTrainerBeenFought(TRAINER_HIKER_EARL) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_STANLY) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_FOSTER) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_LARRY) &&
+               HasTrainerBeenFought(TRAINER_HIKER_DARYL) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_HECTOR) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_DARIO) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_RODETTE) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_MIAH) &&
+               HasTrainerBeenFought(TRAINER_YOUNG_COUPLE_EVE_JON) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_MASON) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_NICOLAS) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_MADELINE) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_GIRL_CYNDY) &&
+               HasTrainerBeenFought(TRAINER_TAMER_EVAN) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_JACKSON) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_KATELYN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_LEROY) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_MICHELLE) &&
+               HasTrainerBeenFought(TRAINER_COOL_COUPLE_LEX_NYA) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_BRANDON) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_BENJAMIN) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_EDNA) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_CLIFFORD) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_KEITH) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_LAUREN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_BROOKE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_OWEN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_PAUL) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_HANNAH) &&
+               HasTrainerBeenFought(TRAINER_TAMER_JOHN) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_WALTER) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_GILBERT) &&
+               HasTrainerBeenFought(TRAINER_OAK);
     }
     return TRUE;
 }

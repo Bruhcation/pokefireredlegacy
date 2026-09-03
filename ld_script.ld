@@ -980,6 +980,7 @@ SECTIONS {
         sound/songs/midi/mus_vs_rayquaza.o(.rodata);
         sound/songs/midi/mus_rs_vs_wild.o(.rodata);
         sound/songs/midi/mus_vs_mew.o(.rodata);
+        sound/songs/midi/mus_vs_oak_fidas.o(.rodata);
     } > ROM =0
 
     lib_rodata :
