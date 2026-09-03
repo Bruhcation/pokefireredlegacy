@@ -49,11 +49,11 @@ ViridianCity_PokemonCenter_2F_EventScript_Pichu::
 # 25 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	goto_if_set FLAG_SURF_PIKACHU, ViridianCity_PokemonCenter_2F_EventScript_PostPichu
 # 26 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
-	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu2
 # 27 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	waitmessage
 # 28 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
-	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu2, MSGBOX_YESNO
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu, MSGBOX_YESNO
 # 29 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, ViridianCity_PokemonCenter_2F_EventScript_NoPichu
 # 30 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
@@ -111,7 +111,7 @@ ViridianCity_PokemonCenter_2F_Text_Pichu::
 # 56 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 ViridianCity_PokemonCenter_2F_EventScript_End::
 # 57 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
-	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu
+	msgbox ViridianCity_PokemonCenter_2F_Text_Pichu2
 # 58 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"
 	release
 # 59 "data/maps/ViridianCity_PokemonCenter_2F/scripts.pory"

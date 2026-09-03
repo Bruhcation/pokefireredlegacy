@@ -2235,3 +2235,7 @@ DirectSoundWaveData_drum_and_percussion_stick::
 .align 2
 DirectSoundWaveData_unknown_anvil_low::
 	.incbin "sound/direct_sound_samples/unknown_anvil_low.bin"
+
+	.align 2
+DirectSoundWaveData_jv1080_slap_bass::
+	.incbin "sound/direct_sound_samples/jv1080_slap_bass.bin"

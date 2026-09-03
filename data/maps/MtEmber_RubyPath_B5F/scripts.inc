@@ -13,7 +13,7 @@ MtEmber_RubyPath_B5F_EventScript_BrailleMessage::
 # 7 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	setvar VAR_0x8005, 130
 # 8 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	goto_if_set FLAG_SHINY_STARTER, MtEmber_RubyPath_B5F_EventScript_Pokemon
+	call_if_set FLAG_SHINY_STARTER, MtEmber_RubyPath_B5F_EventScript_Pokemon
 # 9 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	braillemessage_wait Braille_Text_Everything
 # 10 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
@@ -81,7 +81,7 @@ MtEmber_RubyPath_B5F_EventScript_NoMirage::
 # 41 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	waitmovement 0
 # 42 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon4
 # 43 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	delay 16
 # 44 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
@@ -119,11 +119,11 @@ MtEmber_RubyPath_B5F_Text_SummonMon4::
 # 60 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	.string "Despite your disapproval,\n"
 # 61 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "a different POKEMON than\l"
+	.string "a different POKEMON than what's\l"
 # 62 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "what's sealed appears\l"
+	.string "sealed appears in your mind?$"
 # 63 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "in your mind?$"
+
 # 64 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 MtEmber_RubyPath_B5F_Text_Notice::
 # 65 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
@@ -131,80 +131,84 @@ MtEmber_RubyPath_B5F_Text_Notice::
 # 66 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	.string "(Perhaps it's the orb?)$"
 # 67 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-MtEmber_RubyPath_B5F_EventScript_Pokemon2::
+
 # 68 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	lock
+MtEmber_RubyPath_B5F_EventScript_Pokemon2::
 # 69 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	faceplayer
+	lock
 # 70 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	playse SE_PIN
+	faceplayer
 # 71 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	waitse
+	playse SE_PIN
 # 72 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitse
 # 73 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 74 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
+	waitmovement 0
 # 75 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	delay 16
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
 # 76 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	goto_if_questlog EventScript_ReleaseEnd
+	delay 16
 # 77 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.ifdef FIRERED
+	goto_if_questlog EventScript_ReleaseEnd
 # 78 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	playmoncry SPECIES_CHARIZARD, CRY_MODE_ENCOUNTER
+	.ifdef FIRERED
 # 79 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_CHARIZARD, CRY_MODE_ENCOUNTER
 # 80 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	setflag FLAG_SHINY_CREATION
-# 81 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	setwildbattle SPECIES_CHARIZARD, 65
-# 82 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.else
-# 83 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.ifdef LEAFGREEN
-# 84 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	playmoncry SPECIES_VENUSAUR, CRY_MODE_ENCOUNTER
-# 85 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	waitmoncry
-# 86 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+# 81 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	setflag FLAG_SHINY_CREATION
+# 82 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	setwildbattle SPECIES_CHARIZARD, 65
+# 83 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	.else
+# 84 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	.ifdef LEAFGREEN
+# 85 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	playmoncry SPECIES_VENUSAUR, CRY_MODE_ENCOUNTER
+# 86 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	waitmoncry
 # 87 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	setwildbattle SPECIES_VENUSAUR, 65
+	setflag FLAG_SHINY_CREATION
 # 88 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.endif
+	setwildbattle SPECIES_VENUSAUR, 65
 # 89 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 	.endif
 # 90 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	dowildbattle
+	.endif
 # 91 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	special QuestLog_CutRecording
+	dowildbattle
 # 92 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
+	special QuestLog_CutRecording
 # 93 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-
+	goto MtEmber_RubyPath_B5F_EventScript_Pokemon3
 # 94 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-MtEmber_RubyPath_B5F_EventScript_Pokemon3::
-# 95 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	msgbox MtEmber_RubyPath_B5F_Text_SummonMon2
-# 96 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	clearflag FLAG_SHINY_STARTER
-# 97 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	release
-# 98 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	end
-# 99 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
 
+# 95 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+MtEmber_RubyPath_B5F_EventScript_Pokemon3::
+# 96 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon2
+# 97 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	clearflag FLAG_SHINY_STARTER
+# 98 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	release
+# 99 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	end
 # 100 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-MtEmber_RubyPath_B5F_Text_SummonMon2::
+
 # 101 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "The room sealed itself\n"
+MtEmber_RubyPath_B5F_Text_SummonMon2::
 # 102 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "from the Shining POKEMON!$"
+	.string "The room sealed itself from the\n"
 # 103 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-MtEmber_RubyPath_B5F_Text_SummonMon::
+	.string "Shining POKEMON!$"
 # 104 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "The shining POKEMON\n"
+
 # 105 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
-	.string "appears in your mind?$"
+MtEmber_RubyPath_B5F_Text_SummonMon::
+# 106 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	.string "The shining POKEMON appears in\n"
+# 107 "data/maps/MtEmber_RubyPath_B5F/scripts.pory"
+	.string "your mind?$"

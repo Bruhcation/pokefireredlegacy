@@ -131,9 +131,9 @@ LavenderTown_VolunteerPokemonHouse_Text_ThankYouForHelping2::
 # 66 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"
 LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute::
 # 67 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"
-	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
-# 68 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"
 	goto_if_unset FLAG_JIRACHI_WISH, LavenderTown_VolunteerPokemonHouse_EventScript_SoulDewCheck
+# 68 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_HasPokeFluteHelpedYou
 # 69 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"
 	release
 # 70 "data/maps/LavenderTown_VolunteerPokemonHouse/scripts.pory"

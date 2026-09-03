@@ -594,9 +594,9 @@ static const struct TrainerMon sParty_Ren[] =
         .isShiny = TRUE,
     },
     {
-        .iv = TRAINER_PARTY_IVS(31, 30, 31, 31, 31, 30),
+        .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 31, 31),
         .lvl = 100,
-        .species = SPECIES_UNOWN,
+        .species = SPECIES_UNOWN_QMARK,
         .heldItem = ITEM_WHITE_HERB,
         .nature = TRAINER_PARTY_NATURE(NATURE_SERIOUS),
         .moves = {MOVE_HIDDEN_POWER, MOVE_SUPERPOWER, MOVE_NATURE_POWER, MOVE_ANCIENT_POWER},
@@ -2043,8 +2043,8 @@ static const struct TrainerMon sParty_Clair[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 65,
-        .species = SPECIES_SALAMENCE,
-        .moves = {MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE, MOVE_CRUNCH},
+        .species = SPECIES_MILOTIC,
+        .moves = {MOVE_DIVE, MOVE_TOXIC, MOVE_ICE_BEAM, MOVE_RECOVER},
         .ev = TRAINER_PARTY_EVS(85, 85, 85, 85, 85, 85),
     }, 
     {
@@ -7249,7 +7249,7 @@ static const struct TrainerMon sParty_BlackBeltTakashi[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 52,
+        .lvl = 50,
         .species = SPECIES_MACHAMP,
         .heldItem = ITEM_BLACK_BELT,
         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_EARTHQUAKE, MOVE_ROCK_TOMB, MOVE_ROCK_SLIDE},
@@ -9213,13 +9213,14 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 12,
         .species = SPECIES_GEODUDE,
-        .moves = {MOVE_NONE, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
+        .moves = {MOVE_BLOCK, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
     },
     {
         .iv = TRAINER_PARTY_IVS(20, 20, 20, 10, 20, 20),
         .lvl = 14,
         .species = SPECIES_ONIX,
-        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_TACKLE, MOVE_BIND},
+        .heldItem = ITEM_ORAN_BERRY,
+        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BIND},
     },
     {
         .iv = TRAINER_PARTY_IVS(25, 15, 25, 25, 25, 25),
@@ -12333,7 +12334,7 @@ static const struct TrainerMon sParty_PsychicRodette[] = {
     {
         .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
         .lvl = 65,
-        .species = SPECIES_UNOWN,
+        .species = SPECIES_UNOWN_EMARK,
     },
     {
         .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -14761,7 +14762,7 @@ static const struct TrainerMon sParty_PsychicRodette2[] = {
     {
         .iv = TRAINER_PARTY_IVS(28, 28, 28, 28, 28, 28),
         .lvl = 67,
-        .species = SPECIES_UNOWN,
+        .species = SPECIES_UNOWN_EMARK,
     },
 };
 
@@ -15352,6 +15353,14 @@ static const struct TrainerMon sParty_EliteFourLance2[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
         .moves = {MOVE_DRAGON_BREATH, MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_REST},
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
+    },
+    {
+        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+        .lvl = 73,
+        .species = SPECIES_SALAMENCE,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_FIRE_BLAST, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE, MOVE_FLY},
+        .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

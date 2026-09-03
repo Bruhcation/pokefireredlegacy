@@ -193,6 +193,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blastoise;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Venusaur;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hex_Maniac;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerFWater2;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sudowoodo_2;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_RED_NORMAL]               = &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE]                 = &gObjectEventGraphicsInfo_RedBike,
@@ -387,4 +390,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HEX_MANIAC]  			 = &gObjectEventGraphicsInfo_Hex_Maniac,
 	[OBJ_EVENT_GFX_POKE_BALL]   			 = &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] 					 = &gObjectEventGraphicsInfo_Follower,
+    [OBJ_EVENT_GFX_SWIMMER_F_WATER_2]        = &gObjectEventGraphicsInfo_SwimmerFWater2,
+    [OBJ_EVENT_GFX_SUDOWOODO_2]              = &gObjectEventGraphicsInfo_Sudowoodo_2,
 };

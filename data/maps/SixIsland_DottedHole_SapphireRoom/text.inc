@@ -10,7 +10,7 @@ SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword::
     .string "I knew that there was a SAPPHIRE\n"
     .string "here, so it belongs to me!\p"
     .string "I'll use this to hold control over\n"
-    .string "the SEVII ISLANDS along with\n"
+    .string "the SEVII ISLANDS along with\l"
     .string "TEAM ROCKET!\p"
     .string "Oh… You're the KANTO CHAMPION?\p"
     .string "People from that region are really\n"

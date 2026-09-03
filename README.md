@@ -113,6 +113,9 @@ For contacts and other pret projects, see [pret.github.io](https://pret.github.i
 Delevoper:
 - SpikeCation (Sole Dev)
 
+Volunteer Assister
+- jvtrovao
+
 Helper:
 - therealteamplayer (Did lots of text fixes and edits)
 

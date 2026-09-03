@@ -90,7 +90,7 @@
 #define SE_ROULETTE_BALL2         86  // SE_TAMAKORO_E
 #define SE_TAILLOW_WING_FLAP      87  // SE_BASABASA
 #define SE_RS_SHOP                88  // SE_REGI
-#define SE_CONTEST_HEART          89  // SE_C_GAJI
+#define SE_SUDOWOODO_SHAKE        89  // SE_C_GAJI
 #define SE_CONTEST_CURTAIN_RISE   90  // SE_C_MAKU_U
 #define SE_CONTEST_CURTAIN_FALL   91  // SE_C_MAKU_D
 #define SE_CONTEST_ICON_CHANGE    92  // SE_C_PASI
@@ -366,6 +366,7 @@
 #define MUS_VS_RAYQUAZA           357
 #define MUS_RS_VS_WILD            358
 #define MUS_VS_MEW                359
+#define MUS_VS_OAK_FIDAS            360
 
 #define MUS_NONE                    0xFFFF
 

@@ -69,27 +69,57 @@ SevenIsland_House_Room2_EventScript_BaldMan::
 	end
 
 SevenIsland_House_Room2_EventScript_Eevee::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_EEVEE, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Eevee, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_EventScript_Jolteon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_JOLTEON, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Jolteon, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_EventScript_Vaporeon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_VAPOREON, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Vaporeon, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_EventScript_Flareon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_FLAREON, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Flareon, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_EventScript_Espeon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ESPEON, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Espeon, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_EventScript_Umbreon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_UMBREON, CRY_MODE_NORMAL
 	msgbox SevenIsland_House_Room2_Text_Umbreon, MSGBOX_NPC
+	waitmoncry
 	end
 
 SevenIsland_House_Room2_Text_Jolteon:

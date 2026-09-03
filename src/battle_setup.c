@@ -318,6 +318,8 @@ void StartScriptedWildBattle(void)
 
 void StartMarowakBattle(void)
 {
+    u16 heldItem = ITEM_THICK_CLUB;
+
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndMarowakBattle;
     if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
@@ -330,6 +332,7 @@ void StartMarowakBattle(void)
         gBattleTypeFlags = BATTLE_TYPE_GHOST;
     }
     CreateBattleStartTask(GetWildBattleTransition(), 0);
+    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &heldItem);
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -1062,7 +1065,7 @@ u8 getLevelCap(void){
     u8 levelCap = 0;
     u16 nextLeader, i;
     const struct TrainerMon *partyData;    
-    if (!FlagGet(FLAG_HARD) || FlagGet(FLAG_IS_CHAMPION))
+    if (!FlagGet(FLAG_HARD) || (FlagGet(FLAG_IS_CHAMPION)))
         return 100;
     if (!FlagGet(FLAG_BADGE01_GET))
         nextLeader = TRAINER_LEADER_BROCK;
@@ -1110,392 +1113,449 @@ bool8 levelCappedNuzlocke(u8 level){
 
 bool8 CanUseRareCandyHardcore(void)//Unused
 {
-    if (!FlagGet(FLAG_NUZLOCKE) || FlagGet(FLAG_IS_CHAMPION))
+    if (!FlagGet(FLAG_NUZLOCKE) || FlagGet(FLAG_POST_GAME_CAP))
         return TRUE;
-
     // Before Brock
     if (!FlagGet(FLAG_BADGE01_GET))
     {
-        return FlagGet(TRAINER_BUG_CATCHER_RICK) &&
-               FlagGet(TRAINER_BUG_CATCHER_SAMMY) &&
-               FlagGet(TRAINER_BUG_CATCHER_DOUG) &&
-               FlagGet(TRAINER_SAM) &&
-               FlagGet(TRAINER_BUG_CATCHER_CHARLIE) &&
-               FlagGet(TRAINER_BUG_CATCHER_ANTHONY) &&
+        return HasTrainerBeenFought(TRAINER_BUG_CATCHER_RICK) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_SAMMY) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_DOUG) &&
+               HasTrainerBeenFought(TRAINER_SAM) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_CHARLIE) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_ANTHONY) &&
                FlagGet(FLAG_BLUE_FOUGHT_ROUTE22) &&
-               FlagGet(TRAINER_CAMPER_LIAM);
+               HasTrainerBeenFought(TRAINER_CAMPER_LIAM);
     }
     // Before Misty
     else if (!FlagGet(FLAG_BADGE02_GET))
     {
-        return FlagGet(TRAINER_YOUNGSTER_BEN) &&
-               FlagGet(TRAINER_YOUNGSTER_CALVIN) &&
-               FlagGet(TRAINER_BUG_CATCHER_COLTON) &&
-               FlagGet(TRAINER_BUG_CATCHER_GREG) &&
-               FlagGet(TRAINER_BUG_CATCHER_JAMES) &&
-               FlagGet(TRAINER_LASS_JANICE) &&
-               FlagGet(TRAINER_LASS_SALLY) &&
-               FlagGet(TRAINER_LASS_ROBIN) &&
-               FlagGet(TRAINER_HIKER_MARCOS) &&
-               FlagGet(TRAINER_YOUNGSTER_JOSH) &&
-               FlagGet(TRAINER_LASS_MIRIAM) &&
-               FlagGet(TRAINER_LASS_IRIS) &&
-               FlagGet(TRAINER_SUPER_NERD_JOVAN) &&
-               FlagGet(TRAINER_BUG_CATCHER_KENT) &&
-               FlagGet(TRAINER_BUG_CATCHER_ROBBY) &&
-               FlagGet(TRAINER_SUPER_NERD_MIGUEL) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_2) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_3) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_4) &&
-               FlagGet(TRAINER_YOUNGSTER_TIMMY) &&
-               FlagGet(TRAINER_BUG_CATCHER_CALE) &&
-               FlagGet(TRAINER_LASS_RELI) &&
-               FlagGet(TRAINER_LASS_ALI) &&
-               FlagGet(TRAINER_CAMPER_SHANE) &&
-               FlagGet(TRAINER_CAMPER_ETHAN) &&
-               FlagGet(TRAINER_PICNICKER_DIANA) &&
-               FlagGet(TRAINER_SWIMMER_MALE_LUIS) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_6);
+        return HasTrainerBeenFought(TRAINER_YOUNGSTER_BEN) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_CALVIN) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_COLTON) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_GREG) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_JAMES) &&
+               HasTrainerBeenFought(TRAINER_LASS_JANICE) &&
+               HasTrainerBeenFought(TRAINER_LASS_SALLY) &&
+               HasTrainerBeenFought(TRAINER_LASS_ROBIN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_MARCOS) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_JOSH) &&
+               HasTrainerBeenFought(TRAINER_LASS_MIRIAM) &&
+               HasTrainerBeenFought(TRAINER_LASS_IRIS) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_JOVAN) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_KENT) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_ROBBY) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_MIGUEL) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_2) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_3) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_4) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_TIMMY) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_CALE) &&
+               HasTrainerBeenFought(TRAINER_LASS_RELI) &&
+               HasTrainerBeenFought(TRAINER_LASS_ALI) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_SHANE) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_ETHAN) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_DIANA) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_LUIS) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_6);
     }
 
     // Before Lt. Surge
     else if (!FlagGet(FLAG_GYM3CAP))
     {
-        return FlagGet(TRAINER_YOUNGSTER_JOEY) &&
-               FlagGet(TRAINER_YOUNGSTER_DAN) &&
-               FlagGet(TRAINER_YOUNGSTER_CHAD) &&
-               FlagGet(TRAINER_PICNICKER_KELSEY) &&
-               FlagGet(TRAINER_LASS_HALEY) &&
-               FlagGet(TRAINER_HIKER_FRANKLIN) &&
-               FlagGet(TRAINER_HIKER_NOB) &&
-               FlagGet(TRAINER_HIKER_WAYNE) &&
-               FlagGet(TRAINER_CAMPER_FLINT) &&
-               FlagGet(TRAINER_BUG_CATCHER_KEIGO) &&
-               FlagGet(TRAINER_BUG_CATCHER_ELIJAH) &&
-               FlagGet(TRAINER_CAMPER_RICKY) &&
-               FlagGet(TRAINER_CAMPER_JEFF) &&
-               FlagGet(TRAINER_PICNICKER_NANCY) &&
-               FlagGet(TRAINER_PICNICKER_ISABELLE) &&
-               FlagGet(TRAINER_YOUNGSTER_EDDIE) &&
-               FlagGet(TRAINER_YOUNGSTER_DILLON) &&
-               FlagGet(TRAINER_YOUNGSTER_YASU) &&
-               FlagGet(TRAINER_YOUNGSTER_DAVE) &&
-               FlagGet(TRAINER_ENGINEER_BRAXTON) &&
-               FlagGet(TRAINER_ENGINEER_BERNIE) &&
-               FlagGet(TRAINER_GAMER_HUGO) &&
-               FlagGet(TRAINER_GAMER_JASPER) &&
-               FlagGet(TRAINER_GAMER_DIRK) &&
-               FlagGet(TRAINER_GAMER_DARIAN) &&
-               FlagGet(TRAINER_LASS_ANN) &&
-               FlagGet(TRAINER_YOUNGSTER_TYLER) &&
-               FlagGet(TRAINER_FISHERMAN_DALE) &&
-               FlagGet(TRAINER_GENTLEMAN_THOMAS) &&
-               FlagGet(TRAINER_GENTLEMAN_BROOKS) &&
-               FlagGet(TRAINER_GENTLEMAN_LAMAR) &&
-               FlagGet(TRAINER_LASS_DAWN) &&
-               FlagGet(TRAINER_FISHERMAN_BARNY) &&
-               FlagGet(TRAINER_SAILOR_PHILLIP) &&
-               FlagGet(TRAINER_SAILOR_HUEY) &&
-               FlagGet(TRAINER_SAILOR_DYLAN) &&
-               FlagGet(TRAINER_SAILOR_LEONARD) &&
-               FlagGet(TRAINER_SAILOR_DUNCAN) &&
-               FlagGet(TRAINER_SAILOR_DWAYNE) &&
-               FlagGet(TRAINER_ENGINEER_BAILY) &&
-               FlagGet(TRAINER_GENTLEMAN_TUCKER);
+        return HasTrainerBeenFought(TRAINER_YOUNGSTER_JOEY) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_DAN) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_CHAD) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_KELSEY) &&
+               HasTrainerBeenFought(TRAINER_LASS_HALEY) &&
+               HasTrainerBeenFought(TRAINER_HIKER_FRANKLIN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_NOB) &&
+               HasTrainerBeenFought(TRAINER_HIKER_WAYNE) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_FLINT) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_KEIGO) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_ELIJAH) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_RICKY) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_JEFF) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_NANCY) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_ISABELLE) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_EDDIE) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_DILLON) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_YASU) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_DAVE) &&
+               HasTrainerBeenFought(TRAINER_ENGINEER_BRAXTON) &&
+               HasTrainerBeenFought(TRAINER_ENGINEER_BERNIE) &&
+               HasTrainerBeenFought(TRAINER_GAMER_HUGO) &&
+               HasTrainerBeenFought(TRAINER_GAMER_JASPER) &&
+               HasTrainerBeenFought(TRAINER_GAMER_DIRK) &&
+               HasTrainerBeenFought(TRAINER_GAMER_DARIAN) &&
+               HasTrainerBeenFought(TRAINER_LASS_ANN) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_TYLER) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_DALE) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_THOMAS) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_BROOKS) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_LAMAR) &&
+               HasTrainerBeenFought(TRAINER_LASS_DAWN) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_BARNY) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_PHILLIP) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_HUEY) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_DYLAN) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_LEONARD) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_DUNCAN) &&
+               HasTrainerBeenFought(TRAINER_SAILOR_DWAYNE) &&
+               HasTrainerBeenFought(TRAINER_ENGINEER_BAILY) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_TUCKER);
     }
 
     // Before Erika
     else if (!FlagGet(FLAG_GYM4CAP))
     {
-        return FlagGet(TRAINER_BUG_CATCHER_BRENT) &&
-               FlagGet(TRAINER_BUG_CATCHER_CONNER) &&
-               FlagGet(TRAINER_CAMPER_CHRIS) &&
-               FlagGet(TRAINER_CAMPER_DREW) &&
-               FlagGet(TRAINER_PICNICKER_ALICIA) &&
-               FlagGet(TRAINER_PICNICKER_CAITLIN) &&
-               FlagGet(TRAINER_HIKER_ALAN) &&
-               FlagGet(TRAINER_HIKER_BRICE) &&
-               FlagGet(TRAINER_HIKER_JEREMY) &&
-               FlagGet(TRAINER_PICNICKER_HEIDI) &&
-               FlagGet(TRAINER_PICNICKER_CAROL) &&
-               FlagGet(TRAINER_POKEMANIAC_HERMAN) &&
-               FlagGet(TRAINER_HIKER_CLARK) &&
-               FlagGet(TRAINER_HIKER_TRENT) &&
-               FlagGet(TRAINER_LASS_PAIGE) &&
-               FlagGet(TRAINER_LASS_ANDREA) &&
-               FlagGet(TRAINER_LASS_MEGAN) &&
-               FlagGet(TRAINER_LASS_JULIA) &&
-               FlagGet(TRAINER_SUPER_NERD_AIDAN) &&
-               FlagGet(TRAINER_SUPER_NERD_GLENN) &&
-               FlagGet(TRAINER_SUPER_NERD_LESLIE) &&
-               FlagGet(TRAINER_GAMER_STAN) &&
-               FlagGet(TRAINER_GAMER_RICH) &&
-               FlagGet(TRAINER_TWINS_ELI_ANNE) &&
-               FlagGet(TRAINER_BIKER_RICARDO) &&
-               FlagGet(TRAINER_BIKER_JAREN) &&
-               FlagGet(TRAINER_YOUNG_COUPLE_LEA_JED) &&
-               FlagGet(TRAINER_HIKER_LENNY) &&
-               FlagGet(TRAINER_HIKER_OLIVER) &&
-               FlagGet(TRAINER_HIKER_LUCAS) &&
-               FlagGet(TRAINER_POKEMANIAC_ASHTON) &&
-               FlagGet(TRAINER_PICNICKER_LEAH) &&
-               FlagGet(TRAINER_PICNICKER_ARIANA) &&
-               FlagGet(TRAINER_PICNICKER_DANA) &&
-               FlagGet(TRAINER_PICNICKER_SOFIA) &&
-               FlagGet(TRAINER_PICNICKER_MARTHA) &&
-               FlagGet(TRAINER_HIKER_DUDLEY) &&
-               FlagGet(TRAINER_HIKER_ALLEN) &&
-               FlagGet(TRAINER_HIKER_ERIC) &&
-               FlagGet(TRAINER_POKEMANIAC_COOPER) &&
-               FlagGet(TRAINER_POKEMANIAC_STEVE) &&
-               FlagGet(TRAINER_POKEMANIAC_WINSTON) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_8) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_9) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_10) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_11) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_12) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_13) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_14) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_15) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_16) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_17) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_18) &&
-               FlagGet(TRAINER_BOSS_GIOVANNI) &&
-               FlagGet(TRAINER_LASS_KAY) &&
-               FlagGet(TRAINER_LASS_LISA) &&
-               FlagGet(TRAINER_PICNICKER_TINA) &&
-               FlagGet(TRAINER_BEAUTY_BRIDGET) &&
-               FlagGet(TRAINER_BEAUTY_TAMIA) &&
-               FlagGet(TRAINER_BEAUTY_LORI) &&
-               FlagGet(TRAINER_FISHERMAN_NED) &&
-               FlagGet(TRAINER_FISHERMAN_CHIP) &&
-               FlagGet(TRAINER_FISHERMAN_HANK) &&
-               FlagGet(TRAINER_FISHERMAN_ELLIOT) &&
-               FlagGet(TRAINER_YOUNG_COUPLE_GIA_JES) &&
-               FlagGet(TRAINER_BLACK_BELT_HITOSHI) &&
-               FlagGet(TRAINER_BLACK_BELT_HIDEKI) &&
-               FlagGet(TRAINER_BLACK_BELT_AARON) &&
-               FlagGet(TRAINER_BLACK_BELT_MIKE) &&
-               FlagGet(TRAINER_BLACK_BELT_KOICHI) &&
-               FlagGet(TRAINER_COOLTRAINER_MARY);
+        return HasTrainerBeenFought(TRAINER_BUG_CATCHER_BRENT) &&
+               HasTrainerBeenFought(TRAINER_BUG_CATCHER_CONNER) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_CHRIS) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_DREW) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_ALICIA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_CAITLIN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_ALAN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_BRICE) &&
+               HasTrainerBeenFought(TRAINER_HIKER_JEREMY) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_HEIDI) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_CAROL) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_HERMAN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_CLARK) &&
+               HasTrainerBeenFought(TRAINER_HIKER_TRENT) &&
+               HasTrainerBeenFought(TRAINER_LASS_PAIGE) &&
+               HasTrainerBeenFought(TRAINER_LASS_ANDREA) &&
+               HasTrainerBeenFought(TRAINER_LASS_MEGAN) &&
+               HasTrainerBeenFought(TRAINER_LASS_JULIA) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_AIDAN) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_GLENN) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_LESLIE) &&
+               HasTrainerBeenFought(TRAINER_GAMER_STAN) &&
+               HasTrainerBeenFought(TRAINER_GAMER_RICH) &&
+               HasTrainerBeenFought(TRAINER_TWINS_ELI_ANNE) &&
+               HasTrainerBeenFought(TRAINER_BIKER_RICARDO) &&
+               HasTrainerBeenFought(TRAINER_BIKER_JAREN) &&
+               HasTrainerBeenFought(TRAINER_YOUNG_COUPLE_LEA_JED) &&
+               HasTrainerBeenFought(TRAINER_HIKER_LENNY) &&
+               HasTrainerBeenFought(TRAINER_HIKER_OLIVER) &&
+               HasTrainerBeenFought(TRAINER_HIKER_LUCAS) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_ASHTON) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_LEAH) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_ARIANA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_DANA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_SOFIA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_MARTHA) &&
+               HasTrainerBeenFought(TRAINER_HIKER_DUDLEY) &&
+               HasTrainerBeenFought(TRAINER_HIKER_ALLEN) &&
+               HasTrainerBeenFought(TRAINER_HIKER_ERIC) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_COOPER) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_STEVE) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_WINSTON) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_8) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_9) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_10) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_11) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_12) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_13) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_14) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_15) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_16) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_17) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_18) &&
+               HasTrainerBeenFought(TRAINER_BOSS_GIOVANNI) &&
+               HasTrainerBeenFought(TRAINER_LASS_KAY) &&
+               HasTrainerBeenFought(TRAINER_LASS_LISA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_TINA) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_BRIDGET) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_TAMIA) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_LORI) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_NED) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_CHIP) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_HANK) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_ELLIOT) &&
+               HasTrainerBeenFought(TRAINER_YOUNG_COUPLE_GIA_JES) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_HITOSHI) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_HIDEKI) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_AARON) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_MIKE) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_KOICHI) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_MARY);
     }
-
     // Before Koga
     else if (!FlagGet(FLAG_GYM5CAP))
     {
-        return FlagGet(TRAINER_FISHERMAN_ANDREW) &&
-               FlagGet(TRAINER_CHANNELER_PATRICIA) &&
-               FlagGet(TRAINER_CHANNELER_CARLY) &&
-               FlagGet(TRAINER_CHANNELER_HOPE) &&
-               FlagGet(TRAINER_CHANNELER_PAULA) &&
-               FlagGet(TRAINER_CHANNELER_LAUREL) &&
-               FlagGet(TRAINER_CHANNELER_JODY) &&
-               FlagGet(TRAINER_CHANNELER_TAMMY) &&
-               FlagGet(TRAINER_CHANNELER_RUTH) &&
-               FlagGet(TRAINER_CHANNELER_KARINA) &&
-               FlagGet(TRAINER_CHANNELER_JANAE) &&
-               FlagGet(TRAINER_CHANNELER_ANGELICA) &&
-               FlagGet(TRAINER_CHANNELER_EMILIA) &&
-               FlagGet(TRAINER_CHANNELER_JENNIFER) &&
-               FlagGet(TRAINER_ROCKER_LUCA) &&
-               FlagGet(TRAINER_CAMPER_JUSTIN) &&
-               FlagGet(TRAINER_BIKER_JARED) &&
-               FlagGet(TRAINER_BEAUTY_LOLA) &&
-               FlagGet(TRAINER_BEAUTY_SHEILA) &&
-               FlagGet(TRAINER_BIRD_KEEPER_SEBASTIAN) &&
-               FlagGet(TRAINER_BIRD_KEEPER_PERRY) &&
-               FlagGet(TRAINER_BIRD_KEEPER_ROBERT) &&
-               FlagGet(TRAINER_PICNICKER_ALMA) &&
-               FlagGet(TRAINER_PICNICKER_SUSIE) &&
-               FlagGet(TRAINER_PICNICKER_VALERIE) &&
-               FlagGet(TRAINER_PICNICKER_GWEN) &&
-               FlagGet(TRAINER_BIKER_MALIK) &&
-               FlagGet(TRAINER_BIKER_LUKAS) &&
-               FlagGet(TRAINER_BIKER_ISAAC) &&
-               FlagGet(TRAINER_BIKER_GERALD) &&
-               FlagGet(TRAINER_BIRD_KEEPER_DONALD) &&
-               FlagGet(TRAINER_BIRD_KEEPER_BENNY) &&
-               FlagGet(TRAINER_BIRD_KEEPER_CARTER) &&
-               FlagGet(TRAINER_BIRD_KEEPER_MITCH) &&
-               FlagGet(TRAINER_BIRD_KEEPER_BECK) &&
-               FlagGet(TRAINER_BIRD_KEEPER_MARLON) &&
-               FlagGet(TRAINER_TWINS_KIRI_JAN) &&
-               FlagGet(TRAINER_BIKER_ERNEST) &&
-               FlagGet(TRAINER_BIKER_ALEX) &&
-               FlagGet(TRAINER_BEAUTY_GRACE) &&
-               FlagGet(TRAINER_BEAUTY_OLIVIA) &&
-               FlagGet(TRAINER_BIRD_KEEPER_EDWIN) &&
-               FlagGet(TRAINER_BIRD_KEEPER_CHESTER) &&
-               FlagGet(TRAINER_PICNICKER_YAZMIN) &&
-               FlagGet(TRAINER_PICNICKER_KINDRA) &&
-               FlagGet(TRAINER_PICNICKER_BECKY) &&
-               FlagGet(TRAINER_PICNICKER_CELIA) &&
-               FlagGet(TRAINER_CRUSH_KIN_RON_MYA) &&
-               FlagGet(TRAINER_BIKER_LAO) &&
-               FlagGet(TRAINER_BIKER_HIDEO) &&
-               FlagGet(TRAINER_BIKER_RUBEN) &&
-               FlagGet(TRAINER_CUE_BALL_KOJI) &&
-               FlagGet(TRAINER_CUE_BALL_LUKE) &&
-               FlagGet(TRAINER_CUE_BALL_CAMRON) &&
-               FlagGet(TRAINER_BIKER_BILLY) &&
-               FlagGet(TRAINER_BIKER_NIKOLAS) &&
-               FlagGet(TRAINER_BIKER_JAXON) &&
-               FlagGet(TRAINER_BIKER_WILLIAM) &&
-               FlagGet(TRAINER_CUE_BALL_RAUL) &&
-               FlagGet(TRAINER_CUE_BALL_ISAIAH) &&
-               FlagGet(TRAINER_CUE_BALL_ZEEK) &&
-               FlagGet(TRAINER_CUE_BALL_JAMAL) &&
-               FlagGet(TRAINER_CUE_BALL_COREY) &&
-               FlagGet(TRAINER_BIKER_VIRGIL) &&
-               FlagGet(TRAINER_BIRD_KEEPER_WILTON) &&
-               FlagGet(TRAINER_BIRD_KEEPER_RAMIRO) &&
-               FlagGet(TRAINER_BIRD_KEEPER_JACOB) &&
-               FlagGet(TRAINER_SWIMMER_MALE_REECE) &&
-               FlagGet(TRAINER_SWIMMER_MALE_RICHARD) &&
-               FlagGet(TRAINER_TAMER_PHIL) &&
-               FlagGet(TRAINER_TAMER_EDGAR) &&
-               FlagGet(TRAINER_JUGGLER_KIRK) &&
-               FlagGet(TRAINER_JUGGLER_SHAWN) &&
-               FlagGet(TRAINER_JUGGLER_KAYDEN) &&
-               FlagGet(TRAINER_LASS_JANINE);
+        return HasTrainerBeenFought(TRAINER_FISHERMAN_ANDREW) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_PATRICIA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_CARLY) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_HOPE) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_PAULA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_LAUREL) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_JODY) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_TAMMY) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_RUTH) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_KARINA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_JANAE) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_ANGELICA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_EMILIA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_JENNIFER) &&
+               HasTrainerBeenFought(TRAINER_ROCKER_LUCA) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_JUSTIN) &&
+               HasTrainerBeenFought(TRAINER_BIKER_JARED) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_LOLA) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_SHEILA) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_SEBASTIAN) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_PERRY) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_ROBERT) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_ALMA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_SUSIE) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_VALERIE) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_GWEN) &&
+               HasTrainerBeenFought(TRAINER_BIKER_MALIK) &&
+               HasTrainerBeenFought(TRAINER_BIKER_LUKAS) &&
+               HasTrainerBeenFought(TRAINER_BIKER_ISAAC) &&
+               HasTrainerBeenFought(TRAINER_BIKER_GERALD) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_DONALD) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_BENNY) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_CARTER) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_MITCH) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_BECK) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_MARLON) &&
+               HasTrainerBeenFought(TRAINER_TWINS_KIRI_JAN) &&
+               HasTrainerBeenFought(TRAINER_BIKER_ERNEST) &&
+               HasTrainerBeenFought(TRAINER_BIKER_ALEX) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_GRACE) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_OLIVIA) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_EDWIN) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_CHESTER) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_YAZMIN) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_KINDRA) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_BECKY) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_CELIA) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_KIN_RON_MYA) &&
+               HasTrainerBeenFought(TRAINER_BIKER_LAO) &&
+               HasTrainerBeenFought(TRAINER_BIKER_HIDEO) &&
+               HasTrainerBeenFought(TRAINER_BIKER_RUBEN) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_KOJI) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_LUKE) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_CAMRON) &&
+               HasTrainerBeenFought(TRAINER_BIKER_BILLY) &&
+               HasTrainerBeenFought(TRAINER_BIKER_NIKOLAS) &&
+               HasTrainerBeenFought(TRAINER_BIKER_JAXON) &&
+               HasTrainerBeenFought(TRAINER_BIKER_WILLIAM) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_RAUL) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_ISAIAH) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_ZEEK) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_JAMAL) &&
+               HasTrainerBeenFought(TRAINER_CUE_BALL_COREY) &&
+               HasTrainerBeenFought(TRAINER_BIKER_VIRGIL) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_WILTON) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_RAMIRO) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_JACOB) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_REECE) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_RICHARD) &&
+               HasTrainerBeenFought(TRAINER_TAMER_PHIL) &&
+               HasTrainerBeenFought(TRAINER_TAMER_EDGAR) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_KIRK) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_SHAWN) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_KAYDEN) &&
+               HasTrainerBeenFought(TRAINER_LASS_JANINE);
     }
 
     else if (!FlagGet(FLAG_GYM6CAP))
     {
-        return FlagGet(TRAINER_SCIENTIST_CONNOR) &&
-               FlagGet(TRAINER_SCIENTIST_JERRY) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_23) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_24) &&
-               FlagGet(TRAINER_SCIENTIST_JOSE) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_25) &&
-               FlagGet(TRAINER_SCIENTIST_RODNEY) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_26) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_27) &&
-               FlagGet(TRAINER_SCIENTIST_BEAU) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_28) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_29) &&
-               FlagGet(TRAINER_JUGGLER_DALTON) &&
-               FlagGet(TRAINER_SCIENTIST_TAYLOR) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_30) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_31) &&
-               FlagGet(TRAINER_SCIENTIST_JOSHUA) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_33) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_34) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_35) &&
-               FlagGet(TRAINER_SCIENTIST_PARKER) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_32) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_36) &&
-               FlagGet(TRAINER_SCIENTIST_ED) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_37) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_38) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_39) &&
-               FlagGet(TRAINER_SCIENTIST_TRAVIS) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_40) &&
-               FlagGet(TRAINER_TEAM_ROCKET_GRUNT_41) &&
-               FlagGet(TRAINER_PSYCHIC_TYRON) &&
-               FlagGet(TRAINER_PSYCHIC_JOHAN) &&
-               FlagGet(TRAINER_PSYCHIC_CAMERON) &&
-               FlagGet(TRAINER_PSYCHIC_PRESTON) &&
-               FlagGet(TRAINER_CHANNELER_AMANDA) &&
-               FlagGet(TRAINER_CHANNELER_STACY) &&
-               FlagGet(TRAINER_CHANNELER_TASHA);
+        return HasTrainerBeenFought(TRAINER_SCIENTIST_CONNOR) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_JERRY) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_23) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_24) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_JOSE) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_25) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_RODNEY) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_26) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_27) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_BEAU) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_28) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_29) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_DALTON) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_TAYLOR) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_30) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_31) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_JOSHUA) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_33) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_34) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_35) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_PARKER) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_32) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_36) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_ED) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_37) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_38) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_39) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_TRAVIS) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_40) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_GRUNT_41) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_TYRON) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_JOHAN) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_CAMERON) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_PRESTON) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_AMANDA) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_STACY) &&
+               HasTrainerBeenFought(TRAINER_CHANNELER_TASHA);
     }
     else if (!FlagGet(FLAG_BADGE07_GET))
     {
-        return FlagGet(TRAINER_SWIMMER_MALE_MATTHEW) &&
-               FlagGet(TRAINER_SWIMMER_MALE_DOUGLAS) &&
-               FlagGet(TRAINER_SWIMMER_MALE_DAVID) &&
-               FlagGet(TRAINER_SWIMMER_MALE_TONY) &&
-               FlagGet(TRAINER_SWIMMER_MALE_AXLE) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_ANYA) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_ALICE) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_CONNIE) &&
-               FlagGet(TRAINER_SIS_AND_BRO_LIA_LUC) &&
-               FlagGet(TRAINER_SWIMMER_MALE_BARRY) &&
-               FlagGet(TRAINER_SWIMMER_MALE_DEAN) &&
-               FlagGet(TRAINER_SWIMMER_MALE_DARRIN) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_TIFFANY) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_NORA) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_MELISSA) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_SHIRLEY) &&
-               FlagGet(TRAINER_BIRD_KEEPER_ROGER) &&
-               FlagGet(TRAINER_PICNICKER_MISSY) &&
-               FlagGet(TRAINER_PICNICKER_IRENE) &&
-               FlagGet(TRAINER_FISHERMAN_RONALD) &&
-               FlagGet(TRAINER_FISHERMAN_CLAUDE) &&
-               FlagGet(TRAINER_FISHERMAN_WADE) &&
-               FlagGet(TRAINER_FISHERMAN_NOLAN) &&
-               FlagGet(TRAINER_SWIMMER_MALE_SPENCER) &&
-               FlagGet(TRAINER_SWIMMER_MALE_JACK) &&
-               FlagGet(TRAINER_SWIMMER_MALE_JEROME) &&
-               FlagGet(TRAINER_SWIMMER_MALE_ROLAND) &&
-               FlagGet(TRAINER_SIS_AND_BRO_LIL_IAN) &&
-               FlagGet(TRAINER_SCIENTIST_TED) &&
-               FlagGet(TRAINER_YOUNGSTER_JOHNSON) &&
-               FlagGet(TRAINER_BURGLAR_ARNIE) &&
-               FlagGet(TRAINER_BURGLAR_SIMON) &&
-               FlagGet(TRAINER_SCIENTIST_BRAYDON) &&
-               FlagGet(TRAINER_BURGLAR_LEWIS) &&
-               FlagGet(TRAINER_SCIENTIST_IVAN) &&
-               FlagGet(TRAINER_SUPER_NERD_ERIK) &&
-               FlagGet(TRAINER_SUPER_NERD_AVERY) &&
-               FlagGet(TRAINER_SUPER_NERD_DEREK) &&
-               FlagGet(TRAINER_SUPER_NERD_ZAC) &&
-               FlagGet(TRAINER_BURGLAR_QUINN) &&
-               FlagGet(TRAINER_BURGLAR_RAMON) &&
-               FlagGet(TRAINER_BURGLAR_DUSTY);
+        return HasTrainerBeenFought(TRAINER_SWIMMER_MALE_MATTHEW) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_DOUGLAS) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_DAVID) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_TONY) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_AXLE) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_ANYA) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_ALICE) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_CONNIE) &&
+               HasTrainerBeenFought(TRAINER_SIS_AND_BRO_LIA_LUC) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_BARRY) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_DEAN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_DARRIN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_TIFFANY) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_NORA) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_MELISSA) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_SHIRLEY) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_ROGER) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_MISSY) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_IRENE) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_RONALD) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_CLAUDE) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_WADE) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_NOLAN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_SPENCER) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_JACK) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_JEROME) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_ROLAND) &&
+               HasTrainerBeenFought(TRAINER_SIS_AND_BRO_LIL_IAN) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_TED) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_JOHNSON) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_ARNIE) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_SIMON) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_BRAYDON) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_LEWIS) &&
+               HasTrainerBeenFought(TRAINER_SCIENTIST_IVAN) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_ERIK) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_AVERY) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_DEREK) &&
+               HasTrainerBeenFought(TRAINER_SUPER_NERD_ZAC) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_QUINN) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_RAMON) &&
+               HasTrainerBeenFought(TRAINER_BURGLAR_DUSTY);
     }
     else if (!FlagGet(FLAG_BADGE08_GET))
     {
-        return FlagGet(TRAINER_TAMER_JASON) &&
-               FlagGet(TRAINER_TAMER_COLE) &&
-               FlagGet(TRAINER_BLACK_BELT_ATSUSHI) &&
-               FlagGet(TRAINER_BLACK_BELT_KIYO) &&
-               FlagGet(TRAINER_BLACK_BELT_TAKASHI) &&
-               FlagGet(TRAINER_COOLTRAINER_SAMUEL) &&
-               FlagGet(TRAINER_COOLTRAINER_YUJI) &&
-               FlagGet(TRAINER_AROMA_LADY_NIKKI) &&
-               FlagGet(TRAINER_AROMA_LADY_VIOLET) &&
-               FlagGet(TRAINER_TUBER_AMIRA) &&
-               FlagGet(TRAINER_TUBER_ALEXIS) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_TISHA) &&
-               FlagGet(TRAINER_TWINS_JOY_MEG) &&
-               FlagGet(TRAINER_COOLTRAINER_WARREN);
+        return HasTrainerBeenFought(TRAINER_TAMER_JASON) &&
+               HasTrainerBeenFought(TRAINER_TAMER_COLE) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_ATSUSHI) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_KIYO) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_TAKASHI) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_SAMUEL) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_YUJI) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_NIKKI) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_VIOLET) &&
+               HasTrainerBeenFought(TRAINER_TUBER_AMIRA) &&
+               HasTrainerBeenFought(TRAINER_TUBER_ALEXIS) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_TISHA) &&
+               HasTrainerBeenFought(TRAINER_TWINS_JOY_MEG) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_WARREN);
     }
     else if (!FlagGet(FLAG_LORCAP))
     {
-        return FlagGet(TRAINER_COOLTRAINER_NAOMI) &&
-               FlagGet(TRAINER_COOLTRAINER_BERKE) &&
-               FlagGet(TRAINER_COOLTRAINER_ROLANDO) &&
-               FlagGet(TRAINER_BLACK_BELT_DAISUKE) &&
-               FlagGet(TRAINER_JUGGLER_NELSON) &&
-               FlagGet(TRAINER_JUGGLER_GREGORY) &&
-               FlagGet(TRAINER_COOLTRAINER_JULIE) &&
-               FlagGet(TRAINER_COOLTRAINER_GEORGE) &&
-               FlagGet(TRAINER_COOLTRAINER_COLBY) &&
-               FlagGet(TRAINER_COOLTRAINER_CAROLINE) &&
-               FlagGet(TRAINER_COOLTRAINER_ALEXA) &&
-               FlagGet(TRAINER_COOLTRAINER_SHANNON) &&
-               FlagGet(TRAINER_TAMER_VINCENT) &&
-               FlagGet(TRAINER_POKEMANIAC_DAWSON) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_ABIGAIL) &&
-               FlagGet(TRAINER_SWIMMER_FEMALE_MARIA) &&
-               FlagGet(TRAINER_SWIMMER_MALE_FINN) &&
-               FlagGet(TRAINER_SWIMMER_MALE_GARRETT) &&
-               FlagGet(TRAINER_FISHERMAN_TOMMY) &&
-               FlagGet(TRAINER_CRUSH_GIRL_SHARON) &&
-               FlagGet(TRAINER_CRUSH_GIRL_TANYA) &&
-               FlagGet(TRAINER_BLACK_BELT_SHEA) &&
-               FlagGet(TRAINER_BLACK_BELT_HUGH) &&
-               FlagGet(TRAINER_CAMPER_BRYCE) &&
-               FlagGet(TRAINER_PICNICKER_CLAIRE) &&
-               FlagGet(TRAINER_CRUSH_KIN_MIK_KIA) &&
-               FlagGet(TRAINER_PKMN_RANGER_LOGAN) &&
-               FlagGet(TRAINER_PKMN_RANGER_BETH) &&
-               FlagGet(TRAINER_CRUSH_GIRL_JOCELYN) &&
-               FlagGet(TRAINER_COOLTRAINER_AUSTINA);
+        return HasTrainerBeenFought(TRAINER_COOLTRAINER_NAOMI) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_BERKE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_ROLANDO) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_DAISUKE) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_NELSON) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_GREGORY) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_JULIE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_GEORGE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_COLBY) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_CAROLINE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_ALEXA) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_SHANNON) &&
+               HasTrainerBeenFought(TRAINER_TAMER_VINCENT) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_DAWSON) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_ABIGAIL) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_MARIA) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_FINN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_GARRETT) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_TOMMY) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_GIRL_SHARON) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_GIRL_TANYA) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_SHEA) &&
+               HasTrainerBeenFought(TRAINER_BLACK_BELT_HUGH) &&
+               HasTrainerBeenFought(TRAINER_CAMPER_BRYCE) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_CLAIRE) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_KIN_MIK_KIA) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_LOGAN) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_BETH) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_GIRL_JOCELYN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_AUSTINA);
+    }
+    else if (!FlagGet(FLAG_POST_GAME_CAP))
+    {
+        return HasTrainerBeenFought(TRAINER_TEAM_ROCKET_ADMIN) &&
+               HasTrainerBeenFought(TRAINER_TEAM_ROCKET_ADMIN_2) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_DAISY) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_CELINA) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_RAYNA) &&
+               HasTrainerBeenFought(TRAINER_LADY_JACKI) &&
+               HasTrainerBeenFought(TRAINER_LADY_GILLIAN) &&
+               HasTrainerBeenFought(TRAINER_YOUNGSTER_DESTIN) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_TOBY) &&
+               HasTrainerBeenFought(TRAINER_PKMN_BREEDER_ALIZE) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_MILO) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_CHAZ) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_HAROLD) &&
+               HasTrainerBeenFought(TRAINER_FISHERMAN_TYLOR) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_MYMO) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_NICOLE) &&
+               HasTrainerBeenFought(TRAINER_SIS_AND_BRO_AVA_GEB) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_JACLYN) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_ROSE) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_EDWARD) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_MALE_SAMIR) &&
+               HasTrainerBeenFought(TRAINER_SWIMMER_FEMALE_DENISE) &&
+               HasTrainerBeenFought(TRAINER_TWINS_MIU_MIA) &&
+               HasTrainerBeenFought(TRAINER_HIKER_EARL) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_STANLY) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_FOSTER) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_LARRY) &&
+               HasTrainerBeenFought(TRAINER_HIKER_DARYL) &&
+               HasTrainerBeenFought(TRAINER_POKEMANIAC_HECTOR) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_DARIO) &&
+               HasTrainerBeenFought(TRAINER_PSYCHIC_RODETTE) &&
+               HasTrainerBeenFought(TRAINER_AROMA_LADY_MIAH) &&
+               HasTrainerBeenFought(TRAINER_YOUNG_COUPLE_EVE_JON) &&
+               HasTrainerBeenFought(TRAINER_JUGGLER_MASON) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_NICOLAS) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_MADELINE) &&
+               HasTrainerBeenFought(TRAINER_CRUSH_GIRL_CYNDY) &&
+               HasTrainerBeenFought(TRAINER_TAMER_EVAN) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_JACKSON) &&
+               HasTrainerBeenFought(TRAINER_PKMN_RANGER_KATELYN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_LEROY) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_MICHELLE) &&
+               HasTrainerBeenFought(TRAINER_COOL_COUPLE_LEX_NYA) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_BRANDON) &&
+               HasTrainerBeenFought(TRAINER_RUIN_MANIAC_BENJAMIN) &&
+               HasTrainerBeenFought(TRAINER_PAINTER_EDNA) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_CLIFFORD) &&
+               HasTrainerBeenFought(TRAINER_BIRD_KEEPER_KEITH) &&
+               HasTrainerBeenFought(TRAINER_BEAUTY_LAUREN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_BROOKE) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_OWEN) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_PAUL) &&
+               HasTrainerBeenFought(TRAINER_PICNICKER_HANNAH) &&
+               HasTrainerBeenFought(TRAINER_TAMER_JOHN) &&
+               HasTrainerBeenFought(TRAINER_GENTLEMAN_WALTER) &&
+               HasTrainerBeenFought(TRAINER_COOLTRAINER_GILBERT) &&
+               HasTrainerBeenFought(TRAINER_OAK);
     }
     return TRUE;
 }
-

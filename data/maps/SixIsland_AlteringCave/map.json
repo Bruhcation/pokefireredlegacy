@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SixIsland_AlteringCave_EventScript_Spike",
-      "flag": "FLAG_HIDE_SEVIIGUYS"
+      "flag": "FLAG_HIDE_SPIKE"
     },
     {
       "type": "object",
@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SixIsland_AlteringCave_EventScript_Jvtrovao",
-      "flag": "FLAG_HIDE_SEVIIGUYS"
+      "flag": "FLAG_HIDE_JVTROVAO"
     },
     {
       "type": "object",
@@ -55,7 +55,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SixIsland_AlteringCave_EventScript_Spell",
-      "flag": "FLAG_HIDE_SEVIIGUYS"
+      "flag": "FLAG_HIDE_TEAMPLAYER"
     }
   ],
   "warp_events": [

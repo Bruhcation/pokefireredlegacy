@@ -43,74 +43,78 @@ SevenIsland_TanobyRuins_MoneanChamber_EventScript_Armstrong::
 # 22 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SevenIsland_TanobyRuins_MoneanChamber_EventScript_NoArmstrong
 # 23 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	trainerbattle_single TRAINER_ARMSTRONG, SevenIsland_TanobyRuins_MoneanChamber_Text_YesArmstrong, SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongDefeat, SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostArmstrong, NO_MUSIC
+	setvar VAR_FORCEANIM, 1
 # 24 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	release
+	trainerbattle_single TRAINER_ARMSTRONG, SevenIsland_TanobyRuins_MoneanChamber_Text_YesArmstrong, SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongDefeat, SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostArmstrong, NO_MUSIC
 # 25 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	end
+	release
 # 26 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-
+	end
 # 27 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostArmstrong::
+
 # 28 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle
+SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostArmstrong::
 # 29 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	setflag FLAG_ARMSTRONG_DEFEATED
+	setvar VAR_FORCEANIM, 0
 # 30 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	cleartrainerflag TRAINER_ARMSTRONG
-# 31 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
-# 32 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	giveitem ITEM_AURORA_TICKET
-# 33 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle2
-# 34 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	release
-# 35 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	end
-# 36 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-
-# 37 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-SevenIsland_TanobyRuins_MoneanChamber_EventScript_CantRematchArmstrong::
-# 38 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
 	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle
-# 39 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	release
-# 40 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	end
-# 41 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-
-# 42 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-SevenIsland_TanobyRuins_MoneanChamber_EventScript_NoArmstrong::
-# 43 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_NoArmstrong
-# 44 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	release
-# 45 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	end
-# 46 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-
-# 47 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-SevenIsland_TanobyRuins_MoneanChamber_EventScript_RematchArmstrong::
-# 48 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrong, MSGBOX_YESNO
-# 49 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, SevenIsland_TanobyRuins_MoneanChamber_EventScript_NoArmstrong
-# 50 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	trainerbattle_single TRAINER_ARMSTRONG, SevenIsland_TanobyRuins_MoneanChamber_Text_YesRematchArmstrong, SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrongDefeat, SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostRematchArmstrong, NO_MUSIC
-# 51 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	release
-# 52 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	end
-# 53 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-
-# 54 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostRematchArmstrong::
-# 55 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
-	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrongDefeat
-# 56 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+# 31 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	setflag FLAG_ARMSTRONG_DEFEATED
+# 32 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
 	cleartrainerflag TRAINER_ARMSTRONG
-# 57 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+# 33 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+# 34 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	giveitem ITEM_AURORA_TICKET
+# 35 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle2
+# 36 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
 	release
+# 37 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	end
+# 38 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+
+# 39 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+SevenIsland_TanobyRuins_MoneanChamber_EventScript_CantRematchArmstrong::
+# 40 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_ArmstrongPostBattle
+# 41 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	release
+# 42 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	end
+# 43 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+
+# 44 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+SevenIsland_TanobyRuins_MoneanChamber_EventScript_NoArmstrong::
+# 45 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_NoArmstrong
+# 46 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	release
+# 47 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	end
+# 48 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+
+# 49 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+SevenIsland_TanobyRuins_MoneanChamber_EventScript_RematchArmstrong::
+# 50 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrong, MSGBOX_YESNO
+# 51 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, SevenIsland_TanobyRuins_MoneanChamber_EventScript_NoArmstrong
+# 52 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	trainerbattle_single TRAINER_ARMSTRONG, SevenIsland_TanobyRuins_MoneanChamber_Text_YesRematchArmstrong, SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrongDefeat, SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostRematchArmstrong, NO_MUSIC
+# 53 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	release
+# 54 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	end
+# 55 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+
+# 56 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+SevenIsland_TanobyRuins_MoneanChamber_EventScript_PostRematchArmstrong::
+# 57 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	msgbox SevenIsland_TanobyRuins_MoneanChamber_Text_RematchArmstrongDefeat
 # 58 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	cleartrainerflag TRAINER_ARMSTRONG
+# 59 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
+	release
+# 60 "data/maps/SevenIsland_TanobyRuins_MoneanChamber/scripts.pory"
 	end

@@ -152,7 +152,7 @@ gControlsGuide_Text_SelectButton::
 gControlsGuide_Text_LRButtons::
     .string "If you need help playing the\n"
     .string "game, or on how to do things,\n"
-    .string "press the L or R Button.$"
+    .string "press the L Button.$"
 
 gOakSpeech_Text_AskPlayerGender::
     .string "Now tell me. Are you a boy?\n"
@@ -176,7 +176,7 @@ gText_Oak_AreYouSure_Hardcore::
 gPikachuIntro_Text_Page4::
 	.string "Thank you for Playing FIRERED\n"
 	.string "REIGNITED and LEAFGREEN REGROWN!\n"
-	.string "Version 2.15!\n"
+	.string "Version 2.17!\n"
     .string "\n"
 	.string "This is a Romhack so if you wanted\n"
 	.string "to play the orignal games log off!\n"

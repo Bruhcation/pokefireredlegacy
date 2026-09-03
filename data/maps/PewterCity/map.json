@@ -193,6 +193,22 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PewterCity_EventScript_HappyGirlButterfree",
       "flag": "0"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
+      "x": 16,
+      "y": 42,
+      "target_local_id": 8,
+      "target_map": "MAP_ROUTE2"
+    },
+    {
+      "type": "clone",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
+      "x": 17,
+      "y": 42,
+      "target_local_id": 9,
+      "target_map": "MAP_ROUTE2"
     }
   ],
   "warp_events": [

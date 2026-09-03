@@ -293,7 +293,7 @@
     {
       "type": "hidden_item",
       "x": 17,
-      "y": 29,
+      "y": 28,
       "elevation": 3,
       "item": "ITEM_PERSIM_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE10_PERSIM_BERRY",
@@ -312,8 +312,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 14,
-      "y": 26,
+      "x": 18,
+      "y": 4,
       "elevation": 0,
       "item": "ITEM_LIGHT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE10_LIGHTBALL",
