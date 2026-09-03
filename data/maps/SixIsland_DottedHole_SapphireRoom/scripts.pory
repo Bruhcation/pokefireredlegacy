@@ -222,8 +222,8 @@ SixIsland_DottedHole_SapphireRoom_Movement_PlayerWatchThiefExit::
 
 SixIsland_DottedHole_SapphireRoom_EventScript_BrailleMessage::
 	lockall
+	call_if_set FLAG_ORBING, SixIsland_DottedHole_SapphireRoom_EventScript_Orb
 	setvar VAR_0x8005, 130
-	goto_if_set FLAG_ORBING, SixIsland_DottedHole_SapphireRoom_EventScript_Orb
 	braillemessage_wait Braille_Text_LetTheTwo
 	braillemessage_wait Braille_Text_Glittering
 	braillemessage_wait Braille_Text_Stones
@@ -278,9 +278,9 @@ SixIsland_DottedHole_SapphireRoom_EventScript_PostMirage::
 	waitmessage
 	waitfanfare 
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_Orbing
-	delay_16
+	waitmessage
 	msgbox SixIsland_DottedHole_SapphireRoom_Text_Goodbye
-	releaseall
+	release
 	end
 
 SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage::
@@ -291,27 +291,25 @@ SixIsland_DottedHole_SapphireRoom_EventScript_NoMirage::
 SixIsland_DottedHole_SapphireRoom_Text_Ren::
 	.string "Hello {PLAYER}, I notice you\n"
 	.string "have the Blue Orb.\p"
-	.string "That means you must be\n"
-	.string "a great battler huh?\p"
-	.string "Call me surpised that\n"
-	.string "you got this face and managed\l"
-	.string "to find this orb's purpose!\p"
-	.string "In terms of what I am, don't worry.\p"
-	.string "All I know is that I want\n"
-	.string "a battle with you, if you want.$"
+	.string "That must be your here\n"
+	.string "looking for the RED ORB too?\l"
+	.string "Well I do have it, but I won't\l"
+	.string "give it easily!\p"
+	.string "Especially with GROUDON and\n"
+	.string "KYOGRE on the line!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_Notice::
 	.string "(You noticed a voice in the air.)$"
 
 SixIsland_DottedHole_SapphireRoom_Text_Mirage::
-	.string "Do you wish to battle.\n"
-	.string "My team will the must\l"
-	.string "stronger than the rest.$"
+	.string "So, do you wish to battle?\p"
+	.string "My team has special things\n"
+	.string "no other teams have.$"
 
 SixIsland_DottedHole_SapphireRoom_Text_NoMirage::
-	.string "Guess you need more\n"
-	.string "time to train than,\l"
-	.string "take your time!$"	
+	.string "Guess you need more time to\n"
+	.string "train than.\p"
+	.string "Take your time!$"	
 
 SixIsland_DottedHole_SapphireRoom_Text_PostMirage::
 	.string "Wow! What a amazing battle!\n"
@@ -319,13 +317,13 @@ SixIsland_DottedHole_SapphireRoom_Text_PostMirage::
 	.string "this battle is Green all around!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_Orbing::
-	.string "This orb if exposed\n"
-	.string "to the right place,\l"
-	.string "say, a place where you\l"
-	.string "found a red gem,\l"
-	.string "will let you encounter\l"
+	.string "This orb if exposed to the \n"
+	.string "right place,\l"
+	.string "Say, a place where you found a \l"
+	.string "red gem,\l"
+	.string "It will let you encounter\l"
 	.string "something shiny!\p"
-	.string "Better not let it waste.$"
+	.string "So better not let it waste!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_YesMirage::
 	.string "Alright.\n"
@@ -334,15 +332,15 @@ SixIsland_DottedHole_SapphireRoom_Text_YesMirage::
 	.string "and may be green in success!$"
 
 SixIsland_DottedHole_SapphireRoom_Text_MiragePostBattle::
-	.string "Ok, guess I gotta give\n"
-	.string "you this reward.$"
+	.string "Ok, guess I gotta give you\n"
+	.string "this reward.$"
 
 SixIsland_DottedHole_SapphireRoom_Text_Goodbye::
-	.string "Alright than, I better\n"
-	.string "get going now.\p"
+	.string "Alright than, I better get\n"
+	.string "going now.\p"
 	.string "And as for me and what I am,\n"
 	.string "you should be able to read\l"
 	.string "the connections from this battle.\p"
 	.string "...\n"
-	.string "Goodbye {PLAYER}$"
+	.string "Goodbye {PLAYER}.$"
 `

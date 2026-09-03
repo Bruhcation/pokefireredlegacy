@@ -88,7 +88,7 @@ gSongTable::
 	song se_roulette_ball2, 2, 2
 	song se_taillow_wing_flap, 1, 1
 	song se_rs_shop, 1, 1
-	song se_contest_heart, 1, 1
+	song se_sudowoodo_shake, 1, 1
 	song se_contest_curtain_rise, 1, 1
 	song se_contest_curtain_fall, 1, 1
 	song se_contest_icon_change, 1, 1
@@ -359,6 +359,7 @@ gSongTable::
 	song mus_vs_rayquaza, 0, 0
 	song mus_rs_vs_wild, 0, 0
 	song mus_vs_mew, 0, 0
+	song mus_vs_oak_fidas, 0, 0
 
 dummy_song_header:
 	.byte 0, 0, 0, 0

@@ -2,7 +2,7 @@ raw `
 .set LOCALID_MEMORIAL_MAN, 1
 .set LOCALID_OLD_LADY, 7
 .set LOCALID_CELEBI, 8
-.set LOCALID_SUDOWOODO, 9
+.set LOCALID_SUDOWOODO, 10
 
 FiveIsland_MemorialPillar_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, FiveIsland_MemorialPillar_OnResume
@@ -32,7 +32,7 @@ FiveIsland_MemorialPillar_EventScript_ShowSudowoodo::
 FiveIsland_MemorialPillar_EventScript_Sudowoodo::
 	lock
 	waitse
-	playse SE_UNLOCK
+	playse SE_SUDOWOODO_SHAKE
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShake
 	waitmovement 0
 	checkitem ITEM_FRESH_WATER, 1
@@ -56,7 +56,7 @@ FiveIsland_MemorialPillar_EventScript_WaterSudowoodo:: @ 8242CFC
 	lock
 	faceplayer
 	removeitem ITEM_FRESH_WATER, 1
-	playse SE_UNLOCK
+	playse SE_SUDOWOODO_SHAKE
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry
 	waitmovement 0
 	applymovement LOCALID_SUDOWOODO, FiveIsland_MemorialPillar_Movement_SudowoodoShakeAngry

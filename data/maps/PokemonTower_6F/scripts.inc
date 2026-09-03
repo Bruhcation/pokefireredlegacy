@@ -17,7 +17,7 @@ PokemonTower_6F_EventScript_MarowakGhost::
 # 9 "data/maps/PokemonTower_6F/scripts.pory"
 	goto_if_questlog EventScript_ReleaseEnd
 # 10 "data/maps/PokemonTower_6F/scripts.pory"
-	setwildbattle SPECIES_MAROWAK, 30
+	setwildbattle SPECIES_MAROWAK, 35
 # 11 "data/maps/PokemonTower_6F/scripts.pory"
 	special StartMarowakBattle
 # 12 "data/maps/PokemonTower_6F/scripts.pory"

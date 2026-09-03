@@ -120,7 +120,14 @@ FiveIsland_MemorialPillar_Text_OmanPostBattle::
     .string "You made better use of them\n"
     .string "than I possibly could've.\p"
     .string "I know I can grow stronger.\n"  
-    .string "It's just a matter of time.$"  
+    .string "It's just a matter of time!\p"  
+	.string "But I can't believe that I got to\n"
+	.string "be a SEVII MASTER in the\l"
+	.string "first place,\l"
+	.string "Because Apparently this island's\l"
+	.string "previous SEVII MASTER dropped his\l"
+	.string "role and joined TEAM ROCKET\l"
+	.string "for his own cause.$"
 
 FiveIsland_MemorialPillar_Text_NoOman::  
     .string "Maybe some other time.$"  

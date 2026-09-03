@@ -229,9 +229,9 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(HM07_WATERFALL)
                                         | TMHM(HM08_DIVE)),
 
-    [SPECIES_CATERPIE]    = TMHM_LEARNSET(0),
+    [SPECIES_CATERPIE]    = TMHM_LEARNSET(TMHM(HM01_CUT)),
 
-    [SPECIES_METAPOD]     = TMHM_LEARNSET(0),
+    [SPECIES_METAPOD]     = TMHM_LEARNSET(TMHM(HM01_CUT)),
 
     [SPECIES_BUTTERFREE]  = TMHM_LEARNSET(TMHM(TM06_TOXIC)
                                         | TMHM(TM10_HIDDEN_POWER)
@@ -254,6 +254,7 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(TM45_ATTRACT)
                                         | TMHM(TM46_THIEF)
                                         | TMHM(TM48_SKILL_SWAP)
+                                        | TMHM(HM01_CUT)
                                         | TMHM(HM05_FLASH)),
 
     [SPECIES_WEEDLE]      = TMHM_LEARNSET(0),

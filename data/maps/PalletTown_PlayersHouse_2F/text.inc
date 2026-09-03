@@ -6,10 +6,10 @@ PalletTown_PlayersHouse_2F_Text_PlayedWithNES::
 PalletTown_PlayersHouse_2F_Text_PressLRForHelp::
     .string "It's a posted notice…\p"
     .string "If you're confused, ask for HELP!\n"
-    .string "Press the L or R Button!\p"
+    .string "Press the L Button!\p"
 	.string "If your confused on what version\n"
 	.string "we are on,\l"
-	.string "we are on VERSION 2.15!\l"
+	.string "we are on VERSION 2.17!\l"
 	.string "DUEL TYPE STARTER PATCH!\p"
 	.ifdef FIRERED
 	.string "POKEMON FIRE RED: REIGNITED!$"

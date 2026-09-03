@@ -659,7 +659,7 @@ OneIsland_PokemonCenter_1F_EventScript_GiveRainbowPass::
 # 330 "data/maps/OneIsland_PokemonCenter_1F/scripts.pory"
 	setflag FLAG_SYS_SEVII_MAP_4567
 # 331 "data/maps/OneIsland_PokemonCenter_1F/scripts.pory"
-	setflag FLAG_HIDE_JOHTO_LEADERS
+	clearflag FLAG_HIDE_JOHTO_LEADERS
 # 332 "data/maps/OneIsland_PokemonCenter_1F/scripts.pory"
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 # 333 "data/maps/OneIsland_PokemonCenter_1F/scripts.pory"

@@ -5,7 +5,7 @@ MtEmber_RubyPath_B5F_MapScripts::
 MtEmber_RubyPath_B5F_EventScript_BrailleMessage::
 	lockall
 	setvar VAR_0x8005, 130
-	goto_if_set FLAG_SHINY_STARTER, MtEmber_RubyPath_B5F_EventScript_Pokemon
+	call_if_set FLAG_SHINY_STARTER, MtEmber_RubyPath_B5F_EventScript_Pokemon
 	braillemessage_wait Braille_Text_Everything
 	braillemessage_wait Braille_Text_HasMeaning1
 	braillemessage_wait Braille_Text_Existence
@@ -39,7 +39,7 @@ MtEmber_RubyPath_B5F_EventScript_NoMirage::
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
-	msgbox MtEmber_RubyPath_B5F_Text_SummonMon
+	msgbox MtEmber_RubyPath_B5F_Text_SummonMon4
 	delay 16
 	goto_if_questlog EventScript_ReleaseEnd
 	waitse
@@ -58,12 +58,13 @@ MtEmber_RubyPath_B5F_Text_Mon::
 
 MtEmber_RubyPath_B5F_Text_SummonMon4::
 	.string "Despite your disapproval,\n"
-	.string "a different POKEMON than\l"
-	.string "what's sealed appears\l"
-	.string "in your mind?$"
+	.string "a different POKEMON than what's\l"
+	.string "sealed appears in your mind?$"
+
 MtEmber_RubyPath_B5F_Text_Notice::
 	.string "(You noticed a voice in the air.)\p"
 	.string "(Perhaps it's the orb?)$"
+
 MtEmber_RubyPath_B5F_EventScript_Pokemon2::
 	lock
 	faceplayer
@@ -98,10 +99,11 @@ MtEmber_RubyPath_B5F_EventScript_Pokemon3::
 	end
 
 MtEmber_RubyPath_B5F_Text_SummonMon2::
-	.string "The room sealed itself\n"
-	.string "from the Shining POKEMON!$"
+	.string "The room sealed itself from the\n"
+	.string "Shining POKEMON!$"
+
 MtEmber_RubyPath_B5F_Text_SummonMon::
-	.string "The shining POKEMON\n"
-	.string "appears in your mind?$"
+	.string "The shining POKEMON appears in\n"
+	.string "your mind?$"
 
 `

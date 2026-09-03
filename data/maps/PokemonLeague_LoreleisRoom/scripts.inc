@@ -197,10 +197,12 @@ PokemonLeague_LoreleisRoom_EventScript_DefeatedLoreleiRematch::
 # 99 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
 	setflag FLAG_DEFEATED_LORELEI
 # 100 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
-	call PokemonLeague_EventScript_OpenDoor
+	setflag FLAG_LORCAP_2
 # 101 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
-	msgbox PokemonLeague_LoreleisRoom_Text_PostBattle2
+	call PokemonLeague_EventScript_OpenDoor
 # 102 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
-	release
+	msgbox PokemonLeague_LoreleisRoom_Text_PostBattle2
 # 103 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
+	release
+# 104 "data/maps/PokemonLeague_LoreleisRoom/scripts.pory"
 	end

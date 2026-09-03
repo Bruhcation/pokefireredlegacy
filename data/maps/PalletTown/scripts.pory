@@ -1,6 +1,7 @@
 raw `
 .equ LOCALID_SIGN_LADY, 1
 .equ LOCALID_PROF_OAK,  3
+.equ LOCALID_ROCK,      5
 
 .equ SIGN_LADY_READY, VAR_TEMP_2
 
@@ -14,6 +15,7 @@ PalletTown_OnTransition::
 	call_if_set FLAG_PALLET_LADY_NOT_BLOCKING_SIGN, PalletTown_EventScript_TryReadySignLady
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 0, PalletTown_EventScript_SetSignLadyPos
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, PalletTown_EventScript_SetSignLadyDone
+	call PalletTown_UpdateRock
 	end
 
 PalletTown_EventScript_TryReadySignLady::
@@ -37,6 +39,18 @@ PalletTown_EventScript_MoveSignLadyToRouteEntrance::
 	setobjectmovementtype LOCALID_SIGN_LADY, MOVEMENT_TYPE_FACE_DOWN
 	setvar SIGN_LADY_READY, TRUE
 	return
+
+PalletTown_UpdateRock::
+	random 99
+	goto_if_eq VAR_RESULT, 67, PalletTown_ShowRock
+	setflag FLAG_ROCKBYTHEWATER
+	removeobject LOCALID_ROCK
+	return
+
+PalletTown_ShowRock::
+	clearflag FLAG_ROCKBYTHEWATER
+	addobject LOCALID_ROCK
+	end
 
 PalletTown_OnFrame::
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 2, PalletTown_EventScript_OakRatingScene
@@ -397,6 +411,10 @@ PalletTown_Movement_SignLadyMoveOutOfWayLeft::
 
 PalletTown_EventScript_FatMan::
 	msgbox PalletTown_Text_CanStoreItemsAndMonsInPC, MSGBOX_NPC
+	end
+
+PalletTown_EventScript_Rock::
+	msgbox PalletTown_Text_Rock, MSGBOX_SIGN
 	end
 
 PalletTown_EventScript_OaksLabSign::
