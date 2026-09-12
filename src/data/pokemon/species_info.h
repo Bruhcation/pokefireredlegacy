@@ -2143,7 +2143,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseDefense   = 65,
         .baseSpeed     = 75,
         .baseSpAttack  = 100,
-        .baseSpDefense = 60,
+        .baseSpDefense = 70,
         .types = {TYPE_GRASS, TYPE_POISON},
         .catchRate = 45,
         .expYield = 191,
@@ -4932,7 +4932,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseAttack    = 50,
         .baseDefense   = 50,
         .baseSpeed     = 70,
-        .baseSpAttack  = 76,
+        .baseSpAttack  = 86,
         .baseSpDefense = 96,
         .types = {TYPE_NORMAL, TYPE_FLYING},
         .catchRate = 90,
@@ -6788,7 +6788,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_MANTINE] =
     {
-        .baseHP        = 65,
+        .baseHP        = 85,
         .baseAttack    = 50,
         .baseDefense   = 70,
         .baseSpeed     = 70,
