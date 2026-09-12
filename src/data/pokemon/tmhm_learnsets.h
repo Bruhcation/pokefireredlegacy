@@ -5431,6 +5431,7 @@ static const u32 sTMHMLearnsets[][2] =
     [SPECIES_MANTINE]     = TMHM_LEARNSET(TMHM(TM03_WATER_PULSE)
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM07_HAIL)
+                                        | TMHM(TM09_BULLET_SEED)
                                         | TMHM(TM10_HIDDEN_POWER)
                                         | TMHM(TM13_ICE_BEAM)
                                         | TMHM(TM14_BLIZZARD)

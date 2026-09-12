@@ -15351,15 +15351,6 @@ static const struct TrainerMon sParty_EliteFourLance2[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 73,
-        .species = SPECIES_KINGDRA,
-        .heldItem = ITEM_CHESTO_BERRY,
-        .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
-        .moves = {MOVE_DRAGON_BREATH, MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_REST},
-        .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-    },
-    {
-        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-        .lvl = 73,
         .species = SPECIES_SALAMENCE,
         .heldItem = ITEM_LEFTOVERS,
         .moves = {MOVE_FIRE_BLAST, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE, MOVE_FLY},
