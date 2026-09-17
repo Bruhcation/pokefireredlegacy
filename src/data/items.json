@@ -1331,7 +1331,7 @@
     {
       "english": "SUPER REPEL",
       "itemId": "ITEM_SUPER_REPEL",
-      "price": 100,
+      "price": 200,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 200,
       "description_english": "Prevents weak wild POKéMON from\\nappearing for 200 steps.",
@@ -1347,7 +1347,7 @@
     {
       "english": "MAX REPEL",
       "itemId": "ITEM_MAX_REPEL",
-      "price": 130,
+      "price": 250,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 250,
       "description_english": "Prevents weak wild POKéMON from\\nappearing for 250 steps.",
@@ -1379,7 +1379,7 @@
     {
       "english": "REPEL",
       "itemId": "ITEM_REPEL",
-      "price": 30,
+      "price": 100,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 100,
       "description_english": "Prevents weak wild POKéMON from\\nappearing for 100 steps.",
