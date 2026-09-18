@@ -10827,7 +10827,7 @@ static const struct TrainerMon sParty_GideonRematch[] = {
         .heldItem = ITEM_WHITE_HERB,
         .moves = {MOVE_BRICK_BREAK, MOVE_PSYCHO_BOOST, MOVE_SHADOW_BALL, MOVE_THUNDERBOLT},
         .ev = TRAINER_PARTY_EVS(4, 128, 0, 128, 252, 0),
-        .pokeball = ITEM_MASTER_BALL,
+        .ball = ITEM_MASTER_BALL,
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
