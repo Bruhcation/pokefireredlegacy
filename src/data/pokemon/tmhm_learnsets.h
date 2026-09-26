@@ -3911,7 +3911,8 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(TM45_ATTRACT)
                                         | TMHM(TM46_THIEF)
                                         | TMHM(HM01_CUT)
-                                        | TMHM(HM03_SURF)),
+                                        | TMHM(HM03_SURF)
+                                        | TMHM(HM06_ROCK_SMASH)),
 
     [SPECIES_FURRET]      = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM03_WATER_PULSE)
