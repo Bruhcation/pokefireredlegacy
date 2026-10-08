@@ -2361,7 +2361,7 @@ static const struct TrainerMon sParty_SabrinaUnused[] = {
         .lvl = 52,
         .species = SPECIES_MR_MIME,
         .heldItem = ITEM_BRIGHT_POWDER,
-        .moves = {MOVE_SUBSTITUTE, MOVE_PSYCHIC, MOVE_BATON_PASS, MOVE_CALM_MIND},
+        .moves = {MOVE_ICE_PUNCH, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_CALM_MIND},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9219,18 +9219,17 @@ static const struct TrainerMon sParty_LeaderBrock[] = {
         .moves = {MOVE_BLOCK, MOVE_DEFENSE_CURL, MOVE_ROCK_TOMB, MOVE_TACKLE},
     },
     {
-        .iv = TRAINER_PARTY_IVS(20, 20, 20, 10, 20, 20),
+        .iv = TRAINER_PARTY_IVS(20, 10, 20, 10, 20, 20),
         .lvl = 14,
         .species = SPECIES_ONIX,
         .heldItem = ITEM_ORAN_BERRY,
-        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_ROCK_TOMB, MOVE_BIND},
+        .moves = {MOVE_DRAGON_BREATH, MOVE_TORMENT, MOVE_SCREECH, MOVE_BIND},
     },
     {
         .iv = TRAINER_PARTY_IVS(25, 15, 25, 25, 25, 25),
         .lvl = 13,
         .species = SPECIES_KABUTO,
-        .nature = TRAINER_PARTY_NATURE(NATURE_HASTY),
-        .moves = {MOVE_ROCK_THROW, MOVE_NONE, MOVE_ABSORB, MOVE_SCRATCH},
+        .moves = {MOVE_ROCK_TOMB, MOVE_WATER_GUN, MOVE_CUT, MOVE_SCRATCH},
     },
 }; //I hate Brock
 
@@ -9243,7 +9242,7 @@ static const struct TrainerMon sParty_LeaderMisty[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-        .lvl = 20,
+        .lvl = 19,
         .species = SPECIES_GOLDEEN,
         .moves = {MOVE_HORN_ATTACK, MOVE_NONE, MOVE_PECK, MOVE_WATERFALL},
     },
@@ -9307,7 +9306,7 @@ static const struct TrainerMon sParty_LeaderErika[] = {
         .lvl = 35,
         .species = SPECIES_VILEPLUME,
         .heldItem = ITEM_MIRACLE_SEED,
-        .moves = {MOVE_SLEEP_POWDER, MOVE_SOLAR_BEAM, MOVE_SUNNY_DAY, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_SLEEP_POWDER, MOVE_SLUDGE_BOMB, MOVE_SUNNY_DAY, MOVE_GIGA_DRAIN},
     },
 };
 
@@ -9391,7 +9390,7 @@ static const struct TrainerMon sParty_LeaderSabrina[] = {
         .lvl = 47,
         .species = SPECIES_MR_MIME,
         .heldItem = ITEM_FOCUS_BAND,
-        .moves = {MOVE_ICE_PUNCH, MOVE_PSYCHIC, MOVE_BATON_PASS, MOVE_CALM_MIND},
+        .moves = {MOVE_ICE_PUNCH, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_CALM_MIND},
     },
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9403,6 +9402,7 @@ static const struct TrainerMon sParty_LeaderSabrina[] = {
     {
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .lvl = 49,
+        .heldItem = ITEM_AGUAV_BERRY,
         .species = SPECIES_WOBBUFFET,
         .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_ENCORE, MOVE_DESTINY_BOND},
     },

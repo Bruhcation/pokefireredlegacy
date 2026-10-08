@@ -1084,9 +1084,9 @@ u8 getLevelCap(void){
     else if (!FlagGet(FLAG_BADGE08_GET))
         nextLeader = TRAINER_LEADER_GIOVANNI;
     else if (!FlagGet(FLAG_LORCAP))
-        nextLeader = TRAINER_ELITE_FOUR_LORELEI;
+        nextLeader = TRAINER_ROCKER_RANDALL;
     else if (!FlagGet(FLAG_BRUNOCAP))
-        nextLeader = TRAINER_ELITE_FOUR_BRUNO;
+        nextLeader = TRAINER_TAMER_JOHN;
     else if (!FlagGet(FLAG_AGATHACAP))
         nextLeader = TRAINER_ELITE_FOUR_AGATHA;
     else if (!FlagGet(FLAG_MAXCAP))
@@ -1496,6 +1496,22 @@ bool8 CanUseRareCandyHardcore(void)//Unused
                HasTrainerBeenFought(TRAINER_PKMN_RANGER_BETH) &&
                HasTrainerBeenFought(TRAINER_CRUSH_GIRL_JOCELYN) &&
                HasTrainerBeenFought(TRAINER_COOLTRAINER_AUSTINA);
+    }
+    if (!FlagGet(FLAG_BRUNOCAP))
+    {
+        return HasTrainerBeenFought(TRAINER_ELITE_FOUR_LORELEI);
+    }
+    if (!FlagGet(FLAG_AGATHACAP))
+    {
+        return HasTrainerBeenFought(TRAINER_ELITE_FOUR_BRUNO);
+    }
+    if (!FlagGet(FLAG_MAXCAP))
+    {
+        return HasTrainerBeenFought(TRAINER_ELITE_FOUR_AGATHA);
+    }
+    if (!FlagGet(FLAG_IS_CHAMPION))
+    {
+        return HasTrainerBeenFought(TRAINER_ELITE_FOUR_LANCE);
     }
     else if (!FlagGet(FLAG_POST_GAME_CAP))
     {

@@ -27468,8 +27468,8 @@
                 "species": "SPECIES_STARYU"
               },
               {
-                "min_level": 15,
-                "max_level": 25,
+                "min_level": 25,
+                "max_level": 35,
                 "species": "SPECIES_SHELLDER"
               },
               {
@@ -27557,8 +27557,8 @@
                 "species": "SPECIES_STARYU"
               },
               {
-                "min_level": 15,
-                "max_level": 25,
+                "min_level": 25,
+                "max_level": 35,
                 "species": "SPECIES_SHELLDER"
               },
               {

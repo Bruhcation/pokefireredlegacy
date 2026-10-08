@@ -231,7 +231,7 @@ SafariZone_West_EventScript_ItemGoldTeeth::
 	end
 
 SafariZone_West_EventScript_ItemMaxPotion::
-	finditem ITEM_MAX_POTION
+	finditem ITEM_KINGS_ROCK
 	end
 
 SafariZone_West_EventScript_ItemMaxRevive::
