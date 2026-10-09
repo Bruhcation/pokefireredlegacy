@@ -105,7 +105,7 @@ CeruleanCave_B1F_EventScript_MewtwoUnimpressed::
 # 53 "data/maps/CeruleanCave_B1F/scripts.pory"
 	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, EventScript_Return
 # 54 "data/maps/CeruleanCave_B1F/scripts.pory"
-	message CeruleanCave_B1F_Text_MewtwoUnimpressed
+	msgbox CeruleanCave_B1F_Text_MewtwoUnimpressed
 # 55 "data/maps/CeruleanCave_B1F/scripts.pory"
 	waitmessage
 # 56 "data/maps/CeruleanCave_B1F/scripts.pory"
@@ -117,7 +117,7 @@ CeruleanCave_B1F_EventScript_MewtwoUnimpressed::
 # 59 "data/maps/CeruleanCave_B1F/scripts.pory"
 CeruleanCave_B1F_Text_MewtwoUnimpressed::
 # 60 "data/maps/CeruleanCave_B1F/scripts.pory"
-	.string "MEWTWO seems umimpressed with you.\p"
+	.string "It seems umimpressed with you.\p"
 # 61 "data/maps/CeruleanCave_B1F/scripts.pory"
 	.string "Perhaps you should complete\n"
 # 62 "data/maps/CeruleanCave_B1F/scripts.pory"

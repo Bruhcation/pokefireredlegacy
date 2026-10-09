@@ -3598,7 +3598,7 @@ static const struct TrainerMon sParty_YoungsterChad[] = {
     {
         .iv = 0,
         .lvl = 16,
-        .species = SPECIES_EKANS,
+        .species = SPECIES_SLUGMA,
     },
     {
         .iv = 0,
