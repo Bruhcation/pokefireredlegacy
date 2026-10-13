@@ -51,13 +51,13 @@ CeruleanCave_B1F_EventScript_Mewtwo::
 
 CeruleanCave_B1F_EventScript_MewtwoUnimpressed::
 	call_if_set FLAG_SYS_CAN_LINK_WITH_RS, EventScript_Return
-	message CeruleanCave_B1F_Text_MewtwoUnimpressed
+	msgbox CeruleanCave_B1F_Text_MewtwoUnimpressed
 	waitmessage
 	release
 	end
 
 CeruleanCave_B1F_Text_MewtwoUnimpressed::
-	.string "MEWTWO seems umimpressed with you.\p"
+	.string "It seems umimpressed with you.\p"
 	.string "Perhaps you should complete\n"
 	.string "a quest in order to fight it.$"
 

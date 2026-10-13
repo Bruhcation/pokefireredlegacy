@@ -315,7 +315,7 @@ IndigoPlateau_PokemonCenter_1F_Text_No::
 # 158 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 	.string "Hey, I detect that you have more\n"
 # 159 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
-	.string "than 10 rare candies!\l"
+	.string "than 15 rare candies!\l"
 # 160 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"
 	.string "Please put them away before\l"
 # 161 "data/maps/IndigoPlateau_PokemonCenter_1F/scripts.pory"

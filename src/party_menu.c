@@ -405,8 +405,8 @@ static bool8 MonCanEvolve(void);
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType);
 static void ItemEffectToStatString(u8 effectType, u8 *dest);
 static void Task_WaitRareCandyMessage(u8 taskId);
-static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move);
-static bool8 IsFieldMoveTriggeredFromOverworld(u16 move);
+//static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move);
+//static bool8 IsFieldMoveTriggeredFromOverworld(u16 move);
 
 
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
@@ -2999,59 +2999,59 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 // Returns the CanMonLearnTMHM() "tm" index for the given HM move, or 0xFF if it's not
 // one of the 7 badge-gated HMs (i.e. it's Teleport/Dig/Milk Drink/Soft-Boiled/Sweet Scent,
 // which the FIELD MOVES hack option intentionally does not apply to).
-u8 GetFieldMoveHmIndex(u16 move)
-{
-    switch (move)
-    {
-    case MOVE_CUT:        return ITEM_HM01_CUT - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_FLY:         return ITEM_HM02_FLY - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_SURF:        return ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_STRENGTH:    return ITEM_HM04_STRENGTH - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_FLASH:       return ITEM_HM05_FLASH - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_ROCK_SMASH:  return ITEM_HM06_ROCK_SMASH - ITEM_TM01_FOCUS_PUNCH;
-    case MOVE_WATERFALL:   return ITEM_HM07_WATERFALL - ITEM_TM01_FOCUS_PUNCH;
-    default:               return 0xFF;
-    }
-}
+//u8 GetFieldMoveHmIndex(u16 move)
+//{
+    //switch (move)
+    //{
+    //case MOVE_CUT:        return ITEM_HM01_CUT - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_FLY:         return ITEM_HM02_FLY - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_SURF:        return ITEM_HM03_SURF - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_STRENGTH:    return ITEM_HM04_STRENGTH - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_FLASH:       return ITEM_HM05_FLASH - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_ROCK_SMASH:  return ITEM_HM06_ROCK_SMASH - ITEM_TM01_FOCUS_PUNCH;
+    //case MOVE_WATERFALL:   return ITEM_HM07_WATERFALL - ITEM_TM01_FOCUS_PUNCH;
+    //default:               return 0xFF;
+    //}
+//}
 
 // Cut/Strength/Surf/Rock Smash/Waterfall can be triggered directly from the overworld
 // (checkpartymove / PartyHasMonWithSurf), so the FIELD MOVES option intentionally does NOT
 // list them here via the can-learn bypass - only via genuinely knowing them.
-static bool8 IsFieldMoveTriggeredFromOverworld(u16 move)
-{
-    switch (move)
-    {
-    case MOVE_CUT:
-    case MOVE_STRENGTH:
-    case MOVE_SURF:
-    case MOVE_ROCK_SMASH:
-    case MOVE_WATERFALL:
-        return TRUE;
-    default:
-        return FALSE;
-    }
-}
+//static bool8 IsFieldMoveTriggeredFromOverworld(u16 move)
+//{
+    //switch (move)
+    //{
+    //case MOVE_CUT:
+    //case MOVE_STRENGTH:
+    //case MOVE_SURF:
+    //case MOVE_ROCK_SMASH:
+    //case MOVE_WATERFALL:
+        //return TRUE;
+    //default:
+        //return FALSE;
+    //}
+//}
 
 // Checks whether a species could ever learn this field move, regardless of how it's taught:
 // HM (Flash/Fly), TM (Dig), or level-up only (Teleport/Sweet Scent/Milk Drink/Soft-Boiled).
-static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move)
-{
-    u8 hmIndex = GetFieldMoveHmIndex(move);
-    int i;
+//static bool8 CanMonLearnFieldMove(struct Pokemon *mon, u16 species, u16 move)
+//{
+    //u8 hmIndex = GetFieldMoveHmIndex(move);
+    //int i;
 
-    if (hmIndex != 0xFF)
-        return CanMonLearnTMHM(mon, hmIndex) != 0;
+    //if (hmIndex != 0xFF)
+        //return CanMonLearnTMHM(mon, hmIndex) != 0;
 
-    if (move == MOVE_DIG)
-        return CanMonLearnTMHM(mon, ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH) != 0;
+    //if (move == MOVE_DIG)
+        //return CanMonLearnTMHM(mon, ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH) != 0;
 
-    for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
-    {
-        if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == move)
-            return TRUE;
-    }
-    return FALSE;
-}
+    //for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
+    //{
+        //if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == move)
+            //return TRUE;
+    //}
+    //return FALSE;
+//}
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {

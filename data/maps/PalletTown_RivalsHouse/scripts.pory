@@ -166,14 +166,14 @@ PalletTown_RivalsHouse_EventScript_ForgotTownMap::
 	closemessage
 	checkitemspace ITEM_TOWN_MAP
 	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
-	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
+	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_TOWN_MAP
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
 	delay 15
 	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
 	waitmovement 0
 	delay 12
+	fadescreen FADE_FROM_BLACK
 	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2, PalletTown_RivalsHouse_EventScript_ExplainTownMap
 	release
