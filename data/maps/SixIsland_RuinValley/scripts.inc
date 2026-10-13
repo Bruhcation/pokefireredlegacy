@@ -317,7 +317,7 @@ SixIsland_RuinValley_Text_Petrol::
 # 159 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "Do not come any futher,\n"
 # 160 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "or else i'll have to use force!\p"
+	.string "or else i'll have to use force!\l"
 # 161 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "Got that?$"
 # 162 "data/maps/SixIsland_RuinValley/scripts.pory"
@@ -343,6 +343,6 @@ SixIsland_RuinValley_Text_PetrolDefeat::
 # 172 "data/maps/SixIsland_RuinValley/scripts.pory"
 SixIsland_RuinValley_Text_PetrolPostBattle::
 # 173 "data/maps/SixIsland_RuinValley/scripts.pory"
-	.string "Welp guess my cover is blown.\l"
+	.string "Welp guess my cover is blown.\n"
 # 174 "data/maps/SixIsland_RuinValley/scripts.pory"
 	.string "So it's time for me to flee!$"

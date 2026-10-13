@@ -3943,17 +3943,17 @@ static const struct TrainerMon sParty_LassRobin[] = {
 static const struct TrainerMon sParty_LassCrissy[] = {
     {
         .iv = 0,
-        .lvl = 30,
-        .species = SPECIES_PARASECT,
+        .lvl = 40,
+        .species = SPECIES_TANGELA,
     },
     {
         .iv = 0,
-        .lvl = 30,
-        .species = SPECIES_GLOOM,
+        .lvl = 40,
+        .species = SPECIES_VILEPLUME,
     },
     {
         .iv = 0,
-        .lvl = 30,
+        .lvl = 40,
         .species = SPECIES_PARASECT,
     },
 };
