@@ -335,21 +335,21 @@ PalletTown_RivalsHouse_EventScript_ForgotTownMap::
 # 168 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, PalletTown_RivalsHouse_EventScript_NoRoomForTownMap
 # 169 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterRight
+	fadescreen FADE_TO_BLACK
 # 170 "data/maps/PalletTown_RivalsHouse/scripts.pory"
-	waitmovement 0
-# 171 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	removeobject LOCALID_TOWN_MAP
-# 172 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 171 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	setvar VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE, 2
-# 173 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 172 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	delay 15
-# 174 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 173 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	applymovement LOCALID_DAISY, Common_Movement_FacePlayer
-# 175 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 174 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	waitmovement 0
-# 176 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+# 175 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	delay 12
+# 176 "data/maps/PalletTown_RivalsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
 # 177 "data/maps/PalletTown_RivalsHouse/scripts.pory"
 	giveitem_msg PalletTown_RivalsHouse_Text_ReceivedTownMapFromDaisy, ITEM_TOWN_MAP, 1, MUS_OBTAIN_KEY_ITEM
 # 178 "data/maps/PalletTown_RivalsHouse/scripts.pory"

@@ -3911,7 +3911,8 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(TM45_ATTRACT)
                                         | TMHM(TM46_THIEF)
                                         | TMHM(HM01_CUT)
-                                        | TMHM(HM03_SURF)),
+                                        | TMHM(HM03_SURF)
+                                        | TMHM(HM06_ROCK_SMASH)),
 
     [SPECIES_FURRET]      = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM03_WATER_PULSE)
@@ -3966,7 +3967,8 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(HM02_FLY)
                                         | TMHM(HM05_FLASH)),
 
-    [SPECIES_NOCTOWL]     = TMHM_LEARNSET(TMHM(TM06_TOXIC)
+    [SPECIES_NOCTOWL]     = TMHM_LEARNSET(TMHM(TM04_CALM_MIND)
+                                        | TMHM(TM06_TOXIC)
                                         | TMHM(TM10_HIDDEN_POWER)
                                         | TMHM(TM11_SUNNY_DAY)
                                         | TMHM(TM15_HYPER_BEAM)

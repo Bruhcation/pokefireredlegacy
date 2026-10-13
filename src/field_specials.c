@@ -2827,7 +2827,7 @@ void BattleTrophy(void)
 
 void CheckGotMoreThan10RareCandies(void)
 {
-    if (CheckBagHasItem(ITEM_RARE_CANDY, 11))
+    if (CheckBagHasItem(ITEM_RARE_CANDY, 16))
     {
         gSpecialVar_Result = TRUE;
         return;

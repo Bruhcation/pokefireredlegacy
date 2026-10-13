@@ -88,7 +88,7 @@ void ChoosePartyMonByMenuType(u8 menuType);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV2(u8 taskId, TaskFunc task);
 void ShowOpponentPartyMenuInBattle(void);
-u8 GetFieldMoveHmIndex(u16 move);
+//u8 GetFieldMoveHmIndex(u16 move);
 void ItemUseCB_PokeBall(u8 taskId, TaskFunc task);
 
 #endif // GUARD_PARTY_MENU_H

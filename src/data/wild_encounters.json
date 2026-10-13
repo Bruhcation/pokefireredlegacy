@@ -2837,7 +2837,7 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_RATTATA"
+                "species": "SPECIES_SLUGMA"
               },
               {
                 "min_level": 37,
@@ -2975,7 +2975,7 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_RATTATA"
+                "species": "SPECIES_SLUGMA"
               },
               {
                 "min_level": 37,
@@ -23345,7 +23345,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_RATICATE"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 28,
@@ -23542,7 +23542,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 28,
@@ -23611,7 +23611,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 28,
@@ -27468,8 +27468,8 @@
                 "species": "SPECIES_STARYU"
               },
               {
-                "min_level": 15,
-                "max_level": 25,
+                "min_level": 25,
+                "max_level": 35,
                 "species": "SPECIES_SHELLDER"
               },
               {
@@ -27557,8 +27557,8 @@
                 "species": "SPECIES_STARYU"
               },
               {
-                "min_level": 15,
-                "max_level": 25,
+                "min_level": 25,
+                "max_level": 35,
                 "species": "SPECIES_SHELLDER"
               },
               {
