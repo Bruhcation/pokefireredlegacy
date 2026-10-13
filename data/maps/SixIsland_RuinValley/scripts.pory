@@ -157,7 +157,7 @@ SixIsland_RuinValley_Text_Petrol::
 	.string "Hey, this place is under\n"
 	.string "Investigation!\p"
 	.string "Do not come any futher,\n"
-	.string "or else i'll have to use force!\p"
+	.string "or else i'll have to use force!\l"
 	.string "Got that?$"
 
 SixIsland_RuinValley_Text_PetrolIntro::
@@ -170,7 +170,7 @@ SixIsland_RuinValley_Text_PetrolDefeat::
 	.string "I've been foiled!$"
 
 SixIsland_RuinValley_Text_PetrolPostBattle::
-	.string "Welp guess my cover is blown.\l"
+	.string "Welp guess my cover is blown.\n"
 	.string "So it's time for me to flee!$"
 
 `

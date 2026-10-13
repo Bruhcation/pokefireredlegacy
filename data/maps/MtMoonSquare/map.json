@@ -32,8 +32,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CLEFAIRY",
-      "x": 11,
-      "y": 8,
+      "x": 10,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -102,7 +102,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
-      "x": 6,
+      "x": 4,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",

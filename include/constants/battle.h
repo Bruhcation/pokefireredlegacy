@@ -309,6 +309,7 @@
 #define B_WAIT_TIME_LONG  64
 #define B_WAIT_TIME_MED   48
 #define B_WAIT_TIME_SHORT 32
+#define B_WAIT_TIME_SHORTEST 16
 
 #define CASTFORM_NORMAL     0
 #define CASTFORM_FIRE       1

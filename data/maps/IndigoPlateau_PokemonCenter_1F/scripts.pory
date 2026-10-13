@@ -156,7 +156,7 @@ IndigoPlateau_PokemonCenter_1F_EventScript_HardcoreCandyCheckNo::
 
 IndigoPlateau_PokemonCenter_1F_Text_No::
 	.string "Hey, I detect that you have more\n"
-	.string "than 10 rare candies!\l"
+	.string "than 15 rare candies!\l"
 	.string "Please put them away before\l"
 	.string "entering the league!$"
 
