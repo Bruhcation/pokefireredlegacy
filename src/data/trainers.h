@@ -431,9 +431,9 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_MIRAGESTRONG] = {
         .trainerClass = TRAINER_CLASS_MIRAGE_TRAINER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
-        .trainerName = gExpandedPlaceholder_Empty,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = COMPOUND_STRING("ARMSTRONG"),
         .doubleBattle = FALSE,
         .trainerType = TRAINER(.items = {},
                                .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
