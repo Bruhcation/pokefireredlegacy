@@ -500,7 +500,7 @@
 #define TRAINER_GOON_CHAMPION_2                    494
 #define TRAINER_GOON_CHAMPION_3                    495
 #define TRAINER_GIDEON_REMATCH                    496
-#define TRAINER_BUG_CATCHER_8                    497
+#define TRAINER_GIDEON_REMATCH_2                    497
 #define TRAINER_YOUNGSTER_BEN_3                  498
 #define TRAINER_YOUNGSTER_BEN_4                  499
 #define TRAINER_YOUNGSTER_CHAD_2                 500

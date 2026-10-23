@@ -3,6 +3,8 @@ FiveIsland_LostCave_Room13_MapScripts::
 	.byte 0
 
 FiveIsland_LostCave_Room13_EventScript_Oak::
+	lock
+	faceplayer
 	goto_if_set FLAG_DEFEATED_OAK_REMATCH, FiveIsland_LostCave_Room13_EventScript_RematchOak
 	cleartrainerflag TRAINER_OAK2
 	msgbox FiveIsland_LostCave_Room13_Text_Oak, MSGBOX_YESNO

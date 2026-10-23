@@ -46,9 +46,11 @@ PokemonMansion_2F_EventScript_Oak::
 	lock
 	applymovement LOCALID_OAK, Common_Movement_ExclamationMarkDelay
 	playse SE_PIN
-	msgbox PokemonMansion_1F_Text_Oak
 	waitmovement 0
+	msgbox PokemonMansion_1F_Text_Oak
+	waitmessage
 	applymovement LOCALID_OAK, Common_Movement_FacePlayer
+	waitmovement 0
 	msgbox PokemonMansion_1F_Text_Oak22
 	waitmessage 
 	applymovement LOCALID_OAK, Common_Movement_FaceRight
@@ -71,21 +73,23 @@ PokemonMansion_2F_EventScript_Oak::
 PokemonMansion_2F_EventScript_PostOak::
 	setvar VAR_FORCEANIM, 0
 	msgbox PokemonMansion_1F_Text_OakPostBattle
+	waitmessage
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject 5
+	fadescreen FADE_FROM_BLACK
+	delay 40
+	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox PokemonMansion_1F_Text_Mew
+	waitmessage
+	setflag FLAG_AMONGUS
+	clearflag FLAG_AHHH
 	setflag FLAG_OAK2_DEFEATED
 	clearflag FLAG_HIDE_MEW
 	clearflag FLAG_HIDE_EASTER
 	setflag FLAG_HIDE_OAK2
 	clearflag FLAG_HIDE_OAK_IN_HIS_LAB
-	fadescreen FADE_TO_BLACK
-	removeobject 5
-	fadescreen FADE_FROM_BLACK
-	playmoncry SPECIES_MEW, CRY_MODE_NORMAL
-	waitmessage 
-	delay 40
-	msgbox PokemonMansion_1F_Text_Mew
-	waitmessage
-	setflag FLAG_AMONGUS
-	clearflag FLAG_AHHH
 	release
 	end
 

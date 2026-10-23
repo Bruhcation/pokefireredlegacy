@@ -2835,3 +2835,24 @@ void CheckGotMoreThan10RareCandies(void)
 
     gSpecialVar_Result = FALSE;
 }
+
+void EasterEggCheck(void)
+{
+    if (FlagGet(FLAG_OAK2_DEFEATED) &&
+        FlagGet(FLAG_BIRTH_ISLAND_GIDEON) &&
+        FlagGet(FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF) &&
+        FlagGet(FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM11_LAX_INCENSE) &&
+        FlagGet(FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM12_SEA_INCENSE) &&
+        FlagGet(FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM13_MAX_REVIVE) &&
+        FlagGet(FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM14_RARE_CANDY) &&
+        FlagGet(FLAG_HIDE_LOST_CAVE_SELPHY) &&
+        FlagGet(FLAG_JIRACHI_WISH_GOT))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}

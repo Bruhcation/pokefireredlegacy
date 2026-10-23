@@ -64,4 +64,43 @@ FiveIsland_LostCave_Room10_Movement_SelphyApproach::
 	walk_down
 	walk_down
 	step_end
+
+FiveIsland_LostCave_Room10_EventScript_Gideon::
+	lock
+	faceplayer
+	msgbox FiveIsland_LostCave_Room10_Text_Gideon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room10_EventScript_NoGideon
+	trainerbattle_single TRAINER_GIDEON_REMATCH_2, FiveIsland_LostCave_Room10_Text_YesGideon, FiveIsland_LostCave_Room10_Text_GideonDefeat, FiveIsland_LostCave_Room10_EventScript_PostGideon, NO_MUSIC
+	release
+	end
+
+FiveIsland_LostCave_Room10_EventScript_PostGideon::
+	msgbox FiveIsland_LostCave_Room10_Text_GideonPostBattle
+	cleartrainerflag TRAINER_GIDEON_REMATCH_2
+	release
+	end
+
+FiveIsland_LostCave_Room10_EventScript_NoGideon::
+	msgbox FiveIsland_LostCave_Room10_Text_NoGideon
+	release
+	end
+
+FiveIsland_LostCave_Room10_Text_Gideon::
+	.string "Fufufufufu {PLAYER}.\n"
+	.string "I might of gotten a little lost...\l"
+	.string "I might not even be myself!\p"
+	.string "But anyways do you want to\n"
+	.string "have a rematch?$"
+
+FiveIsland_LostCave_Room10_Text_YesGideon::
+	.string "Let's Go!$"
+
+FiveIsland_LostCave_Room10_Text_NoGideon::
+	.string "Fufufufufu...$"
+
+FiveIsland_LostCave_Room10_Text_GideonDefeat::
+	.string "As expected.$"
+
+FiveIsland_LostCave_Room10_Text_GideonPostBattle::
+	.string "Fufufufufu...$"
 `

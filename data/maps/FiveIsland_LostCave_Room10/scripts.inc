@@ -130,3 +130,81 @@ FiveIsland_LostCave_Room10_Movement_SelphyApproach::
 	walk_down
 # 66 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
 	step_end
+# 67 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 68 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_EventScript_Gideon::
+# 69 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	lock
+# 70 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	faceplayer
+# 71 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	msgbox FiveIsland_LostCave_Room10_Text_Gideon, MSGBOX_YESNO
+# 72 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, FiveIsland_LostCave_Room10_EventScript_NoGideon
+# 73 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	trainerbattle_single TRAINER_GIDEON_REMATCH_2, FiveIsland_LostCave_Room10_Text_YesGideon, FiveIsland_LostCave_Room10_Text_GideonDefeat, FiveIsland_LostCave_Room10_EventScript_PostGideon, NO_MUSIC
+# 74 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	release
+# 75 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	end
+# 76 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 77 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_EventScript_PostGideon::
+# 78 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	msgbox FiveIsland_LostCave_Room10_Text_GideonPostBattle
+# 79 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	cleartrainerflag TRAINER_GIDEON_REMATCH_2
+# 80 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	release
+# 81 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	end
+# 82 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 83 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_EventScript_NoGideon::
+# 84 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	msgbox FiveIsland_LostCave_Room10_Text_NoGideon
+# 85 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	release
+# 86 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	end
+# 87 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 88 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_Text_Gideon::
+# 89 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "Fufufufufu {PLAYER}.\n"
+# 90 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "I might of gotten a little lost...\l"
+# 91 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "I might not even be myself!\p"
+# 92 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "But anyways do you want to\n"
+# 93 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "have a rematch?$"
+# 94 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 95 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_Text_YesGideon::
+# 96 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "Let's Go!$"
+# 97 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 98 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_Text_NoGideon::
+# 99 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "Fufufufufu...$"
+# 100 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 101 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_Text_GideonDefeat::
+# 102 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "As expected.$"
+# 103 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+
+# 104 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+FiveIsland_LostCave_Room10_Text_GideonPostBattle::
+# 105 "data/maps/FiveIsland_LostCave_Room10/scripts.pory"
+	.string "Fufufufufu...$"
