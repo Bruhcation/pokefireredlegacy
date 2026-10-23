@@ -4,22 +4,15 @@ FiveIsland_LostCave_Room1_MapScripts::
 	.byte 0
 
 FiveIsland_LostCave_Room1_OnTransition::
-	goto_if_set FLAG_HIDE_EASTER, FiveIsland_LostCave_Room1_EventScript_Mirage
-	setflag FLAG_MIRAGE_FLAG
-	goto_if_set FLAG_JIRACHI_WISH_GOT, FiveIsland_LostCave_Room1_EventScript_MirageShow
+	special EasterEggCheck
+	call_if_eq VAR_RESULT, TRUE, FiveIsland_LostCave_Room1_ShowEasterEggs
+	setflag FLAG_HIDE_EASTER
 	end
 
-FiveIsland_LostCave_Room1_EventScript_MirageShow::
-	clearflag FLAG_MIRAGE_FLAG
+FiveIsland_LostCave_Room1_ShowEasterEggs::
+	clearflag FLAG_HIDE_EASTER
 	end
 
-FiveIsland_LostCave_Room1_EventScript_Mirage::
-	setflag FLAG_JIRACHI_WISH_GOT
-	end
-
-FiveIsland_LostCave_Room1_EventScript_MirageHide::
-	setflag FLAG_MIRAGE_FLAG
-	end
 
 FiveIsland_LostCave_Room1_EventScript_Lawson::
 	trainerbattle_single TRAINER_RUIN_MANIAC_LAWSON, FiveIsland_LostCave_Room1_Text_LawsonIntro, FiveIsland_LostCave_Room1_Text_LawsonDefeat

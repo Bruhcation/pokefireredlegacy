@@ -338,7 +338,7 @@ gSpecials::
 	def_special BattleTrophy
 	def_special GetPartyMonSpecies
 	def_special IsSelectedMonEgg
-	def_special NullFieldSpecial
+	def_special EasterEggCheck
 	def_special NullFieldSpecial
 	def_special LoadPlayerBag
 	def_special Script_FadeOutMapMusic

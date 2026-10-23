@@ -4811,15 +4811,14 @@ const struct Trainer gTrainers[] = {
         .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
         .party = TRAINER_PARTY(sParty_GideonRematch),
     },
-    [TRAINER_BUG_CATCHER_8] = {
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = gExpandedPlaceholder_Empty,
+    [TRAINER_GIDEON_REMATCH_2] = {
+        .trainerClass = TRAINER_CLASS_SEVII_CHAMPION,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST,
+        .trainerName = COMPOUND_STRING("GIDEON"),
         .doubleBattle = FALSE,
-        .trainerType = TRAINER(.items = {},
-                               .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY),
-        .party = TRAINER_PARTY(sParty_BugCatcher8),
+        .trainerType = TRAINER(.items = {}, .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_HP_AWARE,),
+        .party = TRAINER_PARTY(sParty_GideonRematch2),
     },
     [TRAINER_YOUNGSTER_BEN_3] = {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
