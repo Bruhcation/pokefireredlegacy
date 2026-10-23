@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "type": "object",
@@ -42,6 +42,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FiveIsland_LostCave_Room10_EventScript_ItemSilkScarf",
       "flag": "FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FiveIsland_LostCave_Room10_EventScript_Gideon",
+      "flag": "FLAG_HIDE_EASTER"
     }
   ],
   "warp_events": [
@@ -53,6 +67,10 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }
