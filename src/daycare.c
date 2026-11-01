@@ -1214,7 +1214,7 @@ void GiveEggFromDaycare(void)
 static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
 {
     u32 i, validEggs = 0;
-    u8 toSub = GetEggCyclesToSubtract();
+    u8 toSub;
 
 
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
@@ -1235,6 +1235,10 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     if (++daycare->stepCounter == 255)
     {
         u32 steps;
+
+        // Only needed on the 255th step: computing it on every step decrypts
+        // the whole party each time and overruns the frame in encounter areas.
+        toSub = GetEggCyclesToSubtract();
 
         for (i = 0; i < gPlayerPartyCount; i++)
         {
