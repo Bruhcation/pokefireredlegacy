@@ -717,15 +717,12 @@ static void UpdateHappinessStepCounter(void)
 
     (*ptr)++;
     (*ptr) %= 128;
-    if (*ptr == 0)
-    {
-        struct Pokemon *mon = gPlayerParty;
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            AdjustFriendship(mon, FRIENDSHIP_EVENT_WALKING);
-            mon++;
-        }
-    }
+    // Each party slot still gets one walking friendship check per 128 steps,
+    // but one slot per step (steps 0..5) instead of all six on the same frame,
+    // which used to drop a frame in encounter areas.
+    i = *ptr;
+    if (i < PARTY_SIZE)
+        AdjustFriendship(&gPlayerParty[i], FRIENDSHIP_EVENT_WALKING);
 }
 
 void ClearPoisonStepCounter(void)

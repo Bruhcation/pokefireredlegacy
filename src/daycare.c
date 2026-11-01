@@ -1238,6 +1238,15 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
 
         // Only needed on the 255th step: computing it on every step decrypts
         // the whole party each time and overruns the frame in encounter areas.
+        // The unencrypted egg flag lets a party without eggs skip the
+        // expensive party scan below entirely.
+        for (i = 0; i < gPlayerPartyCount; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
+                break;
+        }
+        if (i == gPlayerPartyCount)
+            return FALSE;
         toSub = GetEggCyclesToSubtract();
 
         for (i = 0; i < gPlayerPartyCount; i++)
