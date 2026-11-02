@@ -3059,11 +3059,30 @@ case n:                                                                 \
         break;                                                          \
     }                                                                   \
 
+// personality % 24 without a software division (the GBA has no divide
+// instruction). 24 = 8 * 3: the low three bits give the "8" part, and y % 3 is
+// the sum of y's base-4 digits modulo 3, since 4 = 1 (mod 3). Exhaustively
+// checked equal to % 24 for every u32. GetSubstruct runs several times per
+// GetMonData call, so this makes every party read noticeably cheaper.
+static u32 PersonalityMod24(u32 x)
+{
+    u32 y = x >> 3;
+    y = (y >> 16) + (y & 0xFFFF);
+    y = (y >> 8) + (y & 0xFF);
+    y = (y >> 4) + (y & 0xF);
+    y = (y >> 2) + (y & 3);
+    y = (y >> 2) + (y & 3);
+    y = (y >> 2) + (y & 3);
+    while (y >= 3)
+        y -= 3;
+    return (y << 3) | (x & 7);
+}
+
 static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 personality, u8 substructType)
 {
     union PokemonSubstruct *substruct = NULL;
 
-    switch (personality % 24)
+    switch (PersonalityMod24(personality))
     {
         SUBSTRUCT_CASE( 0,0,1,2,3)
         SUBSTRUCT_CASE( 1,0,1,3,2)
