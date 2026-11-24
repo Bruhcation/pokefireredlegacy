@@ -13,8 +13,6 @@ EventScript_CutTree::
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_CUT
-	msgbox Text_CutTreeDown, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontCutTree
 	msgbox Text_MonUsedMove
 	closemessage
 EventScript_CutTreeCommon:
@@ -76,8 +74,6 @@ EventScript_RockSmash::
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	msgbox Text_UseRockSmash, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontSmashRock
 	msgbox Text_MonUsedMove
 	closemessage
 EventScript_RockSmashCommon:
@@ -248,9 +244,6 @@ EventScript_StrengthBoulder::
 	checkpartymove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMoveBoulder
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_UseStrength, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_DontUseStrength
-	closemessage
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
 	goto EventScript_UseStrength
@@ -312,8 +305,6 @@ EventScript_Waterfall::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_WaterCrashingDown
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_UseWaterfall, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall
 	dofieldeffect FLDEFF_USE_WATERFALL
 	goto EventScript_EndWaterfall

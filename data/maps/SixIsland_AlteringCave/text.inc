@@ -7,7 +7,9 @@ SixIsland_AlteringCave_Text_SpikeDefeat::
 SixIsland_AlteringCave_Text_SpikePostBattle::
     .string "Since I lost, I ought to tell.\p"
     .string "This place switches encounters\n"
-    .string "quite often.$"
+    .string "quite often.\p"
+    .string "And I can't believe it's been\n"
+    .string "so long since I came here...$"
 
 SixIsland_AlteringCave_Text_NoSpike::
     .string "Go away!$"
