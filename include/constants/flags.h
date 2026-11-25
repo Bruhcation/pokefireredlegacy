@@ -311,7 +311,7 @@
 #define FLAG_LORCAP_2               0x123
 #define FLAG_AUTO_RUN_TOGGLED                                0x124
 #define FLAG_AUTO_RUN_EXPLAINED                              0x125
-#define FLAG_0x126               0x126
+#define FLAG_HIDE_DOJO_HITMONTOP_BALL               0x126
 #define FLAG_0x127               0x127
 #define FLAG_0x128               0x128
 #define FLAG_0x129               0x129

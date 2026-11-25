@@ -36,7 +36,7 @@ static const struct InGameTrade sInGameTrades[] = {
 #if defined(FIRERED)
         .nickname = _("HORSEY"),
         .species = SPECIES_PONYTA,
-        .ivs = {22, 25, 25, 19, 15, 22},
+        .ivs = {22, 25, 25, 19, 21, 22},
         .abilityNum = 0,
         .otId = 63184,
         .conditions = {5, 5, 5, 5, 30},
@@ -48,19 +48,19 @@ static const struct InGameTrade sInGameTrades[] = {
         .sheen = 10,
         .requestedSpecies = SPECIES_TENTACOOL
 #elif defined(LEAFGREEN)
-        .nickname = _("BONEY"),
-        .species = SPECIES_CUBONE,
-        .ivs = {19, 25, 18, 22, 22, 15},
+        .nickname = _("HORSEY"),
+        .species = SPECIES_PONYTA,
+        .ivs = {22, 25, 25, 19, 21, 22},
         .abilityNum = 0,
         .otId = 63184,
-        .conditions = {30, 5, 5, 5, 5},
-        .personality = 0x151943d7,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = 0x06341016,
         .heldItem = ITEM_TINY_MUSHROOM,
         .mailNum = 255,
         .otName = _("SAIGE"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_RATICATE
+        .requestedSpecies = SPECIES_TENTACOOL
 #endif
     }, 
     [INGAME_TRADE_FARFETCHD] = 
@@ -82,33 +82,33 @@ static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_NIDORINOA] = 
     {
 #if defined(FIRERED)
-        .nickname = _("TOPPER"),
-        .species = SPECIES_HITMONTOP,
-        .ivs = {22, 25, 18, 19, 22, 15},
+        .nickname = _("DAVID"),
+        .species = SPECIES_RHYHORN,
+        .ivs = {19, 25, 18, 22, 22, 15},
         .abilityNum = 0,
-        .otId = 13637,
-        .conditions = {5, 5, 30, 5, 5},
+        .otId = 63184,
+        .conditions = {30, 5, 5, 5, 5},
         .personality = 0x151943d7,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_TINY_MUSHROOM,
         .mailNum = 255,
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_ONIX
+        .requestedSpecies = SPECIES_LICKITUNG
 #elif defined(LEAFGREEN)
-        .nickname = _("TOPPER"),
-        .species = SPECIES_HITMONTOP,
-        .ivs = {22, 25, 18, 19, 22, 15},
+        .nickname = _("DAVID"),
+        .species = SPECIES_RHYHORN,
+        .ivs = {19, 25, 18, 22, 22, 15},
         .abilityNum = 0,
-        .otId = 13637,
-        .conditions = {5, 5, 5, 5, 30},
+        .otId = 63184,
+        .conditions = {30, 5, 5, 5, 5},
         .personality = 0x151943d7,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_TINY_MUSHROOM,
         .mailNum = 255,
         .otName = _("TURNER"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_ONIX
+        .requestedSpecies = SPECIES_LICKITUNG
 #endif
     }, 
     [INGAME_TRADE_LICKITUNG] = 

@@ -19772,7 +19772,7 @@
               },
               {
                 "min_level": 15,
-                "max_level": 15,
+                "max_level": 18,
                 "species": "SPECIES_POLIWAG"
               },
               {
@@ -19782,7 +19782,7 @@
               },
               {
                 "min_level": 15,
-                "max_level": 15,
+                "max_level": 18,
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -19926,7 +19926,7 @@
               },
               {
                 "min_level": 15,
-                "max_level": 15,
+                "max_level": 18,
                 "species": "SPECIES_POLIWAG"
               },
               {
@@ -19936,7 +19936,7 @@
               },
               {
                 "min_level": 15,
-                "max_level": 15,
+                "max_level": 18,
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -20345,23 +20345,23 @@
                 "species": "SPECIES_MEOWTH"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_ABRA"
               },
               {
-                "min_level": 24,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_MEOWTH"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20419,8 +20419,8 @@
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20429,8 +20429,8 @@
                 "species": "SPECIES_MEOWTH"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_ABRA"
               },
               {
@@ -20488,8 +20488,8 @@
                 "species": "SPECIES_GROWLITHE"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 26,
+                "max_level": 26,
                 "species": "SPECIES_ABRA"
               },
               {
