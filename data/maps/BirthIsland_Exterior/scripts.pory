@@ -203,8 +203,11 @@ BirthIsland_Exterior_Text_Gideon::
 	.string "them also!$"
 
 BirthIsland_Exterior_Text_GideonYes::
-	.string "And now I have caught DEOXYS.\n"
-	.string "However I feel a bit empty,\l"
+	.string "I kinda knew you would recieve one\n"
+	.string "too for beating ARMSTRONG.\l"
+	.string "So I rushed here to capture it,\l"
+	.string "Which did proved sucessful.\p"
+	.string "However I feel a bit empty,\n"
 	.string "with how I betrayed the\l"
 	.string "SEVII MASTERS and the whole\l"
 	.string "thing with TEAM ROCKET.\p"

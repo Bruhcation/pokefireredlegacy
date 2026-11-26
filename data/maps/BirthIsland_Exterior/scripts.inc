@@ -409,125 +409,125 @@ BirthIsland_Exterior_Text_Gideon::
 # 205 "data/maps/BirthIsland_Exterior/scripts.pory"
 BirthIsland_Exterior_Text_GideonYes::
 # 206 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "And now I have caught DEOXYS.\n"
+	.string "I kinda knew you would recieve one\n"
 # 207 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "However I feel a bit empty,\l"
+	.string "too for beating ARMSTRONG.\l"
 # 208 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "with how I betrayed the\l"
+	.string "So I rushed here to capture it,\l"
 # 209 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "SEVII MASTERS and the whole\l"
+	.string "Which did proved sucessful.\p"
 # 210 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "thing with TEAM ROCKET.\p"
+	.string "However I feel a bit empty,\n"
 # 211 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "And seeing now that my dream\n"
+	.string "with how I betrayed the\l"
 # 212 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "was holding back the\l"
+	.string "SEVII MASTERS and the whole\l"
 # 213 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "SEVII ISLANDS and it's people,\l"
+	.string "thing with TEAM ROCKET.\p"
 # 214 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "I feel like I could of done better.$"
+	.string "And seeing now that my dream\n"
 # 215 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+	.string "was holding back the\l"
 # 216 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonLetsFight::
+	.string "SEVII ISLANDS and it's people,\l"
 # 217 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "So I present a option,\n"
+	.string "I feel like I could of done better.$"
 # 218 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "If you beat me in a battle with\l"
+
 # 219 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "DEOXYS, i'll release it and\l"
+BirthIsland_Exterior_Text_GideonLetsFight::
 # 220 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "let you catch it.\p"
+	.string "So I present a option,\n"
 # 221 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "So, let's fight.$"
+	.string "If you beat me in a battle with\l"
 # 222 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+	.string "DEOXYS, i'll release it and\l"
 # 223 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonNo::
+	.string "let you catch it.\p"
 # 224 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Well be quick, or i'm taking\n"
+	.string "So, let's fight.$"
 # 225 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "DEOXYS!$"
+
 # 226 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+BirthIsland_Exterior_Text_GideonNo::
 # 227 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonIntro::
+	.string "Well be quick, or i'm taking\n"
 # 228 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Alright than, I have felt stronger\n"
+	.string "DEOXYS!$"
 # 229 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "since last time.\p"
-# 230 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Let's fight for DEOXYS!$"
-# 231 "data/maps/BirthIsland_Exterior/scripts.pory"
 
+# 230 "data/maps/BirthIsland_Exterior/scripts.pory"
+BirthIsland_Exterior_Text_GideonIntro::
+# 231 "data/maps/BirthIsland_Exterior/scripts.pory"
+	.string "Alright than, I have felt stronger\n"
 # 232 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonDefeat::
+	.string "since last time.\p"
 # 233 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Well. That settles it.$"
+	.string "Let's fight for DEOXYS!$"
 # 234 "data/maps/BirthIsland_Exterior/scripts.pory"
 
 # 235 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonPostBattle::
+BirthIsland_Exterior_Text_GideonDefeat::
 # 236 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Seems like i'll release DEOXYS\n"
+	.string "Well. That settles it.$"
 # 237 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "right now.$"
+
 # 238 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+BirthIsland_Exterior_Text_GideonPostBattle::
 # 239 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonPostBattle2::
+	.string "Seems like i'll release DEOXYS\n"
 # 240 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "It was a good match {PLAYER}.\n"
+	.string "right now.$"
 # 241 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "I'll come back to the warehouse\l"
+
 # 242 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "and finish what I started since\l"
+BirthIsland_Exterior_Text_GideonPostBattle2::
 # 243 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "last time.\p"
+	.string "It was a good match {PLAYER}.\n"
 # 244 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "I'm not gonna come back as a\n"
+	.string "I'll come back to the warehouse\l"
 # 245 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "SEVII MASTER, but i'll\l"
+	.string "and finish what I started since\l"
 # 246 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "make sure my life isn't a waste.$"
+	.string "last time.\p"
 # 247 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+	.string "I'm not gonna come back as a\n"
 # 248 "data/maps/BirthIsland_Exterior/scripts.pory"
-BirthIsland_Exterior_Text_GideonLastWords::
+	.string "SEVII MASTER, but i'll\l"
 # 249 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Fufufufu,\n"
+	.string "make sure my life isn't a waste.$"
 # 250 "data/maps/BirthIsland_Exterior/scripts.pory"
-	.string "Good luck as CHAMPION {PLAYER}.$"
+
 # 251 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+BirthIsland_Exterior_Text_GideonLastWords::
 # 252 "data/maps/BirthIsland_Exterior/scripts.pory"
-Movement_FaceUpNormal::
+	.string "Fufufufu,\n"
 # 253 "data/maps/BirthIsland_Exterior/scripts.pory"
-	face_up
+	.string "Good luck as CHAMPION {PLAYER}.$"
 # 254 "data/maps/BirthIsland_Exterior/scripts.pory"
-	step_end
+
 # 255 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+Movement_FaceUpNormal::
 # 256 "data/maps/BirthIsland_Exterior/scripts.pory"
-Movement_WalkUpPlayer::
+	face_up
 # 257 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_up
-# 258 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_up
-# 259 "data/maps/BirthIsland_Exterior/scripts.pory"
 	step_end
-# 260 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 258 "data/maps/BirthIsland_Exterior/scripts.pory"
 
+# 259 "data/maps/BirthIsland_Exterior/scripts.pory"
+Movement_WalkUpPlayer::
+# 260 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_up
 # 261 "data/maps/BirthIsland_Exterior/scripts.pory"
-Movement_WalkDownPlayer::
+	walk_up
 # 262 "data/maps/BirthIsland_Exterior/scripts.pory"
-	face_down
+	step_end
 # 263 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
+
 # 264 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
+Movement_WalkDownPlayer::
 # 265 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
+	face_down
 # 266 "data/maps/BirthIsland_Exterior/scripts.pory"
 	walk_down
 # 267 "data/maps/BirthIsland_Exterior/scripts.pory"
@@ -535,30 +535,36 @@ Movement_WalkDownPlayer::
 # 268 "data/maps/BirthIsland_Exterior/scripts.pory"
 	walk_down
 # 269 "data/maps/BirthIsland_Exterior/scripts.pory"
-	step_end
+	walk_down
 # 270 "data/maps/BirthIsland_Exterior/scripts.pory"
-
+	walk_down
 # 271 "data/maps/BirthIsland_Exterior/scripts.pory"
-Movement_GideonWalkDown::
+	walk_down
 # 272 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_right
-# 273 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
-# 274 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
-# 275 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_down
-# 276 "data/maps/BirthIsland_Exterior/scripts.pory"
-	walk_left
-# 277 "data/maps/BirthIsland_Exterior/scripts.pory"
-	face_up
-# 278 "data/maps/BirthIsland_Exterior/scripts.pory"
 	step_end
-# 279 "data/maps/BirthIsland_Exterior/scripts.pory"
+# 273 "data/maps/BirthIsland_Exterior/scripts.pory"
 
+# 274 "data/maps/BirthIsland_Exterior/scripts.pory"
+Movement_GideonWalkDown::
+# 275 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_right
+# 276 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_down
+# 277 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_down
+# 278 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_down
+# 279 "data/maps/BirthIsland_Exterior/scripts.pory"
+	walk_left
 # 280 "data/maps/BirthIsland_Exterior/scripts.pory"
-Movement_FaceDown::
+	face_up
 # 281 "data/maps/BirthIsland_Exterior/scripts.pory"
-	face_down
+	step_end
 # 282 "data/maps/BirthIsland_Exterior/scripts.pory"
+
+# 283 "data/maps/BirthIsland_Exterior/scripts.pory"
+Movement_FaceDown::
+# 284 "data/maps/BirthIsland_Exterior/scripts.pory"
+	face_down
+# 285 "data/maps/BirthIsland_Exterior/scripts.pory"
 	step_end

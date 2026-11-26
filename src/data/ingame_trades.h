@@ -67,7 +67,7 @@ static const struct InGameTrade sInGameTrades[] = {
     {
         .nickname = _("DUX"),
         .species = SPECIES_FARFETCHD,
-        .ivs = {20, 25, 21, 24, 15, 20},
+        .ivs = {20, 10, 21, 24, 15, 20},
         .abilityNum = 0,
         .otId = 8810,
         .conditions = {30, 5, 5, 5, 5},

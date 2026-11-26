@@ -1062,6 +1062,7 @@ static const u32 sTMHMLearnsets[][2] =
                                         | TMHM(TM27_RETURN)
                                         | TMHM(TM28_DIG)
                                         | TMHM(TM29_PSYCHIC)
+                                        | TMHM(TM31_BRICK_BREAK)
                                         | TMHM(TM32_DOUBLE_TEAM)
                                         | TMHM(TM36_SLUDGE_BOMB)
                                         | TMHM(TM40_AERIAL_ACE)

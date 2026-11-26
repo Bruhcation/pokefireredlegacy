@@ -1446,7 +1446,7 @@ BattleScript_EffectTripleKick::
 	attackcanceler
 	attackstring
 	ppreduce
-	sethword sTRIPLE_KICK_POWER, 20
+	sethword sTRIPLE_KICK_POWER, 0
 	initmultihitstring
 	setmultihit 3
 BattleScript_TripleKickLoop::
@@ -1457,7 +1457,7 @@ BattleScript_TripleKickLoop::
 BattleScript_DoTripleKickAttack::
 	accuracycheck BattleScript_TripleKickNoMoreHits, ACC_CURR_MOVE
 	movevaluescleanup
-	addbyte sTRIPLE_KICK_POWER, 10
+	addbyte sTRIPLE_KICK_POWER, 20
 	addbyte sMULTIHIT_STRING + 4, 1
 	copyhword gDynamicBasePower, sTRIPLE_KICK_POWER
 	critcalc
